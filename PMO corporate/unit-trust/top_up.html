@@ -322,9 +322,9 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label fs-8 text-muted mb-2">Enter Investment Amount (RM)</label>
+                                    <label class="form-label fs-8 text-muted mb-2">Enter Investment Amount (MYR)</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-light border-end-0 text-dark fw-bold">RM</span>
+                                        <span class="input-group-text bg-light border-end-0 text-dark fw-bold">MYR</span>
                                         <input type="text" class="form-control form-control-lg fs-7"
                                             id="investmentAmount" value="38,928.00">
                                     </div>
@@ -359,7 +359,7 @@
 
                             <div class="row mb-3">
                                 <div class="col-6">
-                                    <div class="fw-bold text-dark fs-7 d-flex align-items-center gap-2">RM0.4964 <span
+                                    <div class="fw-bold text-dark fs-7 d-flex align-items-center gap-2">MYR0.4964 <span
                                             class="text-muted fw-normal fs-9">Last Price <i
                                                 class="iconoir-info-circle"></i></span></div>
                                 </div>
@@ -429,7 +429,7 @@
                                 payment</p>
 
                             <div class="bg-light rounded-3 p-4 mb-4">
-                                <div class="text-muted fs-8 mb-2">Investment Amount (RM)</div>
+                                <div class="text-muted fs-8 mb-2">Investment Amount (MYR)</div>
                                 <div class="fw-bold fs-3 text-dark" id="confirmAmountDisplay">38,928.00</div>
                             </div>
 
@@ -477,7 +477,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="text-muted fs-9 mb-1">Investment Amount</div>
-                                <div class="fw-bold fs-5 text-danger" id="part2SummaryAmount">RM 38,928.00</div>
+                                <div class="fw-bold fs-5 text-danger" id="part2SummaryAmount">MYR 38,928.00</div>
                             </div>
                             <div class="mb-3">
                                 <div class="text-muted fs-9 mb-1">Payment Bank</div>
@@ -640,7 +640,7 @@
                             </div>
                             <div class="mb-4">
                                 <div class="text-muted fs-8 mb-1">Investment Amount</div>
-                                <div class="fw-bold fs-4 text-danger" id="paymentAmountDisplay">RM 38,928.00</div>
+                                <div class="fw-bold fs-4 text-danger" id="paymentAmountDisplay">MYR 38,928.00</div>
                             </div>
                             <div class="mb-4">
                                 <div class="text-muted fs-8 mb-1">Selected Payment Bank</div>
@@ -725,7 +725,7 @@
                                             id="successAccountDisplay">019420392 PUBLIC e-CASH DEPOSIT - CLASS B</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Investment Amount (RM)</div>
+                                        <div class="text-muted fs-8 mb-2">Investment Amount (MYR)</div>
                                         <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
                                             id="successAmountDisplay">38,928.00</div>
                                     </div>
@@ -753,7 +753,7 @@
                                     <div class="mb-4">
                                         <div class="text-muted fs-8 mb-2">Amount</div>
                                         <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                            id="successPayAmountDisplay">RM 38,928.00</div>
+                                            id="successPayAmountDisplay">MYR 38,928.00</div>
                                     </div>
                                     <div class="mb-4">
                                         <div class="text-muted fs-8 mb-2">Date/Time</div>
@@ -1128,7 +1128,7 @@
                     const p2Amt = document.getElementById('part2SummaryAmount');
                     const p2Bank = document.getElementById('part2SummaryBank');
                     if (p2Acct) p2Acct.textContent = acNo + ' ' + acName;
-                    if (p2Amt) p2Amt.textContent = 'RM ' + amount;
+                    if (p2Amt) p2Amt.textContent = 'MYR ' + amount;
                     if (p2Bank) p2Bank.textContent = bankName;
 
                     showWizardStep(1.5);
@@ -1155,7 +1155,7 @@
                     const bankName = selectBank.value;
 
                     paymentAccountDisplay.textContent = selectedText;
-                    paymentAmountDisplay.textContent = "RM " + amount;
+                    paymentAmountDisplay.textContent = "MYR " + amount;
                     paymentBankDisplay.textContent = bankName;
 
                     showWizardStep(2);
@@ -1210,7 +1210,7 @@
 
                     successAccountDisplay.textContent = selectedText;
                     successAmountDisplay.textContent = amount;
-                    successPayAmountDisplay.textContent = "RM " + amount;
+                    successPayAmountDisplay.textContent = "MYR " + amount;
 
                     showWizardStep(3);
                 });

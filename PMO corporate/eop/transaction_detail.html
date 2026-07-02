@@ -235,7 +235,7 @@
                                             <td class="fw-bold text-dark" id="eopTxnDetailEmpCount">—</td>
                                         </tr>
                                         <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Total Amount (RM)</td>
+                                            <td class="text-muted fw-semibold">Total Amount (MYR)</td>
                                             <td class="fw-bold text-success fs-6" id="eopTxnDetailAmount">—</td>
                                         </tr>
                                     </tbody>
@@ -261,7 +261,7 @@
                                             <th class="py-3 fw-semibold" style="width:20%;">NRIC No.</th>
                                             <th class="py-3 fw-semibold" style="width:15%;">Fund Name</th>
                                             <th class="py-3 fw-semibold" style="width:20%;">Contribution Type</th>
-                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (RM)</th>
+                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-dark fw-medium fs-8" id="eopTxnDetailTbody">
@@ -324,7 +324,7 @@
                                     <div class="fw-bold fs-8 text-dark" id="eopTxnSummaryPreparer">—</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Total Contribution (RM)</div>
+                                    <div class="text-muted fs-9 mb-1">Total Contribution (MYR)</div>
                                     <div class="fw-bold fs-4 text-success" id="eopTxnSummaryAmount">—</div>
                                 </div>
                                 <div class="mb-3">
@@ -607,7 +607,7 @@
 
             document.getElementById('eopTxnDetailContribType').textContent = d.contributionLabel;
             document.getElementById('eopTxnDetailEmpCount').textContent = String(d.employees);
-            const amtRm = `RM ${d.amountFmt}`;
+            const amtRm = `MYR ${d.amountFmt}`;
             document.getElementById('eopTxnDetailAmount').textContent = amtRm;
 
             // Settlement overview
@@ -679,7 +679,7 @@
                             <td class="py-3 text-secondary font-monospace">${r.nric}</td>
                             <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-semibold">${r.fund}</span></td>
                             <td class="py-3 text-secondary">${r.type}</td>
-                            <td class="pe-3 py-3 text-end fw-bold text-dark">RM ${r.amount}</td>
+                            <td class="pe-3 py-3 text-end fw-bold text-dark">MYR ${r.amount}</td>
                         </tr>
                     `;
                 });

@@ -362,7 +362,7 @@
                                     <div class="d-flex align-items-center gap-2 mt-2 p-2 bg-light rounded-3 border">
                                         <i class="iconoir-calculator fs-6 text-muted"></i>
                                         <span class="fs-8 text-muted">Estimated Redemption Value: <strong
-                                                class="text-dark" id="estimatedValue">RM 75,195.00</strong></span>
+                                                class="text-dark" id="estimatedValue">MYR 75,195.00</strong></span>
                                     </div>
                                 </div>
                                 <div class="alert alert-warning d-flex align-items-center border-0 py-2 px-3 fs-9"
@@ -388,7 +388,7 @@
                             <div class="row mb-3">
                                 <div class="col-6">
                                     <div class="text-muted fw-normal fs-9 mb-1">Last Price / Unit</div>
-                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">RM 0.5013</div>
+                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">MYR 0.5013</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-muted fw-normal fs-9 mb-1">Unit Trust Consultant</div>
@@ -456,7 +456,7 @@
                                 <i class="iconoir-calculator fs-5 text-muted"></i>
                                 <div>
                                     <div class="text-muted fs-9">Estimated Redemption Value</div>
-                                    <div class="fw-bold fs-5 text-dark" id="confirmEstValueDisplay">RM 75,195.00</div>
+                                    <div class="fw-bold fs-5 text-dark" id="confirmEstValueDisplay">MYR 75,195.00</div>
                                 </div>
                             </div>
 
@@ -494,7 +494,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="text-muted fs-9 mb-1">Estimated Value</div>
-                                <div class="fw-bold fs-6 text-dark" id="part2SummaryEst">RM 75,195.00</div>
+                                <div class="fw-bold fs-6 text-dark" id="part2SummaryEst">MYR 75,195.00</div>
                             </div>
                             <div class="mt-4 p-3 rounded-3 bg-light border fs-9 text-muted">
                                 <i class="iconoir-info-circle me-1 text-primary"></i>
@@ -596,7 +596,7 @@
                             </div>
                             <div class="mb-4">
                                 <div class="text-muted fs-8 mb-1">Estimated Value</div>
-                                <div class="fw-bold fs-6 text-dark" id="paymentEstValueDisplay">RM 75,195.00</div>
+                                <div class="fw-bold fs-6 text-dark" id="paymentEstValueDisplay">MYR 75,195.00</div>
                             </div>
                             <div class="mb-4">
                                 <div class="text-muted fs-8 mb-1">Payout Bank (Auto)</div>
@@ -680,7 +680,7 @@
                                     <div class="mb-4">
                                         <div class="text-muted fs-8 mb-2">Estimated Redemption Value</div>
                                         <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                            id="successEstValueDisplay">RM 75,195.00</div>
+                                            id="successEstValueDisplay">MYR 75,195.00</div>
                                     </div>
                                     <div class="mb-2">
                                         <div class="text-muted fs-8 mb-2">Unit Trust Consultant</div>
@@ -990,10 +990,10 @@
 
                 previewAccountNo.textContent = opt.value;
                 previewAccountName.textContent = opt.dataset.name;
-                previewLastPrice.textContent = 'RM ' + parseFloat(opt.dataset.price).toFixed(4);
+                previewLastPrice.textContent = 'MYR ' + parseFloat(opt.dataset.price).toFixed(4);
                 previewTotalUnits.textContent = formatNumber(parseFloat(opt.dataset.units));
                 previewAvailableUnits.textContent = formatNumber(parseFloat(opt.dataset.available));
-                estimatedValue.textContent = 'RM ' + formatNumber(est);
+                estimatedValue.textContent = 'MYR ' + formatNumber(est);
             }
 
             // Update on account change
@@ -1004,7 +1004,7 @@
                 const opt = getSelectedOption();
                 const price = parseFloat(opt.dataset.price);
                 const units = parseFloat(this.value.replace(/,/g, '') || 0);
-                estimatedValue.textContent = 'RM ' + formatNumber(units * price);
+                estimatedValue.textContent = 'MYR ' + formatNumber(units * price);
                 redeemUnits.classList.remove('is-invalid');
             });
 
@@ -1094,7 +1094,7 @@
                     confirmAccountNo.textContent = opt.value;
                     confirmAccountName.textContent = opt.dataset.name;
                     confirmUnitsDisplay.textContent = formatNumber(units);
-                    confirmEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+                    confirmEstValueDisplay.textContent = 'MYR ' + formatNumber(est);
 
                     // Populate right summary panel
                     const p2Acct = document.getElementById('part2SummaryAccount');
@@ -1102,7 +1102,7 @@
                     const p2Est = document.getElementById('part2SummaryEst');
                     if (p2Acct) p2Acct.textContent = opt.value + ' ' + opt.dataset.name;
                     if (p2Units) p2Units.textContent = formatNumber(units);
-                    if (p2Est) p2Est.textContent = 'RM ' + formatNumber(est);
+                    if (p2Est) p2Est.textContent = 'MYR ' + formatNumber(est);
 
                     showWizardStep(1.5);
                 });
@@ -1124,7 +1124,7 @@
 
                     paymentAccountDisplay.textContent = opt.value + ' ' + opt.dataset.name;
                     paymentAmountDisplay.textContent = formatNumber(units) + ' units';
-                    if (paymentEstValueDisplay) paymentEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+                    if (paymentEstValueDisplay) paymentEstValueDisplay.textContent = 'MYR ' + formatNumber(est);
 
                     showWizardStep(2);
                 });
@@ -1174,7 +1174,7 @@
 
                     successAccountDisplay.textContent = opt.value + ' ' + opt.dataset.name;
                     successUnitsDisplay.textContent = formatNumber(units) + ' units';
-                    successEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+                    successEstValueDisplay.textContent = 'MYR ' + formatNumber(est);
 
                     showWizardStep(3);
                 });
