@@ -12,7 +12,7 @@ All files in the Corporate PMO Portal must conform to these styling and structur
 - **Primary Trigger Colors**:
   - Primary Action / Call to Action: Brand Red (`#ed1c24`). Must hover to `#c41219` with a smooth 0.3s transition.
   - Secondary / Supporting action: Transparent/white background with `#ced4da` border (Ghost style).
-- **Brand Foundations**: Brand Navy (`#26247b`) or Accent Navy (`#373761`) for structural borders, background fills, or navbar branding.
+- **Brand Foundations**: Brand Navy (`#000000`) or Accent Navy (`#373761`) for structural borders, background fills, or navbar branding.
 
 ## 3. Surface Specifications
 - **Cards**: Customize `.card` classes with `border-radius: 15px` and a diffused shadow `box-shadow: 0 10px 30px rgba(0,0,0,0.2)`.

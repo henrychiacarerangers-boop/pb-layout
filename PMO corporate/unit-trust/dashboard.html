@@ -202,7 +202,9 @@
                                             ********</div>
                                         <div
                                             class="text-muted fs-9 d-flex align-items-center justify-content-center gap-1">
-                                            Investment Cost <i class="iconoir-info-circle"></i>
+                                            Investment Cost <i class="iconoir-info-circle" style="cursor: pointer;"
+                                                data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top"
+                                                data-bs-content="The amount shown here is calculated based on the overall holdings and amount transferred in/out. This amount will not be affected by Switching and income distribution."></i>
                                         </div>
                                     </div>
                                 </div>
@@ -213,8 +215,11 @@
                                             data-value="MYR 49,540.00">
                                             ********
                                         </div>
-                                        <div class="text-muted fs-9">Unrealised Profit/Loss <i
-                                                class="iconoir-info-circle"></i></div>
+                                        <div class="text-muted fs-9">Unrealised Returns <i class="iconoir-info-circle"
+                                                style="cursor: pointer;" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" data-bs-placement="top"
+                                                data-bs-content="How are Unrealised Returns calculated?<br>The unrealised returns amount is calculated by taking the Market Value of your portfolio holdings minus the Investment Cost. The percentage is calculated by dividing the unrealised returns amount with the investment cost and multiplying it by 100."></i>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -224,8 +229,12 @@
                                             data-value="MYR 12,302.00">
                                             ********
                                         </div>
-                                        <div class="text-muted fs-9">Realised Profit/Loss<i
-                                                class="iconoir-info-circle"></i></div>
+                                        <div class="text-muted fs-9">Realised Returns <i class="iconoir-info-circle"
+                                                style="cursor: pointer;" data-bs-toggle="popover"
+                                                data-bs-trigger="hover" data-bs-placement="top"
+                                                data-bs-content="How are Realised Returns calculated? <br> 
+The realised returns are the gain/loss resulting from the redemption of your investment. The realised returns shown here are the cumulative amount since the inception of your investment."></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -294,14 +303,18 @@
                                         <tr class="border-bottom">
                                             <td class="ps-4 py-3 text-start">
                                                 <div class="fw-bold text-dark">06/05/2026</div>
-                                                <div class="text-muted fs-9">II</div>
+                                                <div class="text-muted fs-9" style="cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Initial Investment">II</div>
                                                 <span
                                                     class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
                                             </td>
                                             <td class="text-start">
                                                 <div class="fw-bold text-primary mb-1 text-decoration-underline"
                                                     style="font-size: 0.8rem;">136252514</div>
-                                                <div class="fw-bold" style="font-size: 0.75rem;">PB GROWTH FUND (PBGTHF)
+                                                <div class="fw-bold" style="font-size: 0.75rem; cursor: pointer;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="PB GROWTH FUND (PBGTHF)">PB GROWTH FUND (PBGTHF)
                                                 </div>
 
                                             </td>
@@ -311,14 +324,18 @@
                                         <tr class="border-bottom">
                                             <td class="ps-4 py-3 text-start">
                                                 <div class="fw-bold text-dark">06/05/2026</div>
-                                                <div class="text-muted fs-9">AI</div>
+                                                <div class="text-muted fs-9" style="cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Additional Investment">AI</div>
                                                 <span
                                                     class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
                                             </td>
                                             <td class="text-start">
                                                 <div class="fw-bold text-primary mb-1 text-decoration-underline"
                                                     style="font-size: 0.8rem;">094766508</div>
-                                                <div class="fw-bold" style="font-size: 0.75rem;">PB GLOBAL SELECT FUND
+                                                <div class="fw-bold" style="font-size: 0.75rem; cursor: pointer;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="PB GLOBAL SELECT FUND (PGSF)">PB GLOBAL SELECT FUND
                                                     (PGSF)</div>
 
                                             </td>
@@ -384,15 +401,21 @@
                                     <tr class="border-bottom">
                                         <td class="pt-3 pb-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <div class="fw-bold fs-8 text-dark">PUBLIC SHARIAH BALANCED FUND</div>
+                                                <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="PUBLIC SHARIAH BALANCED FUND">PUBLIC SHARIAH BALANCED FUND
+                                                </div>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                    class="img-fluid" style="height: 16px;"
-                                                    onerror="this.style.display='none'">
+                                                    class="img-fluid" style="height: 16px; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Shariah Compliant" onerror="this.style.display='none'">
                                             </div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">BAL</span>
-                                                <img src="../images/icon/risk-level/icon_risk3.png" alt="Risk 3"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Balanced Fund">BAL</span>
+                                                <img src="../images/icon/risk-level/icon_risk3.svg" alt="Risk 3"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 3 - Moderate"
                                                     onerror="this.style.display='none'">
@@ -410,15 +433,20 @@
                                     <tr class="border-bottom">
                                         <td class="pt-3 pb-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <div class="fw-bold fs-8 text-dark">PUBLIC ITTIKAL SEQUEL FUND</div>
+                                                <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="PUBLIC ITTIKAL SEQUEL FUND">PUBLIC ITTIKAL SEQUEL FUND</div>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                    class="img-fluid" style="height: 16px;"
-                                                    onerror="this.style.display='none'">
+                                                    class="img-fluid" style="height: 16px; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Shariah Compliant" onerror="this.style.display='none'">
                                             </div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">EQ</span>
-                                                <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Equity Fund">EQ</span>
+                                                <img src="../images/icon/risk-level/icon_risk4.svg" alt="Risk 4"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 4 - High"
                                                     onerror="this.style.display='none'">
@@ -436,15 +464,21 @@
                                     <tr>
                                         <td class="pt-3 pb-1">
                                             <div class="d-flex align-items-center gap-2">
-                                                <div class="fw-bold fs-8 text-dark">PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                                <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="PUBLIC ISLAMIC DIVIDEND FUND">PUBLIC ISLAMIC DIVIDEND FUND
+                                                </div>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                    class="img-fluid" style="height: 16px;"
-                                                    onerror="this.style.display='none'">
+                                                    class="img-fluid" style="height: 16px; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Shariah Compliant" onerror="this.style.display='none'">
                                             </div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">EQ</span>
-                                                <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Equity Fund">EQ</span>
+                                                <img src="../images/icon/risk-level/icon_risk4.svg" alt="Risk 4"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 4 - High"
                                                     onerror="this.style.display='none'">
@@ -492,11 +526,16 @@
                                     <!-- Row 1: Money Market (Very Low Risk) -->
                                     <tr class="border-bottom">
                                         <td class="pt-3 pb-3">
-                                            <div class="fw-bold fs-8 text-dark">PUBLIC e-CASH DEPOSIT - CLASS B</div>
+                                            <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="PUBLIC e-CASH DEPOSIT - CLASS B">PUBLIC e-CASH DEPOSIT - CLASS B
+                                            </div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">MM</span>
-                                                <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Money Market Fund">MM</span>
+                                                <img src="../images/icon/risk-level/icon_risk1.svg" alt="Risk 1"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 1 - Very Low"
                                                     onerror="this.style.display='none'">
@@ -514,11 +553,15 @@
                                     <!-- Row 2: Fixed Income (Low Risk) -->
                                     <tr class="border-bottom">
                                         <td class="pt-3 pb-3">
-                                            <div class="fw-bold fs-8 text-dark">PUBLIC BOND FUND</div>
+                                            <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="PUBLIC BOND FUND">PUBLIC BOND FUND</div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">FI</span>
-                                                <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Fixed Income Fund">FI</span>
+                                                <img src="../images/icon/risk-level/icon_risk2.svg" alt="Risk 2"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 2 - Low"
                                                     onerror="this.style.display='none'">
@@ -536,11 +579,15 @@
                                     <!-- Row 3: Equity (High Risk) -->
                                     <tr>
                                         <td class="pt-3 pb-1">
-                                            <div class="fw-bold fs-8 text-dark">PUBLIC REGIONAL UTILITY FUND</div>
+                                            <div class="fw-bold fs-8 text-dark" style="cursor: pointer;"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="PUBLIC REGIONAL UTILITY FUND">PUBLIC REGIONAL UTILITY FUND</div>
                                             <div class="mt-1 d-flex align-items-center gap-2">
                                                 <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b;">EQ</span>
-                                                <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                    style="background-color: rgba(38, 36, 123, 0.08); color: #26247b; cursor: help;"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Equity Fund">EQ</span>
+                                                <img src="../images/icon/risk-level/icon_risk4.svg" alt="Risk 4"
                                                     style="height: 18px;" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Risk 4 - High"
                                                     onerror="this.style.display='none'">
@@ -723,9 +770,7 @@
                                 <li class="nav-item mb-1"><a href="transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
-                                <li class="nav-item mb-1"><a href="transactions.html?tab=request"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                                
                             </ul>
                         </div>
                     </li>
@@ -878,6 +923,21 @@
                             }
                         });
                     }
+                });
+            });
+
+            // Initialize tooltips and popovers
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl, {
+                    trigger: 'hover',
+                    placement: 'top',
+                    html: true
                 });
             });
         });

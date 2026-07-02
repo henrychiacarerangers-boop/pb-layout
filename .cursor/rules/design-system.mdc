@@ -12,7 +12,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ### Primary & Brand Colors
 - **Brand Red**: `#ed1c24`
   - *Primary use*: Primary CTA buttons, key action highlights, error/alert text banners, main header accents.
-- **Brand Navy**: `#26247b`
+- **Brand Navy**: `#000000`
   - *Primary use*: Base navbars, footer panels, branding elements, major structural container lines.
 
 ### Support Colors & Gradients
