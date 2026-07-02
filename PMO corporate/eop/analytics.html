@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal — EOP · PRS Analytics</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
+    <link href="../css/iconoir.css" rel="stylesheet" >
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="stylesheet" href="../css/eop-dashboard.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
+
+    <div class="top-landing-wrapper position-relative" style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+        <div class="pmo-shell-topnav-bleed w-100"><div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#eopSidebarOffcanvas" aria-controls="eopSidebarOffcanvas" id="eopBtnOpenSidebar">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="eopBrandLink">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="dashboard.html" class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none" id="eopNavPillEop">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../analytics/unit-trust.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillAnalytics">
+                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
+                            <i class="iconoir-user fs-5 text-dark"></i>
+                        </div>
+                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer Admin</span>
+                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="../unit-trust/settings.html" id="dropLnkProfile">
+                                <i class="iconoir-user fs-6"></i> User Profile Details
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                <i class="iconoir-lock fs-6"></i> Change Password
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
+                                <i class="iconoir-log-out fs-6"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    </div></div>
+
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span> <span class="text-white-50 fw-normal fs-6">· EOP Portal</span></h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a></li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html" id="eopTabUpload">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authorise.html" id="eopTabAuthorise">Authorise <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9" id="eopTabAuthBadge">3</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment.html" id="eopTabPay">Payment <span class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabPayBadge">2</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="transactions.html" id="eopTabTxn">Transactions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="statements.html" id="eopTabStatements">Statements</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="analytics.html" id="eopTabAnalytics">Analytics</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <main class="dashboard-content py-5 flex-grow-1">
+        <div class="container">
+            <div class="mb-4">
+                <h2 class="fw-bold text-dark fs-2 mb-2" id="prsAnalyticsTitle">PRS Analytics</h2>
+                <p class="text-muted fs-7 mb-0" id="prsAnalyticsSubtitle">Employer view of Private Retirement Scheme fund performance (demo data).</p>
+            </div>
+            <div class="row g-4">
+                <aside class="col-lg-3">
+                    <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+                            <h5 class="fw-bold text-dark fs-6 mb-0" id="prsFilterHeading">Further filter by &gt;&gt;</h5>
+                            <button type="button" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 28px; height: 28px; border-color: #dee2e6;" id="prsFilterCollapseBtn" aria-label="Collapse filters">
+                                <i class="iconoir-nav-arrow-left fs-6 text-dark" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1" for="prsShowFundsSelect">Show PRS funds</label>
+                            <select class="form-select rounded-3 fs-8 py-2 text-dark border-secondary border-opacity-25" id="prsShowFundsSelect" style="font-weight: 500;">
+                                <option selected>All PRS funds</option>
+                                <option>My favourites only</option>
+                                <option>Sharia PRS</option>
+                                <option>Conventional PRS</option>
+                                <option>Employer default funds</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1" for="prsFundSearchInput">Fund name or code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control fs-8 py-2 border-secondary border-opacity-25" id="prsFundSearchInput" placeholder="Search PRS funds…" autocomplete="off" aria-label="Search PRS funds">
+                                <button type="button" class="btn btn-dark px-3 d-flex align-items-center" id="prsFundSearchBtn" style="background-color: #5d678e; border-color: #5d678e;">
+                                    <i class="iconoir-search fs-6" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="filter-section-title mb-3">PRS category</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCatGrowth" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCatGrowth">Growth</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCatModerate" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCatModerate">Moderate</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCatConservative" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCatConservative">Conservative</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCatSharia">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCatSharia">Sharia-compliant only</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-0">
+                            <div class="filter-section-title mb-3">Core status</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCoreYes" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCoreYes">Core funds</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="prsCoreNo" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="prsCoreNo">Non-core funds</label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="col-lg-9">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+                        <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0 analytics-view-selector">
+                            <a href="#" class="view-tab d-flex align-items-center gap-2" id="prsViewTabInfo" role="button">
+                                <i class="iconoir-info-circle fs-6" aria-hidden="true"></i> Fund Info View
+                            </a>
+                            <a href="#" class="view-tab active d-flex align-items-center gap-2" id="prsViewTabPerformance" role="button" aria-current="page">
+                                <i class="iconoir-graph-up fs-6" aria-hidden="true"></i> Fund Performance View
+                            </a>
+                            <a href="#" class="view-tab d-flex align-items-center gap-2" id="prsViewTabPrices" role="button">
+                                <i class="iconoir-dollar fs-6" aria-hidden="true"></i> Fund Prices View
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 bg-white authorise-table-card mb-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table text-center fs-8 prs-analytics-table">
+                                <thead class="text-muted border-bottom">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" scope="col" style="width: 28%;">
+                                            Fund <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold align-middle" scope="col">
+                                            Performance date <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold prs-analytics-band align-middle" scope="col">
+                                            Factor <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold prs-analytics-band align-middle" scope="col">
+                                            Class <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold text-end align-middle" scope="col">
+                                            YTD <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold text-end align-middle" scope="col">
+                                            1-Yr <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle" scope="col">
+                                            3-Yr <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle" scope="col">
+                                            5-Yr <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle" scope="col">
+                                            10-Yr <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
+                                        </th>
+                                        <th class="pe-4 py-3 fw-semibold text-end align-middle" scope="col" style="width: 4%;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-dark fw-medium">
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn" id="prsFavBtn1" aria-label="Toggle favourite PRS-ISEQF" aria-pressed="false">
+                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <div>
+                                                    <a href="prs_fund_detail.html?code=PRS-ISEQF" class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1" id="prsFundLink1" style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS Islamic Strategic Equity</a>
+                                                    <span class="text-dark fw-bold d-block" style="font-size: 0.7rem;">PRS-ISEQF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-secondary">11/05/2026</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="text-end">60.71</td>
+                                        <td class="text-end">117.33</td>
+                                        <td class="text-end prs-analytics-band">36.22</td>
+                                        <td class="text-end prs-analytics-band">14.91</td>
+                                        <td class="text-end prs-analytics-band">13.02</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <button class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret" type="button" id="prsRowMenu1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Manage menu for PRS-ISEQF">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2" aria-labelledby="prsRowMenu1">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="prs_fund_detail.html?code=PRS-ISEQF" id="prsRowView1">View fund details</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowCompare1">Add to compare</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowDefault1">Set as employer default (demo)</a></li>
+                                            </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn" id="prsFavBtn2" aria-label="Toggle favourite PRS-GSEQF" aria-pressed="false">
+                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <div>
+                                                    <a href="prs_fund_detail.html?code=PRS-GSEQF" class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1" id="prsFundLink2" style="font-size: 0.8rem;">PRS Growth Strategic Equity</a>
+                                                    <span class="text-dark fw-bold d-block" style="font-size: 0.7rem;">PRS-GSEQF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-secondary">11/05/2026</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="text-end">52.04</td>
+                                        <td class="text-end">98.12</td>
+                                        <td class="text-end prs-analytics-band">28.90</td>
+                                        <td class="text-end prs-analytics-band">11.05</td>
+                                        <td class="text-end prs-analytics-band">9.44</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <button class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret" type="button" id="prsRowMenu2" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Manage menu for PRS-GSEQF">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="prs_fund_detail.html?code=PRS-GSEQF" id="prsRowView2">View fund details</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowCompare2">Add to compare</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowDefault2">Set as employer default (demo)</a></li>
+                                            </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn" id="prsFavBtn3" aria-label="Toggle favourite PRS-MODBF" aria-pressed="false">
+                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <div>
+                                                    <a href="prs_fund_detail.html?code=PRS-MODBF" class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1" id="prsFundLink3" style="font-size: 0.8rem;">PRS Moderate Balanced</a>
+                                                    <span class="text-dark fw-bold d-block" style="font-size: 0.7rem;">PRS-MODBF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-secondary">11/05/2026</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="text-end">18.22</td>
+                                        <td class="text-end">24.66</td>
+                                        <td class="text-end prs-analytics-band">9.01</td>
+                                        <td class="text-end prs-analytics-band">6.12</td>
+                                        <td class="text-end prs-analytics-band">5.88</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <button class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret" type="button" id="prsRowMenu3" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Manage menu for PRS-MODBF">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="prs_fund_detail.html?code=PRS-MODBF" id="prsRowView3">View fund details</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowCompare3">Add to compare</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowDefault3">Set as employer default (demo)</a></li>
+                                            </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn" id="prsFavBtn4" aria-label="Toggle favourite PRS-CONSV" aria-pressed="false">
+                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <div>
+                                                    <a href="prs_fund_detail.html?code=PRS-CONSV" class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1" id="prsFundLink4" style="font-size: 0.8rem;">PRS Conservative Income</a>
+                                                    <span class="text-dark fw-bold d-block" style="font-size: 0.7rem;">PRS-CONSV</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-secondary">11/05/2026</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="text-end">6.10</td>
+                                        <td class="text-end">7.85</td>
+                                        <td class="text-end prs-analytics-band">4.20</td>
+                                        <td class="text-end prs-analytics-band">3.55</td>
+                                        <td class="text-end prs-analytics-band">3.10</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <button class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret" type="button" id="prsRowMenu4" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Manage menu for PRS-CONSV">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="prs_fund_detail.html?code=PRS-CONSV" id="prsRowView4">View fund details</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowCompare4">Add to compare</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowDefault4">Set as employer default (demo)</a></li>
+                                            </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn" id="prsFavBtn5" aria-label="Toggle favourite PRS-SHRMM" aria-pressed="false">
+                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <div>
+                                                    <a href="prs_fund_detail.html?code=PRS-SHRMM" class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1" id="prsFundLink5" style="font-size: 0.8rem;">PRS Sharia Money Market</a>
+                                                    <span class="text-dark fw-bold d-block" style="font-size: 0.7rem;">PRS-SHRMM</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-secondary">11/05/2026</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="prs-analytics-band text-secondary">—</td>
+                                        <td class="text-end">3.42</td>
+                                        <td class="text-end">4.08</td>
+                                        <td class="text-end prs-analytics-band">2.95</td>
+                                        <td class="text-end prs-analytics-band">2.80</td>
+                                        <td class="text-end prs-analytics-band">—</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <button class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret" type="button" id="prsRowMenu5" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Manage menu for PRS-SHRMM">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="prs_fund_detail.html?code=PRS-SHRMM" id="prsRowView5">View fund details</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowCompare5">Add to compare</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd" href="#" id="prsRowDefault5">Set as employer default (demo)</a></li>
+                                            </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5">
+                        <div class="card-body p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
+                            <div class="d-flex gap-3">
+                                <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h6 class="fw-bold text-danger mb-2">Important Regulatory Notes & Disclaimers</h6>
+                                    
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
+                                        <li>
+                                            <span class="fw-semibold text-dark">Fund Performance</span> is computed based on the latest available fund price.
+                                        </li>
+                                        <li>
+                                            <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is based on the fund’s portfolio returns as at <strong class="text-dark">28 Feb 2026</strong> (source: Lipper, latest update).
+                                        </li>
+                                        <li class="text-muted" style="text-align: justify;">
+                                            The Volatility Factor (VF) means there is a possibility for the fund in generating an upside return or downside return around this VF. The Volatility Class (VC) is assigned by Lipper based on quintile ranks of the VF for qualified funds. The VF is subject to monthly revisions and the VC is revised every six months or other intervals as advised by FIMM. The volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and “Very High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤ 7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than 13.525 respectively. For this period to 30 June 2026, the VCs for the funds are based on the VFs of the respective funds as at 28 February 2026. The fund’s portfolio may have changed since this date and there is no guarantee that the fund will continue to have the same VF or VC in the future. Presently, only funds launched in the market for at least 36 months will display the VF and its VC.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar eop-sidebar-offcanvas border-end-0 shadow" tabindex="-1" id="eopSidebarOffcanvas" aria-labelledby="eopSidebarUserName">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas" aria-label="Close" id="eopSidebarCloseMenuBtn">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-2">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Employer Online portal(EOP)</div>
+            <h5 class="profile-name fs-6 mb-0" id="eopSidebarUserName">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2" id="eopSidebarCompany">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3" id="eopSidebarRoleBadge">Role: Employer admin</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-3">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html" id="eopSideHome">
+                    <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                    <span class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarContribCollapse" id="eopSidebarContribToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Contributions</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarContribCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="contribution.html" id="eopSideMake">Make contribution</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="upload.html" id="eopSideUpload">Upload contribution</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="authorise.html" id="eopSideAuthorise">
+                                <span>Authorise contribution</span>
+                                <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="payment.html" id="eopSidePayment">
+                                <span>Make payment</span>
+                                <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge" id="eopNavBadgePay">2</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarRecordsCollapse" id="eopSidebarRecordsToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Transactions</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarRecordsCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html" id="eopSideTxnPast">
+                                Past Transaction
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html?tab=pending" id="eopSideTxnPending">
+                                Pending Transaction
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Statements</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarStmtCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html" id="eopSideStmt">PRS documents &amp; reports</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=inv" id="eopSideInv">Invoice</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!--<li class="nav-item mb-2 mt-2 pt-2 border-top">
+                <a href="intro.html" class="btn btn-outline-dark w-100 rounded-pill fs-8 fw-semibold" id="eopSidebarIntroLink">EOP intro &amp; registration</a>
+            </li>
+ --!>            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html" id="eopSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i>
+                    <span class="fw-medium">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script src="../js/authorise-table-dropdowns.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.prs-fav-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var icon = btn.querySelector('i');
+                    if (!icon) return;
+                    var on = btn.getAttribute('aria-pressed') === 'true';
+                    if (!on) {
+                        icon.classList.remove('iconoir-star', 'text-secondary');
+                        icon.classList.add('iconoir-star-solid', 'text-warning');
+                        btn.setAttribute('aria-pressed', 'true');
+                    } else {
+                        icon.classList.remove('iconoir-star-solid', 'text-warning');
+                        icon.classList.add('iconoir-star', 'text-secondary');
+                        btn.setAttribute('aria-pressed', 'false');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.prs-analytics-table .prs-analytics-demo-dd').forEach(function (item) {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

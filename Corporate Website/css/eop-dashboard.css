@@ -1,0 +1,121 @@
+/* EOP Employer workspace — scope: eop_dashboard.html */
+
+/* Main content cards — same elevation as unit-trust dashboard (.card.border-0.shadow-sm.rounded-4) */
+.eop-surface-card {
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.eop-nav-muted {
+    opacity: 0.45 !important;
+    pointer-events: none !important;
+}
+
+/* Summary list: awaiting payment badge — brand red */
+.eop-pending-pay-badge {
+    background-color: #ed1c24 !important;
+    color: #ffffff !important;
+}
+
+.eop-last-contribution-badge {
+    border-radius: var(--radius-md) !important;
+    background: linear-gradient(135deg, #26247b 0%, #423fbb 100%);
+    color: #fff;
+    /* Align with portal chrome (dashboard-styles .portal-sidebar-profile-card) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    border: none;
+}
+
+.eop-role-select {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-color: #dce3e8;
+}
+
+.eop-role-select:focus {
+    border-color: #ed1c24 !important;
+    box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
+    outline: none;
+}
+
+.eop-view-panel.d-none {
+    display: none !important;
+}
+
+.eop-quick-pill {
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 0.45rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.eop-quick-pill.active {
+    background-color: #ed1c24 !important;
+    border-color: #ed1c24 !important;
+    color: #fff !important;
+}
+
+.eop-hint-bar {
+    border-radius: 12px;
+    background: #dce3e8;
+    border: 1px solid rgba(38, 36, 123, 0.12);
+}
+
+.offcanvas.eop-sidebar-offcanvas {
+    max-width: 320px;
+}
+
+/* Upload contribution — drop zone + result */
+.eop-upload-dropzone.eop-upload-dropzone-active {
+    border-color: #ed1c24 !important;
+    background: rgba(237, 28, 36, 0.06) !important;
+}
+
+.eop-upload-match-error {
+    background: rgba(237, 28, 36, 0.1) !important;
+    color: #373761 !important;
+}
+
+.eop-upload-status-badge {
+    background-color: rgba(18, 168, 51, 0.12) !important;
+    color: #12a833 !important;
+    border: 1px solid rgba(18, 168, 51, 0.35) !important;
+}
+
+/* PRS analytics (eop/analytics.html) — view tabs + banded grid (filter sidebar uses dashboard-styles .filter-section-title / .custom-checkbox) */
+.analytics-view-selector {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.prs-analytics-table thead th {
+    background-color: #f8fafc;
+}
+
+.prs-analytics-table thead th.prs-analytics-band,
+.prs-analytics-table tbody td.prs-analytics-band {
+    background-color: #f1f5f9 !important;
+}
+
+.prs-analytics-sort-hint {
+    font-size: 0.7rem;
+    opacity: 0.55;
+    margin-left: 0.2rem;
+    font-weight: 400;
+}
+
+/* EOP transaction enquiry — filter sidebar (unit-trust-style) */
+.eop-txn-filter-sidebar .form-check-input:checked {
+    background-color: var(--brand-navy, #26247b) !important;
+    border-color: var(--brand-navy, #26247b) !important;
+}
+
+.eop-txn-pending-banner {
+    background: #fffbeb;
+    border-color: #fcd34d !important;
+}

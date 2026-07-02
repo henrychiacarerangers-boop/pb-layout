@@ -1,0 +1,161 @@
+Install components:
+
+- baseline:rules [baseline]
+  targets=claude, cursor, antigravity, codebuddy modules=rules-core
+  Core shared rules and supported language rule packs.
+- baseline:agents [baseline]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Baseline agent definitions and shared AGENTS guidance.
+- baseline:commands [baseline]
+  targets=claude, cursor, antigravity, opencode, codebuddy modules=commands-core
+  Core command library and workflow command docs.
+- baseline:hooks [baseline]
+  targets=claude, cursor, opencode, codebuddy modules=hooks-runtime
+  Hook runtime configs and hook helper scripts.
+- baseline:platform [baseline]
+  targets=claude, cursor, antigravity, codex, gemini, opencode, codebuddy modules=platform-configs
+  Platform configs, package-manager setup, and MCP catalog defaults.
+- baseline:workflow [baseline]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Evaluation, TDD, verification, and compaction workflow support.
+- lang:typescript [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  TypeScript and frontend/backend application-engineering guidance. Currently resolves through the shared framework-language module.
+- lang:python [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Python and Django-oriented engineering guidance. Currently resolves through the shared framework-language module.
+- lang:go [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Go-focused coding and testing guidance. Currently resolves through the shared framework-language module.
+- lang:java [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Java and Spring application guidance. Currently resolves through the shared framework-language module.
+- framework:react [framework]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  React-focused engineering guidance. Currently resolves through the shared framework-language module.
+- framework:nextjs [framework]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Next.js-focused engineering guidance. Currently resolves through the shared framework-language module.
+- framework:django [framework]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Django-focused engineering guidance. Currently resolves through the shared framework-language module.
+- framework:springboot [framework]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Spring Boot-focused engineering guidance. Currently resolves through the shared framework-language module.
+- capability:database [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=database
+  Database and persistence-oriented skills.
+- capability:security [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=security
+  Security review and security-focused framework guidance.
+- capability:research [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=research-apis
+  Research and API-integration skills for deep investigations and external tooling.
+- capability:content [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=business-content
+  Business, writing, market, investor communication, and reusable voice-system skills.
+- capability:operators [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=operator-workflows
+  Connected-app operator workflows for setup audits, billing operations, program tracking, Google Workspace, and network optimization.
+- capability:social [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=social-distribution
+  Social publishing and distribution skills.
+- capability:media [capability]
+  targets=claude, cursor, codex, opencode, codebuddy modules=media-generation
+  Media generation, technical explainers, and AI-assisted editing skills.
+- capability:orchestration [capability]
+  targets=claude, codex, opencode modules=orchestration
+  Worktree and tmux orchestration runtime and workflow docs.
+- lang:swift [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=swift-apple
+  Swift, SwiftUI, and Apple platform engineering guidance.
+- lang:cpp [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  C++ coding standards and testing guidance. Currently resolves through the shared framework-language module.
+- lang:c [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  C engineering guidance using the shared C/C++ standards and testing stack. Currently resolves through the shared framework-language module.
+- lang:kotlin [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Kotlin, Ktor, Exposed, Coroutines, and Compose Multiplatform guidance. Currently resolves through the shared framework-language module.
+- lang:perl [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language, security
+  Modern Perl patterns, testing, and security guidance. Currently resolves through framework-language and security modules.
+- lang:rust [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Rust patterns and testing guidance. Currently resolves through the shared framework-language module.
+- lang:csharp [language]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  C# coding standards and patterns guidance. Currently resolves through the shared framework-language module.
+- framework:laravel [framework]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language, security
+  Laravel patterns, TDD, verification, and security guidance. Resolves through framework-language and security modules.
+- capability:agentic [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=agentic-patterns
+  Agentic engineering, autonomous loops, and LLM pipeline optimization.
+- capability:devops [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=devops-infra
+  Deployment, Docker, and infrastructure patterns.
+- capability:supply-chain [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=supply-chain-domain
+  Supply chain, logistics, procurement, and manufacturing domain skills.
+- capability:documents [capability]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=document-processing
+  Document processing, conversion, and translation skills.
+- agent:architect [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  System design and architecture agent.
+- agent:code-reviewer [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Code review agent for quality and security checks.
+- agent:security-reviewer [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Security vulnerability analysis agent.
+- agent:tdd-guide [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Test-driven development guidance agent.
+- agent:planner [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Feature implementation planning agent.
+- agent:build-error-resolver [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Build error resolution agent.
+- agent:e2e-runner [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Playwright E2E testing agent.
+- agent:refactor-cleaner [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Dead code cleanup and refactoring agent.
+- agent:doc-updater [agent]
+  targets=claude, cursor, antigravity, codex, codebuddy modules=agents-core
+  Documentation update agent.
+- skill:tdd-workflow [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Test-driven development workflow skill.
+- skill:continuous-learning [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Legacy v1 Stop-hook session pattern extraction skill; prefer continuous-learning-v2 for new installs.
+- skill:eval-harness [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Evaluation harness for AI regression testing.
+- skill:verification-loop [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Verification loop for code quality assurance.
+- skill:strategic-compact [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=workflow-quality
+  Strategic context compaction for long sessions.
+- skill:coding-standards [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  Language-agnostic coding standards and best practices.
+- skill:frontend-patterns [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  React and frontend engineering patterns.
+- skill:backend-patterns [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=framework-language
+  API design, database, and backend engineering patterns.
+- skill:security-review [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=security
+  Security review checklist and vulnerability analysis.
+- skill:deep-research [skill]
+  targets=claude, cursor, antigravity, codex, opencode, codebuddy modules=research-apis
+  Deep research and investigation workflows.

@@ -1,0 +1,83 @@
+---
+description: Controls JavaScript architecture, scope encapsulation, mock latency simulation, and DOM element ID uniqueness.
+globs: ["**/*.js", "**/*.html"]
+alwaysApply: true
+---
+# PMO Corporate Portal JavaScript Guidelines
+
+All page interactions, form manipulations, settings updates, and transaction clearances must be coded in clean, highly scoped client-side JavaScript. Follow these standards strictly:
+
+## 1. Scope Encapsulation (Preventing Namespace Pollution)
+- **Rule**: Never declare variables, functions, or listeners in the global window scope.
+- **Pattern**: Every script file or embedded `<script>` tag must wrap its execution inside a `DOMContentLoaded` event listener:
+  ```javascript
+  document.addEventListener('DOMContentLoaded', () => {
+      // All logic goes here
+      const loginBtn = document.getElementById('loginBtn');
+      
+      const processLogin = () => {
+          // Inner function logic
+      };
+  });
+  ```
+
+---
+
+## 2. Interactive States & Latency Simulation
+Since the prototype has no live backend database, all transaction and login cycles must simulate latency to showcase premium user feedback states:
+- **Button Disabling**: On submit/click, immediately disable the active button and add a loading spinner (`#btnSpinner` utilizing Bootstrap's `.spinner-border-sm` class).
+- **Text Transitions**: Alter the trigger label (e.g., "Log In" -> "Authenticating...", "Submit" -> "Processing...").
+- **Timeouts**: Use a standard `setTimeout` (ranging between `1000ms` and `1800ms`) to mock the server delay before restoring the button state or triggering a mock redirect/modal completion:
+  ```javascript
+  submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Enter loading state
+      submitBtn.disabled = true;
+      spinner.classList.remove('d-none');
+      buttonText.textContent = "Processing...";
+      
+      setTimeout(() => {
+          // Exit loading state and show success response
+          submitBtn.disabled = false;
+          spinner.classList.add('d-none');
+          buttonText.textContent = "Complete!";
+          
+          showSuccessModal();
+      }, 1500);
+  });
+  ```
+
+---
+
+## 3. Standard UI Controls
+
+### Password Visibility Toggles
+Ensure that login and password fields feature standard eyeball controls allowing users to verify inputs:
+- HTML must link an interactive toggle icon next to the input:
+  ```html
+  <div class="input-group">
+      <input type="password" id="passwordInput" class="form-control">
+      <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+          <i class="iconoir-eye" id="eyeIcon"></i>
+      </button>
+  </div>
+  ```
+- JS should toggle the password input type from `password` to `text` and swap icon states (`bi-eye` <-> `bi-eye-slash` or relevant Iconoir identifiers).
+
+### Form Clearance Action
+- Bind standard "Clear" triggers (`#clearBtn`) to reset input fields and instantly return focus to the leading input field:
+  ```javascript
+  clearBtn.addEventListener('click', () => {
+      usernameInput.value = "";
+      passwordInput.value = "";
+      usernameInput.focus();
+  });
+  ```
+
+---
+
+## 4. Element Labeling Constraints (Explicit IDs)
+Every single interactive control, input field, submission button, error container, and modal panel must have a dedicated, unique `id` attribute. Do not rely entirely on generic class selectors (`.btn`, `.form-control`) for JS selectors. This guarantees that script queries are fast, deterministic, and easily auditable.
+- Good: `#usernameInput`, `#passwordInput`, `#loginBtn`, `#clearBtn`, `#togglePassword`, `#btnSpinner`.
+- Bad: Using `document.querySelector('input[type="text"]')` or `document.querySelectorAll('button')[1]`.

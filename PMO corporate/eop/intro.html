@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Employer Online Portal (EOP)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <style>
+        /* Custom local styles for EOP Portal */
+        .eop-hero-card {
+            background: linear-gradient(135deg, #1e1d5e 0%, #26247b 100%);
+            border: none;
+            border-radius: var(--radius-md);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(14, 13, 59, 0.15);
+        }
+
+        .eop-hero-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(237, 28, 36, 0.15) 0%, rgba(237, 28, 36, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .gradient-red-btn {
+            background: linear-gradient(135deg, #ed1c24 0%, #c41219 100%) !important;
+            border: none !important;
+            box-shadow: 0 4px 15px rgba(237, 28, 36, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .gradient-red-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(237, 28, 36, 0.4) !important;
+        }
+
+        .icon-box-eop {
+            width: 55px;
+            height: 55px;
+            background: rgba(38, 36, 123, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md) !important;
+            border-color: rgba(38, 36, 123, 0.1) !important;
+        }
+
+        .feature-card:hover .icon-box-eop {
+            background: var(--brand-primary);
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        /* Interactive Steps */
+        .step-pill {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #64748b;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-active .step-pill {
+            background: var(--brand-primary);
+            color: #ffffff;
+            box-shadow: 0 0 0 4px rgba(237, 28, 36, 0.2);
+        }
+
+        .step-completed .step-pill {
+            background: #10b981;
+            color: #ffffff;
+        }
+
+        .timeline-line {
+            height: 2px;
+            background: #e2e8f0;
+            flex-grow: 1;
+            margin: 0 15px;
+            position: relative;
+            top: 20px;
+        }
+
+        /* Onboarding Drag and Drop */
+        .drag-drop-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            background: #f8fafc;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .drag-drop-zone:hover {
+            border-color: var(--brand-primary);
+            background: rgba(237, 28, 36, 0.02);
+        }
+
+        /* Successconfetti */
+        .success-checkmark-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            font-size: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            80% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Animated Loading Progress */
+        .progress-bar-animated-custom {
+            height: 8px;
+            border-radius: var(--radius-pill);
+            background-color: #e2e8f0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-animated-custom .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ed1c24, #26247b);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* Pulse animation for pending status */
+        .pulsing-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--brand-primary);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(237, 28, 36, 0.7);
+            animation: pulsing-dot-keyframes 1.5s infinite;
+        }
+
+        @keyframes pulsing-dot-keyframes {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(237, 28, 36, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 8px rgba(237, 28, 36, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(237, 28, 36, 0);
+            }
+        }
+
+        /* Details Accordion */
+        .accordion-button-eop {
+            background-color: #ffffff;
+            font-weight: 600;
+            color: var(--brand-navy);
+            border: none;
+            padding: 1.25rem 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .accordion-button-eop:not(.collapsed) {
+            background-color: rgba(38, 36, 123, 0.02);
+            color: var(--accent-primary);
+            box-shadow: none;
+        }
+
+        .accordion-item-eop {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px !important;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop-intro"
+    data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" id="pmoShellBtnOpenSidebarIntro">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="pmoShellBrandIntro">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="pmoShellPillUtIntro">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopIntroNavPillToWorkspace">
+                        <span class="fs-8 fw-semibold text-dark">EOP workspace</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">4</span>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
+                        <i class="iconoir-user fs-5 text-dark"></i>
+                    </div>
+                    <span class="fs-8 fw-semibold text-dark d-none d-sm-inline" id="pmoShellNavUserIntro">User &amp; Authoriser</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Employer Online Portal <span class="fw-bold">(EOP)</span></h1>
+                <p class="text-white-50 fs-8 mb-4">Empower Your Workforce with Smart Retirement & Investment Management
+                </p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="intro.html" id="tabIntro">EOP Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits-section" id="tabBenefits">Benefits & Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline-section" id="tabHowItWorks">How to Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq-section" id="tabFaq">Onboarding FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-content py-5">
+        <div class="container" id="mainContainer">
+
+            <!-- STATE 1: INTRODUCTION & REGISTRATION NOTIFICATION (Default View) -->
+            <div id="eopIntroState" class="state-container">
+
+                <!-- Unregistered Banner Alert -->
+                <div class="card eop-hero-card text-white p-4 p-md-5 mb-5 border-0">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <span class="pulsing-dot"></span>
+                                <span
+                                    class="badge bg-danger rounded-pill px-3 py-1 fs-9 fw-bold text-uppercase tracking-wider">Account
+                                    Pending Activation</span>
+                            </div>
+                            <h2 class="fw-bold mb-3 fs-3 text-white">EOP Registration Notification</h2>
+                            <p class="text-white-50 fs-7 mb-4 lh-lg">
+                                Your corporate entity <strong class="text-white">Ativa Studio Solution Sdn Bhd</strong>
+                                is not yet registered on our Employer Online Portal (EOP). Activating your EOP portal
+                                allows you to easily process staff monthly salary deductions, coordinate
+                                corporate-matched contributions, and manage employees' retirement accounts securely in
+                                one place.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button
+                                    class="btn btn-danger gradient-red-btn rounded-pill px-4 py-2 fw-bold fs-8 d-flex align-items-center gap-2"
+                                    id="btnRegisterEop" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    <i class="iconoir-user-plus-solid"></i> Register EOP Portal Now
+                                </button>
+                                <button class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold fs-8"
+                                    id="btnMoreDetails" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                                    More Details & Specs
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block text-center position-relative">
+                            <i class="iconoir-building fs-1 text-white opacity-10"
+                                style="font-size: 10rem !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                            <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-10 shadow-lg d-inline-block text-start"
+                                style="backdrop-filter: blur(10px); max-width: 280px; position: relative; z-index: 2;">
+                                <div class="fs-9 fw-bold text-white-50 text-uppercase mb-2">Onboarding Checklist</div>
+                                <div class="d-flex align-items-center gap-2 text-white fs-8 mb-2">
+                                    <i class="iconoir-check-circle text-success fs-6"></i> Profile KYC Verified
+                                </div>
+                                <div class="d-flex align-items-center gap-2 text-white-50 fs-8 mb-2">
+                                    <i class="iconoir-circle text-muted fs-6"></i> Corporate Board Resolution
+                                </div>
+                                <div class="d-flex align-items-center gap-2 text-white-50 fs-8 mb-2">
+                                    <i class="iconoir-circle text-muted fs-6"></i> Linked EPF i-Akaun
+                                </div>
+                                <div class="d-flex align-items-center gap-2 text-white-50 fs-8">
+                                    <i class="iconoir-circle text-muted fs-6"></i> Maker/Checker Configured
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div id="benefits-section" class="scroll-target mb-5">
+                    <div class="text-center mb-5">
+                        <h3 class="fw-bold text-dark fs-4 mb-2">Why Integrate EOP with Your Business?</h3>
+                        <p class="text-muted fs-7 mx-auto" style="max-width: 600px;">Unlock highly specialized corporate
+                            utilities designed to elevate your human capital management and financial administration
+                            workflow.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Card 1 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 p-2 border-0 shadow-sm rounded-4 feature-card">
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="icon-box-eop mb-4">
+                                        <i class="iconoir-group fs-3"></i>
+                                    </div>
+                                    <h4 class="fw-bold fs-7 text-dark mb-2">Bulk Workforce Sync</h4>
+                                    <p class="text-muted fs-8 mb-0 lh-base">
+                                        Directly import employees via batch spreadsheet uploads or instant EPF i-Akaun
+                                        registry synchronization.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 p-2 border-0 shadow-sm rounded-4 feature-card">
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="icon-box-eop mb-4">
+                                        <i class="iconoir-double-check fs-3"></i>
+                                    </div>
+                                    <h4 class="fw-bold fs-7 text-dark mb-2">Multi-Level Approval</h4>
+                                    <p class="text-muted fs-8 mb-0 lh-base">
+                                        Configure customized Maker-Checker roles to restrict unAuthorised fund transfers
+                                        and contributions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 p-2 border-0 shadow-sm rounded-4 feature-card">
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="icon-box-eop mb-4">
+                                        <i class="iconoir-coin fs-3"></i>
+                                    </div>
+                                    <h4 class="fw-bold fs-7 text-dark mb-2">Corporate Matching</h4>
+                                    <p class="text-muted fs-8 mb-0 lh-base">
+                                        Establish salary-matched contribution parameters for employees with optimized
+                                        automated tracking.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 p-2 border-0 shadow-sm rounded-4 feature-card">
+                                <div class="card-body p-4 d-flex flex-column">
+                                    <div class="icon-box-eop mb-4">
+                                        <i class="iconoir-graph-up fs-3"></i>
+                                    </div>
+                                    <h4 class="fw-bold fs-7 text-dark mb-2">Detailed Portfolio BI</h4>
+                                    <p class="text-muted fs-8 mb-0 lh-base">
+                                        Obtain in-depth visual dashboard reports detailing company-wide investments,
+                                        asset growth, and yields.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onboarding Timeline Section -->
+                <div id="timeline-section"
+                    class="scroll-target card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-5 bg-white">
+                    <div class="text-center mb-5">
+                        <h3 class="fw-bold text-dark fs-4 mb-2">Onboarding & Registration Checklist</h3>
+                        <p class="text-muted fs-7">Our streamlined corporate setup checklist ensures you are up and
+                            running in minutes.</p>
+                    </div>
+
+                    <div class="row position-relative px-3">
+                        <div class="col-lg-3 text-center mb-4 mb-lg-0 step-active">
+                            <div class="step-pill mx-auto mb-3">1</div>
+                            <h5 class="fw-bold fs-8 text-dark mb-1">Company EPF KYC</h5>
+                            <p class="text-muted fs-9 mb-0 px-2">Fill in your corporate EPF number and key company
+                                profile data.</p>
+                        </div>
+                        <div class="col-lg-3 text-center mb-4 mb-lg-0">
+                            <div class="step-pill mx-auto mb-3">2</div>
+                            <h5 class="fw-semibold fs-8 text-dark mb-1">Board Mandate</h5>
+                            <p class="text-muted fs-9 mb-0 px-2">Upload a digital board resolution authorizing EOP
+                                portal access.</p>
+                        </div>
+                        <div class="col-lg-3 text-center mb-4 mb-lg-0">
+                            <div class="step-pill mx-auto mb-3">3</div>
+                            <h5 class="fw-semibold fs-8 text-dark mb-1">Direct Bank Link</h5>
+                            <p class="text-muted fs-9 mb-0 px-2">Link corporate bank clearing accounts for direct fpx
+                                allocations.</p>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <div class="step-pill mx-auto mb-3">4</div>
+                            <h5 class="fw-semibold fs-8 text-dark mb-1">Access Activated</h5>
+                            <p class="text-muted fs-9 mb-0 px-2">Invite workforce administrators and initiate your first
+                                contribution batch.</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <button class="btn btn-outline-danger rounded-pill px-5 py-2 fw-bold fs-8"
+                            id="btnTimelineRegister" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Begin Setup Wizard
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div id="faq-section" class="scroll-target mb-5">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold text-dark fs-4 mb-2">Frequently Asked Questions</h3>
+                        <p class="text-muted fs-7">Everything you need to know about corporate registry and EOP
+                            features.</p>
+                    </div>
+
+                    <div class="accordion mx-auto" id="eopFaqAccordion" style="max-width: 800px;">
+                        <div class="accordion-item accordion-item-eop">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-button-eop collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false"
+                                    aria-controls="faqCollapseOne">
+                                    What documents are required to activate the EOP account?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#eopFaqAccordion">
+                                <div class="accordion-body fs-8 text-muted lh-lg">
+                                    To activate EOP, you will need to upload a Corporate Board Resolution (using our
+                                    pre-approved template or your own format) Authorised by at least two directors.
+                                    Additionally, you will need your company SSM registration certificate and corporate
+                                    EPF Registration numbers.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item accordion-item-eop">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-button-eop collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false"
+                                    aria-controls="faqCollapseTwo">
+                                    Is there any registration fee or recurring subscription charge?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#eopFaqAccordion">
+                                <div class="accordion-body fs-8 text-muted lh-lg">
+                                    No, there are no subscription or portal fees. The Employer Online Portal (EOP) is a
+                                    complimentary high-value corporate tool offered to corporate partners of Public
+                                    Mutual to facilitate structured employee investments and PRS contributions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item accordion-item-eop">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-button-eop collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false"
+                                    aria-controls="faqCollapseThree">
+                                    Can we assign separate individuals to upload and Authorise transactions?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#eopFaqAccordion">
+                                <div class="accordion-body fs-8 text-muted lh-lg">
+                                    Absolutely. EOP implements a rigid Maker-Checker system. You can appoint human
+                                    resource officers as "Makers" who can prepare and upload staff investment batches,
+                                    and senior executives or directors as "Checkers/Authorisers" who must verify and
+                                    sign off on transactions before funds are moved.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item accordion-item-eop">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button accordion-button-eop collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false"
+                                    aria-controls="faqCollapseFour">
+                                    How long does the KYC verification process take?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#eopFaqAccordion">
+                                <div class="accordion-body fs-8 text-muted lh-lg">
+                                    Our interactive backend performs instant profile checking against SSM and EPF
+                                    records. Typically, upon successful board resolution mandate upload and
+                                    administrative verification, portal access is fully unlocked within 1-2 business
+                                    days. For testing purposes, this simulator will instantly grant portal access!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End default eopIntroState -->
+
+
+            <!-- STATE 2: ACTIVE EOP EMPLOYER DASHBOARD (Rendered dynamically on successful mock registration) -->
+            <div id="eopActiveDashboardState" class="state-container d-none">
+
+                <!-- Onboarding Success Alert Banner -->
+                <div
+                    class="badge-alert badge-alert-solid-success d-flex align-items-center justify-content-between w-100 mb-4 py-3 px-4 rounded-4 shadow-sm border border-success border-opacity-10">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-check-circle-solid me-3 fs-3"></i>
+                        <div>
+                            <div class="fw-bold fs-7 text-white">EOP Portal Successfully Activated!</div>
+                            <div class="fs-9 opacity-75 text-white">Welcome, Ativa Studio Solution Sdn Bhd! Your
+                                corporate EPF-942823-X integration is fully online.</div>
+                        </div>
+                    </div>
+                    <span class="badge bg-white text-success rounded-pill px-3 py-1 fs-9 fw-bold">PORTAL ACTIVE</span>
+                </div>
+
+                <!-- Employer Quick Dashboard Stats -->
+                <div class="row g-4 mb-4">
+                    <!-- Stat 1 -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="icon-box-eop bg-opacity-10 text-primary rounded-3"
+                                    style="width: 42px; height: 42px;">
+                                    <i class="iconoir-group fs-5"></i>
+                                </div>
+                                <div class="text-muted fs-8 fw-semibold text-uppercase">Employees</div>
+                            </div>
+                            <h3 class="fw-bold text-dark fs-2 mb-1">42</h3>
+                            <span class="text-success fs-9 fw-semibold d-flex align-items-center gap-1">
+                                <i class="iconoir-plus-circle fs-8"></i> 12 Pending Setup
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="icon-box-eop bg-opacity-10 text-success rounded-3"
+                                    style="width: 42px; height: 42px; color: #10b981;">
+                                    <i class="iconoir-coin fs-5"></i>
+                                </div>
+                                <div class="text-muted fs-8 fw-semibold text-uppercase font-sans">Monthly Matching</div>
+                            </div>
+                            <h3 class="fw-bold text-dark fs-2 mb-1">RM42,500.00</h3>
+                            <span class="text-muted fs-9">EPF & PRS Matching</span>
+                        </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="icon-box-eop bg-opacity-10 text-danger rounded-3"
+                                    style="width: 42px; height: 42px; color: #ed1c24;">
+                                    <i class="iconoir-clipboard-check fs-5"></i>
+                                </div>
+                                <div class="text-muted fs-8 fw-semibold text-uppercase">Pending Batches</div>
+                            </div>
+                            <h3 class="fw-bold text-dark fs-2 mb-1">1 Batch</h3>
+                            <span class="text-danger fs-9 fw-semibold d-flex align-items-center gap-1">
+                                <span class="pulsing-dot" style="width: 6px; height: 6px;"></span> Awaiting Maker Upload
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="col-md-3">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div class="icon-box-eop bg-opacity-10 text-warning rounded-3"
+                                    style="width: 42px; height: 42px; color: #eab308;">
+                                    <i class="iconoir-bank fs-5"></i>
+                                </div>
+                                <div class="text-muted fs-8 fw-semibold text-uppercase">Direct Debit</div>
+                            </div>
+                            <h3 class="fw-bold text-success fs-4 mb-1 mt-1">Configured</h3>
+                            <span class="text-muted fs-9">Malayan Banking Berhad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employer Portal Dashboard Active Actions -->
+                <div class="row g-4 mb-5">
+
+                    <!-- Table: Employee Allocation Batches -->
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm rounded-4 bg-white h-100">
+                            <div
+                                class="card-header bg-white p-4 border-bottom d-flex align-items-center justify-content-between">
+                                <h4 class="fw-bold text-dark fs-5 mb-0">Active Contribution Batches</h4>
+                                <button class="btn btn-danger btn-sm rounded-pill px-3 fs-9 fw-bold gradient-red-btn"
+                                    id="btnUploadBatch">
+                                    <i class="iconoir-upload fs-8 me-1"></i> Upload New Batch
+                                </button>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-hover">
+                                        <thead>
+                                            <tr class="text-muted fs-9 text-uppercase">
+                                                <th>Batch Ref</th>
+                                                <th>Type</th>
+                                                <th>Employees</th>
+                                                <th class="text-end">Total Allocation</th>
+                                                <th class="text-center">Status</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold text-dark fs-8">RC00000000000808</td>
+                                                <td class="fs-8">EPF Match</td>
+                                                <td class="fs-8">42 Staff</td>
+                                                <td class="text-end fw-bold fs-8">RM42,500.00</td>
+                                                <td class="text-center"><span
+                                                        class="badge bg-warning bg-opacity-25 text-warning px-2.5 py-1 rounded fs-9 fw-bold">Pending
+                                                        Prepare</span></td>
+                                                <td class="text-center">
+                                                    <button
+                                                        class="btn btn-link text-decoration-none p-0 text-primary fs-8 fw-bold">Prepare
+                                                        Allocation</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark fs-8 text-muted">EOP-2026-04B</td>
+                                                <td class="fs-8 text-muted">PRS Match</td>
+                                                <td class="fs-8 text-muted">35 Staff</td>
+                                                <td class="text-end fw-bold fs-8 text-muted">RM17,500.00</td>
+                                                <td class="text-center"><span
+                                                        class="badge bg-success bg-opacity-25 text-success px-2.5 py-1 rounded fs-9 fw-bold">Reconciled</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button
+                                                        class="btn btn-link text-decoration-none p-0 text-muted fs-8 fw-semibold">View
+                                                        Invoice</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Panel: Quick Staff Enrollment -->
+                    <div class="col-lg-4">
+                        <div class="card border-0 shadow-sm rounded-4 bg-white h-100">
+                            <div class="card-header bg-white p-4 border-bottom">
+                                <h4 class="fw-bold text-dark fs-5 mb-0">Enroll New Employee</h4>
+                            </div>
+                            <div class="card-body p-4">
+                                <form id="enrollEmployeeForm" onsubmit="event.preventDefault();">
+                                    <div class="mb-3">
+                                        <label for="staffName"
+                                            class="form-label fs-8 fw-bold text-muted text-uppercase">Full Name (as in
+                                            NRIC)</label>
+                                        <input type="text" class="form-control rounded-3 fs-8" id="staffName"
+                                            placeholder="Ahmad Bin Abdullah" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="staffNric"
+                                            class="form-label fs-8 fw-bold text-muted text-uppercase">NRIC / Passport
+                                            No</label>
+                                        <input type="text" class="form-control rounded-3 fs-8" id="staffNric"
+                                            placeholder="851023145567" required>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <label for="staffEpf"
+                                                class="form-label fs-8 fw-bold text-muted text-uppercase">EPF Member
+                                                No</label>
+                                            <input type="text" class="form-control rounded-3 fs-8" id="staffEpf"
+                                                placeholder="EPF-12345678" required>
+                                        </div>
+                                        <div class="col">
+                                            <label for="staffMatchRate"
+                                                class="form-label fs-8 fw-bold text-muted text-uppercase">Matched
+                                                %</label>
+                                            <select class="form-select rounded-3 fs-8" id="staffMatchRate">
+                                                <option value="5">5%</option>
+                                                <option value="10">10%</option>
+                                                <option value="12" selected>12% (Standard)</option>
+                                                <option value="15">15%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-dark w-100 rounded-pill py-2.5 fw-bold fs-8"
+                                        id="btnEnrollStaff" type="button">
+                                        Enroll Employee Profile
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- End active dashboard state -->
+
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas" aria-label="Close" id="pmoIntroSidebarCloseBtn">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Corporate portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp; Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../unit-trust/dashboard.html" id="pmoIntroSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../unit-trust/view_account.html" id="pmoIntroSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false" aria-controls="AuthoriseCollapse" id="pmoIntroSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="../unit-trust/authorise.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideAuthTopup"> Top-Up Investment <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/authorise.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideAuthRedeem"> Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoIntroSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="../unit-trust/transactions.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideTxnOnline">Online Activities</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false" aria-controls="statementCollapse" id="pmoIntroSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="../unit-trust/statements.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/statements.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/statements.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideStmt3">Fund Reports</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/statements.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="../unit-trust/statements.html" class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoIntroSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../unit-trust/analytics.html" id="pmoIntroSideAnalytics">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Analytics</span>
+                </a>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html" id="pmoIntroSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+
+
+    <!-- MODAL 1: SPECIFICATIONS & DETAILED VIEW (Toggled via "More Details") -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header bg-dark text-white p-4 border-0">
+                    <div>
+                        <h5 class="modal-title fw-bold fs-5 text-white" id="detailsModalLabel">EOP Portal Specifications
+                            & Guidelines</h5>
+                        <p class="text-white-50 fs-9 mb-0">Understand the system architecture, security gates, and
+                            requirements.</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 bg-white">
+                    <div class="row g-4">
+                        <div class="col-md-6 border-end">
+                            <h6 class="fw-bold text-dark fs-7 mb-3 d-flex align-items-center gap-2">
+                                <i class="iconoir-shield-alert text-danger fs-5"></i> Security & Integrity
+                            </h6>
+                            <ul class="fs-8 text-muted lh-lg ps-3 mb-4">
+                                <li><strong>SSM Integration:</strong> Live credentials authentication prevents corporate
+                                    spoofing.</li>
+                                <li><strong>Bank-Level Mandate:</strong> Requires digital or physical authorization
+                                    board resolution.</li>
+                                <li><strong>Frictionless Direct Debit:</strong> Secure tokens Authorise automatic
+                                    monthly matching deductions.</li>
+                                <li><strong>Maker-Checker Isolation:</strong> Separates preparations from authorizations
+                                    to eliminate rogue activities.</li>
+                            </ul>
+
+                            <h6 class="fw-bold text-dark fs-7 mb-3 d-flex align-items-center gap-2">
+                                <i class="iconoir-task-list text-primary fs-5"></i> Setup Prerequisites
+                            </h6>
+                            <ol class="fs-8 text-muted lh-lg ps-3 mb-0">
+                                <li>Company SSM Registration Certificate (Form 9/Form 24).</li>
+                                <li>EPF Employer Registration Reference ID.</li>
+                                <li>Approved Bank Direct Debit authorization form.</li>
+                            </ol>
+                        </div>
+
+                        <div class="col-md-6 ps-md-4">
+                            <h6 class="fw-bold text-dark fs-7 mb-3 d-flex align-items-center gap-2">
+                                <i class="iconoir-verified-user text-success fs-5"></i> Compliance & Auditing
+                            </h6>
+                            <p class="fs-8 text-muted lh-lg mb-4">
+                                All payroll modifications, contributions, and employee updates processed via EOP are
+                                strictly matched against Bank Negara Malaysia compliance directives and EPF
+                                e-contribution protocols. Secure, downloadable PDFs are generated for audit reporting.
+                            </p>
+
+                            <div class="bg-light rounded-3 p-4 border text-center">
+                                <h6 class="fw-bold text-dark fs-8 mb-2">Need Direct Assistance?</h6>
+                                <p class="text-muted fs-9 mb-3 lh-base">Our Corporate Relationship Desk is standing by
+                                    to help you with board mandates and banking integration.</p>
+                                <a href="mailto:corporate-support@publicmutual.com.my"
+                                    class="btn btn-outline-dark rounded-pill px-4 py-1.5 fs-9 fw-bold">Email Support
+                                    Desk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer p-4 border-top-0 d-flex justify-content-between bg-light rounded-bottom-4">
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 fs-8"
+                        data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger gradient-red-btn rounded-pill px-4 fs-8 fw-bold"
+                        data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Proceed to
+                        Registration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL 2: INTERACTIVE STEP-BY-STEP REGISTRATION WIZARD -->
+    <div class="modal fade" id="registerModal" tabindex="-1" data-bs-backdrop="static"
+        aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow overflow-hidden">
+                <div class="modal-header bg-dark text-white p-4 border-0">
+                    <div>
+                        <h5 class="modal-title fw-bold fs-5 text-white" id="registerModalLabel">EOP Portal Registration
+                        </h5>
+                        <p class="text-white-50 fs-9 mb-0" id="wizardSubtitle">Step 1 of 3: Corporate EPF Profile
+                            Verification</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                        id="btnExitWizard"></button>
+                </div>
+                <div class="modal-body p-4 bg-white" style="min-height: 320px;">
+
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-animated-custom mb-4" id="wizardProgressBar">
+                        <div class="progress-fill" id="wizardProgressFill" style="width: 33%;"></div>
+                    </div>
+
+                    <!-- STEP 1: Corporate EPF Profile (Form) -->
+                    <div id="wizardStep1" class="wizard-step">
+                        <div class="mb-4">
+                            <h6 class="fw-bold text-dark fs-7 mb-1">EPF & SSM Verification</h6>
+                            <p class="text-muted fs-8">Verify company details using pre-populated records.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-9 fw-bold text-uppercase text-muted">Company Name</label>
+                            <input type="text" class="form-control rounded-3 fs-8 bg-light fw-bold text-dark"
+                                value="Ativa Studio Solution Sdn Bhd" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eopSsmNo" class="form-label fs-9 fw-bold text-uppercase text-muted">Company SSM
+                                No.*</label>
+                            <input type="text" class="form-control rounded-3 fs-8" id="eopSsmNo"
+                                value="202101004562 (1404861-M)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eopEpfRegNo" class="form-label fs-9 fw-bold text-uppercase text-muted">Employer
+                                EPF Number*</label>
+                            <input type="text" class="form-control rounded-3 fs-8" id="eopEpfRegNo"
+                                placeholder="e.g. EPF-942823-X" value="EPF-942823-X" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eopContactEmail"
+                                class="form-label fs-9 fw-bold text-uppercase text-muted">Corporate Contact
+                                Email*</label>
+                            <input type="email" class="form-control rounded-3 fs-8" id="eopContactEmail"
+                                value="finance@ativastudio.com" required>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Corporate Board Resolution & Makers (Mandates) -->
+                    <div id="wizardStep2" class="wizard-step d-none">
+                        <div class="mb-4">
+                            <h6 class="fw-bold text-dark fs-7 mb-1">Corporate Mandates & Maker Assignment</h6>
+                            <p class="text-muted fs-8">Assign roles and upload board resolution mandates.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-9 fw-bold text-uppercase text-muted">Appointed Maker (Prepared
+                                by)</label>
+                            <input type="text" class="form-control rounded-3 fs-8 bg-light text-dark"
+                                value="Ahmad Razak bin Osman" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-9 fw-bold text-uppercase text-muted">Mandate Resolution
+                                Document*</label>
+                            <div class="drag-drop-zone" id="resolutionDragZone">
+                                <i class="iconoir-cloud-upload fs-1 text-muted mb-2"></i>
+                                <div class="fs-8 fw-bold text-dark mb-1" id="uploadStatusText">Drag & Drop Board
+                                    Resolution PDF</div>
+                                <div class="fs-9 text-muted" id="uploadSubText">Supported formats: PDF (Max 5MB)</div>
+                                <input type="file" id="resolutionFileInput" class="d-none" accept=".pdf">
+                            </div>
+                        </div>
+                        <div class="form-check fs-8 text-muted">
+                            <input class="form-check-input" type="checkbox" id="checkDeclaration" checked>
+                            <label class="form-check-label lh-base" for="checkDeclaration">
+                                We hereby declare that the details provided are true and correct according to the board
+                                mandates of Ativa Studio Solution Sdn Bhd.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Automated Server KYC Integration (Loader State) -->
+                    <div id="wizardStep3" class="wizard-step d-none text-center py-5">
+                        <div class="spinner-border text-danger mb-4" role="status"
+                            style="width: 3.5rem; height: 3.5rem; border-width: 0.3em;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <h5 class="fw-bold text-dark fs-6 mb-2" id="loaderTitle">Verifying Company Registry</h5>
+                        <p class="text-muted fs-8 px-3" id="loaderSubtext">Connecting to SSM company profiles database
+                            and validating board mandates...</p>
+                    </div>
+
+                    <!-- STEP 4: Success Confetti screen -->
+                    <div id="wizardStepSuccess" class="wizard-step d-none text-center py-4">
+                        <div class="success-checkmark-wrapper">
+                            <i class="iconoir-check"></i>
+                        </div>
+                        <h4 class="fw-bold text-dark fs-5 mb-2">Activation Successful!</h4>
+                        <p class="text-muted fs-8 px-4 mb-4 lh-base">
+                            Ativa Studio Solution Sdn Bhd has been registered in our database! You can now immediately
+                            use the Employer Online Portal (EOP) to manage employee matching records and submit
+                            contribution batches.
+                        </p>
+                        <button class="btn btn-danger gradient-red-btn rounded-pill px-5 py-2 fw-bold fs-8"
+                            id="btnGotoDashboard">
+                            Explore EOP Portal Dashboard
+                        </button>
+                    </div>
+
+                </div>
+                <div class="modal-footer p-4 border-top-0 d-flex justify-content-between bg-light" id="wizardFooter">
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 fs-8" id="btnWizardBack"
+                        disabled>Back</button>
+                    <button type="button" class="btn btn-danger gradient-red-btn rounded-pill px-4 fs-8 fw-bold"
+                        id="btnWizardNext">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+
+    <!-- JS Logic for eop_intro.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Navigation Tabs scrolling helper
+            const tabs = {
+                'tabIntro': 'mainContainer',
+                'tabBenefits': 'benefits-section',
+                'tabHowItWorks': 'timeline-section',
+                'tabFaq': 'faq-section'
+            };
+
+            Object.keys(tabs).forEach(tabId => {
+                const el = document.getElementById(tabId);
+                if (el) {
+                    el.addEventListener('click', (e) => {
+                        const targetId = tabs[tabId];
+                        const targetEl = document.getElementById(targetId);
+
+                        // If EOP Dashboard state is active, click tabs shouldn't slide around intro sections
+                        if (document.getElementById('eopActiveDashboardState').classList.contains('d-none')) {
+                            if (targetId === 'mainContainer') {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            } else if (targetEl) {
+                                e.preventDefault();
+                                targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+
+                            // Highlight active tab
+                            Object.keys(tabs).forEach(t => document.getElementById(t).classList.remove('active'));
+                            el.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+
+            // 2. Interactive Wizard Controller
+            let currentStep = 1;
+            const wizardProgressFill = document.getElementById('wizardProgressFill');
+            const wizardSubtitle = document.getElementById('wizardSubtitle');
+
+            const btnNext = document.getElementById('btnWizardNext');
+            const btnBack = document.getElementById('btnWizardBack');
+            const wizardFooter = document.getElementById('wizardFooter');
+
+            const step1 = document.getElementById('wizardStep1');
+            const step2 = document.getElementById('wizardStep2');
+            const step3 = document.getElementById('wizardStep3');
+            const stepSuccess = document.getElementById('wizardStepSuccess');
+
+            // Set up Drag and Drop simulation
+            const dragZone = document.getElementById('resolutionDragZone');
+            const fileInput = document.getElementById('resolutionFileInput');
+            const uploadStatusText = document.getElementById('uploadStatusText');
+            const uploadSubText = document.getElementById('uploadSubText');
+
+            dragZone.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files && fileInput.files.length > 0) {
+                    uploadStatusText.innerHTML = `<i class="iconoir-check text-success me-1"></i> ${fileInput.files[0].name}`;
+                    uploadSubText.innerHTML = `<span class="text-success fw-bold">Mandate resolution uploaded successfully.</span>`;
+                    dragZone.style.borderColor = '#10b981';
+                    dragZone.style.background = 'rgba(16, 185, 129, 0.02)';
+                }
+            });
+
+            // Handle Next Click
+            btnNext.addEventListener('click', () => {
+                if (currentStep === 1) {
+                    // Go to Step 2
+                    step1.classList.add('d-none');
+                    step2.classList.remove('d-none');
+                    btnBack.disabled = false;
+                    currentStep = 2;
+                    wizardProgressFill.style.width = '66%';
+                    wizardSubtitle.innerText = 'Step 2 of 3: Appoint Maker & Upload Mandates';
+                } else if (currentStep === 2) {
+                    // Verify declaration checked
+                    if (!document.getElementById('checkDeclaration').checked) {
+                        alert('Please acknowledge and check the declaration box before proceeding.');
+                        return;
+                    }
+
+                    // Go to Step 3 (Simulated Server Integrations)
+                    step2.classList.add('d-none');
+                    step3.classList.remove('d-none');
+                    wizardFooter.classList.add('d-none');
+                    document.getElementById('btnExitWizard').classList.add('d-none');
+                    currentStep = 3;
+                    wizardProgressFill.style.width = '100%';
+                    wizardSubtitle.innerText = 'Step 3 of 3: Server Integrations';
+
+                    // Run automated progress animations to simulate premium KYC lookup
+                    const loaderTitle = document.getElementById('loaderTitle');
+                    const loaderSubtext = document.getElementById('loaderSubtext');
+
+                    setTimeout(() => {
+                        loaderTitle.innerText = "Connecting EPF i-Akaun Profiles";
+                        loaderSubtext.innerText = "Synchronizing corporate EPF account EPF-942823-X and authenticating mandate administrators...";
+                    }, 1400);
+
+                    setTimeout(() => {
+                        loaderTitle.innerText = "Instantiating Corporate Ledger";
+                        loaderSubtext.innerText = "Securing private EOP portal keys, preparing Maker database tables, and generating public access tokens...";
+                    }, 2800);
+
+                    setTimeout(() => {
+                        // Go to Success Step
+                        step3.classList.add('d-none');
+                        stepSuccess.classList.remove('d-none');
+                        wizardSubtitle.innerText = 'Registration Completed Successfully';
+                        currentStep = 4;
+                    }, 4200);
+                }
+            });
+
+            // Handle Back Click
+            btnBack.addEventListener('click', () => {
+                if (currentStep === 2) {
+                    step2.classList.add('d-none');
+                    step1.classList.remove('d-none');
+                    btnBack.disabled = true;
+                    currentStep = 1;
+                    wizardProgressFill.style.width = '33%';
+                    wizardSubtitle.innerText = 'Step 1 of 3: Corporate EPF Profile Verification';
+                }
+            });
+
+            // Goto EOP Employer Dashboard Simulation
+            const btnGotoDashboard = document.getElementById('btnGotoDashboard');
+            btnGotoDashboard.addEventListener('click', () => {
+                // Dismiss Modal
+                const modalEl = document.getElementById('registerModal');
+                const modal = bootstrap.Modal.getInstance(modalEl);
+                if (modal) modal.hide();
+
+                // Swap States
+                document.getElementById('eopIntroState').classList.add('d-none');
+                document.getElementById('eopActiveDashboardState').classList.remove('d-none');
+
+                // Adjust dashboard sub-tabs to represent Active EOP Dashboard
+                const tabIntro = document.getElementById('tabIntro');
+                const tabBenefits = document.getElementById('tabBenefits');
+                const tabHowItWorks = document.getElementById('tabHowItWorks');
+                const tabFaq = document.getElementById('tabFaq');
+
+                tabIntro.innerHTML = "Employer Dashboard";
+                tabBenefits.innerHTML = "Workforce List";
+                tabBenefits.setAttribute('href', '#');
+                tabHowItWorks.innerHTML = "Submit Allocation";
+                tabHowItWorks.setAttribute('href', '#');
+                tabFaq.innerHTML = "Reconciliation Reports";
+                tabFaq.setAttribute('href', '#');
+
+                // Active EOP menu badge can be updated or highlighted
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+
+            // 3. EOP Active Dashboard - Quick Employee Enrollment Simulator
+            const btnEnrollStaff = document.getElementById('btnEnrollStaff');
+            btnEnrollStaff.addEventListener('click', () => {
+                const name = document.getElementById('staffName').value.trim();
+                const nric = document.getElementById('staffNric').value.trim();
+                const epf = document.getElementById('staffEpf').value.trim();
+
+                if (!name || !nric || !epf) {
+                    alert('Please fill out all required employee enrollment details.');
+                    return;
+                }
+
+                // Show spinner loader on button
+                btnEnrollStaff.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Enrolling Staff...`;
+                btnEnrollStaff.disabled = true;
+
+                setTimeout(() => {
+                    // Create simulated success feedback
+                    alert(`Employee "${name}" has been successfully enrolled into the EOP workforce! Contribution matched rate set at ${document.getElementById('staffMatchRate').value}%.`);
+
+                    // Reset fields
+                    document.getElementById('enrollEmployeeForm').reset();
+                    btnEnrollStaff.innerHTML = "Enroll Employee Profile";
+                    btnEnrollStaff.disabled = false;
+                }, 1500);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

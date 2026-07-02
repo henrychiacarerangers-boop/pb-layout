@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Agreements & Verification</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <style>
+        /* First-login legal: one surface, scroll progress, no nested card clash */
+        body.legal-first-login .legal-card {
+            text-align: left;
+        }
+
+        body.legal-first-login .legal-card>h1,
+        body.legal-first-login .legal-card>.subtitle {
+            text-align: center;
+        }
+
+        .legal-scroll-wrap {
+            border-radius: 15px;
+            border: 1px solid rgba(38, 36, 123, 0.12);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-scroll-progress {
+            height: 4px;
+            background: #eceef2;
+        }
+
+        .legal-scroll-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #26247b 0%, #ed1c24 100%);
+            transition: width 0.12s ease-out;
+        }
+
+        .legal-scroll-progress-fill.is-done {
+            background: #12a833;
+        }
+
+        #scroll-container-merged.legal-scroll-view {
+            max-height: min(56vh, 560px) !important;
+            overflow-y: auto !important;
+            font-size: 0.875rem;
+            line-height: 1.65;
+            color: #404041;
+            background: #fafbfc !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 1.25rem 1.5rem !important;
+            margin: 0 !important;
+        }
+
+        #scroll-container-merged.legal-scroll-view:focus {
+            outline: none;
+        }
+
+        .legal-section-title {
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #5d678e;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        /* Fix for footer blocking content */
+        body.legal-first-login .hero-section {
+            height: auto !important;
+            min-height: 100vh;
+            padding-bottom: 60px;
+            background-color: #f5f6fb;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='180' fill='none' stroke='rgba(38,36,123,0.04)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='140' fill='none' stroke='rgba(38,36,123,0.035)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='100' fill='none' stroke='rgba(38,36,123,0.03)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='60' fill='none' stroke='rgba(237,28,36,0.035)' stroke-width='1'/%3E%3Cline x1='20' y1='200' x2='380' y2='200' stroke='rgba(38,36,123,0.025)' stroke-width='0.5'/%3E%3Cline x1='200' y1='20' x2='200' y2='380' stroke='rgba(38,36,123,0.025)' stroke-width='0.5'/%3E%3C/svg%3E"),
+                radial-gradient(circle, rgba(38, 36, 123, 0.06) 1px, transparent 1px);
+            background-size: 300px 300px, 22px 22px;
+            background-position: right bottom, center;
+            background-repeat: no-repeat, repeat;
+        }
+
+        .legal-container {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body class="legal-first-login">
+
+    <!-- Floating SMS Push Notification Container -->
+    <div class="sms-toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+        style="z-index: 10000; width: 100%; max-width: 440px; pointer-events: none; margin-top: 15px;">
+        <div id="smsToast" class="sms-toast p-3 border-start border-4 shadow rounded-4 d-none"
+            style="border-left-color: #ed1c24 !important; pointer-events: auto;">
+            <div class="d-flex align-items-start">
+                <div class="bg-danger-subtle text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px; flex-shrink: 0;">
+                    <i class="iconoir-smartphone-device fs-4"></i>
+                </div>
+                <div class="flex-grow-1 text-start">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <strong class="text-dark fs-8" style="letter-spacing: 0.5px;">PUBLIC MUTUAL SMS</strong>
+                        <small class="text-muted fs-9 fw-semibold">Just now</small>
+                    </div>
+                    <div class="text-dark fs-8 font-monospace fw-semibold"
+                        style="line-height: 1.5; letter-spacing: -0.2px;">
+                        RM0.00 Public Mutual: Your secure login authorization PAC is <span
+                            class="badge bg-danger px-2 py-1 fs-8 text-white font-monospace"
+                            style="letter-spacing: 1px;">12345678</span>. Valid for 5 mins. Do not share.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <!-- Header -->
+        <header class="top-nav">
+            <div class="container d-flex align-items-center">
+                <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Logo" height="40"></a>
+                <div class="portal-title h4 mb-0 d-none d-md-block"><img src="images/pmo-logo.png" alt="Logo"
+                        height="40"></div>
+            </div>
+        </header>
+
+        <!-- Main Card Section -->
+        <main class="legal-container container">
+            <div class="legal-card shadow">
+                <h1>Service Agreement & Security Verification</h1>
+                <p class="subtitle text-muted">Read the disclosures below (one scroll), verify with PAC, then accept to
+                    continue.</p>
+
+                <div class="legal-scroll-wrap text-start">
+                    <div class="px-4 pt-4 pb-2">
+                        <h2 class="h5 fw-bold text-dark mb-0" style="color: #26247b;">Internet risk &amp; terms of use
+                        </h2>
+                    </div>
+                    <div class="legal-scroll-progress" aria-hidden="true">
+                        <div class="legal-scroll-progress-fill" id="legal-scroll-progress-fill"></div>
+                    </div>
+                    <div id="scroll-container-merged" class="legal-scroll-view" tabindex="0">
+                        <section class="mb-4 pb-4 border-bottom border-secondary border-opacity-25"
+                            aria-labelledby="legal-heading-risk">
+                            <div class="legal-section-title" id="legal-heading-risk">Part A</div>
+                            <h3 class="h6 fw-bold text-dark mb-2">Internet risk disclosure</h3>
+                            <p class="fw-bold text-dark mb-3 small">IMPORTANT NOTICE ON INTERNET SECURITY RISKS</p>
+                            <p>While Public Mutual is committed to maintain high security measures to ensure information
+                                provided are secure, there are Internet communication risks beyond Public Mutual's
+                                control. Please note that communication over the Internet is subjected to the common
+                                usual hazards of Internet communications, nor can it be guaranteed that this
+                                communication has not been the subject of unauthorised interception of modification.</p>
+                            <p class="mt-3">As a precaution, you should always make sure that your personal computer is
+                                secured and protected from unauthorised access and/or virus that may reveal your
+                                confidential information to third party. You should also be wary of email scams and
+                                attachments that may attempt to steal information about and/or from you.</p>
+                            <p class="mt-3">Public Mutual commitment to excellence extends to all segments of our
+                                business, especially our security systems. Keeping your information safe is our top
+                                priority.</p>
+                            <p class="mt-3">Please be reminded that Public Mutual does not, and will never request for
+                                sensitive/confidential information from our customers online or via e-mail, letters and
+                                phone calls/SMS/instant messages.</p>
+                            <p class="mt-3 mb-0">You are advised to exercise caution when performing your online
+                                transactions and ensure your PC and mobile devices are protected with an effective
+                                anti-virus/anti-malware software.</p>
+                        </section>
+                        <section aria-labelledby="legal-heading-terms">
+                            <div class="legal-section-title" id="legal-heading-terms">Part B</div>
+                            <h3 class="h6 fw-bold text-dark mb-2">Terms &amp; conditions of use</h3>
+                            <p class="fw-bold text-dark mb-3 small">TERMS AND CONDITIONS OF USE</p>
+                            <p class="fw-bold text-dark mb-2">1. GENERAL</p>
+                            <p>This website (www.publicmutualonline.com.my) ("Site") and Investor Mobile Application
+                                ("App"), are published and maintained by Public Mutual Berhad ("Public Mutual"). By
+                                using this Site and/or App or any reports, financial statements, data, information,
+                                contents, product and services available and/or provided by the Site and the App
+                                (Collectively "Materials"), you agree to be bound by the terms and conditions set out
+                                herein ("Terms and Conditions of Use"). Public Mutual may periodically modify these
+                                Terms and Conditions of Use without prior notice. If you do not agree to these Terms and
+                                Conditions of Use, kindly do not use this Site and App.</p>
+                            <p class="mt-3">Public Mutual may modify, suspend, discontinue, or restrict the use and
+                                availability of any portion of this Site and App at any time, without notice or
+                                liability. Your use of this Site and App may be monitored by Public Mutual and used for
+                                Public Mutual's marketing and research purposes.</p>
+                            <p class="mt-4 fw-bold text-dark mb-2">2. LIMITED LICENSE AND RESTRICTIONS ON USE</p>
+                            <p>Public Mutual grants you a limited, revocable, non-exclusive, non-transferable license to
+                                view, save/store, bookmark, download, and print the pages within this Site and App
+                                solely for your personal, informational and non-commercial use or as expressly
+                                Authorised by Public Mutual herein. You are responsible for obtaining and maintaining
+                                all equipment, services, and other materials that you need to access this Site and App.
+                                Public Mutual reserves all rights not expressly granted in these Terms and Conditions of
+                                Use. Except as otherwise stated in these Terms and Conditions of Use, you may not:</p>
+                            <ul class="mt-2 ps-3 mb-0" style="list-style-type: square;">
+                                <li class="mb-2">Modify, distribute, transmit, post, reproduce, republish, broadcast,
+                                    create derivative works from, transfer, sell, or exploit any of the Materials;</li>
+                                <li class="mb-2">Redeliver any page, text, image on this Site and App or any of the
+                                    Materials using "framing" or other technology other than those made generally
+                                    available by Public Mutual;</li>
+                                <li class="mb-2">Engage in any conduct that could damage, disable, or overburden this
+                                    Site and App, any of the Materials, or any systems, networks.</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Consent checkbox trigger (Must be checked first) -->
+                <div class="custom-checkbox d-flex align-items-start gap-2 mb-4 p-4 shadow-sm rounded-4 border bg-white">
+                    <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
+                        id="agreeCheckbox" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
+                    <label class="form-check-label fs-8 text-dark cursor-pointer text-start" for="agreeCheckbox"
+                        style="line-height: 1.4;">
+                        I/We irrevocably and unconditionally agree to the Internet Risk Disclosure and Terms &amp;
+                        Conditions of Use above, the Terms and Conditions of PMO Service, and the Terms and
+                        Conditions of Use of the Service as stipulated on the PMO website.
+                    </label>
+                </div>
+
+                <!-- PAC Verification Card -->
+                <div class="pac-verification-card text-start shadow-sm mb-4 p-4">
+                    <h6 class="fw-bold mb-3 text-dark">Security verification</h6>
+
+                    <div class="mb-3">
+                        <label class="form-label">Verification Method</label>
+                        <select class="form-select text-dark fw-semibold">
+                            <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                            <option value="SecureSign">SecureSign</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">PAC Number</label>
+                        <div class="pac-group">
+                            <input type="password" class="form-control" id="pacInput" placeholder="Enter 8-digit PAC"
+                                maxlength="8" disabled>
+                            <button type="button" class="btn-request-pac" id="btn-request-pac" disabled>REQUEST PAC</button>
+                        </div>
+                        <div class="invalid-feedback text-danger fw-bold" id="pac-error"
+                            style="display: none; font-size: 0.8rem; margin-top: 6px;">
+                            <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC number. Please use
+                            12345678 to test.
+                        </div>
+                        <div class="valid-feedback text-success fw-bold" id="pac-success"
+                            style="display: none; font-size: 0.8rem; margin-top: 6px;">
+                            <i class="iconoir-check-circle-solid me-1 align-middle"></i> PAC Verified Successfully!
+                        </div>
+                    </div>
+
+                    <p class="text-muted small mb-3" style="line-height: 1.5;">
+                        Request PAC to receive an 8-digit code at your registered mobile <span
+                            class="text-dark fw-semibold">XXX3ZXXXXX1</span>. Did not receive it? Call <span
+                            class="text-dark fw-semibold">03-2022 5000</span>.
+                    </p>
+
+                    <!-- Countdown timer text -->
+                    <div id="pac-timer" class="text-muted fs-8 fw-semibold mb-4" style="display: none;">
+                        <i class="iconoir-clock me-1 text-danger"></i> PAC sent! Request another in <span
+                            id="timer-seconds" class="text-danger fw-bold">60</span> seconds.
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-center gap-4 mt-4">
+                    <button id="disagreeBtn" class="btn-legal-disagree">Disagree</button>
+                    <button id="agreeBtn" class="btn-legal-agree" disabled>
+                        <span id="btnText">Agree & Proceed</span>
+                        <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status"
+                            aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
+    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
+        <div class="container px-4">
+            <div class="row g-4">
+                <!-- Column 1: Products & Services -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Unit Trust</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">Build Wealth</a></li>
+                        <li><a href="#">List of Funds</a></li>
+                        <li><a href="#">e-Series Funds</a></li>
+                        <li><a href="#">Islamic Funds</a></li>
+                        <li><a href="#">EPF-MIS</a></li>
+                        <li><a href="#">Sustainable and Responsible Investing</a></li>
+                        <li><a href="#">Fund Prices</a></li>
+                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
+                        <li><a href="#">Private Retirement Scheme</a></li>
+                        <li><a href="#">Fund Explorer</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Specific Goals</a></li>
+                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
+                        <li><a href="#">Regular investing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Privileges & Company -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Mutual Gold</a></li>
+                        <li><a href="#">Mutual Elite</a></li>
+                        <li><a href="#">Mutual Signature</a></li>
+                        <li><a href="#">Mutual Platinum</a></li>
+                        <li><a href="#">Mutual Prestige</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">New Funds</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
+
+                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Vision Mission</a></li>
+                        <li><a href="#">Core Values</a></li>
+                        <li><a href="#">Our Profile</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Track Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources & Info -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Learning Hub</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
+                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Contact Us (Form)</a></li>
+                                <li><a href="#">Branches</a></li>
+                                <li><a href="#">Customer Service Hotline</a></li>
+                                <li><a href="#">Investor Guide</a></li>
+                                <li><a href="#">Check Your UTC's Credentials</a></li>
+                                <li><a href="#">Announcements & News</a></li>
+                                <li><a href="#">Cybersecurity Awareness</a></li>
+                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
+                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
+                                <li><a href="#">Advertising Disclaimer</a></li>
+                                <li><a href="#">Cross Trade Policy</a></li>
+                                <li><a href="#">Glossary</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Utility Footer -->
+    <footer class="bottom-footer py-4 w-100 bg-navy text-white">
+        <div class="container text-center text-md-start px-4">
+            <!-- Disclaimer -->
+            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+                *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
+                Malaysia.
+            </p>
+
+            <!-- Vanguard-Style Important Disclosures -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                            Information</h6>
+                        <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
+                                money you invest.</strong> Past performance is not a guarantee or reliable indicator of
+                            future results. Unit prices, yields, and investment returns will fluctuate, and you may have
+                            a gain or loss when you redeem your units. Diversification does not ensure a profit or
+                            protect against a loss in a declining market.</p>
+                        <p class="mb-2">Investors should carefully consider the investment objectives, risks, charges,
+                            and expenses of a fund before investing. The prospectus, master prospectus, and Product
+                            Highlights Sheet (PHS) contain this and other key information. You can obtain copies of
+                            these documents from any Public Mutual branch, Authorised Unit Trust Consultant (UTC), or
+                            online. Please read them thoroughly before making any investment decisions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                            Disclosures</h6>
+                        <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
+                            management company under the Capital Markets and Services Act 2007, regulated and supervised
+                            by the Securities Commission Malaysia (SC). Public Mutual is also a registered Institutional
+                            Private Retirement Scheme Adviser (IPRSA) and a member of the Federation of Investment
+                            Managers Malaysia (FIMM).</p>
+                        <p class="mb-2">For Shariah-compliant funds, investments are managed in strict adherence to
+                            Shariah principles under the supervision and guidance of our appointed Shariah Advisers.
+                            Private Retirement Schemes (PRS) are subject to retirement savings regulations, and early
+                            withdrawals from sub-account B may be subject to tax penalties and statutory restrictions.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-top border-white-10 pt-3 opacity-75"
+                    style="border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
+                        platforms operated by Public Mutual Berhad. By accessing these portals, you agree to be bound by
+                        the Terms and Conditions of Use, Website Disclaimer, and Privacy Policy. Electronic transactions
+                        are secured with industry-standard encryption protocols. Safeguard your login credentials;
+                        Public Mutual will never ask for your password or PAC codes via email or SMS.</p>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
+            <!-- Links -->
+            <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
+                style="font-size: 0.78rem;">
+                <a href="website-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="investment-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Investment
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-policy.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Policy</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-notice.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Notice</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="drb-consent.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">DRB
+                    Check Consent Terms</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="internet-risk.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Internet
+                    Risk</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="contact-us.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Contact
+                    Us</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="quick-links.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Quick
+                    Access Links</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="terms.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
+                    and Conditions of Use</a>
+            </div>
+            <!-- Copyright and Social Buttons -->
+            <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                    <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                        us:</span>
+                    <a href="https://www.facebook.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
+                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
+                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
+                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
+                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
+                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Form Controls
+            const disagreeBtn = document.getElementById('disagreeBtn');
+            const agreeBtn = document.getElementById('agreeBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+
+            const btnRequestPac = document.getElementById('btn-request-pac');
+            const pacInput = document.getElementById('pacInput');
+            const pacError = document.getElementById('pac-error');
+            const pacSuccess = document.getElementById('pac-success');
+            const pacTimer = document.getElementById('pac-timer');
+            const timerSeconds = document.getElementById('timer-seconds');
+            const agreeCheckbox = document.getElementById('agreeCheckbox');
+
+            const smsToast = document.getElementById('smsToast');
+
+            // State
+            let pacSent = false;
+            let pacVerified = false;
+            let countdownValue = 60;
+            let timerInterval = null;
+            const correctPAC = "12345678";
+
+            // --- Scroll progress bar + latch “complete” at bottom (no footer UI) ---
+            const scrollMerged = document.getElementById('scroll-container-merged');
+            const progressFill = document.getElementById('legal-scroll-progress-fill');
+            let legalReadComplete = false;
+
+            function updateScrollProgress() {
+                if (!scrollMerged || !progressFill || legalReadComplete) return;
+                const maxScroll = scrollMerged.scrollHeight - scrollMerged.clientHeight;
+                const pct = maxScroll <= 0 ? 100 : Math.min(100, (scrollMerged.scrollTop / maxScroll) * 100);
+                progressFill.style.width = pct + '%';
+            }
+
+            function markReadIfAtBottom() {
+                if (!scrollMerged) return;
+                updateScrollProgress();
+                if (legalReadComplete) return;
+                const atBottom = scrollMerged.scrollHeight - scrollMerged.scrollTop <= scrollMerged.clientHeight + 12;
+                if (atBottom) {
+                    legalReadComplete = true;
+                    if (progressFill) {
+                        progressFill.style.width = '100%';
+                        progressFill.classList.add('is-done');
+                    }
+                }
+            }
+
+            scrollMerged?.addEventListener('scroll', markReadIfAtBottom);
+            setTimeout(function () {
+                if (scrollMerged && scrollMerged.scrollHeight <= scrollMerged.clientHeight) {
+                    updateScrollProgress();
+                    markReadIfAtBottom();
+                }
+            }, 400);
+
+            // --- Request PAC logic ---
+            btnRequestPac.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (!agreeCheckbox.checked) return;
+
+                // Show loading text state
+                btnRequestPac.disabled = true;
+                btnRequestPac.textContent = 'REQUESTING...';
+
+                setTimeout(() => {
+                    pacSent = true;
+                    btnRequestPac.textContent = 'REQUEST PAC';
+
+                    // Enable PAC input field
+                    pacInput.removeAttribute('disabled');
+                    pacInput.value = '12345678'; // Pre-populate standard demo PAC code
+                    pacInput.classList.remove('is-valid', 'is-invalid');
+                    pacInput.focus();
+
+                    // Display Push Notification Toast with animation
+                    smsToast.classList.remove('d-none');
+                    // Force reflow
+                    smsToast.offsetHeight;
+                    smsToast.classList.add('show');
+
+                    // Clear existing timer if any
+                    if (timerInterval) clearInterval(timerInterval);
+
+                    // Countdown timer
+                    countdownValue = 60;
+                    pacTimer.style.display = 'block';
+                    timerSeconds.textContent = countdownValue;
+
+                    timerInterval = setInterval(() => {
+                        countdownValue--;
+                        timerSeconds.textContent = countdownValue;
+                        if (countdownValue <= 0) {
+                            clearInterval(timerInterval);
+                            timerInterval = null;
+                            if (agreeCheckbox.checked) {
+                                btnRequestPac.disabled = false;
+                            }
+                            pacTimer.style.display = 'none';
+                            btnRequestPac.textContent = 'RESEND PAC';
+                        }
+                    }, 1000);
+
+                    // Auto-dismiss the toast after 8 seconds
+                    setTimeout(() => {
+                        smsToast.classList.remove('show');
+                        setTimeout(() => {
+                            smsToast.classList.add('d-none');
+                        }, 500);
+                    }, 8000);
+
+                    // Trigger input event to run validation instantly
+                    pacInput.dispatchEvent(new Event('input'));
+
+                }, 1000);
+            });
+
+            // --- PAC Input verification check ---
+            pacInput.addEventListener('input', function () {
+                const val = pacInput.value.trim();
+
+                if (val.length === 8) {
+                    if (val === correctPAC) {
+                        // Success verification
+                        pacVerified = true;
+                        pacInput.classList.add('is-valid');
+                        pacInput.classList.remove('is-invalid');
+                        pacSuccess.style.display = 'block';
+                        pacError.style.display = 'none';
+
+                        // Enable Agree & Proceed button directly
+                        agreeBtn.removeAttribute('disabled');
+                    } else {
+                        // Failed verification
+                        pacVerified = false;
+                        pacInput.classList.add('is-invalid');
+                        pacInput.classList.remove('is-valid');
+                        pacError.style.display = 'block';
+                        pacSuccess.style.display = 'none';
+
+                        agreeBtn.setAttribute('disabled', 'true');
+                    }
+                } else {
+                    // Reset validation styling when editing
+                    pacVerified = false;
+                    pacInput.classList.remove('is-valid', 'is-invalid');
+                    pacError.style.display = 'none';
+                    pacSuccess.style.display = 'none';
+
+                    agreeBtn.setAttribute('disabled', 'true');
+                }
+            });
+
+            // --- Consent checkbox trigger ---
+            agreeCheckbox.addEventListener('change', function () {
+                if (agreeCheckbox.checked) {
+                    if (!timerInterval) {
+                        btnRequestPac.removeAttribute('disabled');
+                    }
+                } else {
+                    btnRequestPac.setAttribute('disabled', 'true');
+                    pacInput.setAttribute('disabled', 'true');
+                    pacInput.value = '';
+                    pacInput.classList.remove('is-valid', 'is-invalid');
+                    pacSuccess.style.display = 'none';
+                    pacError.style.display = 'none';
+                    pacVerified = false;
+                    agreeBtn.setAttribute('disabled', 'true');
+
+                    if (timerInterval) {
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                    }
+                    pacTimer.style.display = 'none';
+                    btnRequestPac.textContent = 'REQUEST PAC';
+                    countdownValue = 60;
+                }
+            });
+
+            // --- Disagree logic (logout redirect) ---
+            disagreeBtn.addEventListener('click', function () {
+                if (confirm('Are you sure you wish to disagree? By disagreeing, you will terminate your current session and be logged out of your PMO Corporate Portal.')) {
+                    window.location.href = 'index.html';
+                }
+            });
+
+            // --- Agree and Proceed transition ---
+            agreeBtn.addEventListener('click', function () {
+                if (agreeBtn.hasAttribute('disabled')) return;
+
+                // Set loading status
+                agreeBtn.setAttribute('disabled', 'true');
+                disagreeBtn.setAttribute('disabled', 'true');
+                pacInput.setAttribute('disabled', 'true');
+                agreeCheckbox.setAttribute('disabled', 'true');
+
+                btnText.textContent = 'Authorizing Agreement... ';
+                btnSpinner.classList.remove('d-none');
+
+                setTimeout(() => {
+                    btnSpinner.classList.add('d-none');
+                    btnText.textContent = 'Authorised!';
+                    agreeBtn.style.backgroundColor = '#198754';
+
+                    setTimeout(() => {
+                        window.location.href = 'unit-trust/dashboard.html';
+                    }, 500);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Statements</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <style>
+        /* Interactive Card Style Overrides */
+        .cursor-pointer {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .cursor-pointer:hover {
+            background-color: #f1f5f9 !important;
+        }
+
+        /* Table Cell Link Styling */
+        .table-link {
+            color: #0d6efd;
+            text-decoration: underline;
+            font-weight: 700;
+            transition: color 0.15s ease;
+        }
+
+        .table-link:hover {
+            color: #0a58ca;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+            aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        id="pmoShellBtnOpenSidebarUt">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                        id="pmoShellBrandUt">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="dashboard.html"
+                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                        id="pmoShellPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillEopFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../analytics/unit-trust.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillAnalyticsFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 35px; height: 35px;" aria-hidden="true">
+                            <i class="iconoir-user fs-5 text-dark"></i>
+                        </div>
+                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User &amp; Authoriser</span>
+                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="settings.html" id="dropLnkProfile">
+                                <i class="iconoir-user fs-6"></i> User Profile Details
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="settings.html#password" id="dropLnkPassword">
+                                <i class="iconoir-lock fs-6"></i> Change Password
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
+                                <i class="iconoir-log-out fs-6"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Unit Trust Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_account.html">View Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="authorise.html">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="statements.html">Statements</a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+            <div class="mb-4">
+                <h2 class="fw-bold text-dark fs-2 mb-2">Documents &amp; Reports</h2>
+                <p class="text-muted fs-7 mb-0">Access your transaction statements and annual fund reports</p>
+            </div>
+            <!-- Card with Tabs (Styled like Analytics Page) -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-3">
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center gap-4 flex-wrap" id="utStmtViewTabs">
+                        <a href="#" class="view-tab active d-flex align-items-center gap-2" data-panel="transactions"
+                            id="utStmtTabTxn">
+                            <i class="iconoir-double-check fs-6"></i> Transactions
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="annual"
+                            id="utStmtTabAnnual">
+                            <i class="iconoir-calendar fs-6"></i> Annual/Interim
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="fundreports"
+                            id="utStmtTabFund">
+                            <i class="iconoir-stats-down-square fs-6"></i> Fund Reports
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="einvoice"
+                            id="utStmtTabEinv">
+                            <i class="iconoir-multiple-pages fs-6"></i> e-Invoice
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="invoice"
+                            id="utStmtTabInv">
+                            <i class="iconoir-multiple-pages fs-6"></i> Invoice
+                        </a>
+                    </div>
+                    <!-- Month & Year Filters -->
+                    <div class="d-flex align-items-center gap-2 me-md-2">
+                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                class="iconoir-filter-list me-1"></i>Filter:</span>
+                        <select
+                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                            style="width: 130px; height: 36px;" id="utStmtFilterMonth">
+                            <option value="all" selected>All Months</option>
+                            <option value="Jan">January</option>
+                            <option value="Feb">February</option>
+                            <option value="Mar">March</option>
+                            <option value="Apr">April</option>
+                            <option value="May">May</option>
+                            <option value="Jun">June</option>
+                            <option value="Jul">July</option>
+                            <option value="Aug">August</option>
+                            <option value="Sep">September</option>
+                            <option value="Oct">October</option>
+                            <option value="Nov">November</option>
+                            <option value="Dec">December</option>
+                        </select>
+                        <select
+                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                            style="width: 110px; height: 36px;" id="utStmtFilterYear">
+                            <option value="all" selected>All Years</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab Content -->
+            <div class="tab-content" id="statementsTabContent">
+
+                <!-- Transactions Tab -->
+                <div class="tab-pane fade show active" id="transactions" role="tabpanel"
+                    aria-labelledby="transactions-tab">
+
+                    <!-- Accordion 1: Statement of Transaction -->
+                    <div class="border rounded-4 overflow-hidden mb-4 shadow-sm bg-white">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light cursor-pointer"
+                            data-bs-toggle="collapse" data-bs-target="#statementOfTransactionCollapse"
+                            aria-expanded="true" aria-controls="statementOfTransactionCollapse">
+                            <span class="fw-bold text-dark fs-7">Statement of Transaction</span>
+                            <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"></i>
+                        </div>
+
+                        <div id="statementOfTransactionCollapse" class="collapse show">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 custom-table border-top">
+                                    <thead class="text-muted fs-8 border-bottom">
+                                        <tr>
+                                            <th class="ps-4 py-3 fw-semibold text-dark" style="width: 250px;">Date</th>
+                                            <th class="py-3 fw-semibold text-center text-dark"
+                                                style="width: 200px; background-color: #f8fafc; border-left: 1px solid #dee2e6; border-right: 1px solid #dee2e6;">
+                                                Scheme</th>
+                                            <th class="ps-4 py-3 fw-semibold text-dark">Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fs-8 fw-semibold">
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">28/04/2026</a></td>
+                                            <td class="text-center py-3 text-dark fw-bold"
+                                                style="background-color: #f8fafc; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                                Unit Trust - Money Market</td>
+                                            <td class="ps-4 py-3 text-secondary fw-medium">Statement of Transaction</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">19/03/2025</a></td>
+                                            <td class="text-center py-3 text-dark fw-bold"
+                                                style="background-color: #f8fafc; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                                Unit Trust - Money Market</td>
+                                            <td class="ps-4 py-3 text-secondary fw-medium">Statement of Transaction</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2: Monthly Statement of Accounts -->
+                    <div class="border rounded-4 overflow-hidden mb-2 shadow-sm bg-white">
+                        <div class="d-flex align-items-center justify-content-between p-3 bg-light cursor-pointer"
+                            data-bs-toggle="collapse" data-bs-target="#monthlyStatementCollapse" aria-expanded="true"
+                            aria-controls="monthlyStatementCollapse">
+                            <span class="fw-bold text-dark fs-7">Monthly Statement of Accounts</span>
+                            <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"></i>
+                        </div>
+
+                        <div id="monthlyStatementCollapse" class="collapse show">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 custom-table border-top">
+                                    <thead class="text-muted fs-8 border-bottom">
+                                        <tr>
+                                            <th class="ps-4 py-3 fw-semibold text-dark" style="width: 250px;">Date</th>
+                                            <th class="py-3 fw-semibold text-dark">Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="fs-8 fw-semibold">
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">30/04/2026</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">31/03/2026</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">27/02/2026</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">30/01/2026</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">31/12/2025</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3"><a href="#" class="table-link">28/11/2025</a></td>
+                                            <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Annual/Interim Tab -->
+                <div class="tab-pane fade" id="annual" role="tabpanel" aria-labelledby="annual-tab">
+                    <div class="card border rounded-4 overflow-hidden mb-4 shadow-sm bg-white p-4">
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 pb-2 border-bottom">
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">Annual / Interim Financial Reports</h5>
+                            </div>
+                            <!-- Sub-tabs for UT vs PRS -->
+                            <div class="d-flex gap-1 bg-light p-1 rounded-pill border" style="width: auto;">
+                                <button type="button"
+                                    class="btn btn-sm btn-dark rounded-pill px-3 py-1 fw-bold fs-9 border-0"
+                                    id="annualReportSubTabUt" style="font-size: 0.75rem;">Unit Trust Funds</button>
+                                <button type="button"
+                                    class="btn btn-sm btn-light rounded-pill px-3 py-1 fw-bold fs-9 text-secondary border-0"
+                                    id="annualReportSubTabPrs" style="font-size: 0.75rem; background: transparent;">PRS
+                                    Funds</button>
+                            </div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div id="utAnnualReportSelectContainer" class="mb-4">
+                            <label for="utAnnualReportSelect" class="form-label text-muted fs-8 fw-semibold mb-2">Select
+                                Unit Trust Fund Name</label>
+                            <select
+                                class="form-select border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="max-width: 450px; height: 38px;" id="utAnnualReportSelect">
+                                <option value="" selected>-- Select a Unit Trust Fund --</option>
+                                <option value="tactical">Public Tactical Allocation Fund (PAGF)</option>
+                                <option value="dividend">Public Islamic Dividend Fund (PIDF)</option>
+                                <option value="money">Public Money Market Fund (PMMF)</option>
+                            </select>
+                        </div>
+
+                        <div id="prsAnnualReportSelectContainer" class="mb-4 d-none">
+                            <label for="prsAnnualReportSelect"
+                                class="form-label text-muted fs-8 fw-semibold mb-2">Select PRS Fund Name</label>
+                            <select
+                                class="form-select border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="max-width: 450px; height: 38px;" id="prsAnnualReportSelect">
+                                <option value="" selected>-- Select a PRS Fund --</option>
+                                <option value="prs-growth">Public Mutual PRS Growth Fund (PMPGF)</option>
+                                <option value="prs-moderate">Public Mutual PRS Moderate Fund (PMPMF)</option>
+                                <option value="prs-conservative">Public Mutual PRS Conservative Fund (PMPCF)</option>
+                            </select>
+                        </div>
+
+                        <div id="annualReportsTableWrapper" class="d-none">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                        <tr>
+                                            <th class="ps-4 py-3 fw-semibold text-start" style="width: 30%;">Date / Year
+                                            </th>
+                                            <th class="py-3 fw-semibold text-start" style="width: 25%;">Type</th>
+                                            <th class="py-3 fw-semibold text-start" style="width: 30%;">Fund Name
+                                                (Short)</th>
+                                            <th class="pe-4 py-3 fw-semibold text-center" style="width: 15%;">Download
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="annualReportsTableBody" class="fw-semibold">
+                                        <!-- UT Funds -->
+                                        <tr class="border-bottom" data-fund="tactical">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PAGF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="tactical">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PAGF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="dividend">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PIDF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="dividend">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PIDF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="money">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PMMF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="money">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PMMF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <!-- PRS Funds -->
+                                        <tr class="border-bottom" data-fund="prs-growth">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PMPGF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-growth">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PMPGF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-moderate">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PMPMF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-moderate">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PMPMF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-conservative">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-dark">PMPCF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-conservative">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Interim</td>
+                                            <td class="py-3 text-dark">PMPCF</td>
+                                            <td class="pe-4 py-3 text-center">
+                                                <a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> PDF</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Prompt placeholder -->
+                        <div id="annualReportsPlaceholder" class="p-5 text-center bg-light rounded-4">
+                            <div class="d-flex justify-content-center mb-3">
+                                <i class="iconoir-page-search fs-1 text-muted"></i>
+                            </div>
+                            <p class="text-muted mb-0 fw-medium" id="annualReportsPlaceholderText">Please select a Unit
+                                Trust fund name from the dropdown above to view its reports.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Tax Voucher Tab -->
+                <div class="tab-pane fade" id="tax" role="tabpanel" aria-labelledby="tax-tab">
+                    <div class="p-4 text-center">
+                        <i class="iconoir-percentage fs-1 text-muted mb-3 d-block"></i>
+                        <p class="text-muted mb-0 fw-medium">No Tax Vouchers on Distribution found.</p>
+                    </div>
+                </div>
+
+                <!-- Fund Reports Tab -->
+                <div class="tab-pane fade" id="fundreports" role="tabpanel" aria-labelledby="fundreports-tab">
+                    <div class="card border rounded-4 overflow-hidden mb-4 shadow-sm bg-white p-4">
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 pb-2 border-bottom">
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">Fund Reports</h5>
+
+                            </div>
+                            <!-- Sub-tabs for UT vs PRS -->
+                            <div class="d-flex gap-1 bg-light p-1 rounded-pill border" style="width: auto;">
+                                <button type="button"
+                                    class="btn btn-sm btn-dark rounded-pill px-3 py-1 fw-bold fs-9 border-0"
+                                    id="fundReportSubTabUt" style="font-size: 0.75rem;">Unit Trust Funds</button>
+                                <button type="button"
+                                    class="btn btn-sm btn-light rounded-pill px-3 py-1 fw-bold fs-9 text-secondary border-0"
+                                    id="fundReportSubTabPrs" style="font-size: 0.75rem; background: transparent;">PRS
+                                    Funds</button>
+                            </div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div id="utFundReportSelectContainer" class="mb-4">
+                            <label for="utFundReportSelect" class="form-label text-muted fs-8 fw-semibold mb-2">Select
+                                Unit Trust Fund Name</label>
+                            <select
+                                class="form-select border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="max-width: 450px; height: 38px;" id="utFundReportSelect">
+                                <option value="" selected>-- Select a Unit Trust Fund --</option>
+                                <option value="tactical">Public Tactical Allocation Fund</option>
+                                <option value="dividend">Public Islamic Dividend Fund</option>
+                                <option value="money">Public Money Market Fund</option>
+                            </select>
+                        </div>
+
+                        <div id="prsFundReportSelectContainer" class="mb-4 d-none">
+                            <label for="prsFundReportSelect" class="form-label text-muted fs-8 fw-semibold mb-2">Select
+                                PRS Fund Name</label>
+                            <select
+                                class="form-select border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="max-width: 450px; height: 38px;" id="prsFundReportSelect">
+                                <option value="" selected>-- Select a PRS Fund --</option>
+                                <option value="prs-growth">Public Mutual PRS Growth Fund</option>
+                                <option value="prs-moderate">Public Mutual PRS Moderate Fund</option>
+                                <option value="prs-conservative">Public Mutual PRS Conservative Fund</option>
+                            </select>
+                        </div>
+
+                        <div id="fundReportsTableWrapper" class="d-none">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                        <tr>
+                                            <th class="ps-4 py-3 fw-semibold text-start" style="width: 25%;">Date / Year
+                                            </th>
+                                            <th class="py-3 fw-semibold text-start" style="width: 25%;">Report Type</th>
+                                            <th class="py-3 fw-semibold text-center" style="width: 16%;">English (PDF)
+                                            </th>
+                                            <th class="py-3 fw-semibold text-center" style="width: 16%;">Bahasa Melayu
+                                                (PDF)</th>
+                                            <th class="pe-4 py-3 fw-semibold text-center" style="width: 18%;">Mandarin
+                                                (PDF)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="fundReportsTableBody" class="fw-semibold">
+                                        <!-- UT Funds -->
+                                        <tr class="border-bottom" data-fund="tactical">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="tactical">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="dividend">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="dividend">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="money">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="money">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <!-- PRS Funds -->
+                                        <tr class="border-bottom" data-fund="prs-growth">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-growth">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-moderate">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-moderate">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr class="border-bottom" data-fund="prs-conservative">
+                                            <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
+                                            <td class="py-3 text-secondary">Annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                        <tr data-fund="prs-conservative">
+                                            <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
+                                            <td class="py-3 text-secondary">Semi-annual</td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                            <td class="pe-4 py-3 text-center"><a href="#"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                        class="iconoir-download me-1"></i> Download</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Prompt placeholder -->
+                        <div id="fundReportsPlaceholder" class="p-5 text-center bg-light rounded-4">
+                            <div class="d-flex justify-content-center mb-3">
+                                <i class="iconoir-page-search fs-1 text-muted"></i>
+                            </div>
+                            <p class="text-muted mb-0 fw-medium" id="fundReportsPlaceholderText">Please select a Unit
+                                Trust fund name from the dropdown above to view its reports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRS Tab -->
+                <div class="tab-pane fade" id="prs" role="tabpanel" aria-labelledby="prs-tab">
+                    <div class="p-4 text-center">
+                        <i class="iconoir-user fs-1 text-muted mb-3 d-block"></i>
+                        <p class="text-muted mb-0 fw-medium">No Summary of PRS Contributions available.</p>
+                    </div>
+                </div>
+
+                <!-- e-Invoice Tab -->
+                <div class="tab-pane fade" id="einvoice" role="tabpanel" aria-labelledby="einvoice-tab">
+                    <div class="card border rounded-4 overflow-hidden mb-4 shadow-sm bg-white p-4">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 35%;">
+                                            Reference No. /<br><span class="fs-9 fw-normal text-secondary">Unique Identifier No.</span></th>
+                                        <th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">Validated date</th>
+                                        <th class="py-3 fw-semibold text-dark text-start" style="width: 25%;">Invoice type</th>
+                                        <th class="py-3 fw-semibold text-dark text-end" style="width: 10%;">Taxable (RM)</th>
+                                        <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="fw-semibold">
+                                    <tr class="border-bottom" data-month="Apr" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">
+                                            <span class="fw-semibold d-block">E-INV-UT-20260428-0091</span>
+                                            <span class="text-secondary font-monospace fs-9">8c6f1a3b-2090-41da-a71e-3a1b028dcd91</span>
+                                        </td>
+                                        <td class="py-3 text-dark text-start">28 Apr 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">e-Invoice</td>
+                                        <td class="py-3 text-dark text-end">450.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="einvPdfLnk1"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom" data-month="Apr" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">
+                                            <span class="fw-semibold d-block">E-INV-UT-20260401-0044</span>
+                                            <span class="text-secondary font-monospace fs-9">7d5b8e2a-1049-43c2-b91d-1e0f8c5b6a7d</span>
+                                        </td>
+                                        <td class="py-3 text-dark text-start">01 Apr 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">Self Billed e-Invoice</td>
+                                        <td class="py-3 text-dark text-end">8,400.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="einvPdfLnk2"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom" data-month="Mar" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">
+                                            <span class="fw-semibold d-block">E-INV-UT-20260315-0012</span>
+                                            <span class="text-secondary font-monospace fs-9">6a4c9f1b-5038-42bd-90ec-2d3c7a6e5b8c</span>
+                                        </td>
+                                        <td class="py-3 text-dark text-start">15 Mar 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">e-Invoice</td>
+                                        <td class="py-3 text-dark text-end">150.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="einvPdfLnk3"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invoice Tab -->
+                <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
+                    <div class="card border rounded-4 overflow-hidden mb-4 shadow-sm bg-white p-4">
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                            <div>
+                                <h5 class="fw-bold text-dark mb-1">Invoices</h5>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 30%;">Invoice number</th>
+                                        <th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">Date</th>
+                                        <th class="py-3 fw-semibold text-dark text-start" style="width: 30%;">Invoice type</th>
+                                        <th class="py-3 fw-semibold text-dark text-end" style="width: 10%;">Amount (RM)</th>
+                                        <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="fw-semibold">
+                                    <tr class="border-bottom" data-month="Apr" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">INV-UT-20260428-091</td>
+                                        <td class="py-3 text-dark text-start">28 Apr 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
+                                        <td class="py-3 text-dark text-end">477.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="invDwnld1"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom" data-month="Apr" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">INV-UT-20260401-044</td>
+                                        <td class="py-3 text-dark text-start">01 Apr 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">Credit Note</td>
+                                        <td class="py-3 text-dark text-end">8,904.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="invDwnld2"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-bottom" data-month="Mar" data-year="2026">
+                                        <td class="ps-4 py-3 text-dark text-start">INV-UT-20260315-012</td>
+                                        <td class="py-3 text-dark text-start">15 Mar 2026</td>
+                                        <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
+                                        <td class="py-3 text-dark text-end">150.00</td>
+                                        <td class="pe-4 py-3 text-center">
+                                            <a href="#"
+                                                class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
+                                                id="invDwnld3"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+    aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseUt">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                    id="pmoUtSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                    id="pmoUtSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
+                                Top-Up Investment <span
+                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
+                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
+                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="transactions.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnOnline">Online Activities</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=request"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
+                                Reports</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoUtSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fund Reports category selector & dropdown filter script
+            var subTabUt = document.getElementById('fundReportSubTabUt');
+            var subTabPrs = document.getElementById('fundReportSubTabPrs');
+            var utContainer = document.getElementById('utFundReportSelectContainer');
+            var prsContainer = document.getElementById('prsFundReportSelectContainer');
+            var utSelect = document.getElementById('utFundReportSelect');
+            var prsSelect = document.getElementById('prsFundReportSelect');
+            var reportsTableWrapper = document.getElementById('fundReportsTableWrapper');
+            var reportsPlaceholder = document.getElementById('fundReportsPlaceholder');
+            var placeholderText = document.getElementById('fundReportsPlaceholderText');
+
+            function showCategory(category) {
+                if (category === 'ut') {
+                    subTabUt.classList.add('btn-dark');
+                    subTabUt.classList.remove('btn-light', 'text-secondary');
+                    subTabPrs.classList.add('btn-light', 'text-secondary');
+                    subTabPrs.classList.remove('btn-dark');
+                    utContainer.classList.remove('d-none');
+                    prsContainer.classList.add('d-none');
+                    prsSelect.value = ''; // reset PRS selection
+                    placeholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its reports.';
+                } else {
+                    subTabPrs.classList.add('btn-dark');
+                    subTabPrs.classList.remove('btn-light', 'text-secondary');
+                    subTabUt.classList.add('btn-light', 'text-secondary');
+                    subTabUt.classList.remove('btn-dark');
+                    prsContainer.classList.remove('d-none');
+                    utContainer.classList.add('d-none');
+                    utSelect.value = ''; // reset UT selection
+                    placeholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its reports.';
+                }
+                reportsTableWrapper.classList.add('d-none');
+                reportsPlaceholder.classList.remove('d-none');
+            }
+
+            if (subTabUt && subTabPrs) {
+                subTabUt.addEventListener('click', function () { showCategory('ut'); });
+                subTabPrs.addEventListener('click', function () { showCategory('prs'); });
+            }
+
+            function handleFundSelectChange(selectEl) {
+                var selectedFund = selectEl.value;
+                if (selectedFund === '') {
+                    reportsTableWrapper.classList.add('d-none');
+                    reportsPlaceholder.classList.remove('d-none');
+                } else {
+                    reportsPlaceholder.classList.add('d-none');
+                    reportsTableWrapper.classList.remove('d-none');
+
+                    document.querySelectorAll('#fundReportsTableBody tr[data-fund]').forEach(function (row) {
+                        if (row.getAttribute('data-fund') === selectedFund) {
+                            row.classList.remove('d-none');
+                        } else {
+                            row.classList.add('d-none');
+                        }
+                    });
+                }
+            }
+
+            if (utSelect) {
+                utSelect.addEventListener('change', function () { handleFundSelectChange(utSelect); });
+            }
+            if (prsSelect) {
+                prsSelect.addEventListener('change', function () { handleFundSelectChange(prsSelect); });
+            }
+
+            // Annual/Interim category selector & dropdown filter script
+            var annualSubTabUt = document.getElementById('annualReportSubTabUt');
+            var annualSubTabPrs = document.getElementById('annualReportSubTabPrs');
+            var utAnnualContainer = document.getElementById('utAnnualReportSelectContainer');
+            var prsAnnualContainer = document.getElementById('prsAnnualReportSelectContainer');
+            var utAnnualSelect = document.getElementById('utAnnualReportSelect');
+            var prsAnnualSelect = document.getElementById('prsAnnualReportSelect');
+            var annualReportsTableWrapper = document.getElementById('annualReportsTableWrapper');
+            var annualReportsPlaceholder = document.getElementById('annualReportsPlaceholder');
+            var annualPlaceholderText = document.getElementById('annualReportsPlaceholderText');
+
+            function showAnnualCategory(category) {
+                if (category === 'ut') {
+                    annualSubTabUt.classList.add('btn-dark');
+                    annualSubTabUt.classList.remove('btn-light', 'text-secondary');
+                    annualSubTabPrs.classList.add('btn-light', 'text-secondary');
+                    annualSubTabPrs.classList.remove('btn-dark');
+                    utAnnualContainer.classList.remove('d-none');
+                    prsAnnualContainer.classList.add('d-none');
+                    prsAnnualSelect.value = ''; // reset PRS selection
+                    annualPlaceholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its reports.';
+                } else {
+                    annualSubTabPrs.classList.add('btn-dark');
+                    annualSubTabPrs.classList.remove('btn-light', 'text-secondary');
+                    annualSubTabUt.classList.add('btn-light', 'text-secondary');
+                    annualSubTabUt.classList.remove('btn-dark');
+                    prsAnnualContainer.classList.remove('d-none');
+                    utAnnualContainer.classList.add('d-none');
+                    utAnnualSelect.value = ''; // reset UT selection
+                    annualPlaceholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its reports.';
+                }
+                annualReportsTableWrapper.classList.add('d-none');
+                annualReportsPlaceholder.classList.remove('d-none');
+            }
+
+            if (annualSubTabUt && annualSubTabPrs) {
+                annualSubTabUt.addEventListener('click', function () { showAnnualCategory('ut'); });
+                annualSubTabPrs.addEventListener('click', function () { showAnnualCategory('prs'); });
+            }
+
+            function handleAnnualFundSelectChange(selectEl) {
+                var selectedFund = selectEl.value;
+                if (selectedFund === '') {
+                    annualReportsTableWrapper.classList.add('d-none');
+                    annualReportsPlaceholder.classList.remove('d-none');
+                } else {
+                    annualReportsPlaceholder.classList.add('d-none');
+                    annualReportsTableWrapper.classList.remove('d-none');
+
+                    document.querySelectorAll('#annualReportsTableBody tr[data-fund]').forEach(function (row) {
+                        if (row.getAttribute('data-fund') === selectedFund) {
+                            row.classList.remove('d-none');
+                        } else {
+                            row.classList.add('d-none');
+                        }
+                    });
+                }
+            }
+
+            if (utAnnualSelect) {
+                utAnnualSelect.addEventListener('change', function () { handleAnnualFundSelectChange(utAnnualSelect); });
+            }
+            if (prsAnnualSelect) {
+                prsAnnualSelect.addEventListener('change', function () { handleAnnualFundSelectChange(prsAnnualSelect); });
+            }
+
+            // Tab switching logic for Unit Trust statements
+            document.querySelectorAll('#utStmtViewTabs .view-tab[data-panel]').forEach(function (tab) {
+                tab.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var panelId = tab.getAttribute('data-panel');
+                    document.querySelectorAll('#utStmtViewTabs .view-tab').forEach(function (t) {
+                        t.classList.remove('active');
+                        t.removeAttribute('aria-current');
+                    });
+                    document.querySelectorAll('#statementsTabContent .tab-pane').forEach(function (p) {
+                        p.classList.remove('show', 'active');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-current', 'page');
+                    var panel = document.getElementById(panelId);
+                    if (panel) {
+                        panel.classList.add('show', 'active');
+                    }
+                });
+            });
+
+            // Handle active tab from query parameter (for sidebar links redirection)
+            var urlParams = new URLSearchParams(window.location.search);
+            var tabParam = urlParams.get('tab');
+            if (tabParam) {
+                var targetTab = null;
+                if (tabParam === 'einv') {
+                    targetTab = document.getElementById('utStmtTabEinv');
+                } else if (tabParam === 'inv') {
+                    targetTab = document.getElementById('utStmtTabInv');
+                } else if (tabParam === 'annual') {
+                    targetTab = document.getElementById('utStmtTabAnnual');
+                } else if (tabParam === 'fund') {
+                    targetTab = document.getElementById('utStmtTabFund');
+                }
+                if (targetTab) {
+                    targetTab.click();
+                }
+            }
+
+            // Filtering logic for Month and Year
+            var monthFilter = document.getElementById('utStmtFilterMonth');
+            var yearFilter = document.getElementById('utStmtFilterYear');
+
+            function applyFilters() {
+                var monthVal = monthFilter.value;
+                var yearVal = yearFilter.value;
+
+                document.querySelectorAll('#statementsTabContent tbody tr[data-month]').forEach(function (row) {
+                    var matchMonth = (monthVal === 'all' || row.getAttribute('data-month') === monthVal);
+                    var matchYear = (yearVal === 'all' || row.getAttribute('data-year') === yearVal);
+
+                    if (matchMonth && matchYear) {
+                        row.classList.remove('d-none');
+                    } else {
+                        row.classList.add('d-none');
+                    }
+                });
+
+                // Handle empty states for tables when all rows are filtered out
+                document.querySelectorAll('#statementsTabContent table').forEach(function (table) {
+                    var tbody = table.querySelector('tbody');
+                    if (!tbody) return;
+                    var visibleRows = tbody.querySelectorAll('tr:not(.d-none):not(.no-filter-data-row)');
+                    var existingNoData = tbody.querySelector('.no-filter-data-row');
+
+                    if (visibleRows.length === 0) {
+                        if (!existingNoData) {
+                            var colCount = table.querySelectorAll('thead th').length;
+                            var noDataRow = document.createElement('tr');
+                            noDataRow.className = 'no-filter-data-row';
+                            noDataRow.innerHTML = '<td colspan="' + colCount + '" class="text-center py-4 text-muted fs-8 fw-medium"><i class="iconoir-info-circle me-1"></i>No matching items found for the selected period.</td>';
+                            tbody.appendChild(noDataRow);
+                        }
+                    } else {
+                        if (existingNoData) {
+                            existingNoData.remove();
+                        }
+                    }
+                });
+            }
+
+            monthFilter.addEventListener('change', applyFilters);
+            yearFilter.addEventListener('change', applyFilters);
+
+            // Re-align chevron icons when collapse events trigger
+            const collapsibles = document.querySelectorAll('.collapse');
+            collapsibles.forEach(function (collapseEl) {
+                const headerButton = document.querySelector('[data-bs-target="#' + collapseEl.id + '"]');
+                if (headerButton) {
+                    const icon = headerButton.querySelector('.accordion-icon');
+                    collapseEl.addEventListener('show.bs.collapse', function () {
+                        icon.classList.remove('iconoir-nav-arrow-down');
+                        icon.classList.add('iconoir-nav-arrow-up');
+                    });
+                    collapseEl.addEventListener('hide.bs.collapse', function () {
+                        icon.classList.remove('iconoir-nav-arrow-up');
+                        icon.classList.add('iconoir-nav-arrow-down');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

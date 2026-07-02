@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Fund Analytics</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <style>
+        /* Fund Analytics Custom Layout Styles */
+        .analytics-view-selector {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .sub-tab-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #64748b;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .sub-tab-link:hover {
+            color: var(--brand-primary);
+        }
+
+        .sub-tab-link.active {
+            color: var(--brand-primary);
+            border-bottom-color: var(--brand-primary);
+            font-weight: 700;
+        }
+
+        .filter-section-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #1e293b;
+            letter-spacing: 0.3px;
+        }
+
+        .favourite-star {
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .favourite-star:hover {
+            transform: scale(1.2);
+        }
+
+        /* Custom styled checkboxes */
+        .custom-checkbox .form-check-input:checked {
+            background-color: var(--brand-navy) !important;
+            border-color: var(--brand-navy) !important;
+        }
+
+        /* Hover zoom effect on table action menu */
+        .table-action-btn {
+            color: #94a3b8;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .table-action-btn:hover {
+            color: var(--brand-primary);
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="analytics"
+    data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#analyticsSidebarOffcanvas" aria-controls="analyticsSidebarOffcanvas" id="analyticsBtnOpenSidebar">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="analyticsBrandLink">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="analyticsNavPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="analyticsNavPillEop">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="unit-trust.html" class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none" id="analyticsNavPillAnalytics">
+                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
+                            <i class="iconoir-user fs-5 text-dark"></i>
+                        </div>
+                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="analyticsNavUserLabel">User &amp; Authoriser</span>
+                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item d-flex align-items-center gap-2" href="../unit-trust/settings.html" id="dropLnkProfile">
+                                <i class="iconoir-user fs-6"></i> User Profile Details
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                <i class="iconoir-lock fs-6"></i> Change Password
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
+                                <i class="iconoir-log-out fs-6"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Analytics</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="analyticsMainTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="unit-trust.html" id="analyticsTabUt">Unit Trust Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="eop.html" id="analyticsTabEop">PRS Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+            <!-- Title Section Removed - Migrated to Card Header -->
+            <div class="row g-4">
+
+                <!-- LEFT SIDEBAR: Filters Column (col-lg-3) -->
+                <aside class="col-lg-3">
+                    <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <!-- Sidebar Header -->
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+                            <h5 class="fw-bold text-dark fs-6 mb-0">Further filter by &gt;&gt;</h5>
+                            <button
+                                class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 28px; height: 28px; border-color: #dee2e6;">
+                                <i class="iconoir-nav-arrow-left fs-6 text-dark"></i>
+                            </button>
+                        </div>
+
+                        <!-- Show Funds Selector -->
+                        <div class="mb-4">
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1">Show Funds</label>
+                            <select class="form-select rounded-3 fs-8 py-2 text-dark border-secondary border-opacity-25"
+                                style="font-weight: 500;">
+                                <option selected>All Funds</option>
+                                <option>My Favourites Only</option>
+                                <option>Islamic Funds</option>
+                                <option>Conventional Funds</option>
+                            </select>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="mb-4">
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1">Fund Name or Abbreviation</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control fs-8 py-2 border-secondary border-opacity-25"
+                                    placeholder="Search funds..." aria-label="Search funds">
+                                <button class="btn btn-dark px-3 d-flex align-items-center" type="button"
+                                    style="background-color: #5d678e; border-color: #5d678e;">
+                                    <i class="iconoir-search fs-6"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Fund Category Filters -->
+                        <div class="mb-4">
+                            <div class="filter-section-title mb-3">Fund Category</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="catEquity" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="catEquity">Equity</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="catMixed">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catMixed">Mixed
+                                    Asset/Balanced</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="catBond">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catBond">Bond/Fixed
+                                    Income</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="catMoney">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catMoney">Money
+                                    Market</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="catOfFunds">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="catOfFunds">Fund-of-Funds</label>
+                            </div>
+                        </div>
+
+                        <!-- Geographical Region Filters -->
+                        <div class="mb-4">
+                            <div class="filter-section-title mb-3">Geographical Region</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="regAsia" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="regAsia">Asia</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="regDomestic">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="regDomestic">Domestic</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="regGlobal">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="regGlobal">Global</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="regAsean">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="regAsean">ASEAN</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="regChina">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="regChina">Greater
+                                    China</label>
+                            </div>
+                        </div>
+
+                        <!-- Thematic Filters -->
+                        <div class="mb-4">
+                            <div class="filter-section-title mb-3">Thematic</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themConsumer">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themConsumer">Consumer</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themREITs">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Property /
+                                    REITs / Infrastructure</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themHealth">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themHealth">Sustainable & Responsible</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themSustain">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themSustain">Lifestyle / Technology</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themTech" checked>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themTech">Pioneer Entrepreneur</label>
+                            </div>
+                        </div>
+						<div class="mb-4">
+                            <div class="filter-section-title mb-3">Currency Exposure</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themConsumer">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themConsumer">Diversified Currency</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themREITs">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Single Currency</label>
+                            </div>
+                        </div>
+						<div class="mb-0">
+                            <div class="filter-section-title mb-3">Portfolio Objective</div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themConsumer">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themConsumer">General</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themREITs">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Concentrated Portfolio</label>
+                            </div>
+							<div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themConsumer">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themConsumer">Income Generation</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themREITs">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Large Cap</label>
+                            </div>
+							<div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themConsumer">
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
+                                    for="themConsumer">Small / Mid Cap</label>
+                            </div>
+                            <div class="custom-checkbox form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="themREITs">
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Flexible Positioning</label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+				
+
+                <!-- RIGHT COLUMN: Analytics Main Dashboard Panel (col-lg-9) -->
+                <section class="col-lg-9">
+                    <div class="mb-4">
+                        <h2 class="fw-bold text-dark fs-2 mb-2">Fund Analytics</h2>
+                        <p class="text-muted fs-7 mb-0">Track and compare your fund performance.</p>
+                    </div>
+                    <!-- Top Views Selectors Card -->
+
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
+                        <!-- View Tab Links -->
+                        <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
+                            <a href="#" class="view-tab d-flex align-items-center gap-2">
+                                <i class="iconoir-info-circle fs-6"></i> Fund Info View
+                            </a>
+                            <a href="#" class="view-tab active d-flex align-items-center gap-2">
+                                <i class="iconoir-graph-up fs-6"></i> Fund Performance View
+                            </a>
+                            <a href="#" class="view-tab d-flex align-items-center gap-2">
+                                <i class="iconoir-dollar fs-6"></i> Fund Prices View
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Subtabs Row (Unit Trust / Private Retirement Scheme) -->
+                    <!-- <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between g-3 mt-3">
+                            
+
+                           Interactive Buttons on Same Row -->
+                    <!-- <div class="d-flex align-items-center gap-2">
+                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-white fw-bold transition-all" style="background-color: #26247b; border: none;" id="btnFavourites">
+                                    <i class="iconoir-star-solid text-warning fs-6"></i> My Favourites
+                                </button>
+                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-muted border bg-light transition-all" id="btnCompare">
+                                    Compare Funds <span class="badge bg-secondary rounded-circle px-2 py-1 fs-9 ms-1 text-white">0</span>
+                                </button>
+                            </div> -->
+                    <!-- </div> -->
+                    <!-- Performance Table Card -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
+                                <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" style="width: 32%;">
+                                            Fund</th>
+                                        <th class="py-3 fw-semibold align-middle" style="width: 14%;">
+                                            Performance<br>Date</th>
+                                        <th class="py-2 fw-semibold border-start border-end" colspan="2"
+                                            style="width: 18%; background-color: #f1f5f9;">3-Year Volatility</th>
+                                        <th class="py-2 fw-semibold border-end" colspan="2"
+                                            style="width: 14%; background-color: #f1f5f9;">Returns %</th>
+                                        <th class="py-2 fw-semibold" colspan="3"
+                                            style="width: 18%; background-color: #f1f5f9;">Annualised Returns (%)</th>
+                                        <th class="pe-4 py-3 fw-semibold align-middle" style="width: 4%;">Action</th>
+                                    </tr>
+                                    <tr class="border-bottom" style="font-size: 0.75rem;">
+                                        <th></th>
+                                        <th></th>
+                                        <th class="py-2 border-start text-secondary fw-medium">Factor</th>
+                                        <th class="py-2 border-end text-secondary fw-medium">Class</th>
+                                        <th class="py-2 text-secondary fw-medium">YTD</th>
+                                        <th class="py-2 border-end text-secondary fw-medium">1-Yr</th>
+                                        <th class="py-2 text-secondary fw-medium">3-Yr</th>
+                                        <th class="py-2 text-secondary fw-medium">5-Yr</th>
+                                        <th class="py-2 text-secondary fw-medium">10-Yr</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-dark fw-medium">
+                                    <!-- Row 1 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star-solid favourite-star text-warning fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        ISLAMIC ASIA TACTICAL ALLOCATION</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PIATAF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">22.4</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">76.15</td>
+                                        <td class="border-end text-success fw-semibold">162.53</td>
+                                        <td class="text-success fw-semibold">43.88</td>
+                                        <td class="text-success fw-semibold">17.82</td>
+                                        <td class="text-success fw-semibold">16.50</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 2 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        e-ISLAMIC ASIA THEMATIC GROWTH</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PeIATGF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">18.5</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">54.87</td>
+                                        <td class="border-end text-success fw-semibold">91.78</td>
+                                        <td class="text-success fw-semibold">30.88</td>
+                                        <td class="text-muted fw-normal">-</td>
+                                        <td class="text-muted fw-normal">-</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 3 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PB
+                                                        ISLAMIC ASIA STRATEGIC SECTOR</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PBIASSF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">19.6</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">53.20</td>
+                                        <td class="border-end text-success fw-semibold">106.05</td>
+                                        <td class="text-success fw-semibold">27.69</td>
+                                        <td class="text-success fw-semibold">7.81</td>
+                                        <td class="text-success fw-semibold">12.00</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 4 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        ISLAMIC OPTIMAL EQUITY</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PIOEF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">16.4</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">46.90</td>
+                                        <td class="border-end text-success fw-semibold">79.16</td>
+                                        <td class="text-success fw-semibold">24.67</td>
+                                        <td class="text-success fw-semibold">4.52</td>
+                                        <td class="text-muted fw-normal">-</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 5 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        CHINA ITTIKAL</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PCIF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">15.3</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">46.78</td>
+                                        <td class="border-end text-success fw-semibold">74.54</td>
+                                        <td class="text-success fw-semibold">26.16</td>
+                                        <td class="text-success fw-semibold">7.45</td>
+                                        <td class="text-success fw-semibold">11.00</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 6 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        REGIONAL SECTOR</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PRSEC</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">17.1</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">44.31</td>
+                                        <td class="border-end text-success fw-semibold">89.72</td>
+                                        <td class="text-success fw-semibold">29.16</td>
+                                        <td class="text-success fw-semibold">9.15</td>
+                                        <td class="text-success fw-semibold">10.54</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 7 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        ISLAMIC ASIA LEADERS EQUITY</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PIALEF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">18.5</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">43.40</td>
+                                        <td class="border-end text-success fw-semibold">83.65</td>
+                                        <td class="text-success fw-semibold">22.46</td>
+                                        <td class="text-success fw-semibold">5.14</td>
+                                        <td class="text-success fw-semibold">10.56</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Row 8 -->
+                                    <tr>
+                                        <td class="ps-4 py-3 text-start">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    onclick="toggleFavourite(this)"></i>
+                                                <div>
+                                                    <a href="#"
+                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
+                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                        ASIA PACIFIC FOCUS</a>
+                                                    <span class="text-muted fw-bold d-block"
+                                                        style="font-size: 0.7rem;">PAPFF</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-muted">06/05/2026</td>
+                                        <td class="border-start fw-semibold text-secondary">18.4</td>
+                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
+                                        <td class="text-success fw-semibold">43.31</td>
+                                        <td class="border-end text-success fw-semibold">95.24</td>
+                                        <td class="text-success fw-semibold">30.59</td>
+                                        <td class="text-muted fw-normal">-</td>
+                                        <td class="text-muted fw-normal">-</td>
+                                        <td class="pe-4 text-center">
+                                            <a href="#" class="table-action-btn"><i
+                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- HIGHLIGHTED DISCLAIMER PANEL (Requested by user) -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5">
+                        <div class="card-body p-4 border-start border-4 border-danger"
+                            style="background-color: #fffbfb;">
+                            <div class="d-flex gap-3">
+                                <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h6 class="fw-bold text-danger mb-2">Important Regulatory Notes & Disclaimers</h6>
+
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
+                                        <li>
+                                            <span class="fw-semibold text-dark">Fund Performance</span> is computed
+                                            based on the latest available fund price.
+                                        </li>
+                                        <li>
+                                            <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is based
+                                            on the fund’s portfolio returns as at <strong class="text-dark">28 Feb
+                                                2026</strong> (source: Lipper, latest update).
+                                        </li>
+                                        <li class="text-muted" style="text-align: justify;">
+                                            The Volatility Factor (VF) means there is a possibility for the fund in
+                                            generating an upside return or downside return around this VF. The
+                                            Volatility Class (VC) is assigned by Lipper based on quintile ranks of the
+                                            VF for qualified funds. The VF is subject to monthly revisions and the VC is
+                                            revised every six months or other intervals as advised by FIMM. The
+                                            volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and “Very
+                                            High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤
+                                            7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than
+                                            13.525 respectively. For this period to 30 June 2026, the VCs for the funds
+                                            are based on the VFs of the respective funds as at 28 February 2026. The
+                                            fund’s portfolio may have changed since this date and there is no guarantee
+                                            that the fund will continue to have the same VF or VC in the future.
+                                            Presently, only funds launched in the market for at least 36 months will
+                                            display the VF and its VC.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="analyticsSidebarOffcanvas"
+    aria-labelledby="analyticsSidebarLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseAnalytics">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Fund Analytics</div>
+            <h5 class="profile-name fs-6 mb-0" id="analyticsSidebarLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="unit-trust.html"
+                    id="pmoAnalyticsSideUt">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Unit
+                        Trust Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="eop.html"
+                    id="pmoAnalyticsSideEop">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">PRS
+                        Analytics</span>
+                </a>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoAnalyticsSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script>
+        // Toggle Favourite star state dynamically
+        function toggleFavourite(starEl) {
+            if (starEl.classList.contains('iconoir-star')) {
+                starEl.classList.remove('iconoir-star', 'text-muted');
+                starEl.classList.add('iconoir-star-solid', 'text-warning');
+
+                // Micro-interaction bounce
+                starEl.style.transform = 'scale(1.3)';
+                setTimeout(() => starEl.style.transform = 'scale(1)', 150);
+            } else {
+                starEl.classList.remove('iconoir-star-solid', 'text-warning');
+                starEl.classList.add('iconoir-star', 'text-muted');
+            }
+        }
+
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+        });
+    </script>
+</body>
+
+</html>

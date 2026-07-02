@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Authorise</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+            aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        id="pmoShellBtnOpenSidebarUt">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                        id="pmoShellBrandUt">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="dashboard.html"
+                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                        id="pmoShellPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillEopFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../analytics/unit-trust.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillAnalyticsFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 35px; height: 35px;" aria-hidden="true">
+                            <i class="iconoir-user fs-5 text-dark"></i>
+                        </div>
+                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User &amp; Authoriser</span>
+                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="settings.html" id="dropLnkProfile">
+                                <i class="iconoir-user fs-6"></i> User Profile Details
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="settings.html#password" id="dropLnkPassword">
+                                <i class="iconoir-lock fs-6"></i> Change Password
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
+                                <i class="iconoir-log-out fs-6"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Unit Trust Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_account.html">View Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="authorise.html">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statements.html">Statements</a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+            <div class="mb-4">
+                <h2 class="fw-bold text-dark fs-2 mb-2">Transactions Pending for Approval</h2>
+                <p class="text-muted fs-7 mb-0">Authorise the investment top up and redemption</p>
+            </div>
+            <!-- Card with Tabs (Styled like Analytics Page) -->
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-4 p-4">
+                <!-- View Tab Links (Interactive) -->
+                <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
+                    <a href="javascript:void(0)" class="view-tab active d-flex align-items-center gap-2" id="tab-topup">
+                        <i class="iconoir-plus-circle fs-6"></i> Top-Up Investment <span
+                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span>
+                    </a>
+                    <a href="javascript:void(0)" class="view-tab d-flex align-items-center gap-2" id="tab-redemption">
+                        <i class="iconoir-minus-circle fs-5"></i> Redemption <span
+                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 bg-white authorise-table-card mb-4">
+                <div class="card-body p-0 tab-content" id="authoriseTabContent">
+                    <!-- Top-Up Tab Pane (Populated with Pending Requests) -->
+                    <div class="tab-pane fade show active" id="topup" role="tabpanel" aria-labelledby="topup-tab">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table">
+                                <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold">Reference No.</th>
+                                        <th class="py-3 fw-semibold">Fund</th>
+                                        <th class="py-3 fw-semibold">Account</th>
+                                        <th class="py-3 fw-semibold">Transaction Date/Time</th>
+                                        <th class="py-3 fw-semibold text-center">Category</th>
+                                        <th class="py-3 fw-semibold text-center">Risk</th>
+                                        <th class="py-3 fw-semibold text-end">Amount</th>
+                                        <th class="pe-4 py-3 fw-semibold text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-dark fw-medium fs-8">
+                                    <!-- Row 1 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3"><a href="authorise_topup.html?ref=UT26000000000195"
+                                                class="text-primary text-decoration-underline fw-bold">UT26000000000195</a>
+                                        </td>
+                                        <td class="py-3"><span class="fw-bold">PUBLIC STRATEGIC GROWTH FUND</span></td>
+                                        <td class="py-3"><a href="view_account.html"
+                                                class="text-primary text-decoration-underline fw-bold">094766567</a>
+                                        </td>
+                                        <td class="py-3 text-dark">2026/04/10 14:15:22</td>
+                                        <td class="text-center py-3">MM</td>
+                                        <td class="text-center py-3">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                                <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                    style="height: 20px;" onerror="this.style.display='none'">
+                                            </div>
+                                        </td>
+                                        <td class="text-end py-3 text-success fw-bold">+RM 100,000.00</td>                                        <td class="pe-4 py-3 text-end">
+                                            <a href="authorise_topup.html?ref=UT26000000000195"
+                                                class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-9 fw-semibold">View Details</a>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 2 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3"><a href="authorise_topup.html?ref=UT26000000000196"
+                                                class="text-primary text-decoration-underline fw-bold">UT26000000000196</a>
+                                        </td>
+                                        <td class="py-3"><span class="fw-bold">PUBLIC ISLAMIC DIVIDEND FUND</span></td>
+                                        <td class="py-3"><a href="view_account.html"
+                                                class="text-primary text-decoration-underline fw-bold">0283749202</a>
+                                        </td>
+                                        <td class="py-3 text-dark">2026/04/11 10:30:15</td>
+                                        <td class="text-center py-3">MM</td>
+                                        <td class="text-center py-3">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Risk 3 - Moderate">
+                                                <img src="../images/icon/risk-level/icon_risk3.png" alt="Risk 3"
+                                                    style="height: 20px;" onerror="this.style.display='none'">
+                                            </div>
+                                        </td>
+                                        <td class="text-end py-3 text-success fw-bold">+RM 50,000.00</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <a href="authorise_topup.html?ref=UT26000000000196"
+                                                class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-9 fw-semibold">View Details</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Redemption Tab Pane (Active) -->
+                    <div class="tab-pane fade show " id="redemption" role="tabpanel" aria-labelledby="redemption-tab">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 custom-table">
+                                <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                                    <tr>
+                                        <th class="ps-4 py-3 fw-semibold">Reference No.</th>
+                                        <th class="py-3 fw-semibold">Fund</th>
+                                        <th class="py-3 fw-semibold">Account</th>
+                                        <th class="py-3 fw-semibold">Transaction Date/Time</th>
+                                        <th class="py-3 fw-semibold text-center">Category</th>
+                                        <th class="py-3 fw-semibold text-center">Risk</th>
+                                        <th class="py-3 fw-semibold text-end">Balance Unit</th>
+                                        <th class="py-3 fw-semibold text-end">Redemption<br>Units</th>
+                                        <th class="pe-4 py-3 fw-semibold text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-dark fw-medium fs-8">
+                                    <!-- Row 1 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3"><a href="authorise_redemption.html?ref=RP26000000000179"
+                                                class="text-primary text-decoration-underline fw-bold">RP26000000000179</a>
+                                        </td>
+                                        <td class="py-3"><span class="fw-bold">PUBLIC e-CASH DEPOSIT - CLASS B</span>
+                                        </td>
+                                        <td class="py-3"><a href="view_account.html"
+                                                class="text-primary text-decoration-underline fw-bold">0193922094</a>
+                                        </td>
+                                        <td class="py-3 text-dark">2026/04/05</td>
+                                        <td class="text-center py-3">BO</td>
+                                        <td class="text-center py-3">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 2 - Low">
+                                                <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
+                                                    style="height: 20px;" onerror="this.style.display='none'">
+                                            </div>
+                                        </td>
+                                        <td class="text-end py-3 text-dark">39,000.00</td>
+                                        <td class="text-end py-3 text-dark">30,000.00</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div
+                                                class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
+                                                <span class="fs-9 fw-semibold text-dark">Authorise</span>
+                                                <button
+                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                    aria-label="Authorise menu">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000179">View
+                                                            Details</a></li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000179&action=approve">Approve</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000179&action=reject">Reject</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 2 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3"><a href="authorise_redemption.html?ref=RP26000000000180"
+                                                class="text-primary text-decoration-underline fw-bold">RP26000000000180</a>
+                                        </td>
+                                        <td class="py-3"><span class="fw-bold">PUBLIC STRATEGIC GROWTH FUND</span></td>
+                                        <td class="py-3"><a href="view_account.html"
+                                                class="text-primary text-decoration-underline fw-bold">094766567</a>
+                                        </td>
+                                        <td class="py-3 text-dark">2026/04/06</td>
+                                        <td class="text-center py-3">BO</td>
+                                        <td class="text-center py-3">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                                <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                    style="height: 20px;" onerror="this.style.display='none'">
+                                            </div>
+                                        </td>
+                                        <td class="text-end py-3 text-dark">250,000.00</td>
+                                        <td class="text-end py-3 text-dark">150,000.00</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div
+                                                class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
+                                                <span class="fs-9 fw-semibold text-dark">Authorise</span>
+                                                <button
+                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                    aria-label="Authorise menu">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000180">View
+                                                            Details</a></li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000180&action=approve">Approve</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000180&action=reject">Reject</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 3 -->
+                                    <tr class="border-bottom">
+                                        <td class="ps-4 py-3"><a href="authorise_redemption.html?ref=RP26000000000181"
+                                                class="text-primary text-decoration-underline fw-bold">RP26000000000181</a>
+                                        </td>
+                                        <td class="py-3"><span class="fw-bold">PUBLIC ISLAMIC DIVIDEND FUND</span></td>
+                                        <td class="py-3"><a href="view_account.html"
+                                                class="text-primary text-decoration-underline fw-bold">0283749202</a>
+                                        </td>
+                                        <td class="py-3 text-dark">2026/04/07</td>
+                                        <td class="text-center py-3">BO</td>
+                                        <td class="text-center py-3">
+                                            <div class="d-flex align-items-center justify-content-center"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Risk 3 - Moderate">
+                                                <img src="../images/icon/risk-level/icon_risk3.png" alt="Risk 3"
+                                                    style="height: 20px;" onerror="this.style.display='none'">
+                                            </div>
+                                        </td>
+                                        <td class="text-end py-3 text-dark">120,000.00</td>
+                                        <td class="text-end py-3 text-dark">100,000.00</td>
+                                        <td class="pe-4 py-3 text-end">
+                                            <div
+                                                class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
+                                                <span class="fs-9 fw-semibold text-dark">Authorise</span>
+                                                <button
+                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                    aria-label="Authorise menu">
+                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                </button>
+                                                <ul
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000181">View
+                                                            Details</a></li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000181&action=approve">Approve</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                            href="authorise_redemption.html?ref=RP26000000000181&action=reject">Reject</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Tab Content -->
+        </div> <!-- End Card -->
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+    aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseUt">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                    id="pmoUtSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                    id="pmoUtSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
+                                Top-Up Investment <span
+                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
+                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
+                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="transactions.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnOnline">Online Activities</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=request"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
+                                Reports</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoUtSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script>
+        // Initialize tooltips and Tab Switcher
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+
+            // Tab Switcher
+            const tabTopup = document.getElementById('tab-topup');
+            const tabRedemption = document.getElementById('tab-redemption');
+            const paneTopup = document.getElementById('topup');
+            const paneRedemption = document.getElementById('redemption');
+
+            if (tabTopup && tabRedemption) {
+                tabTopup.addEventListener('click', function () {
+                    tabTopup.classList.add('active');
+                    tabRedemption.classList.remove('active');
+                    paneTopup.classList.add('show', 'active');
+                    paneRedemption.classList.remove('show', 'active');
+                });
+
+                tabRedemption.addEventListener('click', function () {
+                    tabRedemption.classList.add('active');
+                    tabTopup.classList.remove('active');
+                    paneRedemption.classList.add('show', 'active');
+                    paneTopup.classList.remove('show', 'active');
+                });
+            }
+        });
+    </script>
+    <script src="../js/authorise-table-dropdowns.js"></script>
+</body>
+
+</html>

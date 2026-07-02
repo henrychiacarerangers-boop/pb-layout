@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Registration</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <style>
+        /* Registration Specific Styles */
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        /* Success check list item validation */
+        .custom-check-list.rules-list li.valid {
+            color: #198754 !important;
+        }
+
+        .custom-check-list.rules-list li.valid i {
+            color: #198754 !important;
+        }
+
+        .custom-check-list.rules-list li.invalid {
+            color: #dc3545 !important;
+        }
+
+        .custom-check-list.rules-list li.invalid i {
+            color: #dc3545 !important;
+        }
+
+        /* Custom Checkbox Checked Color */
+        .custom-checkbox .form-check-input:checked {
+            background-color: var(--brand-navy) !important;
+            border-color: var(--brand-navy) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="top-nav">
+        <div class="container d-flex align-items-center">
+            <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Logo" height="40"></a>
+            <div class="portal-title h4 mb-0 d-none d-md-block"><img src="images/pmo-logo-corporate.png" alt="Logo"
+                    height="40"></div>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <div class="register-hero-section">
+        <div class="container">
+            <div class="row align-items-center w-100">
+                <!-- Left Side: Title & Stepper -->
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h1 class="fw-bold mb-5" style="color: #1a1e36;">Corporate PMO Registration</h1>
+                    <div class="stepper-container">
+                        <!-- Step 1 -->
+                        <div class="step active" id="indicator-step-1">
+                            <div class="step-circle"><i class="iconoir-page"></i></div>
+                            <div class="step-text">Step 1<br><small>Terms & Conditions</small></div>
+                        </div>
+                        <div class="step-line" id="line-1"></div>
+                        <!-- Step 2 -->
+                        <div class="step" id="indicator-step-2">
+                            <div class="step-circle"><i class="iconoir-user"></i></div>
+                            <div class="step-text">Step 2<br><small>Account Details</small></div>
+                        </div>
+                        <div class="step-line" id="line-2"></div>
+                        <!-- Step 3 -->
+                        <div class="step" id="indicator-step-3">
+                            <div class="step-circle"><i class="iconoir-smartphone-device"></i></div>
+                            <div class="step-text">Step 3<br><small>Security Verification</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Forms -->
+                <div class="col-lg-7">
+
+                    <!-- STEP 1 CARD -->
+                    <div class="register-card shadow" id="step-1-card">
+                        <h2>Registration for Corporate Public Mutual<br>online Services</h2>
+                        <p class="subtitle">Terms and Conditions - Corporate Public Mutual Online (PMO)</p>
+
+                        <div class="terms-box">
+                            <p>Public Mutual Online is an online facility which allows corporate investors to perform
+                                investment and redemption requests and access to investment accounts, and view
+                                statements and fund reports.</p>
+                            <p>Subscribers of Corporate PMO are bound by the following:-</p>
+                            <p>1. Investment request made via PMO will be processed when payment is received by Public
+                                Mutual. "Site", is published and maintained by Public Mutual Berhad ("Public Mutual").
+                                By using this Site or any reports, financial statements, data, information, contents,
+                                product and services available and/or provided by the Site (Collectively "Materials"),
+                                you agree to be bound by the terms and conditions set out herein ("Terms of Use").
+                                Public Mutual may periodically modify these Terms of Use without prior notice. If you do
+                                not agree to these Terms of Use, kindly do not use this Site.</p>
+                            <p>2. Public Mutual may modify, suspend, discontinue, or restrict the use and availability
+                                of any portion of this Site at any time, without notice or liability.</p>
+                        </div>
+
+                        <div class="mb-4 d-flex flex-column gap-3">
+                            <div class="custom-checkbox d-flex align-items-start gap-1">
+                                <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
+                                    id="check-term-1" checked style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
+                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                    for="check-term-1" style="line-height: 1.4;">
+                                    I/We irrevocably and unconditionally agree to be bound by the Terms and Conditions
+                                    of PMO Service as specified overleaf and the Terms and Conditions Of Use Of the
+                                    Service as stipulated in the PMO website.
+                                </label>
+                            </div>
+                            <div class="custom-checkbox d-flex align-items-start gap-1">
+                                <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
+                                    id="check-term-2" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
+                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                    for="check-term-2" style="line-height: 1.4;">
+                                    I/We am/are Authorised to apply for PMO Service and enclose herewith the details of
+                                    the person(s) Authorised to access and operate the PMO Service.
+                                </label>
+                            </div>
+                            <div class="custom-checkbox d-flex align-items-start gap-1">
+                                <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
+                                    id="check-term-3" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
+                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                    for="check-term-3" style="line-height: 1.4;">
+                                    I/We undertake to notify Public Mutual of any change in the mandate for PMO
+                                    Services.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 mt-4">
+                            <button type="button" class="btn btn-clear w-50"
+                                onclick="window.location.href='index.html'">Disagree</button>
+                            <button type="button" class="btn btn-log-in w-50" id="btn-next-1">Agree</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 CARD -->
+                    <div class="register-card d-none shadow" id="step-2-card">
+                        <h2>Registration for Corporate Public Mutual<br>online Services</h2>
+                        <p class="subtitle">Please enter your company registration details and configure your login credentials.</p>
+
+                        <form id="step2Form">
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <label class="form-label">Company Registration No. (New)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i
+                                                class="iconoir-building"></i></span>
+                                        <input type="text" class="form-control" placeholder='e.g., 202301001234'
+                                            id="NewcompanyRegNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name (As Per IC NO)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i
+                                                class="iconoir-user"></i></span>
+                                        <input type="text" class="form-control" id="fullName"
+                                            value="Ahmad Razak bin Osman">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Identification No.</label>
+                                    <input type="text" class="form-control" id="idNo" placeholder="e.g. 850821145231"
+                                        value="850821145231">
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Mobile No. (Last 4 Digits)</label>
+                                <input type="text" class="form-control" id="mobileNo" value="3230">
+                            </div>
+
+                            <!-- Captcha verification -->
+                            <div class="row mb-4 align-items-center">
+                                <div class="col-md-6">
+                                    <!-- Mock Captcha Box -->
+                                    <div id="captcha-box" class="fw-bold border"
+                                        style="background: #f1f3f5; padding: 10px; text-align: center; letter-spacing: 6px; font-style: italic; font-size: 1.4rem; color: #495057; border-radius: 8px; user-select: none; font-family: monospace;">
+                                        2YA8U2
+                                    </div>
+                                    <div class="mt-2" style="font-size: 0.75rem;">Can't read the text? <a href="#"
+                                            id="refresh-captcha" class="text-dark fw-bold">Try another text</a></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Enter Security Code</label>
+                                    <input type="text" class="form-control" id="captchaInput" value="2YA8U2"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+
+                            <!-- Credentials Configuration (Moved from Step 3) -->
+                            <div class="border-top pt-4 mt-4 mb-4">
+                                <h4 class="fw-bold mb-3" style="font-size: 1.1rem; color: #1a1e36;">Create Login Credentials</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label class="form-label">User ID</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-light border-end-0 text-muted"><i
+                                                    class="iconoir-user"></i></span>
+                                            <input type="text" class="form-control" id="username" value="franklinjunior01">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">New Password</label>
+                                        <div class="input-group">
+                                            <input type="password" id="passwordInputReg" class="form-control"
+                                                value="PmoCorpPass2026!">
+                                            <span class="input-group-text bg-white border-start-0 cursor-pointer"
+                                                id="togglePasswordReg">
+                                                <i class="iconoir-eye text-primary" id="eyeIconReg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Confirm New Password</label>
+                                        <div class="input-group">
+                                            <input type="password" id="confirmPasswordInputReg" class="form-control"
+                                                value="PmoCorpPass2026!">
+                                            <span class="input-group-text bg-white border-start-0 cursor-pointer"
+                                                id="toggleConfirmPasswordReg">
+                                                <i class="iconoir-eye text-primary" id="eyeIconConfirmReg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rules Checklist -->
+                                <ul class="custom-check-list rules-list mb-0">
+                                    <li id="rule-casing" class="valid"><i class="iconoir-check-circle"></i> Mixture of both
+                                        upper and lower case letters</li>
+                                    <li id="rule-numeric" class="valid"><i class="iconoir-check-circle"></i> Numeric
+                                        characters (e.g. 1,2,3)</li>
+                                    <li id="rule-length" class="valid"><i class="iconoir-check-circle"></i> Between 8 and 16
+                                        characters without spaces</li>
+                                    <li id="rule-special" class="valid"><i class="iconoir-check-circle"></i> Special
+                                        characters ( ` ~ ! @ $ % ^ _ = + [ ] | ; . / ? )</li>
+                                </ul>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-clear w-50" id="btn-back-1">Back</button>
+                                <button type="submit" class="btn btn-log-in w-50" id="btn-next-2">Next</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- STEP 3 CARD -->
+                    <div class="register-card d-none shadow" id="step-3-card">
+                        <h2>Registration for Corporate Public Mutual<br>online Services</h2>
+
+                        <!-- Role Context Banner (shown after company details verified) -->
+                        <div class="d-flex align-items-center gap-3 p-3 rounded-3 mb-4 border"
+                            style="background-color: #f8f9ff; border-color: #dde3f5 !important;">
+
+                            <div class="flex-grow-1">
+                                <div class="fs-9 text-muted mb-1">Roles</div>
+                                <div class="text-dark" style="font-size: 0.8rem;">Unit Trust: <span class="fw-bold"
+                                        id="displayRoleUt">User &amp; Authoriser</span></div>
+                                <div class="text-dark" style="font-size: 0.8rem;">EOP: <span class="fw-bold"
+                                        id="displayRoleEop">Admin</span></div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fs-9 text-muted mb-1">Company</div>
+                                <div class="fw-semibold text-dark fs-9" id="display-company">Ativa Studio Solution Sdn
+                                    Bhd</div>
+                            </div>
+                        </div>
+
+                        <form id="step3Form">
+                            <h6 class="fw-bold mb-3" style="font-size: 0.9rem;">Security Verification</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Verification Method</label>
+                                <select class="form-select text-dark fw-semibold">
+                                    <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                                    <option value="SecureSign">SecureSign</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">PAC Number</label>
+                                <div class="pac-group">
+                                    <input type="password" class="form-control" id="pacInput"
+                                        placeholder="Enter 8-digit PAC" value="12345678" maxlength="8">
+                                    <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                        PAC</button>
+                                </div>
+                                <p class="fs-9 text-success mb-0 d-none" id="regPacDemoHint">Successfully Verification.
+                                </p>
+                            </div>
+                            <div class="pac-info-text mb-4 text-muted">
+                                * Please a for PAC and enter the number sent to your registered mobile number. If
+                                you did not receive PAC on your registered mobile number, please contact our Customer
+                                Service at 03-2022 5000 for assistance.
+                            </div>
+                            <div
+                                class="pac-info-text mb-4 fw-bold p-3 bg-light rounded-3 d-flex align-items-center border">
+                                <i class="iconoir-smartphone-device fs-4 me-3 text-danger"></i>
+                                <span class="fs-9">PAC Sent to XXX12XXXXX3<br>Security Number:QD5788156".</span>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-clear w-50" id="btn-back-2">Back</button>
+                                <button type="submit"
+                                    class="btn btn-log-in w-50 d-inline-flex align-items-center justify-content-center gap-2"
+                                    id="btn-complete">
+                                    <span class="spinner-border spinner-border-sm d-none" id="regCompleteSpinner"
+                                        role="status" aria-hidden="true"></span>
+                                    <span id="regCompleteLabel">Complete</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
+    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
+        <div class="container px-4">
+            <div class="row g-4">
+                <!-- Column 1: Products & Services -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Unit Trust</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">Build Wealth</a></li>
+                        <li><a href="#">List of Funds</a></li>
+                        <li><a href="#">e-Series Funds</a></li>
+                        <li><a href="#">Islamic Funds</a></li>
+                        <li><a href="#">EPF-MIS</a></li>
+                        <li><a href="#">Sustainable and Responsible Investing</a></li>
+                        <li><a href="#">Fund Prices</a></li>
+                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
+                        <li><a href="#">Private Retirement Scheme</a></li>
+                        <li><a href="#">Fund Explorer</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Specific Goals</a></li>
+                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
+                        <li><a href="#">Regular investing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Privileges & Company -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Mutual Gold</a></li>
+                        <li><a href="#">Mutual Elite</a></li>
+                        <li><a href="#">Mutual Signature</a></li>
+                        <li><a href="#">Mutual Platinum</a></li>
+                        <li><a href="#">Mutual Prestige</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">New Funds</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
+
+                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Vision Mission</a></li>
+                        <li><a href="#">Core Values</a></li>
+                        <li><a href="#">Our Profile</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Track Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources & Info -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Learning Hub</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
+                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Contact Us (Form)</a></li>
+                                <li><a href="#">Branches</a></li>
+                                <li><a href="#">Customer Service Hotline</a></li>
+                                <li><a href="#">Investor Guide</a></li>
+                                <li><a href="#">Check Your UTC's Credentials</a></li>
+                                <li><a href="#">Announcements & News</a></li>
+                                <li><a href="#">Cybersecurity Awareness</a></li>
+                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
+                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
+                                <li><a href="#">Advertising Disclaimer</a></li>
+                                <li><a href="#">Cross Trade Policy</a></li>
+                                <li><a href="#">Glossary</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Utility Footer -->
+    <footer class="bottom-footer py-4 w-100 bg-navy text-white">
+        <div class="container text-center text-md-start px-4">
+            <!-- Disclaimer -->
+            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+                *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
+                Malaysia.
+            </p>
+
+            <!-- Vanguard-Style Important Disclosures -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                            Information</h6>
+                        <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
+                                money you invest.</strong> Past performance is not a guarantee or reliable indicator of
+                            future results. Unit prices, yields, and investment returns will fluctuate, and you may have
+                            a gain or loss when you redeem your units. Diversification does not ensure a profit or
+                            protect against a loss in a declining market.</p>
+                        <p class="mb-2">Investors should carefully consider the investment objectives, risks, charges,
+                            and expenses of a fund before investing. The prospectus, master prospectus, and Product
+                            Highlights Sheet (PHS) contain this and other key information. You can obtain copies of
+                            these documents from any Public Mutual branch, Authorised Unit Trust Consultant (UTC), or
+                            online. Please read them thoroughly before making any investment decisions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                            Disclosures</h6>
+                        <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
+                            management company under the Capital Markets and Services Act 2007, regulated and supervised
+                            by the Securities Commission Malaysia (SC). Public Mutual is also a registered Institutional
+                            Private Retirement Scheme Adviser (IPRSA) and a member of the Federation of Investment
+                            Managers Malaysia (FIMM).</p>
+                        <p class="mb-2">For Shariah-compliant funds, investments are managed in strict adherence to
+                            Shariah principles under the supervision and guidance of our appointed Shariah Advisers.
+                            Private Retirement Schemes (PRS) are subject to retirement savings regulations, and early
+                            withdrawals from sub-account B may be subject to tax penalties and statutory restrictions.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-top border-white-10 pt-3 opacity-75"
+                    style="border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
+                        platforms operated by Public Mutual Berhad. By accessing these portals, you agree to be bound by
+                        the Terms and Conditions of Use, Website Disclaimer, and Privacy Policy. Electronic transactions
+                        are secured with industry-standard encryption protocols. Safeguard your login credentials;
+                        Public Mutual will never ask for your password or PAC codes via email or SMS.</p>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
+            <!-- Links -->
+            <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
+                style="font-size: 0.78rem;">
+                <a href="website-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="investment-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Investment
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-policy.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Policy</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-notice.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Notice</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="drb-consent.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">DRB
+                    Check Consent Terms</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="internet-risk.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Internet
+                    Risk</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="contact-us.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Contact
+                    Us</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="quick-links.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Quick
+                    Access Links</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="terms.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
+                    and Conditions of Use</a>
+            </div>
+            <!-- Copyright and Social Buttons -->
+            <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                    <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                        us:</span>
+                    <a href="https://www.facebook.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
+                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
+                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
+                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
+                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
+                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Registration Interactions -->
+    <script src="js/register.js"></script>
+</body>
+
+</html>

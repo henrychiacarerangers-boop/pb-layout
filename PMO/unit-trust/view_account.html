@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - View Account</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+            aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        id="pmoShellBtnOpenSidebarUt">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                        id="pmoShellBrandUt">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo.pngg" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="dashboard.html"
+                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                        id="pmoShellPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillEopFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 35px; height: 35px;" aria-hidden="true">
+                        <i class="iconoir-user fs-5 text-dark"></i>
+                    </div>
+                    <span class="fs-8 fw-semibold text-dark d-none d-sm-inline" id="pmoShellNavUserUt">User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Unit Trust Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="view_account.html">View Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="authorise.html">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statements.html">Statements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+            <!-- Title Section -->
+            <div class="mb-4">
+                <h2 class="fw-bold text-dark fs-2 mb-2">View Account</h2>
+                <p class="text-muted fs-7">Please Select accounts to Top Up or Redeem</p>
+            </div>
+
+
+            <div class="card border-0 shadow-sm rounded-4 bg-white authorise-table-card mb-5">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 custom-table">
+                            <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                                <tr>
+                                    <th class="ps-4 py-3 fw-semibold">Fund</th>
+                                    <th class="py-3 fw-semibold text-center">Category</th>
+                                    <th class="py-3 fw-semibold text-center">Risk</th>
+                                    <th class="py-3 fw-semibold text-end">Total Units</th>
+                                    <th class="py-3 fw-semibold text-center">Price/Unit<br>(RM)</th>
+                                    <th class="py-3 fw-semibold text-center">Market Value<br>(RM)</th>
+                                    <th class="py-3 fw-semibold text-center">Investment Cost<br>by Account<br>(RM)</th>
+                                    <th class="py-3 fw-semibold text-center">Unrealised<br>P/L<br>(RM)</th>
+                                    <th class="py-3 fw-semibold text-center">Unrealised<br>P/L %</th>
+                                    <th class="pe-4 py-3 fw-semibold text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-dark fw-medium fs-8">
+                                <!-- Row 1 -->
+                                <tr class="border-bottom">
+                                    <td class="ps-4 py-3">
+                                        <a href="view_account_detail.html"
+                                            class="text-primary text-decoration-underline d-block fw-bold">094766567</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC STRATEGIC GROWTH FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Equity / Growth" style="cursor: help;">EQ</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                            <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">25,063.70</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">0.5013 <i
+                                                class="iconoir-arrow-up text-success fs-7"></i></div>
+                                        <div class="text-success fs-9">+25.64%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">12,564.43</td>
+                                    <td class="text-center py-3 text-dark">10,000.00</td>
+                                    <td class="text-center py-3 text-success">2,564.43</td>
+                                    <td class="text-center py-3 text-success">+25.64%</td>
+                                    <td class="pe-4 py-3 text-end">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="view_account_detail.html">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr class="border-bottom">
+                                    <td class="ps-4 py-3">
+                                        <a href="#"
+                                            class="text-primary text-decoration-underline d-block fw-bold">019420393</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC SHARIAH BALANCED FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Balanced" style="cursor: help;">BAL</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 3 - Moderate">
+                                            <img src="../images/icon/risk-level/icon_risk3.png" alt="Risk 3"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">18,500.00</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">0.6540 <i
+                                                class="iconoir-arrow-up text-success fs-7"></i></div>
+                                        <div class="text-success fs-9">+5.21%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">12,099.00</td>
+                                    <td class="text-center py-3 text-dark">11,500.00</td>
+                                    <td class="text-center py-3 text-success">599.00</td>
+                                    <td class="text-center py-3 text-success">+5.21%</td>
+                                    <td class="pe-4 py-3 text-end">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr class="border-bottom">
+                                    <td class="ps-4 py-3">
+                                        <a href="#"
+                                            class="text-primary text-decoration-underline d-block fw-bold">019420394</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC ITTIKAL SEQUEL FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Equity" style="cursor: help;">EQ</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                            <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">45,000.00</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">0.8520 <i
+                                                class="iconoir-arrow-up text-success fs-7"></i></div>
+                                        <div class="text-success fs-9">+19.81%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">38,340.00</td>
+                                    <td class="text-center py-3 text-dark">32,000.00</td>
+                                    <td class="text-center py-3 text-success">6,340.00</td>
+                                    <td class="text-center py-3 text-success">+19.81%</td>
+                                    <td class="pe-4 py-3 text-end">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr class="border-bottom">
+                                    <td class="ps-4 py-3">
+                                        <a href="#"
+                                            class="text-primary text-decoration-underline d-block fw-bold">019420395</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Equity" style="cursor: help;">EQ</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                            <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">30,000.00</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">0.5210 <i
+                                                class="iconoir-arrow-down text-danger fs-7"></i></div>
+                                        <div class="text-danger fs-9">-5.27%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">15,630.00</td>
+                                    <td class="text-center py-3 text-dark">16,500.00</td>
+                                    <td class="text-center py-3 text-danger">-870.00</td>
+                                    <td class="text-center py-3 text-danger">-5.27%</td>
+                                    <td class="pe-4 py-3 text-end">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr class="border-bottom">
+                                    <td class="ps-4 py-3">
+                                        <a href="#"
+                                            class="text-primary text-decoration-underline d-block fw-bold">019420396</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC BOND FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Fixed Income" style="cursor: help;">FI</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 2 - Low">
+                                            <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">50,000.00</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">1.0530 <i
+                                                class="iconoir-arrow-up text-success fs-7"></i></div>
+                                        <div class="text-success fs-9">+5.30%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">52,650.00</td>
+                                    <td class="text-center py-3 text-dark">50,000.00</td>
+                                    <td class="text-center py-3 text-success">2,650.00</td>
+                                    <td class="text-center py-3 text-success">+5.30%</td>
+                                    <td class="pe-4 py-3 text-end">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Row 6 -->
+                                <tr>
+                                    <td class="ps-4 py-3 rounded-bottom-4">
+                                        <a href="#"
+                                            class="text-primary text-decoration-underline d-block fw-bold">019420397</a>
+                                        <div class="fw-bold text-dark mt-1 pe-2">PUBLIC REGIONAL UTILITY FUND</div>
+                                    </td>
+                                    <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Equity" style="cursor: help;">EQ</td>
+                                    <td class="text-center py-3">
+                                        <div class="d-flex align-items-center justify-content-center"
+                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Risk 4 - High">
+                                            <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                style="height: 20px;" onerror="this.style.display='none'">
+                                        </div>
+                                    </td>
+                                    <td class="text-end py-3">15,000.00</td>
+                                    <td class="text-center py-3">
+                                        <div class="fw-bold text-dark">0.7200 <i
+                                                class="iconoir-arrow-up text-success fs-7"></i></div>
+                                        <div class="text-success fs-9">+20.00%</div>
+                                    </td>
+                                    <td class="text-center py-3 text-dark">10,800.00</td>
+                                    <td class="text-center py-3 text-dark">9,000.00</td>
+                                    <td class="text-center py-3 text-success">1,800.00</td>
+                                    <td class="text-center py-3 text-success">+20.00%</td>
+                                    <td class="pe-4 py-3 text-end rounded-bottom-4">
+                                        <div
+                                            class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
+                                            <span class="fs-8 fw-semibold text-dark">Transact</span>
+                                            <button class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                aria-label="Transact menu">
+                                                <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                            </button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
+                                                <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                        Up</a></li>
+                                                <li><a class="dropdown-item rounded-2 py-2"
+                                                        href="redemption.html">Redeem</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+    aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseUt">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                    id="pmoUtSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                    id="pmoUtSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
+                                Top-Up Investment <span
+                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
+                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
+                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="transactions.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnOnline">Online Activities</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=request"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
+                                Reports</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="analytics.html"
+                    id="pmoUtSideAnalytics">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2 mt-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="settings.html"
+                    id="pmoUtSideSettings">
+                    <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoUtSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script>
+        // Initialize tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+    </script>
+    <script src="../js/authorise-table-dropdowns.js"></script>
+</body>
+
+</html>

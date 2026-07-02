@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal — EOP · PRS Fund Detail</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <style>
+        .prs-detail-header-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 28px 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 24px;
+        }
+
+        .prs-detail-label {
+            font-size: 0.78rem;
+            color: #5d678e;
+            font-weight: 600;
+        }
+
+        .prs-detail-val {
+            font-weight: 700;
+            color: #373761;
+            font-size: 1.15rem;
+        }
+
+        .prs-detail-accordion .accordion-button {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #26247b;
+            background-color: #f8fafc;
+        }
+
+        .prs-detail-accordion .accordion-button:not(.collapsed) {
+            background-color: #f1f5f9;
+            color: #26247b;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
+
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#eopSidebarOffcanvas" aria-controls="eopSidebarOffcanvas" id="eopBtnOpenSidebar">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="eopBrandLink">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="dashboard.html" class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none" id="eopNavPillEop">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../analytics/unit-trust.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillAnalytics">
+                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
+                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
+                            <i class="iconoir-user fs-5 text-dark"></i>
+                        </div>
+                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer Admin</span>
+                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="../unit-trust/settings.html" id="dropLnkProfile">
+                                <i class="iconoir-user fs-6"></i> User Profile Details
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                <i class="iconoir-lock fs-6"></i> Change Password
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider my-1"></li>
+                        <li>
+                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
+                                <i class="iconoir-log-out fs-6"></i> Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    </div>
+        </div>
+
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· EOP Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html" id="eopTabUpload">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authorise.html" id="eopTabAuthorise">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9"
+                                id="eopTabAuthBadge">3</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="payment.html" id="eopTabPay">Payment <span
+                                class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabPayBadge">2</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="transactions.html" id="eopTabTxn">Transactions</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="statements.html" id="eopTabStatements">Statements</a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <main class="dashboard-content py-5 flex-grow-1">
+        <div class="container">
+            <div
+                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="../analytics/eop.html" class="btn-back-circle" id="prsDetailBackLink" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Back to PRS analytics" aria-label="Back to PRS analytics">
+                        <i class="iconoir-nav-arrow-left fs-5 text-dark" aria-hidden="true"></i>
+                    </a>
+                    <div>
+                        <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
+                            <span class="text-secondary fw-semibold fs-5" id="prsDetailCode">PRS-ISEQF</span>
+                            <span class="text-primary text-uppercase" id="prsDetailName">PRS Islamic Strategic
+                                Equity</span>
+                        </h2>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="prsDetailSubtitle">Private Retirement
+                            Scheme · Employer reference (demo)</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <button type="button"
+                        class="btn btn-outline-secondary rounded-pill px-4 fs-8 fw-semibold d-flex align-items-center gap-2"
+                        style="border-color: #dee2e6; transition: all 0.3s ease;" id="prsDetailPrintBtn">
+                        <i class="iconoir-printer fs-6 text-dark" aria-hidden="true"></i> Print
+                    </button>
+                </div>
+            </div>
+
+            <div class="prs-detail-header-card border border-light">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-4 border-lg-end pe-lg-4">
+                        <div class="prs-detail-label mb-1">Fund category</div>
+                        <div class="mb-3">
+                            <span class="badge rounded-pill fw-semibold fs-8 px-3 py-2"
+                                style="background-color: rgba(38, 36, 123, 0.1); color: #26247b;"
+                                id="prsDetailBadgeCategory">Growth</span>
+                            <span class="badge rounded-pill fw-semibold fs-8 px-3 py-2 ms-1 bg-light text-dark border"
+                                id="prsDetailBadgeCore">Core</span>
+                            <span
+                                class="badge rounded-pill fw-semibold fs-8 px-3 py-2 ms-1 bg-success bg-opacity-10 text-success d-none"
+                                id="prsDetailBadgeSharia">Sharia</span>
+                        </div>
+                        <div class="prs-detail-label mb-1">Performance as at</div>
+                        <div class="prs-detail-val text-dark fs-5 mb-3" id="prsDetailPerfDate">11/05/2026</div>
+                        <div class="prs-detail-label mb-1">Indicative NAV / unit (RM)</div>
+                        <div class="prs-detail-val text-dark fs-5" id="prsDetailNav">0.4821</div>
+                    </div>
+                    <div class="col-lg-8 ps-lg-4">
+                        <div class="prs-detail-label mb-2">Cumulative returns (%)</div>
+                        <div class="table-responsive">
+                            <table class="table table-borderless align-middle mb-0 fs-8">
+                                <thead>
+                                    <tr class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem;">
+                                        <th class="py-2">YTD</th>
+                                        <th class="py-2">1-Yr</th>
+                                        <th class="py-2">3-Yr</th>
+                                        <th class="py-2">5-Yr</th>
+                                        <th class="py-2">10-Yr</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="fw-bold text-dark">
+                                    <tr>
+                                        <td class="py-2" id="prsDetailYtd">60.71</td>
+                                        <td class="py-2" id="prsDetailY1">117.33</td>
+                                        <td class="py-2" id="prsDetailY3">36.22</td>
+                                        <td class="py-2" id="prsDetailY5">14.91</td>
+                                        <td class="py-2" id="prsDetailY10">13.02</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted fs-9 mb-0 mt-2" id="prsDetailReturnsFootnote">Figures mirror the analytics
+                            grid for this prototype; not live pricing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion prs-detail-accordion rounded-4 overflow-hidden mb-4 shadow-sm border-0"
+                id="prsDetailAccordion">
+                <div class="accordion-item border-0">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#prsCollapseObjective" aria-expanded="true" id="prsDetailAccObjectiveBtn">
+                            Investment objective &amp; strategy
+                        </button>
+                    </h3>
+                    <div id="prsCollapseObjective" class="accordion-collapse collapse show">
+                        <div class="accordion-body fs-8 text-secondary lh-lg" id="prsDetailObjective">
+                            Demo copy: this PRS fund aims for long-term capital growth by investing primarily in
+                            Sharia-compliant equities across strategic sectors. Asset allocation and risk are managed
+                            per scheme rules and regulatory limits.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 border-top">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#prsCollapseRisk" aria-expanded="false" id="prsDetailAccRiskBtn">
+                            Risk &amp; suitability
+                        </button>
+                    </h3>
+                    <div id="prsCollapseRisk" class="accordion-collapse collapse">
+                        <div class="accordion-body fs-8 text-secondary lh-lg" id="prsDetailRisk">
+                            Higher equity exposure may suit members with a longer horizon. Employers should align
+                            default fund choices with workforce communication and official PRS risk disclosures.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-5">
+                <div class="card-body p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
+                    <div class="d-flex gap-3">
+                        <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                        <div>
+                            <h6 class="fw-bold text-danger mb-2">Disclaimer</h6>
+                            <p class="fs-8 text-secondary mb-0" id="prsDetailDisclaimer">This screen is a static
+                                prototype. It does not constitute an offer, recommendation, or contract. Refer to scheme
+                                documents and regulatory filings for binding terms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar eop-sidebar-offcanvas border-end-0 shadow" tabindex="-1" id="eopSidebarOffcanvas" aria-labelledby="eopSidebarUserName">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas" aria-label="Close" id="eopSidebarCloseMenuBtn">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-2">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Employer Online portal(EOP)</div>
+            <h5 class="profile-name fs-6 mb-0" id="eopSidebarUserName">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2" id="eopSidebarCompany">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3" id="eopSidebarRoleBadge">Role: Employer admin</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-3">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html" id="eopSideHome">
+                    <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                    <span class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarContribCollapse" id="eopSidebarContribToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Contributions</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarContribCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="contribution.html" id="eopSideMake">Make contribution</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="upload.html" id="eopSideUpload">Upload contribution</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="authorise.html" id="eopSideAuthorise">
+                                <span>Authorise contribution</span>
+                                <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="payment.html" id="eopSidePayment">
+                                <span>Make payment</span>
+                                <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge" id="eopNavBadgePay">2</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarRecordsCollapse" id="eopSidebarRecordsToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Transactions</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarRecordsCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html" id="eopSideTxnPast">
+                                Past Transaction
+                            </a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html?tab=pending" id="eopSideTxnPending">
+                                Pending Transaction
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                        <span class="fw-medium">Statements</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse" id="eopSidebarStmtCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html" id="eopSideStmt">PRS documents &amp; reports</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
+                        </li>
+                        <li class="nav-item mb-1">
+                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=inv" id="eopSideInv">Invoice</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!--<li class="nav-item mb-2 mt-2 pt-2 border-top">
+                <a href="intro.html" class="btn btn-outline-dark w-100 rounded-pill fs-8 fw-semibold" id="eopSidebarIntroLink">EOP intro &amp; registration</a>
+            </li>
+ --!>            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html" id="eopSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i>
+                    <span class="fw-medium">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var PRS_DEMO_FUNDS = {
+                'PRS-ISEQF': {
+                    name: 'PRS Islamic Strategic Equity',
+                    category: 'Growth',
+                    core: 'Core',
+                    sharia: true,
+                    perfDate: '26/05/2026',
+                    nav: '0.4821',
+                    ytd: '69.69', y1: '123.71', y3: '35.34', y5: '15.37', y10: '13.55',
+                    objective: 'Seeks long-term capital growth through a Sharia-compliant portfolio biased toward strategic equity themes, subject to PRS investment guidelines and scheme limits (demo text).',
+                    risk: 'Equity-heavy PRS funds carry market and concentration risk. Members should review the prospectus, fund fact sheet, and risk classification before investing.'
+                },
+                'PRS-IGRF': {
+                    name: 'PRS Islamic Growth',
+                    category: 'Growth',
+                    core: 'Core',
+                    sharia: true,
+                    perfDate: '26/05/2026',
+                    nav: '0.5240',
+                    ytd: '44.62', y1: '75.08', y3: '26.96', y5: '12.41', y10: '11.64',
+                    objective: 'Aims to provide capital growth over the long term by investing in a diversified portfolio of Sharia-compliant equities.',
+                    risk: 'Market risk, Sharia compliance risk, and equity investment risk.'
+                },
+                'PRS-MDF': {
+                    name: 'PRS Moderate',
+                    category: 'Moderate',
+                    core: 'Core',
+                    sharia: false,
+                    perfDate: '26/05/2026',
+                    nav: '0.4512',
+                    ytd: '29.78', y1: '49.48', y3: '21.28', y5: '9.69', y10: '8.03',
+                    objective: 'Seeks to provide moderate capital growth and income over the medium to long term by investing in a balanced mix of equities and fixed income securities.',
+                    risk: 'Market risk, credit risk, and interest rate risk.'
+                },
+                'PRS-GRF': {
+                    name: 'PRS Growth',
+                    category: 'Growth',
+                    core: 'Core',
+                    sharia: false,
+                    perfDate: '26/05/2026',
+                    nav: '0.5890',
+                    ytd: '23.44', y1: '43.95', y3: '16.38', y5: '4.73', y10: '6.10',
+                    objective: 'Aims for high capital growth by investing primarily in diversified domestic and regional equities.',
+                    risk: 'Higher equity volatility and market fluctuations.'
+                },
+                'PRS-SEQF': {
+                    name: 'PRS Strategic Equity',
+                    category: 'Growth',
+                    core: 'Core',
+                    sharia: false,
+                    perfDate: '26/05/2026',
+                    nav: '0.5100',
+                    ytd: '22.72', y1: '35.68', y3: '12.78', y5: '4.46', y10: '7.38',
+                    objective: 'Focuses on long-term capital growth through strategic equity allocations across major sectors.',
+                    risk: 'Equity market risk and industry concentration risk.'
+                },
+                'PRS-IMDF': {
+                    name: 'PRS Islamic Moderate',
+                    category: 'Moderate',
+                    core: 'Core',
+                    sharia: true,
+                    perfDate: '26/05/2026',
+                    nav: '0.4682',
+                    ytd: '10.04', y1: '24.87', y3: '10.85', y5: '3.03', y10: '5.42',
+                    objective: 'Aims to balance capital growth and regular income through Sharia-compliant equities and fixed income securities.',
+                    risk: 'Credit/default risk, interest rate risk, and market risk.'
+                },
+                'PRS-EQF': {
+                    name: 'PRS Equity',
+                    category: 'Growth',
+                    core: 'Core',
+                    sharia: false,
+                    perfDate: '26/05/2026',
+                    nav: '0.6210',
+                    ytd: '8.07', y1: '18.25', y3: '14.30', y5: '8.29', y10: '8.60',
+                    objective: 'Seeks long-term capital appreciation by investing in active equity portfolios.',
+                    risk: 'High market volatility and investment loss risk.'
+                },
+                'PRS-CVF': {
+                    name: 'PRS Conservative',
+                    category: 'Conservative',
+                    core: 'Core',
+                    sharia: false,
+                    perfDate: '26/05/2026',
+                    nav: '0.4120',
+                    ytd: '7.73', y1: '12.03', y3: '7.11', y5: '4.70', y10: '5.11',
+                    objective: 'Prioritizes capital preservation and steady income through fixed income and money market placements.',
+                    risk: 'Low risk, inflation risk, and interest rate risk.'
+                },
+                'PRS-ICVF': {
+                    name: 'PRS Islamic Conservative',
+                    category: 'Conservative',
+                    core: 'Core',
+                    sharia: true,
+                    perfDate: '26/05/2026',
+                    nav: '0.4280',
+                    ytd: '5.49', y1: '8.36', y3: '6.97', y5: '4.20', y10: '4.48',
+                    objective: 'Seeks conservative capital growth and income preservation through Sharia-compliant fixed income placements.',
+                    risk: 'Inflation risk, credit risk, and rate of return risk.'
+                }
+            };
+
+            var params = new URLSearchParams(window.location.search);
+            var raw = (params.get('code') || 'PRS-ISEQF').trim().toUpperCase();
+            var data = PRS_DEMO_FUNDS[raw];
+            var codeEl = document.getElementById('prsDetailCode');
+            var nameEl = document.getElementById('prsDetailName');
+
+            if (data) {
+                codeEl.textContent = raw;
+                nameEl.textContent = data.name;
+                document.getElementById('prsDetailBadgeCategory').textContent = data.category;
+                document.getElementById('prsDetailBadgeCore').textContent = data.core;
+                var sh = document.getElementById('prsDetailBadgeSharia');
+                sh.classList.toggle('d-none', !data.sharia);
+                document.getElementById('prsDetailPerfDate').textContent = data.perfDate;
+                document.getElementById('prsDetailNav').textContent = data.nav;
+                document.getElementById('prsDetailYtd').textContent = data.ytd;
+                document.getElementById('prsDetailY1').textContent = data.y1;
+                document.getElementById('prsDetailY3').textContent = data.y3;
+                document.getElementById('prsDetailY5').textContent = data.y5;
+                document.getElementById('prsDetailY10').textContent = data.y10;
+                document.getElementById('prsDetailObjective').textContent = data.objective;
+                document.getElementById('prsDetailRisk').textContent = data.risk;
+                document.title = 'Corporate PMO Portal — EOP · ' + raw + ' · ' + data.name;
+            } else {
+                codeEl.textContent = raw;
+                nameEl.textContent = 'PRS fund';
+                document.getElementById('prsDetailSubtitle').textContent = 'No demo profile for this code — showing placeholder (prototype).';
+                document.getElementById('prsDetailBadgeCategory').textContent = '—';
+                document.getElementById('prsDetailBadgeCore').textContent = '—';
+                document.getElementById('prsDetailBadgeSharia').classList.add('d-none');
+                document.title = 'Corporate PMO Portal — EOP · ' + raw;
+            }
+
+            var printBtn = document.getElementById('prsDetailPrintBtn');
+            if (printBtn) {
+                printBtn.addEventListener('click', function () {
+                    window.print();
+                });
+            }
+
+            var back = document.getElementById('prsDetailBackLink');
+            if (back && typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
+                new bootstrap.Tooltip(back);
+            }
+        });
+    </script>
+</body>
+
+</html>

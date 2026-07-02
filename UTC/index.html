@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTC Connect Portal - Login</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+
+    <!-- Custom style overrides for financial solutions card hover animations -->
+    <style>
+        .financial-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .financial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(38, 36, 123, 0.12) !important;
+            border-color: rgba(38, 36, 123, 0.15) !important;
+        }
+
+        .learn-more-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #ed1c24;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .learn-more-btn span {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .financial-card:hover .learn-more-btn {
+            color: #b31017;
+        }
+
+        .financial-card:hover .learn-more-btn span {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body class="premium-login-body">
+
+    <div class="widescreen-login-container">
+
+        <!-- Top Utility Header -->
+        <div class="widescreen-header">
+            <div class="d-flex align-items-center gap-4">
+                <!-- Main Brand Logo on the Left -->
+                <div class="logo-box d-flex align-items-center gap-3">
+                     <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Public Mutual Logo" height="45"></a>
+                    <div style="width: 1px; height: 45px; background-color: #dee2e6;"></div>
+                    <img src="images/utcconnect_logo.gif" alt="UTC Connect Logo" height="45" style="margin-top: 2px;">
+                </div>
+            </div>
+
+            <div class="widescreen-header-links">
+                <!-- Products & Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Products &
+                        Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Unit Trust Funds</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Shariah-Compliant
+                                Funds</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">e-Series of Funds</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">EPF Members Investment
+                                Scheme</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Private Retirement
+                                Scheme (PRS)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Privileges Circle Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Privileges
+                        Circle</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Gold</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Gold Elite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Signature</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Platinum</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Prestige</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Daily Fund Prices</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Fund Reports & Fact
+                                Sheets</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Learning Hub (Investor
+                                Guide)</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Financial
+                                Calculators</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Downloads (Forms)</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Cybersecurity
+                                Awareness</a></li>
+                    </ul>
+                </div>
+
+                <!-- Happenings Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Happenings</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">New Funds</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Campaigns &
+                                Promotions</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Winners Listings</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Announcements &
+                                News</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Notification Icon -->
+                <a href="#" class="header-utility-icon me-2" title="Notifications">
+                    <i class="iconoir-bell"></i>
+                    <span
+                        style="position: absolute; top: -1px; right: -1px; width: 6px; height: 6px; background-color: #ed1c24; border-radius: 50%;"></span>
+                </a>
+
+                <!-- Search Icon -->
+                <a href="#" class="header-utility-icon me-3" title="Search">
+                    <i class="iconoir-search"></i>
+                </a>
+
+                <div class="dropdown">
+                    <div class="language-dropdown dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/my.png" alt="Malaysia Flag" width="16">
+                        <span class="ms-1">English</span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end" style="min-width: 80px;">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">Malay</a></li>
+                        <li><a class="dropdown-item" href="#">简体中文</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="btn text-navy d-xl-none border-0 p-0 lh-1" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sitemapOffcanvas" aria-controls="sitemapOffcanvas" style="font-size: 1.75rem;">
+                <i class="iconoir-menu"></i>
+            </button>
+        </div>
+
+        <!-- Main Panel (Left / Center) -->
+        <div class="widescreen-main-panel bg-fin-utc-hero">
+
+            <!-- Content Area: Hero and Login Form -->
+            <div class="widescreen-content-wrapper">
+                <div class="row align-items-center w-100 g-4">
+                    <!-- Left: Hero Static Text & Mockups -->
+                    <div class="col-lg-7 text-start position-relative" style="min-height: 520px; display: flex; align-items: center;">
+                        <div id="heroCarousel" class="carousel slide carousel-fade w-100" data-bs-ride="carousel" data-bs-interval="6000">
+                            <!-- Carousel Indicators -->
+                            <div class="carousel-indicators" style="justify-content: flex-start; margin-left: 0; bottom: 0; margin-bottom: 0; z-index: 15;">
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.4); border: none;"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2" style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.4); border: none; margin-left: 6px;"></button>
+                            </div>
+                            
+                            <div class="carousel-inner pb-5">
+                                <!-- Slide 1: Market Leader -->
+                                <div class="carousel-item active">
+                                    <div class="row align-items-center w-100 g-3">
+                                        <div class="col-12">
+                                            
+                                            <h1 class="hero-title text-white fw-bold mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem;">
+                                                  Grow Your Advisory <br><span class="text-danger">Business With Connect</span>
+                                            </h1>
+                                            <p class="hero-subtitle text-white mb-4" style="font-size: 0.95rem;">
+                                                 Access performance analytics, client portfolios, new fund material, and advisory tools in one secure workspace.
+                                            </p>
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <a href="../Corporate Website/landing.html" class="btn btn-hero-cta py-2 px-3 fs-8">
+                                                    UTC Solutions <i class="iconoir-arrow-up-right ms-1"></i>
+                                                </a>
+                                                <a href="#explore-financial" class="btn btn-hero-outline-cta py-2 px-3 fs-8">
+                                                    Learn More <i class="iconoir-arrow-down ms-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Slide 2: UTC Mobile Experience -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center w-100 g-3">
+                                        <div class="col-12">
+                                            
+                                            <h1 class="hero-title text-white fw-bold mb-3" style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem;">
+                                                Grow Your Advisory <br><span class="text-danger">Business With Connect</span>
+                                            </h1>
+                                            <p class="hero-subtitle text-white mb-4" style="font-size: 0.95rem;">
+                                                Access performance analytics, client portfolios, new fund material, and advisory tools in one secure workspace.
+                                            </p>
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <a href="../Corporate Website/landing.html" class="btn btn-hero-cta py-2 px-3 fs-8">
+                                                    UTC Solutions <i class="iconoir-arrow-up-right ms-1"></i>
+                                                </a>
+                                                <a href="#explore-financial" class="btn btn-hero-outline-cta py-2 px-3 fs-8">
+                                                    Consulting Tools <i class="iconoir-arrow-down ms-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Inline Login Form Card -->
+                    <div class="col-lg-5">
+                        <div class="inline-login-card">
+                            <div class="card-title-badge">Unit Trust Consultant</div>
+
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label class="form-label text-secondary">User ID</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="iconoir-user fs-6"></i></span>
+                                        <input type="text" id="usernameInput" class="form-control border-start-0"
+                                            value="franklinjunior01">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label text-secondary">Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="iconoir-lock fs-6"></i></span>
+                                        <input type="password" id="passwordInput"
+                                            class="form-control border-start-0 border-end-0" value="123456">
+                                        <span class="input-group-text bg-white border-start-0" id="togglePassword"
+                                            style="cursor: pointer;">
+                                            <i class="iconoir-eye text-primary" id="eyeIcon"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-3 mb-3">
+                                    <button type="button" id="clearBtn" class="btn btn-clear-inline">Clear</button>
+                                    <button type="submit" id="loginBtn" class="btn btn-log-in-inline">
+                                            <span id="btnText">Log In</span>
+                                            <span id="btnSpinner" class="spinner-border spinner-border-sm d-none"
+                                                role="status" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+
+                                <div class="login-links-wrapper">
+                                    <a href="forgot.html" class="inline-link-item"><i class="iconoir-arrow-right"></i>
+                                        Forgotten your password? Click here </a>
+                                    <a href="#" class="inline-link-item"><i class="iconoir-arrow-right"></i>Click here
+                                        to register UTC Connect online!</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Public Bank Style Top Utility Bar -->
+        <div class="widescreen-sidebar-panel">
+            <!-- Left: Platform Tabs -->
+            <div class="top-bar-tabs">
+                <a href="../PMO/index.html" class="top-tab">Public Mutual Online</a>
+                <a href="../PMO corporate/index.html" class="top-tab">Corporate</a>
+                <a href="#" class="top-tab active">UTC Connect</a>
+            </div>
+
+            <!-- Right: Quick Links & Social Icons -->
+            <div class="top-bar-right-links">
+                <a href="../Corporate Website/landing.html" class="top-link-item">About Us</a>
+                <a href="../Corporate Website/landing.html" class="top-link-item">Contact Us</a>
+                <a href="../Corporate Website/landing.html" class="top-link-item">Branch Locator</a>
+                <div class="top-social-divider"></div>
+                <div class="top-social-icons">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook"><i
+                            class="iconoir-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i
+                            class="iconoir-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" title="YouTube"><i
+                            class="iconoir-youtube"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i
+                            class="iconoir-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- News & Hightlight Section -->
+    <section class="py-5 bg-fin-dot-grid-white w-100 border-bottom text-start">
+        <div class="container px-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold text-navy mb-0" style="font-size: 2rem;">News & Hightlight</h2>
+                <div class="d-flex gap-2 d-none">
+                    <button
+                        class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;"><i class="iconoir-arrow-left"></i></button>
+                    <button
+                        class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px; border-color: #26247b; color: #26247b;"><i
+                            class="iconoir-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_consultant_success.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Advisory Tools</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Digital Client
+                                Onboarding</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Onboard Clients Instantly</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Master the new digital onboarding
+                                system. Complete transactions and verify identities seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_consultant_team.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Advisory Team</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Consultant
+                                Collaboration</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Consulting Best Practices</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Learn from peer sharing and regional
+                                roundtables on designing custom portfolios for clients.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_consultant_award.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Recognition</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Consultant
+                                Achievement Awards</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Celebrate Consultant Success</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Explore qualifiers, criteria, and
+                                benefits for our prestigious annual advisory awards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Financial Solutions Section -->
+    <section class="py-5 bg-fin-exclusive-solutions w-100 border-bottom text-start" id="explore-financial">
+        <div class="container px-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="solution-card-tag" style="color: #ed1c24 !important; font-size: 0.75rem; letter-spacing: 2px;">
+                        <i class="iconoir-sparks me-1"></i> EXCLUSIVE BENEFITS
+                    </div>
+                    <h2 class="fw-bold text-navy mb-0"
+                        style="font-size: 2.3rem; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px; line-height: 1.2; color: #26247b !important;">
+                        Elite Advisory Solutions for Client Wealth
+                    </h2>
+                </div>
+                <div class="col-lg-6 mt-3 mt-lg-0">
+                    <p class="text-secondary mb-0" style="font-size: 0.95rem; line-height: 1.6; max-width: 500px; color: #475569 !important;">
+                        Equip yourself with Malaysia's leading range of investment products and retirement schemes designed to accelerate your clients' portfolios.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Card 1: Unit Trust Funds & EPF-MIS -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-graph-up"></i>
+                            </div>
+                            <div class="solution-card-tag">PORTFOLIO ADVISORY</div>
+                            <h4 class="solution-card-title">Unit Trust Funds & EPF-MIS</h4>
+                            <p class="solution-card-body">
+                                Market Malaysia's leading suite of conventional equity, bond, and balanced funds. Tap into cash investments and the cash-free EPF Members Investment Scheme (EPF-MIS) to build client portfolios.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>Conventional & Islamic</span></li>
+                                <li><i class="iconoir-check"></i> <span>EPF Members Account 1 Link</span></li>
+                                <li><i class="iconoir-check"></i> <span>High-Yield Portfolio Suite</span></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Card 2: Shariah-Compliant Funds -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-sparks"></i>
+                            </div>
+                            <div class="solution-card-tag">HALAL ETHICS</div>
+                            <h4 class="solution-card-title">Shariah-Compliant Funds</h4>
+                            <p class="solution-card-body">
+                                Distribute the largest selection of Islamic unit trust funds in Malaysia. Address the growing demand for Shariah-compliant wealth solutions with certified ethical management.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>100% Islamic Compliance</span></li>
+                                <li><i class="iconoir-check"></i> <span>Dedicated Shariah Board</span></li>
+                                <li><i class="iconoir-check"></i> <span>Global Halal Markets</span></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Card 3: Private Retirement Scheme (PRS) -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-piggy-bank"></i>
+                            </div>
+                            <div class="solution-card-tag">RETIREMENT SECURE</div>
+                            <h4 class="solution-card-title">Private Retirement Scheme (PRS)</h4>
+                            <p class="solution-card-body">
+                                Help clients secure retirement adequacy via age-targeted schemes while capitalizing on annual individual tax relief of up to RM3,000 to drive recurring client contributions.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>Age-Targeted Portfolios</span></li>
+                                <li><i class="iconoir-check"></i> <span>RM3,000 Annual Tax Relief</span></li>
+                                <li><i class="iconoir-check"></i> <span>Regular Savings Options</span></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <!-- Card 4: Corporate Cash & Treasury Overrides -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-coins"></i>
+                            </div>
+                            <div class="solution-card-tag">BUSINESS CAPITAL</div>
+                            <h4 class="solution-card-title">Corporate Cash & Treasury</h4>
+                            <p class="solution-card-body">
+                                Advise companies on treasury cash optimization (PBCMF) with T+1 liquidity, and implement Corporate PRS Vesting Programmes for employee retention to earn high-volume overrides.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>High-Volume Override Potentials</span></li>
+                                <li><i class="iconoir-check"></i> <span>Corporate PRS Vesting</span></li>
+                                <li><i class="iconoir-check"></i> <span>Treasury Cash Optimization</span></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Be Your Own Boss Section -->
+    <section class="recruit-promo py-5 bg-fin-promo w-100 text-start border-bottom">
+        <div class="container px-4">
+            <!-- Part 1: Intro & Enrolment Steps -->
+            <div class="row align-items-stretch g-5 mb-5">
+                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge rounded-pill px-3 py-1 mb-3 fw-bold"
+                            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; background-color: rgba(237, 28, 36, 0.1); color: #ed1c24;">Career
+                            Opportunity</span>
+                        <h2 class="fw-bold text-navy mb-3"
+                            style="font-size: 2.5rem; font-family: 'Montserrat', sans-serif; line-height: 1.2;">Be Your
+                            Own Boss</h2>
+                        <p class="text-navy fw-semibold mb-4 fs-5"
+                            style="line-height: 1.5; font-family: 'Montserrat', sans-serif;">Enjoy limitless
+                            opportunities as a Unit Trust Consultant (UTC) / Private Retirement Scheme Consultant (PRC):
+                        </p>
+
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Flexible working hours.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Enjoy up to eight types of income.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Opportunity to build your own business at
+                                    almost no cost.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Ability to achieve financial
+                                    independence.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Free trips and recognition.</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                                    style="width: 28px; height: 28px; background-color: rgba(38, 36, 123, 0.08); color: #26247b;">
+                                    <i class="iconoir-check" style="font-size: 1.1rem; stroke-width: 2.5;"></i>
+                                </div>
+                                <span class="text-secondary fw-semibold">Special housing and car loan subsidy.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact details / branches link -->
+                    <div class="p-4 rounded-4" style="background-color: #f8f9fa; border: 1px solid rgba(0,0,0,0.05);">
+                        <p class="text-dark small mb-3"><strong>Interested to find out more?</strong> Kindly <a
+                                href="../Corporate Website/landing.html"
+                                class="text-danger fw-bold text-decoration-none">click here</a> to find our nearest
+                            branch to assist you.</p>
+                        <hr class="my-3 opacity-10">
+                        <div class="row g-2 text-secondary small">
+                            <div class="col-sm-6">
+                                <strong>Hotline:</strong> 03-2022 6300
+                            </div>
+                            <div class="col-sm-6">
+                                <strong>E-mail:</strong> <a href="mailto:utcsupport@publicmutual.com.my"
+                                    class="text-navy text-decoration-none fw-semibold">utcsupport@publicmutual.com.my</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-premium p-4 rounded-4 h-100"
+                        style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border: 1px solid rgba(0,0,0,0.05) !important;">
+                        <h4 class="fw-bold text-navy mb-2" style="font-family: 'Montserrat', sans-serif;">How to enrol?
+                        </h4>
+                        <p class="text-muted small mb-4">Here is the simple guide on enrolment as UTC/PRC:</p>
+
+                        <div class="join-steps position-relative ps-2">
+                            <!-- Timeline line -->
+                            <div class="position-absolute start-0 top-0 bottom-0 ms-3"
+                                style="width: 2px; background-color: rgba(38,36,123,0.1); margin-top: 10px; margin-bottom: 25px;">
+                            </div>
+
+                            <div class="d-flex gap-3 mb-4 position-relative">
+                                <div class="step-num rounded-circle text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0"
+                                    style="width: 32px; height: 32px; font-size: 0.9rem; background-color: #26247b; z-index: 2;">
+                                    1</div>
+                                <div>
+                                    <h6 class="fw-bold text-navy mb-1" style="font-family: 'Montserrat', sans-serif;">
+                                        Step 1</h6>
+                                    <ul class="text-muted small ps-3 mb-0">
+                                        <li>Visit a Public Mutual Branch nearest to you.</li>
+                                        <li>Present certified true copies of your academic certificates and transcripts.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-4 position-relative">
+                                <div class="step-num rounded-circle text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0"
+                                    style="width: 32px; height: 32px; font-size: 0.9rem; background-color: #26247b; z-index: 2;">
+                                    2</div>
+                                <div>
+                                    <h6 class="fw-bold text-navy mb-1" style="font-family: 'Montserrat', sans-serif;">
+                                        Step 2</h6>
+                                    <p class="text-muted small mb-0">Click the button below to register and enrol
+                                        online.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-4 position-relative">
+                                <div class="step-num rounded-circle text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0"
+                                    style="width: 32px; height: 32px; font-size: 0.9rem; background-color: #26247b; z-index: 2;">
+                                    3</div>
+                                <div>
+                                    <h6 class="fw-bold text-navy mb-1" style="font-family: 'Montserrat', sans-serif;">
+                                        Step 3</h6>
+                                    <p class="text-muted small mb-0">Wait for the confirmation email from Public Mutual
+                                        Berhad.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3 mb-4 position-relative">
+                                <div class="step-num rounded-circle text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0"
+                                    style="width: 32px; height: 32px; font-size: 0.9rem; background-color: #26247b; z-index: 2;">
+                                    4</div>
+                                <div>
+                                    <h6 class="fw-bold text-navy mb-1" style="font-family: 'Montserrat', sans-serif;">
+                                        Step 4</h6>
+                                    <p class="text-muted small mb-0">Visit FIMM’s website (<a
+                                            href="https://fcs.fimm.com.my/Home" target="_blank"
+                                            class="text-navy text-decoration-none fw-semibold">https://fcs.fimm.com.my/Home</a>)
+                                        to complete the self-registration process.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-auto pt-3">
+                            <p class="text-center text-secondary small mb-2 fw-semibold">Kickstart your business with us
+                            </p>
+                            <a href="https://erecruit.publicmutual.com.my/PMBERecruit/" target="_blank"
+                                class="btn btn-danger rounded-pill w-100 py-3 fw-semibold shadow-sm hover-opacity-100"
+                                style="background: #ed1c24; border: none; color: #ffffff;">Enrol Now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 1.5: Payout Structures / Eight Types of Income -->
+            <div class="my-5 p-4 rounded-4"
+                style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); border: 1px solid rgba(0,0,0,0.05);">
+                <div class="mb-4">
+                    <h4 class="fw-bold text-navy" style="font-family: 'Montserrat', sans-serif;">Unlock Eight Streams of
+                        Personal & Passive Income</h4>
+                    <p class="text-secondary small">As a Public Mutual UTC, your earning potential is unlimited. Learn
+                        how the eight payout types build your business:</p>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-lg-6">
+                        <div class="accordion accordion-custom" id="incomeAccordionLeft">
+                            <!-- Income Type 1 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome1">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome1"
+                                        aria-expanded="false" aria-controls="collapseIncome1"
+                                        style="font-size: 0.95rem;">
+                                        1. Direct Commission
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome1" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome1" data-bs-parent="#incomeAccordionLeft">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Earn up-front commissions of up to 2.75% on every client deposit you secure (via
+                                        cash investments or the EPF Members Investment Scheme).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 2 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome2">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome2"
+                                        aria-expanded="false" aria-controls="collapseIncome2"
+                                        style="font-size: 0.95rem;">
+                                        2. Career Benefit (Passive Pension)
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome2" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome2" data-bs-parent="#incomeAccordionLeft">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Receive a monthly passive base payout calculated directly from the total
+                                        **Assets Under Management (AUM)** you service and maintain.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 3 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome3">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome3"
+                                        aria-expanded="false" aria-controls="collapseIncome3"
+                                        style="font-size: 0.95rem;">
+                                        3. Group Overriding Commission
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome3" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome3" data-bs-parent="#incomeAccordionLeft">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Earn percentage overrides on the sales volumes generated by the junior
+                                        consultants you recruit, train, and mentor into your agency network.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 4 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome4">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome4"
+                                        aria-expanded="false" aria-controls="collapseIncome4"
+                                        style="font-size: 0.95rem;">
+                                        4. Year-End Bonus
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome4" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome4" data-bs-parent="#incomeAccordionLeft">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Receive a performance-linked lump-sum cash bonus at the close of Public Mutual's
+                                        financial year for achieving targeted sales milestones.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="accordion accordion-custom" id="incomeAccordionRight">
+                            <!-- Income Type 5 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome5">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome5"
+                                        aria-expanded="false" aria-controls="collapseIncome5"
+                                        style="font-size: 0.95rem;">
+                                        5. Equalization Bonus
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome5" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome5" data-bs-parent="#incomeAccordionRight">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        A specialized bonus structure that rewards managers for maintaining balanced
+                                        organizational sales benchmarks across their entire network.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 6 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome6">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome6"
+                                        aria-expanded="false" aria-controls="collapseIncome6"
+                                        style="font-size: 0.95rem;">
+                                        6. Appreciation Bonus
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome6" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome6" data-bs-parent="#incomeAccordionRight">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        A leadership development bonus awarded to agency leaders for successfully
+                                        grooming and promoting high-performing consultants into new agency managers.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 7 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome7">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome7"
+                                        aria-expanded="false" aria-controls="collapseIncome7"
+                                        style="font-size: 0.95rem;">
+                                        7. Breakaway Overriding Bonus
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome7" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome7" data-bs-parent="#incomeAccordionRight">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Earn overriding bonuses even after a consultant you coached matures and breaks
+                                        away to run their independent agency team.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Income Type 8 -->
+                            <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+                                <h2 class="accordion-header" id="headingIncome8">
+                                    <button class="accordion-button collapsed fw-bold text-navy bg-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseIncome8"
+                                        aria-expanded="false" aria-controls="collapseIncome8"
+                                        style="font-size: 0.95rem;">
+                                        8. Annual Performance Bonus
+                                    </button>
+                                </h2>
+                                <div id="collapseIncome8" class="accordion-collapse collapse"
+                                    aria-labelledby="headingIncome8" data-bs-parent="#incomeAccordionRight">
+                                    <div class="accordion-body bg-white text-secondary small pt-0">
+                                        Top-tier executive level cash bonus calculated on the collective annual sales
+                                        and assets generated by your entire downline agency structure.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: Videos / Inspiration -->
+            <div class="border-top pt-5">
+                <div class="section-header mb-4 text-center">
+                    <h3 class="fw-bold text-navy mb-2" style="font-family: 'Montserrat', sans-serif;">Inspirational
+                        Stories</h3>
+                    <p class="text-secondary mb-0" style="font-size: 1rem; font-weight: 500;">Discover your ideal career
+                        and unlock your full potential with Public Mutual! Transform your life now!</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                            style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                            <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                                style="height: 200px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('https://www.publicmutual.com.my/PM.Web.Portal.Admin/media/Join%20Us/Be%20Your%20Own%20Boss/A-Brighter-Future-Awaits-You-banner.jpg') no-repeat center; background-size: cover;">
+                                <a href="https://www.youtube.com/watch?v=nNTkBDVoSVM&feature=youtu.be" target="_blank"
+                                    class="position-absolute top-50 start-50 translate-middle text-white d-flex align-items-center justify-content-center rounded-circle"
+                                    style="width: 50px; height: 50px; background: rgba(237, 28, 36, 0.9); box-shadow: 0 0 15px rgba(237, 28, 36, 0.5);">
+                                    <i class="iconoir-play fs-4" style="margin-left: 2px;"></i>
+                                </a>
+                            </div>
+                            <div class="card-body p-3 bg-white text-center">
+                                <h6 class="fw-bold text-dark mb-2" style="font-size: 0.95rem; line-height: 1.4;"><a
+                                        href="https://www.youtube.com/watch?v=nNTkBDVoSVM&feature=youtu.be"
+                                        target="_blank" class="text-decoration-none text-navy hover-text-danger">A
+                                        Brighter Future Awaits You!</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                            style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                            <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                                style="height: 200px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('https://www.publicmutual.com.my/PM.Web.Portal.Admin/media/Join%20Us/Be%20Your%20Own%20Boss/Thriving-Superwomen-Banner.jpg') no-repeat center; background-size: cover;">
+                                <a href="https://www.youtube.com/watch?v=M2jxvqXRdkA" target="_blank"
+                                    class="position-absolute top-50 start-50 translate-middle text-white d-flex align-items-center justify-content-center rounded-circle"
+                                    style="width: 50px; height: 50px; background: rgba(237, 28, 36, 0.9); box-shadow: 0 0 15px rgba(237, 28, 36, 0.5);">
+                                    <i class="iconoir-play fs-4" style="margin-left: 2px;"></i>
+                                </a>
+                            </div>
+                            <div class="card-body p-3 bg-white text-center">
+                                <h6 class="fw-bold text-dark mb-2" style="font-size: 0.95rem; line-height: 1.4;"><a
+                                        href="https://www.youtube.com/watch?v=M2jxvqXRdkA" target="_blank"
+                                        class="text-decoration-none text-navy hover-text-danger">Be a Successful
+                                        Entrepreneur and Supermom!</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                            style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                            <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                                style="height: 200px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('https://www.publicmutual.com.my/PM.Web.Portal.Admin/media/Join%20Us/Be%20Your%20Own%20Boss/Golden-Years-Banner.jpg') no-repeat center; background-size: cover;">
+                                <a href="https://www.youtube.com/watch?v=wkIwUXovJgw&feature=youtu.be" target="_blank"
+                                    class="position-absolute top-50 start-50 translate-middle text-white d-flex align-items-center justify-content-center rounded-circle"
+                                    style="width: 50px; height: 50px; background: rgba(237, 28, 36, 0.9); box-shadow: 0 0 15px rgba(237, 28, 36, 0.5);">
+                                    <i class="iconoir-play fs-4" style="margin-left: 2px;"></i>
+                                </a>
+                            </div>
+                            <div class="card-body p-3 bg-white text-center">
+                                <h6 class="fw-bold text-dark mb-2" style="font-size: 0.95rem; line-height: 1.4;"><a
+                                        href="https://www.youtube.com/watch?v=wkIwUXovJgw&feature=youtu.be"
+                                        target="_blank" class="text-decoration-none text-navy hover-text-danger">Start a
+                                        New Adventure After Retirement!</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
+    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
+        <div class="container px-4">
+            <div class="row g-4">
+                <!-- Column 1: Products & Services -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Unit Trust</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">Build Wealth</a></li>
+                        <li><a href="#">List of Funds</a></li>
+                        <li><a href="#">e-Series Funds</a></li>
+                        <li><a href="#">Islamic Funds</a></li>
+                        <li><a href="#">EPF-MIS</a></li>
+                        <li><a href="#">Sustainable and Responsible Investing</a></li>
+                        <li><a href="#">Fund Prices</a></li>
+                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
+                        <li><a href="#">Private Retirement Scheme</a></li>
+                        <li><a href="#">Fund Explorer</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Specific Goals</a></li>
+                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
+                        <li><a href="#">Regular investing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Privileges & Company -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Mutual Gold</a></li>
+                        <li><a href="#">Mutual Elite</a></li>
+                        <li><a href="#">Mutual Signature</a></li>
+                        <li><a href="#">Mutual Platinum</a></li>
+                        <li><a href="#">Mutual Prestige</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">New Funds</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
+
+                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Vision Mission</a></li>
+                        <li><a href="#">Core Values</a></li>
+                        <li><a href="#">Our Profile</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Track Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources & Info -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Learning Hub</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
+                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Contact Us (Form)</a></li>
+                                <li><a href="#">Branches</a></li>
+                                <li><a href="#">Customer Service Hotline</a></li>
+                                <li><a href="#">Investor Guide</a></li>
+                                <li><a href="#">Check Your UTC's Credentials</a></li>
+                                <li><a href="#">Announcements & News</a></li>
+                                <li><a href="#">Cybersecurity Awareness</a></li>
+                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
+                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
+                                <li><a href="#">Advertising Disclaimer</a></li>
+                                <li><a href="#">Cross Trade Policy</a></li>
+                                <li><a href="#">Glossary</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Utility Footer -->
+    <footer class="bottom-footer py-4 w-100 bg-navy text-white">
+        <div class="container text-center text-md-start px-4">
+            <!-- Disclaimer -->
+            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+                *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
+                Malaysia.
+            </p>
+
+            <!-- Vanguard-Style Important Disclosures -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                            Information</h6>
+                        <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
+                                money you invest.</strong> Past performance is not a guarantee or reliable indicator of
+                            future results. Unit prices, yields, and investment returns will fluctuate, and you may have
+                            a gain or loss when you redeem your units. Diversification does not ensure a profit or
+                            protect against a loss in a declining market.</p>
+                        <p class="mb-2">Investors should carefully consider the investment objectives, risks, charges,
+                            and expenses of a fund before investing. The prospectus, master prospectus, and Product
+                            Highlights Sheet (PHS) contain this and other key information. You can obtain copies of
+                            these documents from any Public Mutual branch, Authorised Unit Trust Consultant (UTC), or
+                            online. Please read them thoroughly before making any investment decisions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                            Disclosures</h6>
+                        <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
+                            management company under the Capital Markets and Services Act 2007, regulated and supervised
+                            by the Securities Commission Malaysia (SC). Public Mutual is also a registered Institutional
+                            Private Retirement Scheme Adviser (IPRSA) and a member of the Federation of Investment
+                            Managers Malaysia (FIMM).</p>
+                        <p class="mb-2">For Shariah-compliant funds, investments are managed in strict adherence to
+                            Shariah principles under the supervision and guidance of our appointed Shariah Advisers.
+                            Private Retirement Schemes (PRS) are subject to retirement savings regulations, and early
+                            withdrawals from sub-account B may be subject to tax penalties and statutory restrictions.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-top border-white-10 pt-3 opacity-75"
+                    style="border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
+                        platforms operated by Public Mutual Berhad. By accessing these portals, you agree to be bound by
+                        the Terms and Conditions of Use, Website Disclaimer, and Privacy Policy. Electronic transactions
+                        are secured with industry-standard encryption protocols. Safeguard your login credentials;
+                        Public Mutual will never ask for your password or PAC codes via email or SMS.</p>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
+            <!-- Links -->
+            <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
+                style="font-size: 0.78rem;">
+                <a href="website-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="investment-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Investment
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-policy.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Policy</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-notice.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Notice</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="drb-consent.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">DRB
+                    Check Consent Terms</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="internet-risk.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Internet
+                    Risk</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="contact-us.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Contact
+                    Us</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="quick-links.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Quick
+                    Access Links</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="terms.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
+                    and Conditions of Use</a>
+            </div>
+            <!-- Copyright and Social Buttons -->
+            <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                    <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                        us:</span>
+                    <a href="https://www.facebook.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
+                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
+                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
+                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
+                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
+                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sitemap Offcanvas (Sleek Investor Navigation) -->
+    <div class="offcanvas offcanvas-start border-0 shadow-lg text-start" tabindex="-1" id="sitemapOffcanvas"
+        aria-labelledby="sitemapOffcanvasLabel" style="width: 380px;">
+        <div class="offcanvas-header border-bottom px-4 py-3 bg-light">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="Logo" height="30">
+                <span class="logo-box-text">PUBLIC MUTUAL</span>
+            </div>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-4 py-4">
+            <h5 class="fw-bold text-navy mb-4" id="sitemapOffcanvasLabel">Sitemap & Quick Links</h5>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-danger border-bottom pb-2 mb-3"><i class="iconoir-coins me-2"></i> Our Funds
+                </h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Unit Trust Funds</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Shariah-Compliant Funds</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Private Retirement Scheme
+                            (PRS)</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">EPF Members Investment
+                            Scheme</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">e-Series of Funds</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-graph-up me-2"></i> Investor
+                    Resources</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Daily Fund Prices</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Fund Reports & Fact Sheets</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Financial Calculators</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Downloadable Forms</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Investor Education Learning
+                            Hub</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Cybersecurity Awareness</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-user-badge-details me-2"></i>
+                    Privilege Circle</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Gold</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Signature</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Platinum</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-info-circle me-2"></i> About
+                    Public Mutual</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Corporate Profile</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Track Record & Lipper
+                            Awards</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Sustainable and Responsible
+                            Investing (SRI)</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-mail me-2"></i> Contact & Help
+                </h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Customer Service Support</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Branch Locator</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Frequently Asked Questions
+                            (FAQ)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Let's Chat Floating Bubble -->
+    <div class="chat-bubble position-fixed z-3">
+        <button class="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center shadow-lg"
+            style="width: 55px; height: 55px; border: none; background: #ed1c24;">
+            <div class="text-center lh-1">
+                <small class="d-block text-uppercase fw-bold text-white"
+                    style="font-size: 0.5rem; letter-spacing: 0.5px;">Let's</small>
+                <span class="fw-bold text-white" style="font-size: 0.85rem; font-weight: 700;">CHAT</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Prototype JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

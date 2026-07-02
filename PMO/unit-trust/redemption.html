@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Redemption</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <style>
+        /* Horizontal Stepper Styles */
+        .h-stepper-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .h-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #adb5bd;
+            width: 130px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .h-step.active {
+            color: var(--brand-navy);
+        }
+
+        .h-step.completed {
+            color: var(--brand-navy);
+        }
+
+        .h-step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .h-step.active .h-step-circle {
+            background-color: var(--brand-navy);
+            color: white;
+        }
+
+        .h-step.completed .h-step-circle {
+            background-color: var(--brand-navy);
+            color: white;
+        }
+
+        .h-step-text {
+            font-weight: 700;
+            font-size: 0.85rem;
+            line-height: 1.2;
+        }
+
+        .h-step-text small {
+            font-weight: 400;
+            font-size: 0.72rem;
+            color: var(--ui-support);
+        }
+
+        .h-step.active .h-step-text small {
+            color: var(--brand-navy);
+            font-weight: 600;
+        }
+
+        .h-step-line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #e9ecef;
+            margin-bottom: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .h-step-line.active {
+            background-color: var(--brand-navy);
+        }
+
+        .h-step-line.completed {
+            background-color: var(--brand-navy);
+        }
+
+        /* PAC and captcha customizations */
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .pac-group {
+            position: relative;
+        }
+
+        .btn-request-pac {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #ed1c24;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0;
+        }
+
+        .btn-request-pac:hover {
+            color: #c41219;
+        }
+
+        .pac-info-text {
+            font-size: 0.75rem;
+            color: #333;
+            display: flex;
+            align-items: flex-start;
+            margin-top: 15px;
+        }
+
+        .custom-checkbox .form-check-input:checked {
+            background-color: var(--brand-navy);
+            border-color: var(--brand-navy);
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+
+            /* Hide everything except step 3 summary */
+            .top-landing-wrapper,
+            .dashboard-header,
+            .offcanvas,
+            .bottom-footer,
+            nav,
+            header,
+            #step1Form,
+            #step1Part2Form,
+            #step2Form,
+            .h-stepper-container,
+            .d-flex.align-items-center.justify-content-between.mb-5,
+            .d-flex.justify-content-end.gap-3.mt-5 {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .dashboard-content {
+                padding: 0 !important;
+            }
+
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #dee2e6 !important;
+            }
+
+            .print-header {
+                display: flex !important;
+            }
+
+            #step3Form {
+                display: block !important;
+            }
+        }
+
+        .print-header {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+            aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        id="pmoShellBtnOpenSidebarUt">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                        id="pmoShellBrandUt">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo.pngg" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="dashboard.html"
+                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                        id="pmoShellPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillEopFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 35px; height: 35px;" aria-hidden="true">
+                        <i class="iconoir-user fs-5 text-dark"></i>
+                    </div>
+                    <span class="fs-8 fw-semibold text-dark d-none d-sm-inline" id="pmoShellNavUserUt">User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Unit Trust Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="view_account.html">View Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statements.html">Statements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+
+            <div
+                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="view_account.html" class="btn-back-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Back to Account List">
+                        <i class="iconoir-nav-arrow-left fs-5 text-dark"></i>
+                    </a>
+                    <div>
+                        <h2 class="fw-bold text-dark fs-3 m-0">Redemption</h2>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="badge-alert badge-alert-outline-primary d-inline-flex align-items-center m-0 py-2 px-3">
+                        <i class="iconoir-info-circle me-2 fs-5"></i>
+                        <span class="fs-8 fw-semibold m-0">*The transaction request will not be completed until it is
+                            authorised.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stepper Indicators -->
+            <div class="h-stepper-container mb-5">
+                <div class="h-step active" id="indicator-step-1">
+                    <div class="h-step-circle"><i class="iconoir-page"></i></div>
+                    <div class="h-step-text">Step 1<br><small>Redemption Details</small></div>
+                </div>
+                <div class="h-step-line" id="line-1"></div>
+                <div class="h-step" id="indicator-step-2">
+                    <div class="h-step-circle"><i class="iconoir-lock"></i></div>
+                    <div class="h-step-text">Step 2<br><small>PAC Verification</small></div>
+                </div>
+                <div class="h-step-line" id="line-2"></div>
+                <div class="h-step" id="indicator-step-3">
+                    <div class="h-step-circle"><i class="iconoir-check-circle"></i></div>
+                    <div class="h-step-text">Step 3<br><small>Completed</small></div>
+                </div>
+            </div>
+
+            <!-- STEP 1: Form (Part 1 - Investment Details Input) -->
+            <div id="step1Form" class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100 p-4">
+                        <div class="card-body p-2">
+                            <form id="step1Part1Form">
+                                <div class="mb-4">
+                                    <label class="form-label fs-8 text-muted mb-2">Select Account to Redeem</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i
+                                                class="iconoir-user"></i></span>
+                                        <select class="form-select form-select-lg fs-7" id="selectAccount">
+                                            <option value="094766567" data-name="PUBLIC STRATEGIC GROWTH FUND"
+                                                data-price="0.5013" data-units="25063.70" data-available="25063.70"
+                                                selected>094766567 PUBLIC STRATEGIC GROWTH FUND</option>
+                                            <option value="019420393" data-name="PUBLIC ITTIKAL SEQUEL FUND"
+                                                data-price="0.8520" data-units="45000.00" data-available="45000.00">
+                                                019420393 PUBLIC ITTIKAL SEQUEL FUND</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label fs-8 text-muted mb-2">Units to Redeem</label>
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text bg-light border-end-0 text-dark fw-bold">Units</span>
+                                        <input type="text" class="form-control form-control-lg fs-7" id="redeemUnits"
+                                            placeholder="e.g. 150,000" value="150,000">
+                                        <div class="invalid-feedback" id="units-error">Minimum redemption is 100,000
+                                            units.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="d-flex align-items-center gap-2 mt-2 p-2 bg-light rounded-3 border">
+                                        <i class="iconoir-calculator fs-6 text-muted"></i>
+                                        <span class="fs-8 text-muted">Estimated Redemption Value: <strong
+                                                class="text-dark" id="estimatedValue">RM 75,195.00</strong></span>
+                                    </div>
+                                </div>
+                                <div class="alert alert-warning d-flex align-items-center border-0 py-2 px-3 fs-9"
+                                    style="border-left: 4px solid #ffc107 !important; background-color: rgba(255,193,7,0.08);">
+                                    <i class="iconoir-warning-triangle text-warning me-2 fs-6"></i>
+                                    <span>Minimum redemption is <strong>100,000 units</strong>. Payout will be credited
+                                        to your registered bank automatically.</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100 p-4">
+                        <div class="card-body p-2">
+                            <div class="d-flex gap-2 align-items-center mb-4 pb-3 border-bottom">
+                                <a href="#" class="text-primary text-decoration-underline fw-bold fs-5"
+                                    id="previewAccountNo">094766567</a>
+                                <h5 class="fw-bold m-0 fs-6" id="previewAccountName">PUBLIC STRATEGIC GROWTH FUND</h5>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <div class="text-muted fw-normal fs-9 mb-1">Last Price / Unit</div>
+                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">RM 0.5013</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-muted fw-normal fs-9 mb-1">Unit Trust Consultant</div>
+                                    <div class="fw-bold text-success fs-7 d-flex align-items-center gap-1">122302390
+                                        <div class="bg-success bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width:16px;height:16px;"><i
+                                                class="iconoir-user fs-10 text-success"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="text-muted fw-normal fs-9 mb-1">Total Units</div>
+                                <div class="fw-bold text-dark fs-7" id="previewTotalUnits">25,063.70</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <div class="text-muted fw-normal fs-9 mb-1">Available Units</div>
+                                <div class="fw-bold text-dark fs-7" id="previewAvailableUnits">25,063.70</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="form-check custom-checkbox d-flex align-items-center gap-2">
+                        <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="executionCheck" checked>
+                        <label class="form-check-label fs-7 text-dark cursor-pointer" for="executionCheck">
+                            I agree and confirm that this investment is made based on 'Execution-Only Transaction' with
+                            no recommendation being made.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            onclick="location.href='view_account.html'">Cancel</button>
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            id="btn-to-part2">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 1: Form (Part 2 - Redemption Confirmation) -->
+            <div id="step1Part2Form" class="row g-4 d-none">
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-5">
+                        <div class="card-body p-0">
+                            <div class="d-flex gap-2 align-items-center mb-4">
+                                <a href="#" class="text-primary text-decoration-underline fw-bold fs-5"
+                                    id="confirmAccountNo">094766567</a>
+                                <h5 class="fw-bold m-0 fs-5" id="confirmAccountName">PUBLIC STRATEGIC GROWTH FUND</h5>
+                            </div>
+                            <p class="text-muted fs-7 mb-4">Please confirm your redemption details below</p>
+
+                            <div class="bg-light rounded-3 p-4 mb-3">
+                                <div class="text-muted fs-8 mb-1">Units to Redeem</div>
+                                <div class="fw-bold fs-2 text-dark" id="confirmUnitsDisplay">150,000</div>
+                                <div class="text-muted fs-8 mt-1">units</div>
+                            </div>
+
+                            <div class="border rounded-3 p-3 mb-4 d-flex align-items-center gap-3">
+                                <i class="iconoir-calculator fs-5 text-muted"></i>
+                                <div>
+                                    <div class="text-muted fs-9">Estimated Redemption Value</div>
+                                    <div class="fw-bold fs-5 text-dark" id="confirmEstValueDisplay">RM 75,195.00</div>
+                                </div>
+                            </div>
+
+                            <div class="alert d-flex align-items-start gap-3 border-0 py-3 px-4 mb-4 rounded-3"
+                                style="background-color: rgba(13,110,253,0.06); border-left: 4px solid #0d6efd !important;">
+                                <i class="iconoir-info-circle text-primary fs-5 mt-1"></i>
+                                <span class="fs-8 text-dark">Redemption proceeds will be credited to your registered
+                                    bank account within <strong>T+2 business days</strong> upon authorisation.</span>
+                            </div>
+
+                            <div class="alert alert-secondary d-flex align-items-center border-0 bg-secondary bg-opacity-10 py-3 rounded-3"
+                                style="border-left: 4px solid #6c757d !important;">
+                                <i class="iconoir-warning-triangle text-secondary fs-5 me-3"></i>
+                                <span class="fs-8 fw-semibold text-dark">The transaction request will not be complete
+                                    until it is authorised.</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Account Mini Summary -->
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body p-2">
+                            <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Redemption Summary</h6>
+                            <div class="mb-3">
+                                <div class="text-muted fs-9 mb-1">Account</div>
+                                <div class="fw-bold fs-8 text-dark" id="part2SummaryAccount">094766567 PUBLIC STRATEGIC
+                                    GROWTH FUND</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-muted fs-9 mb-1">Units to Redeem</div>
+                                <div class="fw-bold fs-4 text-danger" id="part2SummaryUnits">150,000</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="text-muted fs-9 mb-1">Estimated Value</div>
+                                <div class="fw-bold fs-6 text-dark" id="part2SummaryEst">RM 75,195.00</div>
+                            </div>
+                            <div class="mt-4 p-3 rounded-3 bg-light border fs-9 text-muted">
+                                <i class="iconoir-info-circle me-1 text-primary"></i>
+                                Payout credited automatically to registered bank within T+2 business days.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            onclick="location.href='view_account.html'">Cancel</button>
+                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            id="btn-back-to-part1">Back</button>
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            id="btn-to-payment">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Payment Gateway & PAC Verification -->
+            <div id="step2Form" class="row g-4 d-none">
+                <div class="col-lg-7">
+                    <!-- LEFT: Security Verification Form -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body p-2">
+                            <h5 class="fw-bold mb-4 pb-2 border-bottom text-dark">Secure Verification</h5>
+
+                            <form id="step2VerificationForm">
+                                <!-- Captcha verification -->
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-md-5 mb-3 mb-md-0">
+                                        <!-- Mock Captcha Box -->
+                                        <div id="captcha-box" class="fw-bold border"
+                                            style="background: #f1f3f5; padding: 10px; text-align: center; letter-spacing: 6px; font-style: italic; font-size: 1.4rem; color: #495057; border-radius: 8px; user-select: none; font-family: monospace;">
+                                            2YA8U2
+                                        </div>
+                                        <div class="mt-2" style="font-size: 0.75rem;">Can't read the text? <a href="#"
+                                                id="refresh-captcha" class="text-dark fw-bold">Try another text</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <label class="form-label">Enter CAPTCHA Code</label>
+                                        <input type="text" class="form-control" id="captchaInput" value="2YA8U2">
+                                        <div class="invalid-feedback" id="captcha-error">Incorrect CAPTCHA code.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Verification Method</label>
+                                    <select class="form-select text-dark fw-semibold">
+                                        <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                                        <option value="SecureSign">SecureSign</option>
+                                    </select>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">PAC Number</label>
+                                    <div class="pac-group">
+                                        <input type="password" class="form-control" id="pacInput"
+                                            placeholder="Enter 8-digit PAC" value="12345678" maxlength="8">
+                                        <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                            PAC</button>
+                                    </div>
+                                    <div class="invalid-feedback" id="pac-error" style="display:none;">Incorrect PAC
+                                        number. Please click 'REQUEST PAC' and use 12345678 to proceed.</div>
+                                </div>
+                                <div class="pac-info-text mb-4 text-muted fs-9">
+                                    * Please request for PAC and enter the number sent to your registered mobile number.
+                                    If you did not receive PAC on your registered mobile number, please contact our
+                                    Customer Service at 03-2022 5000 for assistance.
+                                </div>
+                                <div
+                                    class="pac-info-text mb-4 fw-bold p-3 bg-light rounded-3 d-flex align-items-center border">
+                                    <i class="iconoir-smartphone-device fs-4 me-3 text-danger"></i>
+                                    <span class="fs-9" style="line-height: 1.4;">A 8-digit PAC will be sent to your
+                                        registered mobile number XXX3ZXXXXX1.<br>Please click Request PAC if you wish to
+                                        proceed</span>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Redemption Summary -->
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100 p-4">
+                        <div class="card-body p-2">
+                            <h5 class="fw-bold mb-4 pb-2 border-bottom text-dark">Redemption Summary</h5>
+                            <div class="mb-4">
+                                <div class="text-muted fs-8 mb-1">Redemption Account</div>
+                                <div class="fw-bold fs-7 text-dark" id="paymentAccountDisplay">094766567 PUBLIC
+                                    STRATEGIC GROWTH FUND</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-muted fs-8 mb-1">Units to Redeem</div>
+                                <div class="fw-bold fs-4 text-danger" id="paymentAmountDisplay">150,000 units</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-muted fs-8 mb-1">Estimated Value</div>
+                                <div class="fw-bold fs-6 text-dark" id="paymentEstValueDisplay">RM 75,195.00</div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="text-muted fs-8 mb-1">Payout Bank (Auto)</div>
+                                <div class="fw-bold fs-8 text-dark">PUBLIC BANK BERHAD 891823092391</div>
+                            </div>
+                            <div class="mb-1 text-muted fs-9 p-3 bg-light rounded-3 d-flex border">
+                                <i class="iconoir-info-circle text-primary fs-5 me-2"></i>
+                                <span>Simulated secure verification is required to process this redemption
+                                    request.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            id="btn-back-to-part2">Back</button>
+                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            id="btn-confirm-payment-trigger">Confirm Redemption</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Completed -->
+            <div id="step3Form" class="row g-4 d-none">
+                <div class="col-12 mt-0">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-5">
+                        <div class="card-body p-0">
+                            <!-- Print-only header -->
+                            <!-- <div class="print-header d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom">
+                                <img src="../images/logo.png" alt="Public Mutual" height="35">
+                                <div class="text-end">
+                                    <div class="fw-bold fs-7 text-dark">Redemption Confirmation</div>
+                                    <div class="text-muted fs-9">Corporate Public Mutual Online</div>
+                                    <div class="text-muted fs-9" id="printDate"></div>
+                                </div>
+                            </div> -->
+
+                            <div class="col-lg-12 text-center mb-4" id="successIcon">
+                                <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
+                                    style="width: 100px; height: 100px;">
+                                    <i class="iconoir-check text-white" style="font-size: 3rem; stroke-width: 3;"></i>
+                                </div>
+                                <h4 class="fw-bold text-dark mt-3 mb-1">Redemption Request Submitted</h4>
+                                <p class="text-muted fs-8">Your request has been received and is awaiting authorisation.
+                                </p>
+                            </div>
+
+                            <!-- Pending Authorisation Banner -->
+                            <div class="alert d-flex align-items-start gap-3 border-0 py-3 px-4 mb-5 rounded-3"
+                                style="background-color: rgba(255,193,7,0.10); border-left: 4px solid #ffc107 !important;">
+                                <i class="iconoir-warning-triangle text-warning fs-4 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <div class="fw-bold text-dark fs-7 mb-1">Pending for Authorisation</div>
+                                    <div class="fs-8 text-dark">Your redemption has been received. This request is not
+                                        complete until authorisation is made.</div>
+                                </div>
+                            </div>
+
+                            <div class="row g-5">
+                                <!-- Left Col -->
+                                <div class="col-md-6 border-end">
+                                    <h5 class="fw-bold mb-4 text-dark">Redemption Details</h5>
+
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Reference Number</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">
+                                            RP26000000000180</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Account</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="successAccountDisplay">094766567 PUBLIC STRATEGIC GROWTH FUND</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Units Redeemed</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="successUnitsDisplay">150,000.00 units</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Estimated Redemption Value</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="successEstValueDisplay">RM 75,195.00</div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Unit Trust Consultant</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">Tan Bee Bee
+                                            (123123123)</div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Col -->
+                                <div class="col-md-6 ps-md-4">
+                                    <h5 class="fw-bold mb-4 text-dark">Processing Information</h5>
+
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Payout Bank</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">PUBLIC BANK
+                                            BERHAD 891823092391</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Transaction ID</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">TXN8128933
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Date / Time</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">07/05/2026
+                                            11:20</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Estimated Payout Date</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">09/05/2026
+                                            (T+2)</div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Status</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7">Successful
+                                            (Pending Authorization)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button
+                            class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-flex align-items-center gap-2"
+                            id="btn-print-summary" onclick="printRedemptionSummary()">
+                            <i class="iconoir-printer fs-6"></i> Print
+                        </button>
+                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            onclick="location.href='dashboard.html'">Back to Dashboard</button>
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            onclick="location.href='view_account.html'">Redeem Another Account</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+    aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseUt">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                    id="pmoUtSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                    id="pmoUtSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
+                                Top-Up Investment <span
+                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
+                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
+                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="transactions.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnOnline">Online Activities</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=request"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
+                                Reports</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="analytics.html"
+                    id="pmoUtSideAnalytics">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2 mt-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="settings.html"
+                    id="pmoUtSideSettings">
+                    <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoUtSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+
+    <!-- Redemption Wizard Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const MIN_UNITS = 100000;
+
+            // Screen elements
+            const step1Form = document.getElementById('step1Form');
+            const step1Part2Form = document.getElementById('step1Part2Form');
+            const step2Form = document.getElementById('step2Form');
+            const step3Form = document.getElementById('step3Form');
+
+            // Stepper indicators
+            const indicatorStep1 = document.getElementById('indicator-step-1');
+            const indicatorStep2 = document.getElementById('indicator-step-2');
+            const indicatorStep3 = document.getElementById('indicator-step-3');
+            const line1 = document.getElementById('line-1');
+            const line2 = document.getElementById('line-2');
+
+            // Form inputs
+            const selectAccount = document.getElementById('selectAccount');
+            const redeemUnits = document.getElementById('redeemUnits');
+            const executionCheck = document.getElementById('executionCheck');
+            const unitsError = document.getElementById('units-error');
+
+            // Preview card
+            const previewAccountNo = document.getElementById('previewAccountNo');
+            const previewAccountName = document.getElementById('previewAccountName');
+            const previewLastPrice = document.getElementById('previewLastPrice');
+            const previewTotalUnits = document.getElementById('previewTotalUnits');
+            const previewAvailableUnits = document.getElementById('previewAvailableUnits');
+            const estimatedValue = document.getElementById('estimatedValue');
+
+            // Confirmation (Part 2)
+            const confirmAccountNo = document.getElementById('confirmAccountNo');
+            const confirmAccountName = document.getElementById('confirmAccountName');
+            const confirmUnitsDisplay = document.getElementById('confirmUnitsDisplay');
+            const confirmEstValueDisplay = document.getElementById('confirmEstValueDisplay');
+
+            // Step 2
+            const paymentAccountDisplay = document.getElementById('paymentAccountDisplay');
+            const paymentAmountDisplay = document.getElementById('paymentAmountDisplay');
+            const paymentEstValueDisplay = document.getElementById('paymentEstValueDisplay');
+            const captchaBox = document.getElementById('captcha-box');
+            const captchaInput = document.getElementById('captchaInput');
+            const refreshCaptchaBtn = document.getElementById('refresh-captcha');
+            const pacInput = document.getElementById('pacInput');
+            const btnRequestPac = document.getElementById('btn-request-pac');
+            const pacError = document.getElementById('pac-error');
+
+            // Step 3
+            const successAccountDisplay = document.getElementById('successAccountDisplay');
+            const successUnitsDisplay = document.getElementById('successUnitsDisplay');
+            const successEstValueDisplay = document.getElementById('successEstValueDisplay');
+
+            const captchas = ['2YA8U2', '4P8DX', '9KW4V', 'K7Z2M', 'X4F9S'];
+            let currentCaptchaIdx = 0;
+
+            function getSelectedOption() {
+                return selectAccount.options[selectAccount.selectedIndex];
+            }
+
+            function formatNumber(n) {
+                return n.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+
+            function updatePreviewCard() {
+                const opt = getSelectedOption();
+                const price = parseFloat(opt.dataset.price);
+                const units = parseFloat(redeemUnits.value.replace(/,/g, '') || 0);
+                const est = units * price;
+
+                previewAccountNo.textContent = opt.value;
+                previewAccountName.textContent = opt.dataset.name;
+                previewLastPrice.textContent = 'RM ' + parseFloat(opt.dataset.price).toFixed(4);
+                previewTotalUnits.textContent = formatNumber(parseFloat(opt.dataset.units));
+                previewAvailableUnits.textContent = formatNumber(parseFloat(opt.dataset.available));
+                estimatedValue.textContent = 'RM ' + formatNumber(est);
+            }
+
+            // Update on account change
+            selectAccount.addEventListener('change', updatePreviewCard);
+
+            // Update estimated value live as user types
+            redeemUnits.addEventListener('input', function () {
+                const opt = getSelectedOption();
+                const price = parseFloat(opt.dataset.price);
+                const units = parseFloat(this.value.replace(/,/g, '') || 0);
+                estimatedValue.textContent = 'RM ' + formatNumber(units * price);
+                redeemUnits.classList.remove('is-invalid');
+            });
+
+            // Captcha refresh
+            if (refreshCaptchaBtn) {
+                refreshCaptchaBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    currentCaptchaIdx = (currentCaptchaIdx + 1) % captchas.length;
+                    captchaBox.textContent = captchas[currentCaptchaIdx];
+                    captchaInput.value = captchas[currentCaptchaIdx];
+                });
+            }
+
+            // PAC simulation
+            if (btnRequestPac) {
+                btnRequestPac.addEventListener('click', function () {
+                    alert("A demonstration 8-digit PAC [12345678] has been simulated and sent to registered mobile XXX3ZXXXXX1.");
+                    pacInput.value = "12345678";
+                });
+            }
+
+            // Wizard step controller
+            function showWizardStep(step) {
+                step1Form.classList.add('d-none');
+                step1Part2Form.classList.add('d-none');
+                step2Form.classList.add('d-none');
+                step3Form.classList.add('d-none');
+
+                indicatorStep1.className = 'h-step';
+                indicatorStep2.className = 'h-step';
+                indicatorStep3.className = 'h-step';
+                line1.className = 'h-step-line';
+                line2.className = 'h-step-line';
+
+                const iconStep1 = indicatorStep1.querySelector('.h-step-circle i');
+                const iconStep2 = indicatorStep2.querySelector('.h-step-circle i');
+                const iconStep3 = indicatorStep3.querySelector('.h-step-circle i');
+
+                iconStep1.className = 'iconoir-page';
+                iconStep2.className = 'iconoir-lock';
+                iconStep3.className = 'iconoir-check-circle';
+
+                if (step === 1) {
+                    step1Form.classList.remove('d-none');
+                    indicatorStep1.classList.add('active');
+                } else if (step === 1.5) {
+                    step1Part2Form.classList.remove('d-none');
+                    indicatorStep1.classList.add('active');
+                } else if (step === 2) {
+                    step2Form.classList.remove('d-none');
+                    indicatorStep1.classList.add('completed');
+                    iconStep1.className = 'iconoir-check';
+                    line1.classList.add('completed');
+                    indicatorStep2.classList.add('active');
+                } else if (step === 3) {
+                    step3Form.classList.remove('d-none');
+                    indicatorStep1.classList.add('completed');
+                    iconStep1.className = 'iconoir-check';
+                    line1.classList.add('completed');
+                    indicatorStep2.classList.add('completed');
+                    iconStep2.className = 'iconoir-check';
+                    line2.classList.add('completed');
+                    indicatorStep3.classList.add('active');
+                    iconStep3.className = 'iconoir-check-circle-solid';
+                }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Step 1 → Part 2
+            const btnToPart2 = document.getElementById('btn-to-part2');
+            if (btnToPart2) {
+                btnToPart2.addEventListener('click', function () {
+                    const units = parseFloat(redeemUnits.value.replace(/,/g, '') || 0);
+                    if (!redeemUnits.value.trim() || isNaN(units) || units < MIN_UNITS) {
+                        redeemUnits.classList.add('is-invalid');
+                        return;
+                    }
+                    if (!executionCheck.checked) {
+                        alert("You must agree and check the Execution-Only Transaction statement to continue.");
+                        return;
+                    }
+
+                    const opt = getSelectedOption();
+                    const price = parseFloat(opt.dataset.price);
+                    const est = units * price;
+
+                    confirmAccountNo.textContent = opt.value;
+                    confirmAccountName.textContent = opt.dataset.name;
+                    confirmUnitsDisplay.textContent = formatNumber(units);
+                    confirmEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+
+                    // Populate right summary panel
+                    const p2Acct = document.getElementById('part2SummaryAccount');
+                    const p2Units = document.getElementById('part2SummaryUnits');
+                    const p2Est = document.getElementById('part2SummaryEst');
+                    if (p2Acct) p2Acct.textContent = opt.value + ' ' + opt.dataset.name;
+                    if (p2Units) p2Units.textContent = formatNumber(units);
+                    if (p2Est) p2Est.textContent = 'RM ' + formatNumber(est);
+
+                    showWizardStep(1.5);
+                });
+            }
+
+            // Part 2 → Part 1 (back)
+            const btnBackToPart1 = document.getElementById('btn-back-to-part1');
+            if (btnBackToPart1) {
+                btnBackToPart1.addEventListener('click', () => showWizardStep(1));
+            }
+
+            // Part 2 → Step 2
+            const btnToPayment = document.getElementById('btn-to-payment');
+            if (btnToPayment) {
+                btnToPayment.addEventListener('click', function () {
+                    const opt = getSelectedOption();
+                    const units = parseFloat(redeemUnits.value.replace(/,/g, '') || 0);
+                    const est = units * parseFloat(opt.dataset.price);
+
+                    paymentAccountDisplay.textContent = opt.value + ' ' + opt.dataset.name;
+                    paymentAmountDisplay.textContent = formatNumber(units) + ' units';
+                    if (paymentEstValueDisplay) paymentEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+
+                    showWizardStep(2);
+                });
+            }
+
+            // Step 2 → Part 2 (back)
+            const btnBackToPart2 = document.getElementById('btn-back-to-part2');
+            if (btnBackToPart2) {
+                btnBackToPart2.addEventListener('click', () => showWizardStep(1.5));
+            }
+
+            // External confirm trigger (button lives outside form)
+            const btnConfirmTrigger = document.getElementById('btn-confirm-payment-trigger');
+            if (btnConfirmTrigger) {
+                btnConfirmTrigger.addEventListener('click', function () {
+                    document.getElementById('step2VerificationForm').dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+                });
+            }
+
+            // Step 2 submit
+            const step2VerificationForm = document.getElementById('step2VerificationForm');
+            if (step2VerificationForm) {
+                step2VerificationForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (captchaInput.value.toUpperCase() !== captchaBox.textContent.trim()) {
+                        captchaInput.classList.add('is-invalid');
+                        alert("Incorrect CAPTCHA code.");
+                        return;
+                    } else {
+                        captchaInput.classList.remove('is-invalid');
+                    }
+
+                    if (pacInput.value !== '12345678') {
+                        pacInput.classList.add('is-invalid');
+                        pacError.style.display = 'block';
+                        alert("Incorrect PAC number. Please click 'REQUEST PAC' and use code 12345678.");
+                        return;
+                    } else {
+                        pacInput.classList.remove('is-invalid');
+                        pacError.style.display = 'none';
+                    }
+
+                    const opt = getSelectedOption();
+                    const units = parseFloat(redeemUnits.value.replace(/,/g, '') || 0);
+                    const est = units * parseFloat(opt.dataset.price);
+
+                    successAccountDisplay.textContent = opt.value + ' ' + opt.dataset.name;
+                    successUnitsDisplay.textContent = formatNumber(units) + ' units';
+                    successEstValueDisplay.textContent = 'RM ' + formatNumber(est);
+
+                    showWizardStep(3);
+                });
+            }
+
+            // Init preview
+            updatePreviewCard();
+        });
+
+        // Print summary function (global scope, called by onclick)
+        function printRedemptionSummary() {
+            // Set print date/time
+            const printDateEl = document.getElementById('printDate');
+            if (printDateEl) {
+                const now = new Date();
+                printDateEl.textContent = 'Printed: ' + now.toLocaleString('en-MY', {
+                    day: '2-digit', month: '2-digit', year: 'numeric',
+                    hour: '2-digit', minute: '2-digit'
+                });
+            }
+            window.print();
+        }
+    </script>
+</body>
+
+</html>

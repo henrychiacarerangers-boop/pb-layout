@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Authorise Redemption</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="../css/montserrat.css"
+        rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+
+    <style>
+        .custom-table-details td {
+            padding: 12px 16px;
+            font-size: 0.8rem;
+        }
+
+        .custom-table-details tr:last-child {
+            border-bottom: 0 !important;
+        }
+
+        .pac-group {
+            position: relative;
+        }
+
+        .btn-request-pac {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--brand-red, #dc3545);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-request-pac:hover {
+            color: #bd2130;
+        }
+
+        .brand-text-red {
+            color: var(--brand-red, #dc3545) !important;
+        }
+
+        /* Print styles for summary printing */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .top-landing-wrapper,
+            .custom-sidebar,
+            .offcanvas,
+            .bottom-footer,
+            #btn-action-row,
+            .navbar,
+            .dashboard-header,
+            #pac-verification-card,
+            .print-hidden {
+                display: none !important;
+            }
+
+            main {
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+
+            .card {
+                border: 1px solid #dee2e6 !important;
+                box-shadow: none !important;
+                margin-bottom: 20px !important;
+            }
+
+            .print-header {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
+    data-pmo-footer-print="1">
+
+    <!-- Top Landing Section -->
+    <div class="top-landing-wrapper position-relative"
+        style="background-image: url('../images/landing-bg.png'); background-size: cover; background-position: right center;">
+
+        <!-- Floating Navbar -->
+        <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+<header class="top-nav pmo-shell-dashboard-topnav w-100">
+    <div class="container-fluid px-3 px-md-4 py-2">
+        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+            aria-label="Portal primary">
+            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                        id="pmoShellBtnOpenSidebarUt">
+                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                    </button>
+                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                        id="pmoShellBrandUt">
+                        <img src="../images/logo.png" alt="Logo" height="35">
+                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                            <img src="../images/pmo-logo.pngg" alt="PMO" height="40">
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                    <a href="dashboard.html"
+                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                        id="pmoShellPillUt">
+                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                    <a href="../eop/dashboard.html"
+                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                        id="pmoShellPillEopFromUt">
+                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 35px; height: 35px;" aria-hidden="true">
+                        <i class="iconoir-user fs-5 text-dark"></i>
+                    </div>
+                    <span class="fs-8 fw-semibold text-dark d-none d-sm-inline" id="pmoShellNavUserUt">User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+    </div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                    <span class="text-white-50 fw-normal fs-6">· Unit Trust Portal</span>
+                </h1>
+                <p class="text-white-50 fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_account.html">View Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="authorise.html">Authorise <span
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions.html">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statements.html">Statements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- Main Content -->
+    <main class="dashboard-content py-5">
+        <div class="container">
+
+            <!-- Breadcrumbs / Top Header Actions (Standardised) -->
+            <div
+                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 print-hidden">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="authorise.html" class="btn-back-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Back to Pending Authorisation">
+                        <i class="iconoir-nav-arrow-left fs-5 text-dark"></i>
+                    </a>
+                    <div>
+                        <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
+                            <span class="text-secondary fw-medium" id="headerRefDisplay">RP26000000000179</span>
+                            <span class="text-primary" id="headerFundDisplay">PUBLIC e-CASH DEPOSIT - CLASS B</span>
+                        </h2>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block">Authorise Redemption Request</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <button
+                        class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2"
+                        style="border-color: #dee2e6;" onclick="window.print()">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Print-Only Header -->
+            <div class="print-header d-none align-items-center justify-content-between mb-4 pb-3 border-bottom">
+                <div class="d-flex align-items-center">
+                    <img src="../images/logo.png" alt="Public Mutual" height="35">
+                    <div class="ms-3 ps-3 border-start border-2 h-100 d-flex align-items-center"
+                        style="border-color: #dee2e6 !important; height: 30px !important;">
+                        <img src="../images/pmo-logo.png" alt="PMO Logo" height="25">
+                    </div>
+                </div>
+                <div class="text-end">
+                    <div class="fw-bold fs-7 text-dark">Redemption Authorisation Advice</div>
+                    <div class="text-muted fs-9">Corporate Public Mutual Online</div>
+                    <div class="text-muted fs-9" id="printDateTime"></div>
+                </div>
+            </div>
+
+            <!-- STEP 1: Main Verification & Detail View -->
+            <div id="authoriseDetailSection" class="row g-4">
+
+                <!-- LEFT: All Authorise Request Details -->
+                <div class="col-lg-7">
+                    <!-- Request Summary Card -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                        <div class="card-body p-4">
+                            <h5
+                                class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
+                                <span>Request Overview</span>
+                            </h5>
+
+                            <div class="table-responsive">
+                                <table class="table align-middle custom-table-details mb-0">
+                                    <tbody>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold" style="width: 35%;">Reference No.</td>
+                                            <td class="fw-bold text-dark" id="refNoDisplay">RP26000000000179</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Request Date & Time</td>
+                                            <td class="text-dark" id="requestDateDisplay">2026/04/05 11:30:15</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Fund Name</td>
+                                            <td class="fw-bold text-dark" id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
+                                                CLASS B</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Account Number</td>
+                                            <td class="fw-bold text-primary" id="accountDisplay">0193922094</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Payout Account</td>
+                                            <td class="text-dark" id="payoutAccountDisplay">PUBLIC BANK BERHAD
+                                                (891823092391)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Redemption & Unit Details Card (Standardised matching EOP) -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Redemption &amp; Unit Details</h5>
+                            <div class="table-responsive">
+                                <table class="table align-middle custom-table-details mb-0">
+                                    <tbody>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold" style="width: 35%;">Current Unit Balance</td>
+                                            <td class="fw-bold text-dark" id="totalUnitsDisplay">—</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Redemption Units</td>
+                                            <td class="fw-bold text-dark" id="redeemUnitsDisplay">—</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Remaining Units</td>
+                                            <td class="fw-bold text-dark" id="afterRedeemDisplay">—</td>
+                                        </tr>
+                                        <tr class="border-bottom">
+                                            <td class="text-muted fw-semibold">Estimated Payout Value</td>
+                                            <td class="fw-bold text-danger fs-6" id="payoutValueDisplay">—</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAC Secure Verification Card -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4" id="pac-verification-card">
+                        <div class="card-body p-2">
+                            <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Secure Authorisation</h5>
+
+                            <form id="authPACForm">
+                                <div class="mb-3">
+                                    <label class="form-label text-muted fs-8 fw-semibold">Verification Method</label>
+                                    <select class="form-select text-dark fw-semibold fs-8">
+                                        <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                                        <option value="SecureSign">SecureSign</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label text-dark fs-8 fw-bold">PAC Number</label>
+                                    <div class="pac-group">
+                                        <input type="password" class="form-control border-secondary rounded-3 px-3 py-2"
+                                            id="pacInput" placeholder="Enter 8-digit PAC" maxlength="8">
+                                        <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                            PAC</button>
+                                    </div>
+                                    <div class="invalid-feedback" id="pac-error" style="display:none;">Incorrect PAC
+                                        number. Please click 'REQUEST PAC' and use code 12345678.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label text-muted fs-8 fw-semibold">Authoriser Remarks
+                                        (Optional)</label>
+                                    <textarea class="form-control" id="remarksInput" rows="2"
+                                        placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
+                                </div>
+
+                                <div class="pac-info-text mb-2 text-muted fs-9">
+                                    * Please click 'REQUEST PAC' and enter the 8-digit code sent to your registered
+                                    mobile number XXX3ZXXXXX1.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Authorisation Summary Action Deck -->
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body p-2 d-flex flex-column justify-content-between">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Transaction Category</div>
+                                    <div class="fw-bold fs-8 text-dark">Redemption Request (Unit-based)</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Initiator</div>
+                                    <div class="fw-bold fs-8 text-dark">Ahmad Razak bin Osman</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Amount Units to Claim</div>
+                                    <div class="fw-bold fs-4 text-danger" id="redeemUnitsDisplay2">30,000.00</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Impact to Portfolio</div>
+                                    <div class="fw-bold fs-8 text-dark" id="portfolioImpactDisplay">Reduces e-CASH
+                                        holdings by 76.9%</div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="mt-4 p-3 rounded-3 bg-light border fs-9 text-muted">
+                                <i class="iconoir-info-circle me-1 text-primary"></i>
+                                Approving this transaction immediately proceeds with payout processing. Rejecting returns this request to initiator with your feedback.
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions validation block -->
+                <div class="col-12 print-hidden mb-2">
+                    <div class="mt-4">
+                        <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
+                            <input class="form-check-input mt-0 fs-5" type="checkbox" id="utAuthTermsCheckbox" style="flex-shrink: 0;">
+                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="utAuthTermsCheckbox">
+                                I have read and agreed to the <a href="#" class="text-danger fw-bold text-decoration-none" style="color: var(--brand-red, #ed1c24) !important;">Terms and Conditions of Unit Trust Investment</a> and hereby authorise this transaction.
+                            </label>
+                        </div>
+                        <div class="invalid-feedback d-none mt-1" id="utAuthTermsError" style="color: var(--brand-red, #ed1c24); font-size: 0.75rem;">
+                            You must agree to the Terms and Conditions before authorising.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOOTER BUTTONS: Outside Cards, Left Standard aligned -->
+                <div class="col-12 print-hidden">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            onclick="location.href='authorise.html'">Back</button>
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            id="btn-reject-trigger">Reject Request</button>
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            id="btn-approve-trigger">Approve & Authorise</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- STEP 2: Done Screen (Approved/Rejected Status) -->
+            <div id="authoriseDoneSection" class="row g-4 d-none">
+                <div class="col-12 mt-0">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-5">
+                        <div class="card-body p-0">
+
+                            <!-- Large Status Icon -->
+                            <div class="col-lg-12 text-center mb-4">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
+                                    id="statusIconBg" style="width: 100px; height: 100px;">
+                                    <i class="text-white" id="statusIcon" style="font-size: 3rem; stroke-width: 3;"></i>
+                                </div>
+                            </div>
+
+                            <div class="text-center mb-5">
+                                <h3 class="fw-bold text-dark mb-2" id="statusMainTitle">Redemption Request Approved</h3>
+                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 500px;" id="statusSubTitle">
+                                    The redemption transaction has been successfully approved. Payout process will be
+                                    executed automatically.</p>
+                            </div>
+
+                            <!-- Dual Column Premium layout, matching top_up.html and redemption.html -->
+                            <div class="row g-5">
+                                <!-- Left Col: Transaction Request Details -->
+                                <div class="col-md-6 border-end text-start">
+                                    <h5 class="fw-bold mb-4 text-dark">Request Details</h5>
+
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Reference No.</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7" id="doneRefNo">
+                                            RP26000000000179</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Fund Name</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="doneFundName">PUBLIC e-CASH DEPOSIT - CLASS B</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Account Number</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-primary fs-7"
+                                            id="doneAccount">0193922094</div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Transaction Category</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7">Redemption
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Col: Authorization Status details -->
+                                <div class="col-md-6 ps-md-4 text-start">
+                                    <h5 class="fw-bold mb-4 text-dark">Authorization Details</h5>
+
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Execution Status</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold fs-7" id="doneStatusText">
+                                            Approved (Pending Payout)</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Redeemed Units</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7"
+                                            id="doneRedeemUnits">30,000.00 Units</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Remaining Unit Balance</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7"
+                                            id="doneRemainingUnits">9,000.00 Units</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Authorised On</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="doneDateTime">2026/05/11 14:42:00</div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Authoriser Remarks</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="doneRemarksDisplay">-</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER ACTIONS FOR STEP 2 -->
+                    <div class="col-12 mt-4 print-hidden">
+                        <div class="d-flex justify-content-end gap-3 mt-2">
+                            <button
+                                class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-flex align-items-center gap-2"
+                                onclick="window.print()">
+                                <i class="iconoir-printer fs-6"></i> Print
+                            </button>
+                            <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                                onclick="location.href='dashboard.html'">Back to Dashboard</button>
+                            <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                                onclick="location.href='authorise.html'">Back to Authorise List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer (partials/footer-portal.html) -->
+    <div id="pmoShellFooterMount">
+<footer class="bottom-footer mt-auto">
+    <div class="container text-start">
+        <div class="bottom-links mb-2">
+            <a href="#">Terms and conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Internet Risk</a>
+            <a href="#">Disclaimer</a>
+            <a href="#">Investment Channels</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="../Corporate Website/landing.html">Public Mutual Fund</a
+        </div>
+        <div class="copyright-text fs-9">
+            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+        </div>
+    </div>
+</footer>
+
+    </div>
+
+    <!-- Sidebar (partials/sidebar-*.html) -->
+    <div id="pmoShellSidebarMount">
+<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+    aria-labelledby="sidebarMenuLabel">
+    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+        <div class="d-flex justify-content-end mb-2 w-100">
+            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                aria-label="Close" id="pmoShellSidebarCloseUt">
+                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="portal-sidebar-profile-card w-100 mb-3">
+            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                Authoriser</span>
+        </div>
+    </div>
+    <div class="offcanvas-body pt-4">
+        <ul class="nav flex-column sidebar-nav">
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                    id="pmoUtSideDash">
+                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                    id="pmoUtSideViewAcct">
+                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">View Account</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Authorise Transaction</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
+                                Top-Up Investment <span
+                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                        <li class="nav-item mb-1"><a href="authorise.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
+                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
+                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Transaction Enquiry</span>
+                    </div>
+                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                </a>
+                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="transactions.html"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPast">Past Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnPending">Pending Investments</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnOnline">Online Activities</a></li>
+                        <li class="nav-item mb-1"><a href="transactions.html?tab=request"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideTxnRequest">Transaction Request</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                    <div class="d-flex align-items-center">
+                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            class="fw-medium">Statement</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <div class="collapse ps-5 mt-1" id="statementCollapse">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt1">Transactions</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt2">Annual/Interim</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
+                                Reports</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt4">e-Invoice</a></li>
+                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                id="pmoUtSideStmt5">Invoice</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="analytics.html"
+                    id="pmoUtSideAnalytics">
+                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2 mt-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="settings.html"
+                    id="pmoUtSideSettings">
+                    <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                        class="fw-medium">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                    id="pmoUtSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
+                        Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btnRequestPac = document.getElementById('btn-request-pac');
+            const pacInput = document.getElementById('pacInput');
+            const pacError = document.getElementById('pac-error');
+            const btnApprove = document.getElementById('btn-approve-trigger');
+            const btnReject = document.getElementById('btn-reject-trigger');
+
+            const detailSection = document.getElementById('authoriseDetailSection');
+            const doneSection = document.getElementById('authoriseDoneSection');
+
+            const statusIconBg = document.getElementById('statusIconBg');
+            const statusIcon = document.getElementById('statusIcon');
+            const statusMainTitle = document.getElementById('statusMainTitle');
+            const statusSubTitle = document.getElementById('statusSubTitle');
+            const doneStatusText = document.getElementById('doneStatusText');
+            const doneRemarksDisplay = document.getElementById('doneRemarksDisplay');
+            const doneDateTime = document.getElementById('doneDateTime');
+            const printDateTime = document.getElementById('printDateTime');
+            const remarksInput = document.getElementById('remarksInput');
+            const termsCheckbox = document.getElementById('utAuthTermsCheckbox');
+            const termsError = document.getElementById('utAuthTermsError');
+
+            if (termsCheckbox) {
+                termsCheckbox.addEventListener('change', () => {
+                    if (termsCheckbox.checked) {
+                        termsCheckbox.classList.remove('is-invalid');
+                        termsError?.classList.add('d-none');
+                    }
+                });
+            }
+
+            function validateTerms() {
+                if (!termsCheckbox) return true;
+                if (!termsCheckbox.checked) {
+                    termsCheckbox.classList.add('is-invalid');
+                    termsError?.classList.remove('d-none');
+                    return false;
+                }
+                termsCheckbox.classList.remove('is-invalid');
+                termsError?.classList.add('d-none');
+                return true;
+            }
+            // URL parameter parsing (e.g. support referencing unique reference)
+            const urlParams = new URLSearchParams(window.location.search);
+            const refParam = urlParams.get('ref') || 'RP26000000000179';
+            const actionParam = urlParams.get('action') || '';
+
+            // Caveman style data database! Ugh!
+            const tribesData = {
+                'RP26000000000179': {
+                    fund: 'PUBLIC e-CASH DEPOSIT - CLASS B',
+                    account: '0193922094',
+                    payout: 'PUBLIC BANK BERHAD (891823092391)',
+                    totalUnits: '39,000.00 Units',
+                    redeemUnits: '30,000.00 Units',
+                    afterRedeem: '9,000.00 Units',
+                    payoutVal: 'RM 15,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: RM 0.5000)</span>',
+                    impact: 'Reduces e-CASH holdings by 76.9%',
+                    rawRedeem: '30,000.00'
+                },
+                'RP26000000000180': {
+                    fund: 'PUBLIC STRATEGIC GROWTH FUND',
+                    account: '094766567',
+                    payout: 'MAYBANK BERHAD (164019283742)',
+                    totalUnits: '250,000.00 Units',
+                    redeemUnits: '150,000.00 Units',
+                    afterRedeem: '100,000.00 Units',
+                    payoutVal: 'RM 75,195.00 <span class="text-muted fs-9 fw-normal">(Est. Price: RM 0.5013)</span>',
+                    impact: 'Reduces STRATEGIC holdings by 60.0%',
+                    rawRedeem: '150,000.00'
+                },
+                'RP26000000000181': {
+                    fund: 'PUBLIC ISLAMIC DIVIDEND FUND',
+                    account: '0283749202',
+                    payout: 'CIMB BANK BERHAD (7029381023)',
+                    totalUnits: '120,000.00 Units',
+                    redeemUnits: '100,000.00 Units',
+                    afterRedeem: '20,000.00 Units',
+                    payoutVal: 'RM 50,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: RM 0.5000)</span>',
+                    impact: 'Reduces DIVIDEND holdings by 83.3%',
+                    rawRedeem: '100,000.00'
+                }
+            };
+
+            // Grab data or fallback to row 1
+            const activeTribe = tribesData[refParam] || tribesData['RP26000000000179'];
+
+            // Fill the DOM with dynamic tribe data! Ugh!
+            document.getElementById('headerRefDisplay').textContent = refParam;
+            document.getElementById('headerFundDisplay').textContent = activeTribe.fund;
+            document.getElementById('refNoDisplay').textContent = refParam;
+            document.getElementById('doneRefNo').textContent = refParam;
+            document.getElementById('fundNameDisplay').textContent = activeTribe.fund;
+            document.getElementById('accountDisplay').textContent = activeTribe.account;
+            document.getElementById('payoutAccountDisplay').textContent = activeTribe.payout;
+            document.getElementById('totalUnitsDisplay').textContent = activeTribe.totalUnits;
+            document.getElementById('redeemUnitsDisplay').textContent = activeTribe.redeemUnits;
+            document.getElementById('afterRedeemDisplay').textContent = activeTribe.afterRedeem;
+            document.getElementById('payoutValueDisplay').innerHTML = activeTribe.payoutVal;
+            document.getElementById('redeemUnitsDisplay2').textContent = activeTribe.rawRedeem;
+            document.getElementById('portfolioImpactDisplay').textContent = activeTribe.impact;
+
+            // Done Screen sync
+            document.getElementById('doneFundName').textContent = activeTribe.fund;
+            document.getElementById('doneAccount').textContent = activeTribe.account;
+            document.getElementById('doneRedeemUnits').textContent = activeTribe.redeemUnits;
+            document.getElementById('doneRemainingUnits').textContent = activeTribe.afterRedeem;
+
+            // Generate/Display Request Date (Dynamic current date style)
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const formattedDate = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+
+            document.getElementById('requestDateDisplay').textContent = formattedDate;
+
+            // Auto action triggers for seamless demo!
+            if (actionParam === 'approve') {
+                pacInput.value = "12345678";
+                remarksInput.value = "Approved via bulk action shortcuts.";
+                // Highlight action button to guide user
+                btnApprove.classList.add('pulse-button');
+                btnApprove.style.boxShadow = '0 0 15px rgba(40, 167, 69, 0.6)';
+            } else if (actionParam === 'reject') {
+                pacInput.value = "12345678";
+                remarksInput.value = "Rejected via bulk action shortcuts.";
+                btnReject.classList.add('pulse-button');
+                btnReject.style.boxShadow = '0 0 15px rgba(220, 53, 69, 0.6)';
+            };
+
+            // PAC Simulation Action
+            if (btnRequestPac) {
+                btnRequestPac.addEventListener('click', function () {
+                    alert("A demonstration 8-digit PAC [12345678] has been simulated and sent to registered mobile XXX3ZXXXXX1.");
+                    pacInput.value = "12345678";
+                    pacInput.classList.remove('is-invalid');
+                    pacError.style.display = 'none';
+                });
+            }
+
+            // Verify PAC for decisions
+            function validatePAC() {
+                if (!pacInput.value) {
+                    pacInput.classList.add('is-invalid');
+                    pacError.textContent = "Please enter the 8-digit PAC.";
+                    pacError.style.display = 'block';
+                    alert("Verification code is required.");
+                    return false;
+                }
+                if (pacInput.value !== '12345678') {
+                    pacInput.classList.add('is-invalid');
+                    pacError.textContent = "Incorrect PAC number. Please click 'REQUEST PAC' and use code 12345678.";
+                    pacError.style.display = 'block';
+                    alert("Incorrect PAC number. Please click 'REQUEST PAC' and use code 12345678.");
+                    return false;
+                }
+                pacInput.classList.remove('is-invalid');
+                pacError.style.display = 'none';
+                return true;
+            }
+
+            // Approve Action Handler
+            if (btnApprove) {
+                btnApprove.addEventListener('click', function () {
+                    if (!validateTerms()) return;
+                    if (!validatePAC()) return;
+
+                    // Transition to completed Approved
+                    statusIconBg.classList.remove('bg-danger');
+                    statusIconBg.classList.add('bg-success');
+                    statusIcon.className = 'iconoir-check text-white';
+                    statusMainTitle.textContent = "Redemption Request Approved";
+                    statusMainTitle.className = "fw-bold text-dark mb-2";
+                    statusSubTitle.textContent = "The redemption transaction has been successfully approved and authorised. Payout processing is underway.";
+                    doneStatusText.textContent = "Approved (Pending Payout)";
+                    doneStatusText.className = "bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7";
+                    document.getElementById('doneRedeemUnits').className = "bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7";
+
+                    const remarks = remarksInput.value.trim();
+                    doneRemarksDisplay.textContent = remarks ? remarks : "-";
+
+                    const timestamp = new Date().toLocaleString();
+                    doneDateTime.textContent = timestamp;
+                    printDateTime.textContent = timestamp;
+
+                    detailSection.classList.add('d-none');
+                    doneSection.classList.remove('d-none');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // Reject Action Handler
+            if (btnReject) {
+                btnReject.addEventListener('click', function () {
+                    if (!validatePAC()) return;
+
+                    // Transition to completed Rejected
+                    statusIconBg.classList.remove('bg-success');
+                    statusIconBg.classList.add('bg-danger');
+                    statusIcon.className = 'iconoir-cancel text-white';
+                    statusMainTitle.textContent = "Redemption Request Rejected";
+                    statusMainTitle.className = "fw-bold text-dark mb-2";
+                    statusSubTitle.textContent = "This redemption request has been rejected. It has been sent back to the initiator with your remarks.";
+                    doneStatusText.textContent = "Rejected";
+                    doneStatusText.className = "bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7";
+                    document.getElementById('doneRedeemUnits').className = "bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7";
+
+                    const remarks = remarksInput.value.trim();
+                    doneRemarksDisplay.textContent = remarks ? remarks : "-";
+
+                    const timestamp = new Date().toLocaleString();
+                    doneDateTime.textContent = timestamp;
+                    printDateTime.textContent = timestamp;
+
+                    detailSection.classList.add('d-none');
+                    doneSection.classList.remove('d-none');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

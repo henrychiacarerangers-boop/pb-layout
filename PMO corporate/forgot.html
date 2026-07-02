@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Account Recovery</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <style>
+        /* Forgot Password Specific Styles */
+        .option-select-card {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        .option-select-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(38, 36, 123, 0.2);
+        }
+
+        .option-select-card.selected {
+            border: 2px solid var(--brand-primary) !important;
+            box-shadow: 0 8px 24px rgba(237, 28, 36, 0.08) !important;
+            background-color: rgba(237, 28, 36, 0.21) !important;
+        }
+
+        .option-select-card.selected .option-icon-container {
+            background-color: var(--brand-primary) !important;
+            color: #ffffff !important;
+            transform: scale(1.05);
+        }
+
+        .option-icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        /* Custom alert transitions */
+        .retrieved-userid-banner {
+            border-left: 4px solid var(--brand-navy);
+            background-color: rgba(38, 36, 123, 0.04);
+            border-radius: var(--radius-sm);
+        }
+
+        /* Success check list item validation */
+        .custom-check-list.rules-list li.valid {
+            color: #198754 !important;
+        }
+
+        .custom-check-list.rules-list li.valid i {
+            color: #198754 !important;
+        }
+
+        .custom-check-list.rules-list li.invalid {
+            color: #dc3545 !important;
+        }
+
+        .custom-check-list.rules-list li.invalid i {
+            color: #dc3545 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating SMS Push Notification Container -->
+    <div class="sms-toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+        style="z-index: 10000; width: 100%; max-width: 440px; pointer-events: none; margin-top: 15px;">
+        <div id="smsToast" class="sms-toast p-3 border-start border-4 shadow rounded-4 d-none"
+            style="border-left-color: #ed1c24 !important; pointer-events: auto;">
+            <div class="d-flex align-items-start">
+                <div class="bg-danger-subtle text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px; flex-shrink: 0;">
+                    <i class="iconoir-smartphone-device fs-4"></i>
+                </div>
+                <div class="flex-grow-1 text-start">
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                        <strong class="text-dark fs-8" style="letter-spacing: 0.5px;">PUBLIC MUTUAL SMS</strong>
+                        <small class="text-muted fs-9 fw-semibold">Just now</small>
+                    </div>
+                    <div class="text-dark fs-8 font-monospace fw-semibold"
+                        style="line-height: 1.5; letter-spacing: -0.2px;">
+                        RM0.00 Public Mutual: Your secure login authorization PAC is <span
+                            class="badge bg-danger px-2 py-1 fs-8 text-white font-monospace"
+                            style="letter-spacing: 1px;">12345678</span>. Valid for 5 mins. Do not share.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="top-nav">
+        <div class="container d-flex align-items-center">
+            <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Logo" height="40"></a>
+            <div class="portal-title h4 mb-0 d-none d-md-block"><img src="images/pmo-logo-corporate.png" alt="Logo"
+                    height="40"></div>
+        </div>
+    </header>
+
+    <!-- Registration/Recovery Section -->
+    <div class="register-hero-section">
+        <div class="container">
+            <div class="row align-items-center w-100">
+                <!-- Left Side: Title & Stepper -->
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h1 class="fw-bold mb-4" style="color: #1a1e36;">Account Recovery</h1>
+                    <p class="text-muted mb-5 fs-8">Follow the step-by-step wizard to verify your identity, recover
+                        credentials, and reset your password securely.</p>
+                    <div class="stepper-container">
+                        <!-- Step 1 -->
+                        <div class="step active" id="indicator-step-1">
+                            <div class="step-circle"><i class="iconoir-page-search"></i></div>
+                            <div class="step-text">Step 1<br><small id="step1-label">Verification</small></div>
+                        </div>
+                        <div class="step-line" id="line-1"></div>
+                        <!-- Step 2 -->
+                        <div class="step" id="indicator-step-2">
+                            <div class="step-circle"><i class="iconoir-key"></i></div>
+                            <div class="step-text">Step 2<br><small id="step2-label">New Password</small></div>
+                        </div>
+                        <div class="step-line" id="line-2"></div>
+                        <!-- Step 3 -->
+                        <div class="step" id="indicator-step-3">
+                            <div class="step-circle"><i class="iconoir-smartphone-device"></i></div>
+                            <div class="step-text">Step 3<br><small id="step3-label">SMS PAC</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Forms -->
+                <div class="col-lg-7">
+
+                    <!-- STEP 1 CARD -->
+                    <div class="register-card shadow" id="step-1-card">
+                        <h2>Choose Your Recovery Option</h2>
+                        <p class="subtitle mb-4">To Reset User Credientials</p>
+
+                        <!-- Recovery Choices -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <div class="option-select-card p-4 text-center rounded-4 h-100 selected"
+                                    id="opt-password-only">
+                                    <div class="option-icon-container mb-3 d-inline-flex align-items-center justify-content-center bg-danger bg-opacity-10 text-white rounded-circle"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="iconoir-lock-slash fs-4"></i>
+                                    </div>
+                                    <h5 class="fw-bold fs-7 text-dark mb-2">Reset Password</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="option-select-card p-4 text-center rounded-4 h-100" id="opt-both">
+                                    <div class="option-icon-container mb-3 d-inline-flex align-items-center justify-content-center bg-danger bg-opacity-10 text-white rounded-circle"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="iconoir-user fs-4"></i>
+                                    </div>
+                                    <h5 class="fw-bold fs-7 text-dark mb-2">Reset ID & Password</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Area -->
+                        <form id="step1Form" class="mt-4">
+
+                            <!-- Fields for Option A: Forgot Password Only -->
+                            <div id="fields-password-only">
+                                <div class="mb-3">
+                                    <label class="form-label">PMO Corporate User ID</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted"><i
+                                                class="iconoir-user"></i></span>
+                                        <input type="text" class="form-control" id="pmoUserId"
+                                            placeholder="e.g. franklinjunior01" value="franklinjunior01">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Identification No. (As Per IC No)</label>
+                                        <input type="text" class="form-control" id="icNoPassword"
+                                            placeholder="e.g. 850821145231" value="850821145231">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Mobile No. (Last 4 Digits)</label>
+                                        <input type="text" class="form-control" id="mobilePassword"
+                                            placeholder="e.g. 3230" value="3230">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fields for Option B: Forgot Both -->
+                            <div id="fields-both" class="d-none">
+                                <div class="row mb-3">
+
+                                    <div class="col-md-12">
+                                        <label class="form-label">Company Registration No(New).</label>
+                                        <input type="text" class="form-control" id="companyRegNo"
+                                            placeholder="e.g., 202301001234" value="">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Identification No. (As Per IC No)</label>
+                                        <input type="text" class="form-control" id="icNoBoth"
+                                            placeholder="e.g. 850821145231" value="850821145231">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Mobile No. (Last 4 Digits)</label>
+                                        <input type="text" class="form-control" id="mobileBoth" placeholder="e.g. 3230"
+                                            value="3230">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Captcha Verification (Common) -->
+                            <div class="row mb-4 align-items-center">
+                                <div class="col-md-6">
+                                    <!-- Mock Captcha Box -->
+                                    <div id="captcha-box" class="fw-bold border"
+                                        style="background: #f1f3f5; padding: 10px; text-align: center; letter-spacing: 6px; font-style: italic; font-size: 1.4rem; color: #495057; border-radius: 8px; user-select: none; font-family: monospace;">
+                                        4P8DX
+                                    </div>
+                                    <div class="mt-2" style="font-size: 0.75rem;">Can't read the text? <a href="#"
+                                             id="refresh-captcha" class="text-dark fw-bold">Try another text</a></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Enter Security Code</label>
+                                    <input type="text" class="form-control" id="captchaInput"
+                                        placeholder="Enter captcha" value="4P8DX">
+                                    <div class="invalid-feedback" id="captcha-error">Incorrect captcha code.</div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-clear w-50"
+                                    onclick="window.location.href='index.html'">Cancel</button>
+                                <button type="submit" class="btn btn-log-in w-50" id="btn-next-1">Next</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- STEP 2 CARD -->
+                    <div class="register-card d-none shadow" id="step-2-card">
+                        <h2 id="step2-title">Create New Password</h2>
+<!--                        <p class="subtitle" id="step2-subtitle">Please configure a robust new password for your PMO corporate profile.</p>-->
+
+                        <form id="step2Form">
+                            <!-- Retrieved container (Only for Option B: Reset Both) -->
+                            <div class="mb-3 d-none" id="username-update-container">
+                                <label class="form-label">New User ID</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white text-muted"><i class="iconoir-user"></i></span>
+                                    <input type="text" id="newUsername" class="form-control" placeholder="Create new User ID" value="franklinjunior01">
+                                    <div class="invalid-feedback" id="newUsername-error">User ID cannot be empty.</div>
+                                </div>
+                                
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">New Password</label>
+                                    <div class="input-group">
+                                        <input type="password" id="newPassword" class="form-control"
+                                            placeholder="Enter new password" value="PmoCorpPass2026!">
+                                        <span class="input-group-text bg-white border-start-0 cursor-pointer"
+                                            id="toggleNewPassword">
+                                            <i class="iconoir-eye text-primary" id="eyeIconNew"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Confirm New Password</label>
+                                    <div class="input-group">
+                                        <input type="password" id="confirmPassword" class="form-control"
+                                            placeholder="Re-type password" value="PmoCorpPass2026!">
+                                        <span class="input-group-text bg-white border-start-0 cursor-pointer"
+                                            id="toggleConfirmPassword">
+                                            <i class="iconoir-eye text-primary" id="eyeIconConfirm"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rules Checklist -->
+                            <ul class="custom-check-list rules-list mb-4">
+                                <li id="rule-casing" class="valid"><i class="iconoir-check-circle"></i> Mixture of both
+                                    upper and lower case letters</li>
+                                <li id="rule-numeric" class="valid"><i class="iconoir-check-circle"></i> Numeric
+                                    characters (e.g. 1,2,3)</li>
+                                <li id="rule-length" class="valid"><i class="iconoir-check-circle"></i> Between 8 and 16
+                                    characters without spaces</li>
+                                <li id="rule-special" class="valid"><i class="iconoir-check-circle"></i> Special
+                                    characters ( ` ~ ! @ $ % ^ _ = + [ ] | ; . / ? )</li>
+                            </ul>
+
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-clear w-50" id="btn-back-1">Back</button>
+                                <button type="submit" class="btn btn-log-in w-50" id="btn-next-2">Next</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- STEP 3 CARD -->
+                    <div class="register-card d-none shadow" id="step-3-card">
+                        <h2>Security Verification</h2>
+                       
+
+                       
+
+                        <form id="step3Form">
+                            <div class="mb-3">
+                                <label class="form-label">Verification Method</label>
+                                <select class="form-select text-dark fw-semibold">
+                                    <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                                    <option value="SecureSign">SecureSign</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label">PAC Number</label>
+                                <div class="pac-group">
+                                    <input type="password" class="form-control" id="pacInput"
+                                        placeholder="Enter 8-digit PAC" maxlength="8" disabled>
+                                    <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                        PAC</button>
+                                </div>
+                                <div class="invalid-feedback text-danger fw-bold" id="pac-error"
+                                    style="display: none; font-size: 0.8rem; margin-top: 6px;">
+                                    <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC number. Please
+                                    use 12345678 to test.
+                                </div>
+                                <div class="valid-feedback text-success fw-bold" id="pac-success"
+                                    style="display: none; font-size: 0.8rem; margin-top: 6px;">
+                                    <i class="iconoir-check-circle-solid me-1 align-middle"></i> PAC Verified
+                                    Successfully!
+                                </div>
+                            </div>
+
+                            <div class="pac-info-text mb-4 text-muted" style="font-size: 0.75rem; line-height: 1.5;">
+                                * Please request for PAC and enter the number sent to your registered mobile number. If
+                                you did not receive PAC on your registered mobile number, please contact our Customer
+                                Service at 03-2022 5000 for assistance.
+                            </div>
+                            <div
+                                class="pac-info-text mb-4 fw-bold p-3 bg-light rounded-3 d-flex align-items-center border">
+                                <i class="iconoir-smartphone-device fs-4 me-3 text-danger"></i>
+                                <span class="fs-9" id="pac-message">PAC Sent to XXX12XXXXX3<br>Security Number:QD5788156".</span>
+                            </div>
+
+                            <!-- Countdown timer text -->
+                            <div id="pac-timer" class="text-muted fs-8 fw-semibold mb-4" style="display: none;">
+                                <i class="iconoir-clock me-1 text-danger"></i> PAC sent! Request another in <span
+                                    id="timer-seconds" class="text-danger fw-bold">60</span> seconds.
+                            </div>
+
+                            <!-- Retrieval Result Alert (Only for Option B: Forgot Both) -->
+
+                            <div id="userid-retrieval-container" class="d-none">
+                                <div class="retrieved-userid-banner p-3 mb-4 d-flex align-items-center gap-3">
+                                    <div class="bg-navy bg-opacity-10 text-navy p-2 rounded-circle">
+                                        <i class="iconoir-user fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fs-9 text-muted uppercase fw-semibold">Updated Corporate User ID
+                                        </div>
+                                        <div class="fs-6 fw-bold text-dark mt-1" id="retrieved-userid-val">
+                                            franklinjunior01</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-clear w-50" id="btn-back-2">Back</button>
+                                <button type="submit" class="btn btn-log-in w-50" id="btn-complete" disabled>Verify &amp;
+                                    Complete</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
+    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
+        <div class="container px-4">
+            <div class="row g-4">
+                <!-- Column 1: Products & Services -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Unit Trust</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">Build Wealth</a></li>
+                        <li><a href="#">List of Funds</a></li>
+                        <li><a href="#">e-Series Funds</a></li>
+                        <li><a href="#">Islamic Funds</a></li>
+                        <li><a href="#">EPF-MIS</a></li>
+                        <li><a href="#">Sustainable and Responsible Investing</a></li>
+                        <li><a href="#">Fund Prices</a></li>
+                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
+                        <li><a href="#">Private Retirement Scheme</a></li>
+                        <li><a href="#">Fund Explorer</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Specific Goals</a></li>
+                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
+                        <li><a href="#">Regular investing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Privileges & Company -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Mutual Gold</a></li>
+                        <li><a href="#">Mutual Elite</a></li>
+                        <li><a href="#">Mutual Signature</a></li>
+                        <li><a href="#">Mutual Platinum</a></li>
+                        <li><a href="#">Mutual Prestige</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">New Funds</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
+
+                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Vision Mission</a></li>
+                        <li><a href="#">Core Values</a></li>
+                        <li><a href="#">Our Profile</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Track Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources & Info -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Learning Hub</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
+                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Contact Us (Form)</a></li>
+                                <li><a href="#">Branches</a></li>
+                                <li><a href="#">Customer Service Hotline</a></li>
+                                <li><a href="#">Investor Guide</a></li>
+                                <li><a href="#">Check Your UTC's Credentials</a></li>
+                                <li><a href="#">Announcements & News</a></li>
+                                <li><a href="#">Cybersecurity Awareness</a></li>
+                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
+                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
+                                <li><a href="#">Advertising Disclaimer</a></li>
+                                <li><a href="#">Cross Trade Policy</a></li>
+                                <li><a href="#">Glossary</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Utility Footer -->
+    <footer class="bottom-footer py-4 w-100 bg-navy text-white">
+        <div class="container text-center text-md-start px-4">
+            <!-- Disclaimer -->
+            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+                *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
+                Malaysia.
+            </p>
+
+            <!-- Vanguard-Style Important Disclosures -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                            Information</h6>
+                        <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
+                                money you invest.</strong> Past performance is not a guarantee or reliable indicator of
+                            future results. Unit prices, yields, and investment returns will fluctuate, and you may have
+                            a gain or loss when you redeem your units. Diversification does not ensure a profit or
+                            protect against a loss in a declining market.</p>
+                        <p class="mb-2">Investors should carefully consider the investment objectives, risks, charges,
+                            and expenses of a fund before investing. The prospectus, master prospectus, and Product
+                            Highlights Sheet (PHS) contain this and other key information. You can obtain copies of
+                            these documents from any Public Mutual branch, Authorised Unit Trust Consultant (UTC), or
+                            online. Please read them thoroughly before making any investment decisions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                            Disclosures</h6>
+                        <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
+                            management company under the Capital Markets and Services Act 2007, regulated and supervised
+                            by the Securities Commission Malaysia (SC). Public Mutual is also a registered Institutional
+                            Private Retirement Scheme Adviser (IPRSA) and a member of the Federation of Investment
+                            Managers Malaysia (FIMM).</p>
+                        <p class="mb-2">For Shariah-compliant funds, investments are managed in strict adherence to
+                            Shariah principles under the supervision and guidance of our appointed Shariah Advisers.
+                            Private Retirement Schemes (PRS) are subject to retirement savings regulations, and early
+                            withdrawals from sub-account B may be subject to tax penalties and statutory restrictions.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-top border-white-10 pt-3 opacity-75"
+                    style="border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
+                        platforms operated by Public Mutual Berhad. By accessing these portals, you agree to be bound by
+                        the Terms and Conditions of Use, Website Disclaimer, and Privacy Policy. Electronic transactions
+                        are secured with industry-standard encryption protocols. Safeguard your login credentials;
+                        Public Mutual will never ask for your password or PAC codes via email or SMS.</p>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
+            <!-- Links -->
+            <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
+                style="font-size: 0.78rem;">
+                <a href="website-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="investment-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Investment
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-policy.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Policy</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-notice.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Notice</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="drb-consent.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">DRB
+                    Check Consent Terms</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="internet-risk.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Internet
+                    Risk</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="contact-us.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Contact
+                    Us</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="quick-links.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Quick
+                    Access Links</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="terms.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
+                    and Conditions of Use</a>
+            </div>
+            <!-- Copyright and Social Buttons -->
+            <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                    <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                        us:</span>
+                    <a href="https://www.facebook.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
+                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
+                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
+                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
+                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
+                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Forgot Password Interactions -->
+    <script src="js/forgot.js"></script>
+</body>
+
+</html>

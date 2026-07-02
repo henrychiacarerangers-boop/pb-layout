@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal - Login</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Montserrat -->
+    <link href="css/montserrat.css" rel="stylesheet">
+    <!-- Iconoir Icons -->
+    <link rel="stylesheet" href="css/iconoir.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+
+    <!-- Custom style overrides for financial solutions card hover animations -->
+    <style>
+        .financial-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .financial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(38, 36, 123, 0.12) !important;
+            border-color: rgba(38, 36, 123, 0.15) !important;
+        }
+
+        .learn-more-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #ed1c24;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .learn-more-btn span {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .financial-card:hover .learn-more-btn {
+            color: #b31017;
+        }
+
+        .financial-card:hover .learn-more-btn span {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body class="premium-login-body">
+
+    <div class="widescreen-login-container">
+
+        <!-- Top Utility Header -->
+        <div class="widescreen-header">
+            <div class="d-flex align-items-center gap-4">
+                <!-- Main Brand Logo on the Left -->
+                <div class="logo-box d-flex align-items-center gap-3">
+                     <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Public Mutual Logo" height="45"></a>
+                    <div style="width: 1px; height: 45px; background-color: #dee2e6;"></div>
+                    <img src="images/pmo-logo-corporate.png" alt="PMO Corporate Logo" height="45"
+                        style="margin-top: 2px;">
+                </div>
+            </div>
+
+            <div class="widescreen-header-links">
+                <!-- Products & Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Products &
+                        Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Unit Trust Funds</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Shariah-Compliant
+                                Funds</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">e-Series of Funds</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">EPF Members Investment
+                                Scheme</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Private Retirement
+                                Scheme (PRS)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Privileges Circle Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Privileges
+                        Circle</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Gold</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Gold Elite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Signature</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Platinum</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Mutual Prestige</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Daily Fund Prices</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Fund Reports & Fact
+                                Sheets</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Learning Hub (Investor
+                                Guide)</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Financial
+                                Calculators</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Downloads (Forms)</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Cybersecurity
+                                Awareness</a></li>
+                    </ul>
+                </div>
+
+                <!-- Happenings Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Happenings</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">New Funds</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Campaigns &
+                                Promotions</a></li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Winners Listings</a>
+                        </li>
+                        <li><a class="dropdown-item" href="../Corporate Website/landing.html">Announcements &
+                                News</a></li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Header CTA Button -->
+                <a href="../Corporate Website/landing.html" class="header-cta-btn me-3">Corporate Solutions</a>
+
+                <!-- Notification Icon -->
+                <a href="#" class="header-utility-icon me-2" title="Notifications">
+                    <i class="iconoir-bell"></i>
+                    <span
+                        style="position: absolute; top: -1px; right: -1px; width: 6px; height: 6px; background-color: #ed1c24; border-radius: 50%;"></span>
+                </a>
+
+                <!-- Search Icon -->
+                <a href="#" class="header-utility-icon me-3" title="Search">
+                    <i class="iconoir-search"></i>
+                </a>
+
+                <div class="dropdown">
+                    <div class="language-dropdown dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/my.png" alt="Malaysia Flag" width="16">
+                        <span class="ms-1">English</span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-end" style="min-width: 80px;">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">Malay</a></li>
+                        <li><a class="dropdown-item" href="#">简体中文</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="btn text-navy d-xl-none border-0 p-0 lh-1" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sitemapOffcanvas" aria-controls="sitemapOffcanvas" style="font-size: 1.75rem;">
+                <i class="iconoir-menu"></i>
+            </button>
+        </div>
+
+        <!-- Main Panel (Left / Center) -->
+        <div class="widescreen-main-panel bg-fin-hero-panel">
+
+            <!-- Content Area: Hero and Login Form -->
+            <div class="widescreen-content-wrapper">
+                <div class="row align-items-center w-100 g-4">
+                    <!-- Left: Hero Static Text & Mockups -->
+                    <div class="col-lg-7 text-start position-relative"
+                        style="min-height: 520px; display: flex; align-items: center;">
+                        <div id="heroCarousel" class="carousel slide carousel-fade w-100" data-bs-ride="carousel"
+                            data-bs-interval="6000">
+                            <!-- Carousel Indicators -->
+                            <div class="carousel-indicators"
+                                style="justify-content: flex-start; margin-left: 0; bottom: 0; margin-bottom: 0; z-index: 15;">
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                                    aria-current="true" aria-label="Slide 1"
+                                    style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.4); border: none;"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                    style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.4); border: none; margin-left: 6px;"></button>
+                            </div>
+
+                            <div class="carousel-inner pb-5">
+                                <!-- Slide 1: Market Leader -->
+                                <div class="carousel-item active">
+                                    <div class="row align-items-center w-100 g-3">
+                                        <div class="col-12">
+											
+                                            <h1 class="hero-title text-white fw-bold mb-3"
+                                                style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem;">
+                                                Institutional Wealth <br><span class="text-danger">Cash Management</span>
+                                            </h1>
+                                            <p class="hero-subtitle mb-4" style="font-size: 0.95rem;">
+                                                Empower your enterprise liquidity and corporate investments. Perform
+                                                secure bulk transactions, EPF submissions, and dual-authorization
+                                                approvals seamlessly.
+                                            </p>
+                                            
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <a href="../Corporate Website/landing.html"
+                                                    class="btn btn-hero-cta py-2 px-3 fs-8"
+                                                  	>
+                                                    Corporate Solutions <i class="iconoir-arrow-up-right ms-1"></i>
+                                                </a>
+                                                <a href="#pmo-plus-promo"
+                                                    class="btn btn-hero-outline-cta py-2 px-3 fs-8">
+                                                    Learn More <i class="iconoir-arrow-down ms-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2: Corporate Mobile & Web Experience -->
+                                <div class="carousel-item">
+                                    <div class="row align-items-center w-100 g-3">
+                                        <div class="col-12">
+											
+                                            <h1 class="hero-title text-white fw-bold mb-3"
+                                                style="font-family: 'Montserrat', sans-serif; font-size: 2.3rem;">
+                                                Institutional Wealth <br><span class="text-danger">Cash Management</span>
+                                            </h1>
+                                            <p class="hero-subtitle mb-4" style="font-size: 0.95rem;">
+                                                Empower your enterprise liquidity and corporate investments. Perform
+                                                secure bulk transactions, EPF submissions, and dual-authorization
+                                                approvals seamlessly.
+                                            </p>
+                                            
+                                            <div class="d-flex gap-2 flex-wrap">
+                                                <a href="../Corporate Website/landing.html"
+                                                    class="btn btn-hero-cta py-2 px-3 fs-8"
+                                                    style="background-color: #26247b !important; border-color: #26247b !important;">
+                                                    Corporate Solutions <i class="iconoir-arrow-up-right ms-1"></i>
+                                                </a>
+                                                <a href="#pmo-plus-promo"
+                                                    class="btn btn-hero-outline-cta py-2 px-3 fs-8">
+                                                    Learn More <i class="iconoir-arrow-down ms-1"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Inline Login Form Card -->
+                    <div class="col-lg-5">
+                        <div class="inline-login-card">
+                            <!-- Gateway Segmented Tabs -->
+                            <div class="gateway-tabs">
+                                <button type="button" class="gateway-tab-btn active" data-tab="corp-login">Corporate Log
+                                    In</button>
+                                <button type="button" class="gateway-tab-btn" data-tab="corp-register">Activate
+                                    Corporate</button>
+                            </div>
+
+                            <!-- Tab Panel 1: Corporate Log In -->
+                            <div class="gateway-panel active" id="corp-login">
+                                <form id="loginForm">
+                                    <div class="mb-3 text-start">
+                                        <label class="form-label text-secondary">User ID</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="iconoir-user fs-6"></i></span>
+                                            <input type="text" id="usernameInput" class="form-control border-start-0"
+                                                value="franklinjunior01">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 text-start">
+                                        <label class="form-label text-secondary">Password</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="iconoir-lock fs-6"></i></span>
+                                            <input type="password" id="passwordInput"
+                                                class="form-control border-start-0 border-end-0" value="123456">
+                                            <span class="input-group-text bg-white border-start-0" id="togglePassword"
+                                                style="cursor: pointer;">
+                                                <i class="iconoir-eye text-primary" id="eyeIcon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex gap-3 mb-3">
+                                        <button type="button" id="clearBtn" class="btn btn-clear-inline">Clear</button>
+                                        <button type="submit" id="loginBtn" class="btn btn-log-in-inline">
+                                            <span id="btnText">Log In</span>
+                                            <span id="btnSpinner" class="spinner-border spinner-border-sm d-none"
+                                                role="status" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="login-links-wrapper">
+                                        <a href="forgot.html" class="inline-link-item"><i
+                                                class="iconoir-arrow-right"></i>
+                                            Forgotten your password? Click here</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Tab Panel 2: Activate Corporate -->
+                            <div class="gateway-panel" id="corp-register">
+                                <div class="text-start mb-3">
+                                    <h5 class="fw-bold text-navy mb-2" style="font-size: 1.05rem;">Activate Corporate
+                                        Online</h5>
+                                    <p class="text-secondary" style="font-size: 0.8rem; line-height: 1.4;">
+                                        Invested corporate funds via a consultant or branch? Register for corporate
+                                        online access to manage your company portfolio.
+                                    </p>
+                                </div>
+                                <ul class="gateway-help-list">
+                                    <li><i class="iconoir-check"></i> <span>Link accounts opened via corporate
+                                            consultants or branches</span></li>
+<!--
+                                    <li><i class="iconoir-check"></i> <span>Set up Maker/Checker roles for
+                                            transactions</span></li>
+-->
+                                    <li><i class="iconoir-check"></i> <span>Access audit-ready reports and consolidated
+                                            statements</span></li>
+                                </ul>
+                                <div class="d-grid mt-3">
+                                    <a href="register.html" class="btn btn-danger w-100"
+                                        style="border-radius: 20px; font-size: 0.85rem; font-weight: 600; padding: 10px;">
+                                        Activate Corporate Access
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Public Bank Style Top Utility Bar -->
+        <div class="widescreen-sidebar-panel">
+            <!-- Left: Platform Tabs -->
+            <div class="top-bar-tabs">
+                <a href="../PMO/index.html" class="top-tab">Public Mutual Online</a>
+                <a href="#" class="top-tab active">Corporate</a>
+                <a href="../UTC/index.html" class="top-tab">UTC Connect</a>
+            </div>
+
+            <!-- Right: Quick Links & Social Icons -->
+            <div class="top-bar-right-links">
+                <a href="../Corporate Website/landing.html" class="top-link-item">About Us</a>
+                <a href="../Corporate Website/landing.html" class="top-link-item">Contact Us</a>
+                <a href="../Corporate Website/landing.html" class="top-link-item">Branch Locator</a>
+                <div class="top-social-divider"></div>
+                <div class="top-social-icons">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook"><i
+                            class="iconoir-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram"><i
+                            class="iconoir-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" title="YouTube"><i
+                            class="iconoir-youtube"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i
+                            class="iconoir-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- News & Hightlight Section -->
+    <section class="py-5 bg-fin-dot-grid-white w-100 border-bottom text-start">
+        <div class="container px-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold text-navy mb-0" style="font-size: 2rem;">News & Hightlight</h2>
+                <div class="d-flex gap-2 d-none">
+                    <button
+                        class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;"><i class="iconoir-arrow-left"></i></button>
+                    <button
+                        class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px; border-color: #26247b; color: #26247b;"><i
+                            class="iconoir-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_corporate_wealth.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Treasury Solutions</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Corporate Cash
+                                Management</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Optimize Treasury Yields</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Maximize returns on excess corporate
+                                cash with our low-risk, high-liquidity solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_corporate_treasury.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Corporate Treasury</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Institutional
+                                Treasury Controls</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Treasury Control Systems</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Enhance monitoring and compliance
+                                with our institutional-grade treasury reporting systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden"
+                        style="border: 1px solid rgba(0,0,0,0.08) !important;">
+                        <div class="position-relative text-white p-4 d-flex flex-column justify-content-end"
+                            style="height: 180px; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%), url('images/news/news_corporate_partnership.png') no-repeat center; background-size: cover;">
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                Strategic Partnership</div>
+                            <h4 class="fw-bold mb-0 mt-1"
+                                style="font-size: 1.2rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Corporate Partnership
+                                Success</h4>
+                        </div>
+                        <div class="card-body p-3 bg-white">
+                            <h6 class="fw-bold text-dark mb-1">Corporate Strategic Deals</h6>
+                            <p class="text-muted mb-0" style="font-size: 0.85rem;">Learn how our dedicated corporate
+                                unit trust consulting services help scale firm investments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Explore Financial Solutions Section -->
+    <section class="py-5 bg-fin-exclusive-solutions w-100 border-bottom text-start">
+        <div class="container px-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="solution-card-tag"
+                        style="color: #ed1c24 !important; font-size: 0.75rem; letter-spacing: 2px;">
+                        <i class="iconoir-sparks me-1"></i> EXCLUSIVE BENEFITS
+                    </div>
+                    <h2 class="fw-bold text-navy mb-0"
+                        style="font-size: 2.3rem; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px; line-height: 1.2; color: #26247b !important;">
+                        Elite Class Solutions for Your Corporate Wealth
+                    </h2>
+                </div>
+                <div class="col-lg-6 mt-3 mt-lg-0">
+                    <p class="text-secondary mb-0"
+                        style="font-size: 0.95rem; line-height: 1.6; max-width: 500px; color: #475569 !important;">
+                        Discover our specialized corporate fund offerings, liquidity management plans, and institutional
+                        retirement solutions designed to secure company reserves.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Card 1: Corporate Cash Management -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-coins"></i>
+                            </div>
+                            <div class="solution-card-tag">TREASURY ACCELERATE</div>
+                            <h4 class="solution-card-title">Corporate Cash Management (PBCMF)</h4>
+                            <p class="solution-card-body">
+                                Optimize operational current account yields via the PB Cash Management Fund (PBCMF).
+                                Enjoy tax-exempt yields, T+1 next-business-day liquidity, and high capital stability.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>Tax-Exempt Yields</span></li>
+                                <li><i class="iconoir-check"></i> <span>T+1 Next-Day Liquidity</span></li>
+                                <li><i class="iconoir-check"></i> <span>High Capital Stability</span></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <!-- Card 2: Corporate Unit Trust Schemes -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-network"></i>
+                            </div>
+                            <div class="solution-card-tag">BUSINESS CAPITAL</div>
+                            <h4 class="solution-card-title">Corporate Unit Trust Schemes</h4>
+                            <p class="solution-card-body">
+                                Accelerate medium-to-long term business capital reserves. Choose from Malaysia's largest
+                                selection of equity, balanced, and bond portfolios aligned with your firm's growth
+                                objectives.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>Widescreen Asset Base</span></li>
+                                <li><i class="iconoir-check"></i> <span>Dedicated Fund Mandates</span></li>
+                                <li><i class="iconoir-check"></i> <span>Robust Risk Safeguards</span></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <!-- Card 3: Corporate PRS Vesting -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-safe"></i>
+                            </div>
+                            <div class="solution-card-tag">EMPLOYEE BENEFITS</div>
+                            <h4 class="solution-card-title">Corporate PRS Vesting</h4>
+                            <p class="solution-card-body">
+                                Retain key talent by co-contributing to your employees' Private Retirement Scheme.
+                                Customise vesting rules (cliff/graded) while securing corporate tax deductions of up to
+                                19%.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>Up to 19% Tax Deductible</span></li>
+                                <li><i class="iconoir-check"></i> <span>Talent Retention Focus</span></li>
+                                <li><i class="iconoir-check"></i> <span>Customized Vesting Rules</span></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Card 4: Institutional Portfolio Management -->
+                <div class="col">
+                    <div class="solution-glass-card">
+                        <div>
+                            <div class="solution-card-icon-circle">
+                                <i class="iconoir-database-settings"></i>
+                            </div>
+                            <div class="solution-card-tag">CUSTOM MANDATES</div>
+                            <h4 class="solution-card-title">Institutional Portfolio Management</h4>
+                            <p class="solution-card-body">
+                                Partner with us to design and execute mandate-specific investment portfolios tailored
+                                for large corporations, GLCs, multi-nationals, foundations, and institutional
+                                treasuries.
+                            </p>
+                            <ul class="solution-card-list">
+                                <li><i class="iconoir-check"></i> <span>GLC & Corporate Mandates</span></li>
+                                <li><i class="iconoir-check"></i> <span>Dedicated Fund Managers</span></li>
+                                <li><i class="iconoir-check"></i> <span>Custom Investment Plans</span></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Insights Section -->
+    <section class="py-5 bg-fin-dot-grid w-100 border-bottom text-start">
+        <div class="container px-4">
+            <div class="section-header mb-4">
+                <h2 class="fw-bold text-navy mb-2" style="font-size: 2.2rem; font-family: 'Montserrat', sans-serif;">
+                    Fund Insights</h2>
+                <p class="text-secondary mb-0" style="font-size: 1.1rem; font-weight: 500;">Subsection text providing
+                    context to the market overview.</p>
+            </div>
+
+            <div class="row g-4 fund-carousel">
+                <!-- Card 1: Top 3 Popular Funds -->
+                <div class="col-md-4">
+                    <div class="card h-100 fund-card border-0 shadow-premium p-4">
+                        <div class="card-header bg-transparent border-0 text-center mb-3">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Montserrat', sans-serif;">Top 3 Most Popular
+                                Funds</h5>
+                            <span class="badge bg-soft-orange text-orange rounded-pill px-3 py-1">Risk Level 3</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless align-middle mb-0">
+                                    <thead>
+                                        <tr class="text-muted border-bottom small">
+                                            <th>FUND NAME</th>
+                                            <th class="text-end">YTD RETURN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="small fw-semibold">
+                                        <tr>
+                                            <td>PUBLIC EHSAN MIXED<br>ASSET CONSERVATIVE</td>
+                                            <td class="text-end text-navy">8.1%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PUBLIC e-ATARAXIA<br>MIXED ASSET FUND</td>
+                                            <td class="text-end text-navy">10.8%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PUBLIC ISLAMIC<br>GROWTH BALANCED</td>
+                                            <td class="text-end text-navy">8.7%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-center mt-4 pt-0">
+                            <div class="d-flex justify-content-center gap-1 mb-3">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="btn btn-navy rounded-pill px-4 py-2 w-100">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: In the Spotlight -->
+                <div class="col-md-4">
+                    <div class="card h-100 fund-card border-0 shadow-premium p-4">
+                        <div class="card-header bg-transparent border-0 text-center mb-3">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Montserrat', sans-serif;">In the Spotlight
+                            </h5>
+                            <p class="small text-muted mb-0">Annualised Return over the 5 - Year Period *</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-borderless align-middle mb-0">
+                                    <tbody class="small fw-semibold">
+                                        <tr>
+                                            <td>PUBLIC ISLAMIC ASIA TACTICAL<br>ALLOCATION FUND</td>
+                                            <td class="text-end text-navy">10.90%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PUBLIC STRATEGIC BALANCED<br>FUND</td>
+                                            <td class="text-end text-navy">5.41%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PUBLIC ISLAMIC GLOBAL<br>BALANCED FUND</td>
+                                            <td class="text-end text-navy">5.32%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-center mt-4 pt-0">
+                            <div class="d-flex justify-content-center gap-1 mb-3">
+                                <span class="dot"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="btn btn-navy rounded-pill px-4 py-2 w-100">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Performance Chart -->
+                <div class="col-md-4">
+                    <div class="card h-100 fund-card border-0 shadow-premium p-4">
+                        <div class="card-header bg-transparent border-0 text-center mb-3">
+                            <h5 class="fw-bold mb-1" style="font-family: 'Montserrat', sans-serif;">Performance</h5>
+                            <p class="small fw-bold text-navy mb-0">PUBLIC ISLAMIC ASIA TACTICAL ALLOCATION FUND
+                                (PIATAF)<br>from 17-Mar-2025 to 17-Mar-2026</p>
+                        </div>
+                        <div class="card-body p-0 text-center">
+                            <img src="images/chart.png" alt="Performance Chart" class="img-fluid rounded-3 mb-2">
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-center mt-3 pt-0">
+                            <button class="btn btn-navy rounded-pill px-4 py-2 w-100">Fund Information</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls (Mobile/Visual) -->
+            <div class="d-flex justify-content-between align-items-center mt-4 d-md-none d-none">
+                <button class="btn btn-outline-navy rounded-circle p-2"><i class="iconoir-arrow-left"></i></button>
+                <button class="btn btn-outline-navy rounded-circle p-2"><i class="iconoir-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Award Winning Section -->
+    <section class="py-5 bg-fin-topographic-white w-100 text-center" style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="container px-4">
+            <h2 class="fw-bold text-navy mb-5"
+                style="font-size: 2.2rem; font-family: 'Montserrat', sans-serif; letter-spacing: -0.5px;">
+                Public Mutual's Award-Winning Investment
+            </h2>
+
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <!-- Left navigation arrow -->
+                <button
+                    class="btn btn-link text-secondary position-absolute start-0 d-none d-md-flex align-items-center justify-content-center border-0"
+                    style="z-index: 10; font-size: 2rem; outline: none; box-shadow: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 w-100 px-md-5">
+                    <!-- Award 1: LSEG Lipper Group Award 2026 -->
+                    <div class="col">
+                        <div class="d-flex flex-column align-items-center text-center p-3 h-100">
+                            <!-- LSEG Lipper Logo -->
+                            <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 100px;">
+                                <img src="images/lseg_lipper_logo.webp" alt="LSEG Lipper Logo"
+                                    style="width: 160px; object-fit: contain;">
+                            </div>
+                            <h6 class="fw-bold text-navy mb-2"
+                                style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; min-height: 40px; text-transform: uppercase;">
+                                LSEG Lipper Fund Awards
+                            </h6>
+                            <p class="text-secondary small mb-0" style="font-weight: 500; font-size: 0.8rem;">
+                                33 Individual & Group Awards Won<br>
+                                <strong>2026</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Award 2: LSEG Lipper Group Award 2025 -->
+                    <div class="col">
+                        <div class="d-flex flex-column align-items-center text-center p-3 h-100">
+                            <!-- LSEG Lipper Logo -->
+                            <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 100px;">
+                                <img src="images/lseg_lipper_logo.webp" alt="LSEG Lipper Logo"
+                                    style="width: 160px; object-fit: contain;">
+                            </div>
+                            <h6 class="fw-bold text-navy mb-2"
+                                style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; min-height: 40px; text-transform: uppercase;">
+                                LSEG Lipper Fund Awards
+                            </h6>
+                            <p class="text-secondary small mb-0" style="font-weight: 500; font-size: 0.8rem;">
+                                2 Overall Group Awards & 28 Individual Awards<br>
+                                <strong>2025</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Award 3: PPA PRS Awards 2026 -->
+                    <div class="col">
+                        <div class="d-flex flex-column align-items-center text-center p-3 h-100">
+                            <!-- PPA PRS Logo -->
+                            <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 100px;">
+                                <img src="images/ppa_prs_logo.png" alt="PPA PRS Logo"
+                                    style="width: 160px; object-fit: contain;">
+                            </div>
+                            <h6 class="fw-bold text-navy mb-2"
+                                style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; min-height: 40px; text-transform: uppercase;">
+                                PPA Grow with PRS
+                            </h6>
+                            <p class="text-secondary small mb-0" style="font-weight: 500; font-size: 0.8rem;">
+                                12 Awards (7 Gold & 5 Silver)<br>
+                                <strong>2026</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Award 4: Islamic Investor Awards -->
+                    <div class="col">
+                        <div class="d-flex flex-column align-items-center text-center p-3 h-100">
+                            <!-- IFN Investor Logo -->
+                            <div class="mb-4 d-flex align-items-center justify-content-center" style="height: 100px;">
+                                <img src="images/ifn_investor_logo.webp" alt="IFN Investor Logo"
+                                    style="max-height: 90px; width: auto; object-fit: contain;">
+                            </div>
+                            <h6 class="fw-bold text-navy mb-2"
+                                style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; min-height: 40px; text-transform: uppercase;">
+                                IFN Investor Fund Awards
+                            </h6>
+                            <p class="text-secondary small mb-0" style="font-weight: 500; font-size: 0.8rem;">
+                                Best Islamic Fund House in Asia<br>
+                                <strong>2025</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right navigation arrow -->
+                <button
+                    class="btn btn-link text-secondary position-absolute end-0 d-none d-md-flex align-items-center justify-content-center border-0"
+                    style="z-index: 10; font-size: 2rem; outline: none; box-shadow: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
+    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
+        <div class="container px-4">
+            <div class="row g-4">
+                <!-- Column 1: Products & Services -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Unit Trust</a></li>
+                        <li><a href="#">Get Started</a></li>
+                        <li><a href="#">Build Wealth</a></li>
+                        <li><a href="#">List of Funds</a></li>
+                        <li><a href="#">e-Series Funds</a></li>
+                        <li><a href="#">Islamic Funds</a></li>
+                        <li><a href="#">EPF-MIS</a></li>
+                        <li><a href="#">Sustainable and Responsible Investing</a></li>
+                        <li><a href="#">Fund Prices</a></li>
+                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
+                        <li><a href="#">Private Retirement Scheme</a></li>
+                        <li><a href="#">Fund Explorer</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Specific Goals</a></li>
+                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
+                        <li><a href="#">Regular investing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Privileges & Company -->
+                <div class="col-6 col-md-3">
+                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Mutual Gold</a></li>
+                        <li><a href="#">Mutual Elite</a></li>
+                        <li><a href="#">Mutual Signature</a></li>
+                        <li><a href="#">Mutual Platinum</a></li>
+                        <li><a href="#">Mutual Prestige</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">New Funds</a></li>
+                        <li><a href="#">Campaigns</a></li>
+                    </ul>
+
+                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
+
+                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
+                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                        <li><a href="#">Vision Mission</a></li>
+                        <li><a href="#">Core Values</a></li>
+                        <li><a href="#">Our Profile</a></li>
+                        <li><a href="#">Our People</a></li>
+                        <li><a href="#">Track Record</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Resources & Info -->
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Learning Hub</a></li>
+                                <li><a href="#">Downloads</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
+                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                                <li><a href="#">Contact Us (Form)</a></li>
+                                <li><a href="#">Branches</a></li>
+                                <li><a href="#">Customer Service Hotline</a></li>
+                                <li><a href="#">Investor Guide</a></li>
+                                <li><a href="#">Check Your UTC's Credentials</a></li>
+                                <li><a href="#">Announcements & News</a></li>
+                                <li><a href="#">Cybersecurity Awareness</a></li>
+                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
+                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
+                                <li><a href="#">Advertising Disclaimer</a></li>
+                                <li><a href="#">Cross Trade Policy</a></li>
+                                <li><a href="#">Glossary</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Utility Footer -->
+    <footer class="bottom-footer py-4 w-100 bg-navy text-white">
+        <div class="container text-center text-md-start px-4">
+            <!-- Disclaimer -->
+            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+                *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
+                Malaysia.
+            </p>
+
+            <!-- Vanguard-Style Important Disclosures -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                            Information</h6>
+                        <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
+                                money you invest.</strong> Past performance is not a guarantee or reliable indicator of
+                            future results. Unit prices, yields, and investment returns will fluctuate, and you may have
+                            a gain or loss when you redeem your units. Diversification does not ensure a profit or
+                            protect against a loss in a declining market.</p>
+                        <p class="mb-2">Investors should carefully consider the investment objectives, risks, charges,
+                            and expenses of a fund before investing. The prospectus, master prospectus, and Product
+                            Highlights Sheet (PHS) contain this and other key information. You can obtain copies of
+                            these documents from any Public Mutual branch, Authorised Unit Trust Consultant (UTC), or
+                            online. Please read them thoroughly before making any investment decisions.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                            Disclosures</h6>
+                        <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
+                            management company under the Capital Markets and Services Act 2007, regulated and supervised
+                            by the Securities Commission Malaysia (SC). Public Mutual is also a registered Institutional
+                            Private Retirement Scheme Adviser (IPRSA) and a member of the Federation of Investment
+                            Managers Malaysia (FIMM).</p>
+                        <p class="mb-2">For Shariah-compliant funds, investments are managed in strict adherence to
+                            Shariah principles under the supervision and guidance of our appointed Shariah Advisers.
+                            Private Retirement Schemes (PRS) are subject to retirement savings regulations, and early
+                            withdrawals from sub-account B may be subject to tax penalties and statutory restrictions.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-top border-white-10 pt-3 opacity-75"
+                    style="border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
+                        platforms operated by Public Mutual Berhad. By accessing these portals, you agree to be bound by
+                        the Terms and Conditions of Use, Website Disclaimer, and Privacy Policy. Electronic transactions
+                        are secured with industry-standard encryption protocols. Safeguard your login credentials;
+                        Public Mutual will never ask for your password or PAC codes via email or SMS.</p>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
+            <!-- Links -->
+            <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
+                style="font-size: 0.78rem;">
+                <a href="website-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="investment-disclaimer.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Investment
+                    Disclaimer</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-policy.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Policy</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="privacy-notice.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Privacy
+                    Notice</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="drb-consent.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">DRB
+                    Check Consent Terms</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="internet-risk.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Internet
+                    Risk</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="contact-us.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Contact
+                    Us</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="quick-links.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Quick
+                    Access Links</a>
+                <span class="text-white-50 opacity-25 d-none d-md-inline" style="margin: 0 2px;">|</span>
+                <a href="terms.html"
+                    class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
+                    and Conditions of Use</a>
+            </div>
+            <!-- Copyright and Social Buttons -->
+            <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                    <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                        us:</span>
+                    <a href="https://www.facebook.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
+                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
+                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.youtube.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
+                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
+                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"
+                        class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
+                        style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
+                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sitemap Offcanvas (Sleek Investor Navigation) -->
+    <div class="offcanvas offcanvas-start border-0 shadow-lg text-start" tabindex="-1" id="sitemapOffcanvas"
+        aria-labelledby="sitemapOffcanvasLabel" style="width: 380px;">
+        <div class="offcanvas-header border-bottom px-4 py-3 bg-light">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="Logo" height="30">
+                <span class="logo-box-text">PUBLIC MUTUAL</span>
+            </div>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-4 py-4">
+            <h5 class="fw-bold text-navy mb-4" id="sitemapOffcanvasLabel">Sitemap & Quick Links</h5>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-danger border-bottom pb-2 mb-3"><i class="iconoir-coins me-2"></i> Our Funds
+                </h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Unit Trust Funds</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Shariah-Compliant Funds</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Private Retirement Scheme
+                            (PRS)</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">EPF Members Investment
+                            Scheme</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">e-Series of Funds</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-graph-up me-2"></i> Investor
+                    Resources</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Daily Fund Prices</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Fund Reports & Fact Sheets</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Financial Calculators</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Downloadable Forms</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Investor Education Learning
+                            Hub</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Cybersecurity Awareness</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-user-badge-details me-2"></i>
+                    Privilege Circle</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Gold</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Signature</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Mutual Platinum</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-info-circle me-2"></i> About
+                    Public Mutual</h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Corporate Profile</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Track Record & Lipper
+                            Awards</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Sustainable and Responsible
+                            Investing (SRI)</a></li>
+                </ul>
+            </div>
+
+            <div class="sitemap-section mb-4">
+                <h6 class="fw-bold text-navy border-bottom pb-2 mb-3"><i class="iconoir-mail me-2"></i> Contact & Help
+                </h6>
+                <ul class="list-unstyled ps-3 fs-8 d-flex flex-column gap-2">
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Customer Service Support</a>
+                    </li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Branch Locator</a></li>
+                    <li><a href="../Corporate Website/landing.html"
+                            class="text-decoration-none text-secondary hover-text-danger">Frequently Asked Questions
+                            (FAQ)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Let's Chat Floating Bubble -->
+    <div class="chat-bubble position-fixed z-3">
+        <button class="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center shadow-lg"
+            style="width: 55px; height: 55px; border: none; background: #ed1c24;">
+            <div class="text-center lh-1">
+                <small class="d-block text-uppercase fw-bold text-white"
+                    style="font-size: 0.5rem; letter-spacing: 0.5px;">Let's</small>
+                <span class="fw-bold text-white" style="font-size: 0.85rem; font-weight: 700;">CHAT</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Prototype JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
