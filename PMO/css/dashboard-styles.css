@@ -120,8 +120,8 @@ main.dashboard-content {
     color: white;
 }
 .dashboard-tabs .nav-link.active {
-    color: #ed1c24;
-    border-bottom-color: #ed1c24;
+    color: #ffffff;
+    border-bottom-color: #ffffff;
     background: transparent;
 }
 
