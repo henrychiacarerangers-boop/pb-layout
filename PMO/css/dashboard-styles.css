@@ -244,8 +244,10 @@ main.dashboard-content {
     transition: all 0.2s ease !important;
 }
 
-.custom-table tbody tr:hover {
-    background-color: rgba(38, 36, 123, 0.02) !important; /* Subtle blue-gray tint on hover */
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:hover th {
+    background-color: rgba(38, 36, 123, 0.015) !important; /* Extremely subtle blue-gray tint on hover */
+    box-shadow: inset 0 0 0 9999px rgba(38, 36, 123, 0.015) !important;
 }
 
 .custom-table tbody td,
