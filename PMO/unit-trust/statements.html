@@ -169,36 +169,6 @@
                             <i class="iconoir-multiple-pages fs-6"></i> Invoice
                         </a>
                     </div>
-                    <!-- Month & Year Filters -->
-                    <div class="d-flex align-items-center gap-2 me-md-2">
-                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                class="iconoir-filter-list me-1"></i>Filter:</span>
-                        <select
-                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                            style="width: 130px; height: 36px;" id="utStmtFilterMonth">
-                            <option value="all" selected>All Months</option>
-                            <option value="Jan">January</option>
-                            <option value="Feb">February</option>
-                            <option value="Mar">March</option>
-                            <option value="Apr">April</option>
-                            <option value="May">May</option>
-                            <option value="Jun">June</option>
-                            <option value="Jul">July</option>
-                            <option value="Aug">August</option>
-                            <option value="Sep">September</option>
-                            <option value="Oct">October</option>
-                            <option value="Nov">November</option>
-                            <option value="Dec">December</option>
-                        </select>
-                        <select
-                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                            style="width: 110px; height: 36px;" id="utStmtFilterYear">
-                            <option value="all" selected>All Years</option>
-                            <option value="2026">2026</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                        </select>
-                    </div>
                 </div>
             </div>
             <!-- Tab Content -->
@@ -765,6 +735,36 @@
                             <div>
                                 <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
                             </div>
+                            <!-- Month & Year Filters -->
+                            <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                        class="iconoir-filter-list me-1"></i>Filter:</span>
+                                <select
+                                    class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                    style="width: 130px; height: 36px;" id="utStmtFilterMonthEinv">
+                                    <option value="all" selected>All Months</option>
+                                    <option value="Jan">January</option>
+                                    <option value="Feb">February</option>
+                                    <option value="Mar">March</option>
+                                    <option value="Apr">April</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">June</option>
+                                    <option value="Jul">July</option>
+                                    <option value="Aug">August</option>
+                                    <option value="Sep">September</option>
+                                    <option value="Oct">October</option>
+                                    <option value="Nov">November</option>
+                                    <option value="Dec">December</option>
+                                </select>
+                                <select
+                                    class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                    style="width: 110px; height: 36px;" id="utStmtFilterYearEinv">
+                                    <option value="all" selected>All Years</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover align-middle mb-0 custom-table fs-8">
@@ -834,6 +834,36 @@
                             class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
                             <div>
                                 <h5 class="fw-bold text-dark mb-1">Invoices</h5>
+                            </div>
+                            <!-- Month & Year Filters -->
+                            <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                        class="iconoir-filter-list me-1"></i>Filter:</span>
+                                <select
+                                    class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                    style="width: 130px; height: 36px;" id="utStmtFilterMonthInv">
+                                    <option value="all" selected>All Months</option>
+                                    <option value="Jan">January</option>
+                                    <option value="Feb">February</option>
+                                    <option value="Mar">March</option>
+                                    <option value="Apr">April</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">June</option>
+                                    <option value="Jul">July</option>
+                                    <option value="Aug">August</option>
+                                    <option value="Sep">September</option>
+                                    <option value="Oct">October</option>
+                                    <option value="Nov">November</option>
+                                    <option value="Dec">December</option>
+                                </select>
+                                <select
+                                    class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                    style="width: 110px; height: 36px;" id="utStmtFilterYearInv">
+                                    <option value="all" selected>All Years</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                </select>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -1104,50 +1134,60 @@
                 }
             }
 
-            // Filtering logic for Month and Year
-            var monthFilter = document.getElementById('utStmtFilterMonth');
-            var yearFilter = document.getElementById('utStmtFilterYear');
+            // Filtering logic for e-Invoice and Invoice local selectors
+            function setupLocalFilters(monthId, yearId, tabContainerId) {
+                var monthFilter = document.getElementById(monthId);
+                var yearFilter = document.getElementById(yearId);
+                var container = document.getElementById(tabContainerId);
 
-            function applyFilters() {
-                var monthVal = monthFilter.value;
-                var yearVal = yearFilter.value;
+                if (!monthFilter || !yearFilter || !container) return;
 
-                document.querySelectorAll('#statementsTabContent tbody tr[data-month]').forEach(function (row) {
-                    var matchMonth = (monthVal === 'all' || row.getAttribute('data-month') === monthVal);
-                    var matchYear = (yearVal === 'all' || row.getAttribute('data-year') === yearVal);
+                function applyLocalFilters() {
+                    var monthVal = monthFilter.value;
+                    var yearVal = yearFilter.value;
 
-                    if (matchMonth && matchYear) {
-                        row.classList.remove('d-none');
-                    } else {
-                        row.classList.add('d-none');
-                    }
-                });
+                    container.querySelectorAll('tbody tr[data-month]').forEach(function (row) {
+                        var matchMonth = (monthVal === 'all' || row.getAttribute('data-month') === monthVal);
+                        var matchYear = (yearVal === 'all' || row.getAttribute('data-year') === yearVal);
 
-                // Handle empty states for tables when all rows are filtered out
-                document.querySelectorAll('#statementsTabContent table').forEach(function (table) {
-                    var tbody = table.querySelector('tbody');
-                    if (!tbody) return;
-                    var visibleRows = tbody.querySelectorAll('tr:not(.d-none):not(.no-filter-data-row)');
-                    var existingNoData = tbody.querySelector('.no-filter-data-row');
-
-                    if (visibleRows.length === 0) {
-                        if (!existingNoData) {
-                            var colCount = table.querySelectorAll('thead th').length;
-                            var noDataRow = document.createElement('tr');
-                            noDataRow.className = 'no-filter-data-row';
-                            noDataRow.innerHTML = '<td colspan="' + colCount + '" class="text-center py-4 text-muted fs-8 fw-medium"><i class="iconoir-info-circle me-1"></i>No matching items found for the selected period.</td>';
-                            tbody.appendChild(noDataRow);
+                        if (matchMonth && matchYear) {
+                            row.classList.remove('d-none');
+                        } else {
+                            row.classList.add('d-none');
                         }
-                    } else {
-                        if (existingNoData) {
-                            existingNoData.remove();
+                    });
+
+                    // Handle empty states for local table
+                    var table = container.querySelector('table');
+                    if (table) {
+                        var tbody = table.querySelector('tbody');
+                        if (tbody) {
+                            var visibleRows = tbody.querySelectorAll('tr:not(.d-none):not(.no-filter-data-row)');
+                            var existingNoData = tbody.querySelector('.no-filter-data-row');
+
+                            if (visibleRows.length === 0) {
+                                if (!existingNoData) {
+                                    var colCount = table.querySelectorAll('thead th').length;
+                                    var noDataRow = document.createElement('tr');
+                                    noDataRow.className = 'no-filter-data-row';
+                                    noDataRow.innerHTML = '<td colspan="' + colCount + '" class="text-center py-4 text-muted fs-8 fw-medium"><i class="iconoir-info-circle me-1"></i>No matching items found for the selected period.</td>';
+                                    tbody.appendChild(noDataRow);
+                                }
+                            } else {
+                                if (existingNoData) {
+                                    existingNoData.remove();
+                                }
+                            }
                         }
                     }
-                });
+                }
+
+                monthFilter.addEventListener('change', applyLocalFilters);
+                yearFilter.addEventListener('change', applyLocalFilters);
             }
 
-            monthFilter.addEventListener('change', applyFilters);
-            yearFilter.addEventListener('change', applyFilters);
+            setupLocalFilters('utStmtFilterMonthEinv', 'utStmtFilterYearEinv', 'einvoice');
+            setupLocalFilters('utStmtFilterMonthInv', 'utStmtFilterYearInv', 'invoice');
 
             // Fund Reports category selector & dropdown filter script
             var subTabUt = document.getElementById('fundReportSubTabUt');
