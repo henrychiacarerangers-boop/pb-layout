@@ -1,15 +1,15 @@
 /**
  * EOP inner pages — demo interactions. Scoped inside DOMContentLoaded.
  *
- * Schema type = Salary deduction | Employer contribution (batch / file category).
- * Contribution type = Salary Deduction (IND) for salary schema, or VSR / EMP / VSC per row for employer schema.
+ * Scheme type = Salary Deduction | Employer Contribution (batch / file category).
+ * Contribution type = Salary Deduction (IND) for salary scheme, or VSR / EMP / VSC per row for employer scheme.
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const EOP_SCHEMA_SALARY = 'Salary deduction';
-    const EOP_SCHEMA_EMPLOYER = 'Employer contribution';
+    const EOP_scheme_SALARY = 'Salary Deduction';
+    const EOP_scheme_EMPLOYER = 'Employer Contribution';
     const EOP_CONTRIB_SALARY_IND = 'Salary Deduction (IND)';
     const EOP_CONTRIB_EMPLOYER_MIXED =
-        'Mixed: Revolving Vesting (VSR), Immediate Vesting (EMP) & Straight Vesting (VSC)';
+        'Vesting (VSC)/Immediate Vesting (EMP)';
     const EOP_EMP_LABEL = {
         VSR: 'Revolving Vesting (VSR)',
         EMP: 'Immediate Vesting (EMP)',
@@ -52,24 +52,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const SALARY_TYPE_DISPLAY = EOP_CONTRIB_SALARY_IND;
         const SALARY_TYPE_CSV = EOP_CONTRIB_SALARY_IND;
-        const SALARY_SCHEMA_DISPLAY = EOP_SCHEMA_SALARY;
-        const EMPLOYER_SCHEMA_DISPLAY = EOP_SCHEMA_EMPLOYER;
+        const SALARY_scheme_DISPLAY = EOP_scheme_SALARY;
+        const EMPLOYER_scheme_DISPLAY = EOP_scheme_EMPLOYER;
         const EMP_LABEL = EOP_EMP_LABEL;
         const VALID_FUNDS = new Set(['PRS-SR', 'PRS-EQF']);
 
         const DEFAULT_SALARY = [
-            { name: 'Siti Aminah bte Hassan', nric: '800101010001', fund: 'PRS-SR', amount: 350, isNew: false },
-            { name: 'Lee Wei Chen', nric: '800101010002', fund: 'PRS-EQF', amount: 420.5, isNew: false },
-            { name: 'Nor Haliza bte Rahman', nric: '800101010004', fund: 'PRS-SR', amount: 280, isNew: true },
+            { name: 'Siti Aminah bte Hassan', nric: '800101010001', fund: 'PRS-SR', amount: 350, isNew: true },
+            { name: 'Lee Wei Chen', nric: '800101010002', fund: 'PRS-EQF', amount: 420.5, isNew: true },
+            { name: 'Nor ass Haliza bte Rahman', nric: '800101010004', fund: 'PRS-SR', amount: 280, isNew: true },
             { name: 'Wong Kah Lok', nric: '800101010005', fund: 'PRS-EQF', amount: 310, isNew: true },
-            { name: 'Sarah Tan Li Min', nric: '800101010006', fund: 'PRS-SR', amount: 195, isNew: true },
-            { name: 'Muhamad Iqbal bin Zulkifli', nric: '800101010007', fund: 'PRS-EQF', amount: 440, isNew: true },
+            { name: 'Sarah Tan Li Min', nric: '800101010006', fund: 'PRS-SR', amount: 195, isNew: false },
+            { name: 'Muhamad Iqbal bin Zulkifli', nric: '800101010007', fund: 'PRS-EQF', amount: 440, isNew: false },
         ];
         const DEFAULT_EMPLOYER = [
-            { name: 'Ahmad Razak bin Osman', nric: '800101010001', fund: 'PRS-SR', kind: 'VSR', amount: 200, isNew: false },
-            { name: 'Kumar A/L Rajendran', nric: '800101010003', fund: 'PRS-EQF', kind: 'EMP', amount: 150, isNew: false },
-            { name: 'Jessica Lim Pei Wen', nric: '800101010008', fund: 'PRS-SR', kind: 'EMP', amount: 320, isNew: true },
-            { name: 'Rajesh A/L Muthu', nric: '800101010009', fund: 'PRS-EQF', kind: 'VSC', amount: 275.5, isNew: true },
+            { name: 'Ahmad Razak bin Osman', nric: '800101010001', fund: 'PRS-SR', kind: 'VSR', amount: 200, isNew: true },
+            { name: 'Kumar A/L Rajendran', nric: '800101010003', fund: 'PRS-EQF', kind: 'EMP', amount: 150, isNew: true },
+            { name: 'Jessica Lim Pei Wen', nric: '800101010008', fund: 'PRS-SR', kind: 'EMP', amount: 320, isNew: false },
+            { name: 'Rajesh A/L Muthu', nric: '800101010009', fund: 'PRS-EQF', kind: 'VSC', amount: 275.5, isNew: false },
         ];
 
         let salaryRows = DEFAULT_SALARY.map((r) => ({ ...r }));
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 tdName.appendChild(nameWrap);
                 tr.appendChild(tdName);
-                [r.nric, r.fund, SALARY_SCHEMA_DISPLAY, SALARY_TYPE_DISPLAY].forEach((text) => {
+                [r.nric, r.fund, SALARY_scheme_DISPLAY, SALARY_TYPE_DISPLAY].forEach((text) => {
                     const td = document.createElement('td');
                     td.className = 'py-3';
                     td.textContent = text;
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 tdName.appendChild(nameWrap);
                 tr.appendChild(tdName);
-                [r.nric, r.fund, EMPLOYER_SCHEMA_DISPLAY, EMP_LABEL[r.kind] || r.kind].forEach((text) => {
+                [r.nric, r.fund, EMPLOYER_scheme_DISPLAY, EMP_LABEL[r.kind] || r.kind].forEach((text) => {
                     const td = document.createElement('td');
                     td.className = 'py-3';
                     td.textContent = text;
@@ -236,22 +236,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function buildSalaryCsv() {
-            const header = ['Name', 'NRIC', 'FundName', 'SchemaType', 'ContributionType', 'Amount'];
+            const header = ['Name', 'NRIC', 'FundName', 'schemeType', 'ContributionType', 'Amount'];
             const lines = [header.join(',')];
             salaryRows.forEach((r) => {
                 lines.push(
-                    [r.name, r.nric, r.fund, SALARY_SCHEMA_DISPLAY, SALARY_TYPE_CSV, r.amount].map(csvEscape).join(',')
+                    [r.name, r.nric, r.fund, SALARY_scheme_DISPLAY, SALARY_TYPE_CSV, r.amount].map(csvEscape).join(',')
                 );
             });
             return lines.join('\r\n');
         }
 
         function buildEmployerCsv() {
-            const header = ['Name', 'NRIC', 'FundName', 'SchemaType', 'ContributionType', 'Amount'];
+            const header = ['Name', 'NRIC', 'FundName', 'schemeType', 'ContributionType', 'Amount'];
             const lines = [header.join(',')];
             employerRows.forEach((r) => {
                 lines.push(
-                    [r.name, r.nric, r.fund, EMPLOYER_SCHEMA_DISPLAY, r.kind, r.amount].map(csvEscape).join(',')
+                    [r.name, r.nric, r.fund, EMPLOYER_scheme_DISPLAY, r.kind, r.amount].map(csvEscape).join(',')
                 );
             });
             return lines.join('\r\n');
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (h === 'name') idx.name = i;
                 else if (h === 'nric' || h === 'nricno' || h === 'employeeic') idx.nric = i;
                 else if (h === 'fundname' || h === 'fund') idx.fund = i;
-                else if (h === 'schematype' || h === 'schema') idx.schema = i;
+                else if (h === 'schemetype' || h === 'scheme') idx.scheme = i;
                 else if (h === 'contributiontype' || h === 'type') idx.type = i;
                 else if (h === 'amount') idx.amount = i;
             });
@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const map = headerMap(h);
             if (map.name === undefined || map.nric === undefined || map.fund === undefined || map.amount === undefined) {
                 return {
-                    error: 'Need columns: Name, NRIC, FundName, Amount, and ContributionType (Salary Deduction IND). Optional: SchemaType (Salary deduction).',
+                    error: 'Need columns: Name, NRIC, FundName, Amount, and ContributionType (Salary Deduction IND). Optional: schemeType (Salary Deduction).',
                 };
             }
             const next = [];
@@ -346,14 +346,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!VALID_FUNDS.has(fund)) return { error: `Row ${li + 1}: Fund must be PRS-SR or PRS-EQF.` };
                 if (!validSalaryType(typeCell)) {
                     return {
-                        error: `Row ${li + 1}: Contribution type must be Salary Deduction IND (salary deduction).`,
+                        error: `Row ${li + 1}: Contribution type must be Salary Deduction IND (Salary Deduction).`,
                     };
                 }
-                if (map.schema !== undefined) {
-                    const sc = String(cols[map.schema] || '').toLowerCase();
+                if (map.scheme !== undefined) {
+                    const sc = String(cols[map.scheme] || '').toLowerCase();
                     if (!sc.includes('salary') || !sc.includes('deduction')) {
                         return {
-                            error: `Row ${li + 1}: Schema type must be "${EOP_SCHEMA_SALARY}" for salary deduction imports.`,
+                            error: `Row ${li + 1}: Scheme type must be "${EOP_scheme_SALARY}" for Salary Deduction imports.`,
                         };
                     }
                 }
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const h = parseCsvLine(lines[0]);
             const map = headerMap(h);
             if (map.name === undefined || map.nric === undefined || map.fund === undefined || map.amount === undefined) {
-                return { error: 'Need columns: Name, NRIC, FundName, ContributionType (VSR, EMP, or VSC), Amount. Optional: SchemaType (Employer contribution).' };
+                return { error: 'Need columns: Name, NRIC, FundName, ContributionType (VSR, EMP, or VSC), Amount. Optional: schemeType (Employer Contribution).' };
             }
             if (map.type === undefined) {
                 return { error: 'ContributionType column required (use VSR, EMP, or VSC in CSV).' };
@@ -392,11 +392,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         error: `Row ${li + 1}: Contribution type must be VSR (Revolving), EMP (Immediate), or VSC (Straight vesting).`,
                     };
                 }
-                if (map.schema !== undefined) {
-                    const sc = String(cols[map.schema] || '').toLowerCase();
+                if (map.scheme !== undefined) {
+                    const sc = String(cols[map.scheme] || '').toLowerCase();
                     if (!sc.includes('employer')) {
                         return {
-                            error: `Row ${li + 1}: Schema type must be "${EOP_SCHEMA_EMPLOYER}" for employer contribution imports.`,
+                            error: `Row ${li + 1}: Scheme type must be "${EOP_scheme_EMPLOYER}" for Employer Contribution imports.`,
                         };
                     }
                 }
@@ -556,8 +556,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return { rows, total };
     }
 
-    function uploadSchemaLabel(value) {
-        return value === 'employer' ? EOP_SCHEMA_EMPLOYER : EOP_SCHEMA_SALARY;
+    function uploadschemeLabel(value) {
+        return value === 'employer' ? EOP_scheme_EMPLOYER : EOP_scheme_SALARY;
     }
 
     function uploadContributionSummary(value) {
@@ -682,7 +682,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const elStatus = document.getElementById('eopUploadResultStatus');
                     const elRef = document.getElementById('eopUploadResultRef');
                     const elDt = document.getElementById('eopUploadResultDateTime');
-                    const elCh = document.getElementById('eopUploadResultSchema');
+                    const elCh = document.getElementById('eopUploadResultscheme');
                     const elContrib = document.getElementById('eopUploadResultContribution');
                     const elEmp = document.getElementById('eopUploadResultEmpCount');
                     const elAmt = document.getElementById('eopUploadResultAmount');
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (elStatus) elStatus.textContent = 'Completed';
                     if (elRef) elRef.textContent = ref;
                     if (elDt) elDt.textContent = dtStr;
-                    if (elCh) elCh.textContent = uploadSchemaLabel(ch);
+                    if (elCh) elCh.textContent = uploadschemeLabel(ch);
                     if (elContrib) elContrib.textContent = uploadContributionSummary(ch);
                     if (elEmp) elEmp.textContent = String(parsed.rows.length);
                     if (elAmt) {
@@ -784,13 +784,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const step3 = document.getElementById('eopPayStep3');
         const detailHeaderRef = document.getElementById('eopPayDetailHeaderRef');
         const detailHeaderContrib = document.getElementById('eopPayDetailHeaderContrib');
-        const detailHeaderSchemaLine = document.getElementById('eopPayDetailHeaderSchemaLine');
+        const detailHeaderschemeLine = document.getElementById('eopPayDetailHeaderschemeLine');
         const detailRef = document.getElementById('eopPayDetailRef');
-        const detailSchema = document.getElementById('eopPayDetailSchema');
+        const detailscheme = document.getElementById('eopPayDetailscheme');
         const detailContribType = document.getElementById('eopPayDetailContribType');
         const detailEmp = document.getElementById('eopPayDetailEmp');
         const detailAmount = document.getElementById('eopPayDetailAmount');
-        const sumSchema = document.getElementById('eopPaySumSchema');
+        const sumscheme = document.getElementById('eopPaySumscheme');
         const sumContribution = document.getElementById('eopPaySumContribution');
         const sumRef = document.getElementById('eopPaySumRef');
         const sumEmp = document.getElementById('eopPaySumEmp');
@@ -816,7 +816,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const chRaw = (params.get('ch') || 'salary').toLowerCase();
         const employees = parseInt(params.get('emp') || '18', 10) || 18;
         const amt = parseInt(params.get('amt') || '42500', 10) || 42500;
-        const schemaLabel = chRaw === 'employer' ? EOP_SCHEMA_EMPLOYER : EOP_SCHEMA_SALARY;
+        const schemeLabel = chRaw === 'employer' ? EOP_scheme_EMPLOYER : EOP_scheme_SALARY;
         const contribLabel = chRaw === 'employer' ? EOP_CONTRIB_EMPLOYER_MIXED : EOP_CONTRIB_SALARY_IND;
 
         // Sample Employee Lists for each reference batch
@@ -919,13 +919,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderStep1() {
             if (detailHeaderRef) detailHeaderRef.textContent = ref;
             if (detailHeaderContrib) detailHeaderContrib.textContent = contribLabel;
-            if (detailHeaderSchemaLine) detailHeaderSchemaLine.textContent = `Schema: ${schemaLabel}`;
+            if (detailHeaderschemeLine) detailHeaderschemeLine.textContent = `Scheme: ${schemeLabel}`;
             if (detailRef) detailRef.textContent = ref;
-            if (detailSchema) detailSchema.textContent = schemaLabel;
+            if (detailscheme) detailscheme.textContent = schemeLabel;
             if (detailContribType) detailContribType.textContent = contribLabel;
             if (detailEmp) detailEmp.textContent = String(employees);
             if (detailAmount) detailAmount.textContent = fmtRmSen(amt);
-            if (sumSchema) sumSchema.textContent = schemaLabel;
+            if (sumscheme) sumscheme.textContent = schemeLabel;
             if (sumContribution) sumContribution.textContent = contribLabel;
             if (sumRef) sumRef.textContent = ref;
             if (sumEmp) sumEmp.textContent = String(employees);
@@ -934,7 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (printDateTime) printDateTime.textContent = new Date().toLocaleString('en-MY');
             const step2Line = document.getElementById('eopPayStep2BatchLine');
             if (step2Line) step2Line.textContent = `${ref} · ${contribLabel}`;
-            
+
             // Populate the employee contributions table list
             renderEmployeeList();
         }

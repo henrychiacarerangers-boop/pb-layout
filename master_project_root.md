@@ -19,7 +19,7 @@ The project is organized into three primary folders, each representing a specifi
 ### 3. [PMO Corporate](./PMO%20corporate)
 *   **Purpose**: High-fidelity prototype for Corporate Public Mutual Online.
 *   **User Base**: Corporate entities, authorized signatories, and investment managers.
-*   **Features**: Complex transaction authorization workflows (Maker/Checker), corporate account auditing, and multi-user role management.
+*   **Features**: Complex transaction Authorisation workflows (Maker/Checker), corporate account auditing, and multi-user role management.
 
 ---
 
@@ -36,10 +36,10 @@ All three projects adhere to the same premium UI/UX standards to ensure a cohesi
     *   **Light (300)**: Secondary microcopy.
 
 ### 2. Signature Color Palette
-*   **Brand Primary (Red)**: `#ed1c24` (Primary actions, key highlights, urgency).
-*   **PMO Brand Primary (Navy)**: `#26247b` (Structural foundation, trust, stability).
+*   **Brand Primary (Red)**: `#ff1700` (Primary actions, key highlights, urgency).
+*   **PMO Brand Primary (Navy)**: `#002e77` (Structural foundation, trust, stability).
 *   **Accent Primary (Navy/Purple)**: `#373761` (Headers, standard text).
-*   **Action Primary (Bright Blue)**: `#423fbb` (Active states, tooltips).
+*   **Action Primary (Bright Blue)**: `#002e77` (Active states, tooltips).
 *   **Neutral Gray/Blue**: `#dce3e8` (Analytics backgrounds, card containers).
 
 ### 3. Visual Components

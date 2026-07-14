@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate PMO Portal — EOP · PRS Analytics</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/montserrat.css"
-        rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/iconoir.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css">
@@ -28,31 +27,36 @@
             background: linear-gradient(to right, #00e676, #ffd600, #ff9100, #d50000);
             outline: none;
         }
+
         .custom-risk-range::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: #0d6efd; /* Premium blue handle */
+            background: #0d6efd;
+            /* Premium blue handle */
             border: 2px solid #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: transform 0.1s ease;
         }
+
         .custom-risk-range::-webkit-slider-thumb:hover {
             transform: scale(1.15);
         }
+
         .custom-risk-range::-moz-range-thumb {
             width: 18px;
             height: 18px;
             border-radius: 50%;
             background: #0d6efd;
             border: 2px solid #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: transform 0.1s ease;
         }
+
         .custom-risk-range::-moz-range-thumb:hover {
             transform: scale(1.15);
         }
@@ -63,79 +67,105 @@
     data-pmo-base="..">
 
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
-<header class="top-nav pmo-shell-dashboard-topnav w-100">
-    <div class="container-fluid px-3 px-md-4 py-2">
-        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
-            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#analyticsSidebarOffcanvas" aria-controls="analyticsSidebarOffcanvas" id="analyticsBtnOpenSidebar">
-                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
-                    </button>
-                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="analyticsBrandLink">
-                        <img src="../images/logo.png" alt="Logo" height="35">
-                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
-                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
-                        </div>
-                    </a>
-                </div>
-                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
-                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="analyticsNavPillUt">
-                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../eop/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="analyticsNavPillEop">
-                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="unit-trust.html" class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none" id="analyticsNavPillAnalytics">
-                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
-                    </a>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
-                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
-                            <i class="iconoir-user fs-5 text-dark"></i>
-                        </div>
-                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="analyticsNavUserLabel">User &amp; Authoriser</span>
-                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
-                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item d-flex align-items-center gap-2" href="../unit-trust/settings.html" id="dropLnkProfile">
-                                <i class="iconoir-user fs-6"></i> User Profile Details
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="../unit-trust/settings.html#password" id="dropLnkPassword">
-                                <i class="iconoir-lock fs-6"></i> Change Password
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
-                                <i class="iconoir-log-out fs-6"></i> Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#analyticsSidebarOffcanvas"
+                                        aria-controls="analyticsSidebarOffcanvas" id="analyticsBtnOpenSidebar">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0"
+                                        href="../unit-trust/dashboard.html" id="analyticsBrandLink">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="../unit-trust/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="analyticsNavPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../eop/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="analyticsNavPillEop">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="unit-trust.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="analyticsNavPillAnalytics">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline"
+                                            id="analyticsNavUserLabel">User &amp; Authoriser</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item d-flex align-items-center gap-2"
+                                                href="../unit-trust/settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
 
-    </div>
+            </div>
         </div>
 
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="text-white-50 fw-normal fs-6">· Analytics</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="text-white fw-normal fs-6">· Analytics</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="analyticsMainTabs">
                     <li class="nav-item">
                         <a class="nav-link" href="unit-trust.html" id="analyticsTabUt">Unit Trust Analytics</a>
@@ -157,7 +187,7 @@
                 <aside class="col-lg-3">
                     <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4">
                         <!-- Sidebar Collapse/Header -->
-                         <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
                             <h5 class="fw-bold text-dark fs-6 mb-0">Further filter by &gt;&gt;</h5>
                             <button
                                 class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -168,8 +198,12 @@
 
                         <!-- Show Funds Selector -->
                         <div class="mb-4 position-relative pt-1">
-                            <label class="form-label text-muted fs-8 fw-semibold mb-0" style="background: white; padding: 0 6px; position: absolute; top: -5px; left: 12px; z-index: 5;">Show Funds</label>
-                            <select class="form-select rounded-3 fs-8 py-2.5 text-dark border-secondary border-opacity-50 fw-medium" style="font-weight: 500;">
+                            <label class="form-label text-muted fs-8 fw-semibold mb-0"
+                                style="background: white; padding: 0 6px; position: absolute; top: -5px; left: 12px; z-index: 5;">Show
+                                Funds</label>
+                            <select
+                                class="form-select rounded-3 fs-8 py-2.5 text-dark border-secondary border-opacity-50 fw-medium"
+                                style="font-weight: 500;">
                                 <option selected>All Funds</option>
                                 <option>My Favourites Only</option>
                                 <option>Islamic Funds</option>
@@ -182,14 +216,16 @@
                             <div class="input-group">
                                 <input type="text" class="form-control fs-8 py-2.5 border-secondary border-opacity-50"
                                     placeholder="Fund Name or Abbreviation" aria-label="Search funds">
-                                <button class="btn btn-secondary px-3 d-flex align-items-center border-secondary border-opacity-50" type="button"
+                                <button
+                                    class="btn btn-secondary px-3 d-flex align-items-center border-secondary border-opacity-50"
+                                    type="button"
                                     style="background-color: #5d678e; border-color: #5d678e; color: white;">
                                     <i class="iconoir-search fs-6"></i>
                                 </button>
                             </div>
                         </div>
 
-                      
+
                         <!-- Fund Category Filters -->
                         <div class="mb-3">
                             <div class="fw-bold text-dark fs-8 mb-2">Fund Category</div>
@@ -199,11 +235,13 @@
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catModerate">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="catModerate">Moderate</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium"
+                                    for="catModerate">Moderate</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catConservative">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="catConservative">Conservative</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium"
+                                    for="catConservative">Conservative</label>
                             </div>
                             <div class="custom-checkbox form-check mb-3">
                                 <input class="form-check-input" type="checkbox" id="catEquity">
@@ -213,7 +251,9 @@
 
                         <!-- Geographical Exposure Dropdown -->
                         <div class="mb-3">
-                            <select class="form-select rounded-3 fs-8 py-2.5 text-dark border-secondary border-opacity-50 fw-medium" style="font-weight: 500;">
+                            <select
+                                class="form-select rounded-3 fs-8 py-2.5 text-dark border-secondary border-opacity-50 fw-medium"
+                                style="font-weight: 500;">
                                 <option value="Local" selected>Local</option>
                                 <option value="Local with Foreign">Local with Foreign</option>
                                 <option value="Foreign">Foreign</option>
@@ -224,19 +264,23 @@
                         <div class="mb-4">
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="shariahBased">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="shariahBased">Shariah Based Only</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium" for="shariahBased">Shariah
+                                    Based Only</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="nonShariahBased">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="nonShariahBased">Non Shariah Based Only</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium" for="nonShariahBased">Non
+                                    Shariah Based Only</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="epfQualified">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="epfQualified">EPF-Qualified Funds</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium"
+                                    for="epfQualified">EPF-Qualified Funds</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="complimentaryInsurance">
-                                <label class="form-check-label fs-8 text-dark fw-medium" for="complimentaryInsurance">Complimentary Insurance/Takaful</label>
+                                <label class="form-check-label fs-8 text-dark fw-medium"
+                                    for="complimentaryInsurance">Complimentary Insurance/Takaful</label>
                             </div>
                         </div>
 
@@ -244,11 +288,16 @@
                         <div class="mb-4">
                             <div class="fw-bold text-dark fs-8 mb-2">Risk Level Up to</div>
                             <div class="position-relative px-1" style="height: 50px;">
-                                <input type="range" class="form-range custom-risk-range w-100" min="1" max="5" step="1" value="5" id="riskRange">
-                                <div class="position-absolute translate-middle-x mt-2 text-center" id="riskBubble" style="left: 100%; top: 12px; transition: left 0.1s ease-out;">
-                                    <div class="px-2 py-0.5 bg-white border border-dark rounded-3 fw-bold fs-8 position-relative shadow-sm" style="min-width: 28px;">
+                                <input type="range" class="form-range custom-risk-range w-100" min="1" max="5" step="1"
+                                    value="5" id="riskRange">
+                                <div class="position-absolute translate-middle-x mt-2 text-center" id="riskBubble"
+                                    style="left: 100%; top: 12px; transition: left 0.1s ease-out;">
+                                    <div class="px-2 py-0.5 bg-white border border-dark rounded-3 fw-bold fs-8 position-relative shadow-sm"
+                                        style="min-width: 28px;">
                                         <span id="riskBubbleValue">5</span>
-                                        <div class="position-absolute start-50 translate-middle-x" style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #000; top: -6px;"></div>
+                                        <div class="position-absolute start-50 translate-middle-x"
+                                            style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #000; top: -6px;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +305,8 @@
 
                         <!-- Reset Button -->
                         <div class="mt-2">
-                            <button class="btn btn-outline-secondary w-100 rounded-3 py-2 fs-8 fw-semibold" style="border-color: #dee2e6; color: #333;" id="btnResetFilters">
+                            <button class="btn btn-outline-secondary w-100 rounded-pill py-2 fs-8 fw-semibold"
+                                style="border-color: #dee2e6; color: #333;" id="btnResetFilters">
                                 Reset
                             </button>
                         </div>
@@ -266,373 +316,395 @@
                 <!-- RIGHT COLUMN: Analytics Main Dashboard Panel (col-lg-9) -->
                 <section class="col-lg-9">
                     <div class="mb-4">
-                        <h2 class="fw-bold text-dark fs-2 mb-2">Fund Analytics</h2>
+                        <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Fund Analytics</h2>
                         <p class="text-muted fs-7 mb-0">Track and compare your fund performance.</p>
                     </div>
                     <!-- Top Views Selectors Card -->
 
                     <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
                         <!-- View Tab Links -->
-                        <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
-                            <a href="#" class="view-tab d-flex align-items-center gap-2">
-                                <i class="iconoir-info-circle fs-6"></i> Fund Info View
-                            </a>
-                            <a href="#" class="view-tab active d-flex align-items-center gap-2">
-                                <i class="iconoir-graph-up fs-6"></i> Fund Performance View
-                            </a>
-                            <a href="#" class="view-tab d-flex align-items-center gap-2">
-                                <i class="iconoir-dollar fs-6"></i> Fund Prices View
-                            </a>
+                        <div class="border-bottom pb-3 mb-4">
+                            <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
+                                <a href="#" class="view-tab d-flex align-items-center gap-2">
+                                    <i class="iconoir-info-circle fs-6"></i> Fund Info View
+                                </a>
+                                <a href="#" class="view-tab active d-flex align-items-center gap-2">
+                                    <i class="iconoir-graph-up fs-6"></i> Fund Performance View
+                                </a>
+                                <a href="#" class="view-tab d-flex align-items-center gap-2">
+                                    <i class="iconoir-dollar fs-6"></i> Fund Prices View
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Subtabs Row (Unit Trust / Private Retirement Scheme) -->
-                    <!-- <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between g-3 mt-3">
+                        <!-- Subtabs Row (Unit Trust / Private Retirement Scheme) -->
+                        <!-- <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between g-3 mt-3">
                             
 
                            Interactive Buttons on Same Row -->
-                    <!-- <div class="d-flex align-items-center gap-2">
-                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-white fw-bold transition-all" style="background-color: #26247b; border: none;" id="btnFavourites">
+                        <!-- <div class="d-flex align-items-center gap-2">
+                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-white fw-bold transition-all" style="background-color: #002e77; border: none;" id="btnFavourites">
                                     <i class="iconoir-star-solid text-warning fs-6"></i> My Favourites
                                 </button>
                                 <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-muted border bg-light transition-all" id="btnCompare">
                                     Compare Funds <span class="badge bg-secondary rounded-circle px-2 py-1 fs-9 ms-1 text-white">0</span>
                                 </button>
                             </div> -->
-                    <!-- </div> -->
-                    <!-- Performance Table Card -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
-                                <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
-                                    <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" style="width: 32%;">
-                                            Fund</th>
-                                        <th class="py-3 fw-semibold align-middle" style="width: 14%;">
-                                            Performance<br>Date</th>
-                                        <th class="py-2 fw-semibold border-start border-end" colspan="2"
-                                            style="width: 18%; background-color: #f1f5f9;">3-Year Volatility</th>
-                                        <th class="py-2 fw-semibold border-end" colspan="2"
-                                            style="width: 14%; background-color: #f1f5f9;">Returns %</th>
-                                        <th class="py-2 fw-semibold" colspan="3"
-                                            style="width: 18%; background-color: #f1f5f9;">Annualised Returns (%)</th>
-                                        <th class="pe-4 py-3 fw-semibold align-middle" style="width: 4%;">Action</th>
-                                    </tr>
-                                    <tr class="border-bottom" style="font-size: 0.75rem;">
-                                        <th></th>
-                                        <th></th>
-                                        <th class="py-2 border-start text-secondary fw-medium">Factor</th>
-                                        <th class="py-2 border-end text-secondary fw-medium">Class</th>
-                                        <th class="py-2 text-secondary fw-medium">YTD</th>
-                                        <th class="py-2 border-end text-secondary fw-medium">1-Yr</th>
-                                        <th class="py-2 text-secondary fw-medium">3-Yr</th>
-                                        <th class="py-2 text-secondary fw-medium">5-Yr</th>
-                                        <th class="py-2 text-secondary fw-medium">10-Yr</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-dark fw-medium">
-                                    <!-- Row 1 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-ISEQF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS ISLAMIC STRATEGIC EQUITY</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-ISEQF</span>
+                        <!-- </div> -->
+                        <!-- Performance Table Card -->
+                        <div class="border rounded-4 overflow-hidden mb-4">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
+                                    <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                                        <tr>
+                                            <th class="ps-4 py-3 fw-semibold text-start align-middle"
+                                                style="width: 32%;">
+                                                Fund</th>
+                                            <th class="py-3 fw-semibold align-middle" style="width: 14%;">
+                                                Performance<br>Date</th>
+                                            <th class="py-2 fw-semibold border-start border-end" colspan="2"
+                                                style="width: 18%; background-color: #f1f5f9;">3-Year Volatility</th>
+                                            <th class="py-2 fw-semibold border-end" colspan="2"
+                                                style="width: 14%; background-color: #f1f5f9;">Returns %</th>
+                                            <th class="py-2 fw-semibold" colspan="3"
+                                                style="width: 18%; background-color: #f1f5f9;">Annualised Returns (%)
+                                            </th>
+                                            <th class="pe-4 py-3 fw-semibold align-middle" style="width: 4%;">Action
+                                            </th>
+                                        </tr>
+                                        <tr class="border-bottom" style="font-size: 0.75rem;">
+                                            <th></th>
+                                            <th></th>
+                                            <th class="py-2 border-start text-secondary fw-medium">Factor</th>
+                                            <th class="py-2 border-end text-secondary fw-medium">Class</th>
+                                            <th class="py-2 text-secondary fw-medium">YTD</th>
+                                            <th class="py-2 border-end text-secondary fw-medium">1-Y</th>
+                                            <th class="py-2 text-secondary fw-medium">3-Y</th>
+                                            <th class="py-2 text-secondary fw-medium">5-Y</th>
+                                            <th class="py-2 text-secondary fw-medium">10-Y</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-dark fw-medium">
+                                        <!-- Row 1 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                    <div>
+                                                        <a href="../eop/prs_fund_detail.html?code=PRS-ISEQF"
+                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            ISLAMIC STRATEGIC EQUITY</a>
+                                                        <span class="text-muted d-block"
+                                                            style="font-size: 0.7rem;">PRS-ISEQF</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">69.69</td>
-                                        <td class="border-end text-success fw-semibold">123.71</td>
-                                        <td class="text-success fw-semibold">35.34</td>
-                                        <td class="text-success fw-semibold">15.37</td>
-                                        <td class="text-success fw-semibold">13.55</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">69.69</td>
+                                            <td class="border-end text-success fw-semibold">123.71</td>
+                                            <td class="text-success fw-semibold">35.34</td>
+                                            <td class="text-success fw-semibold">15.37</td>
+                                            <td class="text-success fw-semibold">13.55</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 2 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-IGRF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS ISLAMIC GROWTH</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-IGRF</span>
+                                        <!-- Row 2 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-IGRF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             ISLAMIC GROWTH</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-IGRF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">44.62</td>
-                                        <td class="border-end text-success fw-semibold">75.08</td>
-                                        <td class="text-success fw-semibold">26.96</td>
-                                        <td class="text-success fw-semibold">12.41</td>
-                                        <td class="text-success fw-semibold">11.64</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">44.62</td>
+                                            <td class="border-end text-success fw-semibold">75.08</td>
+                                            <td class="text-success fw-semibold">26.96</td>
+                                            <td class="text-success fw-semibold">12.41</td>
+                                            <td class="text-success fw-semibold">11.64</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 3 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-MDF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS MODERATE</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-MDF</span>
+                                        <!-- Row 3 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-MDF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             MODERATE</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-MDF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">29.78</td>
-                                        <td class="border-end text-success fw-semibold">49.48</td>
-                                        <td class="text-success fw-semibold">21.28</td>
-                                        <td class="text-success fw-semibold">9.69</td>
-                                        <td class="text-success fw-semibold">8.03</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">29.78</td>
+                                            <td class="border-end text-success fw-semibold">49.48</td>
+                                            <td class="text-success fw-semibold">21.28</td>
+                                            <td class="text-success fw-semibold">9.69</td>
+                                            <td class="text-success fw-semibold">8.03</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 4 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-GRF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS GROWTH</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-GRF</span>
+                                        <!-- Row 4 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-GRF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             GROWTH</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-GRF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">23.44</td>
-                                        <td class="border-end text-success fw-semibold">43.95</td>
-                                        <td class="text-success fw-semibold">16.38</td>
-                                        <td class="text-success fw-semibold">4.73</td>
-                                        <td class="text-success fw-semibold">6.10</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">23.44</td>
+                                            <td class="border-end text-success fw-semibold">43.95</td>
+                                            <td class="text-success fw-semibold">16.38</td>
+                                            <td class="text-success fw-semibold">4.73</td>
+                                            <td class="text-success fw-semibold">6.10</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 5 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-SEQF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS STRATEGIC EQUITY</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-SEQF</span>
+                                        <!-- Row 5 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-SEQF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             STRATEGIC EQUITY</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-SEQF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">22.72</td>
-                                        <td class="border-end text-success fw-semibold">35.68</td>
-                                        <td class="text-success fw-semibold">12.78</td>
-                                        <td class="text-success fw-semibold">4.46</td>
-                                        <td class="text-success fw-semibold">7.38</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">22.72</td>
+                                            <td class="border-end text-success fw-semibold">35.68</td>
+                                            <td class="text-success fw-semibold">12.78</td>
+                                            <td class="text-success fw-semibold">4.46</td>
+                                            <td class="text-success fw-semibold">7.38</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 6 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-IMDF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS ISLAMIC MODERATE</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-IMDF</span>
+                                        <!-- Row 6 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-IMDF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             ISLAMIC MODERATE</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-IMDF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">10.04</td>
-                                        <td class="border-end text-success fw-semibold">24.87</td>
-                                        <td class="text-success fw-semibold">10.85</td>
-                                        <td class="text-success fw-semibold">3.03</td>
-                                        <td class="text-success fw-semibold">5.42</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">10.04</td>
+                                            <td class="border-end text-success fw-semibold">24.87</td>
+                                            <td class="text-success fw-semibold">10.85</td>
+                                            <td class="text-success fw-semibold">3.03</td>
+                                            <td class="text-success fw-semibold">5.42</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 7 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-EQF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS EQUITY</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-EQF</span>
+                                        <!-- Row 7 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-EQF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             EQUITY</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-EQF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">8.07</td>
-                                        <td class="border-end text-success fw-semibold">18.25</td>
-                                        <td class="text-success fw-semibold">14.30</td>
-                                        <td class="text-success fw-semibold">8.29</td>
-                                        <td class="text-success fw-semibold">8.60</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">8.07</td>
+                                            <td class="border-end text-success fw-semibold">18.25</td>
+                                            <td class="text-success fw-semibold">14.30</td>
+                                            <td class="text-success fw-semibold">8.29</td>
+                                            <td class="text-success fw-semibold">8.60</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 8 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-CVF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS CONSERVATIVE</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-CVF</span>
+                                        <!-- Row 8 -->
+                                        <tr class="border-bottom">
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-CVF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             CONSERVATIVE</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-CVF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">7.73</td>
-                                        <td class="border-end text-success fw-semibold">12.03</td>
-                                        <td class="text-success fw-semibold">7.11</td>
-                                        <td class="text-success fw-semibold">4.70</td>
-                                        <td class="text-success fw-semibold">5.11</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">7.73</td>
+                                            <td class="border-end text-success fw-semibold">12.03</td>
+                                            <td class="text-success fw-semibold">7.11</td>
+                                            <td class="text-success fw-semibold">4.70</td>
+                                            <td class="text-success fw-semibold">5.11</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
 
-                                    <!-- Row 9 -->
-                                    <tr>
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
-                                                    onclick="toggleFavourite(this)"></i>
-                                                <div>
-                                                    <a href="../eop/prs_fund_detail.html?code=PRS-ICVF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS ISLAMIC CONSERVATIVE</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-ICVF</span>
+                                        <!-- Row 9 -->
+                                        <tr>
+                                            <td class="ps-4 py-3 text-start">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                        onclick="toggleFavourite(this)"></i>
+                                                     <div>
+                                                         <a href="../eop/prs_fund_detail.html?code=PRS-ICVF"
+                                                             class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
+                                                             style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                             ISLAMIC CONSERVATIVE</a>
+                                                         <span class="text-muted d-block"
+                                                             style="font-size: 0.7rem;">PRS-ICVF</span>
+                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-muted">26/05/2026</td>
-                                        <td class="border-start fw-normal text-muted">-</td>
-                                        <td class="border-end text-muted fw-normal">-</td>
-                                        <td class="text-success fw-semibold">5.49</td>
-                                        <td class="border-end text-success fw-semibold">8.36</td>
-                                        <td class="text-success fw-semibold">6.97</td>
-                                        <td class="text-success fw-semibold">4.20</td>
-                                        <td class="text-success fw-semibold">4.48</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            </td>
+                                            <td class="text-muted">26/05/2026</td>
+                                            <td class="border-start fw-normal text-muted">-</td>
+                                            <td class="border-end text-muted fw-normal">-</td>
+                                            <td class="text-success fw-semibold">5.49</td>
+                                            <td class="border-end text-success fw-semibold">8.36</td>
+                                            <td class="text-success fw-semibold">6.97</td>
+                                            <td class="text-success fw-semibold">4.20</td>
+                                            <td class="text-success fw-semibold">4.48</td>
+                                            <td class="pe-4 text-center">
+                                                <a href="#" class="table-action-btn"><i
+                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- HIGHLIGHTED DISCLAIMER PANEL (Requested by user) -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5">
-                        <div class="card-body p-4 border-start border-4 border-danger"
-                            style="background-color: #fffbfb;">
-                            <div class="d-flex gap-3">
-                                <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
-                                <div>
-                                    <h6 class="fw-bold text-danger mb-2">Important Regulatory Notes & Disclaimers</h6>
+                        <!-- HIGHLIGHTED DISCLAIMER PANEL (Requested by user) -->
+                        <div class="border rounded-4 overflow-hidden mb-5">
+                            <div class="card-body p-4 border-start border-4 border-danger"
+                                style="background-color: #fffbfb;">
+                                <div class="d-flex gap-3">
+                                    <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
+                                    <div>
+                                        <h6 class="fw-bold text-danger mb-2">Important Regulatory Notes & Disclaimers
+                                        </h6>
 
-                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
-                                        <li>
-                                            <span class="fw-semibold text-dark">Fund Performance</span> is computed
-                                            based on the latest available fund price.
-                                        </li>
-                                        <li>
-                                            <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is based
-                                            on the fund’s portfolio returns as at <strong class="text-dark">28 Feb
-                                                2026</strong> (source: Lipper, latest update).
-                                        </li>
-                                        <li class="text-muted" style="text-align: justify;">
-                                            The Volatility Factor (VF) means there is a possibility for the fund in
-                                            generating an upside return or downside return around this VF. The
-                                            Volatility Class (VC) is assigned by Lipper based on quintile ranks of the
-                                            VF for qualified funds. The VF is subject to monthly revisions and the VC is
-                                            revised every six months or other intervals as advised by FIMM. The
-                                            volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and “Very
-                                            High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤
-                                            7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than
-                                            13.525 respectively. For this period to 30 June 2026, the VCs for the funds
-                                            are based on the VFs of the respective funds as at 28 February 2026. The
-                                            fund’s portfolio may have changed since this date and there is no guarantee
-                                            that the fund will continue to have the same VF or VC in the future.
-                                            Presently, only funds launched in the market for at least 36 months will
-                                            display the VF and its VC.
-                                        </li>
-                                    </ul>
+                                        <ul
+                                            class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
+                                            <li>
+                                                <span class="fw-semibold text-dark">Fund Performance</span> is computed
+                                                based on the latest available fund price.
+                                            </li>
+                                            <li>
+                                                <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is
+                                                based
+                                                on the fund’s portfolio returns as at <strong class="text-dark">28 Feb
+                                                    2026</strong> (source: Lipper, latest update).
+                                            </li>
+                                            <li class="text-muted" style="text-align: justify;">
+                                                The Volatility Factor (VF) means there is a possibility for the fund in
+                                                generating an upside return or downside return around this VF. The
+                                                Volatility Class (VC) is assigned by Lipper based on quintile ranks of
+                                                the
+                                                VF for qualified funds. The VF is subject to monthly revisions and the
+                                                VC is
+                                                revised every six months or other intervals as advised by FIMM. The
+                                                volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and
+                                                “Very
+                                                High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤
+                                                7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than
+                                                13.525 respectively. For this period to 30 June 2026, the VCs for the
+                                                funds
+                                                are based on the VFs of the respective funds as at 28 February 2026. The
+                                                fund’s portfolio may have changed since this date and there is no
+                                                guarantee
+                                                that the fund will continue to have the same VF or VC in the future.
+                                                Presently, only funds launched in the market for at least 36 months will
+                                                display the VF and its VC.
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -644,68 +716,71 @@
     </main>
 
     <div id="pmoShellFooterMount">
-<footer class="bottom-footer mt-auto">
-    <div class="container text-start">
-        <div class="bottom-links mb-2">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Internet Risk</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Investment Channels</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQ</a>
-            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
-        </div>
-        <div class="copyright-text fs-9">
-            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
-        </div>
-    </div>
-</footer>
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
     <div id="pmoShellSidebarMount">
-<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="analyticsSidebarOffcanvas"
-    aria-labelledby="analyticsSidebarLabel">
-    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-        <div class="d-flex justify-content-end mb-2 w-100">
-            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
-                aria-label="Close" id="pmoShellSidebarCloseAnalytics">
-                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
-            </button>
+        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1"
+            id="analyticsSidebarOffcanvas" aria-labelledby="analyticsSidebarLabel">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="pmoShellSidebarCloseAnalytics">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="portal-sidebar-profile-card w-100 mb-3">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Fund Analytics</div>
+                    <h5 class="profile-name fs-6 mb-0" id="analyticsSidebarLabel">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+            <div class="offcanvas-body pt-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="unit-trust.html"
+                            id="pmoAnalyticsSideUt">
+                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Unit
+                                Trust Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="eop.html"
+                            id="pmoAnalyticsSideEop">
+                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">PRS
+                                Analytics</span>
+                        </a>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                            id="pmoAnalyticsSideLogout">
+                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Log
+                                Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="portal-sidebar-profile-card w-100 mb-3">
-            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Fund Analytics</div>
-            <h5 class="profile-name fs-6 mb-0" id="analyticsSidebarLabel">Ahmad Razak bin Osman</h5>
-            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
-                Authoriser</span>
-        </div>
-    </div>
-    <div class="offcanvas-body pt-4">
-        <ul class="nav flex-column sidebar-nav">
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="unit-trust.html"
-                    id="pmoAnalyticsSideUt">
-                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Unit
-                        Trust Analytics</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="eop.html"
-                    id="pmoAnalyticsSideEop">
-                    <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">PRS
-                        Analytics</span>
-                </a>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                    id="pmoAnalyticsSideLogout">
-                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
-                        Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
     </div>
 
     <script src="../js/bootstrap.bundle.min.js"></script>

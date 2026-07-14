@@ -1,0 +1,112 @@
+/* Public Mutual Brand Overrides for Hexabox Theme */
+
+:root,
+[data-bs-theme=light] {
+    /* Fonts */
+    --bs-body-font-family: 'Montserrat', sans-serif;
+    --bs-font-sans-serif: 'Montserrat', sans-serif;
+
+    /* Theme Primary (Navy Blue) */
+    --bs-primary: #002e77;
+    --bs-primary-rgb: 38, 36, 123;
+    --bs-primary-text-emphasis: #002e77;
+    --bs-primary-bg-subtle: #f0f0fa;
+    --bs-primary-border-subtle: #d4d3ed;
+    --bs-link-color: #002e77;
+    --bs-link-color-rgb: 38, 36, 123;
+    --bs-link-hover-color: #ff1700;
+    /* Hover: Brand Red */
+    --bs-link-hover-color-rgb: 237, 28, 36;
+
+    /* Theme Danger (Brand Red) */
+    --bs-danger: #ff1700;
+    --bs-danger-rgb: 237, 28, 36;
+    --bs-danger-text-emphasis: #850f14;
+    --bs-danger-bg-subtle: #fee7e7;
+    --bs-danger-border-subtle: #f9c2c4;
+
+    /* Additional Brand Colors */
+    --brand-primary: #ff1700;
+    --brand-navy: #002e77;
+    --accent-primary: #373761;
+    --action-primary: #002e77;
+    --interactive-hover: #5d678e;
+
+    /* Layout & Logo overrides */
+    --nav-logo-primary: #002e77;
+}
+
+[data-bs-theme=dark] {
+    --bs-primary: #002e77;
+    --bs-primary-rgb: 66, 63, 187;
+    --bs-primary-text-emphasis: #8c89ec;
+    --bs-primary-bg-subtle: #121133;
+    --bs-primary-border-subtle: #2b2a7a;
+    --nav-logo-primary: #002e77;
+}
+
+/* Ensure Montserrat font is applied to body & headings */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Override Hexabox specific purple accents that don't use bs-primary */
+.btn-primary {
+    --bs-btn-bg: #002e77 !important;
+    --bs-btn-border-color: #002e77 !important;
+    --bs-btn-hover-bg: #1d1b61 !important;
+    --bs-btn-hover-border-color: #1d1b61 !important;
+    --bs-btn-active-bg: #1d1b61 !important;
+    --bs-btn-active-border-color: #1d1b61 !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #002e77 !important;
+    --bs-btn-border-color: #002e77 !important;
+    --bs-btn-hover-bg: #002e77 !important;
+    --bs-btn-hover-border-color: #002e77 !important;
+}
+
+.btn-danger {
+    --bs-btn-bg: #ff1700 !important;
+    --bs-btn-border-color: #ff1700 !important;
+    --bs-btn-hover-bg: #c8151b !important;
+    --bs-btn-hover-border-color: #c8151b !important;
+}
+
+/* Sidebar and active menu overrides */
+.deznav .metismenu>li.mm-active>a {
+    background-color: rgba(38, 36, 123, 0.1) !important;
+    color: #002e77 !important;
+    border-left: 4px solid #002e77 !important;
+}
+
+.deznav .metismenu a:hover,
+.deznav .metismenu a:focus,
+.deznav .metismenu a:active {
+    color: #002e77 !important;
+}
+
+/* Pagination overrides */
+.page-item.active .page-link {
+    background-color: #002e77 !important;
+    border-color: #002e77 !important;
+}
+
+/* Checked form controls */
+.form-check-input:checked {
+    background-color: #002e77 !important;
+    border-color: #002e77 !important;
+}

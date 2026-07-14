@@ -8,8 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Montserrat -->
-    <link href="../css/montserrat.css"
-        rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="../css/iconoir.css">
     <!-- Custom CSS -->
@@ -22,15 +21,6 @@
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
 
     <style>
-        .custom-table-details td {
-            padding: 12px 16px;
-            font-size: 0.8rem;
-        }
-
-        .custom-table-details tr:last-child {
-            border-bottom: 0 !important;
-        }
-
         .pac-group {
             position: relative;
         }
@@ -100,94 +90,109 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
-<header class="top-nav pmo-shell-dashboard-topnav w-100">
-    <div class="container-fluid px-3 px-md-4 py-2">
-        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
-            aria-label="Portal primary">
-            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
-                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                        id="pmoShellBtnOpenSidebarUt">
-                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
-                    </button>
-                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
-                        id="pmoShellBrandUt">
-                        <img src="../images/logo.png" alt="Logo" height="35">
-                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
-                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
-                        </div>
-                    </a>
-                </div>
-                <div
-                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
-                    <a href="dashboard.html"
-                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
-                        id="pmoShellPillUt">
-                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../eop/dashboard.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillEopFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../analytics/unit-trust.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillAnalyticsFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
-                    </a>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
-                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 35px; height: 35px;" aria-hidden="true">
-                            <i class="iconoir-user fs-5 text-dark"></i>
-                        </div>
-                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User &amp; Authoriser</span>
-                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
-                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="settings.html" id="dropLnkProfile">
-                                <i class="iconoir-user fs-6"></i> User Profile Details
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="settings.html#password" id="dropLnkPassword">
-                                <i class="iconoir-lock fs-6"></i> Change Password
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
-                                <i class="iconoir-log-out fs-6"></i> Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+                                        aria-controls="sidebarMenu" id="pmoShellBtnOpenSidebarUt">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                                        id="pmoShellBrandUt">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="dashboard.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="pmoShellPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../eop/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillEopFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../analytics/unit-trust.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillAnalyticsFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
+                                            &amp; Authoriser</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
+                                                href="settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
             </div>
-        </nav>
-    </div>
-</header>
-    </div>
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust Portal</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
+                        Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -227,15 +232,17 @@
                     <div>
                         <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
                             <span class="text-secondary fw-medium" id="headerRefDisplay">RP26000000000179</span>
-                            <span class="text-primary" id="headerFundDisplay">PUBLIC e-CASH DEPOSIT - CLASS B</span>
+                            <span class="text-primary fw-bold" id="headerFundDisplay">PUBLIC e-CASH DEPOSIT - CLASS B</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block">Authorise Redemption Request</span>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="headerActionType">Authorise
+                            Redemption Request</span>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <button
                         class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2"
                         style="border-color: #dee2e6;" onclick="window.print()">
+                        <i class="iconoir-printer fs-6"></i> Print
                     </button>
                 </div>
             </div>
@@ -261,7 +268,7 @@
 
                 <!-- LEFT: All Authorise Request Details -->
                 <div class="col-lg-7">
-                    <!-- Request Summary Card -->
+                    <!-- Unified Authorisation Details Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
                         <div class="card-body p-4">
                             <h5
@@ -269,106 +276,102 @@
                                 <span>Request Overview</span>
                             </h5>
 
-                            <div class="table-responsive">
+                            <div class="table-responsive mb-4">
                                 <table class="table align-middle custom-table-details mb-0">
-                                    <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="refNoDisplay">RP26000000000179</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Request Date & Time</td>
-                                            <td class="text-dark" id="requestDateDisplay">2026/04/05 11:30:15</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Fund Name</td>
-                                            <td class="fw-bold text-dark" id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
-                                                CLASS B</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Account Number</td>
-                                            <td class="fw-bold text-primary" id="accountDisplay">0193922094</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Payout Account</td>
-                                            <td class="text-dark" id="payoutAccountDisplay">PUBLIC BANK BERHAD
-                                                (891823092391)</td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody>                                        <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold" style="width: 35%;">Reference No.</td>
+                                             <td class="fw-bold text-dark" id="refNoDisplay">RP26000000000179</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Request Date & Time</td>
+                                             <td class="text-dark" id="requestDateDisplay">2026/04/05 11:30:15</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Fund Name</td>
+                                             <td class="text-dark fw-bold" id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
+                                                 CLASS B</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Account Number</td>
+                                             <td class="text-primary" id="accountDisplay">0193922094</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Payout Account</td>
+                                             <td class="text-dark" id="payoutAccountDisplay">PUBLIC BANK BERHAD
+                                                 (891823092391)</td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                             </div>
+
+                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Redemption &amp; Unit Details</h5>
+                             <div class="table-responsive mb-4">
+                                 <table class="table align-middle custom-table-details mb-0">
+                                     <tbody>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold" style="width: 35%;">Current Unit Balance
+                                             </td>
+                                             <td class="fw-semibold text-dark" id="totalUnitsDisplay">—</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Redemption Units</td>
+                                             <td class="fw-semibold text-dark" id="redeemUnitsDisplay">—</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Remaining Units</td>
+                                             <td class="fw-semibold text-dark" id="afterRedeemDisplay">—</td>
+                                         </tr>
+                                         <tr class="border-bottom">
+                                             <td class="text-muted fw-semibold">Estimated Payout Value</td>
+                                             <td class="fw-semibold text-danger fs-6" id="payoutValueDisplay">—</td>
+                                         </tr>
+                                     </tbody> </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
 
+                            <!-- Verification section wrapped with id="pac-verification-card" for print media styles and JS selectors -->
+                            <div id="pac-verification-card" class="mt-4 pt-2">
+                                <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Secure Authorisation</h5>
 
+                                <form id="authPACForm">
+                                    <div id="pac-fields-wrapper">
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted fs-8 fw-semibold">Verification
+                                                Method</label>
+                                            <select class="form-select text-dark fw-semibold fs-8">
+                                                <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
+                                                <option value="SecureSign">SecureSign</option>
+                                            </select>
+                                        </div>
 
-                    <!-- Redemption & Unit Details Card (Standardised matching EOP) -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
-                        <div class="card-body p-4">
-                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Redemption &amp; Unit Details</h5>
-                            <div class="table-responsive">
-                                <table class="table align-middle custom-table-details mb-0">
-                                    <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Current Unit Balance</td>
-                                            <td class="fw-bold text-dark" id="totalUnitsDisplay">—</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Redemption Units</td>
-                                            <td class="fw-bold text-dark" id="redeemUnitsDisplay">—</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Remaining Units</td>
-                                            <td class="fw-bold text-dark" id="afterRedeemDisplay">—</td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Estimated Payout Value</td>
-                                            <td class="fw-bold text-danger fs-6" id="payoutValueDisplay">—</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PAC Secure Verification Card -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4" id="pac-verification-card">
-                        <div class="card-body p-2">
-                            <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Secure Authorisation</h5>
-
-                            <form id="authPACForm">
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fs-8 fw-semibold">Verification Method</label>
-                                    <select class="form-select text-dark fw-semibold fs-8">
-                                        <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
-                                        <option value="SecureSign">SecureSign</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label text-dark fs-8 fw-bold">PAC Number</label>
-                                    <div class="pac-group">
-                                        <input type="password" class="form-control border-secondary rounded-3 px-3 py-2"
-                                            id="pacInput" placeholder="Enter 8-digit PAC" maxlength="8">
-                                        <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
-                                            PAC</button>
+                                        <div class="mb-3">
+                                            <label class="form-label text-dark fs-8 fw-bold">PAC Number</label>
+                                            <div class="pac-group">
+                                                <input type="password"
+                                                    class="form-control border-secondary rounded-3 px-3 py-2" id="pacInput"
+                                                    placeholder="Enter 8-digit PAC" maxlength="8">
+                                                <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                                    PAC</button>
+                                            </div>
+                                            <div class="invalid-feedback" id="pac-error" style="display:none;">Incorrect PAC
+                                                number. Please click 'REQUEST PAC' and use code 12345678.</div>
+                                        </div>
                                     </div>
-                                    <div class="invalid-feedback" id="pac-error" style="display:none;">Incorrect PAC
-                                        number. Please click 'REQUEST PAC' and use code 12345678.</div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fs-8 fw-semibold">Authoriser Remarks
-                                        (Optional)</label>
-                                    <textarea class="form-control" id="remarksInput" rows="2"
-                                        placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
-                                </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fs-8 fw-semibold" id="remarksLabel">Authoriser
+                                            Remarks
+                                            (Optional)</label>
+                                        <textarea class="form-control" id="remarksInput" rows="2"
+                                            placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
+                                    </div>
 
-                                <div class="pac-info-text mb-2 text-muted fs-9">
-                                    * Please click 'REQUEST PAC' and enter the 8-digit code sent to your registered
-                                    mobile number XXX3ZXXXXX1.
-                                </div>
-                            </form>
+                                    <div class="pac-info-text mb-2 text-muted fs-9" id="pacInfoText">
+                                        * Please click 'REQUEST PAC' and enter the 8-digit code sent to your registered
+                                        mobile number XXX3ZXXXXX1.
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -388,14 +391,14 @@
                                     <div class="fw-bold fs-8 text-dark">Ahmad Razak bin Osman</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Amount Units to Claim</div>
+                                    <div class="text-muted fs-9 mb-1">Units to redeem</div>
                                     <div class="fw-bold fs-4 text-danger" id="redeemUnitsDisplay2">30,000.00</div>
                                 </div>
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Impact to Portfolio</div>
                                     <div class="fw-bold fs-8 text-dark" id="portfolioImpactDisplay">Reduces e-CASH
                                         holdings by 76.9%</div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <!-- <div class="mt-4 p-3 rounded-3 bg-light border fs-9 text-muted">
@@ -410,12 +413,17 @@
                 <div class="col-12 print-hidden mb-2">
                     <div class="mt-4">
                         <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                            <input class="form-check-input mt-0 fs-5" type="checkbox" id="utAuthTermsCheckbox" style="flex-shrink: 0;">
+                            <input class="form-check-input mt-0 fs-5" type="checkbox" id="utAuthTermsCheckbox"
+                                style="flex-shrink: 0;">
                             <label class="form-check-label fs-8 text-dark cursor-pointer" for="utAuthTermsCheckbox">
-                                I have read and agreed to the <a href="#" class="text-danger fw-bold text-decoration-none" style="color: var(--brand-red, #ed1c24) !important;">Terms and Conditions of Unit Trust Investment</a> and hereby authorise this transaction.
+                                I have read and agreed to the <a href="#"
+                                    class="text-danger fw-bold text-decoration-none"
+                                    style="color: var(--brand-red, #ff1700) !important;">Terms and Conditions of Unit
+                                    Trust Investment</a> and hereby authorise this transaction.
                             </label>
                         </div>
-                        <div class="invalid-feedback d-none mt-1" id="utAuthTermsError" style="color: var(--brand-red, #ed1c24); font-size: 0.75rem;">
+                        <div class="invalid-feedback d-none mt-1" id="utAuthTermsError"
+                            style="color: var(--brand-red, #ff1700); font-size: 0.75rem;">
                             You must agree to the Terms and Conditions before authorising.
                         </div>
                     </div>
@@ -484,9 +492,9 @@
                                     </div>
                                 </div>
 
-                                <!-- Right Col: Authorization Status details -->
+                                <!-- Right Col: Authorisation Status details -->
                                 <div class="col-md-6 ps-md-4 text-start">
-                                    <h5 class="fw-bold mb-4 text-dark">Authorization Details</h5>
+                                    <h5 class="fw-bold mb-4 text-dark">Authorisation Details</h5>
 
                                     <div class="mb-4">
                                         <div class="text-muted fs-8 mb-2">Execution Status</div>
@@ -540,155 +548,163 @@
 
     <!-- Footer (partials/footer-portal.html) -->
     <div id="pmoShellFooterMount">
-<footer class="bottom-footer mt-auto">
-    <div class="container text-start">
-        <div class="bottom-links mb-2">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Internet Risk</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Investment Channels</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQ</a>
-            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
-        </div>
-        <div class="copyright-text fs-9">
-            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
-        </div>
-    </div>
-</footer>
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
     <!-- Sidebar (partials/sidebar-*.html) -->
     <div id="pmoShellSidebarMount">
-<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
-    aria-labelledby="sidebarMenuLabel">
-    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-        <div class="d-flex justify-content-end mb-2 w-100">
-            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
-                aria-label="Close" id="pmoShellSidebarCloseUt">
-                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
-            </button>
+        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+            aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="pmoShellSidebarCloseUt">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="portal-sidebar-profile-card w-100 mb-3">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+                    <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+            <div class="offcanvas-body pt-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="pmoUtSideDash">
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                            id="pmoUtSideViewAcct">
+                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">View Account</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                            aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Authorise Transaction</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthTopup">
+                                        Top-Up Investment <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthRedeem">
+                                        Redemption <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
+                            aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Transaction Enquiry</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="transactions.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPast">Past Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnOnline">Online Activities</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                            aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Statement</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="statementCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt1">Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt2">Annual/Interim</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt3">Fund
+                                        Reports</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt4">e-Invoice</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt5">Invoice</a></li>
+                            </ul>
+                        </div>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                            id="pmoUtSideLogout">
+                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Log
+                                Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="portal-sidebar-profile-card w-100 mb-3">
-            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
-            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
-            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
-                Authoriser</span>
-        </div>
-    </div>
-    <div class="offcanvas-body pt-4">
-        <ul class="nav flex-column sidebar-nav">
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
-                    id="pmoUtSideDash">
-                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
-                    id="pmoUtSideViewAcct">
-                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">View Account</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
-                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Authorise Transaction</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-1">
-                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
-                                Top-Up Investment <span
-                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
-                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
-                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Transaction Enquiry</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="transactions.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPast">Past Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPending">Pending Investments</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnOnline">Online Activities</a></li>
-                        
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
-                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Statement</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <span
-                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="statementCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt1">Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt2">Annual/Interim</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
-                                Reports</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt4">e-Invoice</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt5">Invoice</a></li>
-                    </ul>
-                </div>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                    id="pmoUtSideLogout">
-                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
-                        Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
@@ -752,7 +768,7 @@
                     totalUnits: '39,000.00 Units',
                     redeemUnits: '30,000.00 Units',
                     afterRedeem: '9,000.00 Units',
-                    payoutVal: 'MYR 15,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5000)</span>',
+                    payoutVal: 'MYR 15,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5000 based on NAV as of 2026/04/03)</span>',
                     impact: 'Reduces e-CASH holdings by 76.9%',
                     rawRedeem: '30,000.00'
                 },
@@ -763,7 +779,7 @@
                     totalUnits: '250,000.00 Units',
                     redeemUnits: '150,000.00 Units',
                     afterRedeem: '100,000.00 Units',
-                    payoutVal: 'MYR 75,195.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5013)</span>',
+                    payoutVal: 'MYR 75,195.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5013 based on NAV as of 2026/04/03)</span>',
                     impact: 'Reduces STRATEGIC holdings by 60.0%',
                     rawRedeem: '150,000.00'
                 },
@@ -774,7 +790,7 @@
                     totalUnits: '120,000.00 Units',
                     redeemUnits: '100,000.00 Units',
                     afterRedeem: '20,000.00 Units',
-                    payoutVal: 'MYR 50,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5000)</span>',
+                    payoutVal: 'MYR 50,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.5000 based on NAV as of 2026/04/06)</span>',
                     impact: 'Reduces DIVIDEND holdings by 83.3%',
                     rawRedeem: '100,000.00'
                 }
@@ -816,24 +832,60 @@
 
             document.getElementById('requestDateDisplay').textContent = formattedDate;
 
-            // Auto action triggers for seamless demo!
-            if (actionParam === 'approve') {
-                pacInput.value = "12345678";
-                remarksInput.value = "Approved via bulk action shortcuts.";
-                // Highlight action button to guide user
-                btnApprove.classList.add('pulse-button');
-                btnApprove.style.boxShadow = '0 0 15px rgba(40, 167, 69, 0.6)';
-            } else if (actionParam === 'reject') {
-                pacInput.value = "12345678";
-                remarksInput.value = "Rejected via bulk action shortcuts.";
+            // Split Approve/Reject detail pages depending on actionParam
+            const actionTypeEl = document.getElementById('headerActionType');
+            const pacFieldsWrapper = document.getElementById('pac-fields-wrapper');
+            const pacInfoText = document.getElementById('pacInfoText');
+            const remarksLabel = document.getElementById('remarksLabel');
+            const pacCardHeader = document.querySelector('#pac-verification-card h5');
+
+            if (actionParam === 'reject') {
+                if (actionTypeEl) actionTypeEl.textContent = 'Reject Redemption Request';
+                if (btnApprove) btnApprove.style.display = 'none';
+                if (btnReject) btnReject.style.display = 'inline-block';
+
+                // Hide secure authorisation fields for rejection
+                if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'none';
+                if (pacInfoText) pacInfoText.style.display = 'none';
+                if (pacCardHeader) pacCardHeader.textContent = 'Rejection Details';
+                if (remarksLabel) {
+                    remarksLabel.textContent = 'Reason for Rejection (Required)';
+                    remarksLabel.className = 'form-label text-danger fs-8 fw-bold';
+                }
+
+                pacInput.value = ""; // No PAC required
+                remarksInput.value = "";
+                remarksInput.setAttribute('placeholder', 'Please provide a reason for rejecting this request (Required)...');
+                remarksInput.required = true;
                 btnReject.classList.add('pulse-button');
                 btnReject.style.boxShadow = '0 0 15px rgba(220, 53, 69, 0.6)';
-            };
+            } else {
+                // Default or approve
+                if (actionTypeEl) actionTypeEl.textContent = 'Approve Redemption Request';
+                if (btnReject) btnReject.style.display = 'none';
+                if (btnApprove) btnApprove.style.display = 'inline-block';
+
+                // Show secure authorisation fields for approval
+                if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'block';
+                if (pacInfoText) pacInfoText.style.display = 'block';
+                if (pacCardHeader) pacCardHeader.textContent = 'Secure Authorisation';
+                if (remarksLabel) {
+                    remarksLabel.textContent = 'Authoriser Remarks (Optional)';
+                    remarksLabel.className = 'form-label text-muted fs-8 fw-semibold';
+                }
+
+                pacInput.value = "12345678";
+                remarksInput.value = "Approved via bulk action shortcuts.";
+                remarksInput.setAttribute('placeholder', 'Provide a reason (Optional)...');
+                remarksInput.required = false;
+                btnApprove.classList.add('pulse-button');
+                btnApprove.style.boxShadow = '0 0 15px rgba(40, 167, 69, 0.6)';
+            }
 
             // PAC Simulation Action
             if (btnRequestPac) {
                 btnRequestPac.addEventListener('click', function () {
-                    alert("A demonstration 8-digit PAC [12345678] has been simulated and sent to registered mobile XXX3ZXXXXX1.");
+                    alert("PAC Sent to XXX12XXXXX3\nSecurity Number:QD5788156");
                     pacInput.value = "12345678";
                     pacInput.classList.remove('is-invalid');
                     pacError.style.display = 'none';
@@ -894,12 +946,19 @@
             // Reject Action Handler
             if (btnReject) {
                 btnReject.addEventListener('click', function () {
-                    if (!validatePAC()) return;
+                    // Rejection does not require PAC validation
+                    const remarks = remarksInput.value.trim();
+                    if (!remarks) {
+                        remarksInput.classList.add('is-invalid');
+                        alert("Reason for rejection is required. Please provide remarks.");
+                        return;
+                    }
+                    remarksInput.classList.remove('is-invalid');
 
                     // Transition to completed Rejected
                     statusIconBg.classList.remove('bg-success');
                     statusIconBg.classList.add('bg-danger');
-                    statusIcon.className = 'iconoir-cancel text-white';
+                    statusIcon.className = 'iconoir-xmark text-white';
                     statusMainTitle.textContent = "Redemption Request Rejected";
                     statusMainTitle.className = "fw-bold text-dark mb-2";
                     statusSubTitle.textContent = "This redemption request has been rejected. It has been sent back to the initiator with your remarks.";
@@ -907,8 +966,7 @@
                     doneStatusText.className = "bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7";
                     document.getElementById('doneRedeemUnits').className = "bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7";
 
-                    const remarks = remarksInput.value.trim();
-                    doneRemarksDisplay.textContent = remarks ? remarks : "-";
+                    doneRemarksDisplay.textContent = remarks;
 
                     const timestamp = new Date().toLocaleString();
                     doneDateTime.textContent = timestamp;

@@ -86,7 +86,7 @@
     <div class="sms-toast-container position-fixed top-0 start-50 translate-middle-x p-3"
         style="z-index: 10000; width: 100%; max-width: 440px; pointer-events: none; margin-top: 15px;">
         <div id="smsToast" class="sms-toast p-3 border-start border-4 shadow rounded-4 d-none"
-            style="border-left-color: #ed1c24 !important; pointer-events: auto;">
+            style="border-left-color: #ff1700 !important; pointer-events: auto;">
             <div class="d-flex align-items-start">
                 <div class="bg-danger-subtle text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center"
                     style="width: 42px; height: 42px; flex-shrink: 0;">
@@ -99,7 +99,7 @@
                     </div>
                     <div class="text-dark fs-8 font-monospace fw-semibold"
                         style="line-height: 1.5; letter-spacing: -0.2px;">
-                        MYR0.00 Public Mutual: Your secure login authorization PAC is <span
+                        MYR0.00 Public Mutual: Your secure login Authorisation PAC is <span
                             class="badge bg-danger px-2 py-1 fs-8 text-white font-monospace"
                             style="letter-spacing: 1px;">12345678</span>. Valid for 5 mins. Do not share.
                     </div>
@@ -239,7 +239,7 @@
                                         4P8DX
                                     </div>
                                     <div class="mt-2" style="font-size: 0.75rem;">Can't read the text? <a href="#"
-                                             id="refresh-captcha" class="text-dark fw-bold">Try another text</a></div>
+                                            id="refresh-captcha" class="text-dark fw-bold">Try another text</a></div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Enter Security Code</label>
@@ -261,18 +261,20 @@
                     <!-- STEP 2 CARD -->
                     <div class="register-card d-none shadow" id="step-2-card">
                         <h2 id="step2-title">Create New Password</h2>
-<!--                        <p class="subtitle" id="step2-subtitle">Please configure a robust new password for your PMO corporate profile.</p>-->
+                        <!--                        <p class="subtitle" id="step2-subtitle">Please configure a robust new password for your PMO corporate profile.</p>-->
 
                         <form id="step2Form">
                             <!-- Retrieved container (Only for Option B: Reset Both) -->
                             <div class="mb-3 d-none" id="username-update-container">
                                 <label class="form-label">New User ID</label>
                                 <div class="input-group">
-                                    <span class="input-group-text bg-white text-muted"><i class="iconoir-user"></i></span>
-                                    <input type="text" id="newUsername" class="form-control" placeholder="Create new User ID" value="franklinjunior01">
+                                    <span class="input-group-text bg-white text-muted"><i
+                                            class="iconoir-user"></i></span>
+                                    <input type="text" id="newUsername" class="form-control"
+                                        placeholder="Create new User ID" value="franklinjunior01">
                                     <div class="invalid-feedback" id="newUsername-error">User ID cannot be empty.</div>
                                 </div>
-                                
+
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
@@ -321,9 +323,9 @@
                     <!-- STEP 3 CARD -->
                     <div class="register-card d-none shadow" id="step-3-card">
                         <h2>Security Verification</h2>
-                       
 
-                       
+
+
 
                         <form id="step3Form">
                             <div class="mb-3">
@@ -344,7 +346,7 @@
                                 </div>
                                 <div class="invalid-feedback text-danger fw-bold" id="pac-error"
                                     style="display: none; font-size: 0.8rem; margin-top: 6px;">
-                                    <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC number. Please
+                                    <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC number. Please
                                     use 12345678 to test.
                                 </div>
                                 <div class="valid-feedback text-success fw-bold" id="pac-success"
@@ -362,7 +364,8 @@
                             <div
                                 class="pac-info-text mb-4 fw-bold p-3 bg-light rounded-3 d-flex align-items-center border">
                                 <i class="iconoir-smartphone-device fs-4 me-3 text-danger"></i>
-                                <span class="fs-9" id="pac-message">PAC Sent to XXX12XXXXX3<br>Security Number:QD5788156".</span>
+                                <span class="fs-9" id="pac-message">PAC Sent to XXX12XXXXX3<br>Security
+                                    Number:QD5788156".</span>
                             </div>
 
                             <!-- Countdown timer text -->
@@ -390,7 +393,8 @@
 
                             <div class="d-flex gap-3">
                                 <button type="button" class="btn btn-clear w-50" id="btn-back-2">Back</button>
-                                <button type="submit" class="btn btn-log-in w-50" id="btn-complete" disabled>Verify &amp;
+                                <button type="submit" class="btn btn-log-in w-50" id="btn-complete" disabled>Verify
+                                    &amp;
                                     Complete</button>
                             </div>
                         </form>

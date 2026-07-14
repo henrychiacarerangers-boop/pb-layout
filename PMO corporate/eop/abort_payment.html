@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Portal — EOP · Abort Payment</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/iconoir.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <style>
+        .pac-group {
+            position: relative;
+        }
+
+        .btn-request-pac {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--brand-red, #ff1700);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .eop-pay-captcha-box {
+            background: #f1f3f5;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 5px;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #495057;
+            border-radius: 8px;
+            user-select: none;
+            font-family: ui-monospace, monospace;
+            border: 1px solid #dee2e6;
+        }
+
+        @media print {
+
+            .top-landing-wrapper,
+            .custom-sidebar,
+            .offcanvas,
+            .bottom-footer,
+            .print-hidden {
+                display: none !important;
+            }
+
+            .print-header {
+                display: flex !important;
+            }
+
+            main.dashboard-content {
+                padding-top: 0 !important;
+            }
+        }
+
+        /* Pro Max Corporate Design Guidelines Overrides */
+        .card {
+            border-radius: 15px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .btn-danger {
+            border-radius: 25px !important;
+            background-color: #ff1700 !important;
+            border-color: #ff1700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #c41219 !important;
+            border-color: #c41219 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3) !important;
+        }
+
+        .btn-outline-dark,
+        .btn-outline-danger {
+            border-radius: 25px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        textarea.form-control:focus {
+            border-color: #ff1700 !important;
+            box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
+            outline: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
+    data-pmo-footer-print="1">
+
+    <div class="top-landing-wrapper position-relative"
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
+        <div class="pmo-shell-topnav-bleed w-100">
+            <div id="pmoShellTopNavMount">
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#eopSidebarOffcanvas"
+                                        aria-controls="eopSidebarOffcanvas" id="eopBtnOpenSidebar">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0"
+                                        href="../unit-trust/dashboard.html" id="eopBrandLink">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="../unit-trust/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="eopNavPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="dashboard.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="eopNavPillEop">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../analytics/unit-trust.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="eopNavPillAnalytics">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
+                                            Admin</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
+                                                href="../unit-trust/settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+
+            </div>
+        </div>
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-2 pb-0 position-relative z-1">
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="text-white fw-normal fs-6">· EOP Portal</span>
+                </h1>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html" id="eopTabUpload">Upload</a></li>
+                    <li class="nav-item"><a class="nav-link" href="authorise.html" id="eopTabAuthorise">Authorise <span
+                                class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabAuthBadge">3</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="payment.html" id="eopTabPay">Payment <span
+                                class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabPayBadge">2</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="transactions.html" id="eopTabTxn">Transactions</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="statements.html" id="eopTabStatements">Statements</a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <main class="dashboard-content py-5 flex-grow-1 d-flex flex-column">
+        <div class="container flex-grow-1 d-flex flex-column">
+
+            <div class="print-header d-none align-items-center justify-content-between mb-4 pb-3 border-bottom">
+                <div class="d-flex align-items-center">
+                    <img src="../images/logo.png" alt="Public Mutual" height="35">
+                    <div class="ms-3 ps-3 border-start border-2 d-flex align-items-center"
+                        style="border-color:#dee2e6;height:30px;">
+                        <img src="../images/pmo-logo-corporate.png" alt="PMO" height="25">
+                    </div>
+                </div>
+                <div class="text-end">
+                    <div class="fw-bold fs-7 text-dark" id="eopAbortPrintTitle">EOP abort payment advice</div>
+                    <div class="text-muted fs-9" id="eopAbortPrintDateTime"></div>
+                </div>
+            </div>
+
+            <div id="eopAbortStep1" class="flex-grow-1 d-flex flex-column justify-content-between">
+                <div
+                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 print-hidden">
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="payment.html" class="btn-back-circle" id="eopAbortDetailBackToList"
+                            data-bs-toggle="tooltip" data-bs-placement="top" title="Back to payment list">
+                            <i class="iconoir-nav-arrow-left fs-5 text-dark" aria-hidden="true"></i>
+                        </a>
+                        <div>
+                            <h2 class="fw-bold text-dark fs-3 m-0">Abort Payment Request</h2>
+                            <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopAbortHeaderRefLine">Reference:
+                                —</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5 print-hidden">
+                    <div class="card-body p-4 border-start border-4 border-danger" style="background-color:#fffbfb;">
+                        <div class="d-flex gap-3">
+                            <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <div>
+                                <h6 class="fw-bold text-danger mb-2">Abort Payment Alert</h6>
+                                <p class="mb-0 fs-8 text-secondary lh-base">
+                                    You are about to cancel and abort this payment instruction. Please provide a
+                                    mandatory reason for aborting below. Aborted transactions are returned to the
+                                    pending authorisation queue.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 flex-grow-1">
+                    <!-- LEFT Column: Unified Details & Form -->
+                    <div class="col-lg-7">
+                        <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                            <div class="card-body p-4">
+                                <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
+                                <div class="table-responsive mb-4">
+                                    <table class="table align-middle custom-table-details mb-0">
+                                        <tbody>
+                                            <tr class="border-bottom">
+                                                <td class="text-muted fw-semibold" style="width:35%;">Reference No.</td>
+                                                <td class="fw-bold text-dark" id="eopAbortDetailRef">—</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="text-muted fw-semibold">Scheme Type</td>
+                                                <td class="text-dark" id="eopAbortDetailScheme">—</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="text-muted fw-semibold">Contribution Type</td>
+                                                <td class="text-dark" id="eopAbortDetailContribType">—</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Abort Details</h5>
+                                <div class="mb-3">
+                                    <label class="form-label text-dark fs-8 fw-semibold" for="eopAbortRemarks">Reason
+                                        for Aborting Payment (Required)</label>
+                                    <textarea class="form-control" id="eopAbortRemarks" rows="3"
+                                        placeholder="Please state the reason why you are aborting this payment instruction..."></textarea>
+                                    <div class="invalid-feedback d-none" id="eopAbortRemarksError">
+                                        A reason is required to abort this payment transaction.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT Column: Sidebar Summary -->
+                    <div class="col-lg-5">
+                        <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                            <div class="card-body p-2 d-flex flex-column justify-content-between">
+                                <div>
+                                    <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Transaction Summary</h6>
+                                    <div class="mb-3">
+                                        <div class="text-muted fs-9 mb-1">Scheme Type</div>
+                                        <div class="fs-8 text-dark" id="eopAbortSumScheme">—</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="text-muted fs-9 mb-1">Contribution Type</div>
+                                        <div class="fs-8 text-dark" id="eopAbortSumContrib">—</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="text-muted fs-9 mb-1">Total Amount (MYR)</div>
+                                        <div class="fw-semibold fs-4 text-danger" id="eopAbortSumTotal">—</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="text-muted fs-9 mb-1">Employees in File</div>
+                                        <div class="fs-8 text-dark" id="eopAbortSumEmp">—</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="col-12 print-hidden mt-auto pt-4">
+                        <div class="d-flex justify-content-end gap-3 mt-2">
+                            <a href="payment.html"
+                                class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold text-decoration-none"
+                                style="transition:all 0.3s ease;">Back</a>
+                            <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                                style="background-color:#ff1700; border-color:#ff1700; transition:all 0.3s ease;"
+                                id="eopAbortBtnSubmit">Abort Payment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Outcome Page -->
+            <div id="eopAbortStep2" class="d-none flex-grow-1 d-flex flex-column justify-content-between">
+                <div class="card border-0 shadow-sm rounded-4 bg-white p-5 flex-grow-1">
+                    <div class="card-body p-0">
+                        <div class="text-center mb-4">
+                            <div class="bg-danger rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
+                                style="width:100px; height:100px;">
+                                <i class="iconoir-xmark text-white" style="font-size:3rem;" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-center mb-5">
+                            <h3 class="fw-bold text-dark mb-2">Payment Transaction Aborted</h3>
+                            <p class="text-muted fs-8">This payment request has been cancelled and returned to the
+                                pending authorisation queue.</p>
+                        </div>
+
+                        <div class="row g-5">
+                            <div class="col-md-6 border-end text-start">
+                                <h5 class="fw-bold mb-4 text-dark">Transaction Details</h5>
+                                <div class="mb-4">
+                                    <div class="text-muted fs-8 mb-2">Batch Reference No.</div>
+                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7" id="eopAbortOkRef">
+                                        —</div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="text-muted fs-8 mb-2">Total Contribution (MYR)</div>
+                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                        id="eopAbortOkAmount">—</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ps-md-4 text-start">
+                                <h5 class="fw-bold mb-4 text-dark">Cancellation Log</h5>
+                                <div class="mb-4">
+                                    <div class="text-muted fs-8 mb-2">Cancellation Status</div>
+                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7">Aborted &amp;
+                                        Returned</div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="text-muted fs-8 mb-2">Reason for Cancellation</div>
+                                    <div class="bg-light rounded-3 px-3 py-3 text-secondary fs-8" id="eopAbortOkReason"
+                                        style="min-height:60px;">—</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-end gap-3 mt-auto pt-4 print-hidden">
+                    <a href="payment.html"
+                        class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold text-decoration-none"
+                        style="transition:all 0.3s ease;">Go to Payment Dashboard</a>
+                    <a href="authorise.html"
+                        class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm text-decoration-none"
+                        style="background-color:#ff1700; border-color:#ff1700; transition:all 0.3s ease;">Go to
+                        Authorisation Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="pmoShellFooterMount">
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <div id="pmoShellSidebarMount">
+        <div class="offcanvas offcanvas-start custom-sidebar eop-sidebar-offcanvas border-end-0 shadow" tabindex="-1"
+            id="eopSidebarOffcanvas" aria-labelledby="eopSidebarUserName">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="eopSidebarCloseMenuBtn">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="portal-sidebar-profile-card w-100 mb-2">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Employer Online portal(EOP)</div>
+                    <h5 class="profile-name fs-6 mb-0" id="eopSidebarUserName">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2" id="eopSidebarCompany">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3"
+                        id="eopSidebarRoleBadge">Role: Employer admin</span>
+                </div>
+            </div>
+            <div class="offcanvas-body pt-3">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="eopSideHome">
+                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <span class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarContribCollapse"
+                            id="eopSidebarContribToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Contributions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarContribCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="contribution.html" id="eopSideMake">Make contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="upload.html"
+                                        id="eopSideUpload">Upload contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="authorise.html" id="eopSideAuthorise">
+                                        <span>Authorise contribution</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="payment.html" id="eopSidePayment">
+                                        <span>Make payment</span>
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
+                                            id="eopNavBadgePay">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
+                            id="eopSidebarRecordsToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Transactions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarRecordsCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="transactions.html" id="eopSideTxnPast">
+                                        Past Transaction
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="transactions.html?tab=pending" id="eopSideTxnPending">
+                                        Pending Transaction
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
+                            aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Statements</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarStmtCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html" id="eopSideStmt">Statements</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html?tab=inv" id="eopSideInv">Invoice</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--<li class="nav-item mb-2 mt-2 pt-2 border-top">
+                <a href="intro.html" class="btn btn-outline-dark w-100 rounded-pill fs-8 fw-semibold" id="eopSidebarIntroLink">EOP intro &amp; registration</a>
+            </li>
+ --!>            <li class="nav-item mb-2">
+                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html" id="eopSideLogout">
+                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i>
+                    <span class="fw-medium">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/layout-active.js"></script>
+    <script defer src="../js/eop-nav-active.js"></script>
+    <script src="../js/eop-pages.js"></script>
+ 
+    <script>
+        (function() {
+            const step1 = document.getElementById('eopAbortStep1');
+            const step2 = document.getElementById('eopAbortStep2');
+
+            // Params from query string
+            const params = new URLSearchParams(window.location.search);
+            const ref = params.get('ref') || 'RC00000000000124';
+            const chRaw = (params.get('ch') || 'salary').toLowerCase();
+            const employees = parseInt(params.get('emp') || '18', 10) || 18;
+            const amt = parseInt(params.get('amt') || '42500', 10) || 42500;
+
+            const EOP_scheme_EMPLOYER = 'Employer Contribution';
+            const EOP_scheme_SALARY = 'Salary Deduction';
+            const EOP_CONTRIB_EMPLOYER_MIXED = 'Employer Contribution (Mixed)';
+            const EOP_CONTRIB_SALARY_IND = 'Salary Deduction (IND)';
+
+            const schemeLabel = chRaw === 'employer' ? EOP_scheme_EMPLOYER : EOP_scheme_SALARY;
+            const contribLabel = chRaw === 'employer' ? EOP_CONTRIB_EMPLOYER_MIXED : EOP_CONTRIB_SALARY_IND;
+
+            function fmtMoney(n) {
+                return Number(n).toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            }
+            function fmtRmSen(n) {
+                return `RM ${fmtMoney(n)}`;
+            }
+
+            // Populate Step 1 Elements
+            const detailHeaderRef = document.getElementById('eopAbortHeaderRefLine');
+            const detailRef = document.getElementById('eopAbortDetailRef');
+            const detailscheme = document.getElementById('eopAbortDetailScheme');
+            const detailContribType = document.getElementById('eopAbortDetailContribType');
+
+            const sumscheme = document.getElementById('eopAbortSumScheme');
+            const sumContribution = document.getElementById('eopAbortSumContrib');
+            const sumTotal = document.getElementById('eopAbortSumTotal');
+            const sumEmp = document.getElementById('eopAbortSumEmp');
+
+            if (detailHeaderRef) detailHeaderRef.textContent = `Reference: ${ref}`;
+            if (detailRef) detailRef.textContent = ref;
+            if (detailscheme) detailscheme.textContent = schemeLabel;
+            if (detailContribType) detailContribType.textContent = contribLabel;
+
+            if (sumscheme) sumscheme.textContent = schemeLabel;
+            if (sumContribution) sumContribution.textContent = contribLabel;
+            if (sumTotal) sumTotal.textContent = fmtRmSen(amt);
+            if (sumEmp) sumEmp.textContent = String(employees);
+
+            const printDateTime = document.getElementById('eopAbortPrintDateTime');
+            if (printDateTime) printDateTime.textContent = new Date().toLocaleString('en-MY');
+
+            // Remarks textarea error handling and submit logic
+            const remarksInput = document.getElementById('eopAbortRemarks');
+            const remarksError = document.getElementById('eopAbortRemarksError');
+            const submitBtn = document.getElementById('eopAbortBtnSubmit');
+
+            if (submitBtn) {
+                submitBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const remarksVal = (remarksInput?.value || '').trim();
+                    if (!remarksVal) {
+                        remarksInput?.classList.add('is-invalid');
+                        remarksError?.classList.remove('d-none');
+                        remarksInput?.focus();
+                        return;
+                    }
+
+                    // Remove validation errors
+                    remarksInput?.classList.remove('is-invalid');
+                    remarksError?.classList.add('d-none');
+
+                    // Populate Step 2 Details
+                    const okRef = document.getElementById('eopAbortOkRef');
+                    const okAmount = document.getElementById('eopAbortOkAmount');
+                    const okReason = document.getElementById('eopAbortOkReason');
+
+                    if (okRef) okRef.textContent = ref;
+                    if (okAmount) okAmount.textContent = fmtRmSen(amt);
+                    if (okReason) okReason.textContent = remarksVal;
+
+                    // Transition to step 2
+                    if (step1) step1.classList.add('d-none');
+                    if (step2) step2.classList.remove('d-none');
+                });
+            }
+
+            if (remarksInput) {
+                remarksInput.addEventListener('input', () => {
+                    if (remarksInput.value.trim()) {
+                        remarksInput.classList.remove('is-invalid');
+                        remarksError?.classList.add('d-none');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

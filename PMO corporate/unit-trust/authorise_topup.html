@@ -8,8 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Montserrat -->
-    <link href="../css/montserrat.css"
-        rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="../css/iconoir.css">
     <!-- Custom CSS -->
@@ -22,15 +21,6 @@
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
 
     <style>
-        .custom-table-details td {
-            padding: 12px 16px;
-            font-size: 0.8rem;
-        }
-
-        .custom-table-details tr:last-child {
-            border-bottom: 0 !important;
-        }
-
         .pac-group {
             position: relative;
         }
@@ -100,94 +90,109 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
-<header class="top-nav pmo-shell-dashboard-topnav w-100">
-    <div class="container-fluid px-3 px-md-4 py-2">
-        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
-            aria-label="Portal primary">
-            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
-                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                        id="pmoShellBtnOpenSidebarUt">
-                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
-                    </button>
-                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
-                        id="pmoShellBrandUt">
-                        <img src="../images/logo.png" alt="Logo" height="35">
-                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
-                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
-                        </div>
-                    </a>
-                </div>
-                <div
-                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
-                    <a href="dashboard.html"
-                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
-                        id="pmoShellPillUt">
-                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../eop/dashboard.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillEopFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../analytics/unit-trust.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillAnalyticsFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
-                    </a>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
-                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 35px; height: 35px;" aria-hidden="true">
-                            <i class="iconoir-user fs-5 text-dark"></i>
-                        </div>
-                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User &amp; Authoriser</span>
-                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
-                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="settings.html" id="dropLnkProfile">
-                                <i class="iconoir-user fs-6"></i> User Profile Details
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="settings.html#password" id="dropLnkPassword">
-                                <i class="iconoir-lock fs-6"></i> Change Password
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
-                                <i class="iconoir-log-out fs-6"></i> Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+                                        aria-controls="sidebarMenu" id="pmoShellBtnOpenSidebarUt">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                                        id="pmoShellBrandUt">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="dashboard.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="pmoShellPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../eop/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillEopFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../analytics/unit-trust.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillAnalyticsFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
+                                            &amp; Authoriser</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
+                                                href="settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
             </div>
-        </nav>
-    </div>
-</header>
-    </div>
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust Portal</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
+                        Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -227,7 +232,7 @@
                     <div>
                         <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
                             <span class="text-secondary fw-medium" id="headerRefDisplay">UT26000000000195</span>
-                            <span class="text-primary" id="headerFundDisplay">PUBLIC STRATEGIC GROWTH FUND</span>
+                            <span class="text-primary fw-bold" id="headerFundDisplay">PUBLIC STRATEGIC GROWTH FUND</span>
                         </h2>
                         <span class="text-muted fs-8 fw-semibold mt-1 d-block">Authorise Top-Up Investment
                             Request</span>
@@ -386,155 +391,163 @@
 
     <!-- Footer (partials/footer-portal.html) -->
     <div id="pmoShellFooterMount">
-<footer class="bottom-footer mt-auto">
-    <div class="container text-start">
-        <div class="bottom-links mb-2">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Internet Risk</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Investment Channels</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQ</a>
-            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
-        </div>
-        <div class="copyright-text fs-9">
-            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
-        </div>
-    </div>
-</footer>
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
     <!-- Sidebar (partials/sidebar-*.html) -->
     <div id="pmoShellSidebarMount">
-<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
-    aria-labelledby="sidebarMenuLabel">
-    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-        <div class="d-flex justify-content-end mb-2 w-100">
-            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
-                aria-label="Close" id="pmoShellSidebarCloseUt">
-                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
-            </button>
+        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+            aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="pmoShellSidebarCloseUt">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="portal-sidebar-profile-card w-100 mb-3">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+                    <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+            <div class="offcanvas-body pt-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="pmoUtSideDash">
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                            id="pmoUtSideViewAcct">
+                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">View Account</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                            aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Authorise Transaction</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthTopup">
+                                        Top-Up Investment <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthRedeem">
+                                        Redemption <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
+                            aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Transaction Enquiry</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="transactions.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPast">Past Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnOnline">Online Activities</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                            aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Statement</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="statementCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt1">Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt2">Annual/Interim</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt3">Fund
+                                        Reports</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt4">e-Invoice</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt5">Invoice</a></li>
+                            </ul>
+                        </div>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                            id="pmoUtSideLogout">
+                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Log
+                                Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="portal-sidebar-profile-card w-100 mb-3">
-            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
-            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
-            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
-                Authoriser</span>
-        </div>
-    </div>
-    <div class="offcanvas-body pt-4">
-        <ul class="nav flex-column sidebar-nav">
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
-                    id="pmoUtSideDash">
-                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
-                    id="pmoUtSideViewAcct">
-                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">View Account</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
-                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Authorise Transaction</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-1">
-                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
-                                Top-Up Investment <span
-                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
-                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
-                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Transaction Enquiry</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="transactions.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPast">Past Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPending">Pending Investments</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnOnline">Online Activities</a></li>
-                        
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
-                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Statement</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <span
-                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="statementCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt1">Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt2">Annual/Interim</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
-                                Reports</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt4">e-Invoice</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt5">Invoice</a></li>
-                    </ul>
-                </div>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                    id="pmoUtSideLogout">
-                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
-                        Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
@@ -545,7 +558,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
+                let options = {};
+                if (tooltipTriggerEl.tagName === 'TD') {
+                    options.offset = [0, -10];
+                }
+                return new bootstrap.Tooltip(tooltipTriggerEl, options);
             });
 
             // Get query params

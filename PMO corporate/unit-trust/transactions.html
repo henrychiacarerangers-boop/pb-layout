@@ -74,7 +74,7 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -168,9 +168,10 @@
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
                     <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
                         Portal</span>
                 </h1>
@@ -204,8 +205,7 @@
     <main class="dashboard-content py-5">
         <div class="container">
             <div class="mb-4">
-                <h2 class="fw-bold text-dark fs-2 mb-2">Transaction Enquiry</h2>
-                <p class="text-muted fs-7 mb-0">Track your past and pending transaction requests.</p>
+                <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Transaction Enquiry</h2>
             </div>
             <div class="row g-4">
 
@@ -313,393 +313,419 @@
                     <!-- Top Views Selectors Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
                         <!-- View Tab Links -->
-                        <div class="d-flex align-items-center gap-4 flex-wrap" id="txnTabLinks">
-                            <a href="#" class="view-tab active d-flex align-items-center gap-2" data-panel="panel-past">
-                                <i class="iconoir-double-check fs-6"></i> Past Transaction
-                            </a>
-                            <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-online">
-                                <i class="iconoir-activity fs-6"></i> Online Activities
-                            </a>
-                            <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-pending">
-                                <i class="iconoir-clock fs-6"></i> Pending Investments
-                            </a>
-                            <!-- <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-request">
-                                <i class="iconoir-clipboard-check fs-6"></i> Transaction Request
-                            </a> -->
-                        </div>
-                    </div>
-
-                    <!-- Print-Only Header -->
-                    <div class="print-header d-none align-items-center justify-content-between mb-4 pb-3 border-bottom">
-                        <div class="d-flex align-items-center">
-                            <img src="../images/logo.png" alt="Public Mutual" height="35">
-                            <div class="ms-3 ps-3 border-start border-2 h-100 d-flex align-items-center"
-                                style="border-color: #dee2e6 !important; height: 30px !important;">
-                                <img src="../images/pmo-logo-corporate.png" alt="PMO Logo" height="25">
+                        <div class="border-bottom pb-3 mb-4">
+                            <div class="d-flex align-items-center gap-4 flex-wrap" id="txnTabLinks">
+                                <a href="#" class="view-tab active d-flex align-items-center gap-2"
+                                    data-panel="panel-past">
+                                    <i class="iconoir-double-check fs-6"></i> Past Transaction
+                                </a>
+                                <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-online">
+                                    <i class="iconoir-activity fs-6"></i> Online Activities
+                                </a>
+                                <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-pending">
+                                    <i class="iconoir-clock fs-6"></i> Pending Investments
+                                </a>
+                                <!-- <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-request">
+                                    <i class="iconoir-clipboard-check fs-6"></i> Transaction Request
+                                </a> -->
                             </div>
                         </div>
-                        <div class="text-end">
-                            <div class="fw-bold fs-7 text-dark" id="printDocTitle">Transaction Enquiry Report</div>
-                            <div class="text-muted fs-9">Corporate Public Mutual Online</div>
-                            <div class="text-muted fs-9" id="printDateTime"></div>
-                        </div>
-                    </div>
 
-                    <!-- ===== PANEL: Past Transactions ===== -->
-                    <div id="panel-past" class="txn-panel">
-                        <!-- Panel Actions (Print/Export) -->
-                        <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
-                            <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Past Transactions History</h5>
-                            <div class="d-flex gap-2">
-                                <button
-                                    class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
-                                    onclick="window.print()">
-                                    <i class="iconoir-printer"></i> Print
-                                </button>
-
+                        <!-- Print-Only Header -->
+                        <div
+                            class="print-header d-none align-items-center justify-content-between mb-4 pb-3 border-bottom">
+                            <div class="d-flex align-items-center">
+                                <img src="../images/logo.png" alt="Public Mutual" height="35">
+                                <div class="ms-3 ps-3 border-start border-2 h-100 d-flex align-items-center"
+                                    style="border-color: #dee2e6 !important; height: 30px !important;">
+                                    <img src="../images/pmo-logo-corporate.png" alt="PMO Logo" height="25">
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <div class="fw-bold fs-7 text-dark" id="printDocTitle">Transaction Enquiry Report</div>
+                                <div class="text-muted fs-9">Corporate Public Mutual Online</div>
+                                <div class="text-muted fs-9" id="printDateTime"></div>
                             </div>
                         </div>
-                        <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
-                                        <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Tran
-                                                Date<br><span class="fs-9 fw-normal">Ref No.</span></th>
-                                            <th class="py-3 fw-semibold text-start" style="width:28%;">Account /
-                                                Fund<br><span class="fs-9 fw-normal">Description</span></th>
-                                            <th class="py-3 fw-semibold text-end" style="width:14%;">
-                                                Paid/(Redeemed)<br>MYR</th>
-                                            <th class="py-3 fw-semibold text-end" style="width:14%;">
-                                                Invested/(Received)<br>MYR</th>
-                                            <th class="py-3 fw-semibold text-end" style="width:14%;">Total Units Sales /
-                                                Switch Charge(MYR)</span></th>
-                                            <th class="pe-4 py-3 fw-semibold text-end" style="width:12%;">GST/SST<br>MYR
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-dark fw-medium">
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
-                                                <div class="fw-bold text-dark">06/05/2026</div>
-                                                <div class="text-muted fs-9">RSW</div>
-                                                <span
-                                                    class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
-                                            </td>
-                                            <td class="text-start">
-                                                <div class="fw-bold text-primary mb-1 text-decoration-underline"
-                                                    style="font-size:0.8rem;">136252514</div>
-                                                <div class="fw-bold" style="font-size:0.75rem;">PB GROWTH FUND (PBGTHF)
-                                                </div>
 
-                                            </td>
-                                            <td class="text-end fw-bold text-dark">1,449.28</td>
-                                            <td class="text-end fw-bold text-success">1,000.00</td>
-                                            <td class="text-end">
-                                                <div class="fw-bold">449.28</div>
-                                                <div class="text-muted fs-9">(14.10)</div>
-                                            </td>
-                                            <td class="pe-4 text-end fw-semibold text-muted">0.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ps-4 py-3 text-start">
-                                                <div class="fw-bold text-dark">06/05/2026</div>
-                                                <div class="text-muted fs-9">RRP</div>
-                                                <span
-                                                    class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
-                                            </td>
-                                            <td class="text-start">
-                                                <div class="fw-bold text-primary mb-1 text-decoration-underline"
-                                                    style="font-size:0.8rem;">094766508</div>
-                                                <div class="fw-bold" style="font-size:0.75rem;">PB GLOBAL SELECT FUND
-                                                    (PGSF)</div>
+                        <!-- ===== PANEL: Past Transactions ===== -->
+                        <div id="panel-past" class="txn-panel">
+                            <!-- Panel Actions (Print/Export) -->
+                            <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
+                                <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Past Transactions History</h5>
+                                <div class="d-flex gap-2">
+                                    <button
+                                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
+                                        onclick="window.print()">
+                                        <i class="iconoir-printer"></i> Print
+                                    </button>
 
-                                            </td>
-                                            <td class="text-end fw-bold text-dark">1200.00</td>
-                                            <td class="text-end fw-bold text-success">912.78</td>
-                                            <td class="text-end">
-                                                <div class="fw-bold">287.22</div>
-                                                <div class="text-danger fs-9">(14.10)</div>
-                                            </td>
-                                            <td class="pe-4 text-end fw-semibold text-muted">1.13</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                </div>
+                            </div>
+                            <div class="border rounded-4 overflow-hidden mb-4">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                            <tr>
+                                                <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Tran
+                                                    Date<br><span class="fs-9 fw-normal">Ref No.</span></th>
+                                                <th class="py-3 fw-semibold text-start" style="width:28%;">Account /
+                                                    Fund<br><span class="fs-9 fw-normal">Description</span></th>
+                                                <th class="py-3 fw-semibold text-end" style="width:14%;">
+                                                    Paid/(Redeemed)<br>MYR</th>
+                                                <th class="py-3 fw-semibold text-end" style="width:14%;">
+                                                    Invested/(Received)<br>MYR</th>
+                                                <th class="py-3 fw-semibold text-end" style="width:14%;">Total Units
+                                                    Sales /
+                                                    Switch Charge(MYR)</span></th>
+                                                <th class="pe-4 py-3 fw-semibold text-end" style="width:12%;">
+                                                    GST/SST<br>MYR
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-dark fw-medium">
+                                            <tr class="border-bottom">
+                                                <td class="ps-4 py-3 text-start">
+                                                    <div class="fw-semibold text-dark">06/05/2026</div>
+                                                    <div class="text-muted fs-9">RSW</div>
+                                                    <span
+                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
+                                                </td>
+                                                <td class="text-start">
+                                                    <div class="text-primary mb-1 text-decoration-underline"
+                                                        style="font-size:0.8rem;">136252514</div>
+                                                    <div class="fw-bold" style="font-size:0.75rem;">PB GROWTH FUND
+                                                        (PBGTHF)
+                                                    </div>
+
+                                                </td>
+                                                <td class="text-end fw-semibold text-dark">1,449.28</td>
+                                                <td class="text-end fw-semibold text-success">1,000.00</td>
+                                                <td class="text-end">
+                                                    <div class="fw-semibold">449.28</div>
+                                                    <div class="text-muted fs-9">(14.10)</div>
+                                                </td>
+                                                <td class="pe-4 text-end fw-semibold text-muted">0.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4 py-3 text-start">
+                                                    <div class="fw-semibold text-dark">06/05/2026</div>
+                                                    <div class="text-muted fs-9">RRP</div>
+                                                    <span
+                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">SUCCESSFUL</span>
+                                                </td>
+                                                <td class="text-start">
+                                                    <div class="text-primary mb-1 text-decoration-underline"
+                                                        style="font-size:0.8rem;">094766508</div>
+                                                    <div class="fw-bold" style="font-size:0.75rem;">PB GLOBAL SELECT
+                                                        FUND
+                                                        (PGSF)</div>
+
+                                                </td>
+                                                <td class="text-end fw-semibold text-dark">1,200.00</td>
+                                                <td class="text-end fw-semibold text-success">912.78</td>
+                                                <td class="text-end">
+                                                    <div class="fw-semibold">287.22</div>
+                                                    <div class="text-danger fs-9">(14.10)</div>
+                                                </td>
+                                                <td class="pe-4 text-end fw-semibold text-muted">1.13</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ===== PANEL: Online Activities ===== -->
-                    <div id="panel-online" class="txn-panel d-none">
-                        <!-- Panel Actions (Print) -->
-                        <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
-                            <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Online Activities</h5>
-                            <div class="d-flex gap-2">
-                                <button
-                                    class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
-                                    onclick="window.print()">
-                                    <i class="iconoir-printer"></i> Print
-                                </button>
+                        <!-- ===== PANEL: Online Activities ===== -->
+                        <div id="panel-online" class="txn-panel d-none">
+                            <!-- Panel Actions (Print) -->
+                            <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
+                                <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Online Activities</h5>
+                                <div class="d-flex gap-2">
+                                    <button
+                                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
+                                        onclick="window.print()">
+                                        <i class="iconoir-printer"></i> Print
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="border rounded-4 overflow-hidden mb-4">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                        <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                                            <tr>
+                                                <th class="ps-4 py-3 fw-semibold text-start align-middle"
+                                                    style="width: 20%;">
+                                                    Request Date/Time<br><span class="fs-9 fw-normal">Reference
+                                                        ID</span>
+                                                </th>
+                                                <th class="py-3 fw-semibold text-start align-middle"
+                                                    style="width: 25%;">
+                                                    Transaction Detail<br><span class="fs-9 fw-normal">Account</span>
+                                                </th>
+                                                <th class="py-3 fw-semibold text-end align-middle" style="width: 20%;">
+                                                    Amount (MYR)</span>
+                                                </th>
+                                                <th class="py-3 fw-semibold text-start align-middle"
+                                                    style="width: 15%;">
+                                                    User ID Name</th>
+                                                <th class="pe-4 py-3 fw-semibold text-end align-middle"
+                                                    style="width: 20%;">
+                                                    Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-dark fw-medium">
+                                            <!-- Row 1 -->
+                                            <tr class="border-bottom">
+                                                <td class="ps-4 py-3 text-start">
+                                                    <div class="fw-semibold text-dark">02 May 2026, 14:30:12</div>
+                                                    <div class="text-muted fs-9">OL39219231931293</div>
+                                                </td>
+                                                <td class="text-start">
+                                                    <div class="fw-semibold text-primary mb-1"
+                                                        style="font-size: 0.8rem;">
+                                                        Top Up
+                                                    </div>
+                                                    <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PIATAF
+                                                    </div>
+                                                </td>
+                                                <td class="text-end">
+                                                    <div class="fw-semibold text-dark">50,000.00</div>
+
+                                                </td>
+                                                <td class="text-start text-dark">Ahmad Razak</td>
+                                                <td class="pe-4 text-end">
+                                                    <span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
+                                                        Payment</span>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 2 -->
+                                            <tr class="border-bottom">
+                                                <td class="ps-4 py-3 text-start">
+                                                    <div class="fw-semibold text-dark">28 Apr 2026, 09:15:00</div>
+                                                    <div class="text-muted fs-9">OL39219231931294</div>
+                                                </td>
+                                                <td class="text-start">
+                                                    <div class="fw-semibold text-danger mb-1"
+                                                        style="font-size: 0.8rem;">
+                                                        Redemption</div>
+                                                    <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PeIATGF
+                                                    </div>
+                                                </td>
+                                                <td class="text-end">
+                                                    <div class="fw-semibold text-dark">15,000.00</div>
+
+                                                </td>
+                                                <td class="text-start text-dark">Sarah Lee</td>
+                                                <td class="pe-4 text-end">
+                                                    <span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
+                                                        Authorisation</span>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 3 -->
+                                            <tr>
+                                                <td class="ps-4 py-3 text-start">
+                                                    <div class="fw-semibold text-dark">15 Apr 2026, 11:20:45</div>
+                                                    <div class="text-muted fs-9">OL39219231931295</div>
+                                                </td>
+                                                <td class="text-start">
+                                                    <div class="fw-semibold text-primary mb-1"
+                                                        style="font-size: 0.8rem;">
+                                                        Top Up
+                                                    </div>
+                                                    <div class="fw-bold" style="font-size: 0.75rem;">987654321 - PRSEC
+                                                    </div>
+                                                </td>
+                                                <td class="text-end">
+                                                    <div class="fw-semibold text-dark">100,000.00</div>
+
+                                                </td>
+                                                <td class="text-start text-dark">Ahmad Razak</td>
+                                                <td class="pe-4 text-end">
+                                                    <span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Failed</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
-                                        <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start align-middle"
-                                                style="width: 20%;">
-                                                Request Date/Time<br><span class="fs-9 fw-normal">Reference ID</span>
-                                            </th>
-                                            <th class="py-3 fw-semibold text-start align-middle" style="width: 25%;">
-                                                Transaction Detail<br><span class="fs-9 fw-normal">Account</span></th>
-                                            <th class="py-3 fw-semibold text-end align-middle" style="width: 20%;">
-                                                Amount (MYR)<br><span class="fs-9 fw-normal">Unit Transacted</span></th>
-                                            <th class="py-3 fw-semibold text-start align-middle" style="width: 15%;">
-                                                User ID Name</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end align-middle" style="width: 20%;">
-                                                Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-dark fw-medium">
-                                        <!-- Row 1 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
-                                                <div class="fw-bold text-dark">02 May 2026, 14:30:12</div>
-                                                <div class="text-muted fs-9">OL39219231931293</div>
-                                            </td>
-                                            <td class="text-start">
-                                                <div class="fw-bold text-primary mb-1" style="font-size: 0.8rem;">Top Up
-                                                </div>
-                                                <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PIATAF
-                                                </div>
-                                            </td>
-                                            <td class="text-end">
-                                                <div class="fw-bold text-dark">50,000.00</div>
 
-                                            </td>
-                                            <td class="text-start text-dark fw-semibold">Ahmad Razak</td>
-                                            <td class="pe-4 text-end">
-                                                <span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
-                                                    Payment</span>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 2 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
-                                                <div class="fw-bold text-dark">28 Apr 2026, 09:15:00</div>
-                                                <div class="text-muted fs-9">OL39219231931294</div>
-                                            </td>
-                                            <td class="text-start">
-                                                <div class="fw-bold text-danger mb-1" style="font-size: 0.8rem;">
-                                                    Redemption</div>
-                                                <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PeIATGF
-                                                </div>
-                                            </td>
-                                            <td class="text-end">
-                                                <div class="fw-bold text-dark">15,000.00</div>
-
-                                            </td>
-                                            <td class="text-start text-dark fw-semibold">Sarah Lee</td>
-                                            <td class="pe-4 text-end">
-                                                <span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
-                                                    Authorisation</span>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 3 -->
-                                        <tr>
-                                            <td class="ps-4 py-3 text-start">
-                                                <div class="fw-bold text-dark">15 Apr 2026, 11:20:45</div>
-                                                <div class="text-muted fs-9">OL39219231931295</div>
-                                            </td>
-                                            <td class="text-start">
-                                                <div class="fw-bold text-primary mb-1" style="font-size: 0.8rem;">Top Up
-                                                </div>
-                                                <div class="fw-bold" style="font-size: 0.75rem;">987654321 - PRSEC</div>
-                                            </td>
-                                            <td class="text-end">
-                                                <div class="fw-bold text-dark">100,000.00</div>
-
-                                            </td>
-                                            <td class="text-start text-dark fw-semibold">Ahmad Razak</td>
-                                            <td class="pe-4 text-end">
-                                                <span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Failed</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ===== PANEL: Pending Investments ===== -->
-                    <div id="panel-pending" class="txn-panel d-none">
-                        <!-- Alert Banner -->
-                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 mb-4 border"
-                            style="background:#fffbeb;border-color:#fcd34d !important;">
-                            <i class="iconoir-warning-circle text-warning fs-5 flex-shrink-0 mt-1"></i>
-                            <div>
-                                <div class="fw-bold text-dark fs-8 mb-1">Action Required — Pending Investments</div>
-                                <div class="text-muted fs-9">The following investments are awaiting payment or
-                                    authorisation. Please complete payment or contact your authoriser to proceed.</div>
-                            </div>
-                        </div>
-                        <!-- Panel Actions (Print/Export) -->
-                        <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
-                            <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Pending Investments Details</h5>
-                            <div class="d-flex gap-2">
-                                <button
-                                    class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
-                                    onclick="window.print()">
-                                    <i class="iconoir-printer"></i> Print
-                                </button>
-
-                            </div>
-                        </div>
-                        <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
-                                        <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Submit
-                                                Date<br><span class="fs-9 fw-normal">Reference</span></th>
-                                            <th class="py-3 fw-semibold text-start" style="width:28%;">Account / Fund
-                                            </th>
-                                            <th class="py-3 fw-semibold text-start" style="width:12%;">Type</th>
-                                            <th class="py-3 fw-semibold text-end" style="width:14%;">Amount (MYR)</th>
-                                            <th class="py-3 fw-semibold text-center" style="width:16%;">Status</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-dark fw-medium">
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3">
-                                                <div class="fw-bold text-dark">15 Apr 2026</div>
-                                                <div class="text-muted fs-9">REF-10927555</div>
-                                            </td>
-                                            <td>
-                                                <div class="fw-bold text-primary text-decoration-underline mb-1"
-                                                    style="font-size:0.8rem;">987654321</div>
-                                                <div class="fw-bold" style="font-size:0.75rem;">PUBLIC REGIONAL SECTOR
-                                                    (PRSEC)</div>
-                                            </td>
-                                            <td><span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-grey border-opacity-25 rounded-pill fs-10">INVESTMENT</span>
-                                            </td>
-                                            <td class="text-end fw-bold text-dark">100,000.00</td>
-                                            <td class="text-center"><span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary  border border-secondary border-opacity-50 rounded-pill fs-10"
-                                                    style="color:#d97706;">Pending Payment</span></td>
-
-                                        </tr>
-                                        <tr>
-                                            <td class="ps-4 py-3">
-                                                <div class="fw-bold text-dark">10 Apr 2026</div>
-                                                <div class="text-muted fs-9">REF-10927110</div>
-                                            </td>
-                                            <td>
-                                                <div class="fw-bold text-primary text-decoration-underline mb-1"
-                                                    style="font-size:0.8rem;">987654321</div>
-                                                <div class="fw-bold" style="font-size:0.75rem;">PUBLIC CHINA ITTIKAL
-                                                    (PCIF)</div>
-                                            </td>
-                                            <td><span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">SWITCHING</span>
-                                            </td>
-                                            <td class="text-end fw-bold text-dark">10,000.00</td>
-                                            <td class="text-center"><span
-                                                    class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
-                                                    Authorisation</span></td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ===== PANEL: Transaction Request ===== -->
-                    <div id="panel-request" class="txn-panel d-none">
-
-                        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
-                            <h5 class="fw-bold text-dark fs-6 mb-1">New Transaction Request</h5>
-                            <p class="text-muted fs-9 mb-4">Submit a top-up, redemption, or switching request for
-                                authorisation.</p>
-                            <form id="txnRequestForm">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Fund Account</label>
-                                        <select class="form-select fs-8 border-secondary border-opacity-25">
-                                            <option selected>Select Account</option>
-                                            <option>Acc 1: 123456789</option>
-                                            <option>Acc 2: 987654321</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Transaction Type</label>
-                                        <select class="form-select fs-8 border-secondary border-opacity-25"
-                                            id="txnTypeSelect">
-                                            <option selected>Select Type</option>
-                                            <option value="topup">Top-Up Investment</option>
-                                            <option value="redeem">Redemption</option>
-                                            <option value="switch">Switching</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Fund Name</label>
-                                        <select class="form-select fs-8 border-secondary border-opacity-25">
-                                            <option selected>Select Fund</option>
-                                            <option>PUBLIC ISLAMIC ASIA TACTICAL ALLOCATION (PIATAF)</option>
-                                            <option>PUBLIC REGIONAL SECTOR (PRSEC)</option>
-                                            <option>PUBLIC CHINA ITTIKAL (PCIF)</option>
-                                            <option>PUBLIC e-ISLAMIC ASIA THEMATIC GROWTH (PeIATGF)</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6" id="switchToFundRow" style="display:none;">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Switch To Fund</label>
-                                        <select class="form-select fs-8 border-secondary border-opacity-25">
-                                            <option selected>Select Target Fund</option>
-                                            <option>PUBLIC ISLAMIC ASIA TACTICAL ALLOCATION (PIATAF)</option>
-                                            <option>PUBLIC REGIONAL SECTOR (PRSEC)</option>
-                                            <option>PUBLIC CHINA ITTIKAL (PCIF)</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Amount (MYR)</label>
-                                        <input type="number"
-                                            class="form-control fs-8 border-secondary border-opacity-25"
-                                            placeholder="e.g. 10,000.00" min="1000">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Payment Method</label>
-                                        <select class="form-select fs-8 border-secondary border-opacity-25">
-                                            <option selected>Select Method</option>
-                                            <option>FPX Online Banking</option>
-                                            <option>Cheque</option>
-                                            <option>Telegraphic Transfer</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fs-8 fw-semibold text-muted">Remarks (Optional)</label>
-                                        <textarea class="form-control fs-8 border-secondary border-opacity-25" rows="2"
-                                            placeholder="Add any notes for your authoriser..."></textarea>
+                        <!-- ===== PANEL: Pending Investments ===== -->
+                        <div id="panel-pending" class="txn-panel d-none">
+                            <!-- Alert Banner -->
+                            <div class="d-flex align-items-start gap-3 p-3 rounded-3 mb-4 border"
+                                style="background:#fffbeb;border-color:#fcd34d !important;">
+                                <i class="iconoir-warning-circle text-warning fs-5 flex-shrink-0 mt-1"></i>
+                                <div>
+                                    <div class="fw-bold text-dark fs-8 mb-1">Action Required — Pending Investments</div>
+                                    <div class="text-muted fs-9">The following investments are Pending payment or
+                                        authorisation. Please complete payment or contact your authoriser to proceed.
                                     </div>
                                 </div>
-                                <!-- Authoriser Notice -->
+                            </div>
+                            <!-- Panel Actions (Print/Export) -->
+                            <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
+                                <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Pending Investments Details</h5>
+                                <div class="d-flex gap-2">
+                                    <button
+                                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
+                                        onclick="window.print()">
+                                        <i class="iconoir-printer"></i> Print
+                                    </button>
 
-                                <div class="d-flex gap-2 mt-4">
-                                    <button type="submit" class="btn btn-danger rounded-pill px-4 fs-8 fw-bold">Submit
-                                        Request</button>
-                                    <button type="reset"
-                                        class="btn btn-outline-secondary rounded-pill px-4 fs-8 fw-semibold">Clear</button>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="border rounded-4 overflow-hidden mb-4">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
+                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                            <tr>
+                                                <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Submit
+                                                    Date<br><span class="fs-9 fw-normal">Reference</span></th>
+                                                <th class="py-3 fw-semibold text-start" style="width:28%;">Account /
+                                                    Fund
+                                                </th>
+                                                <th class="py-3 fw-semibold text-start" style="width:12%;">Type</th>
+                                                <th class="py-3 fw-semibold text-end" style="width:14%;">Amount (MYR)
+                                                </th>
+                                                <th class="pe-4 py-3 fw-semibold text-center" style="width:16%;">Status</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-dark fw-medium">
+                                            <tr class="border-bottom">
+                                                <td class="ps-4 py-3">
+                                                    <div class="fw-semibold text-dark">15 Apr 2026</div>
+                                                    <div class="text-muted fs-9">REF-10927555</div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-primary text-decoration-underline mb-1"
+                                                        style="font-size:0.8rem;">987654321</div>
+                                                    <div class="fw-bold" style="font-size:0.75rem;">PUBLIC REGIONAL
+                                                        SECTOR
+                                                        (PRSEC)</div>
+                                                </td>
+                                                <td><span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-grey border-opacity-25 rounded-pill fs-10">INVESTMENT</span>
+                                                </td>
+                                                <td class="text-end fw-semibold text-dark">100,000.00</td>
+                                                <td class="pe-4 text-center"><span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary  border border-secondary border-opacity-50 rounded-pill fs-10"
+                                                        style="color:#d97706;">Pending Payment</span></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4 py-3">
+                                                    <div class="fw-semibold text-dark">10 Apr 2026</div>
+                                                    <div class="text-muted fs-9">REF-10927110</div>
+                                                </td>
+                                                <td>
+                                                    <div class="text-primary text-decoration-underline mb-1"
+                                                        style="font-size:0.8rem;">987654321</div>
+                                                    <div class="fw-bold" style="font-size:0.75rem;">PUBLIC CHINA ITTIKAL
+                                                        (PCIF)</div>
+                                                </td>
+                                                <td><span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">SWITCHING</span>
+                                                </td>
+                                                <td class="text-end fw-semibold text-dark">10,000.00</td>
+                                                 <td class="pe-4 text-center"><span
+                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">Pending
+                                                        Authorisation</span></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== PANEL: Transaction Request ===== -->
+                        <div id="panel-request" class="txn-panel d-none">
+
+                            <div class="border rounded-4 p-4 mb-4">
+                                <h5 class="fw-bold text-dark fs-6 mb-1">New Transaction Request</h5>
+                                <p class="text-muted fs-9 mb-4">Submit a top-up, redemption, or switching request for
+                                    authorisation.</p>
+                                <form id="txnRequestForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Fund Account</label>
+                                            <select class="form-select fs-8 border-secondary border-opacity-25">
+                                                <option selected>Select Account</option>
+                                                <option>Acc 1: 123456789</option>
+                                                <option>Acc 2: 987654321</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Transaction
+                                                Type</label>
+                                            <select class="form-select fs-8 border-secondary border-opacity-25"
+                                                id="txnTypeSelect">
+                                                <option selected>Select Type</option>
+                                                <option value="topup">Top-Up Investment</option>
+                                                <option value="redeem">Redemption</option>
+                                                <option value="switch">Switching</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Fund Name</label>
+                                            <select class="form-select fs-8 border-secondary border-opacity-25">
+                                                <option selected>Select Fund</option>
+                                                <option>PUBLIC ISLAMIC ASIA TACTICAL ALLOCATION (PIATAF)</option>
+                                                <option>PUBLIC REGIONAL SECTOR (PRSEC)</option>
+                                                <option>PUBLIC CHINA ITTIKAL (PCIF)</option>
+                                                <option>PUBLIC e-ISLAMIC ASIA THEMATIC GROWTH (PeIATGF)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6" id="switchToFundRow" style="display:none;">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Switch To Fund</label>
+                                            <select class="form-select fs-8 border-secondary border-opacity-25">
+                                                <option selected>Select Target Fund</option>
+                                                <option>PUBLIC ISLAMIC ASIA TACTICAL ALLOCATION (PIATAF)</option>
+                                                <option>PUBLIC REGIONAL SECTOR (PRSEC)</option>
+                                                <option>PUBLIC CHINA ITTIKAL (PCIF)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Amount (MYR)</label>
+                                            <input type="number"
+                                                class="form-control fs-8 border-secondary border-opacity-25"
+                                                placeholder="e.g. 10,000.00" min="1000">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Payment Method</label>
+                                            <select class="form-select fs-8 border-secondary border-opacity-25">
+                                                <option selected>Select Method</option>
+                                                <option>FPX Online Banking</option>
+                                                <option>Cheque</option>
+                                                <option>Telegraphic Transfer</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label fs-8 fw-semibold text-muted">Remarks
+                                                (Optional)</label>
+                                            <textarea class="form-control fs-8 border-secondary border-opacity-25"
+                                                rows="2" placeholder="Add any notes for your authoriser..."></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Authoriser Notice -->
+
+                                    <div class="d-flex gap-2 mt-4">
+                                        <button type="submit"
+                                            class="btn btn-danger rounded-pill px-4 fs-8 fw-bold">Submit
+                                            Request</button>
+                                        <button type="reset"
+                                            class="btn btn-outline-secondary rounded-pill px-4 fs-8 fw-semibold">Clear</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-
                 </section>
 
             </div>

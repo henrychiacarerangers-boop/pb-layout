@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate PMO Portal — EOP · Authorise contribution</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/montserrat.css"
-        rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/iconoir.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css">
@@ -18,15 +17,6 @@
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <link rel="stylesheet" href="../css/eop-dashboard.css">
     <style>
-        .custom-table-details td {
-            padding: 12px 16px;
-            font-size: 0.8rem;
-        }
-
-        .custom-table-details tr:last-child {
-            border-bottom: 0 !important;
-        }
-
         .pac-group {
             position: relative;
         }
@@ -38,7 +28,7 @@
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: var(--brand-red, #ed1c24);
+            color: var(--brand-red, #ff1700);
             font-size: 0.75rem;
             font-weight: 700;
             padding: 0;
@@ -64,6 +54,40 @@
                 padding-top: 0 !important;
             }
         }
+
+        /* Pro Max Corporate Design Guidelines Overrides */
+        .card {
+            border-radius: 15px !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .btn-danger {
+            border-radius: 25px !important;
+            background-color: #ff1700 !important;
+            border-color: #ff1700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-danger:hover {
+            background-color: #c41219 !important;
+            border-color: #c41219 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3) !important;
+        }
+
+        .btn-outline-dark,
+        .btn-outline-danger {
+            border-radius: 25px !important;
+            transition: all 0.3s ease !important;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #ff1700 !important;
+            box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
+            outline: none !important;
+        }
     </style>
 </head>
 
@@ -71,78 +95,104 @@
     data-pmo-footer-print="1">
 
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
-<header class="top-nav pmo-shell-dashboard-topnav w-100">
-    <div class="container-fluid px-3 px-md-4 py-2">
-        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100" aria-label="Portal primary">
-            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#eopSidebarOffcanvas" aria-controls="eopSidebarOffcanvas" id="eopBtnOpenSidebar">
-                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
-                    </button>
-                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="../unit-trust/dashboard.html" id="eopBrandLink">
-                        <img src="../images/logo.png" alt="Logo" height="35">
-                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
-                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
-                        </div>
-                    </a>
-                </div>
-                <div class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
-                    <a href="../unit-trust/dashboard.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillUt">
-                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="dashboard.html" class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none" id="eopNavPillEop">
-                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../analytics/unit-trust.html" class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted" id="eopNavPillAnalytics">
-                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
-                    </a>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
-                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;" aria-hidden="true">
-                            <i class="iconoir-user fs-5 text-dark"></i>
-                        </div>
-                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer Admin</span>
-                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
-                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="../unit-trust/settings.html" id="dropLnkProfile">
-                                <i class="iconoir-user fs-6"></i> User Profile Details
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="../unit-trust/settings.html#password" id="dropLnkPassword">
-                                <i class="iconoir-lock fs-6"></i> Change Password
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
-                                <i class="iconoir-log-out fs-6"></i> Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#eopSidebarOffcanvas"
+                                        aria-controls="eopSidebarOffcanvas" id="eopBtnOpenSidebar">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0"
+                                        href="../unit-trust/dashboard.html" id="eopBrandLink">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="../unit-trust/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="eopNavPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="dashboard.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="eopNavPillEop">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../analytics/unit-trust.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="eopNavPillAnalytics">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
+                                            Admin</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
+                                                href="../unit-trust/settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="../unit-trust/settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
 
-    </div>
+            </div>
         </div>
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="text-white-50 fw-normal fs-6">· EOP Portal</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="text-white fw-normal fs-6">· EOP Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
                     <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a>
@@ -163,8 +213,8 @@
         </header>
     </div>
 
-    <main class="dashboard-content py-5 flex-grow-1">
-        <div class="container">
+    <main class="dashboard-content py-5 flex-grow-1 d-flex flex-column">
+        <div class="container flex-grow-1 d-flex flex-column">
 
             <div
                 class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 print-hidden">
@@ -178,10 +228,9 @@
                             <span class="text-secondary fw-medium" id="eopAuthDetailHeaderRef">RC00000000000124</span>
                             <span class="text-primary" id="eopAuthDetailHeaderContrib">Salary Deduction (IND)</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block"
-                            id="eopAuthDetailHeaderSchemaLine">Schema: Salary deduction</span>
-                        <span class="text-muted fs-8 d-block mt-1" id="eopAuthDetailHeaderSubtitle">Authorise
-                            contribution batch</span>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopAuthDetailActionType">Authorise
+                            Contribution</span>
+
                     </div>
                 </div>
                 <button type="button"
@@ -213,7 +262,7 @@
                         <div>
                             <h6 class="fw-bold text-danger mb-2">Authorisation Alert</h6>
                             <p class="mb-0 fs-8 text-secondary lh-base" id="eopAuthDetailAlertText">This batch is
-                                pending your PAC approval. Verify <strong class="text-dark">schema type</strong>,
+                                pending your PAC approval. Verify <strong class="text-dark">Scheme type</strong>,
                                 <strong class="text-dark">contribution type</strong>, amounts, and employee counts
                                 before authorising.
                             </p>
@@ -223,15 +272,17 @@
             </div>
 
             <!-- Step 1: detail + PAC (layout aligned to unit-trust authorise detail) -->
-            <div id="eopAuthDetailSection" class="row g-4">
+            <div id="eopAuthDetailSection" class="row g-4 flex-grow-1">
                 <div class="col-lg-7">
+                    <!-- Unified EOP Authorisation Details Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
                         <div class="card-body p-4">
+                            <!-- Section 1: Request Overview -->
                             <h5
                                 class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
                                 <span>Request Overview</span>
                             </h5>
-                            <div class="table-responsive">
+                            <div class="table-responsive mb-4">
                                 <table class="table align-middle custom-table-details mb-0">
                                     <tbody>
                                         <tr class="border-bottom">
@@ -239,8 +290,8 @@
                                             <td class="fw-bold text-dark" id="eopAuthDetailRef">—</td>
                                         </tr>
                                         <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Schema type</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailSchema">—</td>
+                                            <td class="text-muted fw-semibold" style="width:35%;">Scheme type</td>
+                                            <td class="text-dark" id="eopAuthDetailscheme">—</td>
                                         </tr>
                                         <tr class="border-bottom">
                                             <td class="text-muted fw-semibold">Request Date &amp; Time</td>
@@ -248,47 +299,42 @@
                                         </tr>
                                         <tr class="border-bottom">
                                             <td class="text-muted fw-semibold">Prepared By</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailPreparer">—</td>
+                                            <td class="text-dark" id="eopAuthDetailPreparer">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
-                        <div class="card-body p-4">
-                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Contribution &amp; Amount Details</h5>
-                            <div class="table-responsive">
+                            <!-- Section 2: Contribution & Amount Details -->
+                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
+                            </h5>
+                            <div class="table-responsive mb-4">
                                 <table class="table align-middle custom-table-details mb-0">
                                     <tbody>
                                         <tr class="border-bottom">
                                             <td class="text-muted fw-semibold" style="width:35%;">Contribution type</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailContribType">—</td>
+                                            <td class="text-dark" id="eopAuthDetailContribType">—</td>
                                         </tr>
                                         <tr class="border-bottom">
                                             <td class="text-muted fw-semibold">No. of Employees</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailEmpCount">—</td>
+                                            <td class="text-dark" id="eopAuthDetailEmpCount">—</td>
                                         </tr>
                                         <tr class="border-bottom">
                                             <td class="text-muted fw-semibold">Total Amount (MYR)</td>
-                                            <td class="fw-bold text-success fs-6" id="eopAuthDetailAmount">—</td>
+                                            <td class="fw-semibold text-success fs-6" id="eopAuthDetailAmount">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
-                        <div class="card-body p-4">
+                            <!-- Section 3: Employee Contributions List -->
                             <h5
-                                class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
+                                class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4 d-flex align-items-center justify-content-between">
                                 <span>Employee Contributions List</span>
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopAuthDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+                            <div class="table-responsive mb-4" style="max-height: 380px; overflow-y: auto;">
                                 <table class="table table-hover align-middle mb-0 custom-table fs-8">
                                     <thead class="text-muted border-bottom sticky-top bg-white"
                                         style="z-index: 2; top: -1px;">
@@ -297,7 +343,8 @@
                                             <th class="py-3 fw-semibold" style="width:20%;">NRIC No.</th>
                                             <th class="py-3 fw-semibold" style="width:15%;">Fund Name</th>
                                             <th class="py-3 fw-semibold" style="width:20%;">Contribution Type</th>
-                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)</th>
+                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-dark fw-medium fs-8" id="eopAuthDetailTbody">
@@ -305,324 +352,363 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4" id="eopAuthPacVerificationCard">
-                        <div class="card-body p-2">
-                            <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Secure Authorisation</h5>
-                            <form id="eopAuthPacForm">
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fs-8 fw-semibold"
-                                        for="eopAuthPacMethod">Verification Method</label>
-                                    <select class="form-select fs-8 text-dark fw-semibold" id="eopAuthPacMethod">
-                                        <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
-                                        <option value="SecureSign">SecureSign</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label text-dark fs-8 fw-bold" for="eopAuthPacInput">PAC
-                                        Number</label>
-                                    <div class="pac-group">
-                                        <input type="password" class="form-control border-secondary rounded-3 px-3 py-2"
-                                            id="eopAuthPacInput" placeholder="Enter 8-digit PAC" maxlength="8"
-                                            autocomplete="one-time-code" style="padding-right:7rem;">
-                                        <button type="button" class="btn-request-pac" id="eopAuthBtnRequestPac">REQUEST
-                                            PAC</button>
+                            <!-- Section 4: Secure Verification Form wrapped inside class/ID for print and selector support -->
+                            <div id="eopAuthPacVerificationCard" class="mt-4 pt-2 print-hidden">
+                                <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Secure Authorisation</h5>
+                                <form id="eopAuthPacForm">
+                                    <!-- Wrapper for fields that can be bypassed/hidden during Reject flow -->
+                                    <div id="eopAuthPacFieldsWrapper">
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted fs-8 fw-semibold"
+                                                for="eopAuthPacMethod">Verification Method</label>
+                                            <select class="form-select fs-8 text-dark fw-semibold"
+                                                id="eopAuthPacMethod">
+                                                <option value="PAC" selected>SMS Personal Authentication Code (PAC)
+                                                </option>
+                                                <option value="SecureSign">SecureSign</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label text-dark fs-8 fw-bold" for="eopAuthPacInput">PAC
+                                                Number</label>
+                                            <div class="pac-group">
+                                                <input type="password"
+                                                    class="form-control border-secondary rounded-3 px-3 py-2"
+                                                    id="eopAuthPacInput" placeholder="Enter 8-digit PAC" maxlength="8"
+                                                    autocomplete="one-time-code" style="padding-right:7rem;">
+                                                <button type="button" class="btn-request-pac"
+                                                    id="eopAuthBtnRequestPac">REQUEST
+                                                    PAC</button>
+                                            </div>
+                                            <div class="invalid-feedback d-none" id="eopAuthPacError">Incorrect PAC
+                                                number.
+                                                Please click &apos;REQUEST PAC&apos; and use code 12345678.</div>
+                                        </div>
+                                        <div class="pac-info-text mb-3 text-muted fs-9">
+                                            * Please click &apos;REQUEST PAC&apos; and enter the 8-digit code sent to
+                                            your
+                                            registered mobile number XXX3ZXXXXX1. Use code <strong>12345678</strong>.
+                                        </div>
                                     </div>
-                                    <div class="invalid-feedback d-none" id="eopAuthPacError">Incorrect PAC number.
-                                        Please click &apos;REQUEST PAC&apos; and use code 12345678.</div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label text-muted fs-8 fw-semibold"
-                                        for="eopAuthRemarksInput">Authoriser Remarks (Optional)</label>
-                                    <textarea class="form-control" id="eopAuthRemarksInput" rows="2"
-                                        placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
-                                </div>
-                                <div class="pac-info-text mb-3 text-muted fs-9">
-                                    * Please click &apos;REQUEST PAC&apos; and enter the 8-digit code sent to your
-                                    registered mobile number XXX3ZXXXXX1. Use code <strong>12345678</strong>.
-                                </div>
-                            </form>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fs-8 fw-semibold"
+                                            for="eopAuthRemarksInput">Authoriser Remarks (Optional)</label>
+                                        <textarea class="form-control" id="eopAuthRemarksInput" rows="2"
+                                            placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-5">
-                        <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                            <div class="card-body p-2 d-flex flex-column justify-content-between">
-                                <div>
-                                    <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
-                                    <div class="mb-3">
-                                        <div class="text-muted fs-9 mb-1">Schema type</div>
-                                        <div class="fw-bold fs-8 text-dark" id="eopAuthSummarySchema">—</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="text-muted fs-9 mb-1">Contribution type</div>
-                                        <div class="fw-bold fs-8 text-dark" id="eopAuthSummaryContribution">—</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="text-muted fs-9 mb-1">Initiator</div>
-                                        <div class="fw-bold fs-8 text-dark" id="eopAuthSummaryPreparer">—</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="text-muted fs-9 mb-1">Total Contribution (MYR)</div>
-                                        <div class="fw-bold fs-4 text-success" id="eopAuthSummaryAmount">—</div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="text-muted fs-9 mb-1">Employees in File</div>
-                                        <div class="fw-bold fs-8 text-dark" id="eopAuthSummaryEmp">—</div>
-                                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body p-2 d-flex flex-column justify-content-between">
+                            <div>
+                                <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Scheme type</div>
+                                    <div class="fs-8 text-dark" id="eopAuthSummaryscheme">—</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Contribution type</div>
+                                    <div class="fs-8 text-dark" id="eopAuthSummaryContribution">—</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Initiator</div>
+                                    <div class="fs-8 text-dark" id="eopAuthSummaryPreparer">—</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Total Contribution (MYR)</div>
+                                    <div class="fw-semibold fs-4 text-success" id="eopAuthSummaryAmount">—</div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="text-muted fs-9 mb-1">Employees in File</div>
+                                    <div class="fs-8 text-dark" id="eopAuthSummaryEmp">—</div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-5 print-hidden">
-                        <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                            <input class="form-check-input mt-0 fs-5" type="checkbox" id="eopAuthTermsCheckbox" style="flex-shrink: 0;">
-                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="eopAuthTermsCheckbox">
-                                I have read and agreed to the <a href="#" class="text-danger fw-bold text-decoration-none" style="color: var(--brand-red, #ed1c24) !important;">Terms and Conditions of Employer Channel Contribution</a> and hereby authorise this contribution.
-                            </label>
-                        </div>
-                        <div class="invalid-feedback d-none mt-1" id="eopAuthTermsError" style="color: var(--brand-red, #ed1c24); font-size: 0.75rem;">
-                            You must agree to the Terms and Conditions before authorising.
-                        </div>
-                    </div>
-
-                    <div class="col-12 print-hidden">
-                        <div class="d-flex justify-content-end gap-3 mt-2">
-                            <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
-                                style="transition:all 0.3s ease;" id="eopAuthDetailBtnBack"
-                                onclick="location.href='authorise.html'">Back</button>
-                            <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                                style="background-color:#ed1c24;border-color:#ed1c24;transition:all 0.3s ease;"
-                                id="eopAuthDetailBtnReject">Reject Request</button>
-                            <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                                style="background-color:#ed1c24;border-color:#ed1c24;transition:all 0.3s ease;"
-                                id="eopAuthDetailBtnApprove">Approve &amp; Authorise</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 2: outcome -->
-                <div id="eopAuthDoneSection" class="row g-4 d-none">
-                    <div class="col-12 mt-0">
-                        <div class="card border-0 shadow-sm rounded-4 bg-white p-5">
-                            <div class="card-body p-0">
-                                <div class="text-center mb-4">
-                                    <div class="rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
-                                        id="eopAuthDoneIconWrap" style="width:100px;height:100px;">
-                                        <i class="text-white" id="eopAuthDoneIcon" style="font-size:3rem;"
-                                            aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                                <div class="text-center mb-5">
-                                    <h3 class="fw-bold text-dark mb-2" id="eopAuthDoneTitle">Contribution approved</h3>
-                                    <p class="text-muted fs-8 mb-0 mx-auto" style="max-width:520px;"
-                                        id="eopAuthDoneSubtitle">Your PAC was verified. This batch is authorised for the
-                                        next payment step.</p>
-                                </div>
-
-                                <div class="row g-5">
-                                    <div class="col-md-6 border-end text-start">
-                                        <h5 class="fw-bold mb-4 text-dark">Request Details</h5>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Reference no.</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneRef">—</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Date / time</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneDt">—</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Schema type</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneSchema">—</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Contribution type</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneContribution">—</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">No. of employees</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneEmp">—</div>
-                                        </div>
-                                        <div class="mb-2">
-                                            <div class="text-muted fs-8 mb-2">Amount (MYR)</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7"
-                                                id="eopAuthDoneAmount">—</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 ps-md-4 text-start">
-                                        <h5 class="fw-bold mb-4 text-dark">Authorization Details</h5>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Execution Status</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold fs-7"
-                                                id="eopAuthDoneStatus">Approved</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">PAC</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDonePac">Verified (SMS)</div>
-                                        </div>
-                                        <div class="mb-4">
-                                            <div class="text-muted fs-8 mb-2">Authorised on</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneAuthDt">—</div>
-                                        </div>
-                                        <div class="mb-2">
-                                            <div class="text-muted fs-8 mb-2">Authoriser Remarks</div>
-                                            <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                                id="eopAuthDoneRemarks">—</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="mt-4 print-hidden" id="eopAuthTermsWrapper">
+                    <div class="form-check custom-checkbox d-flex align-items-start gap-2 mb-3">
+                        <input class="form-check-input mt-1 fs-5" type="checkbox" id="eopAuthTermsCheckbox"
+                            style="flex-shrink: 0;">
+                        <label class="form-check-label fs-8 text-dark cursor-pointer lh-base"
+                            for="eopAuthTermsCheckbox">
+                            I confirm that I have read and agreed to the <a href="#"
+                                class="text-danger fw-bold text-decoration-underline"
+                                style="color: #ff1700 !important;">Terms and Conditions of Employer Channel
+                                Contribution</a> and hereby authorise this contribution.
+                        </label>
                     </div>
-                    <div class="col-12 mt-4 print-hidden">
-                        <div class="d-flex justify-content-end gap-3 mt-2">
-                            <button type="button"
-                                class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-flex align-items-center gap-2"
-                                id="eopAuthDonePrintBtn" onclick="window.print()">
-                                <i class="iconoir-printer fs-6" aria-hidden="true"></i> Print
-                            </button>
-                            <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
-                                onclick="location.href='dashboard.html'">Back to Dashboard</button>
-                            <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                                style="background-color:#ed1c24;border-color:#ed1c24;transition:all 0.3s ease;"
-                                onclick="location.href='authorise.html'">Back to Authorise List</button>
-                        </div>
+                    <div class="invalid-feedback d-none mt-1" id="eopAuthTermsError"
+                        style="color: #ff1700; font-size: 0.75rem;">
+                        You must agree to the Terms and Conditions before authorising.
+                    </div>
+                </div>
+
+                <div class="col-12 print-hidden mt-auto pt-4">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            style="transition:all 0.3s ease;" id="eopAuthDetailBtnBack"
+                            onclick="location.href='authorise.html'">Back</button>
+                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            style="background-color:#ff1700;border-color:#ff1700;transition:all 0.3s ease;"
+                            id="eopAuthDetailBtnReject">Reject Request</button>
+                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            style="background-color:#ff1700;border-color:#ff1700;transition:all 0.3s ease;"
+                            id="eopAuthDetailBtnApprove">Approve &amp; Authorise</button>
                     </div>
                 </div>
             </div>
+
+            <!-- Step 2: outcome -->
+            <div id="eopAuthDoneSection" class="row g-4 d-none flex-grow-1">
+                <div class="col-12 mt-0">
+                    <div class="card border-0 shadow-sm rounded-4 bg-white p-5">
+                        <div class="card-body p-0">
+                            <div class="text-center mb-4">
+                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
+                                    id="eopAuthDoneIconWrap" style="width:100px;height:100px;">
+                                    <i class="text-white" id="eopAuthDoneIcon" style="font-size:3rem;"
+                                        aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="text-center mb-5">
+                                <h3 class="fw-bold text-dark mb-2" id="eopAuthDoneTitle">Contribution approved</h3>
+                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width:520px;"
+                                    id="eopAuthDoneSubtitle">Your PAC was verified. This batch is authorised for the
+                                    next payment step.</p>
+                            </div>
+
+                            <div class="row g-5">
+                                <div class="col-md-6 border-end text-start">
+                                    <h5 class="fw-bold mb-4 text-dark">Request Details</h5>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Reference no.</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                            id="eopAuthDoneRef">—</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Date / time</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneDt">—
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Scheme type</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDonescheme">
+                                            —</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Contribution type</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7"
+                                            id="eopAuthDoneContribution">—</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">No. of employees</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneEmp">—
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Amount (MYR)</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-semibold text-success fs-7"
+                                            id="eopAuthDoneAmount">—</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ps-md-4 text-start">
+                                    <h5 class="fw-bold mb-4 text-dark">Authorisation Details</h5>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Execution Status</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold fs-7" id="eopAuthDoneStatus">
+                                            Approved</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">PAC</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDonePac">
+                                            Verified (SMS)</div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="text-muted fs-8 mb-2">Authorised on</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneAuthDt">
+                                            —</div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-muted fs-8 mb-2">Authoriser Remarks</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7"
+                                            id="eopAuthDoneRemarks">—</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-auto pt-4 print-hidden">
+                    <div class="d-flex justify-content-end gap-3 mt-2">
+                        <button type="button"
+                            class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-flex align-items-center gap-2"
+                            id="eopAuthDonePrintBtn" onclick="window.print()">
+                            <i class="iconoir-printer fs-6" aria-hidden="true"></i> Print
+                        </button>
+                        <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                            onclick="location.href='dashboard.html'">Back to Dashboard</button>
+                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                            style="background-color:#ff1700;border-color:#ff1700;transition:all 0.3s ease;"
+                            onclick="location.href='authorise.html'">Back to Authorise List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <div id="pmoShellFooterMount">
-<footer class="bottom-footer mt-auto">
-    <div class="container text-start">
-        <div class="bottom-links mb-2">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Internet Risk</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Investment Channels</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQ</a>
-            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
-        </div>
-        <div class="copyright-text fs-9">
-            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
-        </div>
-    </div>
-</footer>
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
     <div id="pmoShellSidebarMount">
-<div class="offcanvas offcanvas-start custom-sidebar eop-sidebar-offcanvas border-end-0 shadow" tabindex="-1" id="eopSidebarOffcanvas" aria-labelledby="eopSidebarUserName">
-    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-        <div class="d-flex justify-content-end mb-2 w-100">
-            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas" aria-label="Close" id="eopSidebarCloseMenuBtn">
-                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
-            </button>
-        </div>
-        <div class="portal-sidebar-profile-card w-100 mb-2">
-            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Employer Online portal(EOP)</div>
-            <h5 class="profile-name fs-6 mb-0" id="eopSidebarUserName">Ahmad Razak bin Osman</h5>
-            <div class="fs-8 text-white-50 mt-2" id="eopSidebarCompany">Ativa Studio Solution Sdn Bhd</div>
-            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3" id="eopSidebarRoleBadge">Role: Employer admin</span>
-        </div>
-    </div>
-    <div class="offcanvas-body pt-3">
-        <ul class="nav flex-column sidebar-nav">
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html" id="eopSideHome">
-                    <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
-                    <span class="fw-medium">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarContribCollapse" id="eopSidebarContribToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
-                        <span class="fw-medium">Contributions</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse" id="eopSidebarContribCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="contribution.html" id="eopSideMake">Make contribution</a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="upload.html" id="eopSideUpload">Upload contribution</a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="authorise.html" id="eopSideAuthorise">
-                                <span>Authorise contribution</span>
-                                <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
-                            </a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between" href="payment.html" id="eopSidePayment">
-                                <span>Make payment</span>
-                                <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge" id="eopNavBadgePay">2</span>
-                            </a>
-                        </li>
-                    </ul>
+        <div class="offcanvas offcanvas-start custom-sidebar eop-sidebar-offcanvas border-end-0 shadow" tabindex="-1"
+            id="eopSidebarOffcanvas" aria-labelledby="eopSidebarUserName">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="eopSidebarCloseMenuBtn">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
                 </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarRecordsCollapse" id="eopSidebarRecordsToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
-                        <span class="fw-medium">Transactions</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse" id="eopSidebarRecordsCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html" id="eopSideTxnPast">
-                                Past Transaction
-                            </a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="transactions.html?tab=pending" id="eopSideTxnPending">
-                                Pending Transaction
-                            </a>
-                        </li>
-                    </ul>
+                <div class="portal-sidebar-profile-card w-100 mb-2">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Employer Online portal(EOP)</div>
+                    <h5 class="profile-name fs-6 mb-0" id="eopSidebarUserName">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2" id="eopSidebarCompany">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3"
+                        id="eopSidebarRoleBadge">Role: Employer admin</span>
                 </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed" data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false" aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
-                        <span class="fw-medium">Statements</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse" id="eopSidebarStmtCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html" id="eopSideStmt">PRS documents &amp; reports</a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
-                        </li>
-                        <li class="nav-item mb-1">
-                            <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="statements.html?tab=inv" id="eopSideInv">Invoice</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <!--<li class="nav-item mb-2 mt-2 pt-2 border-top">
+            </div>
+            <div class="offcanvas-body pt-3">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="eopSideHome">
+                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <span class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarContribCollapse"
+                            id="eopSidebarContribToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Contributions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarContribCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="contribution.html" id="eopSideMake">Make contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" href="upload.html"
+                                        id="eopSideUpload">Upload contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="authorise.html" id="eopSideAuthorise">
+                                        <span>Authorise contribution</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="payment.html" id="eopSidePayment">
+                                        <span>Make payment</span>
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
+                                            id="eopNavBadgePay">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
+                            id="eopSidebarRecordsToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Transactions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarRecordsCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="transactions.html" id="eopSideTxnPast">
+                                        Past Transaction
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="transactions.html?tab=pending" id="eopSideTxnPending">
+                                        Pending Transaction
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
+                            aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Statements</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse" id="eopSidebarStmtCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html" id="eopSideStmt">PRS documents &amp; reports</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="statements.html?tab=inv" id="eopSideInv">Invoice</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--<li class="nav-item mb-2 mt-2 pt-2 border-top">
                 <a href="intro.html" class="btn btn-outline-dark w-100 rounded-pill fs-8 fw-semibold" id="eopSidebarIntroLink">EOP intro &amp; registration</a>
             </li>
  --!>            <li class="nav-item mb-2">
@@ -649,7 +735,7 @@
 
             const BATCH = {
                 'RC00000000000124': {
-                    schemaLabel: 'Salary deduction',
+                    schemeLabel: 'Salary Deduction',
                     contributionLabel: 'Salary Deduction (IND)',
                     preparer: 'Siti Aminah',
                     preparedDt: '2026/05/08 09:12:44',
@@ -658,7 +744,7 @@
                     amountFmt: '42,500.00',
                 },
                 'RC00000000000320': {
-                    schemaLabel: 'Salary deduction',
+                    schemeLabel: 'Salary Deduction',
                     contributionLabel: 'Salary Deduction (IND)',
                     preparer: 'Lee Wei',
                     preparedDt: '2026/05/09 11:05:18',
@@ -667,8 +753,8 @@
                     amountFmt: '18,200.00',
                 },
                 'RC00000000000502': {
-                    schemaLabel: 'Employer contribution',
-                    contributionLabel: 'Mixed: Revolving Vesting (VSR), Immediate Vesting (EMP) & Straight Vesting (VSC)',
+                    schemeLabel: 'Employer Contribution',
+                    contributionLabel: 'Vesting (VSC)/Immediate Vesting (EMP)',
                     preparer: 'Siti Aminah',
                     preparedDt: '2026/05/10 15:40:02',
                     employees: 28,
@@ -676,7 +762,7 @@
                     amountFmt: '96,000.00',
                 },
                 'RC00000000000808': {
-                    schemaLabel: 'Employer contribution',
+                    schemeLabel: 'Employer Contribution',
                     contributionLabel: 'Immediate Vesting (EMP)',
                     preparer: 'Lee Wei',
                     preparedDt: '2026/05/05 14:22:10',
@@ -719,34 +805,34 @@
                     { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Salary Deduction IND', amount: '2,000.00' }
                 ],
                 'RC00000000000502': [
-                    { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '4,500.00' },
+                    { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '4,500.00' },
                     { name: 'Tan Kah Sheng', nric: '891104-08-6623', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '5,000.00' },
-                    { name: 'Priyah a/p Ganesan', nric: '920215-10-5884', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '3,800.00' },
-                    { name: 'Mohd Fadzil bin Razali', nric: '880820-09-5117', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,000.00' },
+                    { name: 'Priyah a/p Ganesan', nric: '920215-10-5884', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '3,800.00' },
+                    { name: 'Mohd Fadzil bin Razali', nric: '880820-09-5117', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,000.00' },
                     { name: 'Chew Mei Ling', nric: '910403-14-5332', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '4,200.00' },
-                    { name: 'Nurul Farhana binti Ismail', nric: '940608-03-5126', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '3,500.00' },
-                    { name: 'Syahrul bin Hassan', nric: '870125-08-5441', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,000.00' },
+                    { name: 'Nurul Farhana binti Ismail', nric: '940608-03-5126', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '3,500.00' },
+                    { name: 'Syahrul bin Hassan', nric: '870125-08-5441', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,000.00' },
                     { name: 'Lim Wei Kiat', nric: '900518-10-5229', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,800.00' },
-                    { name: 'Saraswathy a/p Raman', nric: '851022-14-5996', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,500.00' },
-                    { name: 'Muhammad Zaim bin Yusof', nric: '931214-03-5221', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,200.00' },
+                    { name: 'Saraswathy a/p Raman', nric: '851022-14-5996', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,500.00' },
+                    { name: 'Muhammad Zaim bin Yusof', nric: '931214-03-5221', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,200.00' },
                     { name: 'Wong Siew Lan', nric: '890730-14-5662', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,400.00' },
-                    { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,900.00' },
-                    { name: 'Khairul Anuar bin Zulkifli', nric: '860904-10-5663', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,100.00' },
+                    { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,900.00' },
+                    { name: 'Khairul Anuar bin Zulkifli', nric: '860904-10-5663', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,100.00' },
                     { name: 'Ng Kok Leong', nric: '921105-08-5775', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '4,100.00' },
-                    { name: 'Divya a/p Murugan', nric: '940218-14-5882', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,700.00' },
-                    { name: 'Zulhelmi bin Osman', nric: '881229-03-5339', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '2,600.00' },
+                    { name: 'Divya a/p Murugan', nric: '940218-14-5882', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,700.00' },
+                    { name: 'Zulhelmi bin Osman', nric: '881229-03-5339', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '2,600.00' },
                     { name: 'Chan Yoke Wah', nric: '901002-14-5110', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,300.00' },
-                    { name: 'Hanim binti Mohd Nor', nric: '920807-09-5334', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,900.00' },
-                    { name: 'Siti Aminah binti Yusuf', nric: '870420-10-5112', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,600.00' },
+                    { name: 'Hanim binti Mohd Nor', nric: '920807-09-5334', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,900.00' },
+                    { name: 'Siti Aminah binti Yusuf', nric: '870420-10-5112', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,600.00' },
                     { name: 'Lee Wei Seng', nric: '850115-08-5221', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,500.00' },
-                    { name: 'Fatima binti Ibrahim', nric: '910930-14-5336', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,800.00' },
-                    { name: 'Tan Ah Kow', nric: '790408-10-5445', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,200.00' },
+                    { name: 'Fatima binti Ibrahim', nric: '910930-14-5336', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,800.00' },
+                    { name: 'Tan Ah Kow', nric: '790408-10-5445', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,200.00' },
                     { name: 'Ramasamy a/l Muniandy', nric: '821014-14-5553', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,000.00' },
-                    { name: 'Ng Mei Yee', nric: '880312-08-5664', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,500.00' },
-                    { name: 'Mohamad Ali bin Abu', nric: '861102-10-5771', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,200.00' },
+                    { name: 'Ng Mei Yee', nric: '880312-08-5664', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,500.00' },
+                    { name: 'Mohamad Ali bin Abu', nric: '861102-10-5771', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,200.00' },
                     { name: 'Vigneswaran a/l Raja', nric: '900228-14-5883', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,100.00' },
-                    { name: 'Cheah Siew Fong', nric: '840715-08-5992', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,400.00' },
-                    { name: 'Farah binti Ahmad', nric: '931012-09-5114', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '1,900.00' }
+                    { name: 'Cheah Siew Fong', nric: '840715-08-5992', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,400.00' },
+                    { name: 'Farah binti Ahmad', nric: '931012-09-5114', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '1,900.00' }
                 ],
                 'RC00000000000808': [
                     { name: 'Lee Wei Seng', nric: '850115-08-5221', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '2,500.00' },
@@ -773,11 +859,11 @@
                 rows.forEach((r) => {
                     html += `
                         <tr class="border-bottom">
-                            <td class="ps-3 py-3 fw-bold text-dark">${r.name}</td>
+                            <td class="ps-3 py-3 text-dark">${r.name}</td>
                             <td class="py-3 text-secondary font-monospace">${r.nric}</td>
-                            <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-semibold">${r.fund}</span></td>
+                            <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
                             <td class="py-3 text-secondary">${r.type}</td>
-                            <td class="pe-3 py-3 text-end fw-bold text-dark">MYR ${r.amount}</td>
+                            <td class="pe-3 py-3 text-end fw-semibold text-dark">MYR ${r.amount}</td>
                         </tr>
                     `;
                 });
@@ -794,16 +880,16 @@
 
             el('eopAuthDetailHeaderRef').textContent = ref;
             el('eopAuthDetailHeaderContrib').textContent = d.contributionLabel;
-            el('eopAuthDetailHeaderSchemaLine').textContent = `Schema: ${d.schemaLabel}`;
+            el('eopAuthDetailHeaderschemeLine').textContent = `Scheme: ${d.schemeLabel}`;
             const amountRm = `MYR ${d.amountFmt}`;
             el('eopAuthDetailRef').textContent = ref;
             el('eopAuthDetailPreparedDt').textContent = d.preparedDt;
-            el('eopAuthDetailSchema').textContent = d.schemaLabel;
+            el('eopAuthDetailscheme').textContent = d.schemeLabel;
             el('eopAuthDetailContribType').textContent = d.contributionLabel;
             el('eopAuthDetailPreparer').textContent = d.preparer;
             el('eopAuthDetailEmpCount').textContent = String(d.employees);
             el('eopAuthDetailAmount').textContent = amountRm;
-            el('eopAuthSummarySchema').textContent = d.schemaLabel;
+            el('eopAuthSummaryscheme').textContent = d.schemeLabel;
             el('eopAuthSummaryContribution').textContent = d.contributionLabel;
             el('eopAuthSummaryPreparer').textContent = d.preparer;
             el('eopAuthSummaryAmount').textContent = amountRm;
@@ -860,7 +946,7 @@
             function fillDoneCommon() {
                 el('eopAuthDoneRef').textContent = ref;
                 el('eopAuthDoneDt').textContent = d.preparedDt;
-                el('eopAuthDoneSchema').textContent = d.schemaLabel;
+                el('eopAuthDonescheme').textContent = d.schemeLabel;
                 el('eopAuthDoneContribution').textContent = d.contributionLabel;
                 el('eopAuthDoneEmp').textContent = String(d.employees);
                 el('eopAuthDoneAmount').textContent = amountRm;
@@ -893,7 +979,7 @@
                 const icon = el('eopAuthDoneIcon');
                 wrap.classList.remove('bg-success');
                 wrap.classList.add('bg-danger');
-                icon.className = 'iconoir-cancel text-white';
+                icon.className = 'iconoir-xmark text-white';
                 icon.setAttribute('style', 'font-size:3rem;');
                 el('eopAuthDoneTitle').textContent = 'Contribution rejected';
                 el('eopAuthDoneSubtitle').textContent = 'This batch was rejected. The initiator will see your remarks and may resubmit.';
@@ -913,13 +999,49 @@
             });
 
             el('eopAuthDetailBtnReject')?.addEventListener('click', () => {
-                if (!validatePac()) return;
+                if (remarks && !remarks.value.trim()) {
+                    remarks.classList.add('is-invalid');
+                    remarks.focus();
+                    return;
+                }
+                if (remarks) remarks.classList.remove('is-invalid');
                 showDoneRejected();
             });
 
+            remarks?.addEventListener('input', () => {
+                remarks.classList.remove('is-invalid');
+            });
+
             const focus = (params.get('focus') || '').toLowerCase();
-            if (focus === 'approve') remarks && (remarks.placeholder = 'Optional note — you opened this batch to approve.');
-            if (focus === 'reject') remarks && (remarks.placeholder = 'Please state reason for rejection…');
+            const actionTypeEl = el('eopAuthDetailActionType');
+            const pacFieldsWrapper = el('eopAuthPacFieldsWrapper');
+            const termsWrapper = el('eopAuthTermsWrapper');
+
+            if (focus === 'reject') {
+                if (actionTypeEl) actionTypeEl.textContent = 'Reject Contribution';
+                const approveBtn = el('eopAuthDetailBtnApprove');
+                if (approveBtn) approveBtn.style.display = 'none';
+                const rejectBtn = el('eopAuthDetailBtnReject');
+                if (rejectBtn) rejectBtn.style.display = 'inline-block';
+                if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'none';
+                if (termsWrapper) termsWrapper.style.display = 'none';
+                if (remarks) {
+                    remarks.placeholder = 'Please state reason for rejection (Required)...';
+                    remarks.required = true;
+                }
+            } else {
+                // Default or approve
+                if (actionTypeEl) actionTypeEl.textContent = 'Approve Contribution';
+                const rejectBtn = el('eopAuthDetailBtnReject');
+                if (rejectBtn) rejectBtn.style.display = 'none';
+                const approveBtn = el('eopAuthDetailBtnApprove');
+                if (approveBtn) approveBtn.style.display = 'inline-block';
+                if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'block';
+                if (termsWrapper) termsWrapper.style.display = 'block';
+                if (remarks) {
+                    remarks.placeholder = 'Optional note — you opened this batch to approve.';
+                }
+            }
         });
     </script>
 </body>

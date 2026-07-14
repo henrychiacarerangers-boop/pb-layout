@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Mutual Design System Library</title>
+    <link href="PMO corporate/css/montserrat.css" rel="stylesheet">
+    <link rel="stylesheet" href="PMO corporate/css/iconoir.css">
+    <style>
+        :root {
+            /* Canonical tokens aligned to PMO corporate/css/styles.css */
+            --brand-primary: #ff1700;
+            --brand-primary-hover: #ac1117;
+            --brand-navy: #002e77;
+            --accent-primary: #002e77;
+            --action-primary: #002e77;
+            --interactive-hover: #5d678e;
+            --bg-container: #FCFCFC;
+            --bg-main: #f8fafc;
+            --ui-support: #8e9ab0;
+            --text-primary: #16161a;
+            --text-secondary: #48484b;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-pill: 50rem;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.04);
+            --border-light: 1px solid rgba(0, 0, 0, 0.04);
+
+            /* Documentation-only supporting tokens */
+            --surface: #ffffff;
+            --surface-soft: #f7f8fc;
+            --surface-muted: #f1f5f9;
+            --line: rgba(22, 22, 26, 0.09);
+            --success: #12a833;
+            --success-soft: #e6ffea;
+            --warning: #ce7226;
+            --warning-soft: #fff5eb;
+            --danger-soft: #fee7e7;
+            --navy-soft: #f0f1f9;
+            --text-muted: #5f6678;
+            --showcase-radius: 24px;
+            --showcase-shadow: 0 18px 50px rgba(20, 22, 41, 0.10);
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            color: var(--text-primary);
+            background:
+                linear-gradient(90deg, rgba(38, 36, 123, 0.045) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(38, 36, 123, 0.045) 1px, transparent 1px),
+                #f5f6fb;
+            background-size: 28px 28px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .app-shell {
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            padding: 28px 18px;
+            color: #ffffff;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(237, 28, 36, 0.48), transparent 32%),
+                linear-gradient(160deg, #12142b 0%, #002e77 58%, #171838 100%);
+            overflow-y: auto;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 8px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--brand-primary);
+            font-weight: 800;
+            box-shadow: 0 14px 28px rgba(237, 28, 36, 0.24);
+        }
+
+        .brand-lockup strong {
+            display: block;
+            font-size: 0.86rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .brand-lockup span {
+            display: block;
+            margin-top: 3px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.72rem;
+        }
+
+        .nav-list {
+            display: grid;
+            gap: 5px;
+            margin-top: 26px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 38px;
+            padding: 9px 10px;
+            border-radius: var(--radius-sm);
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 700;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.is-active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(2px);
+        }
+
+        .nav-link i {
+            font-size: 1rem;
+        }
+
+        main {
+            min-width: 0;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 52px 56px 38px;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(20, 22, 41, 0.92), rgba(38, 36, 123, 0.86)),
+                url("PMO corporate/images/landing-bg.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -120px;
+            bottom: -160px;
+            width: 560px;
+            height: 320px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 50%;
+            transform: rotate(-10deg);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 11px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 999px;
+            color: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+            margin: 22px 0 14px;
+            font-size: clamp(2.2rem, 5vw, 5.2rem);
+            line-height: 0.96;
+            letter-spacing: 0;
+        }
+
+        .hero p {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .hero-metrics {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .metric {
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.38rem;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .content {
+            padding: 34px 56px 80px;
+        }
+
+        section {
+            scroll-margin-top: 24px;
+            margin-top: 34px;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .section-kicker {
+            margin: 0 0 7px;
+            color: var(--brand-primary);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: clamp(1.48rem, 2.6vw, 2.5rem);
+            letter-spacing: 0;
+        }
+
+        .section-note {
+            max-width: 620px;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .panel {
+            border: 1px solid var(--line);
+            border-radius: var(--showcase-radius);
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .panel-pad {
+            padding: 24px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid.four {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .token-card,
+        .component-card,
+        .pattern-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: var(--surface);
+            padding: 18px;
+            transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+        }
+
+        .token-card:hover,
+        .component-card:hover,
+        .pattern-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(38, 36, 123, 0.18);
+            box-shadow: var(--showcase-shadow);
+        }
+
+        .swatch {
+            width: 100%;
+            height: 86px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            margin-bottom: 14px;
+        }
+
+        .token-card h3,
+        .component-card h3,
+        .pattern-card h3 {
+            margin: 0 0 8px;
+            font-size: 0.98rem;
+            color: var(--text-primary);
+        }
+
+        .token-card code,
+        .component-card code {
+            display: inline-flex;
+            max-width: 100%;
+            padding: 4px 7px;
+            border-radius: 6px;
+            color: var(--brand-navy);
+            background: #f0f1f9;
+            font-size: 0.72rem;
+            font-weight: 700;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
+        .token-card p,
+        .component-card p,
+        .pattern-card p {
+            margin: 10px 0 0;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            font-size: 0.8rem;
+        }
+
+        .spec-table th {
+            padding: 14px 16px;
+            color: var(--ui-support);
+            background: #f8fafc;
+            text-align: left;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+        }
+
+        .spec-table td {
+            padding: 14px 16px;
+            border-top: 1px solid var(--line);
+            color: var(--text-primary);
+            vertical-align: top;
+        }
+
+        .spec-table code {
+            color: var(--brand-navy);
+            font-weight: 800;
+        }
+
+        .component-preview {
+            display: grid;
+            gap: 14px;
+            padding: 18px;
+            border-radius: var(--radius-md);
+            background:
+                radial-gradient(circle, rgba(38, 36, 123, 0.06) 1px, transparent 1px),
+                #f8fafc;
+            background-size: 20px 20px;
+            margin-bottom: 16px;
+        }
+
+        .preview-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 40px;
+            padding: 9px 16px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:focus-visible,
+        .nav-link:focus-visible,
+        .input:focus-visible,
+        .tab-btn:focus-visible,
+        .source-link:focus-visible {
+            outline: 3px solid rgba(66, 63, 187, 0.28);
+            outline-offset: 3px;
+        }
+
+        .btn[disabled],
+        .btn.is-disabled {
+            opacity: 0.48;
+            pointer-events: none;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .btn-red {
+            color: #ffffff;
+            background: var(--brand-primary);
+            box-shadow: 0 10px 24px rgba(237, 28, 36, 0.22);
+        }
+
+        .btn-navy {
+            color: #ffffff;
+            background: var(--brand-navy);
+            box-shadow: 0 10px 24px rgba(38, 36, 123, 0.20);
+        }
+
+        .btn-outline {
+            color: var(--brand-navy);
+            border-color: rgba(38, 36, 123, 0.25);
+            background: #ffffff;
+        }
+
+        .btn-ghost {
+            color: var(--text-muted);
+            background: #f2f4f8;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            min-height: 28px;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .chip.red {
+            color: var(--brand-primary);
+            border-color: rgba(237, 28, 36, 0.35);
+            background: #fee7e7;
+        }
+
+        .chip.green {
+            color: #0b7e24;
+            border-color: rgba(18, 168, 51, 0.35);
+            background: #e6ffea;
+        }
+
+        .chip.amber {
+            color: #8a4a13;
+            border-color: rgba(206, 114, 38, 0.35);
+            background: #fff5eb;
+        }
+
+        .chip.gray {
+            color: #64748b;
+            border-color: rgba(100, 116, 139, 0.25);
+            background: #f1f5f9;
+        }
+
+        .form-demo {
+            display: grid;
+            gap: 10px;
+            max-width: 420px;
+        }
+
+        .input {
+            width: 100%;
+            height: 44px;
+            padding: 0 12px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-sm);
+            background: #ffffff;
+            font-family: inherit;
+            font-size: 0.82rem;
+        }
+
+        .input:focus {
+            outline: 0;
+            border-color: var(--action-primary);
+            box-shadow: 0 0 0 3px rgba(66, 63, 187, 0.10);
+        }
+
+        .input-label {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .mini-card {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mini-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+            font-size: 1.25rem;
+        }
+
+        .mini-card span {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .tabs-demo {
+            display: flex;
+            gap: 4px;
+            padding: 4px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #f1f3f5;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-height: 38px;
+            padding: 8px;
+            border-radius: 8px;
+            color: #495057;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .tab-btn.active {
+            color: var(--brand-navy);
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stepper {
+            display: grid;
+            grid-template-columns: 58px 1fr 58px 1fr 58px;
+            align-items: center;
+            max-width: 420px;
+        }
+
+        .step {
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: #ffffff;
+            background: var(--brand-navy);
+            font-weight: 800;
+        }
+
+        .step.muted {
+            color: #adb5bd;
+            background: #e9ecef;
+        }
+
+        .step-line {
+            height: 2px;
+            background: var(--brand-navy);
+        }
+
+        .step-line.muted {
+            background: #e9ecef;
+        }
+
+        .preview-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .preview-table th,
+        .preview-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.74rem;
+            text-align: left;
+        }
+
+        .preview-table th {
+            color: var(--ui-support);
+            background: #f8fafc;
+            font-weight: 800;
+        }
+
+        .preview-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .state-grid {
+            display: grid;
+            grid-template-columns: 180px repeat(5, minmax(120px, 1fr));
+            gap: 1px;
+            overflow-x: auto;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: var(--line);
+        }
+
+        .state-cell {
+            min-height: 74px;
+            padding: 14px;
+            background: var(--surface);
+            font-size: 0.74rem;
+        }
+
+        .state-cell.header {
+            color: var(--ui-support);
+            background: var(--bg-main);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .state-cell.component {
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .state-cell span {
+            display: block;
+            margin-top: 7px;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .state-cell code {
+            display: inline-flex;
+            margin: 2px 3px 0 0;
+            padding: 3px 6px;
+            border-radius: 6px;
+            color: var(--brand-navy);
+            background: var(--navy-soft);
+            font-size: 0.68rem;
+            font-weight: 800;
+            overflow-wrap: anywhere;
+        }
+
+        .source-link {
+            color: var(--brand-navy);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .source-link:hover {
+            color: var(--brand-primary);
+            text-decoration: underline;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+
+        .pattern-card {
+            display: grid;
+            gap: 14px;
+        }
+
+        .pattern-icon {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            color: var(--brand-primary);
+            background: #fff0f0;
+            font-size: 1.4rem;
+        }
+
+        .library-map {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .map-column {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: #ffffff;
+            padding: 18px;
+        }
+
+        .map-column h3 {
+            margin: 0 0 12px;
+            color: var(--text-primary);
+            font-size: 0.92rem;
+        }
+
+        .map-list {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .map-list li {
+            padding: 9px 10px;
+            border-radius: 8px;
+            color: var(--text-muted);
+            background: #f8fafc;
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+        .callout {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 20px;
+            border: 1px solid rgba(237, 28, 36, 0.14);
+            border-radius: var(--showcase-radius);
+            background: linear-gradient(135deg, #fff5f5, #ffffff);
+        }
+
+        .callout i {
+            color: var(--brand-primary);
+            font-size: 1.6rem;
+        }
+
+        .callout strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        .callout p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.86rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1100px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                height: auto;
+                padding: 18px;
+            }
+
+            .nav-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .hero,
+            .content {
+                padding-left: 26px;
+                padding-right: 26px;
+            }
+
+            .hero-metrics,
+            .grid.four,
+            .grid.three,
+            .library-map {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+
+            .nav-list,
+            .hero-metrics,
+            .grid.two,
+            .grid.three,
+            .grid.four,
+            .library-map {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 34px;
+            }
+
+            .section-head {
+                display: grid;
+            }
+
+            .panel-pad {
+                padding: 18px;
+            }
+
+            .stepper {
+                grid-template-columns: 46px 1fr 46px 1fr 46px;
+            }
+
+            .step {
+                width: 42px;
+                height: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand-lockup">
+                <div class="brand-mark">PM</div>
+                <div>
+                    <strong>Design System</strong>
+                    <span>Public Mutual Corporate Portal</span>
+                </div>
+            </div>
+            <nav class="nav-list" aria-label="Design system sections">
+                <a class="nav-link is-active" href="#overview" aria-current="page"><i class="iconoir-home"
+                        aria-hidden="true"></i> Overview</a>
+                <a class="nav-link" href="#foundations"><i class="iconoir-palette" aria-hidden="true"></i>
+                    Foundations</a>
+                <a class="nav-link" href="#tokens"><i class="iconoir-color-picker" aria-hidden="true"></i> Tokens</a>
+                <a class="nav-link" href="#components"><i class="iconoir-app-window" aria-hidden="true"></i>
+                    Components</a>
+                <a class="nav-link" href="#previews"><i class="iconoir-design-pencil" aria-hidden="true"></i>
+                    Previews</a>
+                <a class="nav-link" href="#site-audit"><i class="iconoir-search" aria-hidden="true"></i> Site Audit</a>
+                <a class="nav-link" href="#patterns"><i class="iconoir-layout-left" aria-hidden="true"></i> Patterns</a>
+                <a class="nav-link" href="#governance"><i class="iconoir-check-circle" aria-hidden="true"></i>
+                    Governance</a>
+                <a class="nav-link" href="#source"><i class="iconoir-code" aria-hidden="true"></i> Source Map</a>
+            </nav>
+        </aside>
+
+        <main>
+            <header class="hero" id="overview">
+                <span class="eyebrow"><i class="iconoir-sparks" aria-hidden="true"></i> Design System 101</span>
+                <h1>Public Mutual Corporate Portal component library</h1>
+                <p>
+                    A complete visual inventory of the current website system: foundations, reusable UI components,
+                    page patterns, and practical rules for turning the prototype into a maintainable design library.
+                </p>
+                <div class="hero-metrics" aria-label="Library summary">
+                    <div class="metric">
+                        <strong>4</strong>
+                        <span>Related website shells</span>
+                    </div>
+                    <div class="metric">
+                        <strong>10+</strong>
+                        <span>Foundation token groups</span>
+                    </div>
+                    <div class="metric">
+                        <strong>50+</strong>
+                        <span>Reusable component classes</span>
+                    </div>
+                    <div class="metric">
+                        <strong>6</strong>
+                        <span>Core page patterns</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <section id="foundations">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Foundations</p>
+                            <h2>The visual language</h2>
+                        </div>
+                        <p class="section-note">
+                            The website family shares one clear product feel: Montserrat typography, red and navy brand
+                            contrast, soft enterprise surfaces, and finance-inspired depth.
+                        </p>
+                    </div>
+                    <div class="grid four">
+                        <article class="component-card">
+                            <h3>Typography</h3>
+                            <code>Montserrat</code>
+                            <p>Geometric sans-serif for headings, compact metadata, labels, and operational UI.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Color</h3>
+                            <code>red + navy + support gray</code>
+                            <p>Red carries urgency and primary action. Navy anchors structure and trust.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Surface</h3>
+                            <code>white cards + soft shadow</code>
+                            <p>Most content is grouped through clean cards, subtle borders, and restrained elevation.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Motion</h3>
+                            <code>hover lift + soft transitions</code>
+                            <p>Interactions are quiet: tab movement, card lift, carousel fade, toast entry, and ticker
+                                flow.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="tokens">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Tokens</p>
+                            <h2>Color, radius, shadow, spacing</h2>
+                        </div>
+                        <p class="section-note">
+                            These are the recurring values found across <code>PMO</code>, <code>PMO corporate</code>,
+                            <code>UTC</code>, and the public
+                            corporate website.
+                        </p>
+                    </div>
+                    <div class="grid four">
+                        <article class="token-card">
+                            <div class="swatch" style="background:var(--brand-primary)"></div>
+                            <h3>Brand Primary</h3>
+                            <code>#ff1700</code>
+                            <p>Primary CTA, danger, urgent approvals, notification badges.</p>
+                        </article>
+                        <article class="token-card">
+                            <div class="swatch" style="background:var(--brand-navy)"></div>
+                            <h3>Brand Navy</h3>
+                            <code>#002e77</code>
+                            <p>Structural navigation, dark buttons, headings, active states.</p>
+                        </article>
+                        <article class="token-card">
+                            <div class="swatch" style="background:var(--action-primary)"></div>
+                            <h3>Action Primary</h3>
+                            <code>#002e77</code>
+                            <p>Interactive focus states and Bootstrap primary overrides.</p>
+                        </article>
+                        <article class="token-card">
+                            <div class="swatch" style="background:var(--ui-support)"></div>
+                            <h3>UI Support</h3>
+                            <code>#8e9ab0</code>
+                            <p>Muted labels, helper text, table headers, secondary information.</p>
+                        </article>
+                    </div>
+
+                    <div class="panel" style="margin-top:16px">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Token / Value</th>
+                                    <th>Current usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Radius</td>
+                                    <td><code>8px, 16px, 50rem</code></td>
+                                    <td>Inputs, cards, badges, CTA pills, tab controls.</td>
+                                </tr>
+                                <tr>
+                                    <td>Shadow</td>
+                                    <td><code>0 4px 12px</code>, <code>0 8px 24px</code>, <code>0 15px 45px</code></td>
+                                    <td>Standard cards, premium cards, login panels, dropdowns.</td>
+                                </tr>
+                                <tr>
+                                    <td>Spacing</td>
+                                    <td><code>20px, 24px, 30px, 40px, 60px</code></td>
+                                    <td>Card padding, section rhythm, dashboard grids, registration layouts.</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td><code>#12a833</code>, <code>#ce7226</code>, <code>#ff1700</code></td>
+                                    <td>Success, warning, failed, pending, risk, authorisation feedback.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel" style="margin-top:16px">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Typography token</th>
+                                    <th>Value</th>
+                                    <th>Maps from current usage</th>
+                                    <th>Use for</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--type-display</code></td>
+                                    <td><code>2.3rem</code></td>
+                                    <td>Current login hero headings</td>
+                                    <td>Large first-viewport portal headlines only</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-title</code></td>
+                                    <td><code>1.4rem</code></td>
+                                    <td>Registration / legal page headings</td>
+                                    <td>Card titles and form flow headings</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-section</code></td>
+                                    <td><code>1.1rem</code></td>
+                                    <td>Dashboard card heading overrides</td>
+                                    <td>Panel titles, table section headers</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-body</code></td>
+                                    <td><code>1rem</code></td>
+                                    <td>Default browser body and inline page copy</td>
+                                    <td>Normal paragraph and form body copy</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-body-sm</code></td>
+                                    <td><code>0.875rem</code></td>
+                                    <td>Current <code>0.85rem</code>, <code>0.875rem</code>, <code>0.9rem</code></td>
+                                    <td>Secondary body, helper paragraphs, nav labels</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-caption</code></td>
+                                    <td><code>0.8rem</code></td>
+                                    <td>Current <code>fs-8</code> and most dashboard labels</td>
+                                    <td>Table cells, compact labels, small controls</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-meta</code></td>
+                                    <td><code>0.72rem</code></td>
+                                    <td>Current <code>0.7rem</code>, <code>0.72rem</code>, <code>fs-9</code></td>
+                                    <td>Metadata, timestamps, legal footnotes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--type-micro</code></td>
+                                    <td><code>0.6rem</code></td>
+                                    <td>Current <code>fs-10</code></td>
+                                    <td>Badges only; avoid for long readable text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="components">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Component Library</p>
+                            <h2>Reusable UI inventory</h2>
+                        </div>
+                        <p class="section-note">
+                            These components already exist in the website through Bootstrap overrides and custom
+                            classes. They should become the formal source library.
+                        </p>
+                    </div>
+                    <div class="grid three">
+                        <article class="component-card">
+                            <h3>Navigation</h3>
+                            <code>.top-nav .dashboard-tabs .view-tab</code>
+                            <p>Top utility bars, portal pills, dashboard tabs, segmented controls, offcanvas menus.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Buttons</h3>
+                            <code>.btn-danger .btn-navy .btn-hero-cta</code>
+                            <p>Primary CTAs, secondary outline actions, legal acceptance buttons, circular back button.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Forms</h3>
+                            <code>.form-control .pac-group .custom-checkbox</code>
+                            <p>Login, registration, PAC verification, legal acknowledgement, security verification.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Cards</h3>
+                            <code>.card .inline-login-card .fund-card</code>
+                            <p>Base surfaces, login cards, legal cards, fund cards, insight cards, solution glass cards.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Status</h3>
+                            <code>.badge-alert .status-badge .risk-med</code>
+                            <p>Pending approval banners, success / failed chips, risk badges, scroller labels.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Tables</h3>
+                            <code>.custom-table .mini-table .table-action-btn</code>
+                            <p>Transaction listings, compact fund tables, detail rows, hover states, row actions.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Data Display</h3>
+                            <code>.stat-box .amount-value .legend-item</code>
+                            <p>KPI tiles, masked amounts, financial label-value pairs, chart legends.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Feedback</h3>
+                            <code>.sms-toast .alert-banner .security-popover-box</code>
+                            <p>Maintenance banners, inline alerts, security popovers, validation feedback, SMS toast.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Process</h3>
+                            <code>.stepper-container .step .step-line</code>
+                            <p>Registration and gated workflows using step circles, active states, and completion lines.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Marketing</h3>
+                            <code>.hero-section .ticker-section .solution-glass-card</code>
+                            <p>Hero carousel, promotion blocks, market ticker, showcase icon wrappers, device mockups.
+                            </p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Analytics</h3>
+                            <code>.chart-container-mock .chart-tab-mock-btn</code>
+                            <p>Chart shells, tabbed ranges, SVG graph area, mock bars, financial visual summaries.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Backgrounds</h3>
+                            <code>.bg-fin-dot-grid .bg-fin-hero-panel</code>
+                            <p>Dot grids, trend lines, topographic waves, security circuits, candlestick watermarks.</p>
+                        </article>
+                    </div>
+
+                    <div class="panel" style="margin-top:16px">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Variants</th>
+                                    <th>Required states</th>
+                                    <th>Accessibility</th>
+                                    <th>Source class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Button</td>
+                                    <td>Primary, danger, navy, outline, ghost, circular</td>
+                                    <td>Default, hover, focus, active, disabled, loading</td>
+                                    <td>Use real <code>button</code> for actions; visible <code>:focus-visible</code>.
+                                    </td>
+                                    <td><code>.btn-danger</code>, <code>.btn-navy</code>, <code>.btn-back-circle</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Input</td>
+                                    <td>Text, grouped, PAC, checkbox, readonly</td>
+                                    <td>Default, focus, disabled, error, success, helper text</td>
+                                    <td>Every field needs a visible label or <code>aria-label</code>.</td>
+                                    <td><code>.form-control</code>, <code>.input-group-text</code>,
+                                        <code>.pac-group</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Badge</td>
+                                    <td>Solid, outline, status, risk, notification</td>
+                                    <td>Info, success, warning, failed, muted</td>
+                                    <td>Do not rely on color alone; include readable text.</td>
+                                    <td><code>.badge-alert</code>, <code>.status-badge</code>,
+                                        <code>.fund-risk-badge</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Table</td>
+                                    <td>Standard, compact, detail, action table</td>
+                                    <td>Default, hover, selected, empty, loading, error</td>
+                                    <td>Use table headers, focusable row actions, and readable empty states.</td>
+                                    <td><code>.custom-table</code>, <code>.mini-table</code>,
+                                        <code>.table-action-btn</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tabs</td>
+                                    <td>Dashboard, view, gateway, explorer, chart range</td>
+                                    <td>Default, hover, active, focus, disabled</td>
+                                    <td>Use <code>aria-current</code> for page nav or tab roles for panel switching.
+                                    </td>
+                                    <td><code>.dashboard-tabs</code>, <code>.view-tab</code>,
+                                        <code>.gateway-tab-btn</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="previews">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Previews</p>
+                            <h2>Component examples</h2>
+                        </div>
+                        <p class="section-note">
+                            A quick visual board for the core component styles: actions, badges, tabs, forms, cards,
+                            table rows, and process controls.
+                        </p>
+                    </div>
+                    <div class="grid two">
+                        <div class="panel panel-pad">
+                            <div class="component-preview">
+                                <div class="preview-row">
+                                    <button class="btn btn-red" type="button"><i class="iconoir-check"
+                                            aria-hidden="true"></i> Approve Now</button>
+                                    <button class="btn btn-navy" type="button"><i class="iconoir-plus-circle"
+                                            aria-hidden="true"></i> Top Up</button>
+                                    <button class="btn btn-outline" type="button"><i class="iconoir-arrow-left"
+                                            aria-hidden="true"></i> Back</button>
+                                    <button class="btn btn-ghost" type="button">Clear</button>
+                                    <button class="btn btn-red" type="button" disabled>Loading</button>
+                                </div>
+                                <div class="preview-row">
+                                    <span class="chip red">Pending</span>
+                                    <span class="chip green">Approved</span>
+                                    <span class="chip amber">Risk Level 3</span>
+                                    <span class="chip gray">Draft</span>
+                                </div>
+                            </div>
+                            <h3 style="margin:0 0 8px">Buttons and Status</h3>
+                            <p class="section-note">Pill buttons and compact badges carry most action and state meaning.
+                            </p>
+                        </div>
+
+                        <div class="panel panel-pad">
+                            <div class="component-preview">
+                                <div class="form-demo">
+                                    <label class="input-label" for="demo-user">Corporate User ID</label>
+                                    <input class="input" id="demo-user" value="PMO-CORP-001" readonly>
+                                    <label class="input-label" for="demo-pac">PAC Verification</label>
+                                    <input class="input" id="demo-pac" value="Request PAC" readonly>
+                                </div>
+                            </div>
+                            <h3 style="margin:0 0 8px">Inputs</h3>
+                            <p class="section-note">Inputs use 8px radius, clean borders, and blue focus rings.</p>
+                        </div>
+
+                        <div class="panel panel-pad">
+                            <div class="component-preview">
+                                <div class="grid three">
+                                    <div class="mini-card">
+                                        <strong>MYR 241k</strong>
+                                        <span>Portfolio Holdings</span>
+                                    </div>
+                                    <div class="mini-card">
+                                        <strong>128</strong>
+                                        <span>Total Employees</span>
+                                    </div>
+                                    <div class="mini-card">
+                                        <strong>5</strong>
+                                        <span>Pending Approval</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 style="margin:0 0 8px">KPI Cards</h3>
+                            <p class="section-note">Dashboard metrics sit inside small cards with direct labels.</p>
+                        </div>
+
+                        <div class="panel panel-pad">
+                            <div class="component-preview">
+                                <div class="tabs-demo">
+                                    <span class="tab-btn active">Dashboard</span>
+                                    <span class="tab-btn">Authorise</span>
+                                    <span class="tab-btn">Statements</span>
+                                </div>
+                                <div class="stepper">
+                                    <span class="step">1</span>
+                                    <span class="step-line"></span>
+                                    <span class="step">2</span>
+                                    <span class="step-line muted"></span>
+                                    <span class="step muted">3</span>
+                                </div>
+                            </div>
+                            <h3 style="margin:0 0 8px">Tabs and Stepper</h3>
+                            <p class="section-note">Segmented controls and onboarding steps share a compact rhythm.</p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-pad" style="margin-top:16px">
+                        <div class="component-preview">
+                            <table class="preview-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>UT-2026-0008</td>
+                                        <td>Top Up</td>
+                                        <td><span class="chip red">Pending</span></td>
+                                        <td>MYR 42,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EOP-2026-0102</td>
+                                        <td>Contribution</td>
+                                        <td><span class="chip green">Approved</span></td>
+                                        <td>MYR 100,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 style="margin:0 0 8px">Table Pattern</h3>
+                        <p class="section-note">Tables use muted headers, compact cells, status chips, and row actions
+                            for transaction-heavy workflows.</p>
+                    </div>
+
+                    <div class="panel panel-pad" style="margin-top:16px">
+                        <h3 style="margin:0 0 12px">Core State Matrix</h3>
+                        <div class="state-grid" role="table" aria-label="Core component state matrix">
+                            <div class="state-cell header" role="columnheader">Component</div>
+                            <div class="state-cell header" role="columnheader">Default</div>
+                            <div class="state-cell header" role="columnheader">Hover</div>
+                            <div class="state-cell header" role="columnheader">Focus</div>
+                            <div class="state-cell header" role="columnheader">Disabled</div>
+                            <div class="state-cell header" role="columnheader">Loading / Error</div>
+
+                            <div class="state-cell component" role="rowheader">Button<span><code>.btn-danger</code>,
+                                    <code>.btn-navy</code>, <code>.btn-outline-navy</code></span></div>
+                            <div class="state-cell">Solid or outline pill<span>Clear hierarchy between primary and
+                                    secondary actions.</span></div>
+                            <div class="state-cell">Lift + darker tone<span>Use transform only for non-critical
+                                    motion.</span></div>
+                            <div class="state-cell">Visible ring<span>Use <code>:focus-visible</code> with
+                                    action-primary ring.</span></div>
+                            <div class="state-cell">Reduced opacity<span>Keep label visible, no hover movement.</span>
+                            </div>
+                            <div class="state-cell">Spinner + label<span>Preserve button width to avoid layout
+                                    shift.</span></div>
+
+                            <div class="state-cell component" role="rowheader">Input<span><code>.form-control</code>,
+                                    <code>.input-group-text</code></span></div>
+                            <div class="state-cell">White field<span>8px radius, subtle border.</span></div>
+                            <div class="state-cell">Border emphasis<span>Optional for grouped inputs.</span></div>
+                            <div class="state-cell">Blue focus ring<span>Must include label or aria-label.</span></div>
+                            <div class="state-cell">Muted field<span>Keep helper text readable.</span></div>
+                            <div class="state-cell">Error border<span>Pair red border with text, not color alone.</span>
+                            </div>
+
+                            <div class="state-cell component" role="rowheader">Badge<span><code>.badge-alert</code>,
+                                    <code>.status-badge</code></span></div>
+                            <div class="state-cell">Solid or outline<span>Use semantic color by workflow status.</span>
+                            </div>
+                            <div class="state-cell">No major motion<span>Badges should not compete with CTAs.</span>
+                            </div>
+                            <div class="state-cell">Usually passive<span>Only focusable when it opens details.</span>
+                            </div>
+                            <div class="state-cell">Muted state<span>Use gray for draft / inactive.</span></div>
+                            <div class="state-cell">Failed / warning<span>Red for failed, amber for attention.</span>
+                            </div>
+
+                            <div class="state-cell component" role="rowheader">Table<span><code>.custom-table</code>,
+                                    <code>.table-action-btn</code></span></div>
+                            <div class="state-cell">Compact rows<span>Muted headers, dense body cells.</span></div>
+                            <div class="state-cell">Subtle row tint<span>Do not over-highlight financial data.</span>
+                            </div>
+                            <div class="state-cell">Row action focus<span>Keyboard users need visible action
+                                    focus.</span></div>
+                            <div class="state-cell">Disabled action<span>Keep reason visible in tooltip or label.</span>
+                            </div>
+                            <div class="state-cell">Empty / loading<span>Use skeleton or one clear empty row.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="site-audit">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Site Audit</p>
+                            <h2>Website compliance check</h2>
+                        </div>
+                        <p class="section-note">
+                            Scan result across 54 website HTML pages, excluding this design system page and hidden
+                            tooling templates. The main issue is not missing CSS; it is typography and color overrides
+                            being written directly inside page markup.
+                        </p>
+                    </div>
+
+                    <div class="grid four">
+                        <article class="mini-card">
+                            <strong>53 / 54</strong>
+                            <span>Pages load the main design CSS</span>
+                        </article>
+                        <article class="mini-card">
+                            <strong>42</strong>
+                            <span>Pages contain inline typography</span>
+                        </article>
+                        <article class="mini-card">
+                            <strong>54</strong>
+                            <span>Pages contain inline hardcoded colors</span>
+                        </article>
+                        <article class="mini-card">
+                            <strong>83</strong>
+                            <span>Average compliance score</span>
+                        </article>
+                    </div>
+
+                    <div class="panel" style="margin-top:16px">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Highest-risk page</th>
+                                    <th>Issue count</th>
+                                    <th>Typography drift found</th>
+                                    <th>Fix priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a class="source-link" href="UTC/index.html"><code>UTC/index.html</code></a>
+                                    </td>
+                                    <td>70 inline typography, 51 inline colors</td>
+                                    <td>15 separate inline font-size values including <code>0.5rem</code>,
+                                        <code>0.72rem</code>, <code>2.5rem</code>
+                                    </td>
+                                    <td><span class="chip red">P0</span></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link" href="PMO/index.html"><code>PMO/index.html</code></a>
+                                    </td>
+                                    <td>63 inline typography, 30 inline colors</td>
+                                    <td>17 separate inline font-size values including <code>0.6rem</code>,
+                                        <code>1.05rem</code>, <code>2.3rem</code>
+                                    </td>
+                                    <td><span class="chip red">P0</span></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/index.html"><code>PMO corporate/index.html</code></a>
+                                    </td>
+                                    <td>57 inline typography, 28 inline colors</td>
+                                    <td>16 separate inline font-size values, mostly login hero and gateway card
+                                        overrides</td>
+                                    <td><span class="chip red">P0</span></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="Corporate Website/landing.html"><code>Corporate Website/landing.html</code></a>
+                                    </td>
+                                    <td>31 inline typography, 11 inline colors</td>
+                                    <td>Marketing page mixes <code>fs-4</code>, <code>fs-5</code>, <code>fs-8</code>
+                                        with custom inline sizes</td>
+                                    <td><span class="chip amber">P1</span></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/hexabox_demo.html"><code>PMO corporate/hexabox_demo.html</code></a>
+                                    </td>
+                                    <td>Missing main design CSS, 25 inline colors</td>
+                                    <td>Uses Hexabox styling instead of the portal system</td>
+                                    <td><span class="chip amber">P1</span></td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/register.html"><code>PMO corporate/register.html</code></a>
+                                        / <a class="source-link"
+                                            href="PMO/register.html"><code>PMO/register.html</code></a></td>
+                                    <td>27 inline typography, 12 inline colors each</td>
+                                    <td>Registration typography is repeated in two shells and should be tokenized once
+                                    </td>
+                                    <td><span class="chip amber">P1</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel panel-pad" style="margin-top:16px">
+                        <h3 style="margin:0 0 12px">Typography Scale Problem</h3>
+                        <div class="state-grid" role="table" aria-label="Typography scale audit">
+                            <div class="state-cell header" role="columnheader">Finding</div>
+                            <div class="state-cell header" role="columnheader">Evidence</div>
+                            <div class="state-cell header" role="columnheader">Impact</div>
+                            <div class="state-cell header" role="columnheader">Fix</div>
+                            <div class="state-cell header" role="columnheader">Target token</div>
+                            <div class="state-cell header" role="columnheader">Priority</div>
+
+                            <div class="state-cell component" role="rowheader">Too many custom font sizes</div>
+                            <div class="state-cell">Inline sizes include <code>0.5rem</code>, <code>0.62rem</code>,
+                                <code>0.72rem</code>, <code>0.78rem</code>, <code>0.82rem</code>, <code>0.95rem</code>,
+                                <code>1.05rem</code>, <code>2.3rem</code>
+                            </div>
+                            <div class="state-cell">Pages feel visually related but not systemized.</div>
+                            <div class="state-cell">Map inline values to a fixed type scale.</div>
+                            <div class="state-cell"><code>--type-xs</code> to <code>--type-display</code></div>
+                            <div class="state-cell"><span class="chip red">P0</span></div>
+
+                            <div class="state-cell component" role="rowheader">Bootstrap fs scale is overused</div>
+                            <div class="state-cell"><code>fs-8</code> appears 1,666 times and <code>fs-9</code> appears
+                                935 times.</div>
+                            <div class="state-cell">Small text becomes the default instead of a deliberate caption
+                                style.</div>
+                            <div class="state-cell">Create semantic classes like <code>.text-caption</code>,
+                                <code>.text-meta</code>, <code>.text-table</code>.
+                            </div>
+                            <div class="state-cell"><code>--type-caption</code>, <code>--type-meta</code></div>
+                            <div class="state-cell"><span class="chip amber">P1</span></div>
+
+                            <div class="state-cell component" role="rowheader">CSS files duplicate scales</div>
+                            <div class="state-cell"><code>PMO/css/styles.css</code>,
+                                <code>PMO corporate/css/styles.css</code>, and <code>UTC/css/styles.css</code> each
+                                redefine many font sizes.
+                            </div>
+                            <div class="state-cell">Fixing one shell does not fix the other shells.</div>
+                            <div class="state-cell">Extract shared typography to a common token file.</div>
+                            <div class="state-cell"><code>design-tokens.css</code></div>
+                            <div class="state-cell"><span class="chip red">P0</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="patterns">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Page Patterns</p>
+                            <h2>Canonical templates</h2>
+                        </div>
+                        <p class="section-note">
+                            These are the repeated screen archetypes that should become Figma frames or development
+                            templates.
+                        </p>
+                    </div>
+                    <div class="grid three">
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-log-in"></i></div>
+                            <h3>Login Pattern</h3>
+                            <p>Header, hero panel, login card, support links, and utility footer.</p>
+                        </article>
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-user-plus"></i></div>
+                            <h3>Registration Pattern</h3>
+                            <p>Stepper, legal terms, validation, PAC input, and primary progression CTAs.</p>
+                        </article>
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-page"></i></div>
+                            <h3>Legal Pattern</h3>
+                            <p>Centered card, scrollable legal text, consent checkbox, agree and disagree actions.</p>
+                        </article>
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-dashboard-dots"></i></div>
+                            <h3>Dashboard Shell</h3>
+                            <p>Top nav, portal switcher, dark header, tabs, KPI cards, alerts, and data panels.</p>
+                        </article>
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-clipboard-check"></i></div>
+                            <h3>Authorisation Workspace</h3>
+                            <p>Filter sidebar, transaction table, status badges, row actions, and detail workflows.</p>
+                        </article>
+                        <article class="pattern-card">
+                            <div class="pattern-icon"><i class="iconoir-graph-up"></i></div>
+                            <h3>Analytics Pattern</h3>
+                            <p>Metric cards, risk badges, segmented ranges, chart containers, and summary tables.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="governance">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Governance</p>
+                            <h2>How to mature the system</h2>
+                        </div>
+                        <p class="section-note">
+                            The site already has a strong design language. The next step is consolidation: fewer names,
+                            clearer variants, and one token source of truth.
+                        </p>
+                    </div>
+                    <div class="callout">
+                        <i class="iconoir-light-bulb"></i>
+                        <div>
+                            <strong>Recommended next move</strong>
+                            <p>
+                                Merge duplicated CSS across <code>PMO</code>, <code>PMO corporate</code>,
+                                <code>UTC</code>, and <code>Corporate Website</code>. Then formalize repeated
+                                classes like <code>badge-alert</code>, <code>view-tab</code>,
+                                <code>gateway-tab-btn</code>, and <code>custom-table</code> as official library
+                                components.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="library-map" style="margin-top:16px">
+                        <div class="map-column">
+                            <h3>Foundation</h3>
+                            <ul class="map-list">
+                                <li>foundation/color</li>
+                                <li>foundation/typography</li>
+                                <li>foundation/spacing</li>
+                                <li>foundation/radius</li>
+                                <li>foundation/shadow</li>
+                            </ul>
+                        </div>
+                        <div class="map-column">
+                            <h3>Components</h3>
+                            <ul class="map-list">
+                                <li>components/button</li>
+                                <li>components/input</li>
+                                <li>components/card</li>
+                                <li>components/badge</li>
+                                <li>components/table</li>
+                                <li>components/tabs</li>
+                            </ul>
+                        </div>
+                        <div class="map-column">
+                            <h3>Patterns</h3>
+                            <ul class="map-list">
+                                <li>patterns/login</li>
+                                <li>patterns/register</li>
+                                <li>patterns/dashboard-shell</li>
+                                <li>patterns/authorisation-workspace</li>
+                                <li>patterns/analytics</li>
+                                <li>patterns/legal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="source">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Source Map</p>
+                            <h2>Files behind this library</h2>
+                        </div>
+                        <p class="section-note">
+                            These files contain the strongest examples of the current visual system and component
+                            structure.
+                        </p>
+                    </div>
+                    <div class="panel">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>File</th>
+                                    <th>Why it matters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/css/styles.css"><code>PMO corporate/css/styles.css</code></a>
+                                    </td>
+                                    <td>Global tokens, login shell, badges, cards, hero, marketing, and background
+                                        utilities.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/css/dashboard-styles.css"><code>PMO corporate/css/dashboard-styles.css</code></a>
+                                    </td>
+                                    <td>Dashboard shell, view tabs, tables, statuses, KPI and transaction styling.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="Corporate Website/css/styles.css"><code>Corporate Website/css/styles.css</code></a>
+                                    </td>
+                                    <td>Public website navigation, landing components, registration, and legal page
+                                        styles.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/index.html"><code>PMO corporate/index.html</code></a>
+                                    </td>
+                                    <td>Premium login composition and header navigation pattern.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/unit-trust/dashboard.html"><code>PMO corporate/unit-trust/dashboard.html</code></a>
+                                    </td>
+                                    <td>Unit Trust dashboard template and authoriser workflow entry points.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
+                                            href="PMO corporate/eop/dashboard.html"><code>PMO corporate/eop/dashboard.html</code></a>
+                                    </td>
+                                    <td>EOP dashboard template and employer workflow structure.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

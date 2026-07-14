@@ -10,7 +10,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ## 1. Color Palette Tokens (Strict Specification)
 
 ### Primary & Brand Colors
-- **Brand Red**: `#ed1c24`
+- **Brand Red**: `#ff1700`
   - *Primary use*: Primary CTA buttons, key action highlights, error/alert text banners, main header accents.
 - **Brand Navy**: `#000000`
   - *Primary use*: Base navbars, footer panels, branding elements, major structural container lines.
@@ -18,7 +18,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ### Support Colors & Gradients
 - **Dark Accent Navy/Purple**: `#373761`
   - *Primary use*: Standard heading text, dark theme elements, primary button outlines.
-- **Active Accent Blue**: `#423fbb`
+- **Active Accent Blue**: `#002e77`
   - *Primary use*: Focus outlines, active highlights, badges, tooltips.
 - **Subtle Slate Blue**: `#5d678e`
   - *Primary use*: Form labels, borders, subtle text cards, icons.
@@ -30,7 +30,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ### Semantic Intent Scales
 - **Success/Completed**: `#12a833`
 - **Warning/Pending**: `#ce7226`
-- **Error/Alert**: `#ed1c24`
+- **Error/Alert**: `#ff1700`
 
 ---
 
@@ -60,7 +60,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
   ```css
   transition: all 0.3s ease;
   ```
-- **Primary CTA**: Colored solid Brand Red (`#ed1c24`), hovering to `#c41219` with a subtle elevation shift:
+- **Primary CTA**: Colored solid Brand Red (`#ff1700`), hovering to `#c41219` with a subtle elevation shift:
   ```css
   .btn-primary:hover {
       background-color: #c41219;
@@ -75,7 +75,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 - **Focus glow**: Override default blue halos to a soft Brand Red overlay:
   ```css
   input:focus, select:focus {
-      border-color: #ed1c24 !important;
+      border-color: #ff1700 !important;
       box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
       outline: none;
   }

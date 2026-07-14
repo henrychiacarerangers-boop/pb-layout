@@ -13,15 +13,15 @@
     pointer-events: none !important;
 }
 
-/* Summary list: awaiting payment badge — brand red */
+/* Summary list: Pending payment badge — brand red */
 .eop-pending-pay-badge {
-    background-color: #ed1c24 !important;
+    background-color: #ff1700 !important;
     color: #ffffff !important;
 }
 
 .eop-last-contribution-badge {
     border-radius: var(--radius-md) !important;
-    background: linear-gradient(135deg, #26247b 0%, #423fbb 100%);
+    background: linear-gradient(135deg, #002e77 0%, #002e77 100%);
     color: #fff;
     /* Align with portal chrome (dashboard-styles .portal-sidebar-profile-card) */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
@@ -37,7 +37,7 @@
 }
 
 .eop-role-select:focus {
-    border-color: #ed1c24 !important;
+    border-color: #ff1700 !important;
     box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
     outline: none;
 }
@@ -55,8 +55,8 @@
 }
 
 .eop-quick-pill.active {
-    background-color: #ed1c24 !important;
-    border-color: #ed1c24 !important;
+    background-color: #ff1700 !important;
+    border-color: #ff1700 !important;
     color: #fff !important;
 }
 
@@ -72,7 +72,7 @@
 
 /* Upload contribution — drop zone + result */
 .eop-upload-dropzone.eop-upload-dropzone-active {
-    border-color: #ed1c24 !important;
+    border-color: #ff1700 !important;
     background: rgba(237, 28, 36, 0.06) !important;
 }
 
@@ -109,10 +109,10 @@
     font-weight: 400;
 }
 
-/* EOP transaction enquiry — filter sidebar (unit-trust-style) */
+/* EOP Transaction Enquiry — filter sidebar (unit-trust-style) */
 .eop-txn-filter-sidebar .form-check-input:checked {
-    background-color: var(--brand-navy, #26247b) !important;
-    border-color: var(--brand-navy, #26247b) !important;
+    background-color: var(--brand-navy, #002e77) !important;
+    border-color: var(--brand-navy, #002e77) !important;
 }
 
 .eop-txn-pending-banner {

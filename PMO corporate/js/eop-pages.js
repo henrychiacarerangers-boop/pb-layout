@@ -1,19 +1,19 @@
 /**
  * EOP inner pages — demo interactions. Scoped inside DOMContentLoaded.
  *
- * Schema type = Salary deduction | Employer contribution (batch / file category).
- * Contribution type = Salary Deduction (IND) for salary schema, or VSR / EMP / VSC per row for employer schema.
+ * Scheme type = Salary Deduction | Employer Contribution (batch / file category).
+ * Contribution type = Salary Deduction (IND) for salary scheme, or VSR / EMP / VSC per row for employer scheme.
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const EOP_SCHEMA_SALARY = 'Salary deduction';
-    const EOP_SCHEMA_EMPLOYER = 'Employer contribution';
+    const EOP_scheme_SALARY = 'Salary Deduction';
+    const EOP_scheme_EMPLOYER = 'Employer Contribution';
     const EOP_CONTRIB_SALARY_IND = 'Salary Deduction (IND)';
     const EOP_CONTRIB_EMPLOYER_MIXED =
-        'Mixed: Revolving Vesting (VSR), Immediate Vesting (EMP) & Straight Vesting (VSC)';
+        'Revolving Vesting (VSC)/Immediate Vesting (EMP)';
     const EOP_EMP_LABEL = {
-        VSR: 'Revolving Vesting (VSR)',
+        VSR: 'Revolving Vesting (VSC)',
         EMP: 'Immediate Vesting (EMP)',
-        VSC: 'Straight Vesting (VSC)',
+        VSC: 'Revolving Vesting (VSC)',
     };
     const btnDemoProcess = document.getElementById('eopDemoProcessBtn');
     const btnSpinner = document.getElementById('eopDemoBtnSpinner');
@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const panelEmployer = document.getElementById('eopMakePanelEmployer');
         const tbodySalary = document.getElementById('eopMakeSalaryTbody');
         const tbodyEmployer = document.getElementById('eopMakeEmployerTbody');
+        const tableSalary = document.getElementById('eopMakeTableSalary');
+        const tableEmployer = document.getElementById('eopMakeTableEmployer');
         const alertBox = document.getElementById('eopMakeImportAlert');
         const alertText = document.getElementById('eopMakeImportAlertText');
 
@@ -52,39 +54,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const SALARY_TYPE_DISPLAY = EOP_CONTRIB_SALARY_IND;
         const SALARY_TYPE_CSV = EOP_CONTRIB_SALARY_IND;
-        const SALARY_SCHEMA_DISPLAY = EOP_SCHEMA_SALARY;
-        const EMPLOYER_SCHEMA_DISPLAY = EOP_SCHEMA_EMPLOYER;
+        const SALARY_scheme_DISPLAY = EOP_scheme_SALARY;
+        const EMPLOYER_scheme_DISPLAY = EOP_scheme_EMPLOYER;
         const EMP_LABEL = EOP_EMP_LABEL;
         const VALID_FUNDS = new Set(['PRS-SR', 'PRS-EQF']);
 
         const DEFAULT_SALARY = [
-            { name: 'Siti Aminah bte Hassan', nric: '800101010001', fund: 'PRS-SR', amount: 350, isNew: false },
-            { name: 'Lee Wei Chen', nric: '800101010002', fund: 'PRS-EQF', amount: 420.5, isNew: false },
-            { name: 'Nor Haliza bte Rahman', nric: '800101010004', fund: 'PRS-SR', amount: 280, isNew: true },
-            { name: 'Wong Kah Lok', nric: '800101010005', fund: 'PRS-EQF', amount: 310, isNew: true },
-            { name: 'Sarah Tan Li Min', nric: '800101010006', fund: 'PRS-SR', amount: 195, isNew: true },
-            { name: 'Muhamad Iqbal bin Zulkifli', nric: '800101010007', fund: 'PRS-EQF', amount: 440, isNew: true },
+            { name: 'Siti Aminah bte Hassan', nric: '800101-01-0001', fund: 'PRS-SR', amount: 350, isNew: true },
+            { name: 'Lee Wei Chen', nric: '800101-01-0002', fund: 'PRS-EQF', amount: 420.5, isNew: true },
+            { name: 'Nor Haliza bte Rahman', nric: '800101-01-0004', fund: 'PRS-SR', amount: 280, isNew: true },
+            { name: 'Wong Kah Lok', nric: '800101-01-0005', fund: 'PRS-EQF', amount: 310, isNew: true },
+            { name: 'Sarah Tan Li Min', nric: '800101-01-0006', fund: 'PRS-SR', amount: 195, isNew: false },
+            { name: 'Muhamad Iqbal bin Zulkifli', nric: '800101-01-0007', fund: 'PRS-EQF', amount: 440, isNew: false },
         ];
         const DEFAULT_EMPLOYER = [
-            { name: 'Ahmad Razak bin Osman', nric: '800101010001', fund: 'PRS-SR', kind: 'VSR', amount: 200, isNew: false },
-            { name: 'Kumar A/L Rajendran', nric: '800101010003', fund: 'PRS-EQF', kind: 'EMP', amount: 150, isNew: false },
-            { name: 'Jessica Lim Pei Wen', nric: '800101010008', fund: 'PRS-SR', kind: 'EMP', amount: 320, isNew: true },
-            { name: 'Rajesh A/L Muthu', nric: '800101010009', fund: 'PRS-EQF', kind: 'VSC', amount: 275.5, isNew: true },
+            { name: 'Ahmad Razak bin Osman', nric: '80010-10-10001', fund: 'PRS-SR', kind: 'VSR', amount: 200, isNew: true },
+            { name: 'Kumar A/L Rajendran', nric: '80010-10-10003', fund: 'PRS-EQF', kind: 'EMP', amount: 150, isNew: true },
+            { name: 'Jessica Lim Pei Wen', nric: '800101-01-0008', fund: 'PRS-SR', kind: 'EMP', amount: 320, isNew: false },
+            { name: 'Rajesh A/L Muthu', nric: '800101-01-0009', fund: 'PRS-EQF', kind: 'VSC', amount: 275.5, isNew: false },
         ];
 
         let salaryRows = DEFAULT_SALARY.map((r) => ({ ...r }));
         let employerRows = DEFAULT_EMPLOYER.map((r) => ({ ...r }));
+
+        let salarySortCol = null;
+        let salarySortAsc = true;
+        let employerSortCol = null;
+        let employerSortAsc = true;
+
+        function sortData(rows, col, asc) {
+            return rows.sort((a, b) => {
+                let aVal = a[col];
+                let bVal = b[col];
+                if (typeof aVal === 'string') {
+                    aVal = aVal.toLowerCase();
+                    bVal = bVal.toLowerCase();
+                }
+                if (aVal < bVal) return asc ? -1 : 1;
+                if (aVal > bVal) return asc ? 1 : -1;
+                return 0;
+            });
+        }
+
+        function updateHeaderIcons(table, activeCol, asc) {
+            if (!table) return;
+            table.querySelectorAll('.sortable-header').forEach((th) => {
+                const col = th.getAttribute('data-column');
+                const icon = th.querySelector('.sort-icon');
+                if (!icon) return;
+                if (col === activeCol) {
+                    icon.classList.remove('d-none');
+                    if (asc) {
+                        icon.classList.remove('iconoir-nav-arrow-down');
+                        icon.classList.add('iconoir-nav-arrow-up');
+                    } else {
+                        icon.classList.remove('iconoir-nav-arrow-up');
+                        icon.classList.add('iconoir-nav-arrow-down');
+                    }
+                } else {
+                    icon.classList.add('d-none');
+                }
+            });
+        }
 
         const summarySalaryEl = document.getElementById('eopMakeSalarySummary');
         const summaryEmployerEl = document.getElementById('eopMakeEmployerSummary');
 
         function makeNewRowBadge(idx, prefix) {
             const span = document.createElement('span');
-            span.className = 'badge rounded-pill fs-10 fw-semibold';
+            span.className = 'badge rounded-pill fs-10 fw-semibold pmo-new-row-badge';
             span.id = `${prefix}${idx}`;
             span.setAttribute('role', 'status');
             span.textContent = 'New';
-            span.style.cssText = 'background-color:#fff3e0;color:#ce7226;border:1px solid #ce7226;';
             return span;
         }
 
@@ -92,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!summarySalaryEl) return;
             const total = salaryRows.length;
             const nNew = salaryRows.filter((r) => r.isNew).length;
-            let html = `<strong class="text-dark">${total}</strong> employees on file`;
+            let html = `<strong class="text-dark">${total}</strong> employees`;
             if (nNew) {
-                html += ` · <span class="text-muted">including ${nNew} new to this schedule</span>`;
+                html += ` · <span class="text-muted">Including ${nNew} (New)</span>`;
             }
             summarySalaryEl.innerHTML = html;
         }
@@ -103,9 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!summaryEmployerEl) return;
             const total = employerRows.length;
             const nNew = employerRows.filter((r) => r.isNew).length;
-            let html = `<strong class="text-dark">${total}</strong> employees on file`;
+            let html = `<strong class="text-dark">${total}</strong> employees`;
             if (nNew) {
-                html += ` · <span class="text-muted">including ${nNew} new to this schedule</span>`;
+                html += ` · <span class="text-muted">Including ${nNew} (New)</span>`;
             }
             summaryEmployerEl.innerHTML = html;
         }
@@ -145,12 +186,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 tdName.appendChild(nameWrap);
                 tr.appendChild(tdName);
-                [r.nric, r.fund, SALARY_SCHEMA_DISPLAY, SALARY_TYPE_DISPLAY].forEach((text) => {
-                    const td = document.createElement('td');
-                    td.className = 'py-3';
-                    td.textContent = text;
-                    tr.appendChild(td);
-                });
+                // NRIC
+                const tdNric = document.createElement('td');
+                tdNric.className = 'py-3 text-secondary font-monospace';
+                tdNric.textContent = r.nric;
+                tr.appendChild(tdNric);
+
+                // Fund
+                const tdFund = document.createElement('td');
+                tdFund.className = 'py-3';
+                const fundBadge = document.createElement('span');
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
+                fundBadge.textContent = r.fund;
+                tdFund.appendChild(fundBadge);
+                tr.appendChild(tdFund);
+
+                // Type
+                const tdType = document.createElement('td');
+                tdType.className = 'py-3 text-secondary';
+                tdType.textContent = SALARY_TYPE_DISPLAY;
+                tr.appendChild(tdType);
                 const tdAmt = document.createElement('td');
                 tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark';
                 tdAmt.textContent = fmtAmt(r.amount);
@@ -178,12 +233,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 tdName.appendChild(nameWrap);
                 tr.appendChild(tdName);
-                [r.nric, r.fund, EMPLOYER_SCHEMA_DISPLAY, EMP_LABEL[r.kind] || r.kind].forEach((text) => {
-                    const td = document.createElement('td');
-                    td.className = 'py-3';
-                    td.textContent = text;
-                    tr.appendChild(td);
-                });
+                // NRIC
+                const tdNric = document.createElement('td');
+                tdNric.className = 'py-3 text-secondary font-monospace';
+                tdNric.textContent = r.nric;
+                tr.appendChild(tdNric);
+
+                // Fund
+                const tdFund = document.createElement('td');
+                tdFund.className = 'py-3';
+                const fundBadge = document.createElement('span');
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
+                fundBadge.textContent = r.fund;
+                tdFund.appendChild(fundBadge);
+                tr.appendChild(tdFund);
+
+                // Type
+                const tdType = document.createElement('td');
+                tdType.className = 'py-3 text-secondary';
+                tdType.textContent = EMP_LABEL[r.kind] || r.kind;
+                tr.appendChild(tdType);
                 const tdAmt = document.createElement('td');
                 tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark';
                 tdAmt.textContent = fmtAmt(r.amount);
@@ -236,22 +305,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function buildSalaryCsv() {
-            const header = ['Name', 'NRIC', 'FundName', 'SchemaType', 'ContributionType', 'Amount'];
+            const header = ['Name', 'NRIC', 'FundName', 'schemeType', 'ContributionType', 'Amount'];
             const lines = [header.join(',')];
             salaryRows.forEach((r) => {
                 lines.push(
-                    [r.name, r.nric, r.fund, SALARY_SCHEMA_DISPLAY, SALARY_TYPE_CSV, r.amount].map(csvEscape).join(',')
+                    [r.name, r.nric, r.fund, SALARY_scheme_DISPLAY, SALARY_TYPE_CSV, r.amount].map(csvEscape).join(',')
                 );
             });
             return lines.join('\r\n');
         }
 
         function buildEmployerCsv() {
-            const header = ['Name', 'NRIC', 'FundName', 'SchemaType', 'ContributionType', 'Amount'];
+            const header = ['Name', 'NRIC', 'FundName', 'schemeType', 'ContributionType', 'Amount'];
             const lines = [header.join(',')];
             employerRows.forEach((r) => {
                 lines.push(
-                    [r.name, r.nric, r.fund, EMPLOYER_SCHEMA_DISPLAY, r.kind, r.amount].map(csvEscape).join(',')
+                    [r.name, r.nric, r.fund, EMPLOYER_scheme_DISPLAY, r.kind, r.amount].map(csvEscape).join(',')
                 );
             });
             return lines.join('\r\n');
@@ -302,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (h === 'name') idx.name = i;
                 else if (h === 'nric' || h === 'nricno' || h === 'employeeic') idx.nric = i;
                 else if (h === 'fundname' || h === 'fund') idx.fund = i;
-                else if (h === 'schematype' || h === 'schema') idx.schema = i;
+                else if (h === 'schemetype' || h === 'scheme') idx.scheme = i;
                 else if (h === 'contributiontype' || h === 'type') idx.type = i;
                 else if (h === 'amount') idx.amount = i;
             });
@@ -329,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const map = headerMap(h);
             if (map.name === undefined || map.nric === undefined || map.fund === undefined || map.amount === undefined) {
                 return {
-                    error: 'Need columns: Name, NRIC, FundName, Amount, and ContributionType (Salary Deduction IND). Optional: SchemaType (Salary deduction).',
+                    error: 'Need columns: Name, NRIC, FundName, Amount, and ContributionType (Salary Deduction IND). Optional: schemeType (Salary Deduction).',
                 };
             }
             const next = [];
@@ -346,14 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!VALID_FUNDS.has(fund)) return { error: `Row ${li + 1}: Fund must be PRS-SR or PRS-EQF.` };
                 if (!validSalaryType(typeCell)) {
                     return {
-                        error: `Row ${li + 1}: Contribution type must be Salary Deduction IND (salary deduction).`,
+                        error: `Row ${li + 1}: Contribution type must be Salary Deduction IND (Salary Deduction).`,
                     };
                 }
-                if (map.schema !== undefined) {
-                    const sc = String(cols[map.schema] || '').toLowerCase();
+                if (map.scheme !== undefined) {
+                    const sc = String(cols[map.scheme] || '').toLowerCase();
                     if (!sc.includes('salary') || !sc.includes('deduction')) {
                         return {
-                            error: `Row ${li + 1}: Schema type must be "${EOP_SCHEMA_SALARY}" for salary deduction imports.`,
+                            error: `Row ${li + 1}: Scheme type must be "${EOP_scheme_SALARY}" for Salary Deduction imports.`,
                         };
                     }
                 }
@@ -370,7 +439,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const h = parseCsvLine(lines[0]);
             const map = headerMap(h);
             if (map.name === undefined || map.nric === undefined || map.fund === undefined || map.amount === undefined) {
-                return { error: 'Need columns: Name, NRIC, FundName, ContributionType (VSR, EMP, or VSC), Amount. Optional: SchemaType (Employer contribution).' };
+                return { error: 'Need columns: Name, NRIC, FundName, ContributionType (VSR, EMP, or VSC), Amount. Optional: schemeType (Employer Contribution).' };
             }
             if (map.type === undefined) {
                 return { error: 'ContributionType column required (use VSR, EMP, or VSC in CSV).' };
@@ -389,14 +458,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!VALID_FUNDS.has(fund)) return { error: `Row ${li + 1}: Fund must be PRS-SR or PRS-EQF.` };
                 if (!kind) {
                     return {
-                        error: `Row ${li + 1}: Contribution type must be VSR (Revolving), EMP (Immediate), or VSC (Straight vesting).`,
+                        error: `Row ${li + 1}: Contribution type must be VSR (Revolving Vesting VSC) or EMP (Immediate Vesting EMP).`,
                     };
                 }
-                if (map.schema !== undefined) {
-                    const sc = String(cols[map.schema] || '').toLowerCase();
+                if (map.scheme !== undefined) {
+                    const sc = String(cols[map.scheme] || '').toLowerCase();
                     if (!sc.includes('employer')) {
                         return {
-                            error: `Row ${li + 1}: Schema type must be "${EOP_SCHEMA_EMPLOYER}" for employer contribution imports.`,
+                            error: `Row ${li + 1}: Scheme type must be "${EOP_scheme_EMPLOYER}" for Employer Contribution imports.`,
                         };
                     }
                 }
@@ -436,9 +505,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     if (mode === 'salary') {
                         salaryRows = stamped;
+                        salarySortCol = null;
+                        updateHeaderIcons(tableSalary, null, true);
                         renderSalary();
                     } else {
                         employerRows = stamped;
+                        employerSortCol = null;
+                        updateHeaderIcons(tableEmployer, null, true);
                         renderEmployer();
                     }
                 };
@@ -456,9 +529,43 @@ document.addEventListener('DOMContentLoaded', () => {
         wireImport('eopMakeImportCsvSalary', 'salary');
         wireImport('eopMakeImportCsvEmployer', 'employer');
 
+        tableSalary?.querySelectorAll('.sortable-header').forEach((th) => {
+            th.addEventListener('click', () => {
+                const col = th.getAttribute('data-column');
+                if (salarySortCol === col) {
+                    salarySortAsc = !salarySortAsc;
+                } else {
+                    salarySortCol = col;
+                    salarySortAsc = true;
+                }
+                salaryRows = sortData(salaryRows, col, salarySortAsc);
+                renderSalary();
+                updateHeaderIcons(tableSalary, salarySortCol, salarySortAsc);
+            });
+        });
+
+        tableEmployer?.querySelectorAll('.sortable-header').forEach((th) => {
+            th.addEventListener('click', () => {
+                const col = th.getAttribute('data-column');
+                if (employerSortCol === col) {
+                    employerSortAsc = !employerSortAsc;
+                } else {
+                    employerSortCol = col;
+                    employerSortAsc = true;
+                }
+                employerRows = sortData(employerRows, col, employerSortAsc);
+                renderEmployer();
+                updateHeaderIcons(tableEmployer, employerSortCol, employerSortAsc);
+            });
+        });
+
         eopMakeResetTables = () => {
             salaryRows = DEFAULT_SALARY.map((r) => ({ ...r }));
             employerRows = DEFAULT_EMPLOYER.map((r) => ({ ...r }));
+            salarySortCol = null;
+            employerSortCol = null;
+            updateHeaderIcons(tableSalary, null, true);
+            updateHeaderIcons(tableEmployer, null, true);
             renderSalary();
             renderEmployer();
             hideMakeAlert();
@@ -556,8 +663,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return { rows, total };
     }
 
-    function uploadSchemaLabel(value) {
-        return value === 'employer' ? EOP_SCHEMA_EMPLOYER : EOP_SCHEMA_SALARY;
+    function uploadschemeLabel(value) {
+        return value === 'employer' ? EOP_scheme_EMPLOYER : EOP_scheme_SALARY;
     }
 
     function uploadContributionSummary(value) {
@@ -682,7 +789,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const elStatus = document.getElementById('eopUploadResultStatus');
                     const elRef = document.getElementById('eopUploadResultRef');
                     const elDt = document.getElementById('eopUploadResultDateTime');
-                    const elCh = document.getElementById('eopUploadResultSchema');
+                    const elCh = document.getElementById('eopUploadResultscheme');
                     const elContrib = document.getElementById('eopUploadResultContribution');
                     const elEmp = document.getElementById('eopUploadResultEmpCount');
                     const elAmt = document.getElementById('eopUploadResultAmount');
@@ -690,7 +797,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (elStatus) elStatus.textContent = 'Completed';
                     if (elRef) elRef.textContent = ref;
                     if (elDt) elDt.textContent = dtStr;
-                    if (elCh) elCh.textContent = uploadSchemaLabel(ch);
+                    if (elCh) elCh.textContent = uploadschemeLabel(ch);
                     if (elContrib) elContrib.textContent = uploadContributionSummary(ch);
                     if (elEmp) elEmp.textContent = String(parsed.rows.length);
                     if (elAmt) {
@@ -784,13 +891,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const step3 = document.getElementById('eopPayStep3');
         const detailHeaderRef = document.getElementById('eopPayDetailHeaderRef');
         const detailHeaderContrib = document.getElementById('eopPayDetailHeaderContrib');
-        const detailHeaderSchemaLine = document.getElementById('eopPayDetailHeaderSchemaLine');
+        const detailHeaderschemeLine = document.getElementById('eopPayDetailHeaderschemeLine');
         const detailRef = document.getElementById('eopPayDetailRef');
-        const detailSchema = document.getElementById('eopPayDetailSchema');
+        const detailscheme = document.getElementById('eopPayDetailscheme');
         const detailContribType = document.getElementById('eopPayDetailContribType');
         const detailEmp = document.getElementById('eopPayDetailEmp');
         const detailAmount = document.getElementById('eopPayDetailAmount');
-        const sumSchema = document.getElementById('eopPaySumSchema');
+        const sumscheme = document.getElementById('eopPaySumscheme');
         const sumContribution = document.getElementById('eopPaySumContribution');
         const sumRef = document.getElementById('eopPaySumRef');
         const sumEmp = document.getElementById('eopPaySumEmp');
@@ -816,7 +923,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const chRaw = (params.get('ch') || 'salary').toLowerCase();
         const employees = parseInt(params.get('emp') || '18', 10) || 18;
         const amt = parseInt(params.get('amt') || '42500', 10) || 42500;
-        const schemaLabel = chRaw === 'employer' ? EOP_SCHEMA_EMPLOYER : EOP_SCHEMA_SALARY;
+        const schemeLabel = chRaw === 'employer' ? EOP_scheme_EMPLOYER : EOP_scheme_SALARY;
         const contribLabel = chRaw === 'employer' ? EOP_CONTRIB_EMPLOYER_MIXED : EOP_CONTRIB_SALARY_IND;
 
         // Sample Employee Lists for each reference batch
@@ -850,34 +957,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Salary Deduction IND', amount: '2,000.00' }
             ],
             'RC00000000000502': [
-                { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '4,500.00' },
+                { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '4,500.00' },
                 { name: 'Tan Kah Sheng', nric: '891104-08-6623', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '5,000.00' },
-                { name: 'Priyah a/p Ganesan', nric: '920215-10-5884', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '3,800.00' },
-                { name: 'Mohd Fadzil bin Razali', nric: '880820-09-5117', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,000.00' },
+                { name: 'Priyah a/p Ganesan', nric: '920215-10-5884', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '3,800.00' },
+                { name: 'Mohd Fadzil bin Razali', nric: '880820-09-5117', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,000.00' },
                 { name: 'Chew Mei Ling', nric: '910403-14-5332', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '4,200.00' },
-                { name: 'Nurul Farhana binti Ismail', nric: '940608-03-5126', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '3,500.00' },
-                { name: 'Syahrul bin Hassan', nric: '870125-08-5441', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,000.00' },
+                { name: 'Nurul Farhana binti Ismail', nric: '940608-03-5126', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '3,500.00' },
+                { name: 'Syahrul bin Hassan', nric: '870125-08-5441', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,000.00' },
                 { name: 'Lim Wei Kiat', nric: '900518-10-5229', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,800.00' },
-                { name: 'Saraswathy a/p Raman', nric: '851022-14-5996', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,500.00' },
-                { name: 'Muhammad Zaim bin Yusof', nric: '931214-03-5221', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,200.00' },
+                { name: 'Saraswathy a/p Raman', nric: '851022-14-5996', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,500.00' },
+                { name: 'Muhammad Zaim bin Yusof', nric: '931214-03-5221', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,200.00' },
                 { name: 'Wong Siew Lan', nric: '890730-14-5662', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,400.00' },
-                { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,900.00' },
-                { name: 'Khairul Anuar bin Zulkifli', nric: '860904-10-5663', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,100.00' },
+                { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,900.00' },
+                { name: 'Khairul Anuar bin Zulkifli', nric: '860904-10-5663', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,100.00' },
                 { name: 'Ng Kok Leong', nric: '921105-08-5775', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '4,100.00' },
-                { name: 'Divya a/p Murugan', nric: '940218-14-5882', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,700.00' },
-                { name: 'Zulhelmi bin Osman', nric: '881229-03-5339', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '2,600.00' },
+                { name: 'Divya a/p Murugan', nric: '940218-14-5882', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,700.00' },
+                { name: 'Zulhelmi bin Osman', nric: '881229-03-5339', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '2,600.00' },
                 { name: 'Chan Yoke Wah', nric: '901002-14-5110', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,300.00' },
-                { name: 'Hanim binti Mohd Nor', nric: '920807-09-5334', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,900.00' },
-                { name: 'Siti Aminah binti Yusuf', nric: '870420-10-5112', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,600.00' },
+                { name: 'Hanim binti Mohd Nor', nric: '920807-09-5334', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,900.00' },
+                { name: 'Siti Aminah binti Yusuf', nric: '870420-10-5112', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,600.00' },
                 { name: 'Lee Wei Seng', nric: '850115-08-5221', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,500.00' },
-                { name: 'Fatima binti Ibrahim', nric: '910930-14-5336', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,800.00' },
-                { name: 'Tan Ah Kow', nric: '790408-10-5445', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '4,200.00' },
+                { name: 'Fatima binti Ibrahim', nric: '910930-14-5336', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,800.00' },
+                { name: 'Tan Ah Kow', nric: '790408-10-5445', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,200.00' },
                 { name: 'Ramasamy a/l Muniandy', nric: '821014-14-5553', fund: 'PRS-MDF', type: 'Immediate Vesting (EMP)', amount: '3,000.00' },
-                { name: 'Ng Mei Yee', nric: '880312-08-5664', fund: 'PRS-CVF', type: 'Straight Vesting (VSC)', amount: '2,500.00' },
-                { name: 'Mohamad Ali bin Abu', nric: '861102-10-5771', fund: 'PRS-SR', type: 'Revolving Vesting (VSR)', amount: '3,200.00' },
+                { name: 'Ng Mei Yee', nric: '880312-08-5664', fund: 'PRS-CVF', type: 'Revolving Vesting (VSC)', amount: '2,500.00' },
+                { name: 'Mohamad Ali bin Abu', nric: '861102-10-5771', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '3,200.00' },
                 { name: 'Vigneswaran a/l Raja', nric: '900228-14-5883', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '3,100.00' },
-                { name: 'Cheah Siew Fong', nric: '840715-08-5992', fund: 'PRS-GRF', type: 'Straight Vesting (VSC)', amount: '2,400.00' },
-                { name: 'Farah binti Ahmad', nric: '931012-09-5114', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSR)', amount: '1,900.00' }
+                { name: 'Cheah Siew Fong', nric: '840715-08-5992', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '2,400.00' },
+                { name: 'Farah binti Ahmad', nric: '931012-09-5114', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '1,900.00' }
             ]
         };
 
@@ -893,11 +1000,11 @@ document.addEventListener('DOMContentLoaded', () => {
             rows.forEach((r) => {
                 html += `
                     <tr class="border-bottom">
-                        <td class="ps-3 py-3 fw-bold text-dark">${r.name}</td>
+                        <td class="ps-3 py-3 text-dark">${r.name}</td>
                         <td class="py-3 text-secondary font-monospace">${r.nric}</td>
-                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-semibold">${r.fund}</span></td>
+                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
-                        <td class="pe-3 py-3 text-end fw-bold text-dark">RM ${r.amount}</td>
+                        <td class="pe-3 py-3 text-end fw-semibold text-dark">RM ${r.amount}</td>
                     </tr>
                 `;
             });
@@ -919,13 +1026,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderStep1() {
             if (detailHeaderRef) detailHeaderRef.textContent = ref;
             if (detailHeaderContrib) detailHeaderContrib.textContent = contribLabel;
-            if (detailHeaderSchemaLine) detailHeaderSchemaLine.textContent = `Schema: ${schemaLabel}`;
+            if (detailHeaderschemeLine) detailHeaderschemeLine.textContent = `Scheme: ${schemeLabel}`;
             if (detailRef) detailRef.textContent = ref;
-            if (detailSchema) detailSchema.textContent = schemaLabel;
+            if (detailscheme) detailscheme.textContent = schemeLabel;
             if (detailContribType) detailContribType.textContent = contribLabel;
             if (detailEmp) detailEmp.textContent = String(employees);
             if (detailAmount) detailAmount.textContent = fmtRmSen(amt);
-            if (sumSchema) sumSchema.textContent = schemaLabel;
+            if (sumscheme) sumscheme.textContent = schemeLabel;
             if (sumContribution) sumContribution.textContent = contribLabel;
             if (sumRef) sumRef.textContent = ref;
             if (sumEmp) sumEmp.textContent = String(employees);
@@ -934,7 +1041,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (printDateTime) printDateTime.textContent = new Date().toLocaleString('en-MY');
             const step2Line = document.getElementById('eopPayStep2BatchLine');
             if (step2Line) step2Line.textContent = `${ref} · ${contribLabel}`;
-            
+
+            const modalAbortConfirm = document.getElementById('eopPayModalAbortConfirm');
+            if (modalAbortConfirm) {
+                modalAbortConfirm.href = `abort_payment.html?ref=${ref}&ch=${chRaw}&emp=${employees}&amt=${amt}`;
+            }
+
             // Populate the employee contributions table list
             renderEmployeeList();
         }
@@ -993,6 +1105,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.alert('Please confirm the declaration to continue.');
                 return;
             }
+            const termsCheck = document.getElementById('eopPayTermsCheck');
+            if (termsCheck && !termsCheck.checked) {
+                window.alert('Please read and agree to the Terms and Conditions of Employer Channel Contribution to proceed.');
+                return;
+            }
             syncSidePanel();
             showStep(1);
         });
@@ -1001,13 +1118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bankSelect?.addEventListener('change', syncSidePanel);
         methodSelect?.addEventListener('change', syncSidePanel);
 
-        document.getElementById('eopPayCaptchaRefresh')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            const next = CAPTCHA_POOL[Math.floor(Math.random() * CAPTCHA_POOL.length)];
-            if (captchaBox) captchaBox.textContent = next;
-            if (captchaInput) captchaInput.value = '';
-            captchaInput?.classList.remove('is-invalid');
-        });
         document.getElementById('eopPayBtnRequestPac')?.addEventListener('click', () => {
             if (pacInput) pacInput.value = '12345678';
             pacInput?.classList.remove('is-invalid');
@@ -1016,13 +1126,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         confirmBtn?.addEventListener('click', (e) => {
             e.preventDefault();
-            const cap = (captchaInput?.value || '').trim().toUpperCase();
-            const code = (captchaBox?.textContent || '').trim().toUpperCase();
-            if (cap !== code) {
-                captchaInput?.classList.add('is-invalid');
-                return;
-            }
-            captchaInput?.classList.remove('is-invalid');
             if ((pacInput?.value || '').trim() !== '12345678') {
                 pacInput?.classList.add('is-invalid');
                 pacErr?.classList.remove('d-none');

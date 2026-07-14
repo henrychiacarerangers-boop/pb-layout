@@ -8,8 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Montserrat -->
-    <link href="../css/montserrat.css"
-        rel="stylesheet">
+    <link href="../css/montserrat.css" rel="stylesheet">
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="../css/iconoir.css">
     <!-- Custom CSS -->
@@ -77,37 +76,6 @@
             font-size: 0.7rem;
             margin-left: 6px;
             cursor: pointer;
-        }
-
-        .section-accordion {
-            border: none;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            margin-bottom: 24px;
-            overflow: hidden;
-        }
-
-        .accordion-header-custom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 24px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #e9ecef;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .accordion-header-custom:hover {
-            background-color: #f1f3f5;
-        }
-
-        .accordion-header-custom h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin: 0;
-            color: var(--brand-navy);
         }
 
         .accordion-body-custom {
@@ -184,94 +152,109 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
-<header class="top-nav pmo-shell-dashboard-topnav w-100">
-    <div class="container-fluid px-3 px-md-4 py-2">
-        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
-            aria-label="Portal primary">
-            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
-                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                        id="pmoShellBtnOpenSidebarUt">
-                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
-                    </button>
-                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
-                        id="pmoShellBrandUt">
-                        <img src="../images/logo.png" alt="Logo" height="35">
-                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
-                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
-                        </div>
-                    </a>
-                </div>
-                <div
-                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
-                    <a href="dashboard.html"
-                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
-                        id="pmoShellPillUt">
-                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../eop/dashboard.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillEopFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
-                    </a>
-                    <a href="../analytics/unit-trust.html"
-                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
-                        id="pmoShellPillAnalyticsFromUt">
-                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
-                    </a>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="box-shadow: none;">
-                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                            style="width: 35px; height: 35px;" aria-hidden="true">
-                            <i class="iconoir-user fs-5 text-dark"></i>
-                        </div>
-                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User &amp; Authoriser</span>
-                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu" aria-labelledby="userMenuDropdown" style="min-width: 200px;">
-                        <li class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">Account Settings</li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item" href="settings.html" id="dropLnkProfile">
-                                <i class="iconoir-user fs-6"></i> User Profile Details
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item" href="settings.html#password" id="dropLnkPassword">
-                                <i class="iconoir-lock fs-6"></i> Change Password
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider my-1"></li>
-                        <li>
-                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item" href="../index.html" id="dropLnkLogout">
-                                <i class="iconoir-log-out fs-6"></i> Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <header class="top-nav pmo-shell-dashboard-topnav w-100">
+                    <div class="container-fluid px-3 px-md-4 py-2">
+                        <nav class="navbar navbar-expand-lg bg-transparent p-0 shadow-none rounded-0 align-items-center w-100"
+                            aria-label="Portal primary">
+                            <div class="d-flex align-items-center justify-content-between w-100 position-relative">
+                                <div class="d-flex align-items-center gap-3">
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
+                                        data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
+                                        aria-controls="sidebarMenu" id="pmoShellBtnOpenSidebarUt">
+                                        <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
+                                    </button>
+                                    <a class="navbar-brand d-flex align-items-center m-0 p-0" href="dashboard.html"
+                                        id="pmoShellBrandUt">
+                                        <img src="../images/logo.png" alt="Logo" height="35">
+                                        <div class="portal-title h4 mb-0 d-none d-md-flex align-items-center">
+                                            <img src="../images/pmo-logo-corporate.png" alt="PMO" height="40">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-none d-lg-flex align-items-center gap-2 gap-md-3 position-absolute start-50 translate-middle-x">
+                                    <a href="dashboard.html"
+                                        class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
+                                        id="pmoShellPillUt">
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../eop/dashboard.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillEopFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                    </a>
+                                    <a href="../analytics/unit-trust.html"
+                                        class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
+                                        id="pmoShellPillAnalyticsFromUt">
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-link p-0 border-0 text-decoration-none dropdown-toggle-no-caret pmo-user-dropdown-btn d-flex align-items-center gap-2"
+                                        type="button" id="userMenuDropdown" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style="box-shadow: none;">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                            style="width: 35px; height: 35px;" aria-hidden="true">
+                                            <i class="iconoir-user fs-5 text-dark"></i>
+                                        </div>
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
+                                            &amp; Authoriser</span>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                        aria-labelledby="userMenuDropdown" style="min-width: 200px;">
+                                        <li
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            Account Settings</li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
+                                                href="settings.html" id="dropLnkProfile">
+                                                <i class="iconoir-user fs-6"></i> User Profile Details
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 pmo-user-dropdown-item"
+                                                href="settings.html#password" id="dropLnkPassword">
+                                                <i class="iconoir-lock fs-6"></i> Change Password
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider my-1">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 text-danger px-3 py-2 pmo-user-dropdown-item"
+                                                href="../index.html" id="dropLnkLogout">
+                                                <i class="iconoir-log-out fs-6"></i> Log Out
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
             </div>
-        </nav>
-    </div>
-</header>
-    </div>
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust Portal</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
+                        Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -310,17 +293,27 @@
                     </a>
                     <div>
                         <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
-                            <span class="text-dark fw-medium">094766567</span>
-                            <span class="text-primary">PUBLIC STRATEGIC GROWTH FUND</span>
+                             <span class="text-dark fw-medium">094766567</span>
+                             <span class="text-primary fw-bold">PUBLIC STRATEGIC GROWTH FUND</span>
                         </h2>
                         <span class="text-dark fs-8 fw-semibold mt-1 d-block">Initial Investment on 20/12/2021</span>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <a href="top_up.html"
-                        class="btn btn-primary btn-action-premium shadow-sm d-flex align-items-center gap-2">
-                        <i class="iconoir-flash fs-6"></i> Transact
-                    </a>
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-primary btn-action-premium shadow-sm d-flex align-items-center gap-2 dropdown-toggle"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="iconoir-flash fs-6"></i> Transact
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2"
+                            style="min-width: 140px;">
+                            <li><a class="dropdown-item rounded-2 py-2" href="top_up.html"><i
+                                        class="iconoir-plus-circle me-2 fs-7 align-middle"></i>Top Up</a></li>
+                            <li><a class="dropdown-item rounded-2 py-2" href="redemption.html"><i
+                                        class="iconoir-minus-circle me-2 fs-7 align-middle"></i>Redeem</a></li>
+                        </ul>
+                    </div>
                     <button
                         class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2"
                         style="border-color: #dee2e6;" onclick="window.print()">
@@ -349,30 +342,30 @@
                                 <div class="d-flex align-items-center mt-1">
                                     <span class="financial-val text-dark">MYR 0.5013</span>
                                     <span class="bubble-indicator" data-bs-toggle="tooltip"
-                                        title="as at 01/07/2026 Avg Cost/Unit 0.3990 MYR"><i class="iconoir-dollar"></i></span>
+                                        title="as at 01/07/2026 Avg Cost/Unit 0.3990 MYR"><i
+                                            class="iconoir-dollar"></i></span>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="financial-label">Total Units</div>
                                 <div class="d-flex align-items-center mt-1">
                                     <span class="financial-val fs-5 text-dark">25,063.70</span>
-                                    <span class="bubble-info" data-bs-toggle="tooltip"
-                                        title="Loaded 25,063.70"><i class="iconoir-info-circle"></i></span>
+                                    <span class="bubble-info" data-bs-toggle="tooltip" title="Loaded 25,063.70"><i
+                                            class="iconoir-info-circle"></i></span>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="financial-label">Available Units</div>
                                 <div class="d-flex align-items-center mt-1">
                                     <span class="financial-val fs-5 text-dark">25,063.70</span>
-                                    <span class="bubble-info" data-bs-toggle="tooltip"
-                                        title="Excludes float units"><i
+                                    <span class="bubble-info" data-bs-toggle="tooltip" title="Excludes float units"><i
                                             class="iconoir-info-circle"></i></span>
                                 </div>
                             </div>
-                            <div class="col-12 mt-2">
+                            <!-- <div class="col-12 mt-2">
                                 <div class="financial-label">MGQP</div>
                                 <div class="financial-val fs-5 text-secondary mt-1">10,074.56</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -382,17 +375,17 @@
                             <span class="financial-label">Distribution</span>
                             <div class="fw-semibold text-dark fs-7 mt-1">Re-invest</div>
                         </div>
-                       
+
                         <div>
                             <span class="financial-label">Unit Trust Consultant</span>
                             <div class="fw-bold text-primary fs-7 mt-1">ONG SZE NAN 11295836</div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Direct Debit Authorization (DDA) -->
+                    <!-- Right Column: Direct Debit Authorisation (DDA) -->
                     <div class="col-lg-3 ps-lg-4">
                         <div class="dda-banner">
-                            <div class="dda-title">Direct Debit Authorization (DDA)</div>
+                            <div class="dda-title">Direct Debit Authorisation (DDA)</div>
                             <p class="dda-desc">You do not have DDA enrolled for this account</p>
                         </div>
                     </div>
@@ -400,16 +393,213 @@
                 </div>
             </div>
 
+            <!-- SECTION: Fund Price & Performance History -->
+            <div class="border rounded-4 overflow-hidden mb-4 shadow-sm bg-white">
+                <div class="accordion-header-custom" data-bs-toggle="collapse" data-bs-target="#collapsePerformance"
+                    aria-expanded="true" aria-controls="collapsePerformance">
+                    <span class="fw-bold text-dark fs-7 d-flex align-items-center gap-2">
+                        Fund Price & Performance History <span
+                            class="badge bg-light text-primary border rounded px-2 py-1 fs-9 fw-bold">PUBLIC STRATEGIC GROWTH
+                            FUND</span>
+                    </span>
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="collapse show" id="collapsePerformance">
+                    <div class="accordion-body-custom pt-1">
+                        <div class="row g-4 mt-1">
+                            <!-- Left Column: Chart -->
+                            <div class="col-lg-8 border-end-lg pe-lg-4">
+                                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fw-bold text-dark fs-8">NAV Price (MYR)</span>
+                                        <span class="fs-9 text-success fw-semibold"><i class="iconoir-arrow-up"></i>
+                                            +25.64% overall</span>
+                                    </div>
+                                    <!-- Timeframe buttons -->
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Performance Timeframe">
+                                        <button type="button" class="btn btn-outline-secondary px-3 py-1 fs-9 active"
+                                            onclick="switchDetailTimeframe('1Y', this)">1Y</button>
+                                        <button type="button" class="btn btn-outline-secondary px-3 py-1 fs-9"
+                                            onclick="switchDetailTimeframe('3Y', this)">3Y</button>
+                                        <button type="button" class="btn btn-outline-secondary px-3 py-1 fs-9"
+                                            onclick="switchDetailTimeframe('5Y', this)">5Y</button>
+                                        <button type="button" class="btn btn-outline-secondary px-3 py-1 fs-9"
+                                            onclick="switchDetailTimeframe('ALL', this)">All</button>
+                                    </div>
+                                </div>
+
+                                <!-- Curved Chart SVG -->
+                                <div class="position-relative" style="height: 220px;">
+                                    <!-- 1Y SVG Chart -->
+                                    <svg id="svgChart1Y" class="w-100 h-100" viewBox="0 0 500 200"
+                                        preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="chartGrad1Y" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(237, 28, 36, 0.25)" />
+                                                <stop offset="100%" stop-color="rgba(237, 28, 36, 0.0)" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Grid Lines -->
+                                        <line x1="0" y1="50" x2="500" y2="50" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="100" x2="500" y2="100" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="150" x2="500" y2="150" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <!-- Area Path -->
+                                        <path
+                                            d="M 0 160 Q 50 140 100 150 T 200 120 T 300 90 T 400 80 T 500 45 L 500 200 L 0 200 Z"
+                                            fill="url(#chartGrad1Y)" />
+                                        <!-- Line Path -->
+                                        <path d="M 0 160 Q 50 140 100 150 T 200 120 T 300 90 T 400 80 T 500 45"
+                                            fill="none" stroke="var(--brand-primary)" stroke-width="2.5" />
+                                        <!-- Tooltip dots -->
+                                        <circle cx="500" cy="45" r="4" fill="var(--brand-primary)" stroke="#fff"
+                                            stroke-width="2" />
+                                    </svg>
+
+                                    <!-- 3Y SVG Chart (hidden initially) -->
+                                    <svg id="svgChart3Y" class="w-100 h-100 d-none" viewBox="0 0 500 200"
+                                        preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="chartGrad3Y" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(237, 28, 36, 0.25)" />
+                                                <stop offset="100%" stop-color="rgba(237, 28, 36, 0.0)" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Grid Lines -->
+                                        <line x1="0" y1="50" x2="500" y2="50" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="100" x2="500" y2="100" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="150" x2="500" y2="150" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <!-- Area Path -->
+                                        <path
+                                            d="M 0 170 Q 70 180 140 150 T 280 130 T 420 70 T 500 45 L 500 200 L 0 200 Z"
+                                            fill="url(#chartGrad3Y)" />
+                                        <!-- Line Path -->
+                                        <path d="M 0 170 Q 70 180 140 150 T 280 130 T 420 70 T 500 45" fill="none"
+                                            stroke="var(--brand-primary)" stroke-width="2.5" />
+                                        <circle cx="500" cy="45" r="4" fill="var(--brand-primary)" stroke="#fff"
+                                            stroke-width="2" />
+                                    </svg>
+
+                                    <!-- 5Y SVG Chart (hidden initially) -->
+                                    <svg id="svgChart5Y" class="w-100 h-100 d-none" viewBox="0 0 500 200"
+                                        preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="chartGrad5Y" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(237, 28, 36, 0.25)" />
+                                                <stop offset="100%" stop-color="rgba(237, 28, 36, 0.0)" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Grid Lines -->
+                                        <line x1="0" y1="50" x2="500" y2="50" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="100" x2="500" y2="100" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="150" x2="500" y2="150" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <!-- Area Path -->
+                                        <path d="M 0 180 Q 90 150 180 160 T 360 80 T 500 45 L 500 200 L 0 200 Z"
+                                            fill="url(#chartGrad5Y)" />
+                                        <!-- Line Path -->
+                                        <path d="M 0 180 Q 90 150 180 160 T 360 80 T 500 45" fill="none"
+                                            stroke="var(--brand-primary)" stroke-width="2.5" />
+                                        <circle cx="500" cy="45" r="4" fill="var(--brand-primary)" stroke="#fff"
+                                            stroke-width="2" />
+                                    </svg>
+
+                                    <!-- ALL SVG Chart (hidden initially) -->
+                                    <svg id="svgChartALL" class="w-100 h-100 d-none" viewBox="0 0 500 200"
+                                        preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="chartGradALL" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="rgba(237, 28, 36, 0.25)" />
+                                                <stop offset="100%" stop-color="rgba(237, 28, 36, 0.0)" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Grid Lines -->
+                                        <line x1="0" y1="50" x2="500" y2="50" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="100" x2="500" y2="100" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <line x1="0" y1="150" x2="500" y2="150" stroke="#f1f5f9" stroke-dasharray="4 4"
+                                            stroke-width="1" />
+                                        <!-- Area Path -->
+                                        <path d="M 0 190 Q 100 130 200 140 T 400 60 T 500 45 L 500 200 L 0 200 Z"
+                                            fill="url(#chartGradALL)" />
+                                        <!-- Line Path -->
+                                        <path d="M 0 190 Q 100 130 200 140 T 400 60 T 500 45" fill="none"
+                                            stroke="var(--brand-primary)" stroke-width="2.5" />
+                                        <circle cx="500" cy="45" r="4" fill="var(--brand-primary)" stroke="#fff"
+                                            stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <div class="d-flex justify-content-between text-muted fs-9 px-1 mt-2">
+                                    <span id="chartLabelStart">July 2025</span>
+                                    <span id="chartLabelEnd">July 2026</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Performance Table -->
+                            <div class="col-lg-4 ps-lg-4">
+                                <div class="fw-bold text-dark fs-8 mb-3">Historical Returns</div>
+                                <div class="table-responsive">
+                                    <table class="table table-sm align-middle fs-8 mb-0 table-borderless">
+                                        <tbody>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">Year-to-Date (YTD)</td>
+                                                <td class="py-2 text-end text-success fw-bold">+18.45%</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">1-Year Return</td>
+                                                <td class="py-2 text-end text-success fw-bold">+22.30%</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">3-Year Return (Ann.)</td>
+                                                <td class="py-2 text-end text-success fw-bold">+11.20%</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">5-Year Return (Ann.)</td>
+                                                <td class="py-2 text-end text-success fw-bold">+9.02%</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">10-Year Return (Ann.)</td>
+                                                <td class="py-2 text-end text-success fw-bold">+6.84%</td>
+                                            </tr>
+                                            <tr class="border-bottom">
+                                                <td class="py-2 text-muted fw-semibold">Volatility Factor (3-Y)</td>
+                                                <td class="py-2 text-end text-dark fw-bold">12.5 (Moderate)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 text-muted fw-semibold">52-Week High / Low</td>
+                                                <td class="py-2 text-end text-dark fw-bold">0.5250 / 0.3850</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- SECTION 1: Summary of Returns -->
-            <div class="section-accordion">
+            <div class="border rounded-4 overflow-hidden mb-4 shadow-sm bg-white">
                 <div class="accordion-header-custom" data-bs-toggle="collapse" data-bs-target="#collapseSummary"
-                    aria-expanded="true">
-                    <h4 class="d-flex align-items-center gap-2">
-                        Summary of Returns <span class="text-dark fw-normal fs-8">as at 06 May 2026</span>
-                    </h4>
+                    aria-expanded="true" aria-controls="collapseSummary">
+                    <span class="fw-bold text-dark fs-7 d-flex align-items-center gap-2">
+                        Summary of Returns <span class="text-secondary fw-normal fs-8">as at 06 May 2026</span>
+                    </span>
                     <div class="d-flex align-items-center gap-3">
                         <span class="fw-bold text-dark fs-8">MYR</span>
-                        <i class="iconoir-nav-arrow-up fs-5 text-muted transition-transform duration-300"></i>
+                        <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
+                            aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="collapse show" id="collapseSummary">
@@ -451,28 +641,32 @@
             </div>
 
             <!-- SECTION 2: Account Transactions -->
-            <div class="section-accordion">
+            <div class="border rounded-4 overflow-hidden mb-4 shadow-sm bg-white">
                 <div class="accordion-header-custom" data-bs-toggle="collapse" data-bs-target="#collapseTransactions"
-                    aria-expanded="true">
-                    <h4>Account Transactions</h4>
+                    aria-expanded="true" aria-controls="collapseTransactions">
+                    <span class="fw-bold text-dark fs-7">Account Transactions</span>
                     <div class="d-flex align-items-center gap-3">
-                        <span class="text-muted fs-8 fw-semibold">Total Units <strong
+                        <span class="text-secondary fs-8 fw-semibold">Total Units <strong
                                 class="text-dark">25,063.70</strong></span>
-                        <i class="iconoir-nav-arrow-up fs-5 text-muted transition-transform duration-300"></i>
+                        <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
+                            aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="collapse show" id="collapseTransactions">
                     <div class="accordion-body-custom">
                         <div class="d-flex align-items-center gap-2 mb-4">
-                            <select class="form-select w-auto fs-8 fw-semibold border rounded-3 py-2 ps-3 pe-5 shadow-sm"
+                            <select
+                                class="form-select w-auto fs-8 fw-semibold border rounded-3 py-2 ps-3 pe-5 shadow-sm"
                                 style="border-color: #dee2e6;">
                                 <option>Current Month</option>
-                                <option>Last 3 months</option>
-                                <option>Last 6 months</option>
-                                <option>Last 12 months</option>
-                                <option>Last 24 months</option>
+                                <option>Past 6 Months</option>
+                                <option>Past 1 Year</option>
+                                <option>Past 2 Years</option>
+                                <option>Past 3 Years</option>
+                                <option>Since Inception</option>
                             </select>
-                            <span class="bubble-info" data-bs-toggle="tooltip" title="Filter transactions timeline"><i
+                            <span class="bubble-info" data-bs-toggle="tooltip"
+                                title="Transactions submitted but not processed into your account are not reflected here"><i
                                     class="iconoir-info-circle"></i></span>
                         </div>
 
@@ -480,19 +674,19 @@
                             <table class="table table-hover align-middle mb-0 custom-table">
                                 <thead class="border-bottom">
                                     <tr>
-                                        <th>Tran Date</th>
-                                        <th>Description</th>
+                                        <th class="ps-4 text-start">Tran Date</th>
+                                        <th class="text-start">Description</th>
                                         <th class="text-end">Paid/(Redeemed)<br>MYR</th>
                                         <th class="text-end">Invested/(Received)<br>MYR</th>
                                         <th class="text-end">Total Units</th>
                                         <th class="text-end">Price/Unit<br>MYR</th>
                                         <th class="text-end">Sales/Switch Charge<br>MYR</th>
-                                        <th class="text-end">GST/SST Charges<br>MYR</th>
+                                        <th class="pe-4 text-end">GST/SST Charges<br>MYR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="border-bottom">
-                                        <td>01/09/2022</td>
+                                        <td class="ps-4">01/09/2022</td>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span>DR</span>
@@ -519,10 +713,10 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.00</td>
+                                        <td class="pe-4 text-end">0.00</td>
                                     </tr>
                                     <tr>
-                                        <td>20/12/2021</td>
+                                        <td class="ps-4">20/12/2021</td>
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <span>II</span>
@@ -550,7 +744,7 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.00</td>
+                                        <td class="pe-4 text-end">0.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -560,20 +754,23 @@
             </div>
 
             <!-- SECTION 3: Distribution -->
-            <div class="section-accordion">
+            <div class="border rounded-4 overflow-hidden mb-4 shadow-sm bg-white">
                 <div class="accordion-header-custom" data-bs-toggle="collapse" data-bs-target="#collapseDistribution"
-                    aria-expanded="true">
-                    <h4>Distribution</h4>
-                    <i class="iconoir-nav-arrow-up fs-5 text-muted transition-transform duration-300"></i>
+                    aria-expanded="true" aria-controls="collapseDistribution">
+                    <span class="fw-bold text-dark fs-7">Distribution</span>
+                    <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
+                        aria-hidden="true"></i>
                 </div>
                 <div class="collapse show" id="collapseDistribution">
                     <div class="accordion-body-custom">
                         <div class="mb-4">
-                            <select class="form-select w-auto fs-8 fw-semibold border rounded-3 py-2 ps-3 pe-5 shadow-sm"
+                            <select
+                                class="form-select w-auto fs-8 fw-semibold border rounded-3 py-2 ps-3 pe-5 shadow-sm"
                                 style="border-color: #dee2e6;">
+                                <option>Past 1 Year</option>
+                                <option>Past 2 Years</option>
+                                <option>Past 3 Years</option>
                                 <option>Past 10 Years</option>
-                                <option>Past 5 Years</option>
-                                <option>Past Year</option>
                             </select>
                         </div>
 
@@ -581,16 +778,16 @@
                             <table class="table align-middle mb-0 custom-table">
                                 <thead class="border-bottom">
                                     <tr>
-                                        <th>Financial Year</th>
-                                        <th>Distribution (sen/unit)<br>Date</th>
+                                        <th class="ps-4 text-start">Financial Year</th>
+                                        <th class="text-start">Distribution (sen/unit)<br>Date</th>
                                         <th class="text-end">Distribution Amount<br>MYR</th>
                                         <th class="text-center">Distribution Instruction</th>
-                                        <th>Type</th>
+                                        <th class="pe-4 text-start">Type</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>2022</td>
+                                        <td class="ps-4">2022</td>
                                         <td>
                                             <div>0.30</div>
                                             <div class="text-muted fs-9 fw-normal mt-1">30/08/2022</div>
@@ -600,7 +797,7 @@
                                             <span class="badge bg-light text-primary px-3 py-2 rounded-2 border"
                                                 style="font-weight: 600;">Re-invest</span>
                                         </td>
-                                        <td class="fw-bold text-dark">FINAL</td>
+                                        <td class="pe-4 fw-bold text-dark">FINAL</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -614,182 +811,233 @@
 
     <!-- Footer (partials/footer-portal.html) -->
     <div id="pmoShellFooterMount">
-<footer class="bottom-footer mt-auto">
-    <div class="container text-start">
-        <div class="bottom-links mb-2">
-            <a href="#">Terms and conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Internet Risk</a>
-            <a href="#">Disclaimer</a>
-            <a href="#">Investment Channels</a>
-            <a href="#">Contact Us</a>
-            <a href="#">FAQ</a>
-            <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
-        </div>
-        <div class="copyright-text fs-9">
-            <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
-        </div>
-    </div>
-</footer>
+        <footer class="bottom-footer mt-auto">
+            <div class="container text-start">
+                <div class="bottom-links mb-2">
+                    <a href="#">Terms and conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Internet Risk</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Investment Channels</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
+                </div>
+                <div class="copyright-text fs-9">
+                    <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
     <!-- Sidebar (partials/sidebar-*.html) -->
     <div id="pmoShellSidebarMount">
-<div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
-    aria-labelledby="sidebarMenuLabel">
-    <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-        <div class="d-flex justify-content-end mb-2 w-100">
-            <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
-                aria-label="Close" id="pmoShellSidebarCloseUt">
-                <i class="iconoir-menu fs-4" aria-hidden="true"></i>
-            </button>
+        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
+            aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
+                <div class="d-flex justify-content-end mb-2 w-100">
+                    <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close" id="pmoShellSidebarCloseUt">
+                        <i class="iconoir-menu fs-4" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="portal-sidebar-profile-card w-100 mb-3">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+                    <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                        Authoriser</span>
+                </div>
+            </div>
+            <div class="offcanvas-body pt-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="pmoUtSideDash">
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                            id="pmoUtSideViewAcct">
+                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">View Account</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
+                            aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Authorise Transaction</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthTopup">
+                                        Top-Up Investment <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                <li class="nav-item mb-1"><a href="authorise.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideAuthRedeem">
+                                        Redemption <span
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
+                            aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Transaction Enquiry</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="transactions.html"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPast">Past Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideTxnOnline">Online Activities</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
+                            aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Statement</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <span
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </a>
+                        <div class="collapse ps-5 mt-1" id="statementCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt1">Transactions</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt2">Annual/Interim</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt3">Fund
+                                        Reports</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt4">e-Invoice</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt5">Invoice</a></li>
+                            </ul>
+                        </div>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
+                            id="pmoUtSideLogout">
+                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Log
+                                Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="portal-sidebar-profile-card w-100 mb-3">
-            <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
-            <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
-            <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-            <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
-                Authoriser</span>
-        </div>
-    </div>
-    <div class="offcanvas-body pt-4">
-        <ul class="nav flex-column sidebar-nav">
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
-                    id="pmoUtSideDash">
-                    <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
-                    id="pmoUtSideViewAcct">
-                    <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                        class="fw-medium">View Account</span>
-                </a>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
-                    aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Authorise Transaction</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-1">
-                        <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthTopup">
-                                Top-Up Investment <span
-                                    class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
-                        <li class="nav-item mb-1"><a href="authorise.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideAuthRedeem">
-                                Redemption <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button" aria-expanded="false"
-                    aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Transaction Enquiry</span>
-                    </div>
-                    <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                </a>
-                <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="transactions.html"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPast">Past Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnPending">Pending Investments</a></li>
-                        <li class="nav-item mb-1"><a href="transactions.html?tab=online"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideTxnOnline">Online Activities</a></li>
-                        
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                    data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
-                    aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
-                    <div class="d-flex align-items-center">
-                        <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                            class="fw-medium">Statement</span>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <span
-                            class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                        <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform" aria-hidden="true"></i>
-                    </div>
-                </a>
-                <div class="collapse ps-5 mt-1" id="statementCollapse">
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt1">Transactions</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=annual"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt2">Annual/Interim</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=fund"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark" id="pmoUtSideStmt3">Fund
-                                Reports</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=einv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt4">e-Invoice</a></li>
-                        <li class="nav-item mb-1"><a href="statements.html?tab=inv"
-                                class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                id="pmoUtSideStmt5">Invoice</a></li>
-                    </ul>
-                </div>
-            <li class="nav-item mb-2">
-                <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                    id="pmoUtSideLogout">
-                    <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span class="fw-medium">Log
-                        Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script defer src="../js/layout-active.js"></script>
     <script>
+        // Timeframe switcher for Fund Price & Performance Chart
+        function switchDetailTimeframe(timeframe, btnEl) {
+            // Deactivate all buttons in group
+            const btnGroup = btnEl.closest('.btn-group');
+            btnGroup.querySelectorAll('.btn').forEach(btn => btn.classList.remove('active'));
+            btnEl.classList.add('active');
+
+            // Hide all chart SVGs
+            const svgs = ['1Y', '3Y', '5Y', 'ALL'];
+            svgs.forEach(t => {
+                const svg = document.getElementById('svgChart' + t);
+                if (svg) svg.classList.add('d-none');
+            });
+
+            // Show selected chart SVG
+            const activeSvg = document.getElementById('svgChart' + timeframe);
+            if (activeSvg) activeSvg.classList.remove('d-none');
+
+            // Update chart labels dynamically
+            const labelStart = document.getElementById('chartLabelStart');
+            const labelEnd = document.getElementById('chartLabelEnd');
+            if (labelStart && labelEnd) {
+                if (timeframe === '1Y') {
+                    labelStart.textContent = 'July 2025';
+                    labelEnd.textContent = 'July 2026';
+                } else if (timeframe === '3Y') {
+                    labelStart.textContent = 'July 2023';
+                    labelEnd.textContent = 'July 2026';
+                } else if (timeframe === '5Y') {
+                    labelStart.textContent = 'July 2021';
+                    labelEnd.textContent = 'July 2026';
+                } else if (timeframe === 'ALL') {
+                    labelStart.textContent = 'Dec 2016';
+                    labelEnd.textContent = 'July 2026';
+                }
+            }
+        }
+
         // Initialize tooltips
         document.addEventListener('DOMContentLoaded', function () {
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl)
+                let options = {};
+                if (tooltipTriggerEl.tagName === 'TD') {
+                    options.offset = [0, -10];
+                }
+                return new bootstrap.Tooltip(tooltipTriggerEl, options);
             });
 
-            // Smooth accordion icons rotation toggle logic
-            const accordionHeaders = document.querySelectorAll('.accordion-header-custom');
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function () {
-                    const arrowIcon = this.querySelector('.iconoir-nav-arrow-up, .iconoir-nav-arrow-down');
-                    if (arrowIcon) {
-                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                        if (isExpanded) {
-                            arrowIcon.style.transform = 'rotate(180deg)';
-                        } else {
-                            arrowIcon.style.transform = 'rotate(0deg)';
-                        }
-                    }
-                });
+            // Re-align chevron icons when collapse events trigger
+            const collapsibles = document.querySelectorAll('.collapse');
+            collapsibles.forEach(function (collapseEl) {
+                const headerButton = document.querySelector('[data-bs-target="#' + collapseEl.id + '"]');
+                if (headerButton) {
+                    const icon = headerButton.querySelector('.accordion-icon');
+                    collapseEl.addEventListener('show.bs.collapse', function () {
+                        icon.classList.remove('iconoir-nav-arrow-down');
+                        icon.classList.add('iconoir-nav-arrow-up');
+                    });
+                    collapseEl.addEventListener('hide.bs.collapse', function () {
+                        icon.classList.remove('iconoir-nav-arrow-up');
+                        icon.classList.add('iconoir-nav-arrow-down');
+                    });
+                }
             });
         });
     </script>

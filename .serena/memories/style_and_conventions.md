@@ -10,14 +10,14 @@ All files in the Corporate PMO Portal must conform to these styling and structur
 
 ## 2. Color Scheme & Usage
 - **Primary Trigger Colors**:
-  - Primary Action / Call to Action: Brand Red (`#ed1c24`). Must hover to `#c41219` with a smooth 0.3s transition.
+  - Primary Action / Call to Action: Brand Red (`#ff1700`). Must hover to `#c41219` with a smooth 0.3s transition.
   - Secondary / Supporting action: Transparent/white background with `#ced4da` border (Ghost style).
 - **Brand Foundations**: Brand Navy (`#000000`) or Accent Navy (`#373761`) for structural borders, background fills, or navbar branding.
 
 ## 3. Surface Specifications
 - **Cards**: Customize `.card` classes with `border-radius: 15px` and a diffused shadow `box-shadow: 0 10px 30px rgba(0,0,0,0.2)`.
 - **Buttons**: Every button must be shaped as a pill (`border-radius: 25px`).
-- **Form Inputs**: Every input should have a soft rounded contour (`border-radius: 8px`) and confortable vertical/horizontal padding (`12px`). Overlap standard focus borders with a subtle glow `#ed1c24` soft shadow.
+- **Form Inputs**: Every input should have a soft rounded contour (`border-radius: 8px`) and confortable vertical/horizontal padding (`12px`). Overlap standard focus borders with a subtle glow `#ff1700` soft shadow.
 
 ## 4. Javascript Best Practices
 - **Scope Isolation**: Always wrap script code in a `DOMContentLoaded` event listener wrapper:

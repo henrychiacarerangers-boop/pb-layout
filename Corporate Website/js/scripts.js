@@ -12,48 +12,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
     // Password Toggle Logic
-    togglePassword.addEventListener('click', function() {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        eyeIcon.classList.toggle('iconoir-eye');
-        eyeIcon.classList.toggle('iconoir-eye-closed');
-    });
+    if (togglePassword && passwordInput && eyeIcon) {
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            eyeIcon.classList.toggle('iconoir-eye');
+            eyeIcon.classList.toggle('iconoir-eye-closed');
+        });
+    }
 
     // Clear Button Logic
-    clearBtn.addEventListener('click', function() {
-        usernameInput.value = '';
-        passwordInput.value = '';
-        usernameInput.focus();
-    });
+    if (clearBtn && usernameInput && passwordInput) {
+        clearBtn.addEventListener('click', function() {
+            usernameInput.value = '';
+            passwordInput.value = '';
+            usernameInput.focus();
+        });
+    }
 
     // Form Submit Logic (Prototype presentation)
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent actual submission
+    if (loginForm && usernameInput && passwordInput && loginBtn && btnText && btnSpinner) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual submission
 
-        // Basic UI validation feedback
-        if(usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
-            alert('Please enter both username and password.');
-            return;
-        }
+            // Basic UI validation feedback
+            if(usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                alert('Please enter both username and password.');
+                return;
+            }
 
-        // Show loading state
-        loginBtn.disabled = true;
-        btnText.textContent = 'Authenticating... ';
-        btnSpinner.classList.remove('d-none');
+            // Show loading state
+            loginBtn.disabled = true;
+            btnText.textContent = 'Authenticating... ';
+            btnSpinner.classList.remove('d-none');
 
-        // Simulate API call delay
-        setTimeout(() => {
-            // Success State
-            btnSpinner.classList.add('d-none');
-            btnText.textContent = 'Success!';
-            loginBtn.style.backgroundColor = '#198754';
-            loginBtn.style.borderColor = '#198754';
-            
-            // Reset and simulate redirect after 0.5s
+            // Simulate API call delay
             setTimeout(() => {
-                window.location.href = 'internet_risk.html';
-            }, 500);
+                // Success State
+                btnSpinner.classList.add('d-none');
+                btnText.textContent = 'Success!';
+                loginBtn.style.backgroundColor = '#198754';
+                loginBtn.style.borderColor = '#198754';
+                
+                // Reset and simulate redirect after 0.5s
+                setTimeout(() => {
+                    window.location.href = 'internet_risk.html';
+                }, 500);
 
-        }, 1500);
-    });
+            }, 1500);
+        });
+    }
 });

@@ -30,7 +30,7 @@ For the formal implementation details of this workflow, see [.cursor/rules/quad-
 To ensure deep visual and interactive accuracy, please refer to and enforce the following custom Cursor rules:
 
 -   **Design & Aesthetics Specification**: See [.cursor/rules/design-system.mdc](file:///Users/henrychia/Desktop/PB%20design/PMO%20corporate/.cursor/rules/design-system.mdc).
-    -   *Colors*: Brand Red (`#ed1c24`), Brand Navy (`#000000`), Supporting Navy (`#373761`), Analytics Grey (`#dce3e8`).
+    -   *Colors*: Brand Red (`#ff1700`), Brand Navy (`#000000`), Supporting Navy (`#373761`), Analytics Grey (`#dce3e8`).
     -   *Typography*: Montserrat family globally (`300` Light, `400` Regular, `600` Semi-bold, `700` Bold).
     -   *Surfaces*: Cards must use `border-radius: 15px` and a floating shadow (`box-shadow: 0 10px 30px rgba(0,0,0,0.2)`).
     -   *Triggers*: All standard action buttons must be pill-shaped (`border-radius: 25px`) with smooth transitions (`transition: all 0.3s ease`).

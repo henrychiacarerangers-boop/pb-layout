@@ -71,6 +71,7 @@
             display: flex;
             gap: 10px;
         }
+
         .btn-request-pac {
             background-color: #3b3a73;
             color: #ffffff;
@@ -82,9 +83,11 @@
             white-space: nowrap;
             transition: background-color 0.2s;
         }
+
         .btn-request-pac:hover {
             background-color: #ef1f28;
         }
+
         .pac-info-text {
             font-size: 0.72rem;
             line-height: 1.4;
@@ -96,7 +99,7 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ed1c24 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -190,12 +193,15 @@
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-5 pb-0 position-relative z-1" style="background: transparent;">
+        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust Portal</span>
+                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
+                        Online</span>
+                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
+                        Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026, 09:16</p>
+                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                    09:16</p>
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -225,577 +231,562 @@
         <div class="container">
             <!-- Title Section -->
             <div class="mb-4">
-                <h2 class="fw-bold text-dark fs-2 mb-2">Profile Information</h2>
+                <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Profile Information</h2>
                 <p class="text-muted fs-7">Manage your corporate company profile and account credentials</p>
             </div>
 
             <!-- Card with Tabs (Styled like Analytics & Statement Pages) -->
-            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-4 p-4">
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4">
                 <!-- View Tab Links -->
-                <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0" role="tablist">
-                    <a href="#" class="view-tab active d-flex align-items-center gap-2" id="profile-tab"
-                        data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile"
-                        aria-selected="true">
-                        <i class="iconoir-building fs-6"></i> Corporate & Personal Profile
-                    </a>
-                    <a href="#" class="view-tab d-flex align-items-center gap-2" id="agent-tab" data-bs-toggle="tab"
-                        data-bs-target="#agent" role="tab" aria-controls="agent" aria-selected="false">
-                        <i class="iconoir-headset-help fs-6"></i> Servicing UTC/PRC
-                    </a>
-                    <a href="#" class="view-tab d-flex align-items-center gap-2" id="password-tab" data-bs-toggle="tab"
-                        data-bs-target="#password" role="tab" aria-controls="password" aria-selected="false">
-                        <i class="iconoir-lock fs-6"></i> Change Password
-                    </a>
-                </div>
-            </div>
-
-            <!-- Tab Content -->
-            <div class="tab-content" id="settingsTabContent">
-
-                <!-- Tab 1: Personal & Corporate Profile -->
-                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="row g-4">
-
-                        <!-- Column 1: Corporate Details -->
-                        <div class="col-lg-6">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 bg-white p-4">
-                                <h4 class="profile-section-title pb-2 border-bottom">
-                                    <i class="iconoir-building fs-5 text-dark"></i> Company Details
-                                </h4>
-
-                                <div class="profile-label">Company Name</div>
-                                <div class="profile-value">Ativa Studio Solution Sdn Bhd</div>
-
-                                <div class="profile-label">Company Registration No. (NEW)</div>
-                                <div class="profile-value">112312323233</div>
-
-                                <div class="profile-label">Nature of Business</div>
-                                <div class="profile-value">FINANCIAL/INSURANCE</div>
-
-                                <div class="profile-label">Purpose of Transaction</div>
-                                <div class="profile-value">RETIREMENT/INVESTMENT</div>
-
-                                <div class="profile-label">Source of Funds</div>
-                                <div class="profile-value">CORPORATE REVENUES</div>
-
-                                <div class="profile-label">Source of Wealth</div>
-                                <div class="profile-value">BUSINESS OPERATIONS</div>
-
-                                <div class="profile-label">Office Address</div>
-                                <div class="profile-value profile-value-address">
-                                    MENARXXXXXXXXXXXXXXXX<br>
-                                    NO.78XXXXXXXXXXXXXXXXX<br>
-                                    50200
-                                </div>
-
-                                <div class="profile-label">Telephone No. (Office)</div>
-                                <div class="profile-value fw-semibold">018-9019203990</div>
-                            </div>
-                        </div>
-
-                        <!-- Column 2: Authorised Representative Profile -->
-                        <div class="col-lg-6">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 bg-white p-4">
-                                <h4 class="profile-section-title pb-2 border-bottom">
-                                    <i class="iconoir-user fs-5 text-dark"></i> User ID
-                                </h4>
-
-                                <div class="profile-label">Full Name (As Per IC/ID)</div>
-                                <div class="profile-value">Ahmad Razak bin Osman</div>
-
-                                <div class="profile-label">Identification No. (IC)</div>
-                                <div class="profile-value">850821145231</div>
-
-                                <div class="profile-label">Designation / Role</div>
-                                <div class="profile-value">
-                                    <div class="mb-1.5">
-                                        <span
-                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
-                                            style="letter-spacing:0.3px;">Unit Trust</span>
-                                        <span class="ms-1.5 fs-8 text-dark fw-medium">User & Authoriser</span>
-                                    </div>
-                                    <div>
-                                        <span
-                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
-                                            style="letter-spacing:0.3px;">EOP Portal</span>
-                                        <span class="ms-1.5 fs-8 text-dark fw-medium">Download Investment Contribution &
-                                            Authoriser</span>
-                                    </div>
-                                </div>
-
-                                <div class="profile-label">Mobile No. No.</div>
-                                <div class="profile-value">XXX46XXXXX8 (Ext: 3230)</div>
-
-                                <div class="profile-label">Corporate Email</div>
-                                <div class="profile-value">h*********0@g***l.com</div>
-
-                                <div class="profile-label">Office Address</div>
-                                <div class="profile-value profile-value-address">
-                                    23 JAXXXXXXXXXX<br>
-                                    BuildingXXXXXXXXXX<br>
-                                    32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                </div>
-                            </div>
-                        </div>
+                <div class="border-bottom pb-3 mb-4">
+                    <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0" role="tablist">
+                        <a href="#" class="view-tab active d-flex align-items-center gap-2" id="profile-tab"
+                            data-bs-toggle="tab" data-bs-target="#profile" role="tab" aria-controls="profile"
+                            aria-selected="true">
+                            <i class="iconoir-building fs-6"></i> Corporate & Personal Profile
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" id="agent-tab" data-bs-toggle="tab"
+                            data-bs-target="#agent" role="tab" aria-controls="agent" aria-selected="false">
+                            <i class="iconoir-headset-help fs-6"></i> Servicing UTC/PRC
+                        </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" id="password-tab"
+                            data-bs-toggle="tab" data-bs-target="#password" role="tab" aria-controls="password"
+                            aria-selected="false">
+                            <i class="iconoir-lock fs-6"></i> Change Password
+                        </a>
                     </div>
                 </div>
 
-                <!-- Tab 3: Servicing UTC/PRC -->
-                <div class="tab-pane fade" id="agent" role="tabpanel" aria-labelledby="agent-tab">
-                    <div class="row g-4">
+                <!-- Tab Content -->
+                <div class="tab-content" id="settingsTabContent">
 
-                        <!-- Column 1: Unit Trust Consultant (UTC) -->
-                        <div class="col-lg-6">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 bg-white p-4">
-                                <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
+                    <!-- Tab 1: Personal & Corporate Profile -->
+                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row g-4">
 
-                                    <div>
-                                        <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
-                                            style="letter-spacing: 0.5px; text-transform: uppercase;">Unit Trust
-                                            Consultant (UTC)</div>
-                                        <h4 class="fw-bold text-dark fs-5 mb-0">WONG KAH WEI</h4>
+                            <!-- Column 1: Corporate Details -->
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 h-100 p-4">
+                                    <h4 class="profile-section-title pb-2 border-bottom">
+                                        <i class="iconoir-building fs-5 text-dark"></i> Company Details
+                                    </h4>
+
+                                    <div class="profile-label">Company Name</div>
+                                    <div class="profile-value">Ativa Studio Solution Sdn Bhd</div>
+
+                                    <div class="profile-label">Company Registration No. (NEW)</div>
+                                    <div class="profile-value">112312323233</div>
+
+                                    <div class="profile-label">Nature of Business</div>
+                                    <div class="profile-value">FINANCIAL/INSURANCE</div>
+
+                                    <div class="profile-label">Purpose of Transaction</div>
+                                    <div class="profile-value">RETIREMENT/INVESTMENT</div>
+
+                                    <div class="profile-label">Source of Funds</div>
+                                    <div class="profile-value">CORPORATE REVENUES</div>
+
+                                    <div class="profile-label">Source of Wealth</div>
+                                    <div class="profile-value">BUSINESS OPERATIONS</div>
+
+                                    <div class="profile-label">Office Address</div>
+                                    <div class="profile-value profile-value-address">
+                                        MENARXXXXXXXXXXXXXXXX<br>
+                                        NO.78XXXXXXXXXXXXXXXXX<br>
+                                        50200
                                     </div>
+
+                                    <div class="profile-label">Telephone No. (Office)</div>
+                                    <div class="profile-value fw-semibold">018-9019203990</div>
                                 </div>
+                            </div>
 
-                                <div class="row g-3">
-                                    <div class="col-sm-6">
-                                        <div class="profile-label">SA Number</div>
-                                        <div class="profile-value text-dark fw-bold mb-0">UTC-992384-A</div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="profile-label">Category</div>
-                                        <div class="profile-value mb-0">
+                            <!-- Column 2: Authorised Representative Profile -->
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 h-100 p-4">
+                                    <h4 class="profile-section-title pb-2 border-bottom">
+                                        <i class="iconoir-user fs-5 text-dark"></i> User ID
+                                    </h4>
+
+                                    <div class="profile-label">Full Name (As Per IC/ID)</div>
+                                    <div class="profile-value">Ahmad Razak bin Osman</div>
+
+                                    <div class="profile-label">Identification No. (IC)</div>
+                                    <div class="profile-value">850821145231</div>
+
+                                    <div class="profile-label">Designation / Role</div>
+                                    <div class="profile-value">
+                                        <div class="mb-1.5">
                                             <span
-                                                class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
-                                                1</span>
+                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
+                                                style="letter-spacing:0.3px;">Unit Trust</span>
+                                            <span class="ms-1.5 fs-8 text-dark fw-medium">User & Authoriser</span>
                                         </div>
-                                    </div>
-                                    <div class="col-12 mt-4 pt-2 border-top">
-                                        <div class="profile-label mb-2">Agency Details</div>
-                                        <div class="profile-value fs-8 text-muted fw-normal mb-0"
-                                            style="line-height: 1.5;">
-                                            <strong class="text-dark">KUALA LUMPUR AGENCY MAIN OFFICE</strong><br>
-                                            Level 8, Public Mutual Tower, No. 78, Jalan Taman Tun Dr Ismail,<br>
-                                            60000 Kuala Lumpur, Malaysia.
-                                        </div>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <div class="profile-label mb-2">Contact Consultant</div>
-                                        <div class="d-flex align-items-center gap-2 mb-3">
-                                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                                                style="width: 32px; height: 32px;">
-                                                <i class="iconoir-mail text-secondary fs-6"></i>
-                                            </div>
-                                            <a href="mailto:wong.kw@publicmutual.com.my"
-                                                class="fs-8 text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
-                                        </div>
-
-                                        <!-- Quick contact buttons with brand aesthetics -->
-                                        <div class="d-flex flex-wrap gap-2 mt-2">
-                                            <a href="https://wa.me/60123456789" target="_blank"
-                                                class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-whatsapp"></i> WhatsApp
-                                            </a>
-                                            <a href="tel:+60123456789"
-                                                class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-phone"></i> Call
-                                            </a>
-                                            <a href="sms:+60123456789"
-                                                class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-chat-bubble"></i> SMS
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Column 2: Private Retirement Scheme Consultant (PRC) -->
-                        <div class="col-lg-6">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 bg-white p-4">
-                                <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
-
-                                    <div>
-                                        <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
-                                            style="letter-spacing: 0.5px; text-transform: uppercase;">PRS Consultant
-                                            (PRC)</div>
-                                        <h4 class="fw-bold text-dark fs-5 mb-0">NOR AZMAN BIN AHMAD</h4>
-                                    </div>
-                                </div>
-
-                                <div class="row g-3">
-                                    <div class="col-sm-6">
-                                        <div class="profile-label">SA Number</div>
-                                        <div class="profile-value text-dark fw-bold mb-0">PRC-881245-B</div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="profile-label">Category</div>
-                                        <div class="profile-value mb-0">
+                                        <div>
                                             <span
-                                                class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
-                                                2</span>
+                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
+                                                style="letter-spacing:0.3px;">EOP Portal</span>
+                                            <span class="ms-1.5 fs-8 text-dark fw-medium">Download Investment
+                                                Contribution &
+                                                Authoriser</span>
                                         </div>
                                     </div>
-                                    <div class="col-12 mt-4 pt-2 border-top">
-                                        <div class="profile-label mb-2">Agency Details</div>
-                                        <div class="profile-value fs-8 text-muted fw-normal mb-0"
-                                            style="line-height: 1.5;">
-                                            <strong class="text-dark">PETALING JAYA BRANCH OFFICE</strong><br>
-                                            Block A, Jaya One, No. 72A, Jalan Industrial,<br>
-                                            46200 Petaling Jaya, Selangor, Malaysia.
+
+                                    <div class="profile-label">Mobile No. No.</div>
+                                    <div class="profile-value">XXX46XXXXX8 (Ext: 3230)</div>
+
+                                    <div class="profile-label">Corporate Email</div>
+                                    <div class="profile-value">h*********0@g***l.com</div>
+
+                                    <div class="profile-label">Office Address</div>
+                                    <div class="profile-value profile-value-address">
+                                        23 JAXXXXXXXXXX<br>
+                                        BuildingXXXXXXXXXX<br>
+                                        32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Servicing UTC/PRC -->
+                    <div class="tab-pane fade" id="agent" role="tabpanel" aria-labelledby="agent-tab">
+                        <div class="row g-4">
+
+                            <!-- Column 1: Unit Trust Consultant (UTC) -->
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 h-100 p-4">
+                                    <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
+
+                                        <div>
+                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
+                                                style="letter-spacing: 0.5px; text-transform: uppercase;">Unit Trust
+                                                Consultant (UTC)</div>
+                                            <h4 class="fw-bold text-dark fs-5 mb-0">WONG KAH WEI</h4>
                                         </div>
                                     </div>
-                                    <div class="col-12 mt-4">
-                                        <div class="profile-label mb-2">Contact Consultant</div>
-                                        <div class="d-flex align-items-center gap-2 mb-3">
-                                            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                                                style="width: 32px; height: 32px;">
-                                                <i class="iconoir-mail text-secondary fs-6"></i>
+
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="profile-label">SA Number</div>
+                                            <div class="profile-value text-dark fw-bold mb-0">UTC-992384-A</div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="profile-label">Category</div>
+                                            <div class="profile-value mb-0">
+                                                <span
+                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
+                                                    1</span>
                                             </div>
-                                            <a href="mailto:norazman.ahmad@publicmutual.com.my"
-                                                class="fs-8 text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
                                         </div>
+                                        <div class="col-12 mt-4 pt-2 border-top">
+                                            <div class="profile-label mb-2">Agency Details</div>
+                                            <div class="profile-value fs-8 text-muted fw-normal mb-0"
+                                                style="line-height: 1.5;">
+                                                <strong class="text-dark">KUALA LUMPUR AGENCY MAIN OFFICE</strong><br>
+                                                Level 8, Public Mutual Tower, No. 78, Jalan Taman Tun Dr Ismail,<br>
+                                                60000 Kuala Lumpur, Malaysia.
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <div class="profile-label mb-2">Contact Consultant</div>
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                    style="width: 32px; height: 32px;">
+                                                    <i class="iconoir-mail text-secondary fs-6"></i>
+                                                </div>
+                                                <a href="mailto:wong.kw@publicmutual.com.my"
+                                                    class="fs-8 text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
+                                            </div>
 
-                                        <!-- Quick contact buttons with brand aesthetics -->
-                                        <div class="d-flex flex-wrap gap-2 mt-2">
-                                            <a href="https://wa.me/60198765432" target="_blank"
-                                                class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-whatsapp"></i> WhatsApp
-                                            </a>
-                                            <a href="tel:+60198765432"
-                                                class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-phone"></i> Call
-                                            </a>
-                                            <a href="sms:+60198765432"
-                                                class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                <i class="iconoir-chat-bubble"></i> SMS
-                                            </a>
+                                            <!-- Quick contact buttons with brand aesthetics -->
+                                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                                <a href="https://wa.me/60123456789" target="_blank"
+                                                    class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-whatsapp"></i> WhatsApp
+                                                </a>
+                                                <a href="tel:+60123456789"
+                                                    class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-phone"></i> Call
+                                                </a>
+                                                <a href="sms:+60123456789"
+                                                    class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-chat-bubble"></i> SMS
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Column 2: Private Retirement Scheme Consultant (PRC) -->
+                            <div class="col-lg-6">
+                                <div class="border rounded-4 h-100 p-4">
+                                    <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
+
+                                        <div>
+                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
+                                                style="letter-spacing: 0.5px; text-transform: uppercase;">PRS Consultant
+                                                (PRC)</div>
+                                            <h4 class="fw-bold text-dark fs-5 mb-0">NOR AZMAN BIN AHMAD</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="profile-label">SA Number</div>
+                                            <div class="profile-value text-dark fw-bold mb-0">PRC-881245-B</div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="profile-label">Category</div>
+                                            <div class="profile-value mb-0">
+                                                <span
+                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
+                                                    2</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4 pt-2 border-top">
+                                            <div class="profile-label mb-2">Agency Details</div>
+                                            <div class="profile-value fs-8 text-muted fw-normal mb-0"
+                                                style="line-height: 1.5;">
+                                                <strong class="text-dark">PETALING JAYA BRANCH OFFICE</strong><br>
+                                                Block A, Jaya One, No. 72A, Jalan Industrial,<br>
+                                                46200 Petaling Jaya, Selangor, Malaysia.
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <div class="profile-label mb-2">Contact Consultant</div>
+                                            <div class="d-flex align-items-center gap-2 mb-3">
+                                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                    style="width: 32px; height: 32px;">
+                                                    <i class="iconoir-mail text-secondary fs-6"></i>
+                                                </div>
+                                                <a href="mailto:norazman.ahmad@publicmutual.com.my"
+                                                    class="fs-8 text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
+                                            </div>
+
+                                            <!-- Quick contact buttons with brand aesthetics -->
+                                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                                <a href="https://wa.me/60198765432" target="_blank"
+                                                    class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-whatsapp"></i> WhatsApp
+                                                </a>
+                                                <a href="tel:+60198765432"
+                                                    class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-phone"></i> Call
+                                                </a>
+                                                <a href="sms:+60198765432"
+                                                    class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
+                                                    <i class="iconoir-chat-bubble"></i> SMS
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fund Holdings Mapping Section -->
+                            <div class="col-12 mt-4">
+                                <div class="border rounded-4 p-4">
+                                    <h4 class="profile-section-title pb-2 border-bottom mb-4">
+                                        <i class="iconoir-coins fs-5 text-dark"></i> Fund Allocation by Servicing
+                                        Consultant
+                                    </h4>
+                                    <p class="text-muted fs-8 mb-4">Below is the complete list of funds held under your
+                                        corporate account and their respective designated servicing consultants.</p>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0 custom-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="ps-4 py-3">Fund Name</th>
+                                                    <th class="py-3">Fund Code</th>
+                                                    <th class="py-3">Portal Type</th>
+                                                    <th class="py-3">Servicing Consultant</th>
+                                                    <th class="pe-4 py-3 text-end">Quick Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="fs-8 fw-semibold text-dark">
+                                                <tr class="border-bottom">
+                                                    <td class="ps-4 py-3">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="bg-danger rounded-circle"
+                                                                style="width: 8px; height: 8px;"></div>
+                                                            <span class="fw-bold">Public Ittikal Fund</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-muted">PITTIKAL</td>
+                                                    <td><span
+                                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
+                                                            Trust</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+
+                                                            <span>WONG KAH WEI</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="pe-4 text-end">
+                                                        <a href="https://wa.me/60123456789" target="_blank"
+                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
+                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="ps-4 py-3">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="bg-danger rounded-circle"
+                                                                style="width: 8px; height: 8px;"></div>
+                                                            <span class="fw-bold">Public Regional Growth Fund</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-muted">PRGF</td>
+                                                    <td><span
+                                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
+                                                            Trust</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+
+                                                            <span>WONG KAH WEI</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="pe-4 text-end">
+                                                        <a href="https://wa.me/60123456789" target="_blank"
+                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
+                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr class="border-bottom">
+                                                    <td class="ps-4 py-3">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="bg-primary rounded-circle"
+                                                                style="width: 8px; height: 8px;"></div>
+                                                            <span class="fw-bold">Public Islamic Dividend Fund</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-muted">PIDF</td>
+                                                    <td><span
+                                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
+                                                            Trust</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+
+                                                            <span>WONG KAH WEI</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="pe-4 text-end">
+                                                        <a href="https://wa.me/60123456789" target="_blank"
+                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
+                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+                    </div>
 
-                        <!-- Fund Holdings Mapping Section -->
-                        <div class="col-12 mt-4">
-                            <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                                <h4 class="profile-section-title pb-2 border-bottom mb-4">
-                                    <i class="iconoir-coins fs-5 text-dark"></i> Fund Allocation by Servicing Consultant
-                                </h4>
-                                <p class="text-muted fs-8 mb-4">Below is the complete list of funds held under your
-                                    corporate account and their respective designated servicing consultants.</p>
+                    <!-- Tab 2: Change Password -->
+                    <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                        <div class="row g-4 py-4">
+                            <!-- Left Side: Password Form Card -->
+                            <div class="col-lg-7">
+                                <div class="border rounded-4 p-4 h-100">
+                                    <h4 class="profile-section-title pb-2 border-bottom mb-4">
+                                        <i class="iconoir-lock fs-5 text-dark"></i> Update Account Password
+                                    </h4>
 
-                                <div class="table-responsive">
-                                    <table class="table align-middle border-0"
-                                        style="font-family: 'Montserrat', sans-serif;">
-                                        <thead>
-                                            <tr class="bg-light text-secondary fs-9 fw-bold border-bottom">
-                                                <th class="ps-3 py-3 rounded-start">FUND NAME</th>
-                                                <th class="py-3">FUND CODE</th>
-                                                <th class="py-3">PORTAL TYPE</th>
-                                                <th class="py-3">SERVICING CONSULTANT</th>
-                                                <th class="pe-3 py-3 text-end rounded-end">QUICK ACTION</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="fs-8 fw-semibold text-dark">
-                                            <tr class="border-bottom">
-                                                <td class="ps-3 py-3">
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="bg-danger rounded-circle"
-                                                            style="width: 8px; height: 8px;"></div>
-                                                        <span>Public Ittikal Fund</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted">PITTIKAL</td>
-                                                <td><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
-                                                        Trust</span></td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
+                                    <!-- Alert Success Placeholders -->
+                                    <div id="passwordAlert"
+                                        class="alert alert-success alert-dismissible fade show d-none rounded-3 fs-8 fw-medium"
+                                        role="alert">
+                                        <i class="iconoir-check-circle fs-6 me-2 align-middle"></i> Password updated
+                                        successfully!
+                                        <button type="button" class="btn-close fs-9" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
 
-                                                        <span>WONG KAH WEI</span>
-                                                    </div>
-                                                </td>
-                                                <td class="pe-3 text-end">
-                                                    <a href="https://wa.me/60123456789" target="_blank"
-                                                        class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                        <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-3 py-3">
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="bg-danger rounded-circle"
-                                                            style="width: 8px; height: 8px;"></div>
-                                                        <span>Public Regional Growth Fund</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted">PRGF</td>
-                                                <td><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
-                                                        Trust</span></td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
+                                    <form id="changePasswordForm">
+                                        <!-- Current Password -->
+                                        <div class="mb-4">
+                                            <label for="currentPassword"
+                                                class="form-label fs-8 fw-bold text-secondary">Current Password</label>
+                                            <div class="input-group">
+                                                <input type="password"
+                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
+                                                    id="currentPassword" placeholder="Enter current password" required>
+                                                <button
+                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                    type="button"
+                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    <i class="iconoir-eye fs-6"></i>
+                                                </button>
+                                            </div>
+                                        </div>
 
-                                                        <span>WONG KAH WEI</span>
-                                                    </div>
-                                                </td>
-                                                <td class="pe-3 text-end">
-                                                    <a href="https://wa.me/60123456789" target="_blank"
-                                                        class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                        <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-3 py-3">
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="bg-primary rounded-circle"
-                                                            style="width: 8px; height: 8px;"></div>
-                                                        <span>Public Islamic Dividend Fund</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted">PIDF</td>
-                                                <td><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
-                                                        Trust</span></td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
+                                        <!-- New Password -->
+                                        <div class="mb-4">
+                                            <label for="newPassword" class="form-label fs-8 fw-bold text-secondary">New
+                                                Password</label>
+                                            <div class="input-group">
+                                                <input type="password"
+                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
+                                                    id="newPassword" placeholder="Enter new password" required>
+                                                <button
+                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                    type="button"
+                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    <i class="iconoir-eye fs-6"></i>
+                                                </button>
+                                            </div>
 
-                                                        <span>WONG KAH WEI</span>
-                                                    </div>
-                                                </td>
-                                                <td class="pe-3 text-end">
-                                                    <a href="https://wa.me/60123456789" target="_blank"
-                                                        class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                        <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-3 py-3">
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="bg-success rounded-circle"
-                                                            style="width: 8px; height: 8px;"></div>
-                                                        <span>Public Mutual PRS Growth Fund</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-muted">PMPRSG</td>
-                                                <td><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">EOP
-                                                        Portal</span></td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
+                                            <!-- Interactive Password Rules List -->
+                                            <div class="mt-3 p-3 bg-light rounded-3">
+                                                <div class="fs-9 fw-bold text-secondary text-uppercase mb-2">Password
+                                                    Requirements:</div>
+                                                <ul class="list-unstyled d-flex flex-column gap-2 fs-9 mb-0 ps-0 text-muted"
+                                                    id="passwordRulesList">
+                                                    <li class="d-flex align-items-center gap-2" id="rule-case">
+                                                        <i
+                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                        <span>Mixture of both upper and lower case letters</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center gap-2" id="rule-number">
+                                                        <i
+                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                        <span>Numeric characters (e.g. 1,2,3)</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center gap-2" id="rule-length">
+                                                        <i
+                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                        <span>Between 8 and 16 characters without spaces</span>
+                                                    </li>
+                                                    <li class="d-flex align-items-center gap-2" id="rule-special">
+                                                        <i
+                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                        <span>Special characters (<code
+                                                                class="fs-10 text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
 
-                                                        <span>NOR AZMAN BIN AHMAD</span>
-                                                    </div>
-                                                </td>
-                                                <td class="pe-3 text-end">
-                                                    <a href="https://wa.me/60198765432" target="_blank"
-                                                        class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                        <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                        <!-- Confirm New Password -->
+                                        <div class="mb-4">
+                                            <label for="confirmPassword"
+                                                class="form-label fs-8 fw-bold text-secondary">Confirm New
+                                                Password</label>
+                                            <div class="input-group">
+                                                <input type="password"
+                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
+                                                    id="confirmPassword" placeholder="Confirm your new password"
+                                                    required>
+                                                <button
+                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                    type="button"
+                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    <i class="iconoir-eye fs-6"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <div class="d-grid mt-4 pt-2">
+                                            <button type="submit"
+                                                class="btn btn-danger rounded-pill py-2.5 fs-8 fw-bold text-white border-0 shadow-sm"
+                                                style="background-color: var(--brand-primary) !important; border-color: var(--brand-primary) !important;">UPDATE
+                                                PASSWORD</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Right Side: Safe Password Practices Card -->
+                            <div class="col-lg-5">
+                                <div class="border rounded-4 h-100 p-4"
+                                    style="background: linear-gradient(135deg, rgba(38, 36, 123, 0.01) 0%, rgba(38, 36, 123, 0.04) 100%); border-left: 4px solid var(--brand-primary) !important;">
+                                    <h4 class="profile-section-title pb-2 border-bottom"
+                                        style="color: var(--brand-navy); font-weight: 700;">
+                                        <i class="iconoir-shield-check fs-5 text-danger"></i> Practising Safe and Secure
+                                        Password
+                                    </h4>
+                                    <ul class="list-unstyled d-flex flex-column gap-3 fs-8 text-secondary mt-3">
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Use a combination of numeric, special characters, upper and lower case
+                                                letters. (e.g. <code
+                                                    class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">Smrt1zv3@</code>).</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Password is case sensitive, e.g. <strong
+                                                    class="text-dark">"APPLE123"</strong> is different from <strong
+                                                    class="text-dark">"apple123"</strong>.</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Avoid using dictionary or generic passwords or a password that is
+                                                easily
+                                                identified with you (e.g. <code
+                                                    class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">pass1234</code>,
+                                                birthday etc).</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Create a password that is not easy to guess but easy to
+                                                remember.</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Do not share your password or write it down. Be wary of unexpected
+                                                calls
+                                                or emails requesting for personal information, passwords or financial
+                                                details. <strong class="text-dark">Public Mutual will never send you an
+                                                    email or SMS asking you to verify or provide personal/confidential
+                                                    information.</strong></span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>Choose a different password for each online account. For example,
+                                                using
+                                                the same password for bank accounts and social media or email may
+                                                increase
+                                                the risk of identity theft or fraud.</span>
+                                        </li>
+                                        <li class="d-flex align-items-start gap-2">
+                                            <i class="iconoir-warning-circle text-danger fs-6 mt-0.5 flex-shrink-0"></i>
+                                            <span>If you suspect that your password has been compromised, call Customer
+                                                Service Hotline immediately at <strong class="text-danger">03-2022
+                                                    5000</strong>.</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Tab 2: Change Password -->
-                <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-                    <div class="row g-4 py-4">
-                        <!-- Left Side: Password Form Card -->
-                        <div class="col-lg-7">
-                            <div class="card border-0 shadow-sm rounded-4 bg-white p-4 h-100">
-                                <h4 class="profile-section-title pb-2 border-bottom mb-4">
-                                    <i class="iconoir-lock fs-5 text-dark"></i> Update Account Password
-                                </h4>
-
-                                <!-- Alert Success Placeholders -->
-                                <div id="passwordAlert"
-                                    class="alert alert-success alert-dismissible fade show d-none rounded-3 fs-8 fw-medium"
-                                    role="alert">
-                                    <i class="iconoir-check-circle fs-6 me-2 align-middle"></i> Password updated
-                                    successfully!
-                                    <button type="button" class="btn-close fs-9" data-bs-dismiss="alert"
-                                        aria-label="Close"></button>
-                                </div>
-
-                                <form id="changePasswordForm">
-                                    <!-- Current Password -->
-                                    <div class="mb-4">
-                                        <label for="currentPassword"
-                                            class="form-label fs-8 fw-bold text-secondary">Current Password</label>
-                                        <div class="input-group">
-                                            <input type="password"
-                                                class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
-                                                id="currentPassword" placeholder="Enter current password" required>
-                                            <button
-                                                class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                type="button"
-                                                style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
-                                                <i class="iconoir-eye fs-6"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- New Password -->
-                                    <div class="mb-4">
-                                        <label for="newPassword" class="form-label fs-8 fw-bold text-secondary">New
-                                            Password</label>
-                                        <div class="input-group">
-                                            <input type="password"
-                                                class="form-control rounded-3 py-2.5 fs-8 fw-semibold" id="newPassword"
-                                                placeholder="Enter new password" required>
-                                            <button
-                                                class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                type="button"
-                                                style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
-                                                <i class="iconoir-eye fs-6"></i>
-                                            </button>
-                                        </div>
-
-                                        <!-- Interactive Password Rules List -->
-                                        <div class="mt-3 p-3 bg-light rounded-3">
-                                            <div class="fs-9 fw-bold text-secondary text-uppercase mb-2">Password
-                                                Requirements:</div>
-                                            <ul class="list-unstyled d-flex flex-column gap-2 fs-9 mb-0 ps-0 text-muted"
-                                                id="passwordRulesList">
-                                                <li class="d-flex align-items-center gap-2" id="rule-case">
-                                                    <i
-                                                        class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                    <span>Mixture of both upper and lower case letters</span>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-2" id="rule-number">
-                                                    <i
-                                                        class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                    <span>Numeric characters (e.g. 1,2,3)</span>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-2" id="rule-length">
-                                                    <i
-                                                        class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                    <span>Between 8 and 16 characters without spaces</span>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-2" id="rule-special">
-                                                    <i
-                                                        class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                    <span>Special characters (<code
-                                                            class="fs-10 text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Confirm New Password -->
-                                    <div class="mb-4">
-                                        <label for="confirmPassword"
-                                            class="form-label fs-8 fw-bold text-secondary">Confirm New
-                                            Password</label>
-                                        <div class="input-group">
-                                            <input type="password"
-                                                class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
-                                                id="confirmPassword" placeholder="Confirm your new password" required>
-                                            <button
-                                                class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                type="button"
-                                                style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
-                                                <i class="iconoir-eye fs-6"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Submit Button -->
-                                    <div class="d-grid mt-4 pt-2">
-                                        <button type="submit"
-                                            class="btn btn-danger rounded-pill py-2.5 fs-8 fw-bold text-white border-0 shadow-sm"
-                                            style="background-color: var(--brand-primary) !important; border-color: var(--brand-primary) !important;">UPDATE
-                                            PASSWORD</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <!-- Right Side: Safe Password Practices Card -->
-                        <div class="col-lg-5">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4"
-                                style="background: linear-gradient(135deg, rgba(38, 36, 123, 0.01) 0%, rgba(38, 36, 123, 0.04) 100%); border-left: 4px solid var(--brand-primary) !important;">
-                                <h4 class="profile-section-title pb-2 border-bottom"
-                                    style="color: var(--brand-navy); font-weight: 700;">
-                                    <i class="iconoir-shield-check fs-5 text-danger"></i> Practising Safe and Secure
-                                    Password
-                                </h4>
-                                <ul class="list-unstyled d-flex flex-column gap-3 fs-8 text-secondary mt-3">
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Use a combination of numeric, special characters, upper and lower case
-                                            letters. (e.g. <code
-                                                class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">Smrt1zv3@</code>).</span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Password is case sensitive, e.g. <strong
-                                                class="text-dark">"APPLE123"</strong> is different from <strong
-                                                class="text-dark">"apple123"</strong>.</span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Avoid using dictionary or generic passwords or a password that is easily
-                                            identified with you (e.g. <code
-                                                class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">pass1234</code>,
-                                            birthday etc).</span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Create a password that is not easy to guess but easy to remember.</span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Do not share your password or write it down. Be wary of unexpected calls
-                                            or emails requesting for personal information, passwords or financial
-                                            details. <strong class="text-dark">Public Mutual will never send you an
-                                                email or SMS asking you to verify or provide personal/confidential
-                                                information.</strong></span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>Choose a different password for each online account. For example, using
-                                            the same password for bank accounts and social media or email may increase
-                                            the risk of identity theft or fraud.</span>
-                                    </li>
-                                    <li class="d-flex align-items-start gap-2">
-                                        <i class="iconoir-warning-circle text-danger fs-6 mt-0.5 flex-shrink-0"></i>
-                                        <span>If you suspect that your password has been compromised, call Customer
-                                            Service Hotline immediately at <strong class="text-danger">03-2022
-                                                5000</strong>.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Home & Update Buttons (Placed OUTSIDE / BELOW the card - exactly as top up design!) -->
+                <div id="settingsActionContainer" class="d-flex justify-content-end gap-3 mt-4">
+                    <a href="dashboard.html"
+                        class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold text-decoration-none">Cancel</a>
+                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                        id="btnUpdateProfile">Update</button>
                 </div>
-            </div>
 
-            <!-- Home & Update Buttons (Placed OUTSIDE / BELOW the card - exactly as top up design!) -->
-            <div id="settingsActionContainer" class="d-flex justify-content-end gap-3 mt-4">
-                <a href="dashboard.html"
-                    class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold text-decoration-none">Cancel</a>
-                <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                    id="btnUpdateProfile">Update</button>
-            </div>
+                <!-- Disclaimer/Note Section (Placed OUTSIDE / BELOW the card!) -->
+                <div class="mt-4 text-muted fs-9 ps-3">
+                    Note:<br>Please update your company registration and Authorised representative profile details
+                    immediately whenever there are any statutory corporate changes.
+                </div>
 
-            <!-- Disclaimer/Note Section (Placed OUTSIDE / BELOW the card!) -->
-            <div class="mt-4 text-muted fs-9 ps-3">
-                Note:<br>Please update your company registration and Authorised representative profile details
-                immediately whenever there are any statutory corporate changes.
             </div>
-
-        </div>
     </main>
 
     <!-- Footer (partials/footer-portal.html) -->
@@ -907,7 +898,7 @@
                                 <li class="nav-item mb-1"><a href="transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
-                                
+
                             </ul>
                         </div>
                     </li>
@@ -1046,7 +1037,7 @@
                         if (newPasswordInput.value.length > 0) {
                             element.classList.remove('text-muted', 'text-success', 'fw-semibold');
                             element.classList.add('text-danger');
-                            icon.className = 'iconoir-cancel fs-7 text-danger me-1 align-middle';
+                            icon.className = 'iconoir-xmark fs-7 text-danger me-1 align-middle';
                         } else {
                             element.className = 'd-flex align-items-center gap-2 text-muted';
                             icon.className = 'iconoir-info-circle fs-7 text-secondary me-1 align-middle';
@@ -1058,20 +1049,20 @@
             // Form Submit Simulation
             const form = document.getElementById('changePasswordForm');
             const alertBox = document.getElementById('passwordAlert');
-            
+
             // Password PAC Verification Simulation
             const pwdPacModalEl = document.getElementById('passwordPacModal');
             const pwdPacModal = bootstrap.Modal.getOrCreateInstance(pwdPacModalEl);
             const pwdAuthMethod = document.getElementById('pwdAuthMethod');
             const pwdPacInputContainer = document.getElementById('pwdPacInputContainer');
             const pwdSecureSignContainer = document.getElementById('pwdSecureSignContainer');
-            
+
             const btnPwdRequestPac = document.getElementById('btnPwdRequestPac');
             const pwdPacInput = document.getElementById('pwdPacInput');
             const pwdPacError = document.getElementById('pwdPacError');
             const btnPwdVerifyAndSubmit = document.getElementById('btnPwdVerifyAndSubmit');
             const pwdPacTimerText = document.getElementById('pwdPacTimerText');
-            
+
             let pwdPacTimer = null;
             let secureSignTimeout = null;
 
@@ -1094,12 +1085,12 @@
                     btnPwdVerifyAndSubmit.disabled = true;
                     btnPwdRequestPac.disabled = false;
                     btnPwdRequestPac.textContent = 'REQUEST PAC';
-                    pwdPacTimerText.innerHTML = `<i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit authorization code.`;
-                    
+                    pwdPacTimerText.innerHTML = `<i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit Authorisation code.`;
+
                     pwdAuthMethod.value = 'PAC';
                     pwdPacInputContainer.classList.remove('d-none');
                     pwdSecureSignContainer.classList.add('d-none');
-                    
+
                     if (pwdPacTimer) clearInterval(pwdPacTimer);
                     if (secureSignTimeout) clearTimeout(secureSignTimeout);
 
@@ -1110,14 +1101,14 @@
 
             // Toggle authentication method for password change
             if (pwdAuthMethod) {
-                pwdAuthMethod.addEventListener('change', function() {
+                pwdAuthMethod.addEventListener('change', function () {
                     if (this.value === 'SecureSign') {
                         pwdPacInputContainer.classList.add('d-none');
                         pwdSecureSignContainer.classList.remove('d-none');
                         btnPwdVerifyAndSubmit.disabled = true;
-                        
+
                         // Simulate push notification approval
-                        secureSignTimeout = setTimeout(function() {
+                        secureSignTimeout = setTimeout(function () {
                             pwdPacModal.hide();
                             alertBox.classList.remove('d-none');
                             form.reset();
@@ -1143,7 +1134,7 @@
                     let timeLeft = 60;
                     btnPwdRequestPac.disabled = true;
                     pwdPacTimerText.innerHTML = `<i class="iconoir-clock text-danger"></i> Resend code in <strong class="text-danger">${timeLeft}s</strong>`;
-                    
+
                     pwdPacTimer = setInterval(function () {
                         timeLeft--;
                         if (timeLeft <= 0) {
@@ -1194,7 +1185,7 @@
                     btnVerifyAndSubmit.disabled = true;
                     btnRequestPac.disabled = false;
                     btnRequestPac.textContent = 'REQUEST PAC';
-                    pacTimerText.innerHTML = `<i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit authorization code.`;
+                    pacTimerText.innerHTML = `<i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit Authorisation code.`;
                     if (pacTimer) clearInterval(pacTimer);
 
                     // Show PAC Modal
@@ -1286,11 +1277,11 @@
                         </div>
                         <div class="form-text fs-9 text-muted mt-2 d-flex align-items-center gap-1" id="pacTimerText">
                             <i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit
-                            authorization code.
+                            Authorisation code.
                         </div>
                         <!-- Error indicator -->
                         <div class="text-danger fs-9 fw-semibold mt-2 d-none" id="pacError">
-                            <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
+                            <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
                                 class="fw-bold text-dark">12345678</span>.
                         </div>
                     </div>
@@ -1308,27 +1299,30 @@
     </div>
 
     <!-- Password PAC Verification Modal -->
-    <div class="modal fade" id="passwordPacModal" tabindex="-1" aria-labelledby="passwordPacModalLabel" aria-hidden="true"
-        data-bs-backdrop="static">
+    <div class="modal fade" id="passwordPacModal" tabindex="-1" aria-labelledby="passwordPacModalLabel"
+        aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden"
                 style="font-family: 'Montserrat', sans-serif;">
                 <!-- Modal Header -->
                 <div class="modal-header bg-white border-bottom-0 pt-4 px-4 pb-0">
-                    <h5 class="modal-title fw-bold text-dark fs-6 d-flex align-items-center gap-2" id="passwordPacModalLabel">
-                        <i class="iconoir-shield-alert text-danger fs-4"></i> Secure Password Change Authorization
+                    <h5 class="modal-title fw-bold text-dark fs-6 d-flex align-items-center gap-2"
+                        id="passwordPacModalLabel">
+                        <i class="iconoir-shield-alert text-danger fs-4"></i> Secure Password Change Authorisation
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body p-4">
-                    <p class="text-muted fs-8 mb-4">An 8-digit Personal Authentication Code (PAC) or SecureSign is required to
+                    <p class="text-muted fs-8 mb-4">An 8-digit Personal Authentication Code (PAC) or SecureSign is
+                        required to
                         authorize account password changes. Please select your verification method and proceed.</p>
 
                     <div class="mb-4">
                         <label class="form-label text-secondary fs-9 fw-bold">AUTHENTICATION METHOD</label>
                         <select
-                            class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark border border-secondary border-opacity-25" id="pwdAuthMethod">
+                            class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark border border-secondary border-opacity-25"
+                            id="pwdAuthMethod">
                             <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
                             <option value="SecureSign">SecureSign</option>
                         </select>
@@ -1344,13 +1338,14 @@
                                 style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; font-family: 'Montserrat', sans-serif;">REQUEST
                                 PAC</button>
                         </div>
-                        <div class="form-text fs-9 text-muted mt-2 d-flex align-items-center gap-1" id="pwdPacTimerText">
+                        <div class="form-text fs-9 text-muted mt-2 d-flex align-items-center gap-1"
+                            id="pwdPacTimerText">
                             <i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit
-                            authorization code.
+                            Authorisation code.
                         </div>
                         <!-- Error indicator -->
                         <div class="text-danger fs-9 fw-semibold mt-2 d-none" id="pwdPacError">
-                            <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
+                            <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
                                 class="fw-bold text-dark">12345678</span>.
                         </div>
                     </div>
@@ -1358,11 +1353,13 @@
                     <!-- SecureSign Container (hidden by default) -->
                     <div class="mb-4 d-none" id="pwdSecureSignContainer">
                         <div class="p-3 bg-light rounded-3 text-center">
-                            <div class="spinner-border text-danger mb-2" role="status" style="width: 1.5rem; height: 1.5rem;">
+                            <div class="spinner-border text-danger mb-2" role="status"
+                                style="width: 1.5rem; height: 1.5rem;">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <div class="fs-8 fw-bold text-dark mb-1">Awaiting SecureSign Approval...</div>
-                            <p class="text-muted fs-9 mb-0">Please open your PMO Plus App and approve the transaction secure sign notification.</p>
+                            <div class="fs-8 fw-bold text-dark mb-1">Pending SecureSign Approval...</div>
+                            <p class="text-muted fs-9 mb-0">Please open your PMO Plus App and approve the transaction
+                                secure sign notification.</p>
                         </div>
                     </div>
                 </div>

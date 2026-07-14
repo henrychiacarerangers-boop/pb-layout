@@ -46,7 +46,7 @@
         .legal-scroll-progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #26247b 0%, #ed1c24 100%);
+            background: linear-gradient(90deg, #002e77 0%, #ff1700 100%);
             transition: width 0.12s ease-out;
         }
 
@@ -101,7 +101,7 @@
     <div class="sms-toast-container position-fixed top-0 start-50 translate-middle-x p-3"
         style="z-index: 10000; width: 100%; max-width: 440px; pointer-events: none; margin-top: 15px;">
         <div id="smsToast" class="sms-toast p-3 border-start border-4 shadow rounded-4 d-none"
-            style="border-left-color: #ed1c24 !important; pointer-events: auto;">
+            style="border-left-color: #ff1700 !important; pointer-events: auto;">
             <div class="d-flex align-items-start">
                 <div class="bg-danger-subtle text-danger p-2 rounded-circle me-3 d-flex align-items-center justify-content-center"
                     style="width: 42px; height: 42px; flex-shrink: 0;">
@@ -114,7 +114,7 @@
                     </div>
                     <div class="text-dark fs-8 font-monospace fw-semibold"
                         style="line-height: 1.5; letter-spacing: -0.2px;">
-                        MYR0.00 Public Mutual: Your secure login authorization PAC is <span
+                        MYR0.00 Public Mutual: Your secure login Authorisation PAC is <span
                             class="badge bg-danger px-2 py-1 fs-8 text-white font-monospace"
                             style="letter-spacing: 1px;">12345678</span>. Valid for 5 mins. Do not share.
                     </div>
@@ -142,7 +142,7 @@
 
                 <div class="legal-scroll-wrap text-start">
                     <div class="px-4 pt-4 pb-2">
-                        <h2 class="h5 fw-bold text-dark mb-0" style="color: #26247b;">Internet risk &amp; terms of use
+                        <h2 class="h5 fw-bold text-dark mb-0" style="color: #002e77;">Internet risk &amp; terms of use
                         </h2>
                     </div>
                     <div class="legal-scroll-progress" aria-hidden="true">
@@ -212,7 +212,8 @@
                 </div>
 
                 <!-- Consent checkbox trigger (Must be checked first) -->
-                <div class="custom-checkbox d-flex align-items-start gap-2 mb-4 p-4 shadow-sm rounded-4 border bg-white">
+                <div
+                    class="custom-checkbox d-flex align-items-start gap-2 mb-4 p-4 shadow-sm rounded-4 border bg-white">
                     <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
                         id="agreeCheckbox" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
                     <label class="form-check-label fs-8 text-dark cursor-pointer text-start" for="agreeCheckbox"
@@ -240,11 +241,12 @@
                         <div class="pac-group">
                             <input type="password" class="form-control" id="pacInput" placeholder="Enter 8-digit PAC"
                                 maxlength="8" disabled>
-                            <button type="button" class="btn-request-pac" id="btn-request-pac" disabled>REQUEST PAC</button>
+                            <button type="button" class="btn-request-pac" id="btn-request-pac" disabled>REQUEST
+                                PAC</button>
                         </div>
                         <div class="invalid-feedback text-danger fw-bold" id="pac-error"
                             style="display: none; font-size: 0.8rem; margin-top: 6px;">
-                            <i class="iconoir-cancel-circle me-1 align-middle"></i> Incorrect PAC number. Please use
+                            <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC number. Please use
                             12345678 to test.
                         </div>
                         <div class="valid-feedback text-success fw-bold" id="pac-success"
