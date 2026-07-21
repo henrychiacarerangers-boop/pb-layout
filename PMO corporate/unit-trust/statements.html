@@ -539,12 +539,28 @@
                                 class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
                                 <div>
                                     <h5 class="fw-bold text-dark mb-1">Tax Voucher on Distribution</h5>
-                                    <p class="text-muted fs-9 mb-0">Download your annual tax vouchers issued for distribution income.</p>
                                 </div>
-                                <!-- Year Filter -->
-                                <div class="d-flex align-items-center gap-2">
+                                <!-- Month & Year Filters -->
+                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
                                     <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Year:</span>
+                                            class="iconoir-filter-list me-1"></i>Filter:</span>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 130px; height: 36px;" id="taxVoucherMonthFilter">
+                                        <option value="all" selected>All Months</option>
+                                        <option value="Jan">January</option>
+                                        <option value="Feb">February</option>
+                                        <option value="Mar">March</option>
+                                        <option value="Apr">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">June</option>
+                                        <option value="Jul">July</option>
+                                        <option value="Aug">August</option>
+                                        <option value="Sep">September</option>
+                                        <option value="Oct">October</option>
+                                        <option value="Nov">November</option>
+                                        <option value="Dec">December</option>
+                                    </select>
                                     <select
                                         class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
                                         style="width: 110px; height: 36px;" id="taxVoucherYearFilter">
@@ -552,7 +568,6 @@
                                         <option value="2026">2026</option>
                                         <option value="2025">2025</option>
                                         <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
                                     </select>
                                 </div>
                             </div>
@@ -560,23 +575,26 @@
                                 <table class="table table-hover align-middle mb-0 custom-table fs-8">
                                     <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 30%;">Fund Name</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 18%;">Distribution Date</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 12%;">Year</th>
-                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 15%;">Distribution Amount (MYR)</th>
-                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 15%;">Taxable Income (MYR)</th>
-                                            <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">Download</th>
+                                            <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 30%;">
+                                                Reference No.</th>
+                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 18%;">
+                                                Distribution Date</th>
+                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 28%;">
+                                                Fund Name</th>
+                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 14%;">
+                                                Taxable (MYR)</th>
+                                            <th class="pe-4 py-3 fw-semibold text-dark text-center"
+                                                style="width: 10%;">Download</th>
                                         </tr>
                                     </thead>
                                     <tbody class="fw-semibold" id="taxVoucherTableBody">
-                                        <tr class="border-bottom" data-year="2026">
+                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
                                             <td class="ps-4 py-3 text-dark text-start">
-                                                <div class="fw-bold">PUBLIC SHARIAH BALANCED FUND</div>
-                                                <div class="text-muted fs-9 fw-normal mt-1">Account No: 10-UT-0093857</div>
+                                                <span class="fw-semibold d-block">TV-UT-20260430-0012</span>
                                             </td>
-                                            <td class="py-3 text-dark">30 Apr 2026</td>
-                                            <td class="py-3 text-dark">2026</td>
-                                            <td class="py-3 text-dark text-end">1,200.00</td>
+                                            <td class="py-3 text-dark text-start">30 Apr 2026</td>
+                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
+                                                FUND</td>
                                             <td class="py-3 text-dark text-end">1,200.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
@@ -584,14 +602,13 @@
                                                     id="taxVoucher1"><i class="iconoir-download fs-9"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom" data-year="2026">
+                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
                                             <td class="ps-4 py-3 text-dark text-start">
-                                                <div class="fw-bold">PUBLIC ITTIKAL SEQUEL FUND</div>
-                                                <div class="text-muted fs-9 fw-normal mt-1">Account No: 10-UT-0093857</div>
+                                                <span class="fw-semibold d-block">TV-UT-20260430-0013</span>
                                             </td>
-                                            <td class="py-3 text-dark">30 Apr 2026</td>
-                                            <td class="py-3 text-dark">2026</td>
-                                            <td class="py-3 text-dark text-end">3,540.00</td>
+                                            <td class="py-3 text-dark text-start">30 Apr 2026</td>
+                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC ITTIKAL SEQUEL
+                                                FUND</td>
                                             <td class="py-3 text-dark text-end">3,540.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
@@ -599,14 +616,13 @@
                                                     id="taxVoucher2"><i class="iconoir-download fs-9"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom" data-year="2025">
+                                        <tr class="border-bottom" data-month="Oct" data-year="2025">
                                             <td class="ps-4 py-3 text-dark text-start">
-                                                <div class="fw-bold">PUBLIC SHARIAH BALANCED FUND</div>
-                                                <div class="text-muted fs-9 fw-normal mt-1">Account No: 10-UT-0093857</div>
+                                                <span class="fw-semibold d-block">TV-UT-20251031-0008</span>
                                             </td>
-                                            <td class="py-3 text-dark">30 Oct 2025</td>
-                                            <td class="py-3 text-dark">2025</td>
-                                            <td class="py-3 text-dark text-end">980.00</td>
+                                            <td class="py-3 text-dark text-start">31 Oct 2025</td>
+                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
+                                                FUND</td>
                                             <td class="py-3 text-dark text-end">980.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
@@ -614,14 +630,13 @@
                                                     id="taxVoucher3"><i class="iconoir-download fs-9"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom" data-year="2025">
+                                        <tr class="border-bottom" data-month="Oct" data-year="2025">
                                             <td class="ps-4 py-3 text-dark text-start">
-                                                <div class="fw-bold">PUBLIC ITTIKAL SEQUEL FUND</div>
-                                                <div class="text-muted fs-9 fw-normal mt-1">Account No: 10-UT-0093857</div>
+                                                <span class="fw-semibold d-block">TV-UT-20251031-0009</span>
                                             </td>
-                                            <td class="py-3 text-dark">30 Oct 2025</td>
-                                            <td class="py-3 text-dark">2025</td>
-                                            <td class="py-3 text-dark text-end">2,760.00</td>
+                                            <td class="py-3 text-dark text-start">31 Oct 2025</td>
+                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC ITTIKAL SEQUEL
+                                                FUND</td>
                                             <td class="py-3 text-dark text-end">2,760.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
@@ -629,14 +644,13 @@
                                                     id="taxVoucher4"><i class="iconoir-download fs-9"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr data-year="2024">
+                                        <tr data-month="Oct" data-year="2024">
                                             <td class="ps-4 py-3 text-dark text-start">
-                                                <div class="fw-bold">PUBLIC SHARIAH BALANCED FUND</div>
-                                                <div class="text-muted fs-9 fw-normal mt-1">Account No: 10-UT-0093857</div>
+                                                <span class="fw-semibold d-block">TV-UT-20241031-0005</span>
                                             </td>
-                                            <td class="py-3 text-dark">31 Oct 2024</td>
-                                            <td class="py-3 text-dark">2024</td>
-                                            <td class="py-3 text-dark text-end">840.00</td>
+                                            <td class="py-3 text-dark text-start">31 Oct 2024</td>
+                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
+                                                FUND</td>
                                             <td class="py-3 text-dark text-end">840.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
@@ -1671,21 +1685,7 @@
 
             setupLocalFilters('utStmtFilterMonthEinv', 'utStmtFilterYearEinv', 'einvoice');
             setupLocalFilters('utStmtFilterMonthInv', 'utStmtFilterYearInv', 'invoice');
-
-            // Tax Voucher year filter
-            var taxYearFilter = document.getElementById('taxVoucherYearFilter');
-            if (taxYearFilter) {
-                taxYearFilter.addEventListener('change', function () {
-                    var val = taxYearFilter.value;
-                    document.querySelectorAll('#taxVoucherTableBody tr[data-year]').forEach(function (row) {
-                        if (val === 'all' || row.getAttribute('data-year') === val) {
-                            row.classList.remove('d-none');
-                        } else {
-                            row.classList.add('d-none');
-                        }
-                    });
-                });
-            }
+            setupLocalFilters('taxVoucherMonthFilter', 'taxVoucherYearFilter', 'tax');
 
             // Re-align chevron icons when collapse events trigger
             const collapsibles = document.querySelectorAll('.collapse');
