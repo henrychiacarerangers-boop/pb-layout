@@ -3084,6 +3084,8 @@ h6 {
 p,
 li {
     color: var(--text-secondary);
+    padding: 2px;
+    font-size: 14px;
 }
 
 small,

@@ -834,7 +834,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /** EOP Payment list page — row actions (open detail page / abort) */
+    /** EOP Payment list page — row actions (open detail page / Cancel) */
     (function initEopPaymentWizard() {
         const step0 = document.getElementById('eopPayStep0');
         if (!step0) return;
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const payTabEmployer = document.getElementById('eopPayTabEmployer');
         const payPaneSalary = document.getElementById('eopPayPaneSalary');
         const payPaneEmployer = document.getElementById('eopPayPaneEmployer');
-        const abortBanner = document.getElementById('eopPayAbortBanner');
+        const CancelBanner = document.getElementById('eopPayCancelBanner');
 
         function setPayTab(mode) {
             const isSalary = mode === 'salary';
@@ -873,7 +873,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         step0.addEventListener('click', (e) => {
-            const action = e.target.closest('.eop-pay-action-link, .eop-pay-abort-link');
+            const action = e.target.closest('.eop-pay-action-link, .eop-pay-Cancel-link');
             if (!action || !step0.contains(action)) return;
             const ddRoot = action.closest('.dropdown');
             const toggle = ddRoot?.querySelector('[data-bs-toggle="dropdown"]');
@@ -1044,9 +1044,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const step2Line = document.getElementById('eopPayStep2BatchLine');
             if (step2Line) step2Line.textContent = `${ref} · ${contribLabel}`;
 
-            const modalAbortConfirm = document.getElementById('eopPayModalAbortConfirm');
-            if (modalAbortConfirm) {
-                modalAbortConfirm.href = `abort_payment.html?ref=${ref}&ch=${chRaw}&emp=${employees}&amt=${amt}`;
+            const modalCancelConfirm = document.getElementById('eopPayModalCancelConfirm');
+            if (modalCancelConfirm) {
+                modalCancelConfirm.href = `Abort_payment.html?ref=${ref}&ch=${chRaw}&emp=${employees}&amt=${amt}`;
             }
 
             // Populate the employee contributions table list

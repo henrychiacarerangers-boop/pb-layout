@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate PMO Portal — EOP · Abort Payment</title>
+    <title>Corporate PMO Portal — EOP · Cancel Payment</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/montserrat.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/iconoir.css">
@@ -101,7 +101,7 @@
             outline: none !important;
         }
     </style>
-  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -237,23 +237,22 @@
                     </div>
                 </div>
                 <div class="text-end">
-                    <div class="fw-bold fs-7 text-dark" id="eopAbortPrintTitle">EOP abort payment advice</div>
-                    <div class="text-muted fs-9" id="eopAbortPrintDateTime"></div>
+                    <div class="fw-bold fs-7 text-dark" id="eopCancelPrintTitle">EOP Cancel Payment advice</div>
+                    <div class="text-muted fs-9" id="eopCancelPrintDateTime"></div>
                 </div>
             </div>
 
-            <div id="eopAbortStep1" class="flex-grow-1 d-flex flex-column justify-content-between">
+            <div id="eopCancelStep1" class="flex-grow-1 d-flex flex-column justify-content-between">
                 <div
                     class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 print-hidden">
                     <div class="d-flex align-items-center gap-3">
-                        <a href="payment.html" class="btn-back-circle" id="eopAbortDetailBackToList"
+                        <a href="payment.html" class="btn-back-circle" id="eopCancelDetailBackToList"
                             data-bs-toggle="tooltip" data-bs-placement="top" title="Back to payment list">
                             <i class="iconoir-nav-arrow-left fs-5 text-dark" aria-hidden="true"></i>
                         </a>
                         <div>
-                            <h2 class="fw-bold text-dark fs-3 m-0">Abort Payment Request</h2>
-                            <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopAbortHeaderRefLine">Reference:
-                                —</span>
+                            <h2 class="fw-bold text-dark fs-3 m-0">Cancel Payment Request</h2>
+
                         </div>
                     </div>
                 </div>
@@ -263,10 +262,10 @@
                         <div class="d-flex gap-3">
                             <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
                             <div>
-                                <h6 class="fw-bold text-danger mb-2">Abort Payment Alert</h6>
+                                <h6 class="fw-bold text-danger mb-2">Cancel Payment Alert</h6>
                                 <p class="mb-0 fs-8 text-secondary lh-base">
-                                    You are about to cancel and abort this payment instruction. Please provide a
-                                    mandatory reason for aborting below. Aborted transactions are returned to the
+                                    You are about to cancel and Cancel this payment instruction. Please provide a
+                                    mandatory reason for Canceling below. Canceled transactions are returned to the
                                     pending authorisation queue.
                                 </p>
                             </div>
@@ -281,32 +280,32 @@
                             <div class="card-body p-4">
                                 <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
                                 <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                    <table class="pmo-data-table pmo-data-table--details">
                                         <tbody>
                                             <tr>
                                                 <td>Reference No.</td>
-                                                <td id="eopAbortDetailRef">—</td>
+                                                <td id="eopCancelDetailRef">—</td>
                                             </tr>
                                             <tr>
                                                 <td>Scheme Type</td>
-                                                <td id="eopAbortDetailScheme">—</td>
+                                                <td id="eopCancelDetailScheme">—</td>
                                             </tr>
                                             <tr>
                                                 <td>Contribution Type</td>
-                                                <td id="eopAbortDetailContribType">—</td>
+                                                <td id="eopCancelDetailContribType">—</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
 
-                                <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Abort Details</h5>
+                                <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Cancel Details</h5>
                                 <div class="mb-3">
-                                    <label class="form-label text-dark fs-8 fw-semibold" for="eopAbortRemarks">Reason
-                                        for Aborting Payment (Required)</label>
-                                    <textarea class="form-control" id="eopAbortRemarks" rows="3"
-                                        placeholder="Please state the reason why you are aborting this payment instruction..."></textarea>
-                                    <div class="invalid-feedback d-none" id="eopAbortRemarksError">
-                                        A reason is required to abort this payment transaction.
+                                    <label class="form-label text-dark fs-8 fw-semibold" for="eopCancelRemarks">Reason
+                                        for Canceling Payment (Required)</label>
+                                    <textarea class="form-control" id="eopCancelRemarks" rows="3"
+                                        placeholder="Please state the reason why you are Canceling this payment instruction..."></textarea>
+                                    <div class="invalid-feedback d-none" id="eopCancelRemarksError">
+                                        A reason is required to Cancel this payment transaction.
                                     </div>
                                 </div>
                             </div>
@@ -321,19 +320,19 @@
                                     <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Transaction Summary</h6>
                                     <div class="mb-3">
                                         <div class="text-muted fs-9 mb-1">Scheme Type</div>
-                                        <div class="fs-8 text-dark" id="eopAbortSumScheme">—</div>
+                                        <div class="fs-8 text-dark" id="eopCancelSumScheme">—</div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="text-muted fs-9 mb-1">Contribution Type</div>
-                                        <div class="fs-8 text-dark" id="eopAbortSumContrib">—</div>
+                                        <div class="fs-8 text-dark" id="eopCancelSumContrib">—</div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="text-muted fs-9 mb-1">Total Amount (MYR)</div>
-                                        <div class="fw-semibold fs-4 text-danger" id="eopAbortSumTotal">—</div>
+                                        <div class="fw-semibold fs-4 text-danger" id="eopCancelSumTotal">—</div>
                                     </div>
                                     <div class="mb-3">
                                         <div class="text-muted fs-9 mb-1">Employees in File</div>
-                                        <div class="fs-8 text-dark" id="eopAbortSumEmp">—</div>
+                                        <div class="fs-8 text-dark" id="eopCancelSumEmp">—</div>
                                     </div>
                                 </div>
                             </div>
@@ -348,14 +347,14 @@
                                 style="transition:all 0.3s ease;">Back</a>
                             <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
                                 style="background-color:#ff1700; border-color:#ff1700; transition:all 0.3s ease;"
-                                id="eopAbortBtnSubmit">Abort Payment</button>
+                                id="eopCancelBtnSubmit">Cancel Payment</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- STEP 2: Outcome Page -->
-            <div id="eopAbortStep2" class="d-none flex-grow-1 d-flex flex-column justify-content-between">
+            <div id="eopCancelStep2" class="d-none flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="card border-0 shadow-sm rounded-4 bg-white p-5 flex-grow-1">
                     <div class="card-body p-0">
                         <div class="text-center mb-4">
@@ -365,7 +364,7 @@
                             </div>
                         </div>
                         <div class="text-center mb-5">
-                            <h3 class="fw-bold text-dark mb-2">Payment Transaction Aborted</h3>
+                            <h3 class="fw-bold text-dark mb-2">Payment Transaction Canceled</h3>
                             <p class="text-muted fs-8">This payment request has been cancelled and returned to the
                                 pending authorisation queue.</p>
                         </div>
@@ -375,25 +374,26 @@
                                 <h5 class="fw-bold mb-4 text-dark">Transaction Details</h5>
                                 <div class="mb-4">
                                     <div class="text-muted fs-8 mb-2">Batch Reference No.</div>
-                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7" id="eopAbortOkRef">
+                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                        id="eopCancelOkRef">
                                         —</div>
                                 </div>
                                 <div class="mb-4">
                                     <div class="text-muted fs-8 mb-2">Total Contribution (MYR)</div>
                                     <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
-                                        id="eopAbortOkAmount">—</div>
+                                        id="eopCancelOkAmount">—</div>
                                 </div>
                             </div>
                             <div class="col-md-6 ps-md-4 text-start">
                                 <h5 class="fw-bold mb-4 text-dark">Cancellation Log</h5>
                                 <div class="mb-4">
                                     <div class="text-muted fs-8 mb-2">Cancellation Status</div>
-                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7">Aborted &amp;
+                                    <div class="bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7">Canceled &amp;
                                         Returned</div>
                                 </div>
                                 <div class="mb-4">
                                     <div class="text-muted fs-8 mb-2">Reason for Cancellation</div>
-                                    <div class="bg-light rounded-3 px-3 py-3 text-secondary fs-8" id="eopAbortOkReason"
+                                    <div class="bg-light rounded-3 px-3 py-3 text-secondary fs-8" id="eopCancelOkReason"
                                         style="min-height:60px;">—</div>
                                 </div>
                             </div>
@@ -741,8 +741,8 @@
 
     <script>
         (function () {
-            const step1 = document.getElementById('eopAbortStep1');
-            const step2 = document.getElementById('eopAbortStep2');
+            const step1 = document.getElementById('eopCancelStep1');
+            const step2 = document.getElementById('eopCancelStep2');
 
             // Params from query string
             const params = new URLSearchParams(window.location.search);
@@ -767,15 +767,15 @@
             }
 
             // Populate Step 1 Elements
-            const detailHeaderRef = document.getElementById('eopAbortHeaderRefLine');
-            const detailRef = document.getElementById('eopAbortDetailRef');
-            const detailscheme = document.getElementById('eopAbortDetailScheme');
-            const detailContribType = document.getElementById('eopAbortDetailContribType');
+            const detailHeaderRef = document.getElementById('eopCancelHeaderRefLine');
+            const detailRef = document.getElementById('eopCancelDetailRef');
+            const detailscheme = document.getElementById('eopCancelDetailScheme');
+            const detailContribType = document.getElementById('eopCancelDetailContribType');
 
-            const sumscheme = document.getElementById('eopAbortSumScheme');
-            const sumContribution = document.getElementById('eopAbortSumContrib');
-            const sumTotal = document.getElementById('eopAbortSumTotal');
-            const sumEmp = document.getElementById('eopAbortSumEmp');
+            const sumscheme = document.getElementById('eopCancelSumScheme');
+            const sumContribution = document.getElementById('eopCancelSumContrib');
+            const sumTotal = document.getElementById('eopCancelSumTotal');
+            const sumEmp = document.getElementById('eopCancelSumEmp');
 
             if (detailHeaderRef) detailHeaderRef.textContent = `Reference: ${ref}`;
             if (detailRef) detailRef.textContent = ref;
@@ -787,13 +787,13 @@
             if (sumTotal) sumTotal.textContent = fmtRmSen(amt);
             if (sumEmp) sumEmp.textContent = String(employees);
 
-            const printDateTime = document.getElementById('eopAbortPrintDateTime');
+            const printDateTime = document.getElementById('eopCancelPrintDateTime');
             if (printDateTime) printDateTime.textContent = new Date().toLocaleString('en-MY');
 
             // Remarks textarea error handling and submit logic
-            const remarksInput = document.getElementById('eopAbortRemarks');
-            const remarksError = document.getElementById('eopAbortRemarksError');
-            const submitBtn = document.getElementById('eopAbortBtnSubmit');
+            const remarksInput = document.getElementById('eopCancelRemarks');
+            const remarksError = document.getElementById('eopCancelRemarksError');
+            const submitBtn = document.getElementById('eopCancelBtnSubmit');
 
             if (submitBtn) {
                 submitBtn.addEventListener('click', (e) => {
@@ -811,9 +811,9 @@
                     remarksError?.classList.add('d-none');
 
                     // Populate Step 2 Details
-                    const okRef = document.getElementById('eopAbortOkRef');
-                    const okAmount = document.getElementById('eopAbortOkAmount');
-                    const okReason = document.getElementById('eopAbortOkReason');
+                    const okRef = document.getElementById('eopCancelOkRef');
+                    const okAmount = document.getElementById('eopCancelOkAmount');
+                    const okReason = document.getElementById('eopCancelOkReason');
 
                     if (okRef) okRef.textContent = ref;
                     if (okAmount) okAmount.textContent = fmtRmSen(amt);

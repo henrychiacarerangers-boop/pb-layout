@@ -23,7 +23,7 @@ Create an Adobe XD-importable SVG artboard for each source HTML screen, beginnin
 - Render from a local HTTP server rather than `file://`, so relative assets and browser security behave consistently.
 - Use a 1440px viewport, wait for fonts, and capture full-page dimensions after layout settles.
 - URLs and paths with spaces must be handled without shell word-splitting.
-- A failed page must be captured in the manifest with an error and must not abort exports of the other pages.
+- A failed page must be captured in the manifest with an error and must not Cancel exports of the other pages.
 
 ## Validation
 

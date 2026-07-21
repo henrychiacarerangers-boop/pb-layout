@@ -36,7 +36,7 @@
             }
         }
     </style>
-  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -176,9 +176,7 @@
                             <span class="text-secondary fw-medium" id="eopTxnDetailHeaderRef">RC00000000000124</span>
                             <span class="text-primary" id="eopTxnDetailHeaderContrib">Salary Deduction (IND)</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopTxnDetailHeaderschemeLine">Scheme:
-                            Salary Deduction</span>
-                        <span class="text-muted fs-8 d-block mt-1">Transaction Detail — Advice Advice</span>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopTxnDetailHeaderschemeLine"></span>
                     </div>
                 </div>
                 <button type="button"
@@ -217,7 +215,7 @@
                             <!-- Section 1: Request Overview -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
                             <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Reference No.</td>
@@ -243,7 +241,7 @@
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
                             </h5>
                             <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Contribution type</td>
@@ -268,10 +266,10 @@
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopTxnDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive mb-4 pmo-table-frame" style="max-height: 380px; overflow-y: auto;">
-<table class="pmo-data-table">
-                                    <thead class="sticky-top bg-white"
-                                       >
+                            <div class="table-responsive mb-4 pmo-table-frame"
+                                style="max-height: 380px; overflow-y: auto;">
+                                <table class="pmo-data-table">
+                                    <thead class="sticky-top bg-white">
                                         <tr>
                                             <th class="ps-3 py-3">Name</th>
                                             <th class="py-3">NRIC No.</th>
@@ -291,7 +289,7 @@
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Settlement &amp; Receipt Details
                             </h5>
                             <div class="table-responsive pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Payment Status</td>
@@ -726,7 +724,7 @@
                     preparedDt: '2026/04/28 11:05:18',
                     employees: 6,
                     amountFmt: '18,200.00',
-                    status: 'ABORTED',
+                    status: 'CancelED',
                     bank: 'PUBLIC BANK BERHAD 891823092391',
                     txnId: 'FPX-TXN-FAILED-320',
                     execDt: '28 Apr 2026, 11:09:45'
@@ -799,7 +797,7 @@
             // Set titles & overview
             document.getElementById('eopTxnDetailHeaderRef').textContent = ref;
             document.getElementById('eopTxnDetailHeaderContrib').textContent = d.contributionLabel;
-            document.getElementById('eopTxnDetailHeaderschemeLine').textContent = `Scheme: ${d.schemeLabel}`;
+
 
             document.getElementById('eopTxnDetailRef').textContent = ref;
             document.getElementById('eopTxnDetailscheme').textContent = d.schemeLabel;
@@ -853,14 +851,14 @@
                         <div class="d-flex gap-3">
                             <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
                             <div>
-                                <h6 class="fw-bold text-danger mb-2">Transaction Aborted</h6>
-                                <p class="mb-0 fs-8 text-secondary lh-base">This transaction was aborted or failed. Payment was not settled. You may recreate the contribution batch or retry the payment.</p>
+                                <h6 class="fw-bold text-danger mb-2">Transaction Canceled</h6>
+                                <p class="mb-0 fs-8 text-secondary lh-base">This transaction was Canceled or failed. Payment was not settled. You may recreate the contribution batch or retry the payment.</p>
                             </div>
                         </div>
                     </div>
                 `;
-                summaryBadgeWrap.innerHTML = `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill fs-10">ABORTED</span>`;
-                receiptStatus.innerHTML = `<span class="text-danger fw-bold"><i class="iconoir-xmark fs-6 me-1"></i> Aborted (Cancelled/Failed)</span>`;
+                summaryBadgeWrap.innerHTML = `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill fs-10">CancelED</span>`;
+                receiptStatus.innerHTML = `<span class="text-danger fw-bold"><i class="iconoir-xmark fs-6 me-1"></i> Canceled (Cancelled/Failed)</span>`;
             }
 
             // Populate the employee contributions list table

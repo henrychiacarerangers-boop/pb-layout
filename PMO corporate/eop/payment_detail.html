@@ -103,7 +103,7 @@
             outline: none !important;
         }
     </style>
-  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -258,9 +258,6 @@
                                     id="eopPayDetailHeaderRef">RC00000000000124</span>
                                 <span class="text-primary" id="eopPayDetailHeaderContrib">Salary Deduction (IND)</span>
                             </h2>
-                            <span class="text-muted fs-8 fw-semibold mt-1 d-block"
-                                id="eopPayDetailHeaderschemeLine">Scheme: Salary Deduction</span>
-                            <span class="text-muted fs-8 d-block mt-1">Make payment — review batch</span>
                         </div>
                     </div>
                     <button type="button"
@@ -297,7 +294,7 @@
                                     <span>Request Overview</span>
                                 </h5>
                                 <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                    <table class="pmo-data-table pmo-data-table--details">
                                         <tbody>
                                             <tr>
                                                 <td>Reference No.</td>
@@ -318,7 +315,7 @@
                                 <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount
                                     Details</h5>
                                 <div class="table-responsive pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                    <table class="pmo-data-table pmo-data-table--details">
                                         <tbody>
                                             <tr>
                                                 <td>Contribution type
@@ -960,15 +957,15 @@
     <script defer src="../js/eop-nav-active.js"></script>
     <script src="../js/eop-pages.js"></script>
 
-    <!-- Abort Payment Confirmation Modal -->
-    <div class="modal fade" id="eopPayAbortModal" tabindex="-1" aria-labelledby="eopPayAbortModalLabel"
+    <!-- Cancel Payment Confirmation Modal -->
+    <div class="modal fade" id="eopPayCancelModal" tabindex="-1" aria-labelledby="eopPayCancelModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow">
 
                 <div class="modal-body py-3">
                     <p class="fs-8 text-muted mb-0">
-                        Are you sure you want to abort the payment for this contribution batch? Aborting
+                        Are you sure you want to Cancel the payment for this contribution batch? Canceling
                         this transaction will cancel the payment process and return the batch to the
                         pending authorisation queue.
                     </p>
@@ -977,7 +974,8 @@
                     <button type="button" class="btn btn-outline-secondary rounded-pill px-4 py-2 fw-semibold fs-8"
                         data-bs-dismiss="modal">Cancel</button>
                     <a href="authorise.html" class="btn btn-danger rounded-pill px-4 py-2 fw-semibold fs-8"
-                        style="background-color:#ff1700; border-color:#ff1700;" id="eopPayModalAbortConfirm">Yes, Abort
+                        style="background-color:#ff1700; border-color:#ff1700;" id="eopPayModalCancelConfirm">Yes,
+                        Cancel
                         Payment</a>
                 </div>
             </div>

@@ -66,9 +66,7 @@
   transition: background-color 160ms ease;
 }
 
-.pmo-data-table tbody tr:hover> :is(td, th) {
-  background: #EAF2FF !important;
-}
+
 
 .pmo-data-table tbody tr:focus-visible> :is(td, th) {
   background: #EAF2FF !important;
