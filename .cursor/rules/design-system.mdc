@@ -20,7 +20,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
   - *Primary use*: Standard heading text, dark theme elements, primary button outlines.
 - **Active Accent Blue**: `#002e77`
   - *Primary use*: Focus outlines, active highlights, badges, tooltips.
-- **Subtle Slate Blue**: `#5d678e`
+- **Subtle Slate Blue**: `#58595b`
   - *Primary use*: Form labels, borders, subtle text cards, icons.
 - **Light Analytics Grey**: `#dce3e8`
   - *Primary use*: Overall page background fields, background shading, table header groupings.

@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="../images/favicon/site.webmanifest" />
+    <!-- <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> --> -->
     <style>
         /* Profile Details styling */
         .profile-section-title {
@@ -235,6 +235,8 @@
                 <p class="text-muted fs-7">Manage your corporate company profile and account credentials</p>
             </div>
 
+            <div id="alertMount"></div>
+
             <!-- Card with Tabs (Styled like Analytics & Statement Pages) -->
             <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4">
                 <!-- View Tab Links -->
@@ -259,7 +261,6 @@
 
                 <!-- Tab Content -->
                 <div class="tab-content" id="settingsTabContent">
-
                     <!-- Tab 1: Personal & Corporate Profile -->
                     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row g-4">
@@ -272,32 +273,97 @@
                                     </h4>
 
                                     <div class="profile-label">Company Name</div>
-                                    <div class="profile-value">Ativa Studio Solution Sdn Bhd</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblCompanyName">
+                                        Ativa Studio Solution Sdn Bhd</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputCompanyName" value="Ativa Studio Solution Sdn Bhd">
+                                    </div>
 
                                     <div class="profile-label">Company Registration No. (NEW)</div>
-                                    <div class="profile-value">112312323233</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblCompanyReg">
+                                        112312323233</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputCompanyReg" value="112312323233">
+                                    </div>
 
                                     <div class="profile-label">Nature of Business</div>
-                                    <div class="profile-value">FINANCIAL/INSURANCE</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold"
+                                        id="lblCompanyNature">FINANCIAL/INSURANCE</div>
+                                    <div class="profile-value-edit d-none">
+                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputCompanyNature">
+                                            <option value="FINANCIAL/INSURANCE" selected>FINANCIAL/INSURANCE</option>
+                                            <option value="IT/TECHNOLOGY">IT/TECHNOLOGY</option>
+                                            <option value="MANUFACTURING">MANUFACTURING</option>
+                                            <option value="TRADING/RETAIL">TRADING/RETAIL</option>
+                                            <option value="CONSTRUCTION">CONSTRUCTION</option>
+                                        </select>
+                                    </div>
 
                                     <div class="profile-label">Purpose of Transaction</div>
-                                    <div class="profile-value">RETIREMENT/INVESTMENT</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold"
+                                        id="lblCompanyPurpose">RETIREMENT/INVESTMENT</div>
+                                    <div class="profile-value-edit d-none">
+                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputCompanyPurpose">
+                                            <option value="RETIREMENT/INVESTMENT" selected>RETIREMENT/INVESTMENT
+                                            </option>
+                                            <option value="BUSINESS EXPANSION">BUSINESS EXPANSION</option>
+                                            <option value="WORKING CAPITAL">WORKING CAPITAL</option>
+                                            <option value="TREASURY MANAGEMENT">TREASURY MANAGEMENT</option>
+                                        </select>
+                                    </div>
 
                                     <div class="profile-label">Source of Funds</div>
-                                    <div class="profile-value">CORPORATE REVENUES</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold"
+                                        id="lblCompanyFunds">CORPORATE REVENUES</div>
+                                    <div class="profile-value-edit d-none">
+                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputCompanyFunds">
+                                            <option value="CORPORATE REVENUES" selected>CORPORATE REVENUES</option>
+                                            <option value="SHAREHOLDERS LOAN">SHAREHOLDERS LOAN</option>
+                                            <option value="DISPOSAL OF ASSETS">DISPOSAL OF ASSETS</option>
+                                        </select>
+                                    </div>
 
                                     <div class="profile-label">Source of Wealth</div>
-                                    <div class="profile-value">BUSINESS OPERATIONS</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold"
+                                        id="lblCompanyWealth">BUSINESS OPERATIONS</div>
+                                    <div class="profile-value-edit d-none">
+                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputCompanyWealth">
+                                            <option value="BUSINESS OPERATIONS" selected>BUSINESS OPERATIONS</option>
+                                            <option value="ACCUMULATED SURPLUS">ACCUMULATED SURPLUS</option>
+                                            <option value="INVESTMENT INCOME">INVESTMENT INCOME</option>
+                                        </select>
+                                    </div>
 
                                     <div class="profile-label">Office Address</div>
-                                    <div class="profile-value profile-value-address">
+                                    <div class="profile-value profile-value-view profile-value-address text-dark fw-bold"
+                                        id="lblCompanyAddress">
                                         MENARXXXXXXXXXXXXXXXX<br>
                                         NO.78XXXXXXXXXXXXXXXXX<br>
                                         50200
                                     </div>
+                                    <div class="profile-value-edit d-none">
+                                        <textarea class="form-control rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputCompanyAddress" rows="3">MENARXXXXXXXXXXXXXXXX
+NO.78XXXXXXXXXXXXXXXXX
+50200</textarea>
+                                    </div>
 
                                     <div class="profile-label">Telephone No. (Office)</div>
-                                    <div class="profile-value fw-semibold">018-9019203990</div>
+                                    <div class="profile-value profile-value-view fw-semibold text-dark fw-bold"
+                                        id="lblCompanyPhone">018-9019203990</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputCompanyPhone" value="018-9019203990">
+                                    </div>
                                 </div>
                             </div>
 
@@ -309,41 +375,165 @@
                                     </h4>
 
                                     <div class="profile-label">Full Name (As Per IC/ID)</div>
-                                    <div class="profile-value">Ahmad Razak bin Osman</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserName">
+                                        Ahmad Razak bin Osman</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputUserName" value="Ahmad Razak bin Osman">
+                                    </div>
 
                                     <div class="profile-label">Identification No. (IC)</div>
-                                    <div class="profile-value">850821145231</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserIC">
+                                        850821145231</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputUserIC" value="850821145231">
+                                    </div>
 
                                     <div class="profile-label">Designation / Role</div>
-                                    <div class="profile-value">
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserRoles">
                                         <div class="mb-1.5">
                                             <span
                                                 class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
                                                 style="letter-spacing:0.3px;">Unit Trust</span>
-                                            <span class="ms-1.5 fs-8 text-dark fw-medium">User & Authoriser</span>
+                                            <span class="ms-1.5 fs-8 text-dark fw-medium" id="lblUtRole">Both (Inputter
+                                                & Authoriser)</span>
                                         </div>
                                         <div>
                                             <span
                                                 class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
                                                 style="letter-spacing:0.3px;">EOP Portal</span>
-                                            <span class="ms-1.5 fs-8 text-dark fw-medium">Download Investment
-                                                Contribution &
-                                                Authoriser</span>
+                                            <span class="ms-1.5 fs-8 text-dark fw-medium" id="lblEopRole">Download only,
+                                                Authorise only</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-value-edit d-none mb-3">
+                                        <div class="border rounded-3 p-3 bg-light mb-3">
+                                            <label class="form-label text-secondary fs-9 fw-bold mb-2">UNIT TRUST USER
+                                                ROLE</label>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="radio" name="inputUtRole"
+                                                    id="utRoleInputter" value="Inputter">
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="utRoleInputter">Inputter</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="radio" name="inputUtRole"
+                                                    id="utRoleAuthoriser" value="Authoriser">
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="utRoleAuthoriser">Authoriser</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="inputUtRole"
+                                                    id="utRoleBoth" value="Both" checked>
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="utRoleBoth">Both (Inputter & Authoriser)</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="border rounded-3 p-3 bg-light">
+                                            <label class="form-label text-secondary fs-9 fw-bold mb-2">EOP USER
+                                                ROLE</label>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="checkbox" name="inputEopRole"
+                                                    id="eopRoleDownload" value="Download only" checked>
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="eopRoleDownload">Download only</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="checkbox" name="inputEopRole"
+                                                    id="eopRoleUpload" value="Upload only">
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="eopRoleUpload">Upload only</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="checkbox" name="inputEopRole"
+                                                    id="eopRoleAuthorise" value="Authorise only" checked>
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="eopRoleAuthorise">Authorise only</label>
+                                            </div>
+                                            <div class="form-check mb-1">
+                                                <input class="form-check-input" type="checkbox" name="inputEopRole"
+                                                    id="eopRolePayment" value="Make payment only">
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="eopRolePayment">Make payment only</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="inputEopRole"
+                                                    id="eopRoleAdmin" value="Admin">
+                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                    for="eopRoleAdmin">Admin</label>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="profile-label">Mobile No. No.</div>
-                                    <div class="profile-value">XXX46XXXXX8 (Ext: 3230)</div>
+                                    <div class="profile-label">Mobile No.</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserMobile">
+                                        XXX46XXXXX8 (Ext: 3230)</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputUserMobile" value="XXX46XXXXX8 (Ext: 3230)">
+                                    </div>
 
                                     <div class="profile-label">Corporate Email</div>
-                                    <div class="profile-value">h*********0@g***l.com</div>
+                                    <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserEmail">
+                                        h*********0@g***l.com</div>
+                                    <div class="profile-value-edit d-none">
+                                        <input type="text"
+                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            id="inputUserEmail" value="h*********0@g***l.com">
+                                    </div>
 
                                     <div class="profile-label">Office Address</div>
-                                    <div class="profile-value profile-value-address">
+                                    <div class="profile-value profile-value-view profile-value-address text-dark fw-bold"
+                                        id="lblUserAddress">
                                         23 JAXXXXXXXXXX<br>
                                         BuildingXXXXXXXXXX<br>
                                         32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                                     </div>
+                                    <div class="profile-value-edit d-none">
+                                        <textarea class="form-control rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                            id="inputUserAddress" rows="3">23 JAXXXXXXXXXX
+BuildingXXXXXXXXXX
+32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Document Upload (Visible only in edit mode) -->
+                            <div class="col-12 d-none" id="uploadDocSection">
+                                <div class="border border-dashed border-danger rounded-4 p-4 text-center bg-light">
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <i class="iconoir-upload fs-1 text-danger"></i>
+                                    </div>
+                                    <h5 class="fw-bold text-dark fs-7">Submit Supporting Document</h5>
+                                    <p class="text-muted fs-8 mb-3">Updating company details or user roles requires
+                                        statutory verification. Please upload the Board Resolution or Authorization
+                                        Letter (PDF, JPG, PNG up to 5MB).</p>
+                                    <div class="d-flex justify-content-center align-items-center gap-2">
+                                        <input type="file" id="supportingDoc"
+                                            class="form-control form-control-sm rounded-3 fw-semibold text-dark fs-8 border"
+                                            style="max-width: 350px;">
+                                    </div>
+                                    <div class="text-success fs-9 fw-semibold mt-2 d-none" id="docUploadSuccess">
+                                        <i class="iconoir-check-circle-solid align-middle me-1"></i> Document uploaded
+                                        successfully!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons inside Profile Tab -->
+                            <div class="col-12 mt-4 pt-3 border-top">
+                                <div id="settingsActionContainer" class="d-flex justify-content-end gap-3">
+                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold"
+                                        id="btnStartEdit">Edit Profile</button>
+                                    <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold d-none"
+                                        id="btnCancelEdit">Cancel</button>
+                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm d-none"
+                                        id="btnUpdateProfile" disabled>Submit Changes</button>
                                 </div>
                             </div>
                         </div>
@@ -372,47 +562,42 @@
                                             <div class="profile-value text-dark fw-bold mb-0">UTC-992384-A</div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="profile-label">Category</div>
+                                            <div class="profile-label">SA Risk Level</div>
                                             <div class="profile-value mb-0">
                                                 <span
                                                     class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
                                                     1</span>
                                             </div>
                                         </div>
-                                        <div class="col-12 mt-4 pt-2 border-top">
-                                            <div class="profile-label mb-2">Agency Details</div>
-                                            <div class="profile-value fs-8 text-muted fw-normal mb-0"
-                                                style="line-height: 1.5;">
-                                                <strong class="text-dark">KUALA LUMPUR AGENCY MAIN OFFICE</strong><br>
-                                                Level 8, Public Mutual Tower, No. 78, Jalan Taman Tun Dr Ismail,<br>
-                                                60000 Kuala Lumpur, Malaysia.
-                                            </div>
-                                        </div>
+
                                         <div class="col-12 mt-4">
                                             <div class="profile-label mb-2">Contact Consultant</div>
-                                            <div class="d-flex align-items-center gap-2 mb-3">
-                                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                                                    style="width: 32px; height: 32px;">
-                                                    <i class="iconoir-mail text-secondary fs-6"></i>
+                                            <div class="d-flex flex-column gap-2.5">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-mail text-secondary fs-6"></i>
+                                                    </div>
+                                                    <a href="mailto:wong.kw@publicmutual.com.my"
+                                                        class="fs-8 text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
                                                 </div>
-                                                <a href="mailto:wong.kw@publicmutual.com.my"
-                                                    class="fs-8 text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
-                                            </div>
-
-                                            <!-- Quick contact buttons with brand aesthetics -->
-                                            <div class="d-flex flex-wrap gap-2 mt-2">
-                                                <a href="https://wa.me/60123456789" target="_blank"
-                                                    class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-whatsapp"></i> WhatsApp
-                                                </a>
-                                                <a href="tel:+60123456789"
-                                                    class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-phone"></i> Call
-                                                </a>
-                                                <a href="sms:+60123456789"
-                                                    class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-chat-bubble"></i> SMS
-                                                </a>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-phone text-secondary fs-6"></i>
+                                                    </div>
+                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6012-345
+                                                        6789</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-whatsapp text-secondary fs-6"></i>
+                                                    </div>
+                                                    <a href="https://wa.me/60123456789" target="_blank"
+                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
+                                                        +6012-345 6789</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -438,47 +623,41 @@
                                             <div class="profile-value text-dark fw-bold mb-0">PRC-881245-B</div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="profile-label">Category</div>
+                                            <div class="profile-label">SA Risk Level</div>
                                             <div class="profile-value mb-0">
                                                 <span
                                                     class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
                                                     2</span>
                                             </div>
                                         </div>
-                                        <div class="col-12 mt-4 pt-2 border-top">
-                                            <div class="profile-label mb-2">Agency Details</div>
-                                            <div class="profile-value fs-8 text-muted fw-normal mb-0"
-                                                style="line-height: 1.5;">
-                                                <strong class="text-dark">PETALING JAYA BRANCH OFFICE</strong><br>
-                                                Block A, Jaya One, No. 72A, Jalan Industrial,<br>
-                                                46200 Petaling Jaya, Selangor, Malaysia.
-                                            </div>
-                                        </div>
                                         <div class="col-12 mt-4">
                                             <div class="profile-label mb-2">Contact Consultant</div>
-                                            <div class="d-flex align-items-center gap-2 mb-3">
-                                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
-                                                    style="width: 32px; height: 32px;">
-                                                    <i class="iconoir-mail text-secondary fs-6"></i>
+                                            <div class="d-flex flex-column gap-2.5">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-mail text-secondary fs-6"></i>
+                                                    </div>
+                                                    <a href="mailto:norazman.ahmad@publicmutual.com.my"
+                                                        class="fs-8 text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
                                                 </div>
-                                                <a href="mailto:norazman.ahmad@publicmutual.com.my"
-                                                    class="fs-8 text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
-                                            </div>
-
-                                            <!-- Quick contact buttons with brand aesthetics -->
-                                            <div class="d-flex flex-wrap gap-2 mt-2">
-                                                <a href="https://wa.me/60198765432" target="_blank"
-                                                    class="btn btn-outline-success rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-whatsapp"></i> WhatsApp
-                                                </a>
-                                                <a href="tel:+60198765432"
-                                                    class="btn btn-outline-primary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-phone"></i> Call
-                                                </a>
-                                                <a href="sms:+60198765432"
-                                                    class="btn btn-outline-secondary rounded-pill px-3 py-1.5 fs-9 fw-bold d-flex align-items-center gap-1">
-                                                    <i class="iconoir-chat-bubble"></i> SMS
-                                                </a>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-phone text-secondary fs-6"></i>
+                                                    </div>
+                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6019-876
+                                                        5432</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
+                                                        style="width: 32px; height: 32px;">
+                                                        <i class="iconoir-whatsapp text-secondary fs-6"></i>
+                                                    </div>
+                                                    <a href="https://wa.me/60198765432" target="_blank"
+                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
+                                                        +6019-876 5432</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -502,8 +681,7 @@
                                                     <th class="ps-4 py-3">Fund Name</th>
                                                     <th class="py-3">Fund Code</th>
                                                     <th class="py-3">Portal Type</th>
-                                                    <th class="py-3">Servicing Consultant</th>
-                                                    <th class="pe-4 py-3 text-end">Quick Action</th>
+                                                    <th class="pe-4 py-3 text-end">Servicing Consultant</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="fs-8 fw-semibold text-dark">
@@ -519,17 +697,8 @@
                                                     <td><span
                                                             class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
                                                             Trust</span></td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center gap-2">
-
-                                                            <span>WONG KAH WEI</span>
-                                                        </div>
-                                                    </td>
                                                     <td class="pe-4 text-end">
-                                                        <a href="https://wa.me/60123456789" target="_blank"
-                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                        </a>
+                                                        <span>WONG KAH WEI</span>
                                                     </td>
                                                 </tr>
                                                 <tr class="border-bottom">
@@ -544,17 +713,8 @@
                                                     <td><span
                                                             class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
                                                             Trust</span></td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center gap-2">
-
-                                                            <span>WONG KAH WEI</span>
-                                                        </div>
-                                                    </td>
                                                     <td class="pe-4 text-end">
-                                                        <a href="https://wa.me/60123456789" target="_blank"
-                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                        </a>
+                                                        <span>WONG KAH WEI</span>
                                                     </td>
                                                 </tr>
                                                 <tr class="border-bottom">
@@ -569,17 +729,8 @@
                                                     <td><span
                                                             class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2.5 py-0.5 fw-bold">Unit
                                                             Trust</span></td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center gap-2">
-
-                                                            <span>WONG KAH WEI</span>
-                                                        </div>
-                                                    </td>
                                                     <td class="pe-4 text-end">
-                                                        <a href="https://wa.me/60123456789" target="_blank"
-                                                            class="btn btn-sm btn-light border-secondary border-opacity-25 rounded-pill px-3 fs-9 fw-semibold text-dark">
-                                                            <i class="iconoir-whatsapp text-success me-1"></i> WhatsApp
-                                                        </a>
+                                                        <span>WONG KAH WEI</span>
                                                     </td>
                                                 </tr>
 
@@ -619,12 +770,13 @@
                                                 class="form-label fs-8 fw-bold text-secondary">Current Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
-                                                    id="currentPassword" placeholder="Enter current password" required>
+                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                    id="currentPassword" placeholder="Enter current password" required
+                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
                                                 <button
                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
                                                     type="button"
-                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
                                                     <i class="iconoir-eye fs-6"></i>
                                                 </button>
                                             </div>
@@ -636,12 +788,13 @@
                                                 Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
-                                                    id="newPassword" placeholder="Enter new password" required>
+                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                    id="newPassword" placeholder="Enter new password" required
+                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
                                                 <button
                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
                                                     type="button"
-                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
                                                     <i class="iconoir-eye fs-6"></i>
                                                 </button>
                                             </div>
@@ -684,13 +837,14 @@
                                                 Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control rounded-3 py-2.5 fs-8 fw-semibold"
+                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
                                                     id="confirmPassword" placeholder="Confirm your new password"
-                                                    required>
+                                                    required
+                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
                                                 <button
                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
                                                     type="button"
-                                                    style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-color: #dee2e6;">
+                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
                                                     <i class="iconoir-eye fs-6"></i>
                                                 </button>
                                             </div>
@@ -772,13 +926,7 @@
                     </div>
                 </div>
 
-                <!-- Home & Update Buttons (Placed OUTSIDE / BELOW the card - exactly as top up design!) -->
-                <div id="settingsActionContainer" class="d-flex justify-content-end gap-3 mt-4">
-                    <a href="dashboard.html"
-                        class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold text-decoration-none">Cancel</a>
-                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                        id="btnUpdateProfile">Update</button>
-                </div>
+
 
                 <!-- Disclaimer/Note Section (Placed OUTSIDE / BELOW the card!) -->
                 <div class="mt-4 text-muted fs-9 ps-3">
@@ -816,37 +964,42 @@
         <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-                <div class="d-flex justify-content-end mb-2 w-100">
+                <div class="d-flex justify-content-between align-items-center mb-3 w-100">
+                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
+                        style="padding: 8px 16px !important;">
+                        <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
+                    </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
                         aria-label="Close" id="pmoShellSidebarCloseUt">
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3">
-                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
-                    <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
-                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
-                        Authoriser</span>
+                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                    <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
+                        style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
+                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
-                    <li class="nav-item mb-2">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
-                            id="pmoUtSideDash">
+                    <!-- Section: Unit Trust -->
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
+                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
+                            href="../unit-trust/dashboard.html" id="pmoUtSideDash">
                             <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                 class="fw-medium">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item mb-2">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
-                            id="pmoUtSideViewAcct">
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
+                            href="../unit-trust/view_account.html" id="pmoUtSideViewAcct">
                             <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                 class="fw-medium">View Account</span>
                         </a>
                     </li>
-                    <li class="nav-item mb-2">
+                    <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
                             aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
@@ -860,14 +1013,14 @@
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-1"><a href="authorise.html"
+                        <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
                                         Top-Up Investment <span
                                             class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
-                                <li class="nav-item mb-1"><a href="authorise.html"
+                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
                                         Redemption <span
@@ -876,7 +1029,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mb-2">
+                    <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
                             aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
@@ -887,22 +1040,21 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-1"><a href="transactions.html"
+                        <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
-                                <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
+                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
-                                <li class="nav-item mb-1"><a href="transactions.html?tab=online"
+                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
-
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mb-2">
+                    <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
@@ -917,32 +1069,190 @@
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-5 mt-1" id="statementCollapse">
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
+                        <div class="collapse ps-4 mt-1" id="statementCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
-                                <li class="nav-item mb-1"><a href="statements.html?tab=annual"
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
-                                <li class="nav-item mb-1"><a href="statements.html?tab=fund"
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideStmt3">Fund
-                                        Reports</a></li>
-                                <li class="nav-item mb-1"><a href="statements.html?tab=einv"
+                                        id="pmoUtSideStmtTax">Tax Voucher</a></li>
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoUtSideStmt3">Fund Reports</a></li>
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
-                                <li class="nav-item mb-1"><a href="statements.html?tab=inv"
+                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
-                    <li class="nav-item mb-2">
+                    </li>
+
+                    <!-- Section: EOP -->
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
+                            id="eopSideHome">
+                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <span class="fw-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarContribCollapse"
+                            id="eopSidebarContribToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Contributions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="../eop/authorise.html" id="eopSideAuthorise">
+                                        <span>Authorise contribution</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                        href="../eop/payment.html" id="eopSidePayment">
+                                        <span>Make payment</span>
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
+                                            id="eopNavBadgePay"
+                                            style="background-color: var(--brand-primary); color: #fff;">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button"
+                            aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
+                            id="eopSidebarRecordsToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Transactions</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/transactions.html" id="eopSideTxnPast">
+                                        Past Transaction
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
+                                        Pending Transaction
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
+                            aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <span class="fw-medium">Statements</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
+                                </li>
+                                <li class="nav-item mb-1">
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Section: Analysis -->
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
+                            href="../analytics/unit-trust.html" id="pmoSideUtAnalytics">
+                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">Unit Trust Analytics</span>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../analytics/eop.html"
+                            id="pmoSideEopAnalytics">
+                            <i class="iconoir-activity fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                class="fw-medium">EOP Analytics</span>
+                        </a>
+                    </li>
+
+                    <!-- Section: System -->
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
+                    <li class="nav-item mb-1">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
+                            data-bs-toggle="collapse" href="#settingsCollapse" role="button" aria-expanded="false"
+                            aria-controls="settingsCollapse" id="pmoSideSettingsToggle">
+                            <div class="d-flex align-items-center">
+                                <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                    class="fw-medium">Settings</span>
+                            </div>
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                aria-hidden="true"></i>
+                        </a>
+                        <div class="collapse ps-4 mt-1" id="settingsCollapse">
+                            <ul class="nav flex-column border-start ps-3 ms-2">
+                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
+                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
+                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        id="pmoSideSettingsPassword">Change Password</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                            id="pmoUtSideLogout">
+                            id="pmoSideLogout">
                             <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Log
-                                Out</span>
+                                class="fw-medium">Log Out</span>
                         </a>
                     </li>
                 </ul>
@@ -955,29 +1265,124 @@
     <script defer src="../js/layout-active.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Toggle footer buttons visibility dynamically based on active tab
-            const tabs = document.querySelectorAll('.view-tab');
-            const actionContainer = document.getElementById('settingsActionContainer');
+            // Toggle edit mode
+            const btnStartEdit = document.getElementById('btnStartEdit');
+            const btnCancelEdit = document.getElementById('btnCancelEdit');
+            const btnUpdateProfile = document.getElementById('btnUpdateProfile');
+            const uploadDocSection = document.getElementById('uploadDocSection');
+            const supportingDoc = document.getElementById('supportingDoc');
+            const docUploadSuccess = document.getElementById('docUploadSuccess');
 
-            tabs.forEach(function (tab) {
-                tab.addEventListener('shown.bs.tab', function (event) {
-                    if (event.target.id === 'profile-tab') {
-                        if (actionContainer) actionContainer.classList.remove('d-none');
+            const viewElements = document.querySelectorAll('.profile-value-view');
+            const editElements = document.querySelectorAll('.profile-value-edit');
+
+            if (btnStartEdit) {
+                btnStartEdit.addEventListener('click', function () {
+                    // Toggle buttons visibility
+                    btnStartEdit.classList.add('d-none');
+                    if (btnCancelEdit) btnCancelEdit.classList.remove('d-none');
+                    if (btnUpdateProfile) btnUpdateProfile.classList.remove('d-none');
+
+                    // Toggle form fields
+                    viewElements.forEach(el => el.classList.add('d-none'));
+                    editElements.forEach(el => el.classList.remove('d-none'));
+
+                    // Show document upload section
+                    if (uploadDocSection) {
+                        uploadDocSection.classList.remove('d-none');
+                    }
+
+                    // Reset document upload input
+                    if (supportingDoc) {
+                        supportingDoc.value = '';
+                    }
+                    if (docUploadSuccess) {
+                        docUploadSuccess.classList.add('d-none');
+                    }
+                    if (btnUpdateProfile) btnUpdateProfile.disabled = true; // Disabled until file uploaded
+                });
+            }
+
+            if (btnCancelEdit) {
+                btnCancelEdit.addEventListener('click', function () {
+                    // Toggle buttons visibility
+                    if (btnStartEdit) btnStartEdit.classList.remove('d-none');
+                    btnCancelEdit.classList.add('d-none');
+                    if (btnUpdateProfile) btnUpdateProfile.classList.add('d-none');
+
+                    // Toggle form fields back
+                    viewElements.forEach(el => el.classList.remove('d-none'));
+                    editElements.forEach(el => el.classList.add('d-none'));
+
+                    // Hide document upload section
+                    if (uploadDocSection) {
+                        uploadDocSection.classList.add('d-none');
+                    }
+                });
+            }
+
+            // Document Upload Verification
+            if (supportingDoc) {
+                supportingDoc.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        if (docUploadSuccess) {
+                            docUploadSuccess.classList.remove('d-none');
+                        }
+                        if (btnUpdateProfile) {
+                            btnUpdateProfile.disabled = false;
+                        }
                     } else {
-                        if (actionContainer) actionContainer.classList.add('d-none');
+                        if (docUploadSuccess) {
+                            docUploadSuccess.classList.add('d-none');
+                        }
+                        if (btnUpdateProfile) {
+                            btnUpdateProfile.disabled = true;
+                        }
+                    }
+                });
+            }
+
+            // Auto activate tabs based on URL hash
+            function activateTabFromHash() {
+                const hash = window.location.hash;
+                if (hash === '#password') {
+                    const passwordTab = document.getElementById('password-tab');
+                    if (passwordTab) {
+                        new bootstrap.Tab(passwordTab).show();
+                    }
+                } else if (hash === '#agent') {
+                    const agentTab = document.getElementById('agent-tab');
+                    if (agentTab) {
+                        new bootstrap.Tab(agentTab).show();
+                    }
+                } else if (hash === '#profile') {
+                    const profileTab = document.getElementById('profile-tab');
+                    if (profileTab) {
+                        new bootstrap.Tab(profileTab).show();
+                    }
+                }
+            }
+
+            // Activate tab on load
+            activateTabFromHash();
+
+            // Listen to hash change to switch tab instantly
+            window.addEventListener('hashchange', activateTabFromHash);
+
+            // Sync active tab clicks to window location hash
+            const tabLinksElement = document.querySelectorAll('a[data-bs-toggle="tab"]');
+            tabLinksElement.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function (e) {
+                    const targetId = e.target.id;
+                    let targetHash = '#profile';
+                    if (targetId === 'agent-tab') targetHash = '#agent';
+                    else if (targetId === 'password-tab') targetHash = '#password';
+
+                    if (window.location.hash !== targetHash) {
+                        history.pushState(null, null, targetHash);
                     }
                 });
             });
-
-            // Auto activate Change Password tab if hash is in URL
-            if (window.location.hash === '#password') {
-                const passwordTab = document.getElementById('password-tab');
-                if (passwordTab) {
-                    // Use bootstrap Tab instance to programmatically show tab
-                    const tabTrigger = new bootstrap.Tab(passwordTab);
-                    tabTrigger.show();
-                }
-            }
 
             // Toggle Password Visibility handler
             const passwordToggles = document.querySelectorAll('.toggle-password');
@@ -1052,7 +1457,7 @@
 
             // Password PAC Verification Simulation
             const pwdPacModalEl = document.getElementById('passwordPacModal');
-            const pwdPacModal = bootstrap.Modal.getOrCreateInstance(pwdPacModalEl);
+            const pwdPacModal = pwdPacModalEl ? new bootstrap.Modal(pwdPacModalEl) : null;
             const pwdAuthMethod = document.getElementById('pwdAuthMethod');
             const pwdPacInputContainer = document.getElementById('pwdPacInputContainer');
             const pwdSecureSignContainer = document.getElementById('pwdSecureSignContainer');
@@ -1095,7 +1500,7 @@
                     if (secureSignTimeout) clearTimeout(secureSignTimeout);
 
                     // Show password PAC modal
-                    pwdPacModal.show();
+                    if (pwdPacModal) pwdPacModal.show();
                 });
             }
 
@@ -1109,7 +1514,7 @@
 
                         // Simulate push notification approval
                         secureSignTimeout = setTimeout(function () {
-                            pwdPacModal.hide();
+                            if (pwdPacModal) pwdPacModal.hide();
                             alertBox.classList.remove('d-none');
                             form.reset();
                             alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1153,7 +1558,7 @@
                 btnPwdVerifyAndSubmit.addEventListener('click', function () {
                     const enteredPAC = pwdPacInput.value.trim();
                     if (enteredPAC === "12345678") {
-                        pwdPacModal.hide();
+                        if (pwdPacModal) pwdPacModal.hide();
                         alertBox.classList.remove('d-none');
                         form.reset();
                         alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1165,8 +1570,7 @@
 
             // PAC Verification Simulation Action
             const pacModalEl = document.getElementById('pacModal');
-            const pacModal = bootstrap.Modal.getOrCreateInstance(pacModalEl);
-            const btnUpdateProfile = document.getElementById('btnUpdateProfile');
+            const pacModal = pacModalEl ? new bootstrap.Modal(pacModalEl) : null;
             const btnRequestPac = document.getElementById('btnRequestPac');
             const pacInput = document.getElementById('pacInput');
             const pacError = document.getElementById('pacError');
@@ -1189,7 +1593,7 @@
                     if (pacTimer) clearInterval(pacTimer);
 
                     // Show PAC Modal
-                    pacModal.show();
+                    if (pacModal) pacModal.show();
                 });
             }
 
@@ -1227,8 +1631,84 @@
                 btnVerifyAndSubmit.addEventListener('click', function () {
                     const enteredPAC = pacInput.value.trim();
                     if (enteredPAC === correctPAC) {
-                        pacModal.hide();
-                        alert('Company and personal profile details submitted successfully for statutory verification!');
+                        if (pacModal) pacModal.hide();
+
+                        // 1. Update text views from inputs
+                        const fields = [
+                            { input: 'inputCompanyName', label: 'lblCompanyName', type: 'text' },
+                            { input: 'inputCompanyReg', label: 'lblCompanyReg', type: 'text' },
+                            { input: 'inputCompanyNature', label: 'lblCompanyNature', type: 'select' },
+                            { input: 'inputCompanyPurpose', label: 'lblCompanyPurpose', type: 'select' },
+                            { input: 'inputCompanyFunds', label: 'lblCompanyFunds', type: 'select' },
+                            { input: 'inputCompanyWealth', label: 'lblCompanyWealth', type: 'select' },
+                            { input: 'inputCompanyAddress', label: 'lblCompanyAddress', type: 'textarea' },
+                            { input: 'inputCompanyPhone', label: 'lblCompanyPhone', type: 'text' },
+                            { input: 'inputUserName', label: 'lblUserName', type: 'text' },
+                            { input: 'inputUserIC', label: 'lblUserIC', type: 'text' },
+                            { input: 'inputUserMobile', label: 'lblUserMobile', type: 'text' },
+                            { input: 'inputUserEmail', label: 'lblUserEmail', type: 'text' },
+                            { input: 'inputUserAddress', label: 'lblUserAddress', type: 'textarea' }
+                        ];
+
+                        fields.forEach(function (f) {
+                            const inputEl = document.getElementById(f.input);
+                            const labelEl = document.getElementById(f.label);
+                            if (inputEl && labelEl) {
+                                if (f.type === 'textarea') {
+                                    labelEl.innerHTML = inputEl.value.trim().replace(/\n/g, '<br>');
+                                } else {
+                                    labelEl.textContent = inputEl.value.trim();
+                                }
+                            }
+                        });
+
+                        // Update Unit Trust user role view
+                        const utChecked = document.querySelector('input[name="inputUtRole"]:checked');
+                        if (utChecked) {
+                            const val = utChecked.value;
+                            const lbl = document.getElementById('lblUtRole');
+                            if (lbl) {
+                                lbl.textContent = val === 'Both' ? 'Both (Inputter & Authoriser)' : val;
+                            }
+                        }
+
+                        // Update EOP user role view
+                        const eopChecked = [];
+                        document.querySelectorAll('input[name="inputEopRole"]:checked').forEach(function (cb) {
+                            eopChecked.push(cb.value);
+                        });
+                        const lblEop = document.getElementById('lblEopRole');
+                        if (lblEop) {
+                            lblEop.textContent = eopChecked.length > 0 ? eopChecked.join(', ') : 'No Roles Assigned';
+                        }
+
+                        // 2. Hide edit mode and show view mode
+                        if (viewElements) viewElements.forEach(el => el.classList.remove('d-none'));
+                        if (editElements) editElements.forEach(el => el.classList.add('d-none'));
+                        if (uploadDocSection) uploadDocSection.classList.add('d-none');
+
+                        // 3. Reset footer buttons
+                        if (btnStartEdit) btnStartEdit.classList.remove('d-none');
+                        if (btnCancelEdit) btnCancelEdit.classList.add('d-none');
+                        if (btnUpdateProfile) btnUpdateProfile.classList.add('d-none');
+
+                        // 4. Mount success alert banner at the top
+                        const alertMount = document.getElementById('alertMount');
+                        if (alertMount) {
+                            alertMount.innerHTML = `
+                                <div class="alert alert-warning border-0 rounded-4 shadow-sm p-4 mb-4 d-flex align-items-start gap-3 animate slideIn" id="profileUpdateAlert" style="background-color: #fffbeb; border-left: 5px solid #ce7226 !important;">
+                                    <i class="iconoir-warning-circle text-warning fs-3 mt-0.5" style="color: #ce7226 !important;"></i>
+                                    <div>
+                                        <div class="fw-bold text-dark fs-7 mb-1">Pending Statutory Verification</div>
+                                        <p class="text-secondary fs-8 mb-0">Your profile update and role assignment request has been successfully submitted with supporting documents. The updates will take effect once approved by the Public Mutual compliance office.</p>
+                                        <div class="mt-2 fs-9 text-muted">Reference No: PMO-UPD-2026-0421 &middot; Submitted on: 21 July 2026</div>
+                                    </div>
+                                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            `;
+                            // Scroll to alert banner smoothly
+                            alertMount.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
                     } else {
                         pacError.classList.remove('d-none');
                     }

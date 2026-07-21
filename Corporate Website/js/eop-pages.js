@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const EOP_scheme_EMPLOYER = 'Employer Contribution';
     const EOP_CONTRIB_SALARY_IND = 'Salary Deduction (IND)';
     const EOP_CONTRIB_EMPLOYER_MIXED =
-        'Vesting (VSC)/Immediate Vesting (EMP)';
+        'Vesting (VSC)';
     const EOP_EMP_LABEL = {
         VSR: 'Revolving Vesting (VSR)',
         EMP: 'Immediate Vesting (EMP)',

@@ -25,5 +25,5 @@ Its primary purpose is to establish a state-of-the-art "Pro Max" design standard
 
 ## Design Ethos (The "Pro Max" Standard)
 - **Primary Font**: Montserrat (distinct geometric sans-serif for stable corporate feel).
-- **Core Accents**: Stark Brand Red (`#ff1700`) for major triggers, deep Brand Navy (`#002e77`) for grounding structures, and Iconoir open-source icons for clean lines.
+- **Core Accents**: Stark Brand Red (`#ed1c24`) for major triggers, deep Brand Navy (`#26247b`) for grounding structures, and Iconoir open-source icons for clean lines.
 - **Surfaces**: Gentle border radiuses (`15px` cards, `8px` inputs) with floating box-shadows (`0 10px 30px rgba(0,0,0,0.2)`) and elegant glassmorphism.

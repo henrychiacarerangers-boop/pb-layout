@@ -1,0 +1,12 @@
+{
+  "viewportWidth": 1440,
+  "entries": [
+    {
+      "source": "PMO corporate/unit-trust/dashboard.html",
+      "output": "PMO-corporate/unit-trust/dashboard.svg",
+      "width": 1440,
+      "height": 1000,
+      "status": "success"
+    }
+  ]
+}

@@ -551,12 +551,12 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 
 /* HTML still uses .text-white-50 — must override for white card */
 .portal-sidebar-profile-card .text-white-50 {
-    color: #5d678e !important;
+    color: #58595b !important;
 }
 
 .portal-sidebar-profile-card>div:first-child {
     letter-spacing: 0.1em;
-    color: #5d678e !important;
+    color: #58595b !important;
     font-weight: 600 !important;
 }
 
@@ -662,7 +662,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
     padding: 8px 0 !important;
     font-size: 0.8rem !important;
     font-weight: 500 !important;
-    color: #5d678e !important;
+    color: #58595b !important;
     background: transparent !important;
     border-radius: 0 !important;
     box-shadow: none !important;

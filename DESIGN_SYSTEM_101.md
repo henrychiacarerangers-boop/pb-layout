@@ -38,7 +38,7 @@ The codebase repeatedly uses these core colors:
 | `--brand-navy` | `#002e77` or `#0E0D3B` in some shells | Core structural navy |
 | `--accent-primary` | `#002e77` | Primary action accent |
 | `--action-primary` | `#002e77` | Interactive primary button / active state |
-| `--interactive-hover` | `#5d678e` | Hover / secondary interaction tone |
+| `--interactive-hover` | `#58595b` | Hover / secondary interaction tone |
 | `--bg-container` | `#FCFCFC` | Surface background |
 | `--bg-main` | `#FCFCFC` / `#f8fafc` | Page background |
 | `--ui-support` | `#8e9ab0` | Muted labels, helper text |

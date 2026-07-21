@@ -960,12 +960,12 @@ h2.pmo-card-inline-title {
 
 /* HTML still uses .text-white-50 — must override for white card */
 .portal-sidebar-profile-card .text-white-50 {
-    color: #5d678e !important;
+    color: #58595b !important;
 }
 
 .portal-sidebar-profile-card>div:first-child {
     letter-spacing: 0.1em;
-    color: #5d678e !important;
+    color: #58595b !important;
     font-weight: 600 !important;
 }
 
@@ -1071,7 +1071,7 @@ h2.pmo-card-inline-title {
     padding: 8px 0 !important;
     font-size: 0.8rem !important;
     font-weight: 500 !important;
-    color: #5d678e !important;
+    color: #58595b !important;
     background: transparent !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -1269,9 +1269,6 @@ h2.pmo-card-inline-title {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
-
-.accordion-header-custom:hover {
-    background-color: #f1f1f1 !important;
 }
 
 /* Header Portal Switcher Segmented Control */

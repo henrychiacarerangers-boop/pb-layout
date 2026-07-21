@@ -66,8 +66,8 @@ To facilitate seamless testing, documentation, and agent manipulation, all inter
 
 ### 4. Semantic UI Color Conventions
 When creating status indicators, alerts, or text highlights, developers must follow the semantic scaling established in our design system:
-- **Red (`#ff1700`)**: Primary actions, critical warnings, urgent alerts.
-- **Navy (`#002e77`) / Dark Purple (`#373761`)**: Base UI, header titles, professional boundaries.
+- **Red (`#ed1c24`)**: Primary actions, critical warnings, urgent alerts.
+- **Navy (`#26247b`) / Dark Purple (`#373761`)**: Base UI, header titles, professional boundaries.
 - **Success (`#12a833`)**: Successful processes, completed transfers, authorised items.
 - **Warning (`#ce7226`)**: Pending items, verification required.
 - **Neutral Blue (`#dce3e8`) / Support Gray (`#8e9ab0`)**: Inactive container highlights, subtle subtitles, visual background shapes.

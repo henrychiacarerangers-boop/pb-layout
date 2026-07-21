@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const EOP_scheme_EMPLOYER = 'Employer Contribution';
     const EOP_CONTRIB_SALARY_IND = 'Salary Deduction (IND)';
     const EOP_CONTRIB_EMPLOYER_MIXED =
-        'Revolving Vesting (VSC)/Immediate Vesting (EMP)';
+        'Vesting (VSC)';
     const EOP_EMP_LABEL = {
         VSR: 'Revolving Vesting (VSC)',
         EMP: 'Immediate Vesting (EMP)',
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tr.appendChild(tdName);
                 // NRIC
                 const tdNric = document.createElement('td');
-                tdNric.className = 'py-3 text-secondary font-monospace';
+                tdNric.className = 'py-3 text-secondary';
                 tdNric.textContent = r.nric;
                 tr.appendChild(tdNric);
 
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tr.appendChild(tdName);
                 // NRIC
                 const tdNric = document.createElement('td');
-                tdNric.className = 'py-3 text-secondary font-monospace';
+                tdNric.className = 'py-3 text-secondary';
                 tdNric.textContent = r.nric;
                 tr.appendChild(tdNric);
 
@@ -329,10 +329,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('eopMakeDownloadCsvSalary')?.addEventListener('click', () => {
             hideMakeAlert();
             triggerDownload('eop-salary-deduction.csv', buildSalaryCsv());
+            document.getElementById('eopPostDownloadCta')?.classList.remove('d-none');
         });
         document.getElementById('eopMakeDownloadCsvEmployer')?.addEventListener('click', () => {
             hideMakeAlert();
             triggerDownload('eop-employer-contribution.csv', buildEmployerCsv());
+            document.getElementById('eopPostDownloadCta')?.classList.remove('d-none');
         });
 
         function parseCsvLine(line) {
@@ -957,7 +959,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'Amira binti Mansor', nric: '950311-09-5228', fund: 'PRS-CVF', type: 'Salary Deduction IND', amount: '2,000.00' }
             ],
             'RC00000000000502': [
-                { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSC)', amount: '4,500.00' },
+                { name: 'Ahmad bin Ridzuan', nric: '860512-14-5531', fund: 'PRS-SR', type: 'Revolving Vesting (VSC),Straight Vesting', amount: '5,000.00' },
                 { name: 'Tan Kah Sheng', nric: '891104-08-6623', fund: 'PRS-EQF', type: 'Immediate Vesting (EMP)', amount: '5,000.00' },
                 { name: 'Priyah a/p Ganesan', nric: '920215-10-5884', fund: 'PRS-GRF', type: 'Revolving Vesting (VSC)', amount: '3,800.00' },
                 { name: 'Mohd Fadzil bin Razali', nric: '880820-09-5117', fund: 'PRS-IMDF', type: 'Revolving Vesting (VSC)', amount: '4,000.00' },
@@ -1001,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 html += `
                     <tr class="border-bottom">
                         <td class="ps-3 py-3 text-dark">${r.name}</td>
-                        <td class="py-3 text-secondary font-monospace">${r.nric}</td>
+                        <td class="py-3 text-secondary">${r.nric}</td>
                         <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
                         <td class="pe-3 py-3 text-end fw-semibold text-dark">RM ${r.amount}</td>
