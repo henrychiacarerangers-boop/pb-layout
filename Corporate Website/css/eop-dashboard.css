@@ -93,15 +93,6 @@
     padding-bottom: 10px;
 }
 
-.prs-analytics-table thead th {
-    background-color: #f8fafc;
-}
-
-.prs-analytics-table thead th.prs-analytics-band,
-.prs-analytics-table tbody td.prs-analytics-band {
-    background-color: #f1f5f9 !important;
-}
-
 .prs-analytics-sort-hint {
     font-size: 0.7rem;
     opacity: 0.55;

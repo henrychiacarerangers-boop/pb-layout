@@ -41,7 +41,48 @@
         .table-link:hover {
             color: #0a58ca;
         }
+
+        .tax-voucher-download {
+            color: #002e77;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .tax-voucher-download:hover {
+            color: #001f52;
+        }
+
+        .statement-row-downloadable tbody tr:not(.no-filter-data-row) {
+            cursor: pointer;
+        }
+
+        .statement-row-downloadable tbody tr:not(.no-filter-data-row):focus-visible {
+            outline: 2px solid #002e77;
+            outline-offset: -2px;
+        }
+
+        .statement-download-date {
+            color: #002e77 !important;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 700;
+        }
+
+        .statement-row-downloadable tbody tr:hover .statement-download-date {
+            color: #001f52 !important;
+        }
+
+        .document-register {
+            padding: 24px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .document-register h5 {
+            color: #002e77 !important;
+        }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -196,6 +237,9 @@
                             id="utStmtTabAnnual">
                             <i class="iconoir-calendar fs-6"></i> Annual/Interim
                         </a>
+                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="tax" id="utStmtTabTax">
+                            <i class="iconoir-percentage fs-6"></i> Tax Voucher on Distribution
+                        </a>
                         <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="fundreports"
                             id="utStmtTabFund">
                             <i class="iconoir-stats-down-square fs-6"></i> Fund Reports
@@ -228,33 +272,32 @@
                             </div>
 
                             <div id="statementOfTransactionCollapse" class="collapse show">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table border-top">
-                                        <thead class="text-muted fs-8 border-bottom">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-dark" style="width: 250px;">Date
+                                                <th class="ps-4 py-3">Date
                                                 </th>
-                                                <th class="py-3 fw-semibold text-center text-dark"
-                                                    style="width: 200px; background-color: #f8fafc; border-left: 1px solid #dee2e6; border-right: 1px solid #dee2e6;">
+                                                <th class="py-3">
                                                     Scheme</th>
-                                                <th class="ps-4 py-3 fw-semibold text-dark text-start">Type</th>
+                                                <th class="ps-4 py-3">Type</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fs-8 fw-semibold">
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">28/04/2026</a></td>
-                                                <td class="text-center py-3 text-dark"
-                                                    style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">28/04/2026</a></td>
+                                                <td class="py-3 pmo-table-meta">
                                                     Unit Trust</td>
-                                                <td class="ps-4 py-3 text-secondary fw-medium">Statement of Transaction
+                                                <td class="ps-4 py-3">Statement of Transaction
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">19/03/2025</a></td>
-                                                <td class="text-center py-3 text-dark"
-                                                    style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">19/03/2025</a></td>
+                                                <td class="py-3 pmo-table-meta">
                                                     PRS</td>
-                                                <td class="ps-4 py-3 text-secondary fw-medium">Statement of Transaction
+                                                <td class="ps-4 py-3">Statement of Transaction
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -273,44 +316,50 @@
                             </div>
 
                             <div id="monthlyStatementCollapse" class="collapse show">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table border-top">
-                                        <thead class="text-muted fs-8 border-bottom">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-dark" style="width: 250px;">Date
+                                                <th class="ps-4 py-3">Date
                                                 </th>
-                                                <th class="py-3 fw-semibold text-dark text-start">Type</th>
+                                                <th class="py-3">Type</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fs-8 fw-semibold">
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">30/04/2026</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">30/04/2026</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">31/03/2026</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">31/03/2026</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">27/02/2026</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">27/02/2026</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">30/01/2026</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">30/01/2026</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">31/12/2025</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">31/12/2025</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3"><a href="#" class="table-link">28/11/2025</a></td>
-                                                <td class="py-3 text-secondary fw-medium">Monthly Statement of Accounts
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="table-link pmo-table-link">28/11/2025</a></td>
+                                                <td class="py-3">Monthly Statement of Accounts
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -323,7 +372,7 @@
 
                     <!-- Annual/Interim Tab -->
                     <div class="tab-pane fade" id="annual" role="tabpanel" aria-labelledby="annual-tab">
-                        <div class="border rounded-4 overflow-hidden mb-4 p-4">
+                        <div class="document-register border rounded-4 overflow-hidden">
                             <div
                                 class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 pb-2 border-bottom">
                                 <div>
@@ -372,141 +421,128 @@
                             </div>
 
                             <div id="annualReportsTableWrapper" class="d-none">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-start" style="width: 30%;">Date /
-                                                    Year
+                                                <th class="ps-4 py-3">Date
                                                 </th>
-                                                <th class="py-3 fw-semibold text-start" style="width: 25%;">Type</th>
-                                                <th class="py-3 fw-semibold text-start" style="width: 30%;">Fund Name
-                                                    (Short)</th>
-                                                <th class="pe-4 py-3 fw-semibold text-center" style="width: 15%;">
+                                                <th class="py-3">Type</th>
+                                                <th class="py-3">Fund Name
+                                                </th>
+                                                <th class="pe-4 py-3">
                                                     Download
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody id="annualReportsTableBody" class="fw-semibold">
+                                        <tbody id="annualReportsTableBody">
                                             <!-- UT Funds -->
-                                            <tr class="border-bottom" data-fund="tactical">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PAGF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="tactical">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PAGF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="tactical">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PAGF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="tactical">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PAGF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="dividend">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PIDF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="dividend">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PIDF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="dividend">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PIDF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="dividend">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PIDF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="money">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PMMF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="money">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PMMF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="money">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PMMF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="money">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PMMF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
                                             <!-- PRS Funds -->
-                                            <tr class="border-bottom" data-fund="prs-growth">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PMPGF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-growth">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PMPGF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-growth">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PMPGF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-growth">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PMPGF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-moderate">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PMPMF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-moderate">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PMPMF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-moderate">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PMPMF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-moderate">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PMPMF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-conservative">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-dark">PMPCF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-conservative">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3 pmo-table-primary">PMPCF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-conservative">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Interim</td>
-                                                <td class="py-3 text-dark">PMPCF</td>
-                                                <td class="pe-4 py-3 text-center">
-                                                    <a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-conservative">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Interim</td>
+                                                <td class="py-3 pmo-table-primary">PMPCF</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> PDF</a>
                                                 </td>
                                             </tr>
@@ -530,15 +566,62 @@
 
                     <!-- Tax Voucher Tab -->
                     <div class="tab-pane fade" id="tax" role="tabpanel" aria-labelledby="tax-tab">
-                        <div class="p-4 text-center">
-                            <i class="iconoir-percentage fs-1 text-muted mb-3 d-block"></i>
-                            <p class="text-muted mb-0 fw-medium">No Tax Vouchers on Distribution found.</p>
+                        <div class="document-register border rounded-4 overflow-hidden">
+                            <div
+                                class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 pb-2 border-bottom">
+                                <div>
+                                    <h5 class="fw-bold text-dark mb-1">Tax Voucher on Distribution</h5>
+                                </div>
+                            </div>
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table" data-tax-voucher-register>
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4 py-3">Fund Name</th>
+                                            <th class="py-3">Account No.</th>
+                                            <th class="py-3">Distribution Type</th>
+                                            <th class="py-3">Financial Year Ended</th>
+                                            <th class="py-3">Entitlement Date</th>
+                                            <th class="py-3">Distribution Date</th>
+                                            <th class="py-3">Gross Distribution<br><span>(MYR)</span></th>
+                                            <th class="py-3">Net Distribution<br><span>(MYR)</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 py-3"><a href="#"
+                                                    class="tax-voucher-download pmo-table-link">Public
+                                                    Islamic Dividend Fund</a></td>
+                                            <td class="py-3 pmo-table-primary">0193922094</td>
+                                            <td class="py-3">Semi-annual</td>
+                                            <td class="py-3 pmo-table-date">30 Apr 2026</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">30 Apr 2026</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">14 May 2026</td>
+                                            <td class="py-3">328.84</td>
+                                            <td class="pe-4 py-3">328.84</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4 py-3"><a href="#"
+                                                    class="tax-voucher-download pmo-table-link">Public Money
+                                                    Market Fund</a></td>
+                                            <td class="py-3 pmo-table-primary">0193922094</td>
+                                            <td class="py-3">Annual</td>
+                                            <td class="py-3 pmo-table-date">31 Dec 2025</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">15 Jan 2026</td>
+                                            <td class="py-3">157.20</td>
+                                            <td class="pe-4 py-3">157.20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
 
                     <!-- Fund Reports Tab -->
                     <div class="tab-pane fade" id="fundreports" role="tabpanel" aria-labelledby="fundreports-tab">
-                        <div class="border rounded-4 overflow-hidden mb-4 p-4">
+                        <div class="document-register border rounded-4 overflow-hidden">
                             <div
                                 class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 pb-2 border-bottom">
                                 <div>
@@ -550,18 +633,21 @@
                             </div>
 
                             <!-- Dropdowns -->
-                            <div id="utFundReportSelectContainer" class="mb-4">
-                                <label for="utFundReportSelect"
-                                    class="form-label text-muted fs-8 fw-semibold mb-2">Select
-                                    Unit Trust Fund Name</label>
-                                <select
-                                    class="form-select border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                    style="max-width: 450px; height: 38px;" id="utFundReportSelect">
-                                    <option value="" selected>-- Select a Unit Trust Fund --</option>
-                                    <option value="tactical">Public Tactical Allocation Fund</option>
-                                    <option value="dividend">Public Islamic Dividend Fund</option>
-                                    <option value="money">Public Money Market Fund</option>
-                                </select>
+                            <div id="utFundReportSelectContainer" class="mb-4 d-flex align-items-end gap-3 flex-wrap">
+                                <div>
+                                    <label for="utFundReportSelect"
+                                        class="form-label text-muted fs-8 fw-semibold mb-2">Fund Name</label>
+                                    <select
+                                        class="form-select border-secondary border-opacity-25 rounded-3 fs-8 fw-semibold px-3"
+                                        style="min-width: 360px; height: 44px;" id="utFundReportSelect">
+                                        <option value="" selected>-- Select a Unit Trust Fund --</option>
+                                        <option value="tactical">Public Tactical Allocation Fund</option>
+                                        <option value="dividend">Public Islamic Dividend Fund</option>
+                                        <option value="money">Public Money Market Fund</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-success px-4 fw-semibold" style="height: 44px;"
+                                    id="showFundReports">Show</button>
                             </div>
 
                             <div id="prsFundReportSelectContainer" class="mb-4 d-none">
@@ -579,183 +665,142 @@
                             </div>
 
                             <div id="fundReportsTableWrapper" class="d-none">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table" data-keep-download-column>
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-start" style="width: 25%;">Date /
-                                                    Year
+                                                <th class="ps-4 py-3">Date
                                                 </th>
-                                                <th class="py-3 fw-semibold text-start" style="width: 25%;">Report Type
+                                                <th class="py-3">Type</th>
+                                                <th class="py-3">English
                                                 </th>
-                                                <th class="py-3 fw-semibold text-center" style="width: 16%;">English
-                                                    (PDF)
-                                                </th>
-                                                <th class="py-3 fw-semibold text-center" style="width: 16%;">Bahasa
-                                                    Melayu
-                                                    (PDF)</th>
-                                                <th class="pe-4 py-3 fw-semibold text-center" style="width: 18%;">
-                                                    Mandarin
-                                                    (PDF)</th>
+                                                <th class="py-3">Bahasa
+                                                    Malaysia</th>
+                                                <th class="pe-4 py-3">
+                                                    Mandarin</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="fundReportsTableBody" class="fw-semibold">
+                                        <tbody id="fundReportsTableBody">
                                             <!-- UT Funds -->
-                                            <tr class="border-bottom" data-fund="tactical">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="tactical">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="tactical">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="tactical">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="dividend">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="dividend">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="dividend">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="dividend">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="money">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="money">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="money">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="money">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
                                             <!-- PRS Funds -->
-                                            <tr class="border-bottom" data-fund="prs-growth">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-growth">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-growth">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-growth">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-moderate">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-moderate">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
-                                            <tr class="border-bottom" data-fund="prs-moderate">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                            <tr data-fund="prs-moderate">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
-                                                            class="iconoir-download me-1"></i> Download</a></td>
-                                            </tr>
-                                            <tr class="border-bottom" data-fund="prs-conservative">
-                                                <td class="ps-4 py-3 text-dark">31 Dec 2025</td>
-                                                <td class="py-3 text-secondary">Annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
-                                                            class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
-                                                            class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
                                             <tr data-fund="prs-conservative">
-                                                <td class="ps-4 py-3 text-dark">30 Jun 2025</td>
-                                                <td class="py-3 text-secondary">Semi-annual</td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">31 Dec 2025</td>
+                                                <td class="py-3">Annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
-                                                <td class="pe-4 py-3 text-center"><a href="#"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold"><i
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
+                                                            class="iconoir-download me-1"></i> Download</a></td>
+                                            </tr>
+                                            <tr data-fund="prs-conservative">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">30 Jun 2025</td>
+                                                <td class="py-3">Semi-annual</td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
+                                                            class="iconoir-download me-1"></i> Download</a></td>
+                                                <td class="py-3"><a href="#" class="pmo-table-link"><i
+                                                            class="iconoir-download me-1"></i> Download</a></td>
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"><i
                                                             class="iconoir-download me-1"></i> Download</a></td>
                                             </tr>
                                         </tbody>
@@ -785,26 +830,91 @@
 
                     <!-- e-Invoice Tab -->
                     <div class="tab-pane fade" id="einvoice" role="tabpanel" aria-labelledby="einvoice-tab">
-                        <div class="border rounded-4 overflow-hidden mb-4 p-4">
-                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div><h5 class="fw-bold text-dark mb-1">e-Invoice</h5></div>
+                        <div class="document-register border rounded-4 overflow-hidden">
+                            <div
+                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                <div>
+                                    <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
+                                </div>
                                 <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3" style="width: 130px; height: 36px;" id="utStmtFilterMonthEinv"><option value="all" selected>All Months</option><option value="Jan">January</option><option value="Feb">February</option><option value="Mar">March</option><option value="Apr">April</option><option value="May">May</option><option value="Jun">June</option><option value="Jul">July</option><option value="Aug">August</option><option value="Sep">September</option><option value="Oct">October</option><option value="Nov">November</option><option value="Dec">December</option></select>
-                                    <select class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3" style="width: 110px; height: 36px;" id="utStmtFilterYearEinv"><option value="all" selected>All Years</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option></select>
+                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                            class="iconoir-filter-list me-1"></i>Filter:</span>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 130px; height: 36px;" id="utStmtFilterMonthEinv">
+                                        <option value="all" selected>All Months</option>
+                                        <option value="Jan">January</option>
+                                        <option value="Feb">February</option>
+                                        <option value="Mar">March</option>
+                                        <option value="Apr">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">June</option>
+                                        <option value="Jul">July</option>
+                                        <option value="Aug">August</option>
+                                        <option value="Sep">September</option>
+                                        <option value="Oct">October</option>
+                                        <option value="Nov">November</option>
+                                        <option value="Dec">December</option>
+                                    </select>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 110px; height: 36px;" id="utStmtFilterYearEinv">
+                                        <option value="all" selected>All Years</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="table-responsive"><table class="table table-hover align-middle mb-0 custom-table fs-8"><thead class="text-muted border-bottom" style="background-color:#f8fafc;"><tr><th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 35%;">Reference No.</th><th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">Validation</th><th class="py-3 fw-semibold text-dark text-start" style="width: 25%;">Invoice type</th><th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">Download</th></tr></thead><tbody class="fw-semibold">
-                                <tr class="border-bottom" data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260428-0091</span></td><td class="py-3 text-dark text-start">28 Apr 2026</td><td class="py-3 text-secondary text-start fw-medium">e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk1"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
-                                <tr class="border-bottom" data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260401-0044</span></td><td class="py-3 text-dark text-start">01 Apr 2026</td><td class="py-3 text-secondary text-start fw-medium">Self Billed e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk2"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
-                                <tr class="border-bottom" data-month="Mar" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260315-0012</span></td><td class="py-3 text-dark text-start">15 Mar 2026</td><td class="py-3 text-secondary text-start fw-medium">e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk3"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
-                            </tbody></table></div>
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4 py-3">
+                                                e-Invoice No.</th>
+                                            <th class="py-3">
+                                                Date</th>
+                                            <th class="py-3">
+                                                Document type</th>
+                                            <th class="pe-4 py-3">
+                                                Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary"><span
+                                                    class="d-block">TR2600004083678</span></td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">28 Apr 2026</td>
+                                            <td class="py-3">e-Invoice</td>
+                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="einvPdfLnk1"><i
+                                                        class="iconoir-download"></i> PDF</a></td>
+                                        </tr>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary"><span
+                                                    class="d-block">TR2600004083679</span></td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                            <td class="py-3">Self Billed e-Invoice
+                                            </td>
+                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="einvPdfLnk2"><i
+                                                        class="iconoir-download"></i> PDF</a></td>
+                                        </tr>
+                                        <tr data-month="Mar" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary"><span
+                                                    class="d-block">TR2600004083680</span></td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">15 Mar 2026</td>
+                                            <td class="py-3">e-Invoice</td>
+                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="einvPdfLnk3"><i
+                                                        class="iconoir-download"></i> PDF</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Invoice Tab -->
                     <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
-                        <div class="border rounded-4 overflow-hidden mb-4 p-4">
+                        <div class="document-register border rounded-4 overflow-hidden">
                             <div
                                 class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
                                 <div>
@@ -841,50 +951,48 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 30%;">
-                                                Invoice number</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">Date
+                                            <th class="ps-4 py-3">
+                                                Invoice No.</th>
+                                            <th class="py-3">Issue
+                                                date
                                             </th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 30%;">
-                                                Invoice
+                                            <th class="py-3">
+                                                Document
                                                 type</th>
-                                            <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">
+                                            <th class="pe-4 py-3">
                                                 Download</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="fw-semibold">
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">INV-UT-20260428-091</td>
-                                            <td class="py-3 text-dark text-start">28 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="invDwnld1"><i class="iconoir-download fs-9"></i> PDF</a>
+                                    <tbody>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary">TR2600004083681</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">28 Apr 2026</td>
+                                            <td class="py-3">Invoice</td>
+                                            <td class="pe-4 py-3">
+                                                <a href="#" class="pmo-table-link" id="invDwnld1"><i
+                                                        class="iconoir-download"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">INV-UT-20260401-044</td>
-                                            <td class="py-3 text-dark text-start">01 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">Credit Note</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="invDwnld2"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary">TR2600004083682</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                            <td class="py-3">Credit Note</td>
+                                            <td class="pe-4 py-3">
+                                                <a href="#" class="pmo-table-link" id="invDwnld2"><i
+                                                        class="iconoir-download"></i> PDF</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom" data-month="Mar" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">INV-UT-20260315-012</td>
-                                            <td class="py-3 text-dark text-start">15 Mar 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="invDwnld3"><i class="iconoir-download fs-9"></i> PDF</a>
+                                        <tr data-month="Mar" data-year="2026">
+                                            <td class="ps-4 py-3 pmo-table-link pmo-table-primary">TR2600004083683</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">15 Mar 2026</td>
+                                            <td class="py-3">Invoice</td>
+                                            <td class="pe-4 py-3">
+                                                <a href="#" class="pmo-table-link" id="invDwnld3"><i
+                                                        class="iconoir-download"></i> PDF</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1230,6 +1338,7 @@
             var prsContainer = document.getElementById('prsFundReportSelectContainer');
             var utSelect = document.getElementById('utFundReportSelect');
             var prsSelect = document.getElementById('prsFundReportSelect');
+            var showFundReports = document.getElementById('showFundReports');
             var reportsTableWrapper = document.getElementById('fundReportsTableWrapper');
             var reportsPlaceholder = document.getElementById('fundReportsPlaceholder');
             var placeholderText = document.getElementById('fundReportsPlaceholderText');
@@ -1283,7 +1392,13 @@
             }
 
             if (utSelect) {
-                utSelect.addEventListener('change', function () { handleFundSelectChange(utSelect); });
+                utSelect.addEventListener('change', function () {
+                    reportsTableWrapper.classList.add('d-none');
+                    reportsPlaceholder.classList.remove('d-none');
+                });
+            }
+            if (showFundReports) {
+                showFundReports.addEventListener('click', function () { handleFundSelectChange(utSelect); });
             }
             if (prsSelect) {
                 prsSelect.addEventListener('change', function () { handleFundSelectChange(prsSelect); });
@@ -1387,6 +1502,8 @@
                     targetTab = document.getElementById('utStmtTabInv');
                 } else if (tabParam === 'annual') {
                     targetTab = document.getElementById('utStmtTabAnnual');
+                } else if (tabParam === 'tax') {
+                    targetTab = document.getElementById('utStmtTabTax');
                 } else if (tabParam === 'fund') {
                     targetTab = document.getElementById('utStmtTabFund');
                 }
@@ -1449,6 +1566,57 @@
 
             setupLocalFilters('utStmtFilterMonthEinv', 'utStmtFilterYearEinv', 'einvoice');
             setupLocalFilters('utStmtFilterMonthInv', 'utStmtFilterYearInv', 'invoice');
+
+            function enableStatementRowDownloads() {
+                document.querySelectorAll('#statementsTabContent table').forEach(function (table) {
+                    if (table.hasAttribute('data-tax-voucher-register')) return;
+                    Array.from(table.querySelectorAll('thead th')).forEach(function (header, index) {
+                        if (!table.hasAttribute('data-keep-download-column') && /download|\(pdf\)/i.test(header.textContent)) {
+                            header.classList.add('d-none');
+                            table.querySelectorAll('tbody tr').forEach(function (row) {
+                                if (row.children[index]) row.children[index].classList.add('d-none');
+                            });
+                        }
+                    });
+                    table.classList.add('statement-row-downloadable');
+                    table.querySelectorAll('tbody tr:not(.no-filter-data-row)').forEach(function (row) {
+                        row.tabIndex = 0;
+                        row.setAttribute('role', 'link');
+                        row.setAttribute('aria-label', 'Download statement PDF');
+                        row.querySelector('td:first-child')?.classList.add('pmo-table-link');
+                        function downloadStatement(event) {
+                            if (event) event.preventDefault();
+                            var title = Array.from(row.querySelectorAll('td')).slice(0, 3).map(function (cell) { return cell.textContent.trim(); }).filter(Boolean).join(' — ');
+                            var blob = new Blob(['Public Mutual statement\n\n' + title + '\n'], { type: 'application/pdf' });
+                            var link = document.createElement('a');
+                            link.href = URL.createObjectURL(blob);
+                            link.download = (title || 'public-mutual-statement').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() + '.pdf';
+                            link.click();
+                            URL.revokeObjectURL(link.href);
+                        }
+                        Array.from(row.querySelectorAll('td')).forEach(function (cell) {
+                            if (/\b\d{1,2}\s+[A-Za-z]{3}\s+\d{4}\b|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\b/.test(cell.textContent)) cell.classList.add('statement-download-date');
+                        });
+                        row.addEventListener('click', downloadStatement);
+                        row.addEventListener('keydown', function (event) { if (event.key === 'Enter' || event.key === ' ') downloadStatement(event); });
+                    });
+                });
+            }
+            enableStatementRowDownloads();
+
+            document.querySelectorAll('[data-tax-voucher-register] .tax-voucher-download').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var row = link.closest('tr');
+                    var title = Array.from(row.querySelectorAll('td')).slice(0, 3).map(function (cell) { return cell.textContent.trim(); }).join(' — ');
+                    var blob = new Blob(['Public Mutual Tax Voucher on Distribution\n\n' + title + '\n'], { type: 'application/pdf' });
+                    var download = document.createElement('a');
+                    download.href = URL.createObjectURL(blob);
+                    download.download = title.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() + '-tax-voucher.pdf';
+                    download.click();
+                    URL.revokeObjectURL(download.href);
+                });
+            });
 
             // Re-align chevron icons when collapse events trigger
             const collapsibles = document.querySelectorAll('.collapse');

@@ -103,6 +103,7 @@
             outline: none !important;
         }
     </style>
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -295,20 +296,20 @@
                                     class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
                                     <span>Request Overview</span>
                                 </h5>
-                                <div class="table-responsive mb-4">
-                                    <table class="table align-middle custom-table-details mb-0">
+                                <div class="table-responsive mb-4 pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                         <tbody>
-                                            <tr class="border-bottom">
-                                                <td class="text-muted fw-semibold" style="width:35%;">Reference No.</td>
-                                                <td class="fw-bold text-dark" id="eopPayDetailRef">—</td>
+                                            <tr>
+                                                <td>Reference No.</td>
+                                                <td id="eopPayDetailRef">—</td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="text-muted fw-semibold">Scheme type</td>
-                                                <td class="text-dark" id="eopPayDetailscheme">—</td>
+                                            <tr>
+                                                <td>Scheme type</td>
+                                                <td id="eopPayDetailscheme">—</td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="text-muted fw-semibold">No. of Employees</td>
-                                                <td class="text-dark" id="eopPayDetailEmp">—</td>
+                                            <tr>
+                                                <td>No. of Employees</td>
+                                                <td id="eopPayDetailEmp">—</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -316,17 +317,17 @@
 
                                 <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount
                                     Details</h5>
-                                <div class="table-responsive">
-                                    <table class="table align-middle custom-table-details mb-0">
+                                <div class="table-responsive pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                         <tbody>
-                                            <tr class="border-bottom">
-                                                <td class="text-muted fw-semibold" style="width:35%;">Contribution type
+                                            <tr>
+                                                <td>Contribution type
                                                 </td>
-                                                <td class="text-dark" id="eopPayDetailContribType">—</td>
+                                                <td id="eopPayDetailContribType">—</td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="text-muted fw-semibold">Total Amount (MYR)</td>
-                                                <td class="fw-semibold text-success fs-6" id="eopPayDetailAmount">—</td>
+                                            <tr>
+                                                <td>Total Amount (MYR)</td>
+                                                <td class="text-success" id="eopPayDetailAmount">—</td>
                                             </tr>
                                         </tbody>
                                     </table>

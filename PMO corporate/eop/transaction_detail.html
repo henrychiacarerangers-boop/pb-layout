@@ -36,6 +36,7 @@
             }
         }
     </style>
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -215,24 +216,24 @@
                         <div class="card-body p-4">
                             <!-- Section 1: Request Overview -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="eopTxnDetailRef">—</td>
+                                        <tr>
+                                            <td>Reference No.</td>
+                                            <td id="eopTxnDetailRef">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Scheme type</td>
-                                            <td class="text-dark" id="eopTxnDetailscheme">—</td>
+                                        <tr>
+                                            <td>Scheme type</td>
+                                            <td id="eopTxnDetailscheme">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Prepared Date &amp; Time</td>
-                                            <td class="text-dark" id="eopTxnDetailPreparedDt">—</td>
+                                        <tr>
+                                            <td>Prepared Date &amp; Time</td>
+                                            <td id="eopTxnDetailPreparedDt">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Prepared By</td>
-                                            <td class="text-dark" id="eopTxnDetailPreparer">—</td>
+                                        <tr>
+                                            <td>Prepared By</td>
+                                            <td id="eopTxnDetailPreparer">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -241,20 +242,20 @@
                             <!-- Section 2: Contribution Details -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Contribution type</td>
-                                            <td class="text-dark" id="eopTxnDetailContribType">—</td>
+                                        <tr>
+                                            <td>Contribution type</td>
+                                            <td id="eopTxnDetailContribType">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">No. of Employees</td>
-                                            <td class="text-dark" id="eopTxnDetailEmpCount">—</td>
+                                        <tr>
+                                            <td>No. of Employees</td>
+                                            <td id="eopTxnDetailEmpCount">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Total Amount (MYR)</td>
-                                            <td class="fw-semibold text-success fs-6" id="eopTxnDetailAmount">—</td>
+                                        <tr>
+                                            <td>Total Amount (MYR)</td>
+                                            <td class="text-success" id="eopTxnDetailAmount">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -267,20 +268,20 @@
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopTxnDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive mb-4" style="max-height: 380px; overflow-y: auto;">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom sticky-top bg-white"
-                                        style="z-index: 2; top: -1px;">
+                            <div class="table-responsive mb-4 pmo-table-frame" style="max-height: 380px; overflow-y: auto;">
+<table class="pmo-data-table">
+                                    <thead class="sticky-top bg-white"
+                                       >
                                         <tr>
-                                            <th class="ps-3 py-3 fw-semibold" style="width:30%;">Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">NRIC No.</th>
-                                            <th class="py-3 fw-semibold" style="width:15%;">Fund Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">Contribution Type</th>
-                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)
+                                            <th class="ps-3 py-3">Name</th>
+                                            <th class="py-3">NRIC No.</th>
+                                            <th class="py-3">Fund Name</th>
+                                            <th class="py-3">Contribution Type</th>
+                                            <th class="pe-3 py-3">Amount (MYR)
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopTxnDetailTbody">
+                                    <tbody id="eopTxnDetailTbody">
                                         <!-- Will be populated dynamically by JavaScript -->
                                     </tbody>
                                 </table>
@@ -289,28 +290,28 @@
                             <!-- Section 4: Settlement Details -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Settlement &amp; Receipt Details
                             </h5>
-                            <div class="table-responsive">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Payment Status</td>
-                                            <td class="fw-semibold text-dark" id="eopTxnReceiptStatus">—</td>
+                                        <tr>
+                                            <td>Payment Status</td>
+                                            <td id="eopTxnReceiptStatus">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Payment Channel</td>
-                                            <td class="text-dark">FPX (online banking)</td>
+                                        <tr>
+                                            <td>Payment Channel</td>
+                                            <td>FPX (online banking)</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Debit Bank Account</td>
-                                            <td class="text-dark fw-semibold" id="eopTxnReceiptBank">—</td>
+                                        <tr>
+                                            <td>Debit Bank Account</td>
+                                            <td id="eopTxnReceiptBank">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">FPX Receipt ID</td>
-                                            <td class="text-dark font-monospace fw-bold" id="eopTxnReceiptId">—</td>
+                                        <tr>
+                                            <td>FPX Receipt ID</td>
+                                            <td class="font-monospace" id="eopTxnReceiptId">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Execution Date &amp; Time</td>
-                                            <td class="text-dark" id="eopTxnReceiptExecDt">—</td>
+                                        <tr>
+                                            <td>Execution Date &amp; Time</td>
+                                            <td id="eopTxnReceiptExecDt">—</td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -146,6 +146,7 @@
             transition: all 0.25s ease;
         }
     </style>
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -476,24 +477,24 @@
                                     class="iconoir-info-circle"></i></span>
                         </div>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table">
-                                <thead class="border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+<table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 text-start">Tran Date</th>
-                                        <th class="text-start">Description</th>
-                                        <th class="text-end">Paid/(Redeemed)<br>MYR</th>
-                                        <th class="text-end">Invested/(Received)<br>MYR</th>
-                                        <th class="text-end">Total Units</th>
-                                        <th class="text-end">Price/Unit<br>MYR</th>
-                                        <th class="text-end">Sales/Switch Charge<br>MYR</th>
-                                        <th class="pe-4 text-end">GST/SST Charges<br>MYR</th>
+                                        <th class="ps-4">Tran Date</th>
+                                        <th>Description</th>
+                                        <th>Paid/(Redeemed)<br>MYR</th>
+                                        <th>Invested/(Received)<br>MYR</th>
+                                        <th>Total Units</th>
+                                        <th>Price/Unit<br>MYR</th>
+                                        <th>Sales/Switch Charge<br>MYR</th>
+                                        <th class="pe-4">GST/SST Charges<br>MYR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-bottom">
-                                        <td class="ps-4">01/09/2022</td>
-                                        <td>
+                                    <tr>
+                                        <td class="ps-4 pmo-table-meta pmo-table-date">01/09/2022</td>
+                                        <td class="pmo-table-meta">
                                             <div class="d-flex align-items-center">
                                                 <span>DR</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -501,17 +502,17 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">74.56</td>
-                                        <td class="text-end">74.56</td>
-                                        <td class="text-end">
+                                        <td>74.56</td>
+                                        <td>74.56</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>211.46</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
                                                     title="Units added"><i class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.3526</td>
-                                        <td class="text-end">
+                                        <td>0.3526</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>0.00</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -519,11 +520,11 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="pe-4 text-end">0.00</td>
+                                        <td class="pe-4">0.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="ps-4">20/12/2021</td>
-                                        <td>
+                                        <td class="ps-4 pmo-table-meta pmo-table-date">20/12/2021</td>
+                                        <td class="pmo-table-meta">
                                             <div class="d-flex align-items-center">
                                                 <span>II</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -531,9 +532,9 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">10,000.00</td>
-                                        <td class="text-end">9,528.35</td>
-                                        <td class="text-end">
+                                        <td>10,000.00</td>
+                                        <td>9,528.35</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>24,852.24</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -541,8 +542,8 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.3834</td>
-                                        <td class="text-end">
+                                        <td>0.3834</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>471.65</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -550,7 +551,7 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="pe-4 text-end">0.00</td>
+                                        <td class="pe-4">0.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -580,30 +581,30 @@
                             </select>
                         </div>
 
-                        <div class="table-responsive">
-                            <table class="table align-middle mb-0 custom-table">
-                                <thead class="border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+<table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 text-start">Financial Year</th>
-                                        <th class="text-start">Distribution (sen/unit)<br>Date</th>
-                                        <th class="text-end">Distribution Amount<br>MYR</th>
-                                        <th class="text-center">Distribution Instruction</th>
-                                        <th class="pe-4 text-start">Type</th>
+                                        <th class="ps-4">Financial Year</th>
+                                        <th>Distribution (sen/unit)<br>Date</th>
+                                        <th>Distribution Amount<br>MYR</th>
+                                        <th>Distribution Instruction</th>
+                                        <th class="pe-4">Type</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="ps-4">2022</td>
-                                        <td>
+                                        <td class="pmo-table-meta pmo-table-date">
                                             <div>0.30</div>
-                                            <div class="text-muted fs-9 fw-normal mt-1">30/08/2022</div>
+                                            <div class="mt-1">30/08/2022</div>
                                         </td>
-                                        <td class="text-end fw-bold text-dark">74.56</td>
-                                        <td class="text-center">
-                                            <span class="badge bg-light text-primary px-3 py-2 rounded-2 border"
+                                        <td>74.56</td>
+                                        <td>
+                                            <span class="badge bg-light text-primary px-3 py-2 rounded-2"
                                                 style="font-weight: 600;">Re-invest</span>
                                         </td>
-                                        <td class="pe-4 fw-bold text-dark">FINAL</td>
+                                        <td class="pe-4">FINAL</td>
                                     </tr>
                                 </tbody>
                             </table>

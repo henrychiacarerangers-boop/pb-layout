@@ -51,6 +51,7 @@
             letter-spacing: 0.5px;
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -331,89 +332,89 @@
 
                     <!-- Transactions Table Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" style="width: 20%;">
-                                            Request Date/Time<br><span class="fs-9 fw-normal">Reference ID</span></th>
-                                        <th class="py-3 fw-semibold text-start align-middle" style="width: 25%;">
-                                            Transaction Detail<br><span class="fs-9 fw-normal">Account</span></th>
-                                        <th class="py-3 fw-semibold text-end align-middle" style="width: 20%;">Amount
+                                        <th class="ps-4 py-3">
+                                            Request Date/Time<br><span>Reference ID</span></th>
+                                        <th class="py-3">
+                                            Transaction Detail<br><span>Account</span></th>
+                                        <th class="py-3">Amount
                                             (MYR)</th>
-                                        <th class="py-3 fw-semibold text-start align-middle" style="width: 15%;">User ID
+                                        <th class="py-3">User ID
                                             Name</th>
-                                        <th class="pe-4 py-3 fw-semibold text-end align-middle" style="width: 20%;">
+                                        <th class="pe-4 py-3">
                                             Status</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-dark fw-medium">
+                                <tbody>
                                     <!-- Row 1 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="fw-semibold text-dark">02 May 2026, 14:30:12</div>
-                                            <div class="text-muted fs-9">OL39219231931293</div>
+                                    <tr>
+                                        <td class="ps-4 py-3 pmo-table-date">
+                                            <div>02 May 2026, 14:30:12</div>
+                                            <div>OL39219231931293</div>
                                         </td>
-                                        <td class="text-start">
-                                            <div class="fw-semibold text-primary mb-1" style="font-size: 0.8rem;">Top Up
+                                        <td class="pmo-table-primary">
+                                            <div class="mb-1" style="font-size: 0.8rem;">Top Up
                                             </div>
-                                            <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PIATAF</div>
+                                            <div style="font-size: 0.75rem;">123456789 - PIATAF</div>
                                         </td>
-                                        <td class="text-end">
-                                            <div class="fw-semibold text-dark">50,000.00</div>
-                                            <div class="text-muted fs-9 mt-1">189,573.44</div>
+                                        <td>
+                                            <div>50,000.00</div>
+                                            <div class="mt-1">189,573.44</div>
                                         </td>
-                                        <td class="text-start text-dark">Ahmad Razak</td>
-                                        <td class="pe-4 text-end">
+                                        <td class="pmo-table-meta">Ahmad Razak</td>
+                                        <td class="pe-4">
                                             <span
-                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">PENDING
+                                                class="badge bg-secondary bg-opacity-10 border-opacity-25 rounded-pill">PENDING
                                                 PAYMENT</span>
                                         </td>
                                     </tr>
 
                                     <!-- Row 2 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="fw-semibold text-dark">28 Apr 2026, 09:15:00</div>
-                                            <div class="text-muted fs-9">OL39219231931294</div>
+                                    <tr>
+                                        <td class="ps-4 py-3 pmo-table-date">
+                                            <div>28 Apr 2026, 09:15:00</div>
+                                            <div>OL39219231931294</div>
                                         </td>
-                                        <td class="text-start">
-                                            <div class="fw-semibold text-danger mb-1" style="font-size: 0.8rem;">
+                                        <td class="pmo-table-primary">
+                                            <div class="text-danger mb-1" style="font-size: 0.8rem;">
                                                 Redemption
                                             </div>
-                                            <div class="fw-bold" style="font-size: 0.75rem;">123456789 - PeIATGF</div>
+                                            <div style="font-size: 0.75rem;">123456789 - PeIATGF</div>
                                         </td>
-                                        <td class="text-end">
-                                            <div class="fw-semibold text-dark">15,000.00</div>
-                                            <div class="text-muted fs-9 mt-1">50,000.00</div>
+                                        <td>
+                                            <div>15,000.00</div>
+                                            <div class="mt-1">50,000.00</div>
                                         </td>
-                                        <td class="text-start text-dark">Sarah Lee</td>
-                                        <td class="pe-4 text-end">
+                                        <td class="pmo-table-meta">Sarah Lee</td>
+                                        <td class="pe-4">
                                             <span
-                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">PENDING
+                                                class="badge bg-secondary bg-opacity-10 border-opacity-25 rounded-pill">PENDING
                                                 Authorise</span>
                                         </td>
                                     </tr>
 
                                     <!-- Row 3 -->
                                     <tr>
-                                        <td class="ps-4 py-3 text-start">
-                                            <div class="fw-semibold text-dark">15 Apr 2026, 11:20:45</div>
-                                            <div class="text-muted fs-9">OL39219231931295</div>
+                                        <td class="ps-4 py-3 pmo-table-date">
+                                            <div>15 Apr 2026, 11:20:45</div>
+                                            <div>OL39219231931295</div>
                                         </td>
-                                        <td class="text-start">
-                                            <div class="fw-semibold text-primary mb-1" style="font-size: 0.8rem;">Top Up
+                                        <td class="pmo-table-primary">
+                                            <div class="mb-1" style="font-size: 0.8rem;">Top Up
                                             </div>
-                                            <div class="fw-bold" style="font-size: 0.75rem;">987654321 - PRSEC</div>
+                                            <div style="font-size: 0.75rem;">987654321 - PRSEC</div>
                                         </td>
-                                        <td class="text-end">
-                                            <div class="fw-semibold text-dark">100,000.00</div>
-                                            <div class="text-muted fs-9 mt-1">-</div>
+                                        <td>
+                                            <div>100,000.00</div>
+                                            <div class="mt-1">-</div>
                                         </td>
-                                        <td class="text-start text-dark">Ahmad Razak</td>
-                                        <td class="pe-4 text-end">
+                                        <td class="pmo-table-meta">Ahmad Razak</td>
+                                        <td class="pe-4">
                                             <span
-                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">FAILED</span>
+                                                class="badge bg-secondary bg-opacity-10 border-opacity-25 rounded-pill">FAILED</span>
                                         </td>
                                     </tr>
                                 </tbody>

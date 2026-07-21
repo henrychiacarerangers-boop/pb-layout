@@ -83,6 +83,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
@@ -277,29 +278,29 @@
                                 <span>Request Overview</span>
                             </h5>
 
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="refNoDisplay">RP26000000000179</td>
+                                        <tr>
+                                            <td>Reference No.</td>
+                                            <td id="refNoDisplay">RP26000000000179</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Request Date & Time</td>
-                                            <td class="text-dark" id="requestDateDisplay">2026/04/05 11:30:15</td>
+                                        <tr>
+                                            <td>Request Date & Time</td>
+                                            <td id="requestDateDisplay" class="pmo-table-date">2026/04/05 11:30:15</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Fund Name</td>
-                                            <td class="text-dark fw-bold" id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
+                                        <tr>
+                                            <td>Fund Name</td>
+                                            <td id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
                                                 CLASS B</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Account Number</td>
-                                            <td class="text-primary" id="accountDisplay">0193922094</td>
+                                        <tr>
+                                            <td>Account Number</td>
+                                            <td class="pmo-table-primary" id="accountDisplay">0193922094</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Payout Account</td>
-                                            <td class="text-dark" id="payoutAccountDisplay">PUBLIC BANK BERHAD
+                                        <tr>
+                                            <td>Payout Account</td>
+                                            <td id="payoutAccountDisplay">PUBLIC BANK BERHAD
                                                 (891823092391)</td>
                                         </tr>
                                     </tbody>
@@ -308,25 +309,25 @@
 
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Redemption &amp; Unit Details
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Current Unit Balance
+                                        <tr>
+                                            <td>Current Unit Balance
                                             </td>
-                                            <td class="fw-semibold text-dark" id="totalUnitsDisplay">—</td>
+                                            <td id="totalUnitsDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Redemption Units</td>
-                                            <td class="fw-semibold text-dark" id="redeemUnitsDisplay">—</td>
+                                        <tr>
+                                            <td>Redemption Units</td>
+                                            <td id="redeemUnitsDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Remaining Units</td>
-                                            <td class="fw-semibold text-dark" id="afterRedeemDisplay">—</td>
+                                        <tr>
+                                            <td>Remaining Units</td>
+                                            <td id="afterRedeemDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Estimated Payout Value</td>
-                                            <td class="fw-semibold text-danger fs-6" id="payoutValueDisplay">—</td>
+                                        <tr>
+                                            <td>Estimated Payout Value</td>
+                                            <td class="text-danger" id="payoutValueDisplay">—</td>
                                         </tr>
                                     </tbody>
                                     </tbody>
@@ -392,7 +393,7 @@
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
                                 <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Transaction Category</div>
-                                    <div class="fw-bold fs-8 text-dark">Redemption Request (Unit-based)</div>
+                                    <div class="fw-bold fs-8 text-dark">Redemption Request</div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Initiator</div>
@@ -467,9 +468,7 @@
 
                             <div class="text-center mb-5">
                                 <h3 class="fw-bold text-dark mb-2" id="statusMainTitle">Redemption Request Approved</h3>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 500px;" id="statusSubTitle">
-                                    The redemption transaction has been successfully approved. Payout process will be
-                                    executed automatically.</p>
+
                             </div>
 
                             <!-- Dual Column Premium layout, matching top_up.html and redemption.html -->
@@ -1096,9 +1095,7 @@
                 statusIcon.className = approved ? 'iconoir-check text-white' : 'iconoir-xmark text-white';
                 statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Rejected';
                 statusMainTitle.className = 'fw-bold text-dark mb-2';
-                statusSubTitle.textContent = approved
-                    ? 'The redemption transaction has been successfully approved and authorised. Payout processing is underway.'
-                    : 'This redemption request has been rejected. It has been sent back to the initiator with your remarks.';
+
                 doneStatusText.textContent = approved ? 'Approved (Pending Payout)' : 'Rejected';
                 doneStatusText.className = approved
                     ? 'bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7'

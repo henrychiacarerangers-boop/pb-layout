@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -173,31 +174,31 @@
                             <p class="fs-8 text-muted mb-3" id="eopMakeSalarySummary" role="status"></p>
                         </div>
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8"
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table"
                                     id="eopMakeTableSalary" aria-describedby="eopMakeSalarySummary">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold sortable-header text-start"
-                                                data-column="name" style="cursor: pointer; user-select: none;">Name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="ps-4 py-3 sortable-header"
+                                                data-column="name">Name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="nric"
-                                                style="cursor: pointer; user-select: none;">NRIC No. <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="nric"
+                                               >NRIC No. <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="fund"
-                                                style="cursor: pointer; user-select: none;">Fund name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="fund"
+                                               >Fund name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end sortable-header"
-                                                data-column="amount" style="cursor: pointer; user-select: none;">Amount
-                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="pe-4 py-3 sortable-header"
+                                                data-column="amount">Amount
+                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopMakeSalaryTbody"></tbody>
+                                    <tbody id="eopMakeSalaryTbody"></tbody>
                                 </table>
                             </div>
                         </div>
@@ -217,31 +218,31 @@
                             <p class="fs-8 text-muted mb-3" id="eopMakeEmployerSummary" role="status"></p>
                         </div>
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8"
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table"
                                     id="eopMakeTableEmployer" aria-describedby="eopMakeEmployerSummary">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold sortable-header text-start"
-                                                data-column="name" style="cursor: pointer; user-select: none;">Name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="ps-4 py-3 sortable-header"
+                                                data-column="name">Name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="nric"
-                                                style="cursor: pointer; user-select: none;">NRIC No. <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="nric"
+                                               >NRIC No. <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="fund"
-                                                style="cursor: pointer; user-select: none;">Fund name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="fund"
+                                               >Fund name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end sortable-header"
-                                                data-column="amount" style="cursor: pointer; user-select: none;">Amount
-                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="pe-4 py-3 sortable-header"
+                                                data-column="amount">Amount
+                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopMakeEmployerTbody"></tbody>
+                                    <tbody id="eopMakeEmployerTbody"></tbody>
                                 </table>
                             </div>
                         </div>

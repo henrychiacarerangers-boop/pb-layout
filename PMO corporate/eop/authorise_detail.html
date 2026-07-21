@@ -89,6 +89,7 @@
             outline: none !important;
         }
     </style>
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -282,24 +283,24 @@
                                 class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
                                 <span>Request Overview</span>
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailRef">—</td>
+                                        <tr>
+                                            <td>Reference No.</td>
+                                            <td id="eopAuthDetailRef">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Scheme type</td>
-                                            <td class="text-dark" id="eopAuthDetailscheme">—</td>
+                                        <tr>
+                                            <td>Scheme type</td>
+                                            <td id="eopAuthDetailscheme">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Request Date &amp; Time</td>
-                                            <td class="text-dark" id="eopAuthDetailPreparedDt">—</td>
+                                        <tr>
+                                            <td>Request Date &amp; Time</td>
+                                            <td id="eopAuthDetailPreparedDt">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Prepared By</td>
-                                            <td class="text-dark" id="eopAuthDetailPreparer">—</td>
+                                        <tr>
+                                            <td>Prepared By</td>
+                                            <td id="eopAuthDetailPreparer">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -308,20 +309,20 @@
                             <!-- Section 2: Contribution & Amount Details -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+<table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Contribution type</td>
-                                            <td class="text-dark" id="eopAuthDetailContribType">—</td>
+                                        <tr>
+                                            <td>Contribution type</td>
+                                            <td id="eopAuthDetailContribType">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">No. of Employees</td>
-                                            <td class="text-dark" id="eopAuthDetailEmpCount">—</td>
+                                        <tr>
+                                            <td>No. of Employees</td>
+                                            <td id="eopAuthDetailEmpCount">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Total Amount (MYR)</td>
-                                            <td class="fw-semibold text-success fs-6" id="eopAuthDetailAmount">—</td>
+                                        <tr>
+                                            <td>Total Amount (MYR)</td>
+                                            <td class="text-success" id="eopAuthDetailAmount">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -334,20 +335,20 @@
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopAuthDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive mb-4" style="max-height: 380px; overflow-y: auto;">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom sticky-top bg-white"
-                                        style="z-index: 2; top: -1px;">
+                            <div class="table-responsive mb-4 pmo-table-frame" style="max-height: 380px; overflow-y: auto;">
+<table class="pmo-data-table">
+                                    <thead class="sticky-top bg-white"
+                                       >
                                         <tr>
-                                            <th class="ps-3 py-3 fw-semibold" style="width:30%;">Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">NRIC No.</th>
-                                            <th class="py-3 fw-semibold" style="width:15%;">Fund Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">Contribution Type</th>
-                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)
+                                            <th class="ps-3 py-3">Name</th>
+                                            <th class="py-3">NRIC No.</th>
+                                            <th class="py-3">Fund Name</th>
+                                            <th class="py-3">Contribution Type</th>
+                                            <th class="pe-3 py-3">Amount (MYR)
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopAuthDetailTbody">
+                                    <tbody id="eopAuthDetailTbody">
                                         <!-- Will be populated dynamically by JavaScript -->
                                     </tbody>
                                 </table>

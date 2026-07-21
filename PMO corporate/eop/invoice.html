@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -226,40 +227,38 @@
                     </div>
 
                     <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start" style="width: 25%;">Invoice number
+                                        <th class="ps-4 py-3">Invoice No.
                                         </th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 20%;">Date</th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 25%;">Invoice type</th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 10%;">Status</th>
-                                        <th class="pe-4 py-3 fw-semibold text-end" style="width: 8%;">PDF</th>
+                                        <th class="py-3">Date</th>
+                                        <th class="py-3">Document type</th>
+                                        <th class="py-3">Status</th>
+                                        <th class="pe-4 py-3">PDF</th>
                                     </tr>
                                 </thead>
                                 <tbody id="eopInvTableBody">
                                     <tr>
-                                        <td class="ps-4 py-3 fw-semibold text-dark">INV-PRS-20260411-901</td>
-                                        <td class="py-3 text-dark">11 Apr 2026</td>
-                                        <td class="py-3 text-secondary">Invoice</td>
-                                        <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                        <td class="ps-4 py-3">TR2600004083680</td>
+                                        <td class="py-3 pmo-table-meta pmo-table-date">11 Apr 2026</td>
+                                        <td class="py-3">Invoice</td>
+                                        <td class="py-3"><span class="badge rounded-pill"
                                                 style="background-color:#e8f5e9;color:#12a833;">Paid</span></td>
-                                        <td class="pe-4 py-3 text-end">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                        <td class="pe-4 py-3">
+                                            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                 style="transition: all 0.3s ease;" id="eopInvRowPdf1">View</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="ps-4 py-3 fw-semibold text-dark">INV-FEE-20260401-044</td>
-                                        <td class="py-3 text-dark">01 Apr 2026</td>
-                                        <td class="py-3 text-secondary">Credit Note</td>
-                                        <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                        <td class="ps-4 py-3">TR2600004083681</td>
+                                        <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                        <td class="py-3">Credit Note</td>
+                                        <td class="py-3"><span class="badge rounded-pill"
                                                 style="background-color:#fff8e1;color:#ce7226;">Open</span></td>
-                                        <td class="pe-4 py-3 text-end">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                        <td class="pe-4 py-3">
+                                            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                 style="transition: all 0.3s ease;" id="eopInvRowPdf2">View</button>
                                         </td>
                                     </tr>

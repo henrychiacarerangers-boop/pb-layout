@@ -74,6 +74,7 @@
             transform: scale(1.15);
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -395,273 +396,238 @@
                     <!-- </div> -->
                     <!-- Performance Table Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
-                                <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" style="width: 32%;">
+                                        <th class="ps-4 py-3">
                                             Fund</th>
-                                        <th class="py-3 fw-semibold align-middle" style="width: 14%;">
+                                        <th class="py-3">
                                             Performance<br>Date</th>
-                                        <th class="py-2 fw-semibold border-start border-end" colspan="2"
-                                            style="width: 18%; background-color: #f1f5f9;">3-Year Volatility</th>
-                                        <th class="py-2 fw-semibold border-end" colspan="2"
-                                            style="width: 14%; background-color: #f1f5f9;">Returns %</th>
-                                        <th class="py-2 fw-semibold" colspan="3"
-                                            style="width: 18%; background-color: #f1f5f9;">Annualised Returns (%)</th>
-                                        <th class="pe-4 py-3 fw-semibold align-middle" style="width: 4%;">Action</th>
+                                        <th class="py-2" colspan="2">3-Year Volatility</th>
+                                        <th class="py-2" colspan="2">Returns %</th>
+                                        <th class="py-2" colspan="3">Annualised Returns (%)</th>
+                                        <th class="pe-4 py-3">Action</th>
                                     </tr>
-                                    <tr class="border-bottom" style="font-size: 0.75rem;">
+                                    <tr>
                                         <th></th>
                                         <th></th>
-                                        <th class="py-2 border-start text-secondary fw-medium">Factor</th>
-                                        <th class="py-2 border-end text-secondary fw-medium">Class</th>
-                                        <th class="py-2 text-secondary fw-medium">YTD</th>
-                                        <th class="py-2 border-end text-secondary fw-medium">1-Y</th>
-                                        <th class="py-2 text-secondary fw-medium">3-Y</th>
-                                        <th class="py-2 text-secondary fw-medium">5-Y</th>
-                                        <th class="py-2 text-secondary fw-medium">10-Y</th>
+                                        <th class="py-2">Factor</th>
+                                        <th class="py-2">Class</th>
+                                        <th class="py-2">YTD</th>
+                                        <th class="py-2">1-Y</th>
+                                        <th class="py-2">3-Y</th>
+                                        <th class="py-2">5-Y</th>
+                                        <th class="py-2">10-Y</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-dark fw-medium">
+                                <tbody>
                                     <!-- Row 1 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star-solid favourite-star text-warning fs-5"
+                                                <i class="iconoir-star-solid favourite-star text-warning"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         ISLAMIC ASIA TACTICAL ALLOCATION</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PIATAF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PIATAF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">22.4</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">76.15</td>
-                                        <td class="border-end text-success fw-semibold">162.53</td>
-                                        <td class="text-success fw-semibold">43.88</td>
-                                        <td class="text-success fw-semibold">17.82</td>
-                                        <td class="text-success fw-semibold">16.50</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>22.4</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">76.15</td>
+                                        <td class="text-success">162.53</td>
+                                        <td class="text-success">43.88</td>
+                                        <td class="text-success">17.82</td>
+                                        <td class="text-success">16.50</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 2 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         e-ISLAMIC ASIA THEMATIC GROWTH</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PeIATGF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PeIATGF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">18.5</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">54.87</td>
-                                        <td class="border-end text-success fw-semibold">91.78</td>
-                                        <td class="text-success fw-semibold">30.88</td>
-                                        <td class="text-muted fw-normal">-</td>
-                                        <td class="text-muted fw-normal">-</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>18.5</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">54.87</td>
+                                        <td class="text-success">91.78</td>
+                                        <td class="text-success">30.88</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 3 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PB
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PB
                                                         ISLAMIC ASIA STRATEGIC SECTOR</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PBIASSF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PBIASSF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">19.6</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">53.20</td>
-                                        <td class="border-end text-success fw-semibold">106.05</td>
-                                        <td class="text-success fw-semibold">27.69</td>
-                                        <td class="text-success fw-semibold">7.81</td>
-                                        <td class="text-success fw-semibold">12.00</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>19.6</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">53.20</td>
+                                        <td class="text-success">106.05</td>
+                                        <td class="text-success">27.69</td>
+                                        <td class="text-success">7.81</td>
+                                        <td class="text-success">12.00</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 4 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         ISLAMIC OPTIMAL EQUITY</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PIOEF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PIOEF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">16.4</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">46.90</td>
-                                        <td class="border-end text-success fw-semibold">79.16</td>
-                                        <td class="text-success fw-semibold">24.67</td>
-                                        <td class="text-success fw-semibold">4.52</td>
-                                        <td class="text-muted fw-normal">-</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>16.4</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">46.90</td>
+                                        <td class="text-success">79.16</td>
+                                        <td class="text-success">24.67</td>
+                                        <td class="text-success">4.52</td>
+                                        <td>-</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 5 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         CHINA ITTIKAL</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PCIF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PCIF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">15.3</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">46.78</td>
-                                        <td class="border-end text-success fw-semibold">74.54</td>
-                                        <td class="text-success fw-semibold">26.16</td>
-                                        <td class="text-success fw-semibold">7.45</td>
-                                        <td class="text-success fw-semibold">11.00</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>15.3</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">46.78</td>
+                                        <td class="text-success">74.54</td>
+                                        <td class="text-success">26.16</td>
+                                        <td class="text-success">7.45</td>
+                                        <td class="text-success">11.00</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 6 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         REGIONAL SECTOR</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRSEC</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRSEC</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">17.1</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">44.31</td>
-                                        <td class="border-end text-success fw-semibold">89.72</td>
-                                        <td class="text-success fw-semibold">29.16</td>
-                                        <td class="text-success fw-semibold">9.15</td>
-                                        <td class="text-success fw-semibold">10.54</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>17.1</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">44.31</td>
+                                        <td class="text-success">89.72</td>
+                                        <td class="text-success">29.16</td>
+                                        <td class="text-success">9.15</td>
+                                        <td class="text-success">10.54</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 7 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         ISLAMIC ASIA LEADERS EQUITY</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PIALEF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PIALEF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">18.5</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">43.40</td>
-                                        <td class="border-end text-success fw-semibold">83.65</td>
-                                        <td class="text-success fw-semibold">22.46</td>
-                                        <td class="text-success fw-semibold">5.14</td>
-                                        <td class="text-success fw-semibold">10.56</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>18.5</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">43.40</td>
+                                        <td class="text-success">83.65</td>
+                                        <td class="text-success">22.46</td>
+                                        <td class="text-success">5.14</td>
+                                        <td class="text-success">10.56</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
 
                                     <!-- Row 8 -->
                                     <tr>
-                                        <td class="ps-4 py-3 text-start">
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-center gap-2">
-                                                <i class="iconoir-star favourite-star text-muted fs-5"
+                                                <i class="iconoir-star favourite-star"
                                                     onclick="toggleFavourite(this)"></i>
                                                 <div>
-                                                    <a href="#"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PUBLIC
+                                                    <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                         ASIA PACIFIC FOCUS</a>
-                                                    <span class="text-muted fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PAPFF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PAPFF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-muted">06/05/2026</td>
-                                        <td class="border-start fw-semibold text-secondary">18.4</td>
-                                        <td class="border-end text-danger fw-bold">V. HIGH</td>
-                                        <td class="text-success fw-semibold">43.31</td>
-                                        <td class="border-end text-success fw-semibold">95.24</td>
-                                        <td class="text-success fw-semibold">30.59</td>
-                                        <td class="text-muted fw-normal">-</td>
-                                        <td class="text-muted fw-normal">-</td>
-                                        <td class="pe-4 text-center">
-                                            <a href="#" class="table-action-btn"><i
-                                                    class="iconoir-more-horiz fs-4"></i></a>
+                                        <td class="pmo-table-meta pmo-table-date">06/05/2026</td>
+                                        <td>18.4</td>
+                                        <td class="text-danger">V. HIGH</td>
+                                        <td class="text-success">43.31</td>
+                                        <td class="text-success">95.24</td>
+                                        <td class="text-success">30.59</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td class="pe-4">
+                                            <a href="#" class="pmo-table-link"><i class="iconoir-more-horiz"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>

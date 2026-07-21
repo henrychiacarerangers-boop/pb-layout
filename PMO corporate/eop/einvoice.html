@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -243,54 +244,49 @@
                         </div>
 
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width:32%;">Reference
-                                                No.
-                                                /<br><span class="fs-9 fw-normal text-secondary">Unique Identifier
-                                                    No.</span></th>
-                                            <th class="py-3 fw-semibold text-start" style="width:18%;">Date
+                                            <th class="ps-4 py-3">e-Invoice
+                                                No.</th>
+                                            <th class="py-3">Date
                                             </th>
-                                            <th class="py-3 fw-semibold text-start" style="width:20%;">Invoice type</th>
-                                            <th class="py-3 fw-semibold text-start" style="width:10%;">MyInvois status
+                                            <th class="py-3">Document type
                                             </th>
-                                            <th class="pe-4 py-3 fw-semibold text-end" style="width:8%;">Actions</th>
+                                            <th class="py-3">MyInvois status
+                                            </th>
+                                            <th class="pe-4 py-3">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody id="eopEinvTableBody">
                                         <tr>
-                                            <td class="ps-4 py-3 text-dark">
-                                                <span class="fw-semibold d-block">T012991223</span>
-                                                <span
-                                                    class="text-secondary font-monospace fs-9">DCF12390feak10231091</span>
+                                            <td class="ps-4 py-3">
+                                                <span class="d-block">TR2600004083678</span>
                                             </td>
-                                            <td class="py-3 text-dark">12 Apr 2026</td>
-                                            <td class="py-3 text-secondary">e-Invoice</td>
-                                            <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                            <td class="py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
+                                            <td class="py-3">e-Invoice</td>
+                                            <td class="py-3"><span class="badge rounded-pill"
                                                     style="background-color:#e8f5e9;color:#12a833;">Validated</span>
                                             </td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="pe-4 py-3">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                     style="transition: all 0.3s ease;"
                                                     id="eopEinvRowDownload1">XML</button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="ps-4 py-3 text-dark">
-                                                <span class="fw-semibold d-block">INV-EINV-20260405-C3D4</span>
-                                                <span
-                                                    class="text-secondary font-monospace fs-9">DCF12390feak10231092</span>
+                                            <td class="ps-4 py-3">
+                                                <span class="d-block">TR2600004083679</span>
                                             </td>
-                                            <td class="py-3 text-dark">05 Apr 2026</td>
-                                            <td class="py-3 text-secondary">Self Billed e-Invoice</td>
-                                            <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                            <td class="py-3 pmo-table-meta pmo-table-date">05 Apr 2026</td>
+                                            <td class="py-3">Self-billed e-Invoice</td>
+                                            <td class="py-3"><span class="badge rounded-pill"
                                                     style="background-color:#fff3e0;color:#ce7226;">Pending</span></td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="pe-4 py-3">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                     style="transition: all 0.3s ease;"
                                                     id="eopEinvRowDownload2">XML</button>
                                             </td>

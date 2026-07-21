@@ -16,6 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -171,82 +172,78 @@
                     <div class="tab-pane fade show active" id="eopAuthPaneSalary" role="tabpanel"
                         aria-labelledby="eopAuthTabSalary">
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start">Reference No.</th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="py-3 fw-semibold text-start">Prepared by</th>
-                                            <th class="py-3 fw-semibold text-start">Prepared date/time</th>
-                                            <th class="py-3 fw-semibold text-end">Employees</th>
-                                            <th class="py-3 fw-semibold text-end">Total (MYR)</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end">Action</th>
+                                            <th class="ps-4 py-3">Reference No.</th>
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="py-3">Prepared by</th>
+                                            <th class="py-3">Prepared date/time</th>
+                                            <th class="py-3">Employees</th>
+                                            <th class="py-3">Total (MYR)</th>
+                                            <th class="pe-4 py-3">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8">
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3"><span class="text-dark"
-                                                    id="eopAuthSalRef1">RC00000000000124</span></td>
-                                            <td class="py-3"><span class="text-dark">Salary Deduction (IND)</span></td>
-                                            <td class="py-3">Siti Aminah</td>
-                                            <td class="py-3 text-dark">2026/05/08 09:12:44</td>
-                                            <td class="text-end py-3">18</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">42,500.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 py-3"><span id="eopAuthSalRef1">RC00000000000124</span></td>
+                                            <td class="py-3"><span>Salary Deduction (IND)</span></td>
+                                            <td class="py-3 pmo-table-meta">Siti Aminah</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/05/08 09:12:44</td>
+                                            <td class="py-3">18</td>
+                                            <td class="py-3">42,500.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopAuthSalMenu1" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Authorise menu for RC00000000000124">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000124&amp;ch=salary&amp;focus=approve"
                                                                 id="eopAuthSalView1">View details</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000124&amp;ch=salary&amp;focus=approve"
                                                                 id="eopAuthSalApprove1">Approve</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000124&amp;ch=salary&amp;focus=reject"
                                                                 id="eopAuthSalReject1">Reject</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3"><span class="text-dark"
-                                                    id="eopAuthSalRef2">RC00000000000320</span></td>
-                                            <td class="py-3"><span class="text-dark">Salary Deduction (IND)</span></td>
-                                            <td class="py-3">Lee Wei</td>
-                                            <td class="py-3 text-dark">2026/05/09 11:05:18</td>
-                                            <td class="text-end py-3">6</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">18,200.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                        <tr>
+                                            <td class="ps-4 py-3"><span id="eopAuthSalRef2">RC00000000000320</span></td>
+                                            <td class="py-3"><span>Salary Deduction (IND)</span></td>
+                                            <td class="py-3 pmo-table-meta">Lee Wei</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/05/09 11:05:18</td>
+                                            <td class="py-3">6</td>
+                                            <td class="py-3">18,200.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopAuthSalMenu2" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Authorise menu for RC00000000000320">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000320&amp;ch=salary&amp;focus=approve"
                                                                 id="eopAuthSalView2">View details</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000320&amp;ch=salary&amp;focus=approve"
                                                                 id="eopAuthSalApprove2">Approve</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000320&amp;ch=salary&amp;focus=reject"
                                                                 id="eopAuthSalReject2">Reject</a></li>
                                                     </ul>
@@ -263,49 +260,47 @@
                     <div class="tab-pane fade" id="eopAuthPaneEmployer" role="tabpanel"
                         aria-labelledby="eopAuthTabEmployer">
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start">Reference No.</th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="py-3 fw-semibold text-start">Prepared by</th>
-                                            <th class="py-3 fw-semibold text-start">Prepared date/time</th>
-                                            <th class="py-3 fw-semibold text-end">Employees</th>
-                                            <th class="py-3 fw-semibold text-end">Total (MYR)</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end">Action</th>
+                                            <th class="ps-4 py-3">Reference No.</th>
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="py-3">Prepared by</th>
+                                            <th class="py-3">Prepared date/time</th>
+                                            <th class="py-3">Employees</th>
+                                            <th class="py-3">Total (MYR)</th>
+                                            <th class="pe-4 py-3">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8">
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3"><span class="text-dark"
-                                                    id="eopAuthEmpRef1">RC00000000000502</span></td>
-                                            <td class="py-3"><span class="text-dark">Revolving Vesting (VSC)/Immediate
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4 py-3"><span id="eopAuthEmpRef1">RC00000000000502</span></td>
+                                            <td class="py-3"><span>Revolving Vesting (VSC)/Immediate
                                                     Vesting (EMP)</span></td>
-                                            <td class="py-3">Siti Aminah</td>
-                                            <td class="py-3 text-dark">2026/05/10 15:40:02</td>
-                                            <td class="text-end py-3">28</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">96,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta">Siti Aminah</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/05/10 15:40:02</td>
+                                            <td class="py-3">28</td>
+                                            <td class="py-3">96,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopAuthEmpMenu1" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Authorise menu for RC00000000000502">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000502&amp;ch=employer&amp;focus=approve"
                                                                 id="eopAuthEmpView1">View details</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000502&amp;ch=employer&amp;focus=approve"
                                                                 id="eopAuthEmpApprove1">Approve</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_detail.html?ref=RC00000000000502&amp;ch=employer&amp;focus=reject"
                                                                 id="eopAuthEmpReject1">Reject</a></li>
                                                     </ul>

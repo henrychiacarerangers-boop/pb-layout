@@ -26,6 +26,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -231,36 +232,35 @@
 
                 <div id="contentHoldingsValuation">
                     <div class="border rounded-4 overflow-hidden">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table">
-                                <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold">Fund</th>
-                                        <th class="py-3 fw-semibold text-end">Total Units</th>
-                                        <th class="py-3 fw-semibold text-center">Price/Unit<br>(MYR)</th>
-                                        <th class="py-3 fw-semibold text-center">Market Value<br>(MYR)</th>
-                                        <th class="py-3 fw-semibold text-center">Investment Cost<br>by Account<br>(MYR)
+                                        <th class="ps-4 py-3">Fund</th>
+                                        <th class="py-3">Total Units</th>
+                                        <th class="py-3">Price/Unit<br>(MYR)</th>
+                                        <th class="py-3">Market Value<br>(MYR)</th>
+                                        <th class="py-3">Investment Cost<br>by Account<br>(MYR)
                                         </th>
-                                        <th class="py-3 fw-semibold text-center">Unrealised<br>P/L<br>(MYR)</th>
-                                        <th class="py-3 fw-semibold text-center">Unrealised<br>P/L <br>(%)</th>
-                                        <th class="pe-4 py-3 fw-semibold text-center">Action</th>
+                                        <th class="py-3">Unrealised<br>P/L<br>(MYR)</th>
+                                        <th class="py-3">Unrealised<br>P/L <br>(%)</th>
+                                        <th class="pe-4 py-3">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-dark fw-medium fs-8">
+                                <tbody>
                                     <!-- Row 1 -->
-                                    <tr class="border-bottom">
+                                    <tr>
                                         <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="view_account_detail.html"
-                                                    class="text-primary text-decoration-underline">094766567</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="view_account_detail.html" class="pmo-table-link">094766567</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC STRATEGIC GROWTH FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC STRATEGIC GROWTH FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity / Growth">EQ</span>
@@ -269,66 +269,56 @@
                                                     data-bs-placement="top" title="Risk 4 - High"
                                                     onerror="this.style.display='none'">
                                             </div>
-                                            <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint: Tan Ah
-                                                    Kow</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Lee Mei Ling (A0849)</span>
-                                            </div>
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 25,063.70" style="cursor: help;">25,063.70</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 0.3990 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">0.5013 <i
-                                                    class="iconoir-nav-arrow-up-solid text-success fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 25,063.70">25,063.70</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 0.3990 MYR">
+                                            <div>0.5013 <i class="iconoir-nav-arrow-up-solid text-success"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 10,000.00 MYR"
-                                            style="cursor: help;">12,564.43</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.3990"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 10,000.00 MYR">12,564.43</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.3990">
                                             10,000.00</td>
-                                        <td class="text-center py-3 text-success">2,564.43</td>
-                                        <td class="text-center py-3 text-success">25.64</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="py-3 text-success">2,564.43</td>
+                                        <td class="py-3 text-success">25.64</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="view_account_detail.html">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <!-- Row 2 -->
-                                    <tr class="border-bottom">
+                                    <tr>
                                         <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420393</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420393</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC SHARIAH BALANCED FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC SHARIAH BALANCED FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Balanced">BAL</span>
@@ -337,65 +327,56 @@
                                                     data-bs-placement="top" title="Risk 3 - Moderate"
                                                     onerror="this.style.display='none'">
                                             </div>
-                                            <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint: Lau Swee
-                                                    Lan</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Michael Wong (A0912)</span>
-                                            </div>
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 18,500.00" style="cursor: help;">18,500.00</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 0.6216 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">0.6540 <i
-                                                    class="iconoir-nav-arrow-up-solid text-success fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 18,500.00">18,500.00</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 0.6216 MYR">
+                                            <div>0.6540 <i class="iconoir-nav-arrow-up-solid text-success"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 11,500.00 MYR"
-                                            style="cursor: help;">12,099.00</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.6216"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 11,500.00 MYR">12,099.00</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.6216">
                                             11,500.00</td>
-                                        <td class="text-center py-3 text-success">599.00</td>
-                                        <td class="text-center py-3 text-success">5.21</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="py-3 text-success">599.00</td>
+                                        <td class="py-3 text-success">5.21</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="#">View</a></li>
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <!-- Row 3 -->
-                                    <tr class="border-bottom">
+                                    <tr>
                                         <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420394</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420394</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC ITTIKAL SEQUEL FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC ITTIKAL SEQUEL FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity">EQ</span>
@@ -404,65 +385,56 @@
                                                     data-bs-placement="top" title="Risk 4 - High"
                                                     onerror="this.style.display='none'">
                                             </div>
-                                            <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint: Ahmad
-                                                    bin Hashim</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Siti Aminah (A0722)</span>
-                                            </div>
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 45,000.00" style="cursor: help;">45,000.00</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 0.7111 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">0.8520 <i
-                                                    class="iconoir-nav-arrow-up-solid text-success fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 45,000.00">45,000.00</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 0.7111 MYR">
+                                            <div>0.8520 <i class="iconoir-nav-arrow-up-solid text-success"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 32,000.00 MYR"
-                                            style="cursor: help;">38,340.00</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.7111"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 32,000.00 MYR">38,340.00</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.7111">
                                             32,000.00</td>
-                                        <td class="text-center py-3 text-success">6,340.00</td>
-                                        <td class="text-center py-3 text-success">19.81</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="py-3 text-success">6,340.00</td>
+                                        <td class="py-3 text-success">19.81</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="#">View</a></li>
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <!-- Row 4 -->
-                                    <tr class="border-bottom">
+                                    <tr>
                                         <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420395</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420395</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC ISLAMIC DIVIDEND FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity">EQ</span>
@@ -472,64 +444,56 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                             <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint: Fatima
-                                                    binti Ali</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Mohd Fauzi (A0512)</span>
-                                            </div>
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 30,000.00" style="cursor: help;">30,000.00</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 0.5500 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">0.5210 <i
-                                                    class="iconoir-nav-arrow-down-solid text-danger fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 30,000.00">30,000.00</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 0.5500 MYR">
+                                            <div>0.5210 <i class="iconoir-nav-arrow-down-solid text-danger"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 16,500.00 MYR"
-                                            style="cursor: help;">15,630.00</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.5500"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 16,500.00 MYR">15,630.00</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.5500">
                                             16,500.00</td>
-                                        <td class="text-center py-3 text-danger">870.00</td>
-                                        <td class="text-center py-3 text-danger">5.22</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="py-3 text-danger">870.00</td>
+                                        <td class="py-3 text-danger">5.22</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="#">View</a></li>
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
                                     <!-- Row 5 -->
-                                    <tr class="border-bottom">
+                                    <tr>
                                         <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420396</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420396</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC BOND FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC BOND FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Fixed Income">FI</span>
@@ -538,47 +502,39 @@
                                                     data-bs-placement="top" title="Risk 2 - Low"
                                                     onerror="this.style.display='none'">
                                             </div>
-                                            <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint:
-                                                    N/A</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Ravi Chandran (A0311)</span>
-                                            </div>
+
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 50,000.00" style="cursor: help;">50,000.00</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 1.0000 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">1.0530 <i
-                                                    class="iconoir-nav-arrow-up-solid text-success fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 50,000.00">50,000.00</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 1.0000 MYR">
+                                            <div>1.0530 <i class="iconoir-nav-arrow-up-solid text-success"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 50,000.00 MYR"
-                                            style="cursor: help;">52,650.00</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 1.0000"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 50,000.00 MYR">52,650.00</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 1.0000">
                                             50,000.00</td>
-                                        <td class="text-center py-3 text-success">2,650.00</td>
-                                        <td class="text-center py-3 text-success">5.30</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="py-3 text-success">2,650.00</td>
+                                        <td class="py-3 text-success">5.30</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="#">View</a></li>
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
@@ -586,17 +542,17 @@
                                     </tr>
                                     <!-- Row 6 -->
                                     <tr>
-                                        <td class="ps-4 py-3 rounded-bottom-4">
+                                        <td class="ps-4 py-3 rounded-bottom-4 pmo-table-primary">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420397</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420397</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="text-dark mt-1 pe-2 fw-bold">PUBLIC REGIONAL UTILITY FUND</div>
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC REGIONAL UTILITY FUND</div>
                                             <!-- Category & Risk badges -->
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity">EQ</span>
@@ -606,46 +562,38 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                             <!-- Joint & UTC -->
-                                            <div
-                                                class="text-muted fs-9 mt-1 fw-normal d-flex align-items-center gap-2 flex-wrap">
-                                                <span><i class="iconoir-user fs-9 align-middle me-1"></i>Joint: Lee Kok
-                                                    Wing</span>
-                                                <span class="text-muted opacity-50">|</span>
-                                                <span>UTC: Jane Tan (A0614)</span>
-                                            </div>
+
                                         </td>
-                                        <td class="text-end py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="Loaded 15,000.00" style="cursor: help;">15,000.00</td>
-                                        <td class="text-center py-3" data-bs-toggle="tooltip" data-bs-placement="top"
-                                            title="as at 01/07/2026 Avg Cost/Unit 0.6000 MYR" style="cursor: help;">
-                                            <div class="fw-semibold text-dark">0.7200 <i
-                                                    class="iconoir-nav-arrow-up-solid text-success fs-7"></i></div>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Loaded 15,000.00">15,000.00</td>
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="as at 01/07/2026 Avg Cost/Unit 0.6000 MYR">
+                                            <div>0.7200 <i class="iconoir-nav-arrow-up-solid text-success"></i></div>
                                         </td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Investment Cost 9,000.00 MYR"
-                                            style="cursor: help;">10,800.00</td>
-                                        <td class="text-center py-3 text-dark" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.6000"
-                                            style="cursor: help;">
+                                        <td class="py-3" data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Investment Cost 9,000.00 MYR">10,800.00</td>
+                                        <td class="py-3 pmo-table-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="top" title="Avg Cost/Unit: RM 0.6000">
                                             9,000.00</td>
-                                        <td class="text-center py-3 text-success">1,800.00</td>
-                                        <td class="text-center py-3 text-success">20.00</td>
-                                        <td class="pe-4 py-3 text-end rounded-bottom-4">
+                                        <td class="py-3 text-success">1,800.00</td>
+                                        <td class="py-3 text-success">20.00</td>
+                                        <td class="pe-4 py-3 rounded-bottom-4">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                <button
-                                                    class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                <span>Transact</span>
+                                                <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                     aria-label="Transact menu">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="#">View</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2" href="top_up.html">Top
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="#">View</a></li>
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
+                                                            href="top_up.html">Top
                                                             Up</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="redemption.html">Redeem</a></li>
                                                 </ul>
                                             </div>
@@ -659,51 +607,45 @@
 
                 <div id="contentPricePerformance" class="d-none">
                     <div class="border rounded-4 overflow-hidden">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
-                                <thead class="border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" style="width: 28%;">
+                                        <th class="ps-4 py-3">
                                             Fund Name</th>
-                                        <th class="py-3 fw-semibold text-center align-middle" style="width: 10%;">Price
+                                        <th class="py-3">Price
                                             Date</th>
-                                        <th class="py-3 fw-semibold text-end align-middle" style="width: 15%;">
+                                        <th class="py-3">
                                             Price/Unit (MYR)</th>
-                                        <th class="py-2 fw-semibold border-start border-end align-middle" colspan="2"
-                                            style="background-color: #f1f5f9;">Returns (%)</th>
-                                        <th class="py-2 fw-semibold align-middle" colspan="3"
-                                            style="background-color: #f1f5f9;">Annualised Returns (%)</th>
+                                        <th class="py-2" colspan="2">Returns (%)</th>
+                                        <th class="py-2" colspan="3">Annualised Returns (%)</th>
                                     </tr>
-                                    <tr class="border-bottom" style="font-size: 0.75rem;">
+                                    <tr>
                                         <th></th>
                                         <th></th>
                                         <th></th>
-                                        <th class="py-2 border-start text-secondary fw-semibold"
-                                            style="background-color: #f1f5f9;">YTD</th>
-                                        <th class="py-2 border-end text-secondary fw-semibold"
-                                            style="background-color: #f1f5f9;">1-Y</th>
-                                        <th class="py-2 text-secondary fw-semibold" style="background-color: #f1f5f9;">
+                                        <th class="py-2">YTD</th>
+                                        <th class="py-2">1-Y</th>
+                                        <th class="py-2">
                                             3-Y</th>
-                                        <th class="py-2 text-secondary fw-semibold" style="background-color: #f1f5f9;">
+                                        <th class="py-2">
                                             5-Y</th>
-                                        <th class="py-2 text-secondary fw-semibold pe-4"
-                                            style="background-color: #f1f5f9;">10-Y</th>
+                                        <th class="py-2 pe-4">10-Y</th>
                                     </tr>
                                 </thead>
-                                <tbody class="fw-medium text-center">
+                                <tbody>
                                     <!-- Row 1 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="view_account_detail.html"
-                                                    class="text-primary text-decoration-underline">094766567</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="view_account_detail.html" class="pmo-table-link">094766567</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC STRATEGIC GROWTH FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC STRATEGIC GROWTH FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity Fund">EQ</span>
@@ -713,36 +655,35 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                0.5013 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                0.5013 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                             </div>
-                                            <div class="text-success fs-9 fw-bold">+1.07%</div>
+                                            <div class="text-success">+1.07%</div>
                                         </td>
-                                        <td class="border-start text-success fw-bold">+18.45%</td>
-                                        <td class="border-end text-success fw-bold">+22.30%</td>
-                                        <td class="text-success fw-bold">+35.60%</td>
-                                        <td class="text-success fw-bold">+45.10%</td>
-                                        <td class="text-success fw-bold pe-4">+68.40%</td>
+                                        <td class="text-success">+18.45%</td>
+                                        <td class="text-success">+22.30%</td>
+                                        <td class="text-success">+35.60%</td>
+                                        <td class="text-success">+45.10%</td>
+                                        <td class="text-success pe-4">+68.40%</td>
                                     </tr>
                                     <!-- Row 2 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420393</a>
+                                                <a href="#" class="pmo-table-link">019420393</a>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
                                                     class="img-fluid ms-1" style="height: 14px;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Shariah Compliant" onerror="this.style.display='none'">
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC SHARIAH BALANCED FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC SHARIAH BALANCED FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Balanced Fund">BAL</span>
@@ -752,36 +693,35 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                0.6540 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                0.6540 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                             </div>
-                                            <div class="text-success fs-9 fw-bold">+0.32%</div>
+                                            <div class="text-success">+0.32%</div>
                                         </td>
-                                        <td class="border-start text-success fw-bold">+8.20%</td>
-                                        <td class="border-end text-success fw-bold">+10.50%</td>
-                                        <td class="text-success fw-bold">+12.40%</td>
-                                        <td class="text-success fw-bold">+18.25%</td>
-                                        <td class="text-muted fw-normal pe-4">-</td>
+                                        <td class="text-success">+8.20%</td>
+                                        <td class="text-success">+10.50%</td>
+                                        <td class="text-success">+12.40%</td>
+                                        <td class="text-success">+18.25%</td>
+                                        <td class="pe-4">-</td>
                                     </tr>
                                     <!-- Row 3 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420394</a>
+                                                <a href="#" class="pmo-table-link">019420394</a>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
                                                     class="img-fluid ms-1" style="height: 14px;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Shariah Compliant" onerror="this.style.display='none'">
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC ITTIKAL SEQUEL FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC ITTIKAL SEQUEL FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity Fund">EQ</span>
@@ -791,36 +731,35 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                0.8520 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                0.8520 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                             </div>
-                                            <div class="text-success fs-9 fw-bold">+1.00%</div>
+                                            <div class="text-success">+1.00%</div>
                                         </td>
-                                        <td class="border-start text-success fw-bold">+14.30%</td>
-                                        <td class="border-end text-success fw-bold">+19.80%</td>
-                                        <td class="text-success fw-bold">+28.50%</td>
-                                        <td class="text-success fw-bold">+40.20%</td>
-                                        <td class="text-success fw-bold pe-4">+55.10%</td>
+                                        <td class="text-success">+14.30%</td>
+                                        <td class="text-success">+19.80%</td>
+                                        <td class="text-success">+28.50%</td>
+                                        <td class="text-success">+40.20%</td>
+                                        <td class="text-success pe-4">+55.10%</td>
                                     </tr>
                                     <!-- Row 4 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420395</a>
+                                                <a href="#" class="pmo-table-link">019420395</a>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
                                                     class="img-fluid ms-1" style="height: 14px;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Shariah Compliant" onerror="this.style.display='none'">
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC ISLAMIC DIVIDEND FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity Fund">EQ</span>
@@ -830,32 +769,31 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                0.5210 <i class="iconoir-nav-arrow-down-solid text-danger fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                0.5210 <i class="iconoir-nav-arrow-down-solid text-danger"></i>
                                             </div>
-                                            <div class="text-danger fs-9 fw-bold">-0.67%</div>
+                                            <div class="text-danger">-0.67%</div>
                                         </td>
-                                        <td class="border-start text-danger fw-bold">-2.10%</td>
-                                        <td class="border-end text-danger fw-bold">-5.22%</td>
-                                        <td class="text-success fw-bold">+5.80%</td>
-                                        <td class="text-success fw-bold">+12.40%</td>
-                                        <td class="text-muted fw-normal pe-4">-</td>
+                                        <td class="text-danger">-2.10%</td>
+                                        <td class="text-danger">-5.22%</td>
+                                        <td class="text-success">+5.80%</td>
+                                        <td class="text-success">+12.40%</td>
+                                        <td class="pe-4">-</td>
                                     </tr>
                                     <!-- Row 5 -->
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420396</a>
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <a href="#" class="pmo-table-link">019420396</a>
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC BOND FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC BOND FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Fixed Income Fund">FI</span>
@@ -865,36 +803,35 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                1.0530 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                1.0530 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                             </div>
-                                            <div class="text-success fs-9 fw-bold">+0.05%</div>
+                                            <div class="text-success">+0.05%</div>
                                         </td>
-                                        <td class="border-start text-success fw-bold">+4.10%</td>
-                                        <td class="border-end text-success fw-bold">+5.30%</td>
-                                        <td class="text-success fw-bold">+10.20%</td>
-                                        <td class="text-success fw-bold">+14.85%</td>
-                                        <td class="text-success fw-bold pe-4">+25.40%</td>
+                                        <td class="text-success">+4.10%</td>
+                                        <td class="text-success">+5.30%</td>
+                                        <td class="text-success">+10.20%</td>
+                                        <td class="text-success">+14.85%</td>
+                                        <td class="text-success pe-4">+25.40%</td>
                                     </tr>
                                     <!-- Row 6 -->
                                     <tr>
-                                        <td class="ps-4 py-3 text-start rounded-bottom-4">
+                                        <td class="ps-4 py-3 rounded-bottom-4 pmo-table-primary">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <a href="#" class="text-primary text-decoration-underline">019420397</a>
+                                                <a href="#" class="pmo-table-link">019420397</a>
                                                 <img src="../images/icon/shariah.png" alt="Shariah Compliant"
                                                     class="img-fluid ms-1" style="height: 14px;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Shariah Compliant" onerror="this.style.display='none'">
-                                                <i class="iconoir-info-circle text-muted fs-8" data-bs-toggle="popover"
+                                                <i class="iconoir-info-circle" data-bs-toggle="popover"
                                                     data-bs-trigger="hover focus" data-bs-placement="top"
                                                     data-bs-content="Cash scheme" style="cursor: help;"></i>
                                             </div>
-                                            <div class="fw-bold text-dark mt-1 pe-2">PUBLIC REGIONAL UTILITY FUND</div>
-                                            <div class="mt-1 d-flex align-items-center gap-2">
-                                                <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                            <div class="mt-1 pe-2 pmo-table-meta">PUBLIC REGIONAL UTILITY FUND</div>
+                                            <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <span class="badge rounded-pill px-2 py-1"
                                                     style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                     data-bs-toggle="tooltip" data-bs-placement="top"
                                                     title="Equity Fund">EQ</span>
@@ -904,19 +841,18 @@
                                                     onerror="this.style.display='none'">
                                             </div>
                                         </td>
-                                        <td class="text-center text-muted">01/07/2026</td>
-                                        <td class="text-end performance-cell">
-                                            <div
-                                                class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                0.7200 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
+                                        <td class="pmo-table-meta pmo-table-date">01/07/2026</td>
+                                        <td class="performance-cell">
+                                            <div class="d-flex align-items-center justify-content-end gap-1">
+                                                0.7200 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                             </div>
-                                            <div class="text-success fs-9 fw-bold">+0.84%</div>
+                                            <div class="text-success">+0.84%</div>
                                         </td>
-                                        <td class="border-start text-success fw-bold">+12.40%</td>
-                                        <td class="border-end text-success fw-bold">+20.00%</td>
-                                        <td class="text-success fw-bold">+24.50%</td>
-                                        <td class="text-success fw-bold">+32.60%</td>
-                                        <td class="text-success fw-bold pe-4 rounded-bottom-4">+42.10%</td>
+                                        <td class="text-success">+12.40%</td>
+                                        <td class="text-success">+20.00%</td>
+                                        <td class="text-success">+24.50%</td>
+                                        <td class="text-success">+32.60%</td>
+                                        <td class="text-success pe-4 rounded-bottom-4">+42.10%</td>
                                     </tr>
                                 </tbody>
                             </table>

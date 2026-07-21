@@ -1,0 +1,187 @@
+/*
+ * PMO data-table system
+ * The only production source of table presentation.  Keep page CSS free of
+ * table layout, typography, border, colour, width, and alignment overrides.
+ */
+.pmo-table-frame,
+.table-responsive:has(> .pmo-data-table) {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #E8EEF5;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(15, 40, 78, 0.025);
+}
+
+.pmo-table-frame.table-responsive {
+  overflow-x: auto;
+}
+
+.pmo-data-table {
+  width: 100%;
+  min-width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #FFFFFF;
+  color: #16161A;
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+.pmo-data-table :is(th, td) {
+  box-sizing: border-box;
+  text-align: left !important;
+  vertical-align: middle;
+  border: 0 !important;
+}
+
+.pmo-data-table thead th {
+  padding: 14px 16px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #E8EEF5 !important;
+  color: #64748B !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 18px;
+  white-space: normal;
+}
+
+.pmo-data-table tbody :is(td, th) {
+  padding: 14px 16px;
+  border-bottom: 1px solid #EEF3F8 !important;
+  background: transparent;
+  color: #16161A !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 20px;
+}
+
+/* Page utility classes must not create a second neutral table type scale. */
+
+.pmo-data-table tbody tr:last-child> :is(td, th) {
+  border-bottom: 0 !important;
+}
+
+.pmo-data-table tbody tr {
+  transition: background-color 160ms ease;
+}
+
+.pmo-data-table tbody tr:hover> :is(td, th) {
+  background: #EAF2FF !important;
+}
+
+.pmo-data-table tbody tr:focus-visible> :is(td, th) {
+  background: #EAF2FF !important;
+  box-shadow: inset 3px 0 0 #002E77;
+}
+
+.pmo-data-table tbody tr[role="link"] {
+  cursor: pointer;
+}
+
+.pmo-data-table tbody tr[role="link"]:hover .pmo-table-link {
+  color: #001F52 !important;
+}
+
+.pmo-data-table--details tbody>tr> :first-child {
+  width: 38%;
+  color: #64748B !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.pmo-data-table--details tbody>tr> :not(:first-child) {
+  color: #16161A !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+/* Shared dashboard analytics grid: responsive proportions without fixed pixels. */
+.pmo-data-table--fund-analytics {
+  table-layout: fixed;
+}
+
+.pmo-data-table--fund-analytics :is(th, td):nth-child(1) {
+  width: 40%;
+}
+
+.pmo-data-table--fund-analytics :is(th, td):nth-child(2),
+.pmo-data-table--fund-analytics :is(th, td):nth-child(3),
+.pmo-data-table--fund-analytics :is(th, td):nth-child(4) {
+  width: 20%;
+}
+
+.pmo-data-table--fund-analytics tbody td {
+  vertical-align: middle;
+}
+
+.pmo-data-table--fund-analytics tbody td:nth-child(n + 2) {
+  white-space: nowrap;
+}
+
+.pmo-data-table .pmo-table-primary {
+  color: #002E77 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+}
+
+.pmo-data-table .pmo-table-meta {
+  color: #6B7A90 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 18px;
+}
+
+/* Dates are operational data, not secondary decoration. */
+.pmo-data-table .pmo-table-date {
+  color: #16161A !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 20px;
+}
+
+.pmo-data-table :is(.pmo-table-link, .pmo-table-action),
+.pmo-data-table a[href]:not(.pmo-table-action-button):not(.pmo-table-dropdown-action) {
+  color: #002E77 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.pmo-data-table :is(.pmo-table-link, .pmo-table-action):hover,
+.pmo-data-table a[href]:not(.pmo-table-action-button):not(.pmo-table-dropdown-action):hover {
+  color: #001F52 !important;
+}
+
+.pmo-data-table .pmo-table-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.pmo-data-table .pmo-table-status--success {
+  color: #15803D;
+}
+
+.pmo-data-table .pmo-table-status--warning {
+  color: #A16207;
+}
+
+.pmo-data-table .pmo-table-status--danger {
+  color: #B42318;
+}
+
+@media (max-width: 767.98px) {
+
+  .pmo-data-table thead th,
+  .pmo-data-table tbody :is(td, th) {
+    padding: 12px 14px;
+  }
+}

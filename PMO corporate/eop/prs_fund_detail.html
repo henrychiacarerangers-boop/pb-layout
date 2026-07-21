@@ -50,6 +50,7 @@
             box-shadow: none;
         }
     </style>
+  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -224,10 +225,10 @@
                     </div>
                     <div class="col-lg-8 ps-lg-4">
                         <div class="prs-detail-label mb-2">Cumulative returns (%)</div>
-                        <div class="table-responsive">
-                            <table class="table table-borderless align-middle mb-0 fs-8 pmo-table">
+                        <div class="table-responsive pmo-table-frame">
+<table class="pmo-data-table">
                                 <thead>
-                                    <tr class="text-muted text-uppercase fw-semibold" style="font-size: 0.7rem;">
+                                    <tr class="text-uppercase">
                                         <th class="py-2">YTD</th>
                                         <th class="py-2">1-Y</th>
                                         <th class="py-2">3-Y</th>
@@ -235,7 +236,7 @@
                                         <th class="py-2">10-Y</th>
                                     </tr>
                                 </thead>
-                                <tbody class="fw-semibold text-dark">
+                                <tbody>
                                     <tr>
                                         <td class="py-2" id="prsDetailYtd">60.71</td>
                                         <td class="py-2" id="prsDetailY1">117.33</td>
