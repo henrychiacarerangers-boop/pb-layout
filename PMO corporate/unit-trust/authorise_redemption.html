@@ -418,7 +418,7 @@
                 </div>
 
                 <!-- Terms & Conditions validation block -->
-                <div class="col-12 print-hidden mb-2">
+                <div class="col-12 print-hidden mb-2" id="utAuthTermsWrapper">
                     <div class="mt-4">
                         <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
                             <input class="form-check-input mt-0 fs-5" type="checkbox" id="utAuthTermsCheckbox"
@@ -903,6 +903,7 @@
             const remarksInput = document.getElementById('remarksInput');
             const termsCheckbox = document.getElementById('utAuthTermsCheckbox');
             const termsError = document.getElementById('utAuthTermsError');
+            const termsWrapper = document.getElementById('utAuthTermsWrapper');
 
             if (termsCheckbox) {
                 termsCheckbox.addEventListener('change', () => {
@@ -918,6 +919,7 @@
                 if (!termsCheckbox.checked) {
                     termsCheckbox.classList.add('is-invalid');
                     termsError?.classList.remove('d-none');
+                    termsCheckbox.focus();
                     return false;
                 }
                 termsCheckbox.classList.remove('is-invalid');
@@ -982,7 +984,8 @@
             document.getElementById('afterRedeemDisplay').textContent = activeTribe.afterRedeem;
             document.getElementById('payoutValueDisplay').innerHTML = activeTribe.payoutVal;
             document.getElementById('redeemUnitsDisplay2').textContent = activeTribe.rawRedeem;
-            document.getElementById('portfolioImpactDisplay').textContent = activeTribe.impact;
+            const portfolioImpactDisplay = document.getElementById('portfolioImpactDisplay');
+            if (portfolioImpactDisplay) portfolioImpactDisplay.textContent = activeTribe.impact;
 
             // Done Screen sync
             document.getElementById('doneFundName').textContent = activeTribe.fund;
@@ -1017,6 +1020,7 @@
                 // Hide secure authorisation fields for rejection
                 if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'none';
                 if (pacInfoText) pacInfoText.style.display = 'none';
+                if (termsWrapper) termsWrapper.style.display = 'none';
                 if (pacCardHeader) pacCardHeader.textContent = 'Rejection Details';
                 if (remarksLabel) {
                     remarksLabel.textContent = 'Reason for Rejection (Required)';
@@ -1038,6 +1042,7 @@
                 // Show secure authorisation fields for approval
                 if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'block';
                 if (pacInfoText) pacInfoText.style.display = 'block';
+                if (termsWrapper) termsWrapper.style.display = 'block';
                 if (pacCardHeader) pacCardHeader.textContent = 'Secure Authorisation';
                 if (remarksLabel) {
                     remarksLabel.textContent = 'Authoriser Remarks (Optional)';
@@ -1048,6 +1053,7 @@
                 remarksInput.value = "Approved via bulk action shortcuts.";
                 remarksInput.setAttribute('placeholder', 'Provide a reason (Optional)...');
                 remarksInput.required = false;
+                if (termsCheckbox) termsCheckbox.checked = true;
                 btnApprove.classList.add('pulse-button');
                 btnApprove.style.boxShadow = '0 0 15px rgba(40, 167, 69, 0.6)';
             }
@@ -1083,70 +1089,46 @@
                 return true;
             }
 
-            // Approve Action Handler
-            if (btnApprove) {
-                btnApprove.addEventListener('click', function () {
-                    if (!validateTerms()) return;
-                    if (!validatePAC()) return;
-
-                    // Transition to completed Approved
-                    statusIconBg.classList.remove('bg-danger');
-                    statusIconBg.classList.add('bg-success');
-                    statusIcon.className = 'iconoir-check text-white';
-                    statusMainTitle.textContent = "Redemption Request Approved";
-                    statusMainTitle.className = "fw-bold text-dark mb-2";
-                    statusSubTitle.textContent = "The redemption transaction has been successfully approved and authorised. Payout processing is underway.";
-                    doneStatusText.textContent = "Approved (Pending Payout)";
-                    doneStatusText.className = "bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7";
-                    document.getElementById('doneRedeemUnits').className = "bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7";
-
-                    const remarks = remarksInput.value.trim();
-                    doneRemarksDisplay.textContent = remarks ? remarks : "-";
-
-                    const timestamp = new Date().toLocaleString();
-                    doneDateTime.textContent = timestamp;
-                    printDateTime.textContent = timestamp;
-
-                    detailSection.classList.add('d-none');
-                    doneSection.classList.remove('d-none');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+            function showResult(result) {
+                const approved = result === 'approved';
+                statusIconBg.classList.toggle('bg-success', approved);
+                statusIconBg.classList.toggle('bg-danger', !approved);
+                statusIcon.className = approved ? 'iconoir-check text-white' : 'iconoir-xmark text-white';
+                statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Rejected';
+                statusMainTitle.className = 'fw-bold text-dark mb-2';
+                statusSubTitle.textContent = approved
+                    ? 'The redemption transaction has been successfully approved and authorised. Payout processing is underway.'
+                    : 'This redemption request has been rejected. It has been sent back to the initiator with your remarks.';
+                doneStatusText.textContent = approved ? 'Approved (Pending Payout)' : 'Rejected';
+                doneStatusText.className = approved
+                    ? 'bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7'
+                    : 'bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7';
+                document.getElementById('doneRedeemUnits').className = approved
+                    ? 'bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7'
+                    : 'bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7';
+                doneRemarksDisplay.textContent = approved ? (remarksInput.value.trim() || '-') : remarksInput.value.trim();
+                const timestamp = new Date().toLocaleString();
+                doneDateTime.textContent = timestamp;
+                printDateTime.textContent = timestamp;
+                detailSection.classList.add('d-none');
+                doneSection.classList.remove('d-none');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Reject Action Handler
-            if (btnReject) {
-                btnReject.addEventListener('click', function () {
-                    // Rejection does not require PAC validation
-                    const remarks = remarksInput.value.trim();
-                    if (!remarks) {
-                        remarksInput.classList.add('is-invalid');
-                        alert("Reason for rejection is required. Please provide remarks.");
-                        return;
-                    }
-                    remarksInput.classList.remove('is-invalid');
+            if (btnApprove) btnApprove.addEventListener('click', function () {
+                if (!validateTerms() || !validatePAC()) return;
+                showResult('approved');
+            });
 
-                    // Transition to completed Rejected
-                    statusIconBg.classList.remove('bg-success');
-                    statusIconBg.classList.add('bg-danger');
-                    statusIcon.className = 'iconoir-xmark text-white';
-                    statusMainTitle.textContent = "Redemption Request Rejected";
-                    statusMainTitle.className = "fw-bold text-dark mb-2";
-                    statusSubTitle.textContent = "This redemption request has been rejected. It has been sent back to the initiator with your remarks.";
-                    doneStatusText.textContent = "Rejected";
-                    doneStatusText.className = "bg-light rounded-3 px-3 py-3 fw-bold text-danger fs-7";
-                    document.getElementById('doneRedeemUnits').className = "bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7";
-
-                    doneRemarksDisplay.textContent = remarks;
-
-                    const timestamp = new Date().toLocaleString();
-                    doneDateTime.textContent = timestamp;
-                    printDateTime.textContent = timestamp;
-
-                    detailSection.classList.add('d-none');
-                    doneSection.classList.remove('d-none');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
+            if (btnReject) btnReject.addEventListener('click', function () {
+                const remarks = remarksInput.value.trim();
+                if (!remarks) {
+                    remarksInput.classList.add('is-invalid');
+                    alert('Reason for rejection is required. Please provide remarks.');
+                    return;
+                }
+                showResult('rejected');
+            });
         });
     </script>
 </body>

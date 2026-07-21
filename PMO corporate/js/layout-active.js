@@ -302,72 +302,21 @@
         const nav = mount.querySelector("ul.sidebar-nav");
         if (!nav) return;
 
-        const currentPath = decodeURIComponent(window.location.pathname);
-        const currentParts = currentPath.split("/");
-        const currentFile = (currentParts.pop() || "dashboard.html").split("?")[0] || "dashboard.html";
-        const currentFolder = currentParts.pop() || "";
-
-        // Clear active states first
-        nav.querySelectorAll("a.nav-link").forEach((a) => {
-            a.classList.remove("active", "active-sub");
-        });
-
-        nav.querySelectorAll("a.nav-link[href]").forEach((a) => {
+        nav.querySelectorAll("a.nav-link.rounded-3[href]").forEach((a) => {
             const h = a.getAttribute("href");
             if (!h || h.startsWith("#") || a.getAttribute("data-bs-toggle") === "collapse") return;
-            
-            const hrefParts = decodeURIComponent(h).split("/");
-            const hrefFile = (hrefParts.pop() || "").split("?")[0];
-            const hrefFolder = hrefParts.pop() || "";
-
-            // Check folder match (if specified in href, it must match currentFolder)
-            const isFolderMatch = !hrefFolder || hrefFolder === ".." || hrefFolder === currentFolder;
-
-            // Check query parameter match if the link has one
-            let isQueryParamMatch = true;
-            if (h.includes("?")) {
-                const linkQuery = h.split("?")[1] || "";
-                const currentQuery = window.location.search.replace(/^\?/, "");
-                isQueryParamMatch = (linkQuery === currentQuery);
-            } else {
-                // If link has no query parameter, it matches if current URL also has no query parameters,
-                // OR if it is the default state.
-                const currentQuery = window.location.search.replace(/^\?/, "");
-                if (currentPath.includes("transactions.html") && currentQuery && currentQuery !== "tab=past" && currentQuery !== "tab=transactions") {
-                    isQueryParamMatch = false;
+            const file = h.split("/").pop().split("?")[0];
+            if (file === currentPage) {
+                a.classList.add("active");
+                a.classList.remove("text-dark");
+                const sp = a.querySelector("span.fw-medium");
+                if (sp) {
+                    sp.classList.remove("fw-medium");
+                    sp.classList.add("fw-semibold");
                 }
-                if (currentPath.includes("statements.html") && currentQuery && currentQuery !== "tab=transactions" && currentQuery !== "tab=PRS") {
-                    isQueryParamMatch = false;
-                }
-            }
-
-            if (hrefFile === currentFile && isFolderMatch && isQueryParamMatch) {
-                const isSubLink = !!a.closest(".collapse");
-                if (isSubLink) {
-                    a.classList.add("active-sub");
-                    
-                    // Auto-expand parent collapse container
-                    const collapseEl = a.closest(".collapse");
-                    if (collapseEl && window.bootstrap) {
-                        try {
-                            const bsCollapse = window.bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false });
-                            bsCollapse.show();
-                        } catch (e) {
-                            console.error("[pmo-shell] Failed to show parent collapse:", e);
-                        }
-                    }
-                } else {
-                    a.classList.add("active");
-                    a.classList.remove("text-dark");
-                    const sp = a.querySelector("span.fw-medium");
-                    if (sp) {
-                        sp.classList.remove("fw-medium");
-                        sp.classList.add("fw-semibold");
-                    }
-                    a.querySelectorAll("i.text-dark").forEach((ico) => {
-                        ico.classList.remove("text-dark");
-                    });
-                }
+                a.querySelectorAll("i.text-dark").forEach((ico) => {
+                    ico.classList.remove("text-dark");
+                });
             }
         });
     }
@@ -544,7 +493,7 @@
         initializePopovers();
         syncTableColumnAlignments();
         observeTableChanges();
-        if (portal === "ut" || portal === "analytics" || portal === "eop") {
+        if (portal === "ut" || portal === "analytics") {
             applyUtSidebarActiveForPath();
         }
         // injectAlertBanner(); // Disabled post-login alert banner as requested

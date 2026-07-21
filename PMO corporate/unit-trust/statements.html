@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
-    <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <style>
         /* Interactive Card Style Overrides */
         .cursor-pointer {
@@ -196,10 +196,6 @@
                             id="utStmtTabAnnual">
                             <i class="iconoir-calendar fs-6"></i> Annual/Interim
                         </a>
-                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="tax"
-                            id="utStmtTabTax">
-                            <i class="iconoir-percentage fs-6"></i> Tax Voucher
-                        </a>
                         <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="fundreports"
                             id="utStmtTabFund">
                             <i class="iconoir-stats-down-square fs-6"></i> Fund Reports
@@ -334,7 +330,7 @@
                                     <h5 class="fw-bold text-dark mb-1">Annual / Interim Financial Reports</h5>
                                 </div>
                                 <!-- Sub-tabs for UT vs PRS -->
-                                <div class="d-flex gap-1 bg-light p-1 rounded-pill border" style="width: auto;">
+                                <!-- <div class="d-flex gap-1 bg-light p-1 rounded-pill border" style="width: auto;">
                                     <button type="button"
                                         class="btn btn-sm btn-dark rounded-pill px-3 py-1 fw-bold fs-9 border-0"
                                         id="annualReportSubTabUt" style="font-size: 0.75rem;">Unit Trust Funds</button>
@@ -343,7 +339,7 @@
                                         id="annualReportSubTabPrs"
                                         style="font-size: 0.75rem; background: transparent;">PRS
                                         Funds</button>
-                                </div>
+                                </div> -->
                             </div>
 
                             <!-- Dropdowns -->
@@ -526,7 +522,7 @@
                                 </div>
                                 <p class="text-muted mb-0 fw-medium" id="annualReportsPlaceholderText">Please select a
                                     Unit
-                                    Trust fund name from the dropdown above to view its reports.</p>
+                                    Trust fund name from the dropdown above to view its statements.</p>
                             </div>
                         </div>
 
@@ -534,133 +530,9 @@
 
                     <!-- Tax Voucher Tab -->
                     <div class="tab-pane fade" id="tax" role="tabpanel" aria-labelledby="tax-tab">
-                        <div class="border rounded-4 overflow-hidden mb-4 p-4">
-                            <div
-                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1">Tax Voucher on Distribution</h5>
-                                </div>
-                                <!-- Month & Year Filters -->
-                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 130px; height: 36px;" id="taxVoucherMonthFilter">
-                                        <option value="all" selected>All Months</option>
-                                        <option value="Jan">January</option>
-                                        <option value="Feb">February</option>
-                                        <option value="Mar">March</option>
-                                        <option value="Apr">April</option>
-                                        <option value="May">May</option>
-                                        <option value="Jun">June</option>
-                                        <option value="Jul">July</option>
-                                        <option value="Aug">August</option>
-                                        <option value="Sep">September</option>
-                                        <option value="Oct">October</option>
-                                        <option value="Nov">November</option>
-                                        <option value="Dec">December</option>
-                                    </select>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 110px; height: 36px;" id="taxVoucherYearFilter">
-                                        <option value="all" selected>All Years</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
-                                        <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 30%;">
-                                                Reference No.</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 18%;">
-                                                Distribution Date</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 28%;">
-                                                Fund Name</th>
-                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 14%;">
-                                                Taxable (MYR)</th>
-                                            <th class="pe-4 py-3 fw-semibold text-dark text-center"
-                                                style="width: 10%;">Download</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="fw-semibold" id="taxVoucherTableBody">
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">TV-UT-20260430-0012</span>
-                                            </td>
-                                            <td class="py-3 text-dark text-start">30 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
-                                                FUND</td>
-                                            <td class="py-3 text-dark text-end">1,200.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="taxVoucher1"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">TV-UT-20260430-0013</span>
-                                            </td>
-                                            <td class="py-3 text-dark text-start">30 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC ITTIKAL SEQUEL
-                                                FUND</td>
-                                            <td class="py-3 text-dark text-end">3,540.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="taxVoucher2"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom" data-month="Oct" data-year="2025">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">TV-UT-20251031-0008</span>
-                                            </td>
-                                            <td class="py-3 text-dark text-start">31 Oct 2025</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
-                                                FUND</td>
-                                            <td class="py-3 text-dark text-end">980.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="taxVoucher3"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom" data-month="Oct" data-year="2025">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">TV-UT-20251031-0009</span>
-                                            </td>
-                                            <td class="py-3 text-dark text-start">31 Oct 2025</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC ITTIKAL SEQUEL
-                                                FUND</td>
-                                            <td class="py-3 text-dark text-end">2,760.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="taxVoucher4"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr data-month="Oct" data-year="2024">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">TV-UT-20241031-0005</span>
-                                            </td>
-                                            <td class="py-3 text-dark text-start">31 Oct 2024</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">PUBLIC SHARIAH BALANCED
-                                                FUND</td>
-                                            <td class="py-3 text-dark text-end">840.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="taxVoucher5"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="p-4 text-center">
+                            <i class="iconoir-percentage fs-1 text-muted mb-3 d-block"></i>
+                            <p class="text-muted mb-0 fw-medium">No Tax Vouchers on Distribution found.</p>
                         </div>
                     </div>
 
@@ -674,16 +546,7 @@
 
                                 </div>
                                 <!-- Sub-tabs for UT vs PRS -->
-                                <div class="d-flex gap-1 bg-light p-1 rounded-pill border" style="width: auto;">
-                                    <button type="button"
-                                        class="btn btn-sm btn-dark rounded-pill px-3 py-1 fw-bold fs-9 border-0"
-                                        id="fundReportSubTabUt" style="font-size: 0.75rem;">Unit Trust Funds</button>
-                                    <button type="button"
-                                        class="btn btn-sm btn-light rounded-pill px-3 py-1 fw-bold fs-9 text-secondary border-0"
-                                        id="fundReportSubTabPrs"
-                                        style="font-size: 0.75rem; background: transparent;">PRS
-                                        Funds</button>
-                                </div>
+
                             </div>
 
                             <!-- Dropdowns -->
@@ -907,7 +770,7 @@
                                 </div>
                                 <p class="text-muted mb-0 fw-medium" id="fundReportsPlaceholderText">Please select a
                                     Unit
-                                    Trust fund name from the dropdown above to view its reports.</p>
+                                    Trust fund name from the dropdown above to view its statements.</p>
                             </div>
                         </div>
                     </div>
@@ -923,107 +786,19 @@
                     <!-- e-Invoice Tab -->
                     <div class="tab-pane fade" id="einvoice" role="tabpanel" aria-labelledby="einvoice-tab">
                         <div class="border rounded-4 overflow-hidden mb-4 p-4">
-                            <div
-                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
-                                </div>
-                                <!-- Month & Year Filters -->
+                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                <div><h5 class="fw-bold text-dark mb-1">e-Invoice</h5></div>
                                 <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 130px; height: 36px;" id="utStmtFilterMonthEinv">
-                                        <option value="all" selected>All Months</option>
-                                        <option value="Jan">January</option>
-                                        <option value="Feb">February</option>
-                                        <option value="Mar">March</option>
-                                        <option value="Apr">April</option>
-                                        <option value="May">May</option>
-                                        <option value="Jun">June</option>
-                                        <option value="Jul">July</option>
-                                        <option value="Aug">August</option>
-                                        <option value="Sep">September</option>
-                                        <option value="Oct">October</option>
-                                        <option value="Nov">November</option>
-                                        <option value="Dec">December</option>
-                                    </select>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 110px; height: 36px;" id="utStmtFilterYearEinv">
-                                        <option value="all" selected>All Years</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                    </select>
+                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i class="iconoir-filter-list me-1"></i>Filter:</span>
+                                    <select class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3" style="width: 130px; height: 36px;" id="utStmtFilterMonthEinv"><option value="all" selected>All Months</option><option value="Jan">January</option><option value="Feb">February</option><option value="Mar">March</option><option value="Apr">April</option><option value="May">May</option><option value="Jun">June</option><option value="Jul">July</option><option value="Aug">August</option><option value="Sep">September</option><option value="Oct">October</option><option value="Nov">November</option><option value="Dec">December</option></select>
+                                    <select class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3" style="width: 110px; height: 36px;" id="utStmtFilterYearEinv"><option value="all" selected>All Years</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option></select>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
-                                        <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 35%;">
-                                                Reference No. </th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">
-                                                Validated
-                                                date</th>
-                                            <th class="py-3 fw-semibold text-dark text-start" style="width: 25%;">
-                                                Invoice
-                                                type</th>
-                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 10%;">Taxable
-                                                (MYR)</th>
-                                            <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">
-                                                Download</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="fw-semibold">
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">E-INV-UT-20260428-0091</span>
-
-                                            </td>
-                                            <td class="py-3 text-dark text-start">28 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">e-Invoice</td>
-                                            <td class="py-3 text-dark text-end">450.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="einvPdfLnk1"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">E-INV-UT-20260401-0044</span>
-
-                                            </td>
-                                            <td class="py-3 text-dark text-start">01 Apr 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">Self Billed e-Invoice
-                                            </td>
-                                            <td class="py-3 text-dark text-end">8,400.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="einvPdfLnk2"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom" data-month="Mar" data-year="2026">
-                                            <td class="ps-4 py-3 text-dark text-start">
-                                                <span class="fw-semibold d-block">E-INV-UT-20260315-0012</span>
-
-                                            </td>
-                                            <td class="py-3 text-dark text-start">15 Mar 2026</td>
-                                            <td class="py-3 text-secondary text-start fw-medium">e-Invoice</td>
-                                            <td class="py-3 text-dark text-end">150.00</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="einvPdfLnk3"><i class="iconoir-download fs-9"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div class="table-responsive"><table class="table table-hover align-middle mb-0 custom-table fs-8"><thead class="text-muted border-bottom" style="background-color:#f8fafc;"><tr><th class="ps-4 py-3 fw-semibold text-dark text-start" style="width: 35%;">Reference No.</th><th class="py-3 fw-semibold text-dark text-start" style="width: 20%;">Validation</th><th class="py-3 fw-semibold text-dark text-start" style="width: 25%;">Invoice type</th><th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">Download</th></tr></thead><tbody class="fw-semibold">
+                                <tr class="border-bottom" data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260428-0091</span></td><td class="py-3 text-dark text-start">28 Apr 2026</td><td class="py-3 text-secondary text-start fw-medium">e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk1"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
+                                <tr class="border-bottom" data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260401-0044</span></td><td class="py-3 text-dark text-start">01 Apr 2026</td><td class="py-3 text-secondary text-start fw-medium">Self Billed e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk2"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
+                                <tr class="border-bottom" data-month="Mar" data-year="2026"><td class="ps-4 py-3 text-dark text-start"><span class="fw-semibold d-block">E-INV-UT-20260315-0012</span></td><td class="py-3 text-dark text-start">15 Mar 2026</td><td class="py-3 text-secondary text-start fw-medium">e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="einvPdfLnk3"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
+                            </tbody></table></div>
                         </div>
                     </div>
 
@@ -1077,9 +852,6 @@
                                             <th class="py-3 fw-semibold text-dark text-start" style="width: 30%;">
                                                 Invoice
                                                 type</th>
-                                            <th class="py-3 fw-semibold text-dark text-end" style="width: 10%;">Amount
-                                                (MYR)
-                                            </th>
                                             <th class="pe-4 py-3 fw-semibold text-dark text-center" style="width: 10%;">
                                                 Download</th>
                                         </tr>
@@ -1089,7 +861,6 @@
                                             <td class="ps-4 py-3 text-dark text-start">INV-UT-20260428-091</td>
                                             <td class="py-3 text-dark text-start">28 Apr 2026</td>
                                             <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
-                                            <td class="py-3 text-dark text-end">477.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
                                                     class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
@@ -1100,7 +871,6 @@
                                             <td class="ps-4 py-3 text-dark text-start">INV-UT-20260401-044</td>
                                             <td class="py-3 text-dark text-start">01 Apr 2026</td>
                                             <td class="py-3 text-secondary text-start fw-medium">Credit Note</td>
-                                            <td class="py-3 text-dark text-end">8,904.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
                                                     class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
@@ -1111,7 +881,6 @@
                                             <td class="ps-4 py-3 text-dark text-start">INV-UT-20260315-012</td>
                                             <td class="py-3 text-dark text-start">15 Mar 2026</td>
                                             <td class="py-3 text-secondary text-start fw-medium">Invoice</td>
-                                            <td class="py-3 text-dark text-end">150.00</td>
                                             <td class="pe-4 py-3 text-center">
                                                 <a href="#"
                                                     class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
@@ -1205,7 +974,7 @@
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
+                        <div class="collapse ps-4 mt-1" id="AuthoriseCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1232,7 +1001,7 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
+                        <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1261,7 +1030,7 @@
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="statementCollapse">
+                        <div class="collapse ps-4 mt-1" id="statementCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1269,9 +1038,6 @@
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideStmtTax">Tax Voucher</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
@@ -1307,7 +1073,7 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
+                        <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1348,7 +1114,7 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
+                        <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1376,7 +1142,7 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
+                        <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1426,7 +1192,7 @@
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="settingsCollapse">
+                        <div class="collapse ps-4 mt-1" id="settingsCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
@@ -1477,7 +1243,7 @@
                     utContainer.classList.remove('d-none');
                     prsContainer.classList.add('d-none');
                     prsSelect.value = ''; // reset PRS selection
-                    placeholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its reports.';
+                    placeholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its statements.';
                 } else {
                     subTabPrs.classList.add('btn-dark');
                     subTabPrs.classList.remove('btn-light', 'text-secondary');
@@ -1486,7 +1252,7 @@
                     prsContainer.classList.remove('d-none');
                     utContainer.classList.add('d-none');
                     utSelect.value = ''; // reset UT selection
-                    placeholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its reports.';
+                    placeholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its stetements.';
                 }
                 reportsTableWrapper.classList.add('d-none');
                 reportsPlaceholder.classList.remove('d-none');
@@ -1543,7 +1309,7 @@
                     utAnnualContainer.classList.remove('d-none');
                     prsAnnualContainer.classList.add('d-none');
                     prsAnnualSelect.value = ''; // reset PRS selection
-                    annualPlaceholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its reports.';
+                    annualPlaceholderText.textContent = 'Please select a Unit Trust fund name from the dropdown above to view its statements.';
                 } else {
                     annualSubTabPrs.classList.add('btn-dark');
                     annualSubTabPrs.classList.remove('btn-light', 'text-secondary');
@@ -1552,7 +1318,7 @@
                     prsAnnualContainer.classList.remove('d-none');
                     utAnnualContainer.classList.add('d-none');
                     utAnnualSelect.value = ''; // reset UT selection
-                    annualPlaceholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its reports.';
+                    annualPlaceholderText.textContent = 'Please select a PRS fund name from the dropdown above to view its statements.';
                 }
                 annualReportsTableWrapper.classList.add('d-none');
                 annualReportsPlaceholder.classList.remove('d-none');
@@ -1623,8 +1389,6 @@
                     targetTab = document.getElementById('utStmtTabAnnual');
                 } else if (tabParam === 'fund') {
                     targetTab = document.getElementById('utStmtTabFund');
-                } else if (tabParam === 'tax') {
-                    targetTab = document.getElementById('utStmtTabTax');
                 }
                 if (targetTab) {
                     targetTab.click();
@@ -1685,7 +1449,6 @@
 
             setupLocalFilters('utStmtFilterMonthEinv', 'utStmtFilterYearEinv', 'einvoice');
             setupLocalFilters('utStmtFilterMonthInv', 'utStmtFilterYearInv', 'invoice');
-            setupLocalFilters('taxVoucherMonthFilter', 'taxVoucherYearFilter', 'tax');
 
             // Re-align chevron icons when collapse events trigger
             const collapsibles = document.querySelectorAll('.collapse');

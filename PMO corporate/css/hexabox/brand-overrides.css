@@ -110,3 +110,42 @@ h6,
     background-color: #002e77 !important;
     border-color: #002e77 !important;
 }
+
+/* Align the legacy Hexabox activity list with the portal data-table language. */
+.pmo-table {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.pmo-table > :not(caption) > * > * {
+    padding: 14px 16px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    vertical-align: middle !important;
+}
+
+.pmo-table thead th {
+    background: #f8fafc !important;
+    border-bottom-color: #e2e8f0 !important;
+    color: #64748b !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+}
+
+.pmo-table tbody td,
+.pmo-table tbody th {
+    color: #16161a !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+}
+
+.pmo-table tbody tr:hover > * {
+    background: rgba(0, 46, 119, 0.025) !important;
+    box-shadow: inset 0 0 0 9999px rgba(0, 46, 119, 0.025) !important;
+}
+
+.pmo-table tbody tr:last-child > * {
+    border-bottom: 0 !important;
+}

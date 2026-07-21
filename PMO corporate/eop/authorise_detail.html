@@ -1041,7 +1041,6 @@
 
             el('eopAuthDetailHeaderRef').textContent = ref;
             el('eopAuthDetailHeaderContrib').textContent = d.contributionLabel;
-            el('eopAuthDetailHeaderschemeLine').textContent = `Scheme: ${d.schemeLabel}`;
             const amountRm = `MYR ${d.amountFmt}`;
             el('eopAuthDetailRef').textContent = ref;
             el('eopAuthDetailPreparedDt').textContent = d.preparedDt;
@@ -1097,6 +1096,7 @@
                 if (!termsCheckbox.checked) {
                     termsCheckbox.classList.add('is-invalid');
                     termsError?.classList.remove('d-none');
+                    termsCheckbox.focus();
                     return false;
                 }
                 termsCheckbox.classList.remove('is-invalid');
@@ -1199,8 +1199,14 @@
                 if (approveBtn) approveBtn.style.display = 'inline-block';
                 if (pacFieldsWrapper) pacFieldsWrapper.style.display = 'block';
                 if (termsWrapper) termsWrapper.style.display = 'block';
+                if (pacInput) {
+                    pacInput.value = DEMO_PAC;
+                    pacInput.classList.remove('is-invalid');
+                }
+                if (termsCheckbox) termsCheckbox.checked = true;
                 if (remarks) {
                     remarks.placeholder = 'Optional note — you opened this batch to approve.';
+                    remarks.value = 'Approved via bulk action shortcuts.';
                 }
             }
         });

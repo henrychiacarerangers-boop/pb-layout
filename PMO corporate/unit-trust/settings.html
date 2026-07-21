@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
-    <!-- <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> --> -->
+    <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <style>
         /* Profile Details styling */
         .profile-section-title {
@@ -528,12 +528,9 @@ BuildingXXXXXXXXXX
                             <!-- Action Buttons inside Profile Tab -->
                             <div class="col-12 mt-4 pt-3 border-top">
                                 <div id="settingsActionContainer" class="d-flex justify-content-end gap-3">
-                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold"
-                                        id="btnStartEdit">Edit Profile</button>
-                                    <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold d-none"
-                                        id="btnCancelEdit">Cancel</button>
-                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm d-none"
-                                        id="btnUpdateProfile" disabled>Submit Changes</button>
+                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold" id="btnStartEdit">Edit Profile</button>
+                                    <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold d-none" id="btnCancelEdit">Cancel</button>
+                                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm d-none" id="btnUpdateProfile" disabled>Submit Changes</button>
                                 </div>
                             </div>
                         </div>
@@ -586,8 +583,7 @@ BuildingXXXXXXXXXX
                                                         style="width: 32px; height: 32px;">
                                                         <i class="iconoir-phone text-secondary fs-6"></i>
                                                     </div>
-                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6012-345
-                                                        6789</span>
+                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6012-345 6789</span>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
@@ -595,8 +591,7 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-whatsapp text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="https://wa.me/60123456789" target="_blank"
-                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
-                                                        +6012-345 6789</a>
+                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp: +6012-345 6789</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -646,8 +641,7 @@ BuildingXXXXXXXXXX
                                                         style="width: 32px; height: 32px;">
                                                         <i class="iconoir-phone text-secondary fs-6"></i>
                                                     </div>
-                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6019-876
-                                                        5432</span>
+                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6019-876 5432</span>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
@@ -655,8 +649,7 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-whatsapp text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="https://wa.me/60198765432" target="_blank"
-                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
-                                                        +6019-876 5432</a>
+                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp: +6019-876 5432</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -764,91 +757,91 @@ BuildingXXXXXXXXXX
                                     </div>
 
                                     <form id="changePasswordForm">
-                                        <!-- Current Password -->
-                                        <div class="mb-4">
-                                            <label for="currentPassword"
-                                                class="form-label fs-8 fw-bold text-secondary">Current Password</label>
-                                            <div class="input-group">
-                                                <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
-                                                    id="currentPassword" placeholder="Enter current password" required
-                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
-                                                <button
-                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                    type="button"
-                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
-                                                    <i class="iconoir-eye fs-6"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <!-- New Password -->
-                                        <div class="mb-4">
-                                            <label for="newPassword" class="form-label fs-8 fw-bold text-secondary">New
-                                                Password</label>
-                                            <div class="input-group">
-                                                <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
-                                                    id="newPassword" placeholder="Enter new password" required
-                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
-                                                <button
-                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                    type="button"
-                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
-                                                    <i class="iconoir-eye fs-6"></i>
-                                                </button>
-                                            </div>
-
-                                            <!-- Interactive Password Rules List -->
-                                            <div class="mt-3 p-3 bg-light rounded-3">
-                                                <div class="fs-9 fw-bold text-secondary text-uppercase mb-2">Password
-                                                    Requirements:</div>
-                                                <ul class="list-unstyled d-flex flex-column gap-2 fs-9 mb-0 ps-0 text-muted"
-                                                    id="passwordRulesList">
-                                                    <li class="d-flex align-items-center gap-2" id="rule-case">
-                                                        <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                        <span>Mixture of both upper and lower case letters</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-2" id="rule-number">
-                                                        <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                        <span>Numeric characters (e.g. 1,2,3)</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-2" id="rule-length">
-                                                        <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                        <span>Between 8 and 16 characters without spaces</span>
-                                                    </li>
-                                                    <li class="d-flex align-items-center gap-2" id="rule-special">
-                                                        <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
-                                                        <span>Special characters (<code
-                                                                class="fs-10 text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- Confirm New Password -->
-                                        <div class="mb-4">
-                                            <label for="confirmPassword"
-                                                class="form-label fs-8 fw-bold text-secondary">Confirm New
-                                                Password</label>
-                                            <div class="input-group">
-                                                <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
-                                                    id="confirmPassword" placeholder="Confirm your new password"
-                                                    required
-                                                    style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
-                                                <button
-                                                    class="btn btn-outline-secondary border-start-0 toggle-password px-3"
-                                                    type="button"
-                                                    style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
-                                                    <i class="iconoir-eye fs-6"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+                                         <!-- Current Password -->
+                                         <div class="mb-4">
+                                             <label for="currentPassword"
+                                                 class="form-label fs-8 fw-bold text-secondary">Current Password</label>
+                                             <div class="input-group">
+                                                 <input type="password"
+                                                     class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                     id="currentPassword" placeholder="Enter current password" required
+                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
+                                                 <button
+                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                     type="button"
+                                                     style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
+                                                     <i class="iconoir-eye fs-6"></i>
+                                                 </button>
+                                             </div>
+                                         </div>
+ 
+                                         <!-- New Password -->
+                                         <div class="mb-4">
+                                             <label for="newPassword" class="form-label fs-8 fw-bold text-secondary">New
+                                                 Password</label>
+                                             <div class="input-group">
+                                                 <input type="password"
+                                                     class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                     id="newPassword" placeholder="Enter new password" required
+                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
+                                                 <button
+                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                     type="button"
+                                                     style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
+                                                     <i class="iconoir-eye fs-6"></i>
+                                                 </button>
+                                             </div>
+ 
+                                             <!-- Interactive Password Rules List -->
+                                             <div class="mt-3 p-3 bg-light rounded-3">
+                                                 <div class="fs-9 fw-bold text-secondary text-uppercase mb-2">Password
+                                                     Requirements:</div>
+                                                 <ul class="list-unstyled d-flex flex-column gap-2 fs-9 mb-0 ps-0 text-muted"
+                                                     id="passwordRulesList">
+                                                     <li class="d-flex align-items-center gap-2" id="rule-case">
+                                                         <i
+                                                             class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                         <span>Mixture of both upper and lower case letters</span>
+                                                     </li>
+                                                     <li class="d-flex align-items-center gap-2" id="rule-number">
+                                                         <i
+                                                             class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                         <span>Numeric characters (e.g. 1,2,3)</span>
+                                                     </li>
+                                                     <li class="d-flex align-items-center gap-2" id="rule-length">
+                                                         <i
+                                                             class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                         <span>Between 8 and 16 characters without spaces</span>
+                                                     </li>
+                                                     <li class="d-flex align-items-center gap-2" id="rule-special">
+                                                         <i
+                                                             class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                         <span>Special characters (<code
+                                                                 class="fs-10 text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
+                                                     </li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+ 
+                                         <!-- Confirm New Password -->
+                                         <div class="mb-4">
+                                             <label for="confirmPassword"
+                                                 class="form-label fs-8 fw-bold text-secondary">Confirm New
+                                                 Password</label>
+                                             <div class="input-group">
+                                                 <input type="password"
+                                                     class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                     id="confirmPassword" placeholder="Confirm your new password"
+                                                     required
+                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
+                                                 <button
+                                                     class="btn btn-outline-secondary border-start-0 toggle-password px-3"
+                                                     type="button"
+                                                     style="border-top-left-radius: 0px !important; border-bottom-left-radius: 0px !important; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; border-color: #dee2e6;">
+                                                     <i class="iconoir-eye fs-6"></i>
+                                                 </button>
+                                             </div>
+                                         </div>
 
                                         <!-- Submit Button -->
                                         <div class="d-grid mt-4 pt-2">
@@ -964,42 +957,37 @@ BuildingXXXXXXXXXX
         <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="sidebarMenu"
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
-                <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
-                        <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
-                    </div>
+                <div class="d-flex justify-content-end mb-2 w-100">
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
                         aria-label="Close" id="pmoShellSidebarCloseUt">
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
-                        style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                <div class="portal-sidebar-profile-card w-100 mb-3">
+                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+                    <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
+                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                        Authoriser</span>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
-                    <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
-                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
-                            href="../unit-trust/dashboard.html" id="pmoUtSideDash">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="dashboard.html"
+                            id="pmoUtSideDash">
                             <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                 class="fw-medium">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
-                            href="../unit-trust/view_account.html" id="pmoUtSideViewAcct">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="view_account.html"
+                            id="pmoUtSideViewAcct">
                             <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                 class="fw-medium">View Account</span>
                         </a>
                     </li>
-                    <li class="nav-item mb-1">
+                    <li class="nav-item mb-2">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
                             aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
@@ -1013,14 +1001,14 @@ BuildingXXXXXXXXXX
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
+                        <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="authorise.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
                                         Top-Up Investment <span
                                             class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
+                                <li class="nav-item mb-1"><a href="authorise.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
                                         Redemption <span
@@ -1029,7 +1017,7 @@ BuildingXXXXXXXXXX
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mb-1">
+                    <li class="nav-item mb-2">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
                             aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
@@ -1040,21 +1028,22 @@ BuildingXXXXXXXXXX
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
+                        <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="transactions.html"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
+                                <li class="nav-item mb-1"><a href="transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
+
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item mb-1">
+                    <li class="nav-item mb-2">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
@@ -1069,190 +1058,32 @@ BuildingXXXXXXXXXX
                                     aria-hidden="true"></i>
                             </div>
                         </a>
-                        <div class="collapse ps-4 mt-1" id="statementCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
+                        <div class="collapse ps-5 mt-1" id="statementCollapse">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
+                                <li class="nav-item mb-1"><a href="statements.html?tab=annual"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
+                                <li class="nav-item mb-1"><a href="statements.html?tab=fund"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideStmtTax">Tax Voucher</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideStmt3">Fund Reports</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
+                                        id="pmoUtSideStmt3">Fund
+                                        Reports</a></li>
+                                <li class="nav-item mb-1"><a href="statements.html?tab=einv"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
+                                <li class="nav-item mb-1"><a href="statements.html?tab=inv"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
-                    </li>
-
-                    <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
-                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
-                            id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
-                            <span class="fw-medium">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                            data-bs-toggle="collapse" href="#eopSidebarContribCollapse" role="button"
-                            aria-expanded="false" aria-controls="eopSidebarContribCollapse"
-                            id="eopSidebarContribToggle">
-                            <div class="d-flex align-items-center">
-                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
-                                <span class="fw-medium">Contributions</span>
-                            </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
-                                aria-hidden="true"></i>
-                        </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
-                                        href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
-                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
-                                        href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
-                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
-                                            id="eopNavBadgePay"
-                                            style="background-color: var(--brand-primary); color: #fff;">2</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                            data-bs-toggle="collapse" href="#eopSidebarRecordsCollapse" role="button"
-                            aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
-                            id="eopSidebarRecordsToggle">
-                            <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
-                                <span class="fw-medium">Transactions</span>
-                            </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
-                                aria-hidden="true"></i>
-                        </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/transactions.html" id="eopSideTxnPast">
-                                        Past Transaction
-                                    </a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
-                                        Pending Transaction
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                            data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
-                            aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
-                            <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
-                                <span class="fw-medium">Statements</span>
-                            </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
-                                aria-hidden="true"></i>
-                        </a>
-                        <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
-                                </li>
-                                <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
-                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark"
-                            href="../analytics/unit-trust.html" id="pmoSideUtAnalytics">
-                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Unit Trust Analytics</span>
-                        </a>
-                    </li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../analytics/eop.html"
-                            id="pmoSideEopAnalytics">
-                            <i class="iconoir-activity fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">EOP Analytics</span>
-                        </a>
-                    </li>
-
-                    <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
-                        style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
-                    <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
-                            data-bs-toggle="collapse" href="#settingsCollapse" role="button" aria-expanded="false"
-                            aria-controls="settingsCollapse" id="pmoSideSettingsToggle">
-                            <div class="d-flex align-items-center">
-                                <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Settings</span>
-                            </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
-                                aria-hidden="true"></i>
-                        </a>
-                        <div class="collapse ps-4 mt-1" id="settingsCollapse">
-                            <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoSideSettingsPassword">Change Password</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item mb-1">
+                    <li class="nav-item mb-2">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
-                            id="pmoSideLogout">
+                            id="pmoUtSideLogout">
                             <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Log Out</span>
+                                class="fw-medium">Log
+                                Out</span>
                         </a>
                     </li>
                 </ul>
@@ -1343,46 +1174,21 @@ BuildingXXXXXXXXXX
             }
 
             // Auto activate tabs based on URL hash
-            function activateTabFromHash() {
-                const hash = window.location.hash;
-                if (hash === '#password') {
-                    const passwordTab = document.getElementById('password-tab');
-                    if (passwordTab) {
-                        new bootstrap.Tab(passwordTab).show();
-                    }
-                } else if (hash === '#agent') {
-                    const agentTab = document.getElementById('agent-tab');
-                    if (agentTab) {
-                        new bootstrap.Tab(agentTab).show();
-                    }
-                } else if (hash === '#profile') {
-                    const profileTab = document.getElementById('profile-tab');
-                    if (profileTab) {
-                        new bootstrap.Tab(profileTab).show();
-                    }
+            if (window.location.hash === '#password') {
+                const passwordTab = document.getElementById('password-tab');
+                if (passwordTab) {
+                    // Use bootstrap Tab instance to programmatically show tab
+                    const tabTrigger = new bootstrap.Tab(passwordTab);
+                    tabTrigger.show();
+                }
+            } else if (window.location.hash === '#agent') {
+                const agentTab = document.getElementById('agent-tab');
+                if (agentTab) {
+                    // Use bootstrap Tab instance to programmatically show tab
+                    const tabTrigger = new bootstrap.Tab(agentTab);
+                    tabTrigger.show();
                 }
             }
-
-            // Activate tab on load
-            activateTabFromHash();
-
-            // Listen to hash change to switch tab instantly
-            window.addEventListener('hashchange', activateTabFromHash);
-
-            // Sync active tab clicks to window location hash
-            const tabLinksElement = document.querySelectorAll('a[data-bs-toggle="tab"]');
-            tabLinksElement.forEach(tab => {
-                tab.addEventListener('shown.bs.tab', function (e) {
-                    const targetId = e.target.id;
-                    let targetHash = '#profile';
-                    if (targetId === 'agent-tab') targetHash = '#agent';
-                    else if (targetId === 'password-tab') targetHash = '#password';
-
-                    if (window.location.hash !== targetHash) {
-                        history.pushState(null, null, targetHash);
-                    }
-                });
-            });
 
             // Toggle Password Visibility handler
             const passwordToggles = document.querySelectorAll('.toggle-password');
@@ -1457,7 +1263,7 @@ BuildingXXXXXXXXXX
 
             // Password PAC Verification Simulation
             const pwdPacModalEl = document.getElementById('passwordPacModal');
-            const pwdPacModal = pwdPacModalEl ? new bootstrap.Modal(pwdPacModalEl) : null;
+            const pwdPacModal = bootstrap.Modal.getOrCreateInstance(pwdPacModalEl);
             const pwdAuthMethod = document.getElementById('pwdAuthMethod');
             const pwdPacInputContainer = document.getElementById('pwdPacInputContainer');
             const pwdSecureSignContainer = document.getElementById('pwdSecureSignContainer');
@@ -1500,7 +1306,7 @@ BuildingXXXXXXXXXX
                     if (secureSignTimeout) clearTimeout(secureSignTimeout);
 
                     // Show password PAC modal
-                    if (pwdPacModal) pwdPacModal.show();
+                    pwdPacModal.show();
                 });
             }
 
@@ -1514,7 +1320,7 @@ BuildingXXXXXXXXXX
 
                         // Simulate push notification approval
                         secureSignTimeout = setTimeout(function () {
-                            if (pwdPacModal) pwdPacModal.hide();
+                            pwdPacModal.hide();
                             alertBox.classList.remove('d-none');
                             form.reset();
                             alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1558,7 +1364,7 @@ BuildingXXXXXXXXXX
                 btnPwdVerifyAndSubmit.addEventListener('click', function () {
                     const enteredPAC = pwdPacInput.value.trim();
                     if (enteredPAC === "12345678") {
-                        if (pwdPacModal) pwdPacModal.hide();
+                        pwdPacModal.hide();
                         alertBox.classList.remove('d-none');
                         form.reset();
                         alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1570,7 +1376,7 @@ BuildingXXXXXXXXXX
 
             // PAC Verification Simulation Action
             const pacModalEl = document.getElementById('pacModal');
-            const pacModal = pacModalEl ? new bootstrap.Modal(pacModalEl) : null;
+            const pacModal = bootstrap.Modal.getOrCreateInstance(pacModalEl);
             const btnRequestPac = document.getElementById('btnRequestPac');
             const pacInput = document.getElementById('pacInput');
             const pacError = document.getElementById('pacError');
@@ -1593,7 +1399,7 @@ BuildingXXXXXXXXXX
                     if (pacTimer) clearInterval(pacTimer);
 
                     // Show PAC Modal
-                    if (pacModal) pacModal.show();
+                    pacModal.show();
                 });
             }
 
@@ -1631,7 +1437,7 @@ BuildingXXXXXXXXXX
                 btnVerifyAndSubmit.addEventListener('click', function () {
                     const enteredPAC = pacInput.value.trim();
                     if (enteredPAC === correctPAC) {
-                        if (pacModal) pacModal.hide();
+                        pacModal.hide();
 
                         // 1. Update text views from inputs
                         const fields = [
