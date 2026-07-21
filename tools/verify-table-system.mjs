@@ -13,6 +13,10 @@ function visibleText(markup) {
   return markup.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+function hasSemanticClass(markup, className) {
+  return new RegExp(`\\b${className}\\b`, 'i').test(markup);
+}
+
 function walk(directory, extension, results = []) {
   for (const name of readdirSync(directory)) {
     const file = join(directory, name);
@@ -63,12 +67,12 @@ for (const folder of productionRoots) {
         for (const row of bodyMarkup.matchAll(/<tr\b[^>]*>(.*?)<\/tr>/gis)) {
           const cells = [...row[1].matchAll(/<td\b([^>]*)>.*?<\/td>/gis)];
           for (const column of primaryColumns) {
-            if (cells[column] && !/\bpmo-table-primary\b/i.test(cells[column][0])) {
+            if (cells[column] && !hasSemanticClass(cells[column][0], 'pmo-table-primary')) {
               failures.push(`${label}: table ${index + 1} primary column lacks pmo-table-primary`);
             }
           }
           for (const column of metaColumns) {
-            if (cells[column] && !/\bpmo-table-meta\b/i.test(cells[column][0])) {
+            if (cells[column] && !hasSemanticClass(cells[column][0], 'pmo-table-meta')) {
               failures.push(`${label}: table ${index + 1} metadata column lacks pmo-table-meta`);
             }
           }
