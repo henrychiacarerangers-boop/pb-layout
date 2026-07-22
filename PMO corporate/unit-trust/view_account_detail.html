@@ -146,6 +146,8 @@
             transition: all 0.25s ease;
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -476,24 +478,24 @@
                                     class="iconoir-info-circle"></i></span>
                         </div>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table">
-                                <thead class="border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 text-start">Tran Date</th>
-                                        <th class="text-start">Description</th>
-                                        <th class="text-end">Paid/(Redeemed)<br>MYR</th>
-                                        <th class="text-end">Invested/(Received)<br>MYR</th>
-                                        <th class="text-end">Total Units</th>
-                                        <th class="text-end">Price/Unit<br>MYR</th>
-                                        <th class="text-end">Sales/Switch Charge<br>MYR</th>
-                                        <th class="pe-4 text-end">GST/SST Charges<br>MYR</th>
+                                        <th class="ps-4">Tran Date</th>
+                                        <th>Description</th>
+                                        <th>Paid/(Redeemed)<br>MYR</th>
+                                        <th>Invested/(Received)<br>MYR</th>
+                                        <th>Total Units</th>
+                                        <th>Price/Unit<br>MYR</th>
+                                        <th>Sales/Switch Charge<br>MYR</th>
+                                        <th class="pe-4">GST/SST Charges<br>MYR</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-bottom">
-                                        <td class="ps-4">01/09/2022</td>
-                                        <td>
+                                    <tr>
+                                        <td class="ps-4 pmo-table-meta pmo-table-date">01/09/2022</td>
+                                        <td class="pmo-table-meta">
                                             <div class="d-flex align-items-center">
                                                 <span>DR</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -501,17 +503,17 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">74.56</td>
-                                        <td class="text-end">74.56</td>
-                                        <td class="text-end">
+                                        <td>74.56</td>
+                                        <td>74.56</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>211.46</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
                                                     title="Units added"><i class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.3526</td>
-                                        <td class="text-end">
+                                        <td>0.3526</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>0.00</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -519,11 +521,11 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="pe-4 text-end">0.00</td>
+                                        <td class="pe-4">0.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="ps-4">20/12/2021</td>
-                                        <td>
+                                        <td class="ps-4 pmo-table-meta pmo-table-date">20/12/2021</td>
+                                        <td class="pmo-table-meta">
                                             <div class="d-flex align-items-center">
                                                 <span>II</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -531,9 +533,9 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">10,000.00</td>
-                                        <td class="text-end">9,528.35</td>
-                                        <td class="text-end">
+                                        <td>10,000.00</td>
+                                        <td>9,528.35</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>24,852.24</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -541,8 +543,8 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="text-end">0.3834</td>
-                                        <td class="text-end">
+                                        <td>0.3834</td>
+                                        <td>
                                             <div class="d-inline-flex align-items-center">
                                                 <span>471.65</span>
                                                 <span class="bubble-info ms-2" data-bs-toggle="tooltip"
@@ -550,7 +552,7 @@
                                                         class="iconoir-info-circle"></i></span>
                                             </div>
                                         </td>
-                                        <td class="pe-4 text-end">0.00</td>
+                                        <td class="pe-4">0.00</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -580,30 +582,30 @@
                             </select>
                         </div>
 
-                        <div class="table-responsive">
-                            <table class="table align-middle mb-0 custom-table">
-                                <thead class="border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 text-start">Financial Year</th>
-                                        <th class="text-start">Distribution (sen/unit)<br>Date</th>
-                                        <th class="text-end">Distribution Amount<br>MYR</th>
-                                        <th class="text-center">Distribution Instruction</th>
-                                        <th class="pe-4 text-start">Type</th>
+                                        <th class="ps-4">Financial Year</th>
+                                        <th>Distribution (sen/unit)<br>Date</th>
+                                        <th>Distribution Amount<br>MYR</th>
+                                        <th>Distribution Instruction</th>
+                                        <th class="pe-4">Type</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="ps-4">2022</td>
-                                        <td>
+                                        <td class="pmo-table-meta pmo-table-date">
                                             <div>0.30</div>
-                                            <div class="text-muted fs-9 fw-normal mt-1">30/08/2022</div>
+                                            <div class="mt-1">30/08/2022</div>
                                         </td>
-                                        <td class="text-end fw-bold text-dark">74.56</td>
-                                        <td class="text-center">
-                                            <span class="badge bg-light text-primary px-3 py-2 rounded-2 border"
+                                        <td>74.56</td>
+                                        <td>
+                                            <span class="badge bg-light text-primary px-3 py-2 rounded-2"
                                                 style="font-weight: 600;">Re-invest</span>
                                         </td>
-                                        <td class="pe-4 fw-bold text-dark">FINAL</td>
+                                        <td class="pe-4">FINAL</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -643,8 +645,7 @@
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -652,7 +653,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -737,7 +738,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -777,7 +778,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -797,23 +798,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -828,7 +829,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

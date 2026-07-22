@@ -569,101 +569,6 @@ h2.pmo-card-inline-title {
     border-color: rgba(237, 28, 36, 0.35) !important;
 }
 
-/* Shared table system */
-.custom-table,
-.custom-table-details {
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    width: 100% !important;
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-.custom-table thead,
-.custom-table-details thead {
-    background-color: #f8fafc !important;
-}
-
-.custom-table thead th,
-.custom-table-details thead th {
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    color: #64748b !important;
-    text-transform: none !important;
-    padding: 14px 16px !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    border-top: none !important;
-    vertical-align: middle !important;
-    background: #f8fafc !important;
-}
-
-.custom-table tbody tr,
-.custom-table-details tbody tr {
-    transition: all 0.2s ease !important;
-}
-
-.custom-table tbody tr:hover td,
-.custom-table tbody tr:hover th,
-.custom-table-details tbody tr:hover td,
-.custom-table-details tbody tr:hover th {
-    background-color: rgba(38, 36, 123, 0.015) !important;
-    box-shadow: inset 0 0 0 9999px rgba(38, 36, 123, 0.015) !important;
-}
-
-.custom-table tbody td,
-.custom-table tbody th,
-.custom-table-details tbody td,
-.custom-table-details tbody th {
-    font-size: 0.8125rem !important;
-    font-weight: 500 !important;
-    color: var(--text-primary, #16161a) !important;
-    padding: 14px 16px !important;
-    border-bottom: 1px solid #f1f5f9 !important;
-    vertical-align: middle !important;
-}
-
-/* Detail tables intentionally distinguish labels from values. */
-.custom-table-details tbody td:first-child,
-.custom-table-details tbody th:first-child {
-    color: #64748b !important;
-    font-size: 0.75rem !important;
-    font-weight: 600 !important;
-}
-
-.custom-table-details tbody td:not(:first-child),
-.custom-table-details tbody th:not(:first-child) {
-    color: #16161a !important;
-    font-size: 0.8125rem !important;
-    font-weight: 600 !important;
-}
-
-.custom-table tbody tr:last-child td,
-.custom-table tbody tr:last-child th,
-.custom-table-details tbody tr:last-child td,
-.custom-table-details tbody tr:last-child th {
-    border-bottom: 0 !important;
-}
-
-/* Center all table headers and cells except the first column, unless explicitly aligned left/right */
-.custom-table th:not(:first-child):not(.text-start):not(.text-end),
-.custom-table td:not(:first-child):not(.text-start):not(.text-end) {
-    text-align: center !important;
-}
-
-/* Ensure dynamic and static flex layout containers in centered cells are centered */
-.custom-table td:not(:first-child):not(.text-start):not(.text-end) .d-flex,
-.custom-table td:not(:first-child):not(.text-start):not(.text-end) .d-inline-flex,
-.custom-table td:not(:first-child):not(.text-start):not(.text-end) .dropdown {
-    justify-content: center !important;
-}
-
-/* Ensure padding symmetry on the last column for perfect centering */
-.custom-table th:last-child,
-.custom-table td:last-child,
-.custom-table-details th:last-child,
-.custom-table-details td:last-child {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-}
 
 /* Ensure borders are rounded and clean inside standard cards */
 .card .table-responsive,
@@ -944,29 +849,10 @@ h2.pmo-card-inline-title {
     border-radius: 15px !important;
     padding: 1.15rem 1.25rem 1.2rem 1.35rem;
     font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    border: 1px solid #dce3e8;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.portal-sidebar-profile-card:hover {
-    box-shadow: 0 12px 34px rgba(38, 36, 123, 0.1);
-    border-color: rgba(38, 36, 123, 0.12);
 }
 
 /* One red spine — brand cue only */
-.portal-sidebar-profile-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #ff1700;
-    border-radius: 15px 0 0 15px;
-    z-index: 0;
-}
+
 
 .portal-sidebar-profile-card>* {
     position: relative;

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css">
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -241,243 +243,231 @@
                     </div>
 
                     <div class="card border-0 shadow-sm rounded-4 bg-white authorise-table-card mb-4">
-                        <div class="table-responsive">
-                            <table
-                                class="table table-hover align-middle mb-0 custom-table text-center fs-8 prs-analytics-table">
-                                <thead class="text-muted border-bottom">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start align-middle" scope="col"
-                                            style="width: 28%;">
+                                        <th class="ps-4 py-3" scope="col">
                                             Fund <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold align-middle" scope="col">
+                                        <th class="py-3" scope="col">
                                             Performance date <span class="prs-analytics-sort-hint"
                                                 aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold prs-analytics-band align-middle" scope="col">
+                                        <th class="py-3 prs-analytics-band" scope="col">
                                             Factor <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold prs-analytics-band align-middle" scope="col">
+                                        <th class="py-3 prs-analytics-band" scope="col">
                                             Class <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold text-end align-middle" scope="col">
+                                        <th class="py-3" scope="col">
                                             YTD <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold text-end align-middle" scope="col">
+                                        <th class="py-3" scope="col">
                                             1-Y <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle"
-                                            scope="col">
+                                        <th class="py-3 prs-analytics-band" scope="col">
                                             3-Y <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle"
-                                            scope="col">
+                                        <th class="py-3 prs-analytics-band" scope="col">
                                             5-Y <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="py-3 fw-semibold text-end prs-analytics-band align-middle"
-                                            scope="col">
+                                        <th class="py-3 prs-analytics-band" scope="col">
                                             10-Y <span class="prs-analytics-sort-hint" aria-hidden="true">⇅</span>
                                         </th>
-                                        <th class="pe-4 py-3 fw-semibold text-end align-middle" scope="col"
-                                            style="width: 4%;">Action</th>
+                                        <th class="pe-4 py-3" scope="col">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-dark fw-medium">
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-start gap-2">
                                                 <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn"
                                                     id="prsFavBtn1" aria-label="Toggle favourite PRS-ISEQF"
                                                     aria-pressed="false">
-                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-star" aria-hidden="true"></i>
                                                 </button>
                                                 <div>
                                                     <a href="prs_fund_detail.html?code=PRS-ISEQF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        id="prsFundLink1"
-                                                        style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                        class="text-uppercase mb-1 pmo-table-link" id="prsFundLink1">PRS
                                                         Islamic Strategic Equity</a>
-                                                    <span class="text-dark fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-ISEQF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRS-ISEQF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-secondary">11/05/2026</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="text-end">60.71</td>
-                                        <td class="text-end">117.33</td>
-                                        <td class="text-end prs-analytics-band">36.22</td>
-                                        <td class="text-end prs-analytics-band">14.91</td>
-                                        <td class="text-end prs-analytics-band">13.02</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="pmo-table-meta pmo-table-date">11/05/2026</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td>60.71</td>
+                                        <td>117.33</td>
+                                        <td class="prs-analytics-band">36.22</td>
+                                        <td class="prs-analytics-band">14.91</td>
+                                        <td class="prs-analytics-band">13.02</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <span>Manage</span>
                                                 <button
                                                     class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret"
                                                     type="button" id="prsRowMenu1" data-bs-toggle="dropdown"
                                                     aria-expanded="false" aria-label="Manage menu for PRS-ISEQF">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
-                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2"
+                                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2"
                                                     aria-labelledby="prsRowMenu1">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="prs_fund_detail.html?code=PRS-ISEQF"
                                                             id="prsRowView1">View fund details</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowCompare1">Add to compare</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowDefault1">Set as employer default
                                                             (demo)</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-start gap-2">
                                                 <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn"
                                                     id="prsFavBtn2" aria-label="Toggle favourite PRS-GSEQF"
                                                     aria-pressed="false">
-                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-star" aria-hidden="true"></i>
                                                 </button>
                                                 <div>
                                                     <a href="prs_fund_detail.html?code=PRS-GSEQF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        id="prsFundLink2" style="font-size: 0.8rem;">PRS Growth
+                                                        class="text-uppercase mb-1 pmo-table-link" id="prsFundLink2">PRS
+                                                        Growth
                                                         Strategic Equity</a>
-                                                    <span class="text-dark fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-GSEQF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRS-GSEQF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-secondary">11/05/2026</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="text-end">52.04</td>
-                                        <td class="text-end">98.12</td>
-                                        <td class="text-end prs-analytics-band">28.90</td>
-                                        <td class="text-end prs-analytics-band">11.05</td>
-                                        <td class="text-end prs-analytics-band">9.44</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="pmo-table-meta pmo-table-date">11/05/2026</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td>52.04</td>
+                                        <td>98.12</td>
+                                        <td class="prs-analytics-band">28.90</td>
+                                        <td class="prs-analytics-band">11.05</td>
+                                        <td class="prs-analytics-band">9.44</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <span>Manage</span>
                                                 <button
                                                     class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret"
                                                     type="button" id="prsRowMenu2" data-bs-toggle="dropdown"
                                                     aria-expanded="false" aria-label="Manage menu for PRS-GSEQF">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="prs_fund_detail.html?code=PRS-GSEQF"
                                                             id="prsRowView2">View fund details</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowCompare2">Add to compare</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowDefault2">Set as employer default
                                                             (demo)</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-start gap-2">
                                                 <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn"
                                                     id="prsFavBtn3" aria-label="Toggle favourite PRS-MODBF"
                                                     aria-pressed="false">
-                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-star" aria-hidden="true"></i>
                                                 </button>
                                                 <div>
                                                     <a href="prs_fund_detail.html?code=PRS-MODBF"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        id="prsFundLink3" style="font-size: 0.8rem;">PRS Moderate
+                                                        class="text-uppercase mb-1 pmo-table-link" id="prsFundLink3">PRS
+                                                        Moderate
                                                         Balanced</a>
-                                                    <span class="text-dark fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-MODBF</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRS-MODBF</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-secondary">11/05/2026</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="text-end">18.22</td>
-                                        <td class="text-end">24.66</td>
-                                        <td class="text-end prs-analytics-band">9.01</td>
-                                        <td class="text-end prs-analytics-band">6.12</td>
-                                        <td class="text-end prs-analytics-band">5.88</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="pmo-table-meta pmo-table-date">11/05/2026</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td>18.22</td>
+                                        <td>24.66</td>
+                                        <td class="prs-analytics-band">9.01</td>
+                                        <td class="prs-analytics-band">6.12</td>
+                                        <td class="prs-analytics-band">5.88</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <span>Manage</span>
                                                 <button
                                                     class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret"
                                                     type="button" id="prsRowMenu3" data-bs-toggle="dropdown"
                                                     aria-expanded="false" aria-label="Manage menu for PRS-MODBF">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="prs_fund_detail.html?code=PRS-MODBF"
                                                             id="prsRowView3">View fund details</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowCompare3">Add to compare</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowDefault3">Set as employer default
                                                             (demo)</a></li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-bottom">
-                                        <td class="ps-4 py-3 text-start">
+                                    <tr>
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-start gap-2">
                                                 <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn"
                                                     id="prsFavBtn4" aria-label="Toggle favourite PRS-CONSV"
                                                     aria-pressed="false">
-                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-star" aria-hidden="true"></i>
                                                 </button>
                                                 <div>
                                                     <a href="prs_fund_detail.html?code=PRS-CONSV"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        id="prsFundLink4" style="font-size: 0.8rem;">PRS Conservative
+                                                        class="text-uppercase mb-1 pmo-table-link" id="prsFundLink4">PRS
+                                                        Conservative
                                                         Income</a>
-                                                    <span class="text-dark fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-CONSV</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRS-CONSV</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-secondary">11/05/2026</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="text-end">6.10</td>
-                                        <td class="text-end">7.85</td>
-                                        <td class="text-end prs-analytics-band">4.20</td>
-                                        <td class="text-end prs-analytics-band">3.55</td>
-                                        <td class="text-end prs-analytics-band">3.10</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="pmo-table-meta pmo-table-date">11/05/2026</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td>6.10</td>
+                                        <td>7.85</td>
+                                        <td class="prs-analytics-band">4.20</td>
+                                        <td class="prs-analytics-band">3.55</td>
+                                        <td class="prs-analytics-band">3.10</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <span>Manage</span>
                                                 <button
                                                     class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret"
                                                     type="button" id="prsRowMenu4" data-bs-toggle="dropdown"
                                                     aria-expanded="false" aria-label="Manage menu for PRS-CONSV">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="prs_fund_detail.html?code=PRS-CONSV"
                                                             id="prsRowView4">View fund details</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowCompare4">Add to compare</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowDefault4">Set as employer default
                                                             (demo)</a></li>
                                                 </ul>
@@ -485,49 +475,48 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="ps-4 py-3 text-start">
+                                        <td class="ps-4 py-3">
                                             <div class="d-flex align-items-start gap-2">
                                                 <button type="button" class="btn btn-link p-0 border-0 prs-fav-btn"
                                                     id="prsFavBtn5" aria-label="Toggle favourite PRS-SHRMM"
                                                     aria-pressed="false">
-                                                    <i class="iconoir-star text-secondary fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-star" aria-hidden="true"></i>
                                                 </button>
                                                 <div>
                                                     <a href="prs_fund_detail.html?code=PRS-SHRMM"
-                                                        class="text-decoration-none fw-bold text-primary text-uppercase d-block mb-1"
-                                                        id="prsFundLink5" style="font-size: 0.8rem;">PRS Sharia Money
+                                                        class="text-uppercase mb-1 pmo-table-link" id="prsFundLink5">PRS
+                                                        Sharia Money
                                                         Market</a>
-                                                    <span class="text-dark fw-bold d-block"
-                                                        style="font-size: 0.7rem;">PRS-SHRMM</span>
+                                                    <span class="d-block" style="font-size: 0.7rem;">PRS-SHRMM</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="text-secondary">11/05/2026</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="prs-analytics-band text-secondary">—</td>
-                                        <td class="text-end">3.42</td>
-                                        <td class="text-end">4.08</td>
-                                        <td class="text-end prs-analytics-band">2.95</td>
-                                        <td class="text-end prs-analytics-band">2.80</td>
-                                        <td class="text-end prs-analytics-band">—</td>
-                                        <td class="pe-4 py-3 text-end">
+                                        <td class="pmo-table-meta pmo-table-date">11/05/2026</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td>3.42</td>
+                                        <td>4.08</td>
+                                        <td class="prs-analytics-band">2.95</td>
+                                        <td class="prs-analytics-band">2.80</td>
+                                        <td class="prs-analytics-band">—</td>
+                                        <td class="pe-4 py-3">
                                             <div
                                                 class="dropdown d-inline-flex align-items-center justify-content-end gap-2 flex-wrap">
-                                                <span class="fs-8 fw-semibold text-dark">Manage</span>
+                                                <span>Manage</span>
                                                 <button
                                                     class="btn btn-link p-0 border-0 text-primary dropdown-toggle-no-caret"
                                                     type="button" id="prsRowMenu5" data-bs-toggle="dropdown"
                                                     aria-expanded="false" aria-label="Manage menu for PRS-SHRMM">
-                                                    <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                    <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                 </button>
                                                 <ul
-                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                    <li><a class="dropdown-item rounded-2 py-2"
+                                                    class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                    <li><a class="dropdown-item pmo-table-dropdown-action"
                                                             href="prs_fund_detail.html?code=PRS-SHRMM"
                                                             id="prsRowView5">View fund details</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowCompare5">Add to compare</a></li>
-                                                    <li><a class="dropdown-item rounded-2 py-2 prs-analytics-demo-dd"
+                                                    <li><a class="prs-analytics-demo-dd dropdown-item pmo-table-dropdown-action"
                                                             href="#" id="prsRowDefault5">Set as employer default
                                                             (demo)</a></li>
                                                 </ul>
@@ -608,8 +597,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -617,7 +605,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -702,7 +690,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -742,7 +730,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -762,23 +750,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -793,7 +781,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -905,6 +893,7 @@
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script defer src="../js/layout-active.js"></script>
+    <script defer src="../js/eop-nav-active.js"></script>
     <script src="../js/authorise-table-dropdowns.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -925,7 +914,7 @@
                 });
             });
 
-            document.querySelectorAll('.prs-analytics-table .prs-analytics-demo-dd').forEach(function (item) {
+            document.querySelectorAll('.pmo-data-table .prs-analytics-demo-dd').forEach(function (item) {
                 item.addEventListener('click', function (e) {
                     e.preventDefault();
                 });

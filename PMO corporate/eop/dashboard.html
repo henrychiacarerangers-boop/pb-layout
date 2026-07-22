@@ -16,6 +16,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -131,10 +133,10 @@
                         <label for="eopRoleDemoSelect" class="form-label text-white-50 fs-9 fw-semibold text-uppercase mb-1">Demo: switch employer role</label>
                         <select class="form-select eop-role-select shadow-sm" id="eopRoleDemoSelect" aria-describedby="eopRoleHintText">
                             <option value="all" selected>All roles (full prototype access)</option>
-                            <option value="make">1 — Make contribution</option>
-                            <option value="upload">2 — Upload contribution</option>
-                            <option value="authorise">3 — Authorise contribution</option>
-                            <option value="payment">4 — Make payment</option>
+                            <option value="make">1 — Make Contribution</option>
+                            <option value="upload">2 — Upload Contribution</option>
+                            <option value="authorise">3 — Authorise Contribution</option>
+                            <option value="payment">4 — Make Payment</option>
                         </select>
                     </div>
                 </div>
@@ -178,7 +180,7 @@
                 id="eopPendingAuthBanner">
                 <div class="d-flex align-items-center">
                     <i class="iconoir-warning-triangle me-2" aria-hidden="true"></i>
-                    <span>Pending authorisation: <strong>3 Request</strong></span>
+                    <span>Pending Authorisation: <strong>3 Request</strong></span>
                 </div>
                 <button type="button" class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold"
                     id="eopNotifAuthAction">Review</button>
@@ -190,7 +192,7 @@
                     <span>Pending Payment: <strong>2 Request</strong></span>
                 </div>
                 <button type="button" class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold"
-                    id="eopNotifPaymentAction">Pay now</button>
+                    id="eopNotifPaymentAction">Pay Now</button>
             </div>
 
             <div class="card eop-last-contribution-badge p-4 mb-4">
@@ -202,10 +204,9 @@
                             MYR100,000 — 7 May 2026, 1:58 PM</p>
                     </div>
                     <button type="button" class="btn btn-light rounded-pill px-4 fs-8 fw-bold text-dark border-0"
-                        id="eopBtnViewLastTxn">View in transactions</button>
+                        id="eopBtnViewLastTxn">View In Transactions</button>
                 </div>
             </div>
-
 
             <div id="eopViewHome">
                 <div class="row g-4 mb-4">
@@ -230,7 +231,7 @@
                                         <div
                                             class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatTotalEmp">128</div>
-                                            <div class="text-muted fs-9 fw-semibold">Total employees</div>
+                                            <div class="text-muted fs-9 fw-semibold">Total Employees</div>
 
                                         </div>
                                     </div>
@@ -240,7 +241,7 @@
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatSalaryscheme"><span
                                                     class="iconoir-check-circle"></span>
                                             </div>
-                                            <div class="text-muted fs-9 fw-bold">Salary Deduction scheme</div>
+                                            <div class="text-muted fs-9 fw-bold">Salary Deduction Scheme</div>
                                             <div class="text-muted fs-10 mt-1">Contribution: Salary Deduction (IND)
                                             </div>
                                         </div>
@@ -251,7 +252,7 @@
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatEmployerscheme">
                                                 <span class="iconoir-check-circle-solid text-success fs-6"></span>
                                             </div>
-                                            <div class="text-muted fs-9 fw-semibold">Employer contribution scheme</div>
+                                            <div class="text-muted fs-9 fw-semibold">Employer Contribution Scheme</div>
                                             <div class="text-muted fs-10 mt-1">VSR / EMP / VSC eligible</div>
                                         </div>
                                     </div>
@@ -266,12 +267,12 @@
                                 <ul class="list-group list-group-flush rounded-3">
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 fs-8">
-                                        <span class="text-dark fw-semibold">Pending authorisation</span>
+                                        <span class="text-dark fw-semibold">Pending of Authorisation</span>
                                         <span class="badge bg-danger rounded-pill">3</span>
                                     </li>
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 fs-8">
-                                        <span class="text-dark fw-semibold">Pending payment</span>
+                                        <span class="text-dark fw-semibold">Pending of Payment</span>
                                         <span class="badge eop-pending-pay-badge rounded-pill">2</span>
                                     </li>
                                     <li
@@ -295,57 +296,53 @@
                                         class="btn btn-link text-dark fw-bold text-decoration-underline fs-8 p-0 border-0"
                                         id="eopHomeRecentTxnMore">View more</button>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                        <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-start align-middle"
-                                                    style="width: 18%;">Tran date<br><span class="fs-9 fw-normal">Ref
+                                                <th class="ps-4 py-3">Tran date<br><span>Ref
                                                         No.</span></th>
-                                                <th class="py-3 fw-semibold text-start align-middle"
-                                                    style="width: 62%;">Contribute Scheme<br><span
-                                                        class="fs-9 fw-normal">Description</span></th>
-                                                <th class="py-3 fw-semibold text-end align-middle" style="width: 20%;">
-                                                    Amount<br><span class="fs-9 fw-normal">MYR</span></th>
+                                                <th class="py-3">Contribute Scheme<br><span>Description</span></th>
+                                                <th class="py-3">
+                                                    Amount<br><span>MYR</span></th>
                                             </tr>
                                         </thead>
-                                        <tbody class="text-dark fw-medium">
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3 text-start">
-                                                    <div class="fw-semibold text-dark">07 May 2026</div>
-                                                    <div class="text-muted fs-9">RC00000000000124</div>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>07 May 2026</div>
+                                                    <div>RC00000000000124</div>
                                                     <span
-                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">PAID</span>
+                                                        class="badge bg-success bg-opacity-10 text-success border-opacity-25 rounded-pill mt-1">PAID</span>
                                                 </td>
-                                                <td class="text-start">
-                                                    <div
-                                                        class="fw-semibold text-primary mb-1 text-decoration-underline">
+                                                <td class="pmo-table-meta">
+                                                    <div class="mb-1">
                                                         Salary
                                                         Deduction</div>
                                                     <div style="font-size: 0.75rem;">2 Employees</div>
-                                                    <div class="text-muted fs-9 mt-1">
+                                                    <div class="mt-1">
                                                         Contribution: Salary Deduction (IND)</div>
                                                 </td>
-                                                <td class="text-end fw-semibold text-dark">100,000.00</td>
+                                                <td>100,000.00</td>
                                             </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3 text-start">
-                                                    <div class="fw-semibold text-dark">02 May 2026</div>
-                                                    <div class="text-muted fs-9">RC00000000000125</div>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>02 May 2026</div>
+                                                    <div>RC00000000000125</div>
                                                     <span
-                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10 mt-1">PAID</span>
+                                                        class="badge bg-success bg-opacity-10 text-success border-opacity-25 rounded-pill mt-1">PAID</span>
                                                 </td>
-                                                <td class="text-start">
-                                                    <div class="text-primary fw-semibold mb-1 text-decoration-underline"
-                                                        style="font-size: 0.8rem;">Employer Contribution</div>
+                                                <td class="pmo-table-meta">
+                                                    <div class="mb-1" style="font-size: 0.8rem;">Employer Contribution
+                                                    </div>
                                                     <div style="font-size: 0.75rem;">18 Employees
                                                     </div>
-                                                    <div class="text-muted fs-9 mt-1">Scheme: Employer contribution ·
+                                                    <div class="mt-1">Scheme: Employer contribution ·
                                                         <br>
                                                         Contribution: Vesting(VSC) / Immediate Vesting(EMP)
                                                     </div>
                                                 </td>
-                                                <td class="text-end fw-semibold text-dark">210,400.00</td>
+                                                <td>210,400.00</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -363,86 +360,85 @@
                                         class="text-dark fw-bold text-decoration-underline fs-8">View More</a>
                                 </div>
 
-                                <table class="table table-hover align-middle mb-0 custom-table">
-                                    <thead class="text-muted fs-8 border-bottom">
-                                        <tr>
-                                            <th class="pb-2 fw-semibold text-dark">Fund Name</th>
-                                            <th class="text-center pb-2 fw-semibold text-dark">3-Y Volatility</th>
-                                            <th class="text-center pb-2 fw-semibold text-dark">3-Y Annualised<br>Returns
-                                                (%)</th>
-                                            <th class="text-end pb-2 fw-semibold text-dark">Price/Unit (MYR)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="pt-3 pb-3">
-                                                <div class="fs-8 text-dark fw-bold">PUBLIC e-CASH DEPOSIT - CLASS B
-                                                </div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">MM</span>
-                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
-                                                        style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Very Low"
-                                                        onerror="this.style.display='none'">
-                                                </div>
-                                            </td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-3">0.12 (V.Low)</td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-3">3.85%</td>
-                                            <td class="text-end pt-3 pb-3">
-                                                <div
-                                                    class="fw-semibold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                    1.0000 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
-                                                </div>
-                                                <div class="text-success fs-9 fw-semibold">+4.17%</div>
-                                            </td>
-                                        </tr>
-                                        <tr class="border-bottom">
-                                            <td class="pt-3 pb-3">
-                                                <div class="fs-8 text-dark fw-bold">PUBLIC BOND FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">FI</span>
-                                                    <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
-                                                        style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 2 - Low"
-                                                        onerror="this.style.display='none'">
-                                                </div>
-                                            </td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-3">1.45 (Low)</td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-3">5.10%</td>
-                                            <td class="text-end pt-3 pb-3">
-                                                <div
-                                                    class="fw-semibold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                    1.0530 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
-                                                </div>
-                                                <div class="text-success fs-9 fw-semibold">+5.30%</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="pt-3 pb-1">
-                                                <div class="fs-8 text-dark fw-bold">PUBLIC REGIONAL UTILITY FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">EQ</span>
-                                                    <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
-                                                        style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 4 - High"
-                                                        onerror="this.style.display='none'">
-                                                </div>
-                                            </td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-1">12.80 (High)</td>
-                                            <td class="text-center fs-8 text-dark pt-3 pb-1">18.50%</td>
-                                            <td class="text-end pt-3 pb-1">
-                                                <div
-                                                    class="fw-semibold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                                    0.7200 <i class="iconoir-nav-arrow-up-solid text-success fs-7"></i>
-                                                </div>
-                                                <div class="text-success fs-9 fw-semibold">+20.00%</div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="pmo-table-frame table-responsive">
+                                    <table class="pmo-data-table pmo-data-table--fund-analytics">
+                                        <thead>
+                                            <tr>
+                                                <th class="pb-2">Fund Name</th>
+                                                <th class="pb-2">3-Y Volatility</th>
+                                                <th class="pb-2">3-Y Annualised<br>Returns
+                                                    (%)</th>
+                                                <th class="pb-2">Price/Unit (MYR)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="pt-3 pb-3 pmo-table-primary">
+                                                    <div>PUBLIC e-CASH DEPOSIT - CLASS B
+                                                    </div>
+                                                    <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                        <span class="badge rounded-pill px-2 py-1"
+                                                            style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">MM</span>
+                                                        <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                            style="height: 18px;" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Risk 1 - Very Low"
+                                                            onerror="this.style.display='none'">
+                                                    </div>
+                                                </td>
+                                                <td class="pt-3 pb-3">0.12 (V.Low)</td>
+                                                <td class="pt-3 pb-3">3.85%</td>
+                                                <td class="pt-3 pb-3">
+                                                    <div class="d-flex align-items-center justify-content-end gap-1">
+                                                        1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                    </div>
+                                                    <div class="text-success" style="text-align: right;">+4.17%</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="pt-3 pb-3 pmo-table-primary">
+                                                    <div>PUBLIC BOND FUND</div>
+                                                    <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                        <span class="badge rounded-pill px-2 py-1"
+                                                            style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">FI</span>
+                                                        <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
+                                                            style="height: 18px;" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Risk 2 - Low"
+                                                            onerror="this.style.display='none'">
+                                                    </div>
+                                                </td>
+                                                <td class="pt-3 pb-3">1.45 (Low)</td>
+                                                <td class="pt-3 pb-3">5.10%</td>
+                                                <td class="pt-3 pb-3">
+                                                    <div class="d-flex align-items-center justify-content-end gap-1">
+                                                        1.0530 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                    </div>
+                                                    <div class="text-success" style="text-align: right;">+5.30%</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="pt-3 pb-3 pmo-table-primary">
+                                                    <div>PUBLIC REGIONAL UTILITY FUND</div>
+                                                    <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                        <span class="badge rounded-pill px-2 py-1"
+                                                            style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">EQ</span>
+                                                        <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                            style="height: 18px;" data-bs-toggle="tooltip"
+                                                            data-bs-placement="top" title="Risk 4 - High"
+                                                            onerror="this.style.display='none'">
+                                                    </div>
+                                                </td>
+                                                <td class="pt-3 pb-3">12.80 (High)</td>
+                                                <td class="pt-3 pb-3">18.50%</td>
+                                                <td class="pt-3 pb-3">
+                                                    <div class="d-flex align-items-center justify-content-end gap-1">
+                                                        0.7200 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                    </div>
+                                                    <div class="text-success" style="text-align: right;">+20.00%</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <div class="text-center mt-3 text-muted fs-9">
                                     Price as at 04/05/2026
                                 </div>
@@ -523,8 +519,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -532,7 +527,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -617,7 +612,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -655,10 +650,10 @@
                     <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
+                        <a class="nav-link rounded-3 d-flex align-items-center active" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
-                            <span class="fw-medium">Dashboard</span>
+                            <i class="iconoir-home fs-5 me-3" aria-hidden="true"></i>
+                            <span class="fw-semibold">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
@@ -677,23 +672,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -708,7 +703,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

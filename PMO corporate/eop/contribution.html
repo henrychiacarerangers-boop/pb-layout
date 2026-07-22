@@ -16,6 +16,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -146,6 +148,7 @@
                 <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Download Contribution File</h2>
             </div>
 
+
             <div class="alert alert-danger d-none rounded-3 fs-8 mb-4" id="eopMakeImportAlert" role="alert">
                 <span id="eopMakeImportAlertText"></span>
             </div>
@@ -173,40 +176,64 @@
                             <p class="fs-8 text-muted mb-3" id="eopMakeSalarySummary" role="status"></p>
                         </div>
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8"
-                                    id="eopMakeTableSalary" aria-describedby="eopMakeSalarySummary">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table" id="eopMakeTableSalary"
+                                    aria-describedby="eopMakeSalarySummary">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold sortable-header text-start"
-                                                data-column="name" style="cursor: pointer; user-select: none;">Name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="ps-4 py-3 sortable-header" data-column="name">Name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="nric"
-                                                style="cursor: pointer; user-select: none;">NRIC No. <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="nric">NRIC No. <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="fund"
-                                                style="cursor: pointer; user-select: none;">Fund name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="fund">Fund name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end sortable-header"
-                                                data-column="amount" style="cursor: pointer; user-select: none;">Amount
-                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="pe-4 py-3 sortable-header" data-column="amount">Amount
+                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopMakeSalaryTbody"></tbody>
+                                    <tbody id="eopMakeSalaryTbody"></tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="px-4 py-4 d-flex flex-wrap gap-2 align-items-center">
-                            <button type="button"
-                                class="btn btn-outline-dark rounded-pill fs-8 fw-semibold d-inline-flex align-items-center gap-2"
-                                style="transition: all 0.3s ease;" id="eopMakeDownloadCsvSalary">
-                                <i class="iconoir-download" aria-hidden="true"></i> Download CSV
-                            </button>
+                        <div class="px-4 pb-4">
+                            <div class="d-flex flex-wrap gap-2 align-items-center mb-4">
+                                <button type="button"
+                                    class="btn btn-danger rounded-pill fs-8 fw-semibold d-inline-flex align-items-center gap-2"
+                                    style="transition: all 0.3s ease;" id="eopMakeDownloadCsvSalary">
+                                    <i class="iconoir-download" aria-hidden="true"></i> Download CSV
+                                </button>
+                            </div>
+                            <!-- Workflow Steps -->
+                            <div class="border-top pt-4 d-flex flex-wrap gap-3 align-items-center">
+                                <span class="fw-semibold fs-9 text-muted me-1">Next steps:</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#002e77;">1
+                                    </div>
+                                    <span class="fw-semibold" style="font-size:0.8rem;">Download CSV</span>
+                                </div>
+                                <i class="iconoir-arrow-right text-muted"></i>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#002e77;">2
+                                    </div>
+                                    <span class="fw-semibold" style="font-size:0.8rem;">Update the Info</span>
+                                </div>
+                                <i class="iconoir-arrow-right text-muted"></i>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#ff1700;">3
+                                    </div>
+                                    <span style="font-size:0.8rem;">Go to <a href="upload.html"
+                                            class="fw-bold text-decoration-none" style="color:#ff1700;">Upload
+                                            Contribution</a> to submit</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -217,40 +244,63 @@
                             <p class="fs-8 text-muted mb-3" id="eopMakeEmployerSummary" role="status"></p>
                         </div>
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8"
-                                    id="eopMakeTableEmployer" aria-describedby="eopMakeEmployerSummary">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table" id="eopMakeTableEmployer"
+                                    aria-describedby="eopMakeEmployerSummary">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold sortable-header text-start"
-                                                data-column="name" style="cursor: pointer; user-select: none;">Name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="ps-4 py-3 sortable-header" data-column="name">Name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="nric"
-                                                style="cursor: pointer; user-select: none;">NRIC No. <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="nric">NRIC No. <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold sortable-header text-start" data-column="fund"
-                                                style="cursor: pointer; user-select: none;">Fund name <i
-                                                    class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3 sortable-header" data-column="fund">Fund name <i
+                                                    class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
-                                            <th class="py-3 fw-semibold text-start">Contribution type</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end sortable-header"
-                                                data-column="amount" style="cursor: pointer; user-select: none;">Amount
-                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up fs-7 ms-1 d-none"
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="pe-4 py-3 sortable-header" data-column="amount">Amount
+                                                (MYR) <i class="sort-icon iconoir-nav-arrow-up ms-1 d-none"
                                                     style="vertical-align: middle;"></i></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopMakeEmployerTbody"></tbody>
+                                    <tbody id="eopMakeEmployerTbody"></tbody>
                                 </table>
                             </div>
                         </div>
-                        <div class="px-4 py-4 d-flex flex-wrap gap-2 align-items-center">
-                            <button type="button"
-                                class="btn btn-outline-dark rounded-pill fs-8 fw-semibold d-inline-flex align-items-center gap-2"
-                                style="transition: all 0.3s ease;" id="eopMakeDownloadCsvEmployer">
-                                <i class="iconoir-download" aria-hidden="true"></i> Download CSV
-                            </button>
+                        <div class="px-4 pb-4">
+                            <div class="d-flex flex-wrap gap-2 align-items-center mb-4">
+                                <button type="button" class="btn btn-danger rounded-pill fs-8 fw-semibold d-inline-flex align-items-center gap-2
+                                    style=" transition: all 0.3s ease;" id="eopMakeDownloadCsvEmployer">
+                                    <i class="iconoir-download" aria-hidden="true"></i> Download CSV
+                                </button>
+                            </div>
+                            <!-- Workflow Steps -->
+                            <div class="border-top pt-4 d-flex flex-wrap gap-3 align-items-center">
+                                <span class="fw-semibold fs-9 text-muted me-1">Next steps:</span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#002e77;">1
+                                    </div>
+                                    <span class="fw-semibold" style="font-size:0.8rem;">Download CSV</span>
+                                </div>
+                                <i class="iconoir-arrow-right text-muted"></i>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#002e77;">2
+                                    </div>
+                                    <span class="fw-semibold" style="font-size:0.8rem;">Update the Info</span>
+                                </div>
+                                <i class="iconoir-arrow-right text-muted"></i>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white flex-shrink-0"
+                                        style="width:26px;height:26px;font-size:0.72rem;background-color:#ff1700;">3
+                                    </div>
+                                    <span style="font-size:0.8rem;">Go to <a href="upload.html"
+                                            class="fw-bold text-decoration-none" style="color:#ff1700;">Upload
+                                            Contribution</a> to submit</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,8 +333,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -292,7 +341,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -377,7 +426,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -417,7 +466,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -437,23 +486,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -468,7 +517,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

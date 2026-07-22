@@ -16,6 +16,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -243,54 +245,49 @@
                         </div>
 
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width:32%;">Reference
-                                                No.
-                                                /<br><span class="fs-9 fw-normal text-secondary">Unique Identifier
-                                                    No.</span></th>
-                                            <th class="py-3 fw-semibold text-start" style="width:18%;">Date
+                                            <th class="ps-4 py-3">e-Invoice
+                                                No.</th>
+                                            <th class="py-3">Date
                                             </th>
-                                            <th class="py-3 fw-semibold text-start" style="width:20%;">Invoice type</th>
-                                            <th class="py-3 fw-semibold text-start" style="width:10%;">MyInvois status
+                                            <th class="py-3">Document type
                                             </th>
-                                            <th class="pe-4 py-3 fw-semibold text-end" style="width:8%;">Actions</th>
+                                            <th class="py-3">MyInvois status
+                                            </th>
+                                            <th class="pe-4 py-3">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody id="eopEinvTableBody">
                                         <tr>
-                                            <td class="ps-4 py-3 text-dark">
-                                                <span class="fw-semibold d-block">T012991223</span>
-                                                <span
-                                                    class="text-secondary font-monospace fs-9">DCF12390feak10231091</span>
+                                            <td class="ps-4 py-3">
+                                                <span class="d-block">TR2600004083678</span>
                                             </td>
-                                            <td class="py-3 text-dark">12 Apr 2026</td>
-                                            <td class="py-3 text-secondary">e-Invoice</td>
-                                            <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                            <td class="py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
+                                            <td class="py-3">e-Invoice</td>
+                                            <td class="py-3"><span class="badge rounded-pill"
                                                     style="background-color:#e8f5e9;color:#12a833;">Validated</span>
                                             </td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="pe-4 py-3">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                     style="transition: all 0.3s ease;"
                                                     id="eopEinvRowDownload1">XML</button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="ps-4 py-3 text-dark">
-                                                <span class="fw-semibold d-block">INV-EINV-20260405-C3D4</span>
-                                                <span
-                                                    class="text-secondary font-monospace fs-9">DCF12390feak10231092</span>
+                                            <td class="ps-4 py-3">
+                                                <span class="d-block">TR2600004083679</span>
                                             </td>
-                                            <td class="py-3 text-dark">05 Apr 2026</td>
-                                            <td class="py-3 text-secondary">Self Billed e-Invoice</td>
-                                            <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                            <td class="py-3 pmo-table-meta pmo-table-date">05 Apr 2026</td>
+                                            <td class="py-3">Self-billed e-Invoice</td>
+                                            <td class="py-3"><span class="badge rounded-pill"
                                                     style="background-color:#fff3e0;color:#ce7226;">Pending</span></td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="pe-4 py-3">
                                                 <button type="button"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                     style="transition: all 0.3s ease;"
                                                     id="eopEinvRowDownload2">XML</button>
                                             </td>
@@ -340,8 +337,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -349,7 +345,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -434,7 +430,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -474,7 +470,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -494,23 +490,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -525,7 +521,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

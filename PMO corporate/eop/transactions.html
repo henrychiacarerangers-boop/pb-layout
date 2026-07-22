@@ -64,6 +64,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -308,102 +310,101 @@
                                 </div>
                             </div>
                             <div class="border rounded-4 overflow-hidden mb-4">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Tran
+                                                <th class="ps-4 py-3">Tran
                                                     date /
-                                                    time<br><span class="fs-9 fw-normal text-secondary">Reference
+                                                    time<br><span>Reference
                                                         No.</span>
                                                 </th>
-                                                <th class="py-3 fw-semibold text-start" style="width:28%;">
+                                                <th class="py-3">
                                                     Scheme
-                                                    type<br><span class="fs-9 fw-normal text-secondary">Contribution
-                                                        type</span><br><span
-                                                        class="fs-9 fw-normal text-secondary">Prepared
+                                                    type<br><span>Contribution
+                                                        type</span><br><span>Prepared
                                                         by</span></th>
-                                                <th class="py-3 fw-semibold text-end" style="width:12%;">No. of
+                                                <th class="py-3">No. of
                                                     Employee(s)
                                                 </th>
-                                                <th class="py-3 fw-semibold text-end" style="width:14%;">Amount (MYR)
+                                                <th class="py-3">Amount (MYR)
                                                 </th>
-                                                <th class="py-3 fw-semibold text-center" style="width:16%;">Status</th>
-                                                <th class="pe-4 py-3 fw-semibold text-center" style="width:12%;">Action
+                                                <th class="py-3">Status</th>
+                                                <th class="pe-4 py-3">Action
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody class="text-dark fw-medium">
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3 text-start">
-                                                    <div class="fw-semibold text-dark">7 May 2026</div>
-                                                    <div class="text-muted fs-9">13:58</div>
-                                                    <div class="text-muted fs-9 mt-1">RC00000000000124</div>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>7 May 2026</div>
+                                                    <div>13:58</div>
+                                                    <div class="mt-1 pmo-table-meta">RC00000000000124</div>
                                                 </td>
-                                                <td class="text-center">
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Salary Deduction
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Salary Deduction
                                                     </div>
-                                                    <div class="text-dark fs-9 mt-1">Salary Deduction (IND)</div>
-                                                    <div class="text-muted fs-9 mt-1">Siti Aminah</div>
+                                                    <div class="mt-1">Salary Deduction (IND)</div>
+                                                    <div class="mt-1">Siti Aminah</div>
                                                 </td>
-                                                <td class="text-center">18</td>
-                                                <td class="text-center fw-semibold text-dark">42,500.00</td>
-                                                <td class="text-center">
+                                                <td>18</td>
+                                                <td>42,500.00</td>
+                                                <td>
                                                     <span
-                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10">PAID</span>
+                                                        class="badge status-muted bg-opacity-10 text-success border-opacity-25 rounded-pill">PAID</span>
                                                 </td>
-                                                <td class="pe-4 text-center">
+                                                <td class="pe-4">
                                                     <a href="transaction_detail.html?ref=RC00000000000124"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold text-decoration-none">View</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3 text-start">
-                                                    <div class="fw-semibold text-dark">2 May 2026</div>
-                                                    <div class="text-muted fs-9">09:10</div>
-                                                    <div class="text-muted fs-9 mt-1">RC00000000000502</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Employer
-                                                        contribution
-                                                    </div>
-                                                    <div class="text-dark fs-9 mt-1">Vesting (VSC)/Immediate Vesting
-                                                        (EMP)
-                                                    </div>
-                                                    <div class="text-muted fs-9 mt-1">Lee Wei</div>
-                                                </td>
-                                                <td class="text-center text-dark">28</td>
-                                                <td class="text-center fw-semibold text-dark">96,000.00</td>
-                                                <td class="text-center">
-                                                    <span
-                                                        class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill fs-10">PAID</span>
-                                                </td>
-                                                <td class="pe-4 text-center">
-                                                    <a href="transaction_detail.html?ref=RC00000000000502"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold text-decoration-none">View</a>
+                                                        class="pmo-table-link">View</a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ps-4 py-3 text-start">
-                                                    <div class="fw-semibold text-dark">28 Apr 2026</div>
-                                                    <div class="text-muted fs-9">11:05</div>
-                                                    <div class="text-muted fs-9 mt-1">RC00000000000320</div>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>2 May 2026</div>
+                                                    <div>09:10</div>
+                                                    <div class="mt-1 pmo-table-meta">RC00000000000502</div>
                                                 </td>
-                                                <td class="text-center">
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Salary deduction
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Employer
+                                                        contribution
                                                     </div>
-                                                    <div class="text-dark fs-9 mt-1">Salary Deduction (IND)</div>
-                                                    <div class="text-muted fs-9 mt-1">Siti Aminah</div>
+                                                    <div class="mt-1">Vesting (VSC)/Immediate Vesting
+                                                        (EMP)
+                                                    </div>
+                                                    <div class="mt-1">Lee Wei</div>
                                                 </td>
-                                                <td class="text-center text-dark">6</td>
-                                                <td class="text-center fw-semibold text-dark">18,200.00</td>
-                                                <td class="text-center">
+                                                <td>28</td>
+                                                <td>96,000.00</td>
+                                                <td>
                                                     <span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary  border border-secondary border-opacity-50 rounded-pill fs-10">Rejected</span>
+                                                        class="badge bg-success bg-opacity-10 text-success border-opacity-25 rounded-pill">PAID</span>
                                                 </td>
-                                                <td class="pe-4 text-center">
+                                                <td class="pe-4">
+                                                    <a href="transaction_detail.html?ref=RC00000000000502"
+                                                        class="pmo-table-link">View</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>28 Apr 2026</div>
+                                                    <div>11:05</div>
+                                                    <div class="mt-1 pmo-table-meta">RC00000000000320</div>
+                                                </td>
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Salary deduction
+                                                    </div>
+                                                    <div class="mt-1">Salary Deduction (IND)</div>
+                                                    <div class="mt-1">Siti Aminah</div>
+                                                </td>
+                                                <td>6</td>
+                                                <td>18,200.00</td>
+                                                <td>
+                                                    <span
+                                                        class="badge status-muted bg-opacity-10 border-opacity-50 rounded-pill">Rejected</span>
+                                                </td>
+                                                <td class="pe-4">
                                                     <a href="transaction_detail.html?ref=RC00000000000320"
-                                                        class="btn btn-sm btn-outline-dark rounded-pill px-3 fs-9 fw-semibold text-decoration-none">View</a>
+                                                        class="pmo-table-link">View</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -426,99 +427,95 @@
                                 </div>
                             </div>
                             <div class="border rounded-4 overflow-hidden mb-4">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                        <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-start" style="width:18%;">Tran
+                                                <th class="ps-4 py-3">Tran
                                                     date /
-                                                    time<br><span class="fs-9 fw-normal text-secondary">Reference
+                                                    time<br><span>Reference
                                                         No.</span>
                                                 </th>
-                                                <th class="py-3 fw-semibold text-start" style="width:28%;">Scheme
-                                                    type<br><span class="fs-9 fw-normal text-secondary">Contribution
-                                                        type</span><br><span
-                                                        class="fs-9 fw-normal text-secondary">Prepared
+                                                <th class="py-3">Scheme
+                                                    type<br><span>Contribution
+                                                        type</span><br><span>Prepared
                                                         by</span></th>
-                                                <th class="py-3 fw-semibold text-end" style="width:12%;">No. of
+                                                <th class="py-3">No. of
                                                     Employee(s)
                                                 </th>
-                                                <th class="py-3 fw-semibold text-end" style="width:14%;">Amount (MYR)
+                                                <th class="py-3">Amount (MYR)
                                                 </th>
-                                                <th class="py-3 fw-semibold text-center" style="width:16%;">Status</th>
-                                                <th class="pe-4 py-3 fw-semibold text-center" style="width:12%;">Action
+                                                <th class="py-3">Status</th>
+                                                <th class="pe-4 py-3">Action
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody class="text-dark fw-medium">
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3">
-                                                    <div class="fw-semibold text-dark">8 May 2026</div>
-                                                    <div class="text-muted fs-9">RC00000000000124</div>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>8 May 2026</div>
+                                                    <div>RC00000000000124</div>
                                                 </td>
-                                                <td>
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Salary deduction
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Salary deduction
                                                     </div>
-                                                    <div class="text-dark fs-9 mt-1">Salary Deduction (IND)</div>
-                                                    <div class="text-muted fs-9 mt-1">Siti Aminah</div>
+                                                    <div class="mt-1">Salary Deduction (IND)</div>
+                                                    <div class="mt-1">Siti Aminah</div>
                                                 </td>
-                                                <td class="text-end text-dark">18</td>
-                                                <td class="text-end fw-semibold text-dark">42,500.00</td>
-                                                <td class="text-center"><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">PENDING
+                                                <td>18</td>
+                                                <td>42,500.00</td>
+                                                <td><span
+                                                        class="badge status-muted bg-opacity-10 border-opacity-25 rounded-pill">PENDING
                                                         AUTHORISATION</span></td>
-                                                <td class="pe-4 text-center">
+                                                <td class="pe-4">
                                                     <a href="authorise_detail.html?ref=RC00000000000124&ch=salary&emp=18&amt=42500"
-                                                        class="btn btn-sm btn-danger rounded-pill px-3 fs-9 fw-semibold text-white text-decoration-none"
-                                                        id="eopTxnPendingAuthBtn1">Authorise</a>
-                                                </td>
-                                            </tr>
-                                            <tr class="border-bottom">
-                                                <td class="ps-4 py-3">
-                                                    <div class="fw-semibold text-dark">6 May 2026</div>
-                                                    <div class="text-muted fs-9">RC00000000000502</div>
-                                                </td>
-                                                <td>
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Employer
-                                                        contribution
-                                                    </div>
-                                                    <div class="text-dark fs-9 mt-1">Vesting (VSC)/Immediate Vesting
-                                                        (EMP)
-                                                    </div>
-                                                    <div class="text-muted fs-9 mt-1">HR Payroll</div>
-                                                </td>
-                                                <td class="text-end text-dark">42</td>
-                                                <td class="text-end fw-semibold text-dark">156,000.00</td>
-                                                <td class="text-center"><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary  border border-secondary border-opacity-50 rounded-pill fs-10">Pending
-                                                        Payment</span></td>
-                                                <td class="pe-4 text-center">
-                                                    <a href="payment_detail.html?ref=RC00000000000502&ch=employer&emp=42&amt=156000"
-                                                        class="btn btn-sm btn-danger rounded-pill px-3 fs-9 fw-semibold text-white text-decoration-none"
-                                                        id="eopTxnPendingPayBtn1">Pay now</a>
+                                                        class="pmo-table-link" id="eopTxnPendingAuthBtn1">Authorise</a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ps-4 py-3">
-                                                    <div class="fw-semibold text-dark">5 May 2026</div>
-                                                    <div class="text-muted fs-9">RC00000000000808</div>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>6 May 2026</div>
+                                                    <div>RC00000000000502</div>
                                                 </td>
-                                                <td>
-                                                    <div class="fw-semibold" style="font-size:0.8rem;">Employer
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Employer
                                                         contribution
                                                     </div>
-                                                    <div class="text-dark fs-9 mt-1">Immediate Vesting (EMP)</div>
-                                                    <div class="text-muted fs-9 mt-1">Lee Wei</div>
+                                                    <div class="mt-1">Vesting (VSC)/Immediate Vesting
+                                                        (EMP)
+                                                    </div>
+                                                    <div class="mt-1">HR Payroll</div>
                                                 </td>
-                                                <td class="text-end text-dark">9</td>
-                                                <td class="text-end fw-semibold text-dark">12,300.00</td>
-                                                <td class="text-center"><span
-                                                        class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10">PENDING
+                                                <td>42</td>
+                                                <td>156,000.00</td>
+                                                <td><span
+                                                        class="badge status-muted bg-opacity-10 border-opacity-50 rounded-pill">Pending
+                                                        Payment</span></td>
+                                                <td class="pe-4">
+                                                    <a href="payment_detail.html?ref=RC00000000000502&ch=employer&emp=42&amt=156000"
+                                                        class="pmo-table-link" id="eopTxnPendingPayBtn1">Pay now</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4 py-3 pmo-table-date">
+                                                    <div>5 May 2026</div>
+                                                    <div>RC00000000000808</div>
+                                                </td>
+                                                <td class="pmo-table-meta">
+                                                    <div style="font-size:0.8rem;">Employer
+                                                        contribution
+                                                    </div>
+                                                    <div class="mt-1">Immediate Vesting (EMP)</div>
+                                                    <div class="mt-1">Lee Wei</div>
+                                                </td>
+                                                <td>9</td>
+                                                <td>12,300.00</td>
+                                                <td><span
+                                                        class="badge status-muted bg-opacity-10 border-opacity-25 rounded-pill">PENDING
                                                         AUTHORISATION</span></td>
-                                                <td class="pe-4 text-center">
+                                                <td class="pe-4">
                                                     <a href="authorise_detail.html?ref=RC00000000000808&ch=employer&emp=9&amt=12300"
-                                                        class="btn btn-sm btn-danger rounded-pill px-3 fs-9 fw-semibold text-white text-decoration-none"
-                                                        id="eopTxnPendingAuthBtn2">Authorise</a>
+                                                        class="pmo-table-link" id="eopTxnPendingAuthBtn2">Authorise</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -557,8 +554,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -566,7 +562,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -651,7 +647,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -691,7 +687,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -711,23 +707,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -742,7 +738,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

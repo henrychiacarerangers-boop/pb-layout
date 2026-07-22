@@ -54,6 +54,8 @@
             border: 1px solid #dee2e6;
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -181,17 +183,17 @@
         <div class="container">
 
             <div class="mb-4" id="eopPayPageIntro">
-                <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Make payment</h2>
+                <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Make Payment</h2>
             </div>
 
 
 
             <!-- Step 0: select authorised transactions list -->
             <div id="eopPayStep0">
-                <div class="alert alert-warning border-0 rounded-4 d-none mb-4 fs-8" id="eopPayAbortBanner"
+                <div class="alert alert-warning border-0 rounded-4 d-none mb-4 fs-8" id="eopPayCancelBanner"
                     role="status">
                     <i class="iconoir-warning-triangle me-2" aria-hidden="true"></i>
-                    <span id="eopPayAbortBannerText">Payment run rejected. No debit was attempted (prototype).</span>
+                    <span id="eopPayCancelBannerText">Payment run rejected. No debit was attempted (prototype).</span>
                 </div>
                 <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4 tab-content-combined"
                     id="eopPayTabCard">
@@ -213,79 +215,77 @@
                     <div class="card-body p-0 tab-content" id="eopPaymentTabContent">
                         <div class="tab-pane fade show active" id="eopPayPaneSalary" role="tabpanel"
                             aria-labelledby="eopPayTabSalary">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width: 220px;">Authorise
+                                            <th class="ps-4 py-3">Authorise
                                                 Ref No.</th>
-                                            <th class="py-3 fw-semibold text-center">Contribution type</th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 140px;">Employee(s)
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="py-3">Employee(s)
                                             </th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 150px;">Amount (MYR)
+                                            <th class="py-3">Amount (MYR)
                                             </th>
-                                            <th class="pe-4 py-3 fw-semibold text-center" style="width: 160px;">Action
+                                            <th class="pe-4 py-3">Action
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RC00000000000124</td>
-                                            <td class="py-3 text-center"><span class="text-dark">Salary Deduction
+                                        <tr>
+                                            <td class="ps-4 py-3">RC00000000000124</td>
+                                            <td class="py-3"><span>Salary Deduction
                                                     (IND)</span></td>
-                                            <td class="py-3 text-center text-dark">18</td>
-                                            <td class="py-3 text-center fw-semibold text-dark">42,500.00</td>
-                                            <td class="pe-4 py-3 text-center">
+                                            <td class="py-3">18</td>
+                                            <td class="py-3">42,500.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-center gap-2">
-                                                    <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Transact</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopPayMenuSal1" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Transact menu for RC00000000000124">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-action-link"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
                                                                 id="eopPayActionSal1"
                                                                 href="payment_detail.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Make
                                                                 payment</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-abort-link"
-                                                                id="eopPayAbortSal1"
-                                                                href="abort_payment.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Abort
+                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                id="eopPayCancelSal1"
+                                                                href="Abort_payment.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Cancel
                                                                 payment</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RC00000000000320</td>
-                                            <td class="py-3 text-center"><span class="text-dark">Salary Deduction
+                                        <tr>
+                                            <td class="ps-4 py-3">RC00000000000320</td>
+                                            <td class="py-3"><span>Salary Deduction
                                                     (IND)</span></td>
-                                            <td class="py-3 text-center text-dark">6</td>
-                                            <td class="py-3 text-center fw-semibold text-dark">18,200.00</td>
-                                            <td class="pe-4 py-3 text-center">
+                                            <td class="py-3">6</td>
+                                            <td class="py-3">18,200.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-center gap-2">
-                                                    <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Transact</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopPayMenuSal2" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Transact menu for RC00000000000320">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-action-link"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
                                                                 id="eopPayActionSal2"
                                                                 href="payment_detail.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Make
                                                                 payment</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-abort-link"
-                                                                id="eopPayAbortSal2"
-                                                                href="abort_payment.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Abort
+                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                id="eopPayCancelSal2"
+                                                                href="Abort_payment.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Cancel
                                                                 payment</a></li>
                                                     </ul>
                                                 </div>
@@ -299,49 +299,48 @@
 
                         <div class="tab-pane fade" id="eopPayPaneEmployer" role="tabpanel"
                             aria-labelledby="eopPayTabEmployer">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width: 220px;">Authorise
+                                            <th class="ps-4 py-3">Authorise
                                                 Ref No.</th>
-                                            <th class="py-3 fw-semibold text-center">Contribution type</th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 140px;">Employee(s)
+                                            <th class="py-3">Contribution type</th>
+                                            <th class="py-3">Employee(s)
                                             </th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 150px;">Amount (MYR)
+                                            <th class="py-3">Amount (MYR)
                                             </th>
-                                            <th class="pe-4 py-3 fw-semibold text-center" style="width: 160px;">Action
+                                            <th class="pe-4 py-3">Action
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RC00000000000502</td>
-                                            <td class="py-3 text-center"><span class="text-dark">Revolving Vesting
+                                        <tr>
+                                            <td class="ps-4 py-3">RC00000000000502</td>
+                                            <td class="py-3"><span>Revolving Vesting
                                                     (VSC)/Immediate
                                                     Vesting (EMP)</span></td>
-                                            <td class="py-3 text-center text-dark">28</td>
-                                            <td class="py-3 text-center fw-semibold text-dark">96,000.00</td>
-                                            <td class="pe-4 py-3 text-center">
+                                            <td class="py-3">28</td>
+                                            <td class="py-3">96,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-center gap-2">
-                                                    <span class="fs-8 fw-semibold text-dark">Transact</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Transact</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" id="eopPayMenuEmp1" data-bs-toggle="dropdown"
                                                         aria-expanded="false"
                                                         aria-label="Transact menu for RC00000000000502">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-action-link"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
                                                                 id="eopPayActionEmp1"
                                                                 href="payment_detail.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Make
                                                                 payment</a></li>
-                                                        <li><a class="dropdown-item rounded-2 py-2 eop-pay-abort-link"
-                                                                id="eopPayAbortEmp1"
-                                                                href="abort_payment.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Abort
+                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                id="eopPayCancelEmp1"
+                                                                href="Abort_payment.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Cancel
                                                                 payment</a></li>
                                                     </ul>
                                                 </div>
@@ -385,8 +384,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -394,7 +392,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -479,7 +477,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -519,7 +517,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -539,23 +537,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -570,7 +568,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

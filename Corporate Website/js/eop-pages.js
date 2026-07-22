@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /** Make contribution — salary vs employer tables + CSV download/import */
+    /** Make Contribution — salary vs employer tables + CSV download/import */
     let eopMakeResetTables = null;
     (function initEopMakeContribution() {
         const tabSalary = document.getElementById('eopMakeTabSalary');
@@ -725,7 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /** EOP Payment list page — row actions (open detail page / abort) */
+    /** EOP Payment list page — row actions (open detail page / Cancel) */
     (function initEopPaymentWizard() {
         const step0 = document.getElementById('eopPayStep0');
         if (!step0) return;
@@ -734,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const payTabEmployer = document.getElementById('eopPayTabEmployer');
         const payPaneSalary = document.getElementById('eopPayPaneSalary');
         const payPaneEmployer = document.getElementById('eopPayPaneEmployer');
-        const abortBanner = document.getElementById('eopPayAbortBanner');
+        const CancelBanner = document.getElementById('eopPayCancelBanner');
 
         function setPayTab(mode) {
             const isSalary = mode === 'salary';
@@ -764,7 +764,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         step0.addEventListener('click', (e) => {
-            const action = e.target.closest('.eop-pay-action-link, .eop-pay-abort-link');
+            const action = e.target.closest('.eop-pay-action-link, .eop-pay-Cancel-link');
             if (!action || !step0.contains(action)) return;
             const ddRoot = action.closest('.dropdown');
             const toggle = ddRoot?.querySelector('[data-bs-toggle="dropdown"]');

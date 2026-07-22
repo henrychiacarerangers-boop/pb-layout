@@ -20,6 +20,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
 
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -182,26 +184,26 @@
                     <!-- Top-Up Tab Pane (Populated with Pending Requests) -->
                     <div class="tab-pane fade show active" id="topup" role="tabpanel" aria-labelledby="topup-tab">
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start">Reference No.</th>
-                                            <th class="py-3 fw-semibold text-start">Fund</th>
-                                            <th class="py-3 fw-semibold text-start">Account</th>
-                                            <th class="py-3 fw-semibold text-start">Transaction Date/Time</th>
-                                            <th class="py-3 fw-semibold text-end">Amount</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end">Action</th>
+                                            <th class="ps-4 py-3">Reference No.</th>
+                                            <th class="py-3">Fund</th>
+                                            <th class="py-3">Account</th>
+                                            <th class="py-3">Transaction Date/Time</th>
+                                            <th class="py-3">Amount</th>
+                                            <th class="pe-4 py-3">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8">
+                                    <tbody>
                                         <!-- Row 1 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">UT26000000000195</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC STRATEGIC GROWTH FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">UT26000000000195</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC STRATEGIC GROWTH FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Money Market Fund">MM</span>
@@ -211,24 +213,24 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="#"
-                                                    class="text-primary text-decoration-underline">094766567</a>
+                                            <td class="py-3 pmo-table-primary"><a href="#"
+                                                    class="pmo-table-link">094766567</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/15 14:15:22</td>
-                                            <td class="text-end py-3 text-success fw-semibold">+MYR 100,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/15 14:15:22</td>
+                                            <td class="py-3 text-success">+MYR 100,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <a href="authorise_topup.html?ref=UT26000000000195"
-                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-8 fw-semibold">View
+                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 pmo-table-action-button gap-2">View
                                                     Details</a>
                                             </td>
                                         </tr>
                                         <!-- Row 2 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">UT26000000000196</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC ISLAMIC DIVIDEND FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">UT26000000000196</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Money Market Fund">MM</span>
@@ -238,24 +240,24 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="#"
-                                                    class="text-primary text-decoration-underline">0283749202</a>
+                                            <td class="py-3 pmo-table-primary"><a href="#"
+                                                    class="pmo-table-link">0283749202</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/11 10:30:15</td>
-                                            <td class="text-end py-3 text-success fw-semibold">+MYR 50,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/11 10:30:15</td>
+                                            <td class="py-3 text-success">+MYR 50,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <a href="authorise_topup.html?ref=UT26000000000196"
-                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-8 fw-semibold">View
+                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 pmo-table-action-button">View
                                                     Details</a>
                                             </td>
                                         </tr>
 
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">UT26000000000195</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC STRATEGIC GROWTH FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">UT26000000000195</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC STRATEGIC GROWTH FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Money Market Fund">MM</span>
@@ -265,23 +267,23 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="#"
-                                                    class="text-primary text-decoration-underline">094766567</a>
+                                            <td class="py-3 pmo-table-primary"><a href="#"
+                                                    class="pmo-table-link">094766567</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/10 14:15:22</td>
-                                            <td class="text-end py-3 text-success fw-semibold">+MYR 100,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/10 14:15:22</td>
+                                            <td class="py-3 text-success">+MYR 100,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <a href="authorise_topup.html?ref=UT26000000000195"
-                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-8 fw-semibold">View
+                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 pmo-table-action-button">View
                                                     Details</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">UT26000000000195</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC STRATEGIC GROWTH FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">UT26000000000195</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC STRATEGIC GROWTH FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Money Market Fund">MM</span>
@@ -291,23 +293,23 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="#"
-                                                    class="text-primary text-decoration-underline">094766567</a>
+                                            <td class="py-3 pmo-table-primary"><a href="#"
+                                                    class="pmo-table-link">094766567</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/10 14:15:22</td>
-                                            <td class="text-end py-3 text-success fw-semibold">+MYR 100,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/10 14:15:22</td>
+                                            <td class="py-3 text-success">+MYR 100,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <a href="authorise_topup.html?ref=UT26000000000195"
-                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-8 fw-semibold">View
+                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 pmo-table-action-button">View
                                                     Details</a>
                                             </td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">UT26000000000195</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC STRATEGIC GROWTH FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">UT26000000000195</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC STRATEGIC GROWTH FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Money Market Fund">MM</span>
@@ -317,14 +319,14 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="#"
-                                                    class="text-primary text-decoration-underline">094766567</a>
+                                            <td class="py-3 pmo-table-primary"><a href="#"
+                                                    class="pmo-table-link">094766567</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/10 14:15:22</td>
-                                            <td class="text-end py-3 text-success fw-semibold">+MYR 100,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/10 14:15:22</td>
+                                            <td class="py-3 text-success">+MYR 100,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <a href="authorise_topup.html?ref=UT26000000000195"
-                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 fs-8 fw-semibold">View
+                                                    class="btn btn-outline-dark btn-sm rounded-pill px-3 pmo-table-action-button">View
                                                     Details</a>
                                             </td>
                                         </tr>
@@ -337,27 +339,27 @@
                     <!-- Redemption Tab Pane (Active) -->
                     <div class="tab-pane fade show " id="redemption" role="tabpanel" aria-labelledby="redemption-tab">
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table">
-                                    <thead class="text-muted fs-8 border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start">Reference No.</th>
-                                            <th class="py-3 fw-semibold text-start">Fund</th>
-                                            <th class="py-3 fw-semibold text-start">Account</th>
-                                            <th class="py-3 fw-semibold text-start">Transaction Date/Time</th>
-                                            <th class="py-3 fw-semibold text-end">Balance Unit</th>
-                                            <th class="py-3 fw-semibold text-end">Redemption<br>Units</th>
-                                            <th class="pe-4 py-3 fw-semibold text-end">Action</th>
+                                            <th class="ps-4 py-3">Reference No.</th>
+                                            <th class="py-3">Fund</th>
+                                            <th class="py-3">Account</th>
+                                            <th class="py-3">Transaction Date/Time</th>
+                                            <th class="py-3">Balance Unit</th>
+                                            <th class="py-3">Redemption<br>Units</th>
+                                            <th class="pe-4 py-3">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8">
+                                    <tbody>
                                         <!-- Row 1 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RP26000000000179</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC e-CASH DEPOSIT - CLASS B</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">RP26000000000179</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC e-CASH DEPOSIT - CLASS B</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Bond Fund">BO</span>
@@ -367,28 +369,27 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="view_account.html"
-                                                    class="text-primary text-decoration-underline">0193922094</a>
+                                            <td class="py-3 pmo-table-primary"><a href="view_account.html"
+                                                    class="pmo-table-link">0193922094</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/10 14:15:22</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">39,000.00</td>
-                                            <td class="text-end py-3 fw-semibold text-danger">-30,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/10 14:15:22</td>
+                                            <td class="py-3">39,000.00</td>
+                                            <td class="py-3 text-danger">-30,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                         aria-label="Authorise menu">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000179&action=approve">Approve</a>
                                                         </li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000179&action=reject">Reject</a>
                                                         </li>
                                                     </ul>
@@ -396,12 +397,12 @@
                                             </td>
                                         </tr>
                                         <!-- Row 2 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RP26000000000180</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC STRATEGIC GROWTH FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">RP26000000000180</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC STRATEGIC GROWTH FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Bond Fund">BO</span>
@@ -411,28 +412,27 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="view_account.html"
-                                                    class="text-primary text-decoration-underline">094766567</a>
+                                            <td class="py-3 pmo-table-primary"><a href="view_account.html"
+                                                    class="pmo-table-link">094766567</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/05 2:22:19</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">250,000.00</td>
-                                            <td class="text-end py-3 fw-semibold text-danger">-150,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/05 2:22:19</td>
+                                            <td class="py-3">250,000.00</td>
+                                            <td class="py-3 text-danger">-150,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                         aria-label="Authorise menu">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000180&action=approve">Approve</a>
                                                         </li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000180&action=reject">Reject</a>
                                                         </li>
                                                     </ul>
@@ -440,12 +440,12 @@
                                             </td>
                                         </tr>
                                         <!-- Row 3 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-dark">RP26000000000181</td>
-                                            <td class="py-3">
-                                                <div class="fw-bold text-dark">PUBLIC ISLAMIC DIVIDEND FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2">
-                                                    <span class="badge rounded-pill fw-bold fs-10 px-2 py-1"
+                                        <tr>
+                                            <td class="ps-4 py-3">RP26000000000181</td>
+                                            <td class="py-3 pmo-table-primary">
+                                                <div>PUBLIC ISLAMIC DIVIDEND FUND</div>
+                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                         title="Bond Fund">BO</span>
@@ -455,28 +455,27 @@
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
-                                            <td class="py-3"><a href="view_account.html"
-                                                    class="text-primary text-decoration-underline">0283749202</a>
+                                            <td class="py-3 pmo-table-primary"><a href="view_account.html"
+                                                    class="pmo-table-link">0283749202</a>
                                             </td>
-                                            <td class="py-3 text-dark">2026/04/1 16:12:54</td>
-                                            <td class="text-end py-3 fw-semibold text-dark">120,000.00</td>
-                                            <td class="text-end py-3 fw-semibold text-danger">-100,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
+                                            <td class="py-3 pmo-table-meta pmo-table-date">2026/04/1 16:12:54</td>
+                                            <td class="py-3">120,000.00</td>
+                                            <td class="py-3 text-danger">-100,000.00</td>
+                                            <td class="pe-4 py-3">
                                                 <div
                                                     class="dropdown d-inline-flex align-items-center justify-content-end flex-wrap">
-                                                    <span class="fs-8 fw-semibold text-dark">Authorise</span>
-                                                    <button
-                                                        class="btn btn-link text-dark p-0 border-0 dropdown-toggle-no-caret"
+                                                    <span>Authorise</span>
+                                                    <button class="btn btn-link p-0 border-0 dropdown-toggle-no-caret"
                                                         type="button" data-bs-toggle="dropdown" aria-expanded="false"
                                                         aria-label="Authorise menu">
-                                                        <i class="iconoir-more-vert fs-5" aria-hidden="true"></i>
+                                                        <i class="iconoir-more-vert" aria-hidden="true"></i>
                                                     </button>
                                                     <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 fs-8 p-2">
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000181&action=approve">Approve</a>
                                                         </li>
-                                                        <li><a class="dropdown-item rounded-2 py-2"
+                                                        <li><a class="dropdown-item pmo-table-dropdown-action"
                                                                 href="authorise_redemption.html?ref=RP26000000000181&action=reject">Reject</a>
                                                         </li>
                                                     </ul>
@@ -522,8 +521,7 @@
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -531,7 +529,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -616,7 +614,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -656,7 +654,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -676,23 +674,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -707,7 +705,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

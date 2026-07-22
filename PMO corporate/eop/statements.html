@@ -36,7 +36,38 @@
         .eop-stmt-table-link:hover {
             color: #0a58ca;
         }
+
+        .statement-row-downloadable tbody tr:not(.no-filter-data-row) {
+            cursor: pointer;
+        }
+
+        .statement-row-downloadable tbody tr:not(.no-filter-data-row):focus-visible {
+            outline: 2px solid #002e77;
+            outline-offset: -2px;
+        }
+
+        .statement-download-date {
+            color: #002e77 !important;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 700;
+        }
+
+        .statement-row-downloadable tbody tr:hover .statement-download-date {
+            color: #001f52 !important;
+        }
+
+        .document-register {
+            padding: 24px !important;
+            margin-bottom: 24px !important;
+        }
+
+        .document-register h5 {
+            color: #002e77 !important;
+        }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -187,7 +218,7 @@
                         </a>
                     </div>
                     <!-- Month & Year Filters -->
-                    <div class="d-flex align-items-center gap-2 me-md-2">
+                    <div class="d-none" aria-hidden="true">
                         <span class="fs-8 fw-semibold text-muted text-nowrap"><i
                                 class="iconoir-filter-list me-1"></i>Filter:</span>
                         <select
@@ -224,7 +255,7 @@
 
                     <!-- PRS contribution statements -->
                     <div id="eopStmtPanelPrs" class="eop-stmt-panel">
-                        <div class="border rounded-4 overflow-hidden mb-0">
+                        <div class="document-register border rounded-4 overflow-hidden">
                             <div class="accordion-header-custom" data-bs-toggle="collapse"
                                 data-bs-target="#eopStmtCollapsePrsTxn" aria-expanded="true"
                                 aria-controls="eopStmtCollapsePrsTxn" id="eopStmtHdrPrsTxn">
@@ -233,59 +264,57 @@
                                     aria-hidden="true"></i>
                             </div>
                             <div id="eopStmtCollapsePrsTxn" class="collapse show">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table border-top fs-8">
-                                        <thead class="text-muted border-bottom">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 fw-semibold text-dark" style="width: 220px;">Period
+                                                <th class="ps-4 py-3">Period
                                                     / date</th>
-                                                <th class="py-3 fw-semibold text-center text-dark"
-                                                    style="background-color: #f8fafc; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
-                                                    Schema type<br><span
-                                                        class="fs-9 fw-normal text-secondary">Contribution
+                                                <th class="py-3">
+                                                    Schema type<br><span>Contribution
                                                         type</span>
                                                 </th>
-                                                <th class="pe-4 py-3 fw-semibold text-center text-dark">Document type
+                                                <th class="pe-4 py-3">Document type
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold">
-                                            <tr class="border-bottom" data-month="Apr" data-year="2026">
-                                                <td class="ps-4 py-3"><a href="#" class="eop-stmt-table-link"
+                                        <tbody>
+                                            <tr data-month="Apr" data-year="2026">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="eop-stmt-table-link pmo-table-link"
                                                         id="eopStmtLinkPrs1">Apr 2026</a></td>
-                                                <td class="text-center py-3 text-dark"
-                                                    style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                                <td class="py-3">
                                                     <div>Salary Deduction</div>
-                                                    <div class="fs-9 text-secondary mt-1 fw-medium">Salary Deduction
+                                                    <div class="mt-1">Salary Deduction
                                                         (IND)</div>
                                                 </td>
-                                                <td class="pe-4 py-3 text-secondary fw-medium text-center">Statement of
+                                                <td class="pe-4 py-3">Statement of
                                                     Transcation
                                                 </td>
                                             </tr>
-                                            <tr class="border-bottom" data-month="Mar" data-year="2026">
-                                                <td class="ps-4 py-3"><a href="#" class="eop-stmt-table-link"
+                                            <tr data-month="Mar" data-year="2026">
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="eop-stmt-table-link pmo-table-link"
                                                         id="eopStmtLinkPrs2">Mar 2026</a></td>
-                                                <td class="text-center py-3 text-dark"
-                                                    style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                                <td class="py-3">
                                                     <div>Salary Deduction</div>
-                                                    <div class="fs-9 text-secondary mt-1 fw-medium">Salary Deduction
+                                                    <div class="mt-1">Salary Deduction
                                                         (IND)</div>
                                                 </td>
-                                                <td class="pe-4 py-3 text-secondary fw-medium text-center">Statement of
+                                                <td class="pe-4 py-3">Statement of
                                                     Transcation
                                                 </td>
                                             </tr>
                                             <tr data-month="Feb" data-year="2026">
-                                                <td class="ps-4 py-3"><a href="#" class="eop-stmt-table-link"
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                        class="eop-stmt-table-link pmo-table-link"
                                                         id="eopStmtLinkPrs3">Feb 2026</a></td>
-                                                <td class="text-center py-3 text-dark"
-                                                    style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+                                                <td class="py-3">
                                                     <div>Employer contribution</div>
-                                                    <div class="fs-9 text-secondary mt-1 fw-medium">Vesting
+                                                    <div class="mt-1">Vesting
                                                         (VSC)/Immediate Vesting (EMP)</div>
                                                 </td>
-                                                <td class="pe-4 py-3 text-secondary fw-medium text-center">Statement of
+                                                <td class="pe-4 py-3">Statement of
                                                     Transcation
                                                 </td>
                                             </tr>
@@ -316,68 +345,145 @@
 
                     <!-- e-Invoice -->
                     <div id="eopStmtPanelEinv" class="eop-stmt-panel d-none">
-                        <div class="border rounded-4 overflow-hidden mb-0">
-                            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div><h5 class="fw-bold text-dark mb-1">e-Invoice</h5></div>
-                            </div>
-                            <div class="table-responsive"><table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                <thead class="text-muted border-bottom" style="background-color:#f8fafc;"><tr>
-                                    <th class="ps-4 py-3 fw-semibold text-start" style="width: 35%;">Reference No. /<br><span class="fs-9 fw-normal text-secondary">Unique Identifier No.</span></th>
-                                    <th class="py-3 fw-semibold text-center" style="width: 20%;">Date</th>
-                                    <th class="py-3 fw-semibold text-center" style="width: 25%;">Invoice type</th>
-                                    <th class="pe-4 py-3 fw-semibold text-center" style="width: 10%;">Download</th>
-                                </tr></thead>
-                                <tbody>
-                                    <tr data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark"><span class="fw-semibold d-block">T012991223</span><span class="text-secondary font-monospace fs-9">DCF12390feak10231091</span></td><td class="py-3 text-center text-dark">12 Apr 2026</td><td class="py-3 text-center text-secondary">e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="eopEinvPdf1"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
-                                    <tr data-month="Apr" data-year="2026"><td class="ps-4 py-3 text-dark"><span class="fw-semibold d-block">INV-EINV-20260405-C3D4</span><span class="text-secondary font-monospace fs-9">DCF12390feak10231092</span></td><td class="py-3 text-center text-dark">05 Apr 2026</td><td class="py-3 text-center text-secondary">Self Billed e-Invoice</td><td class="pe-4 py-3 text-center"><a href="#" class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1" id="eopEinvPdf2"><i class="iconoir-download fs-9"></i> PDF</a></td></tr>
-                                </tbody>
-                            </table></div>
-                        </div>
-                    </div>
-
-                    <!-- Invoice -->
-                    <div id="eopStmtPanelInv" class="eop-stmt-panel d-none">
-                        <div class="border rounded-4 overflow-hidden mb-0">
+                        <div class="document-register border rounded-4 overflow-hidden">
                             <div
                                 class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
                                 <div>
-                                    <h5 class="fw-bold text-dark mb-1">Invoice</h5>
-
+                                    <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                            class="iconoir-filter-list me-1"></i>Filter:</span>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 130px; height: 36px;" id="eopStmtFilterMonthEinv">
+                                        <option value="all" selected>All Months</option>
+                                        <option value="Jan">January</option>
+                                        <option value="Feb">February</option>
+                                        <option value="Mar">March</option>
+                                        <option value="Apr">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">June</option>
+                                        <option value="Jul">July</option>
+                                        <option value="Aug">August</option>
+                                        <option value="Sep">September</option>
+                                        <option value="Oct">October</option>
+                                        <option value="Nov">November</option>
+                                        <option value="Dec">December</option>
+                                    </select>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 110px; height: 36px;" id="eopStmtFilterYearEinv">
+                                        <option value="all" selected>All Years</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start" style="width: 30%;">Invoice
-                                                number
+                                            <th class="ps-4 py-3">e-Invoice
+                                                No.</th>
+                                            <th class="py-3">Date</th>
+                                            <th class="py-3">Document type
                                             </th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 20%;">Date</th>
-                                            <th class="py-3 fw-semibold text-center" style="width: 30%;">Invoice type
-                                            </th>
-                                            <th class="pe-4 py-3 fw-semibold text-center" style="width: 10%;">Download
+                                            <th class="pe-4 py-3">Download
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 fw-semibold text-dark">INV-PRS-20260411-901</td>
-                                            <td class="py-3 text-center text-dark">11 Apr 2026</td>
-                                            <td class="py-3 text-center text-secondary">Invoice</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="eopInvPdf1"><i class="iconoir-download fs-9"></i> PDF</a>
+                                            <td class="ps-4 py-3"><span class="d-block">TR2600004083678</span></td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
+                                            <td class="py-3">e-Invoice</td>
+                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="eopEinvPdf1"><i
+                                                        class="iconoir-download"></i> PDF</a></td>
+                                        </tr>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3"><span class="d-block">TR2600004083679</span></td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">05 Apr 2026</td>
+                                            <td class="py-3">Self-billed e-Invoice</td>
+                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="eopEinvPdf2"><i
+                                                        class="iconoir-download"></i> PDF</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Invoice -->
+                    <div id="eopStmtPanelInv" class="eop-stmt-panel d-none">
+                        <div class="document-register border rounded-4 overflow-hidden">
+                            <div
+                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                <div>
+                                    <h5 class="fw-bold text-dark mb-1">Invoices</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                            class="iconoir-filter-list me-1"></i>Filter:</span>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 130px; height: 36px;" id="eopStmtFilterMonthInv">
+                                        <option value="all" selected>All Months</option>
+                                        <option value="Jan">January</option>
+                                        <option value="Feb">February</option>
+                                        <option value="Mar">March</option>
+                                        <option value="Apr">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">June</option>
+                                        <option value="Jul">July</option>
+                                        <option value="Aug">August</option>
+                                        <option value="Sep">September</option>
+                                        <option value="Oct">October</option>
+                                        <option value="Nov">November</option>
+                                        <option value="Dec">December</option>
+                                    </select>
+                                    <select
+                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                        style="width: 110px; height: 36px;" id="eopStmtFilterYearInv">
+                                        <option value="all" selected>All Years</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4 py-3">Invoice
+                                                No.
+                                            </th>
+                                            <th class="py-3">Date</th>
+                                            <th class="py-3">Document type
+                                            </th>
+                                            <th class="pe-4 py-3">Download
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-month="Apr" data-year="2026">
+                                            <td class="ps-4 py-3">TR2600004083680</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">11 Apr 2026</td>
+                                            <td class="py-3">Invoice</td>
+                                            <td class="pe-4 py-3">
+                                                <a href="#" class="pmo-table-link" id="eopInvPdf1"><i
+                                                        class="iconoir-download"></i> PDF</a>
                                             </td>
                                         </tr>
                                         <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-3 fw-semibold text-dark">INV-FEE-20260401-044</td>
-                                            <td class="py-3 text-center text-dark">01 Apr 2026</td>
-                                            <td class="py-3 text-center text-secondary">Credit Note</td>
-                                            <td class="pe-4 py-3 text-center">
-                                                <a href="#"
-                                                    class="btn btn-sm btn-outline-dark rounded-pill px-3 py-1 fs-10 fw-bold d-inline-flex align-items-center gap-1"
-                                                    id="eopInvPdf2"><i class="iconoir-download fs-9"></i> PDF</a>
+                                            <td class="ps-4 py-3">TR2600004083681</td>
+                                            <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                            <td class="py-3">Credit Note</td>
+                                            <td class="pe-4 py-3">
+                                                <a href="#" class="pmo-table-link" id="eopInvPdf2"><i
+                                                        class="iconoir-download"></i> PDF</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -415,8 +521,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -424,7 +529,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -509,7 +614,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -549,7 +654,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -569,23 +674,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -600,7 +705,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -794,6 +899,80 @@
 
             monthFilter.addEventListener('change', applyFilters);
             yearFilter.addEventListener('change', applyFilters);
+
+            function setupLocalFilters(monthId, yearId, panelId) {
+                var localMonthFilter = document.getElementById(monthId);
+                var localYearFilter = document.getElementById(yearId);
+                var panel = document.getElementById(panelId);
+                if (!localMonthFilter || !localYearFilter || !panel) return;
+
+                function applyLocalFilters() {
+                    var monthVal = localMonthFilter.value;
+                    var yearVal = localYearFilter.value;
+
+                    panel.querySelectorAll('tbody tr[data-month]').forEach(function (row) {
+                        var matchMonth = (monthVal === 'all' || row.getAttribute('data-month') === monthVal);
+                        var matchYear = (yearVal === 'all' || row.getAttribute('data-year') === yearVal);
+                        row.classList.toggle('d-none', !(matchMonth && matchYear));
+                    });
+
+                    var table = panel.querySelector('table');
+                    if (!table) return;
+                    var tbody = table.querySelector('tbody');
+                    var visibleRows = tbody.querySelectorAll('tr:not(.d-none):not(.no-filter-data-row)');
+                    var existingNoData = tbody.querySelector('.no-filter-data-row');
+                    if (visibleRows.length === 0 && !existingNoData) {
+                        var noDataRow = document.createElement('tr');
+                        noDataRow.className = 'no-filter-data-row';
+                        noDataRow.innerHTML = '<td colspan="' + table.querySelectorAll('thead th').length + '" class="text-center py-4 text-muted fs-8 fw-medium"><i class="iconoir-info-circle me-1"></i>No matching items found for the selected period.</td>';
+                        tbody.appendChild(noDataRow);
+                    } else if (visibleRows.length > 0 && existingNoData) {
+                        existingNoData.remove();
+                    }
+                }
+
+                localMonthFilter.addEventListener('change', applyLocalFilters);
+                localYearFilter.addEventListener('change', applyLocalFilters);
+            }
+
+            setupLocalFilters('eopStmtFilterMonthEinv', 'eopStmtFilterYearEinv', 'eopStmtPanelEinv');
+            setupLocalFilters('eopStmtFilterMonthInv', 'eopStmtFilterYearInv', 'eopStmtPanelInv');
+
+            function enableStatementRowDownloads() {
+                document.querySelectorAll('.tab-content table').forEach(function (table) {
+                    Array.from(table.querySelectorAll('thead th')).forEach(function (header, index) {
+                        if (/download|\(pdf\)/i.test(header.textContent)) {
+                            header.classList.add('d-none');
+                            table.querySelectorAll('tbody tr').forEach(function (row) {
+                                if (row.children[index]) row.children[index].classList.add('d-none');
+                            });
+                        }
+                    });
+                    table.classList.add('statement-row-downloadable');
+                    table.querySelectorAll('tbody tr:not(.no-filter-data-row)').forEach(function (row) {
+                        row.tabIndex = 0;
+                        row.setAttribute('role', 'link');
+                        row.setAttribute('aria-label', 'Download statement PDF');
+                        row.querySelector('td:first-child')?.classList.add('pmo-table-link');
+                        function downloadStatement(event) {
+                            if (event) event.preventDefault();
+                            var title = Array.from(row.querySelectorAll('td')).slice(0, 3).map(function (cell) { return cell.textContent.trim(); }).filter(Boolean).join(' — ');
+                            var blob = new Blob(['Public Mutual statement\n\n' + title + '\n'], { type: 'application/pdf' });
+                            var link = document.createElement('a');
+                            link.href = URL.createObjectURL(blob);
+                            link.download = (title || 'public-mutual-statement').replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() + '.pdf';
+                            link.click();
+                            URL.revokeObjectURL(link.href);
+                        }
+                        Array.from(row.querySelectorAll('td')).forEach(function (cell) {
+                            if (/\b\d{1,2}\s+[A-Za-z]{3}\s+\d{4}\b|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\b/.test(cell.textContent)) cell.classList.add('statement-download-date');
+                        });
+                        row.addEventListener('click', downloadStatement);
+                        row.addEventListener('keydown', function (event) { if (event.key === 'Enter' || event.key === ' ') downloadStatement(event); });
+                    });
+                });
+            }
+            enableStatementRowDownloads();
 
             document.querySelectorAll('#eopStmtCollapsePrsTxn, #eopStmtCollapseMonthly').forEach(function (collapseEl) {
                 var headerButton = document.querySelector('[data-bs-target="#' + collapseEl.id + '"]');

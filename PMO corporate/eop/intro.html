@@ -236,6 +236,8 @@
             overflow: hidden;
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop-intro"
@@ -684,44 +686,43 @@
                                 </button>
                             </div>
                             <div class="card-body p-4">
-                                <div class="table-responsive">
-                                    <table class="table table-hover align-middle mb-0 custom-table">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
                                         <thead>
                                             <tr>
                                                 <th class="ps-4 py-3">Batch Ref</th>
                                                 <th class="py-3">Type</th>
                                                 <th class="py-3">Employees</th>
-                                                <th class="py-3 text-end">Total Allocation</th>
-                                                <th class="py-3 text-center">Status</th>
-                                                <th class="pe-4 py-3 text-center">Actions</th>
+                                                <th class="py-3">Total Allocation</th>
+                                                <th class="py-3">Status</th>
+                                                <th class="pe-4 py-3">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="ps-4 py-3 text-dark fs-8">RC00000000000808</td>
-                                                <td class="fs-8">EPF Match</td>
-                                                <td class="fs-8">42 Staff</td>
-                                                <td class="text-end fw-semibold fs-8">MYR42,500.00</td>
-                                                <td class="text-center"><span
-                                                        class="badge bg-warning bg-opacity-25 text-warning px-2.5 py-1 rounded fs-9 fw-bold">Pending
+                                                <td class="ps-4 py-3">RC00000000000808</td>
+                                                <td>EPF Match</td>
+                                                <td>42 Staff</td>
+                                                <td>MYR42,500.00</td>
+                                                <td><span
+                                                        class="badge bg-warning bg-opacity-25 text-warning px-2.5 py-1 rounded">Pending
                                                         Prepare</span></td>
-                                                <td class="pe-4 text-center">
+                                                <td class="pe-4">
                                                     <button
-                                                        class="btn btn-link text-decoration-none p-0 text-primary fs-8 fw-bold">Prepare
+                                                        class="btn btn-link text-decoration-none p-0 text-primary">Prepare
                                                         Allocation</button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="ps-4 py-3 text-dark fs-8 text-muted">EOP-2026-04B</td>
-                                                <td class="fs-8 text-muted">PRS Match</td>
-                                                <td class="fs-8 text-muted">35 Staff</td>
-                                                <td class="text-end fw-semibold fs-8 text-muted">MYR17,500.00</td>
-                                                <td class="text-center"><span
-                                                        class="badge bg-success bg-opacity-25 text-success px-2.5 py-1 rounded fs-9 fw-bold">Reconciled</span>
+                                                <td class="ps-4 py-3">EOP-2026-04B</td>
+                                                <td>PRS Match</td>
+                                                <td>35 Staff</td>
+                                                <td>MYR17,500.00</td>
+                                                <td><span
+                                                        class="badge bg-success bg-opacity-25 text-success px-2.5 py-1 rounded">Reconciled</span>
                                                 </td>
-                                                <td class="pe-4 text-center">
-                                                    <button
-                                                        class="btn btn-link text-decoration-none p-0 text-muted fs-8 fw-semibold">View
+                                                <td class="pe-4">
+                                                    <button class="btn btn-link text-decoration-none p-0">View
                                                         Invoice</button>
                                                 </td>
                                             </tr>
@@ -818,8 +819,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -827,7 +827,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -912,7 +912,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -952,7 +952,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -972,23 +972,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -1003,7 +1003,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

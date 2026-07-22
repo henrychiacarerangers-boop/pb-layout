@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate PMO Portal — EOP · Authorise contribution</title>
+    <title>Corporate PMO Portal — EOP · Authorise Contribution</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/montserrat.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/iconoir.css">
@@ -89,6 +89,8 @@
             outline: none !important;
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -228,8 +230,7 @@
                             <span class="text-secondary fw-medium" id="eopAuthDetailHeaderRef">RC00000000000124</span>
                             <span class="text-primary" id="eopAuthDetailHeaderContrib">Salary Deduction (IND)</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopAuthDetailActionType">Authorise
-                            Contribution</span>
+
 
                     </div>
                 </div>
@@ -282,24 +283,24 @@
                                 class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
                                 <span>Request Overview</span>
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="eopAuthDetailRef">—</td>
+                                        <tr>
+                                            <td>Reference No.</td>
+                                            <td id="eopAuthDetailRef">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Scheme type</td>
-                                            <td class="text-dark" id="eopAuthDetailscheme">—</td>
+                                        <tr>
+                                            <td>Scheme type</td>
+                                            <td id="eopAuthDetailscheme">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Request Date &amp; Time</td>
-                                            <td class="text-dark" id="eopAuthDetailPreparedDt">—</td>
+                                        <tr>
+                                            <td>Request Date &amp; Time</td>
+                                            <td id="eopAuthDetailPreparedDt">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Prepared By</td>
-                                            <td class="text-dark" id="eopAuthDetailPreparer">—</td>
+                                        <tr>
+                                            <td>Prepared By</td>
+                                            <td id="eopAuthDetailPreparer">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -308,20 +309,20 @@
                             <!-- Section 2: Contribution & Amount Details -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
                             </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width:35%;">Contribution type</td>
-                                            <td class="text-dark" id="eopAuthDetailContribType">—</td>
+                                        <tr>
+                                            <td>Contribution type</td>
+                                            <td id="eopAuthDetailContribType">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">No. of Employees</td>
-                                            <td class="text-dark" id="eopAuthDetailEmpCount">—</td>
+                                        <tr>
+                                            <td>No. of Employees</td>
+                                            <td id="eopAuthDetailEmpCount">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Total Amount (MYR)</td>
-                                            <td class="fw-semibold text-success fs-6" id="eopAuthDetailAmount">—</td>
+                                        <tr>
+                                            <td>Total Amount (MYR)</td>
+                                            <td class="text-success" id="eopAuthDetailAmount">—</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -334,20 +335,20 @@
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopAuthDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive mb-4" style="max-height: 380px; overflow-y: auto;">
-                                <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                    <thead class="text-muted border-bottom sticky-top bg-white"
-                                        style="z-index: 2; top: -1px;">
+                            <div class="table-responsive mb-4 pmo-table-frame"
+                                style="max-height: 380px; overflow-y: auto;">
+                                <table class="pmo-data-table">
+                                    <thead class="sticky-top bg-white">
                                         <tr>
-                                            <th class="ps-3 py-3 fw-semibold" style="width:30%;">Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">NRIC No.</th>
-                                            <th class="py-3 fw-semibold" style="width:15%;">Fund Name</th>
-                                            <th class="py-3 fw-semibold" style="width:20%;">Contribution Type</th>
-                                            <th class="pe-3 py-3 fw-semibold text-end" style="width:15%;">Amount (MYR)
+                                            <th class="ps-3 py-3">Name</th>
+                                            <th class="py-3">NRIC No.</th>
+                                            <th class="py-3">Fund Name</th>
+                                            <th class="py-3">Contribution Type</th>
+                                            <th class="pe-3 py-3">Amount (MYR)
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium fs-8" id="eopAuthDetailTbody">
+                                    <tbody id="eopAuthDetailTbody">
                                         <!-- Will be populated dynamically by JavaScript -->
                                     </tbody>
                                 </table>
@@ -589,8 +590,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -598,7 +598,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -683,7 +683,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -723,7 +723,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -743,23 +743,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -774,7 +774,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

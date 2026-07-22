@@ -61,6 +61,8 @@
             transform: scale(1.15);
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="analytics"
@@ -353,306 +355,285 @@
                         <!-- </div> -->
                         <!-- Performance Table Card -->
                         <div class="border rounded-4 overflow-hidden mb-4">
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle mb-0 custom-table text-center fs-8">
-                                    <thead class="text-muted border-bottom" style="background-color: #f8fafc;">
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table">
+                                    <thead>
                                         <tr>
-                                            <th class="ps-4 py-3 fw-semibold text-start align-middle"
-                                                style="width: 32%;">
+                                            <th class="ps-4 py-3">
                                                 Fund</th>
-                                            <th class="py-3 fw-semibold align-middle" style="width: 14%;">
+                                            <th class="py-3">
                                                 Performance<br>Date</th>
-                                            <th class="py-2 fw-semibold border-start border-end" colspan="2"
-                                                style="width: 18%; background-color: #f1f5f9;">3-Year Volatility</th>
-                                            <th class="py-2 fw-semibold border-end" colspan="2"
-                                                style="width: 14%; background-color: #f1f5f9;">Returns %</th>
-                                            <th class="py-2 fw-semibold" colspan="3"
-                                                style="width: 18%; background-color: #f1f5f9;">Annualised Returns (%)
+                                            <th class="py-2" colspan="2">3-Year Volatility</th>
+                                            <th class="py-2" colspan="2">Returns %</th>
+                                            <th class="py-2" colspan="3">Annualised Returns (%)
                                             </th>
-                                            <th class="pe-4 py-3 fw-semibold align-middle" style="width: 4%;">Action
+                                            <th class="pe-4 py-3">Action
                                             </th>
                                         </tr>
-                                        <tr class="border-bottom" style="font-size: 0.75rem;">
+                                        <tr>
                                             <th></th>
                                             <th></th>
-                                            <th class="py-2 border-start text-secondary fw-medium">Factor</th>
-                                            <th class="py-2 border-end text-secondary fw-medium">Class</th>
-                                            <th class="py-2 text-secondary fw-medium">YTD</th>
-                                            <th class="py-2 border-end text-secondary fw-medium">1-Y</th>
-                                            <th class="py-2 text-secondary fw-medium">3-Y</th>
-                                            <th class="py-2 text-secondary fw-medium">5-Y</th>
-                                            <th class="py-2 text-secondary fw-medium">10-Y</th>
+                                            <th class="py-2">Factor</th>
+                                            <th class="py-2">Class</th>
+                                            <th class="py-2">YTD</th>
+                                            <th class="py-2">1-Y</th>
+                                            <th class="py-2">3-Y</th>
+                                            <th class="py-2">5-Y</th>
+                                            <th class="py-2">10-Y</th>
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-dark fw-medium">
+                                    <tbody>
                                         <!-- Row 1 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-ISEQF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             ISLAMIC STRATEGIC EQUITY</a>
-                                                        <span class="text-muted d-block"
+                                                        <span class="d-block"
                                                             style="font-size: 0.7rem;">PRS-ISEQF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">69.69</td>
-                                            <td class="border-end text-success fw-semibold">123.71</td>
-                                            <td class="text-success fw-semibold">35.34</td>
-                                            <td class="text-success fw-semibold">15.37</td>
-                                            <td class="text-success fw-semibold">13.55</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">69.69</td>
+                                            <td class="text-success">123.71</td>
+                                            <td class="text-success">35.34</td>
+                                            <td class="text-success">15.37</td>
+                                            <td class="text-success">13.55</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 2 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-IGRF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             ISLAMIC GROWTH</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-IGRF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-IGRF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">44.62</td>
-                                            <td class="border-end text-success fw-semibold">75.08</td>
-                                            <td class="text-success fw-semibold">26.96</td>
-                                            <td class="text-success fw-semibold">12.41</td>
-                                            <td class="text-success fw-semibold">11.64</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">44.62</td>
+                                            <td class="text-success">75.08</td>
+                                            <td class="text-success">26.96</td>
+                                            <td class="text-success">12.41</td>
+                                            <td class="text-success">11.64</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 3 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-MDF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             MODERATE</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-MDF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-MDF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">29.78</td>
-                                            <td class="border-end text-success fw-semibold">49.48</td>
-                                            <td class="text-success fw-semibold">21.28</td>
-                                            <td class="text-success fw-semibold">9.69</td>
-                                            <td class="text-success fw-semibold">8.03</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">29.78</td>
+                                            <td class="text-success">49.48</td>
+                                            <td class="text-success">21.28</td>
+                                            <td class="text-success">9.69</td>
+                                            <td class="text-success">8.03</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 4 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-GRF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             GROWTH</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-GRF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-GRF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">23.44</td>
-                                            <td class="border-end text-success fw-semibold">43.95</td>
-                                            <td class="text-success fw-semibold">16.38</td>
-                                            <td class="text-success fw-semibold">4.73</td>
-                                            <td class="text-success fw-semibold">6.10</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">23.44</td>
+                                            <td class="text-success">43.95</td>
+                                            <td class="text-success">16.38</td>
+                                            <td class="text-success">4.73</td>
+                                            <td class="text-success">6.10</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 5 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-SEQF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             STRATEGIC EQUITY</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-SEQF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-SEQF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">22.72</td>
-                                            <td class="border-end text-success fw-semibold">35.68</td>
-                                            <td class="text-success fw-semibold">12.78</td>
-                                            <td class="text-success fw-semibold">4.46</td>
-                                            <td class="text-success fw-semibold">7.38</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">22.72</td>
+                                            <td class="text-success">35.68</td>
+                                            <td class="text-success">12.78</td>
+                                            <td class="text-success">4.46</td>
+                                            <td class="text-success">7.38</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 6 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-IMDF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             ISLAMIC MODERATE</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-IMDF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-IMDF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">10.04</td>
-                                            <td class="border-end text-success fw-semibold">24.87</td>
-                                            <td class="text-success fw-semibold">10.85</td>
-                                            <td class="text-success fw-semibold">3.03</td>
-                                            <td class="text-success fw-semibold">5.42</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">10.04</td>
+                                            <td class="text-success">24.87</td>
+                                            <td class="text-success">10.85</td>
+                                            <td class="text-success">3.03</td>
+                                            <td class="text-success">5.42</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 7 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-EQF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             EQUITY</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-EQF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-EQF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">8.07</td>
-                                            <td class="border-end text-success fw-semibold">18.25</td>
-                                            <td class="text-success fw-semibold">14.30</td>
-                                            <td class="text-success fw-semibold">8.29</td>
-                                            <td class="text-success fw-semibold">8.60</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">8.07</td>
+                                            <td class="text-success">18.25</td>
+                                            <td class="text-success">14.30</td>
+                                            <td class="text-success">8.29</td>
+                                            <td class="text-success">8.60</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 8 -->
-                                        <tr class="border-bottom">
-                                            <td class="ps-4 py-3 text-start">
+                                        <tr>
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-CVF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             CONSERVATIVE</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-CVF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-CVF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">7.73</td>
-                                            <td class="border-end text-success fw-semibold">12.03</td>
-                                            <td class="text-success fw-semibold">7.11</td>
-                                            <td class="text-success fw-semibold">4.70</td>
-                                            <td class="text-success fw-semibold">5.11</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">7.73</td>
+                                            <td class="text-success">12.03</td>
+                                            <td class="text-success">7.11</td>
+                                            <td class="text-success">4.70</td>
+                                            <td class="text-success">5.11</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
 
                                         <!-- Row 9 -->
                                         <tr>
-                                            <td class="ps-4 py-3 text-start">
+                                            <td class="ps-4 py-3">
                                                 <div class="d-flex align-items-center gap-2">
-                                                    <i class="iconoir-star favourite-star text-muted fs-5"
+                                                    <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="../eop/prs_fund_detail.html?code=PRS-ICVF"
-                                                            class="text-decoration-none text-primary text-uppercase d-block mb-1 fw-bold"
-                                                            style="font-size: 0.8rem; letter-spacing: 0.1px; line-height: 1.3;">PRS
+                                                            class="text-uppercase mb-1 pmo-table-link">PRS
                                                             ISLAMIC CONSERVATIVE</a>
-                                                        <span class="text-muted d-block"
-                                                            style="font-size: 0.7rem;">PRS-ICVF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRS-ICVF</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-muted">26/05/2026</td>
-                                            <td class="border-start fw-normal text-muted">-</td>
-                                            <td class="border-end text-muted fw-normal">-</td>
-                                            <td class="text-success fw-semibold">5.49</td>
-                                            <td class="border-end text-success fw-semibold">8.36</td>
-                                            <td class="text-success fw-semibold">6.97</td>
-                                            <td class="text-success fw-semibold">4.20</td>
-                                            <td class="text-success fw-semibold">4.48</td>
-                                            <td class="pe-4 text-center">
-                                                <a href="#" class="table-action-btn"><i
-                                                        class="iconoir-more-horiz fs-4"></i></a>
+                                            <td class="pmo-table-meta pmo-table-date">26/05/2026</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td class="text-success">5.49</td>
+                                            <td class="text-success">8.36</td>
+                                            <td class="text-success">6.97</td>
+                                            <td class="text-success">4.20</td>
+                                            <td class="text-success">4.48</td>
+                                            <td class="pe-4">
+                                                <a href="#" class="pmo-table-link"><i
+                                                        class="iconoir-more-horiz"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -736,12 +717,11 @@
 
     </div>
     <div id="pmoShellSidebarMount">
-        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1" id="analyticsSidebarOffcanvas"
-            aria-labelledby="analyticsSidebarUserName">
+        <div class="offcanvas offcanvas-start custom-sidebar border-end-0 shadow" tabindex="-1"
+            id="analyticsSidebarOffcanvas" aria-labelledby="analyticsSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -749,7 +729,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="analyticsSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -834,7 +814,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -874,7 +854,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -894,23 +874,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -925,7 +905,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -1057,7 +1037,7 @@
                 });
             });
 
-            document.querySelectorAll('.prs-analytics-table .prs-analytics-demo-dd').forEach(function (item) {
+            document.querySelectorAll('.pmo-data-table .prs-analytics-demo-dd').forEach(function (item) {
                 item.addEventListener('click', function (e) {
                     e.preventDefault();
                 });

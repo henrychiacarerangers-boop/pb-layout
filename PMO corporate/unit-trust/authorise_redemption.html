@@ -83,6 +83,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
@@ -274,61 +276,50 @@
                         <div class="card-body p-4">
                             <h5
                                 class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
-                                <span>Request Overview</span>
+                                <span>Request Overview &amp; Redemption Details</span>
                             </h5>
 
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
+                            <div class="table-responsive mb-4 pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Reference No.</td>
-                                            <td class="fw-bold text-dark" id="refNoDisplay">RP26000000000179</td>
+                                        <tr>
+                                            <td>Reference No.</td>
+                                            <td id="refNoDisplay">RP26000000000179</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Request Date & Time</td>
-                                            <td class="text-dark" id="requestDateDisplay">2026/04/05 11:30:15</td>
+                                        <tr>
+                                            <td>Request Date &amp; Time</td>
+                                            <td id="requestDateDisplay" class="pmo-table-date">2026/04/05 11:30:15</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Fund Name</td>
-                                            <td class="text-dark fw-bold" id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
+                                        <tr>
+                                            <td>Fund Name</td>
+                                            <td id="fundNameDisplay">PUBLIC e-CASH DEPOSIT -
                                                 CLASS B</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Account Number</td>
-                                            <td class="text-primary" id="accountDisplay">0193922094</td>
+                                        <tr>
+                                            <td>Account Number</td>
+                                            <td class="pmo-table-primary" id="accountDisplay">0193922094</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Payout Account</td>
-                                            <td class="text-dark" id="payoutAccountDisplay">PUBLIC BANK BERHAD
+                                        <tr>
+                                            <td>Payout Account</td>
+                                            <td id="payoutAccountDisplay">PUBLIC BANK BERHAD
                                                 (891823092391)</td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Redemption &amp; Unit Details
-                            </h5>
-                            <div class="table-responsive mb-4">
-                                <table class="table align-middle custom-table-details mb-0">
-                                    <tbody>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold" style="width: 35%;">Current Unit Balance
-                                            </td>
-                                            <td class="fw-semibold text-dark" id="totalUnitsDisplay">—</td>
+                                        <tr>
+                                            <td>Current Unit Balance</td>
+                                            <td id="totalUnitsDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Redemption Units</td>
-                                            <td class="fw-semibold text-dark" id="redeemUnitsDisplay">—</td>
+                                        <tr>
+                                            <td>Redemption Units</td>
+                                            <td id="redeemUnitsDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Remaining Units</td>
-                                            <td class="fw-semibold text-dark" id="afterRedeemDisplay">—</td>
+                                        <tr>
+                                            <td>Remaining Units</td>
+                                            <td id="afterRedeemDisplay">—</td>
                                         </tr>
-                                        <tr class="border-bottom">
-                                            <td class="text-muted fw-semibold">Estimated Payout Value</td>
-                                            <td class="fw-semibold text-danger fs-6" id="payoutValueDisplay">—</td>
+                                        <tr>
+                                            <td>Estimated Payout Value</td>
+                                            <td class="text-danger" id="payoutValueDisplay">—</td>
                                         </tr>
-                                    </tbody>
                                     </tbody>
                                 </table>
                             </div>
@@ -392,7 +383,7 @@
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
                                 <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Transaction Category</div>
-                                    <div class="fw-bold fs-8 text-dark">Redemption Request (Unit-based)</div>
+                                    <div class="fw-bold fs-8 text-dark">Redemption Request</div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Initiator</div>
@@ -427,7 +418,7 @@
                                 I have read and agreed to the <a href="#"
                                     class="text-danger fw-bold text-decoration-none"
                                     style="color: var(--brand-red, #ff1700) !important;">Terms and Conditions of Unit
-                                    Trust Investment</a> and hereby authorise this transaction.
+                                    Trust Redemption</a> and hereby authorise this transaction.
                             </label>
                         </div>
                         <div class="invalid-feedback d-none mt-1" id="utAuthTermsError"
@@ -467,9 +458,7 @@
 
                             <div class="text-center mb-5">
                                 <h3 class="fw-bold text-dark mb-2" id="statusMainTitle">Redemption Request Approved</h3>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 500px;" id="statusSubTitle">
-                                    The redemption transaction has been successfully approved. Payout process will be
-                                    executed automatically.</p>
+
                             </div>
 
                             <!-- Dual Column Premium layout, matching top_up.html and redemption.html -->
@@ -582,8 +571,7 @@
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -591,7 +579,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -676,7 +664,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -716,7 +704,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -736,23 +724,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -767,7 +755,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -1096,9 +1084,7 @@
                 statusIcon.className = approved ? 'iconoir-check text-white' : 'iconoir-xmark text-white';
                 statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Rejected';
                 statusMainTitle.className = 'fw-bold text-dark mb-2';
-                statusSubTitle.textContent = approved
-                    ? 'The redemption transaction has been successfully approved and authorised. Payout processing is underway.'
-                    : 'This redemption request has been rejected. It has been sent back to the initiator with your remarks.';
+
                 doneStatusText.textContent = approved ? 'Approved (Pending Payout)' : 'Rejected';
                 doneStatusText.className = approved
                     ? 'bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7'

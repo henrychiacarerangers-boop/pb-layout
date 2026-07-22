@@ -1,5 +1,12 @@
 # Agent Rules
 
+## Required frontend design skill
+
+For landing pages, portfolios, and redesigns, always read and apply
+`.agents/skills/design-taste-frontend/SKILL.md` before making design or frontend
+implementation decisions. Follow its brief inference, design read, dial-setting,
+and pre-flight review process while respecting the project design system below.
+
 ---
 description: Enforces the "Pro Max" premium corporate design system rules, color palettes, Montserrat typography, and button/card curves.
 globs: ["**/*.html", "**/*.css"]

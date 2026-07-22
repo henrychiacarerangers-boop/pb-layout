@@ -16,6 +16,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -226,40 +228,38 @@
                     </div>
 
                     <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0 custom-table fs-8">
-                                <thead class="text-muted border-bottom" style="background-color:#f8fafc;">
+                        <div class="table-responsive pmo-table-frame">
+                            <table class="pmo-data-table">
+                                <thead>
                                     <tr>
-                                        <th class="ps-4 py-3 fw-semibold text-start" style="width: 25%;">Invoice number
+                                        <th class="ps-4 py-3">Invoice No.
                                         </th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 20%;">Date</th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 25%;">Invoice type</th>
-                                        <th class="py-3 fw-semibold text-start" style="width: 10%;">Status</th>
-                                        <th class="pe-4 py-3 fw-semibold text-end" style="width: 8%;">PDF</th>
+                                        <th class="py-3">Date</th>
+                                        <th class="py-3">Document type</th>
+                                        <th class="py-3">Status</th>
+                                        <th class="pe-4 py-3">PDF</th>
                                     </tr>
                                 </thead>
                                 <tbody id="eopInvTableBody">
                                     <tr>
-                                        <td class="ps-4 py-3 fw-semibold text-dark">INV-PRS-20260411-901</td>
-                                        <td class="py-3 text-dark">11 Apr 2026</td>
-                                        <td class="py-3 text-secondary">Invoice</td>
-                                        <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                        <td class="ps-4 py-3">TR2600004083680</td>
+                                        <td class="py-3 pmo-table-meta pmo-table-date">11 Apr 2026</td>
+                                        <td class="py-3">Invoice</td>
+                                        <td class="py-3"><span class="badge rounded-pill"
                                                 style="background-color:#e8f5e9;color:#12a833;">Paid</span></td>
-                                        <td class="pe-4 py-3 text-end">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                        <td class="pe-4 py-3">
+                                            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                 style="transition: all 0.3s ease;" id="eopInvRowPdf1">View</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="ps-4 py-3 fw-semibold text-dark">INV-FEE-20260401-044</td>
-                                        <td class="py-3 text-dark">01 Apr 2026</td>
-                                        <td class="py-3 text-secondary">Credit Note</td>
-                                        <td class="py-3"><span class="badge rounded-pill fs-9 fw-semibold"
+                                        <td class="ps-4 py-3">TR2600004083681</td>
+                                        <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                        <td class="py-3">Credit Note</td>
+                                        <td class="py-3"><span class="badge rounded-pill"
                                                 style="background-color:#fff8e1;color:#ce7226;">Open</span></td>
-                                        <td class="pe-4 py-3 text-end">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-dark rounded-pill fs-9 fw-semibold px-3"
+                                        <td class="pe-4 py-3">
+                                            <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3"
                                                 style="transition: all 0.3s ease;" id="eopInvRowPdf2">View</button>
                                         </td>
                                     </tr>
@@ -308,8 +308,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -317,7 +316,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -402,7 +401,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -442,7 +441,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -462,23 +461,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -493,7 +492,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

@@ -201,54 +201,6 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
     border-color: rgba(237, 28, 36, 0.35) !important;
 }
 
-/* Custom Table Global Standardization */
-.custom-table {
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    width: 100% !important;
-}
-
-.custom-table thead {
-    background-color: #f8fafc !important;
-}
-
-.custom-table thead th {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.75rem !important;
-    /* fs-8 equivalence */
-    font-weight: 600 !important;
-    /* fw-semibold equivalence */
-    color: var(--ui-support) !important;
-    /* text-muted matching */
-    text-transform: none !important;
-    padding: 14px 16px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-    border-top: none !important;
-    vertical-align: middle !important;
-}
-
-.custom-table tbody tr {
-    transition: all 0.2s ease !important;
-}
-
-.custom-table tbody tr:hover {
-    background-color: rgba(38, 36, 123, 0.02) !important;
-    /* Subtle blue-gray tint on hover */
-}
-
-.custom-table tbody td,
-.custom-table tbody th {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.75rem !important;
-    /* fs-8 equivalence */
-    font-weight: 500 !important;
-    /* fw-medium equivalence */
-    color: var(--text-primary) !important;
-    /* text-dark matching */
-    padding: 10px 10px !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
-    vertical-align: middle !important;
-}
 
 /* Ensure borders are rounded and clean inside standard cards */
 .card .table-responsive,
@@ -517,74 +469,12 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 .portal-sidebar-profile-card {
     position: relative;
     overflow: hidden;
-    border-radius: 15px !important;
-    padding: 1.15rem 1.25rem 1.2rem 1.35rem;
-    font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    border: 1px solid #dce3e8;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
 }
 
-.portal-sidebar-profile-card:hover {
-    box-shadow: 0 12px 34px rgba(38, 36, 123, 0.1);
-    border-color: rgba(38, 36, 123, 0.12);
-}
+
 
 /* One red spine — brand cue only */
-.portal-sidebar-profile-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #ff1700;
-    border-radius: 15px 0 0 15px;
-    z-index: 0;
-}
 
-.portal-sidebar-profile-card>* {
-    position: relative;
-    z-index: 1;
-}
-
-/* HTML still uses .text-white-50 — must override for white card */
-.portal-sidebar-profile-card .text-white-50 {
-    color: #58595b !important;
-}
-
-.portal-sidebar-profile-card>div:first-child {
-    letter-spacing: 0.1em;
-    color: #58595b !important;
-    font-weight: 600 !important;
-}
-
-.portal-sidebar-profile-card>div:first-child::after {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 2px;
-    margin-top: 0.45rem;
-    background: #ff1700;
-    border-radius: 1px;
-}
-
-.portal-sidebar-profile-card .profile-name {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #002e77 !important;
-    letter-spacing: -0.02em;
-}
-
-/* Role pill — light grey field, navy text */
-.portal-sidebar-profile-card .badge.bg-white {
-    border: 1px solid #dce3e8 !important;
-    color: #002e77 !important;
-    background-color: #f4f7f9 !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease;
-}
 
 /* EOP SPA: active item inside collapse — keep submenu compact (no full-width gradient) */
 .eop-sidebar-offcanvas .sidebar-nav .collapse .nav-link.active {
