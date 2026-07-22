@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /** Make contribution — salary vs employer tables + CSV download/import */
+    /** Make Contribution — salary vs employer tables + CSV download/import */
     let eopMakeResetTables = null;
     (function initEopMakeContribution() {
         const tabSalary = document.getElementById('eopMakeTabSalary');
