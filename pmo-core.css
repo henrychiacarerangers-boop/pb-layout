@@ -1,0 +1,137 @@
+/*
+ * PMO Core
+ * Shared visual tokens and stable component contracts for PMO, PMO Corporate,
+ * UTC, and the Corporate Website. Shell layouts remain in their local CSS.
+ */
+
+:root {
+    --brand-primary: #ff1700;
+    --brand-primary-hover: #ac1117;
+    --brand-navy: #002e77;
+    --action-primary: #002e77;
+    --text-primary: #16161a;
+    --text-secondary: #48484b;
+    --text-muted: #5f6f86;
+    --surface: #ffffff;
+    --surface-subtle: #f8fafc;
+    --line-subtle: #e8eef5;
+    --success: #15803d;
+    --warning: #a16207;
+    --danger: #b42318;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 999px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --shadow-sm: 0 4px 12px rgba(15, 40, 78, 0.04);
+    --shadow-md: 0 8px 24px rgba(15, 40, 78, 0.08);
+    --motion-fast: 160ms ease;
+    --motion-standard: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Alert / status component */
+.badge-alert {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+    padding: 8px 14px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.badge-alert i { font-size: 1.1em; }
+.badge-alert-solid-danger { color: #ffffff; background: var(--brand-primary); }
+.badge-alert-solid-success { color: #064e1b; background: #bbf7c5; }
+.badge-alert-solid-warning { color: #713f12; background: #fed7aa; }
+.badge-alert-solid-secondary { color: var(--text-primary); background: #f1f5f9; }
+.badge-alert-solid-primary { color: var(--brand-navy); background: #eaf2ff; }
+.badge-alert-outline-danger { color: var(--danger); border-color: var(--danger); background: #fff1f2; }
+.badge-alert-outline-success { color: var(--success); border-color: var(--success); background: #f0fdf4; }
+.badge-alert-outline-warning { color: var(--warning); border-color: var(--warning); background: #fffbeb; }
+.badge-alert-outline-secondary { color: var(--text-secondary); border-color: #94a3b8; background: #f8fafc; }
+.badge-alert-outline-primary { color: var(--brand-navy); border-color: var(--brand-navy); background: #eff6ff; }
+
+/* Secondary view tabs */
+.view-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0 0 8px;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color var(--motion-fast), border-color var(--motion-fast);
+}
+
+.view-tab:hover,
+.view-tab:focus-visible,
+.view-tab.active,
+.view-tab[aria-current="page"],
+.view-tab[aria-selected="true"] {
+    color: var(--brand-primary);
+}
+
+.view-tab.active,
+.view-tab[aria-current="page"],
+.view-tab[aria-selected="true"] { border-bottom-color: currentColor; }
+.view-tab[aria-disabled="true"],
+.view-tab:disabled { pointer-events: none; opacity: 0.5; }
+
+/* Segmented gateway controls */
+.gateway-tabs {
+    display: flex;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    border: 1px solid rgba(15, 40, 78, 0.08);
+    border-radius: 12px;
+    background: #f1f3f5;
+}
+
+.gateway-tab-btn {
+    flex: 1;
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    color: #495057;
+    background: transparent;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: color var(--motion-fast), background-color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.gateway-tab-btn:hover:not(.active):not(:disabled) { color: var(--brand-primary); }
+.gateway-tab-btn.active,
+.gateway-tab-btn[aria-selected="true"] {
+    color: var(--brand-navy);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+.gateway-tab-btn:disabled,
+.gateway-tab-btn[aria-disabled="true"] { cursor: not-allowed; opacity: 0.5; }
+
+/* Table contract marker. table-system.css remains the sole presentation layer. */
+.pmo-data-table {
+    --pmo-component: data-table;
+}
+
+/* Compatibility aliases: do not introduce these in new markup. */
+.custom-table { --pmo-component: data-table-legacy; }
+.mini-table { --pmo-component: compact-table-legacy; }
+
+@media (prefers-reduced-motion: reduce) {
+    .view-tab,
+    .gateway-tab-btn { transition: none; }
+}

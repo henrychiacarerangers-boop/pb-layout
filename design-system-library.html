@@ -1335,8 +1335,8 @@
                             <h2>Reusable UI inventory</h2>
                         </div>
                         <p class="section-note">
-                            These components already exist in the website through Bootstrap overrides and custom
-                            classes. They should become the formal source library.
+                            Shared primitives now live in <code>pmo-core.css</code>; shell stylesheets retain only
+                            portal layout and page-specific modifiers.
                         </p>
                     </div>
                     <div class="grid three">
@@ -1838,10 +1838,15 @@
                             <tbody>
                                 <tr>
                                     <td><a class="source-link"
+                                            href="pmo-core.css"><code>pmo-core.css</code></a>
+                                    </td>
+                                    <td>Canonical tokens plus the shared badge, view-tab, and gateway-tab component contracts.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
                                             href="PMO corporate/css/styles.css"><code>PMO corporate/css/styles.css</code></a>
                                     </td>
-                                    <td>Global tokens, login shell, badges, cards, hero, marketing, and background
-                                        utilities.</td>
+                                    <td>Corporate shell, login, cards, hero, marketing, and background utilities.</td>
                                 </tr>
                                 <tr>
                                     <td><a class="source-link"

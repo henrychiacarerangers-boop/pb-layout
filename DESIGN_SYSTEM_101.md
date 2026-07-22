@@ -30,6 +30,7 @@ Across these shells, the visual language is shared:
 
 ### 2.1 Color Tokens
 
+The canonical tokens are defined in the root-level `pmo-core.css`; local shell styles only add shell-specific rules.
 The codebase repeatedly uses these core colors:
 
 | Token | Value | Meaning |
@@ -548,9 +549,10 @@ These are page-level blueprints:
 
 ### 5.5 Governance
 
-If this were a mature design system, the rules would be:
+The current shared component source is `pmo-core.css`, with `table-system.css` as the sole table-presentation source.
+The rules are:
 
-- One token source of truth
+- One token source of truth: `pmo-core.css`
 - One name for each pattern
 - Variants documented before use
 - Page-specific styling should be minimized
@@ -581,13 +583,11 @@ These are the main consolidation opportunities I see:
 
 If I were to normalize this into a design system, I would group it like this:
 
-- `foundation/`
+- `pmo-core.css` — foundation tokens, `badge-alert`, `view-tab`, `gateway-tab-btn`
+- `table-system.css` — `pmo-data-table` presentation and variants
 - `components/button`
 - `components/input`
 - `components/card`
-- `components/badge`
-- `components/table`
-- `components/tab`
 - `components/alert`
 - `components/stepper`
 - `components/toast`
@@ -619,4 +619,3 @@ If you only want the shortest possible map:
 - [`PMO corporate/index.html`](/Users/henrychia/Desktop/PB%20design/Public%20Mutual/PMO%20corporate/index.html)
 - [`PMO corporate/unit-trust/dashboard.html`](/Users/henrychia/Desktop/PB%20design/Public%20Mutual/PMO%20corporate/unit-trust/dashboard.html)
 - [`PMO corporate/eop/dashboard.html`](/Users/henrychia/Desktop/PB%20design/Public%20Mutual/PMO%20corporate/eop/dashboard.html)
-
