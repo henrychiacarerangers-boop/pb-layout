@@ -302,22 +302,141 @@
         const nav = mount.querySelector("ul.sidebar-nav");
         if (!nav) return;
 
+        function activateMainLink(link) {
+            link.classList.add("active");
+            link.classList.remove("text-dark");
+            const sp = link.querySelector("span.fw-medium");
+            if (sp) {
+                sp.classList.remove("fw-medium");
+                sp.classList.add("fw-semibold");
+            }
+            link.querySelectorAll("i.text-dark").forEach((ico) => {
+                ico.classList.remove("text-dark");
+            });
+        }
+
+        function deactivateMainLink(link) {
+            link.classList.remove("active");
+            link.classList.add("text-dark");
+            const sp = link.querySelector("span.fw-semibold");
+            if (sp) {
+                sp.classList.remove("fw-semibold");
+                sp.classList.add("fw-medium");
+            }
+            link.querySelectorAll("i.fs-5").forEach((ico) => {
+                ico.classList.add("text-dark");
+            });
+        }
+
         nav.querySelectorAll("a.nav-link.rounded-3[href]").forEach((a) => {
             const h = a.getAttribute("href");
             if (!h || h.startsWith("#") || a.getAttribute("data-bs-toggle") === "collapse") return;
-            const file = h.split("/").pop().split("?")[0];
-            if (file === currentPage) {
-                a.classList.add("active");
-                a.classList.remove("text-dark");
-                const sp = a.querySelector("span.fw-medium");
-                if (sp) {
-                    sp.classList.remove("fw-medium");
-                    sp.classList.add("fw-semibold");
-                }
-                a.querySelectorAll("i.text-dark").forEach((ico) => {
-                    ico.classList.remove("text-dark");
-                });
+            const targetPath = new URL(h, window.location.href).pathname;
+            if (targetPath === window.location.pathname) {
+                activateMainLink(a);
             }
+        });
+
+        const matchingSubLinks = Array.from(nav.querySelectorAll(".collapse a.nav-link[href]")).filter((a) => {
+            const target = new URL(a.getAttribute("href"), window.location.href);
+            return target.pathname === window.location.pathname;
+        });
+
+        matchingSubLinks.forEach((subLink) => {
+            const collapse = subLink.closest(".collapse");
+            if (!collapse) return;
+
+            const toggle = nav.querySelector(`[href="#${collapse.id}"]`);
+            if (toggle) {
+                activateMainLink(toggle);
+                toggle.classList.remove("collapsed");
+                toggle.setAttribute("aria-expanded", "true");
+            }
+            collapse.classList.add("show");
+        });
+
+        const exactSubLinks = matchingSubLinks.filter((a) => {
+            const target = new URL(a.getAttribute("href"), window.location.href);
+            return target.search === window.location.search;
+        });
+        if (exactSubLinks.length === 1) exactSubLinks[0].classList.add("active-sub");
+
+        const relatedPageSections = {
+            "view_account_detail.html": "pmoUtSideViewAcct",
+            "top_up.html": "pmoUtSideViewAcct",
+            "redemption.html": "pmoUtSideViewAcct",
+            "authorise_topup.html": "pmoUtSideAuthToggle",
+            "authorise_redemption.html": "pmoUtSideAuthToggle",
+            "online_activities.html": "pmoUtSideTxnToggle"
+        };
+        const relatedSection = document.getElementById(relatedPageSections[currentPage]);
+        if (relatedSection && nav.contains(relatedSection)) {
+            activateMainLink(relatedSection);
+            const collapseTarget = relatedSection.getAttribute("href");
+            const collapse = collapseTarget && nav.querySelector(collapseTarget);
+            if (collapse) {
+                relatedSection.classList.remove("collapsed");
+                relatedSection.setAttribute("aria-expanded", "true");
+                collapse.classList.add("show");
+            }
+        }
+
+        if (portal === "ut" && currentPage === "authorise.html") {
+            const selectedTab = new URLSearchParams(window.location.search).get("tab") === "redemption"
+                ? "redemption"
+                : "topup";
+            const topupTab = document.getElementById("tab-topup");
+            const redemptionTab = document.getElementById("tab-redemption");
+            const topupPane = document.getElementById("topup");
+            const redemptionPane = document.getElementById("redemption");
+            const topupSideLink = document.getElementById("pmoUtSideAuthTopup");
+            const redemptionSideLink = document.getElementById("pmoUtSideAuthRedeem");
+
+            if (topupTab && redemptionTab && topupPane && redemptionPane) {
+                const isRedemption = selectedTab === "redemption";
+                topupTab.classList.toggle("active", !isRedemption);
+                redemptionTab.classList.toggle("active", isRedemption);
+                topupPane.classList.toggle("show", !isRedemption);
+                topupPane.classList.toggle("active", !isRedemption);
+                redemptionPane.classList.toggle("show", isRedemption);
+                redemptionPane.classList.toggle("active", isRedemption);
+            }
+
+            [
+                [topupSideLink, "topup"],
+                [redemptionSideLink, "redemption"]
+            ].forEach(([link, tab]) => {
+                if (!link) return;
+                link.classList.toggle("active-sub", tab === selectedTab);
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const target = new URL(link.getAttribute("href"), window.location.href);
+                    target.searchParams.set("tab", tab);
+                    window.location.assign(target.href);
+                });
+            });
+
+            [
+                [topupTab, topupSideLink, "topup"],
+                [redemptionTab, redemptionSideLink, "redemption"]
+            ].forEach(([tabLink, sideLink, tab]) => {
+                if (!tabLink) return;
+                tabLink.addEventListener("click", () => {
+                    [topupSideLink, redemptionSideLink].forEach((link) => {
+                        if (link) link.classList.toggle("active-sub", link === sideLink);
+                    });
+                    const target = new URL(window.location.href);
+                    target.searchParams.set("tab", tab);
+                    window.history.replaceState(null, "", target.href);
+                });
+            });
+        }
+
+        nav.querySelectorAll('a.nav-link.rounded-3[data-bs-toggle="collapse"]').forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+                nav.querySelectorAll("a.nav-link.rounded-3.active").forEach(deactivateMainLink);
+                activateMainLink(toggle);
+            });
         });
     }
 
@@ -493,9 +612,7 @@
         initializePopovers();
         syncTableColumnAlignments();
         observeTableChanges();
-        if (portal === "ut" || portal === "analytics") {
-            applyUtSidebarActiveForPath();
-        }
+        applyUtSidebarActiveForPath();
         // injectAlertBanner(); // Disabled post-login alert banner as requested
     } catch (e) {
         console.error("[pmo-shell] Active states failed:", e);

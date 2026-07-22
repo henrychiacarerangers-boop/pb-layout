@@ -849,29 +849,10 @@ h2.pmo-card-inline-title {
     border-radius: 15px !important;
     padding: 1.15rem 1.25rem 1.2rem 1.35rem;
     font-family: 'Montserrat', sans-serif;
-    background: #ffffff;
-    border: 1px solid #dce3e8;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.portal-sidebar-profile-card:hover {
-    box-shadow: 0 12px 34px rgba(38, 36, 123, 0.1);
-    border-color: rgba(38, 36, 123, 0.12);
 }
 
 /* One red spine — brand cue only */
-.portal-sidebar-profile-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #ff1700;
-    border-radius: 15px 0 0 15px;
-    z-index: 0;
-}
+
 
 .portal-sidebar-profile-card>* {
     position: relative;

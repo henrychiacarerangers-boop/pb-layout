@@ -190,6 +190,7 @@
             display: none;
         }
     </style>
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -308,7 +309,7 @@
                         <a class="nav-link active" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Authorise <span
+                        <a class="nav-link" href="authorise.html">Authorise <span
                                 class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
                     </li>
                     <li class="nav-item">
@@ -459,20 +460,6 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-3">
-                    <div class="form-check custom-checkbox d-flex align-items-start gap-2">
-                        <input class="form-check-input mt-1 fs-5" type="checkbox" id="redemptionTermsCheck">
-                        <label class="form-check-label fs-8 text-dark cursor-pointer" for="redemptionTermsCheck">
-                            I have read, understood and agreed to the <a href="#"
-                                class="text-primary text-decoration-underline fw-bold">Terms & Conditions</a> of this
-                            redemption request, including the calculation based on historical NAV price, the payout
-                            processing cycles, and internet risk disclosures.
-                        </label>
-                    </div>
-                    <div class="text-danger mt-1 fs-9 d-none" id="redemptionTermsError">
-                        You must read and agree to the Terms & Conditions to proceed.
-                    </div>
-                </div>
                 <div class="col-12">
                     <div class="d-flex justify-content-end gap-3 mt-2">
                         <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
@@ -680,12 +667,27 @@
                     </div>
                 </div>
 
+                <div class="col-12 mt-3">
+                    <div class="form-check custom-checkbox d-flex align-items-start gap-2">
+                        <input class="form-check-input mt-1 fs-5" type="checkbox" id="tcAgreementCheck">
+                        <label class="form-check-label fs-8 text-dark cursor-pointer" for="tcAgreementCheck">
+                            I have read, understood and agreed to the <a href="#"
+                                class="text-primary text-decoration-underline fw-bold">Terms &amp; Conditions</a> of
+                            this
+                            redemption request, including the calculation based on historical NAV price, the payout
+                            processing cycles, and internet risk disclosures.
+                        </label>
+                    </div>
+                    <div class="text-danger mt-1 fs-9 d-none" id="tcAgreementError">
+                        You must read and agree to the Terms &amp; Conditions to proceed.
+                    </div>
+                </div>
                 <div class="col-12">
                     <div class="d-flex justify-content-end gap-3 mt-2">
                         <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                             id="btn-back-to-step1">Back</button>
                         <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                            id="btn-confirm-payment-trigger">Confirm Redemption</button>
+                            id="btn-confirm-payment-trigger" disabled>Confirm Redemption</button>
                     </div>
                 </div>
             </div>
@@ -819,8 +821,7 @@
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -828,7 +829,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -913,7 +914,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -953,7 +954,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -973,23 +974,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -1004,7 +1005,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -1245,15 +1246,7 @@
                 redeemUnits.classList.remove('is-invalid');
             });
 
-            // Terms checkbox change listener
-            if (redemptionTermsCheck) {
-                redemptionTermsCheck.addEventListener('change', () => {
-                    if (redemptionTermsCheck.checked) {
-                        redemptionTermsCheck.classList.remove('is-invalid');
-                        redemptionTermsError?.classList.add('d-none');
-                    }
-                });
-            }
+
 
             // Captcha refresh
             if (refreshCaptchaBtn) {
@@ -1329,14 +1322,7 @@
                         redeemUnits.classList.add('is-invalid');
                         return;
                     }
-                    if (!redemptionTermsCheck.checked) {
-                        redemptionTermsCheck.classList.add('is-invalid');
-                        if (redemptionTermsError) redemptionTermsError.classList.remove('d-none');
-                        alert("You must agree and check the Terms & Conditions of this redemption request to continue.");
-                        return;
-                    }
-                    redemptionTermsCheck.classList.remove('is-invalid');
-                    if (redemptionTermsError) redemptionTermsError.classList.add('d-none');
+
 
                     const opt = getSelectedOption();
                     const price = parseFloat(opt.dataset.price);
@@ -1390,8 +1376,16 @@
                 btnBackToStep1.addEventListener('click', () => showWizardStep(1));
             }
 
-            // External confirm trigger (button lives outside form)
+            // T&C checkbox toggles Confirm Redemption button
+            const tcAgreementCheck = document.getElementById('tcAgreementCheck');
             const btnConfirmTrigger = document.getElementById('btn-confirm-payment-trigger');
+            if (tcAgreementCheck && btnConfirmTrigger) {
+                tcAgreementCheck.addEventListener('change', function () {
+                    btnConfirmTrigger.disabled = !this.checked;
+                });
+            }
+
+            // External confirm trigger (button lives outside form)
             if (btnConfirmTrigger) {
                 btnConfirmTrigger.addEventListener('click', function () {
                     document.getElementById('step2VerificationForm').dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));

@@ -66,9 +66,7 @@
   transition: background-color 160ms ease;
 }
 
-.pmo-data-table tbody tr:hover> :is(td, th) {
-  background: #EAF2FF !important;
-}
+
 
 .pmo-data-table tbody tr:focus-visible> :is(td, th) {
   background: #EAF2FF !important;
@@ -127,9 +125,9 @@
 }
 
 .pmo-data-table .pmo-table-meta {
-  color: #6B7A90 !important;
+  color: #000000 !important;
   font-size: 12px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   line-height: 18px;
 }
 

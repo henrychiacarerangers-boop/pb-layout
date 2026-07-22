@@ -36,7 +36,8 @@
             }
         }
     </style>
-  <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -176,9 +177,7 @@
                             <span class="text-secondary fw-medium" id="eopTxnDetailHeaderRef">RC00000000000124</span>
                             <span class="text-primary" id="eopTxnDetailHeaderContrib">Salary Deduction (IND)</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopTxnDetailHeaderschemeLine">Scheme:
-                            Salary Deduction</span>
-                        <span class="text-muted fs-8 d-block mt-1">Transaction Detail — Advice Advice</span>
+                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="eopTxnDetailHeaderschemeLine"></span>
                     </div>
                 </div>
                 <button type="button"
@@ -217,7 +216,7 @@
                             <!-- Section 1: Request Overview -->
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
                             <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Reference No.</td>
@@ -243,7 +242,7 @@
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Contribution &amp; Amount Details
                             </h5>
                             <div class="table-responsive mb-4 pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Contribution type</td>
@@ -268,10 +267,10 @@
                                 <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
                                     id="eopTxnDetailEmpBadge">—</span>
                             </h5>
-                            <div class="table-responsive mb-4 pmo-table-frame" style="max-height: 380px; overflow-y: auto;">
-<table class="pmo-data-table">
-                                    <thead class="sticky-top bg-white"
-                                       >
+                            <div class="table-responsive mb-4 pmo-table-frame"
+                                style="max-height: 380px; overflow-y: auto;">
+                                <table class="pmo-data-table">
+                                    <thead class="sticky-top bg-white">
                                         <tr>
                                             <th class="ps-3 py-3">Name</th>
                                             <th class="py-3">NRIC No.</th>
@@ -291,7 +290,7 @@
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4">Settlement &amp; Receipt Details
                             </h5>
                             <div class="table-responsive pmo-table-frame">
-<table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details">
                                     <tbody>
                                         <tr>
                                             <td>Payment Status</td>
@@ -391,8 +390,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -400,7 +398,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -485,7 +483,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -525,7 +523,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -545,23 +543,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -576,7 +574,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -726,7 +724,7 @@
                     preparedDt: '2026/04/28 11:05:18',
                     employees: 6,
                     amountFmt: '18,200.00',
-                    status: 'ABORTED',
+                    status: 'CancelED',
                     bank: 'PUBLIC BANK BERHAD 891823092391',
                     txnId: 'FPX-TXN-FAILED-320',
                     execDt: '28 Apr 2026, 11:09:45'
@@ -799,7 +797,7 @@
             // Set titles & overview
             document.getElementById('eopTxnDetailHeaderRef').textContent = ref;
             document.getElementById('eopTxnDetailHeaderContrib').textContent = d.contributionLabel;
-            document.getElementById('eopTxnDetailHeaderschemeLine').textContent = `Scheme: ${d.schemeLabel}`;
+
 
             document.getElementById('eopTxnDetailRef').textContent = ref;
             document.getElementById('eopTxnDetailscheme').textContent = d.schemeLabel;
@@ -853,14 +851,14 @@
                         <div class="d-flex gap-3">
                             <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
                             <div>
-                                <h6 class="fw-bold text-danger mb-2">Transaction Aborted</h6>
-                                <p class="mb-0 fs-8 text-secondary lh-base">This transaction was aborted or failed. Payment was not settled. You may recreate the contribution batch or retry the payment.</p>
+                                <h6 class="fw-bold text-danger mb-2">Transaction Canceled</h6>
+                                <p class="mb-0 fs-8 text-secondary lh-base">This transaction was Canceled or failed. Payment was not settled. You may recreate the contribution batch or retry the payment.</p>
                             </div>
                         </div>
                     </div>
                 `;
-                summaryBadgeWrap.innerHTML = `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill fs-10">ABORTED</span>`;
-                receiptStatus.innerHTML = `<span class="text-danger fw-bold"><i class="iconoir-xmark fs-6 me-1"></i> Aborted (Cancelled/Failed)</span>`;
+                summaryBadgeWrap.innerHTML = `<span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill fs-10">CancelED</span>`;
+                receiptStatus.innerHTML = `<span class="text-danger fw-bold"><i class="iconoir-xmark fs-6 me-1"></i> Canceled (Cancelled/Failed)</span>`;
             }
 
             // Populate the employee contributions list table

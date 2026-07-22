@@ -17,6 +17,7 @@
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
     <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -132,10 +133,10 @@
                         <label for="eopRoleDemoSelect" class="form-label text-white-50 fs-9 fw-semibold text-uppercase mb-1">Demo: switch employer role</label>
                         <select class="form-select eop-role-select shadow-sm" id="eopRoleDemoSelect" aria-describedby="eopRoleHintText">
                             <option value="all" selected>All roles (full prototype access)</option>
-                            <option value="make">1 — Make contribution</option>
-                            <option value="upload">2 — Upload contribution</option>
-                            <option value="authorise">3 — Authorise contribution</option>
-                            <option value="payment">4 — Make payment</option>
+                            <option value="make">1 — Make Contribution</option>
+                            <option value="upload">2 — Upload Contribution</option>
+                            <option value="authorise">3 — Authorise Contribution</option>
+                            <option value="payment">4 — Make Payment</option>
                         </select>
                     </div>
                 </div>
@@ -179,7 +180,7 @@
                 id="eopPendingAuthBanner">
                 <div class="d-flex align-items-center">
                     <i class="iconoir-warning-triangle me-2" aria-hidden="true"></i>
-                    <span>Pending authorisation: <strong>3 Request</strong></span>
+                    <span>Pending Authorisation: <strong>3 Request</strong></span>
                 </div>
                 <button type="button" class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold"
                     id="eopNotifAuthAction">Review</button>
@@ -191,7 +192,7 @@
                     <span>Pending Payment: <strong>2 Request</strong></span>
                 </div>
                 <button type="button" class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold"
-                    id="eopNotifPaymentAction">Pay now</button>
+                    id="eopNotifPaymentAction">Pay Now</button>
             </div>
 
             <div class="card eop-last-contribution-badge p-4 mb-4">
@@ -203,10 +204,9 @@
                             MYR100,000 — 7 May 2026, 1:58 PM</p>
                     </div>
                     <button type="button" class="btn btn-light rounded-pill px-4 fs-8 fw-bold text-dark border-0"
-                        id="eopBtnViewLastTxn">View in transactions</button>
+                        id="eopBtnViewLastTxn">View In Transactions</button>
                 </div>
             </div>
-
 
             <div id="eopViewHome">
                 <div class="row g-4 mb-4">
@@ -231,7 +231,7 @@
                                         <div
                                             class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatTotalEmp">128</div>
-                                            <div class="text-muted fs-9 fw-semibold">Total employees</div>
+                                            <div class="text-muted fs-9 fw-semibold">Total Employees</div>
 
                                         </div>
                                     </div>
@@ -241,7 +241,7 @@
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatSalaryscheme"><span
                                                     class="iconoir-check-circle"></span>
                                             </div>
-                                            <div class="text-muted fs-9 fw-bold">Salary Deduction scheme</div>
+                                            <div class="text-muted fs-9 fw-bold">Salary Deduction Scheme</div>
                                             <div class="text-muted fs-10 mt-1">Contribution: Salary Deduction (IND)
                                             </div>
                                         </div>
@@ -252,7 +252,7 @@
                                             <div class="fw-bold fs-6 text-dark mb-1" id="eopDashStatEmployerscheme">
                                                 <span class="iconoir-check-circle-solid text-success fs-6"></span>
                                             </div>
-                                            <div class="text-muted fs-9 fw-semibold">Employer contribution scheme</div>
+                                            <div class="text-muted fs-9 fw-semibold">Employer Contribution Scheme</div>
                                             <div class="text-muted fs-10 mt-1">VSR / EMP / VSC eligible</div>
                                         </div>
                                     </div>
@@ -267,12 +267,12 @@
                                 <ul class="list-group list-group-flush rounded-3">
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 fs-8">
-                                        <span class="text-dark fw-semibold">Pending authorisation</span>
+                                        <span class="text-dark fw-semibold">Pending of Authorisation</span>
                                         <span class="badge bg-danger rounded-pill">3</span>
                                     </li>
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 fs-8">
-                                        <span class="text-dark fw-semibold">Pending payment</span>
+                                        <span class="text-dark fw-semibold">Pending of Payment</span>
                                         <span class="badge eop-pending-pay-badge rounded-pill">2</span>
                                     </li>
                                     <li
@@ -391,7 +391,7 @@
                                                     <div class="d-flex align-items-center justify-content-end gap-1">
                                                         1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                     </div>
-                                                    <div class="text-success">+4.17%</div>
+                                                    <div class="text-success" style="text-align: right;">+4.17%</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -412,11 +412,11 @@
                                                     <div class="d-flex align-items-center justify-content-end gap-1">
                                                         1.0530 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                     </div>
-                                                    <div class="text-success">+5.30%</div>
+                                                    <div class="text-success" style="text-align: right;">+5.30%</div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="pt-3 pb-1 pmo-table-primary">
+                                                <td class="pt-3 pb-3 pmo-table-primary">
                                                     <div>PUBLIC REGIONAL UTILITY FUND</div>
                                                     <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
                                                         <span class="badge rounded-pill px-2 py-1"
@@ -427,13 +427,13 @@
                                                             onerror="this.style.display='none'">
                                                     </div>
                                                 </td>
-                                                <td class="pt-3 pb-1">12.80 (High)</td>
-                                                <td class="pt-3 pb-1">18.50%</td>
-                                                <td class="pt-3 pb-1">
+                                                <td class="pt-3 pb-3">12.80 (High)</td>
+                                                <td class="pt-3 pb-3">18.50%</td>
+                                                <td class="pt-3 pb-3">
                                                     <div class="d-flex align-items-center justify-content-end gap-1">
                                                         0.7200 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                     </div>
-                                                    <div class="text-success">+20.00%</div>
+                                                    <div class="text-success" style="text-align: right;">+20.00%</div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -519,8 +519,7 @@
             aria-labelledby="eopSidebarUserName">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -528,7 +527,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -613,7 +612,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -651,10 +650,10 @@
                     <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
-                        <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
+                        <a class="nav-link rounded-3 d-flex align-items-center active" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
-                            <span class="fw-medium">Dashboard</span>
+                            <i class="iconoir-home fs-5 me-3" aria-hidden="true"></i>
+                            <span class="fw-semibold">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
@@ -673,23 +672,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -704,7 +703,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"

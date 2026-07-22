@@ -71,7 +71,7 @@
     max-width: 320px;
 }
 
-/* Upload contribution — drop zone + result */
+/* Upload Contribution — drop zone + result */
 .eop-upload-dropzone.eop-upload-dropzone-active {
     border-color: #ff1700 !important;
     background: rgba(237, 28, 36, 0.06) !important;
@@ -136,7 +136,8 @@
 /* Post Download CTA Banner */
 .post-download-card {
     background: linear-gradient(135deg, #002e77 0%, #373761 100%) !important;
-    border-left: 5px solid #12a833 !important; /* Success/Completed color */
+    border-left: 5px solid #12a833 !important;
+    /* Success/Completed color */
     border-radius: 15px !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
 }

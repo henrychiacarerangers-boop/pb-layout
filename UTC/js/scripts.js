@@ -115,7 +115,7 @@ function injectAlertBanner() {
     if (document.getElementById("pmoAlertBanner")) return;
 
     const bannerHtml = `
-        <div class="alert-banner py-2 bg-danger text-white text-center position-relative" id="pmoAlertBanner" style="z-index: 1050; width: 100%; color: #ffffff !important; background-color: #ff1700 !important;">
+        <div class="alert-banner py-2 bg-danger text-white text-center position-relative" id="pmoAlertBanner" style="z-index: 900; width: 100%; color: #ffffff !important; background-color: #ff1700 !important;">
             <div class="container-fluid px-5" style="color: #ffffff !important;">
                 <div id="alertCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" style="color: #ffffff !important;">
                     <div class="carousel-inner" style="color: #ffffff !important;">

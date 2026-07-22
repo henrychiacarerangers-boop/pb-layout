@@ -1016,7 +1016,7 @@ body {
     align-items: center;
     position: relative;
     width: 100%;
-    z-index: 20;
+    z-index: 1001;
     background: #ffffff !important;
     padding: 16px 48px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -3084,6 +3084,8 @@ h6 {
 p,
 li {
     color: var(--text-secondary);
+    padding: 2px;
+    font-size: 14px;
 }
 
 small,
@@ -3227,4 +3229,43 @@ small,
     color: #212529 !important;
     text-decoration: none !important;
     font-weight: 400 !important;
+}
+
+/* --- WCAG 2.1 AA shared safeguards --- */
+:root {
+    --ui-support: #5f6f86;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid #ff1700 !important;
+    outline-offset: 3px;
+}
+
+:where(button, .btn, input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    min-height: 44px;
+}
+
+.pmo-skip-link {
+    position: fixed;
+    z-index: 2000;
+    top: 12px;
+    left: 12px;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    color: #ffffff;
+    background: var(--brand-navy);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+}
+
+.pmo-skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

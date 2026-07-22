@@ -70,7 +70,7 @@
     max-width: 320px;
 }
 
-/* Upload contribution — drop zone + result */
+/* Upload Contribution — drop zone + result */
 .eop-upload-dropzone.eop-upload-dropzone-active {
     border-color: #ff1700 !important;
     background: rgba(237, 28, 36, 0.06) !important;

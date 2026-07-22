@@ -144,6 +144,7 @@
             border-color: var(--brand-navy);
         }
     </style>
+    <script src="../js/accessibility.js" defer></script>
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -262,7 +263,7 @@
                         <a class="nav-link active" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Authorise <span
+                        <a class="nav-link" href="authorise.html">Authorise <span
                                 class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
                     </li>
                     <li class="nav-item">
@@ -427,7 +428,7 @@
                         <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                             onclick="location.href='view_account.html'">Cancel</button>
                         <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                            id="btn-to-payment">Continue</button>
+                            id="btn-to-part2">Continue</button>
                     </div>
                 </div>
             </div>
@@ -509,36 +510,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-5">
-                    <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                        <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check1" checked>
-                        <label class="form-check-label fs-8 text-dark cursor-pointer" for="check1">
-                            I have read and understood the <a href="#"
-                                class="text-danger fw-bold text-decoration-none">Product Highlights Sheet</a> for <span
-                                class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS B</span>
-                        </label>
-                    </div>
-                    <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                        <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check2">
-                        <label class="form-check-label fs-8 text-dark cursor-pointer" for="check2">
-                            I have read and understood the <a href="#"
-                                class="text-danger fw-bold text-decoration-none">Prospectus/Information Memorandum</a>
-                            for <span class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS B</span>
-                        </label>
-                    </div>
-                    <div class="form-check custom-checkbox d-flex align-items-center gap-2">
-                        <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check3">
-                        <label class="form-check-label fs-8 text-dark cursor-pointer" for="check3">
-                            I have read and understood the <a href="#"
-                                class="text-danger fw-bold text-decoration-none">Terms and Conditions</a> of this
-                            investment (<span class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS
-                                B</span>)
-                        </label>
-                    </div>
-                </div>
-                <div class="mt-3 text-muted fs-9 ps-1">
-                    Note:<br>Printed copy of the Prospectus/Information Memorandum can also be obtained from our
-                    branches and distributors of Public Mutual Berhad.
+                <div class="col-12 mt-3">
+                    <fieldset class="border-0 p-0 m-0">
+                        <legend class="fs-6 fw-bold text-dark mb-3">Investment disclaimer and declarations
+                        </legend>
+                        <div class="text-muted fs-9 mb-4">
+                            <p>The contents of this website, including the Product Highlights Sheet and
+                                prospectus, are
+                                not an offer to sell or a solicitation of an offer to buy unit trust funds.</p>
+                            <p>A copy of the fund's Product Highlights Sheet and prospectus featured on this
+                                website has
+                                been lodged with the Securities Commission.</p>
+                            <p class="mb-0">The Securities Commission shall not be liable for any non-disclosure
+                                on the
+                                part of the management company and takes no responsibility for the contents of
+                                the
+                                Product Highlights Sheet and Prospectus/Information Memorandum, makes no
+                                representation as to their accuracy or completeness, and expressly disclaims any
+                                liability whatsoever for any loss arising from or in reliance upon the whole or
+                                any part
+                                of their contents.</p>
+                        </div>
+                        <div class="form-check custom-checkbox d-flex align-items-start gap-2 mb-3">
+                            <input class="form-check-input mt-1 fs-5" type="checkbox" value="" id="topUpDeclaration1">
+                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="topUpDeclaration1">
+                                I have read and understood the <strong>Product Highlights Sheet</strong> and
+                                <strong>Prospectus/Information Memorandum</strong>.
+                            </label>
+                        </div>
+                        <div class="form-check custom-checkbox d-flex align-items-start gap-2 mb-3">
+                            <input class="form-check-input mt-1 fs-5" type="checkbox" value="" id="topUpDeclaration2">
+                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="topUpDeclaration2">
+                                I have read, understood, and agreed to the above statement, Investment
+                                Disclaimer,
+                                <strong>Terms and Conditions</strong>, and notices contained within.
+                            </label>
+                        </div>
+                        <div class="form-check custom-checkbox d-flex align-items-start gap-2">
+                            <input class="form-check-input mt-1 fs-5" type="checkbox" value="" id="topUpDeclaration3">
+                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="topUpDeclaration3">
+                                I understand that, should I cease to be a PMO subscriber, the Management Company
+                                may
+                                redeem my entire account(s) under <strong>PUBLIC e-CASH DEPOSIT - CLASS
+                                    B</strong>.
+                            </label>
+                        </div>
+                    </fieldset>
                 </div>
 
                 <div class="d-flex justify-content-end gap-3 mt-4">
@@ -547,7 +564,7 @@
                     <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                         id="btn-back-to-part1">Back</button>
                     <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                        id="btn-to-payment">Continue</button>
+                        id="btn-to-payment">Agree &amp; Continue</button>
                 </div>
             </div>
 
@@ -656,43 +673,11 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="mt-5">
-                        <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                            <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check1" checked>
-                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="check1">
-                                I have read and understood the <a href="#"
-                                    class="text-danger fw-bold text-decoration-none">Product Highlights Sheet</a> for
-                                <span class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS B</span>
-                            </label>
-                        </div>
-                        <div class="form-check custom-checkbox d-flex align-items-center gap-2 mb-3">
-                            <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check2">
-                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="check2">
-                                I have read and understood the <a href="#"
-                                    class="text-danger fw-bold text-decoration-none">Prospectus/Information
-                                    Memorandum</a>
-                                for <span class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS B</span>
-                            </label>
-                        </div>
-                        <div class="form-check custom-checkbox d-flex align-items-center gap-2">
-                            <input class="form-check-input mt-0 fs-5" type="checkbox" value="" id="check3">
-                            <label class="form-check-label fs-8 text-dark cursor-pointer" for="check3">
-                                I have read and understood the <a href="#"
-                                    class="text-danger fw-bold text-decoration-none">Terms and Conditions</a> of this
-                                investment (<span class="confirm-account-placeholder">PUBLIC e-CASH DEPOSIT - CLASS
-                                    B</span>)
-                            </label>
-                        </div>
-                    </div>
-                    <div class="mt-3 text-muted fs-9 ps-1">
-                        Note:<br>Printed copy of the Prospectus/Information Memorandum can also be obtained from our
-                        branches and distributors of Public Mutual Berhad.
-                    </div>
                     <div class="d-flex justify-content-end gap-3 mt-4">
                         <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                             id="btn-back-to-part2">Back</button>
                         <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                            id="btn-confirm-payment-trigger">Confirm & Pay</button>
+                            id="btn-confirm-payment-trigger">Confirm &amp; Pay</button>
                     </div>
                 </div>
             </div>
@@ -798,8 +783,7 @@
             aria-labelledby="sidebarMenuLabel">
             <div class="offcanvas-header border-0 pb-0 pt-4 align-items-stretch flex-column w-100">
                 <div class="d-flex justify-content-between align-items-center mb-3 w-100">
-                    <div class="d-flex align-items-center bg-white rounded-3 shadow-sm"
-                        style="padding: 8px 16px !important;">
+                    <div class="d-flex align-items-center bg-white rounded-3" style="padding: 8px 16px !important;">
                         <img src="../images/pmo-logo-corporate.png" alt="PMO" height="36">
                     </div>
                     <button type="button" class="btn btn-link text-dark p-0 border-0" data-bs-dismiss="offcanvas"
@@ -807,7 +791,7 @@
                         <i class="iconoir-menu fs-4" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="portal-sidebar-profile-card w-100 mb-3" style="padding: 12px 16px 12px 20px !important;">
+                <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
                     <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
                     <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
@@ -892,7 +876,7 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
@@ -932,7 +916,7 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home-simple fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -952,23 +936,23 @@
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/contribution.html" id="eopSideMake">Make contribution</a>
+                                        href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        href="../eop/upload.html" id="eopSideUpload">Upload contribution</a>
+                                        href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
-                                        <span>Authorise contribution</span>
+                                        <span>Authorise Contribution</span>
                                         <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
                                     <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
-                                        <span>Make payment</span>
+                                        <span>Make Payment</span>
                                         <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
@@ -983,7 +967,7 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
                             <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
@@ -1153,11 +1137,6 @@
             const confirmBankDisplay = document.getElementById('confirmBankDisplay');
             const confirmAccountPlaceholders = document.querySelectorAll('.confirm-account-placeholder');
 
-            // Checkboxes for Part 2
-            const check1 = document.getElementById('check1');
-            const check2 = document.getElementById('check2');
-            const check3 = document.getElementById('check3');
-
             // Step 2 elements
             const paymentAccountDisplay = document.getElementById('paymentAccountDisplay');
             const paymentAmountDisplay = document.getElementById('paymentAmountDisplay');
@@ -1274,11 +1253,6 @@
                         alert("Please enter a valid investment amount.");
                         return;
                     }
-                    if (!executionCheck.checked) {
-                        alert("You must agree and check the Execution-Only Transaction statement to continue.");
-                        return;
-                    }
-
                     // Populate Confirmation details
                     const acNo = selectAccount.value;
                     const selectedText = selectAccount.options[selectAccount.selectedIndex].text;
@@ -1319,8 +1293,6 @@
             const btnToPayment = document.getElementById('btn-to-payment');
             if (btnToPayment) {
                 btnToPayment.addEventListener('click', function () {
-                    // Validation: check highlights sheets checkboxes
-
                     // Populate Payment summary
                     const selectedText = selectAccount.options[selectAccount.selectedIndex].text;
                     const amount = investmentAmount.value;
