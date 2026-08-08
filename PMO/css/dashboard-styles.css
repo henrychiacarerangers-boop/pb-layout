@@ -1,20 +1,4 @@
 /* --- Utilities --- */
-.fs-7 {
-    font-size: 0.9rem !important;
-}
-
-.fs-8 {
-    font-size: 0.8rem !important;
-}
-
-.fs-9 {
-    font-size: 0.7rem !important;
-}
-
-.fs-10 {
-    font-size: 0.6rem !important;
-}
-
 /* --- Standardised Back Circle Button --- */
 .btn-back-circle {
     width: 32px !important;
@@ -120,7 +104,7 @@ main.dashboard-content {
 .dashboard-tabs .nav-link {
     color: rgba(255, 255, 255, 0.7);
     padding: 10px 0;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     font-weight: 600;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
@@ -265,7 +249,7 @@ body[data-pmo-shell="true"] .popover {
     --bs-popover-body-padding-x: 1rem;
     --bs-popover-body-padding-y: 0.75rem;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     box-shadow: var(--bs-popover-box-shadow) !important;
 }
 
@@ -311,7 +295,7 @@ body[data-pmo-shell="true"] .card .card-header {
     margin-bottom: -11px;
     /* Offset so bottom border overlays perfectly on pb-2 border-bottom */
     border-bottom: 2px solid transparent;
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
     color: #64748b !important;
     text-decoration: none !important;
@@ -349,7 +333,7 @@ body[data-pmo-shell="true"] .card .card-header {
 /* Filter Sidebar */
 .filter-section-title {
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: #1e293b;
     letter-spacing: 0.3px;
 }
@@ -372,7 +356,7 @@ body[data-pmo-shell="true"] .card .card-header {
 
 /* Status Badge */
 .status-badge {
-    font-size: 0.65rem;
+    font-size: var(--type-meta);
     padding: 3px 8px;
     text-transform: uppercase;
     letter-spacing: 0.45px;
@@ -455,7 +439,7 @@ body[data-pmo-shell="true"] .card .card-header {
 
 .sidebar-nav .nav-link {
     padding: 12px 16px;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     color: #333;
     transition: all 0.2s ease;
 }
@@ -579,7 +563,7 @@ body[data-pmo-shell="true"] .card .card-header {
     border: 1px solid rgba(38, 36, 123, 0.15) !important;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 500 !important;
 }
 
@@ -613,7 +597,7 @@ body[data-pmo-shell="true"] .card .card-header {
     border: none !important;
     border-radius: 0 !important;
     font-weight: 600 !important;
-    font-size: 0.95rem !important;
+    font-size: var(--type-body) !important;
     padding: 18px 24px !important;
     /* Generous padding */
     text-align: center !important;
@@ -658,7 +642,7 @@ body[data-pmo-shell="true"] .card .card-header {
 
 /* Elegant badge style overrides inside custom tabs */
 .custom-card-tabs .nav-link .badge {
-    font-size: 0.8rem !important;
+    font-size: var(--type-caption) !important;
     padding: 3px 8px !important;
     border-radius: 20px !important;
     transition: all 0.25s ease !important;
@@ -822,7 +806,7 @@ body[data-pmo-shell="true"] .card .card-header {
 
 .sidebar-nav .collapse .nav-link {
     padding: 8px 0 !important;
-    font-size: 0.8rem !important;
+    font-size: var(--type-caption) !important;
     font-weight: 500 !important;
     color: #58595b !important;
     background: transparent !important;
@@ -931,7 +915,7 @@ header nav .position-absolute.start-50.translate-middle-x {
 
 header nav .position-absolute.start-50.translate-middle-x .nav-pill {
     cursor: pointer !important;
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
     color: #64748b !important;
     padding: 6px 16px !important;
@@ -963,7 +947,7 @@ header nav .position-absolute.start-50.translate-middle-x .active-pill span {
 }
 
 header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
 }
 
@@ -1000,7 +984,7 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 .dashboard-content h2.h5,
 .dashboard-content h2[id*="PageTitle"],
 .dashboard-content h2[id*="Title"] {
-    font-size: 2rem !important;
+    font-size: var(--type-title) !important;
     font-weight: 700 !important;
     color: #16161a !important;
     letter-spacing: -0.02em !important;
@@ -1041,14 +1025,14 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
     content: "/";
     margin: 0 0.5rem;
     color: #94a3b8;
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 600;
 }
 
 .pmo-breadcrumbs-link {
     color: #64748b;
     text-decoration: none;
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 600;
     letter-spacing: 0.01em;
     transition: color 0.2s ease;
@@ -1060,7 +1044,7 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 
 .pmo-breadcrumbs-current {
     color: var(--text-primary, #16161a);
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     letter-spacing: 0.01em;
 }

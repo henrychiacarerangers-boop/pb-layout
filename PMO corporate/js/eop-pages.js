@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function makeNewRowBadge(idx, prefix) {
             const span = document.createElement('span');
-            span.className = 'badge rounded-pill fs-10 fw-semibold pmo-new-row-badge';
+            span.className = 'badge rounded-pill text-meta fw-semibold pmo-new-row-badge';
             span.id = `${prefix}${idx}`;
             span.setAttribute('role', 'status');
             span.textContent = 'New';
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tdFund = document.createElement('td');
                 tdFund.className = 'py-3';
                 const fundBadge = document.createElement('span');
-                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 text-meta fw-bold';
                 fundBadge.textContent = r.fund;
                 tdFund.appendChild(fundBadge);
                 tr.appendChild(tdFund);
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tdFund = document.createElement('td');
                 tdFund.className = 'py-3';
                 const fundBadge = document.createElement('span');
-                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 text-meta fw-bold';
                 fundBadge.textContent = r.fund;
                 tdFund.appendChild(fundBadge);
                 tr.appendChild(tdFund);
@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tr class="border-bottom">
                         <td class="ps-3 py-3 text-dark">${r.name}</td>
                         <td class="py-3 text-secondary">${r.nric}</td>
-                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
+                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 text-meta fw-bold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
                         <td class="pe-3 py-3 text-end fw-semibold text-dark">RM ${r.amount}</td>
                     </tr>

@@ -1,20 +1,4 @@
 /* --- Utilities --- */
-.fs-7 {
-    font-size: 0.9rem !important;
-}
-
-.fs-8 {
-    font-size: 0.8rem !important;
-}
-
-.fs-9 {
-    font-size: 0.7rem !important;
-}
-
-.fs-10 {
-    font-size: 0.6rem !important;
-}
-
 /* --- Standardised Back Circle Button --- */
 .btn-back-circle {
     width: 32px !important;
@@ -87,7 +71,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 .dashboard-tabs .nav-link {
     color: rgba(255, 255, 255, 0.7);
     padding: 10px 0;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     font-weight: 600;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
@@ -110,7 +94,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
     margin-bottom: -11px;
     /* Offset so bottom border overlays perfectly on pb-2 border-bottom */
     border-bottom: 2px solid transparent;
-    font-size: 0.75rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
     color: #64748b !important;
     text-decoration: none !important;
@@ -148,7 +132,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 /* Filter Sidebar */
 .filter-section-title {
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: #1e293b;
     letter-spacing: 0.3px;
 }
@@ -171,7 +155,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 
 /* Status Badge */
 .status-badge {
-    font-size: 0.65rem;
+    font-size: var(--type-meta);
     padding: 3px 8px;
     text-transform: uppercase;
     letter-spacing: 0.45px;
@@ -254,7 +238,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 
 .sidebar-nav .nav-link {
     padding: 12px 16px;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     color: #333;
     transition: all 0.2s ease;
 }
@@ -403,7 +387,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
     border: none !important;
     border-radius: 0 !important;
     font-weight: 600 !important;
-    font-size: 0.95rem !important;
+    font-size: var(--type-body) !important;
     padding: 18px 24px !important;
     /* Generous padding */
     text-align: center !important;
@@ -448,7 +432,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 
 /* Elegant badge style overrides inside custom tabs */
 .custom-card-tabs .nav-link .badge {
-    font-size: 0.8rem !important;
+    font-size: var(--type-caption) !important;
     padding: 3px 8px !important;
     border-radius: 20px !important;
     transition: all 0.25s ease !important;
@@ -550,7 +534,7 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
 
 .sidebar-nav .collapse .nav-link {
     padding: 8px 0 !important;
-    font-size: 0.8rem !important;
+    font-size: var(--type-caption) !important;
     font-weight: 500 !important;
     color: #58595b !important;
     background: transparent !important;

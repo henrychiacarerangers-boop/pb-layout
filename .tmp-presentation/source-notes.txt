@@ -1,0 +1,3 @@
+Source material is the local Corporate Public Mutual Online prototype, inspected on 30 July 2026.
+All screen images are direct captures from the local prototype: registration.html, unit-trust/dashboard.html,
+unit-trust/authorise.html, and analytics/unit-trust.html. No external claims or assets were used.

@@ -32,7 +32,7 @@
     border-radius: 8px;
     padding: 12px 16px;
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     border-color: #dce3e8;
 }
 
@@ -49,7 +49,7 @@
 .eop-quick-pill {
     border-radius: 25px;
     font-weight: 600;
-    font-size: 0.78rem;
+    font-size: var(--type-caption);
     padding: 0.45rem 1rem;
     transition: all 0.3s ease;
 }
@@ -100,7 +100,7 @@
 }
 
 .prs-analytics-sort-hint {
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     opacity: 0.55;
     margin-left: 0.2rem;
     font-weight: 400;

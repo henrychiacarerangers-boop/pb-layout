@@ -1,24 +1,4 @@
-:root {
-    --brand-primary: #ff1700;
-    --brand-navy: #0E0D3B;
-    --accent-primary: #002e77;
-    --action-primary: #002e77;
-    --interactive-hover: #58595b;
-    --bg-container: #FCFCFC;
-    --bg-main: #FCFCFC;
-    --ui-support: #8e9ab0;
-    --text-primary: #16161a;
-    --text-secondary: #48484b;
-
-    /* Standardized Structure */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-pill: 50rem;
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.04);
-    --border-light: 1px solid rgba(0, 0, 0, 0.04);
-}
-
+/* Shared foundation tokens are defined in /design-tokens.css. */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-main);
@@ -187,7 +167,7 @@ body {
 }
 
 .form-label {
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: #6c757d;
     margin-bottom: 5px;
 }
@@ -234,12 +214,12 @@ body {
     align-items: center;
     text-decoration: none;
     color: #333;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
 }
 
 .link-item i {
     margin-right: 10px;
-    font-size: 1.1rem;
+    font-size: var(--type-lead);
 }
 
 /* Red Info Footer */
@@ -247,13 +227,13 @@ body {
     background-color: #ff1700;
     color: white;
     padding: 40px 0;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
 }
 
 .info-footer h5 {
     font-weight: 700;
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: var(--type-body);
 }
 
 .info-footer a {
@@ -266,7 +246,7 @@ body {
     background-color: var(--brand-navy);
     color: white;
     padding: 15px 0;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
 }
 
 .bottom-links a {
@@ -346,7 +326,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-bottom: 10px;
     transition: all 0.3s ease;
 }
@@ -358,13 +338,13 @@ body {
 
 .step-text {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
     line-height: 1.2;
 }
 
 .step-text small {
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     color: var(--ui-support);
 }
 
@@ -403,7 +383,7 @@ body {
 .register-card .subtitle {
     text-align: center;
     color: #333;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     margin-bottom: 30px;
 }
 
@@ -414,7 +394,7 @@ body {
     padding: 25px;
     height: 200px;
     overflow-y: auto;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
@@ -430,14 +410,14 @@ body {
 .custom-check-list li {
     display: flex;
     align-items: flex-start;
-    font-size: 0.8rem;
+    font-size: var(--type-caption);
     margin-bottom: 12px;
     color: #555;
 }
 
 .custom-check-list li i {
     color: #198754;
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-right: 12px;
     margin-top: -3px;
 }
@@ -465,7 +445,7 @@ body {
     border: none;
     color: #ff1700;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     padding: 0;
 }
 
@@ -474,7 +454,7 @@ body {
 }
 
 .pac-info-text {
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     color: #333;
     display: flex;
     align-items: flex-start;
@@ -482,7 +462,7 @@ body {
 }
 
 .pac-info-text i {
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-right: 10px;
 }
 
@@ -508,13 +488,13 @@ body {
 
 .legal-card h1 {
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: var(--type-title);
     color: var(--brand-navy);
     margin-bottom: 8px;
 }
 
 .legal-card p.subtitle {
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     color: var(--ui-support);
     margin-bottom: 30px;
 }
@@ -526,7 +506,7 @@ body {
     padding: 24px !important;
     max-height: 280px !important;
     overflow-y: auto;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 35px;
@@ -613,7 +593,7 @@ body {
 .input-group-text {
     background-color: #f8fafc;
     color: var(--ui-support) !important;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     transition: all 0.2s ease;
 }
 
@@ -706,7 +686,7 @@ body {
 .scroller-badge {
     background-color: var(--brand-navy) !important;
     color: white !important;
-    font-size: 0.7rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
     padding: 4px 10px !important;
     border-radius: 20px !important;
@@ -745,10 +725,6 @@ body {
 }
 
 /* --- WCAG 2.1 AA shared safeguards --- */
-:root {
-    --ui-support: #5f6f86;
-}
-
 :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
     outline: 3px solid #ff1700 !important;
     outline-offset: 3px;

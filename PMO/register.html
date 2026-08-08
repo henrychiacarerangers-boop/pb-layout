@@ -48,7 +48,8 @@
         }
     </style>
     <script src="js/accessibility.js" defer></script>
-    <link rel="stylesheet" href="../pmo-core.css">
+<link rel="stylesheet" href="../design-tokens.css">
+<link rel="stylesheet" href="../pmo-core.css">
 </head>
 
 <body>
@@ -118,7 +119,7 @@
                             <div class="custom-checkbox d-flex align-items-start gap-1">
                                 <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
                                     id="check-term-1" checked style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
-                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                <label class="form-check-label text-caption text-dark cursor-pointer ms-2 text-start"
                                     for="check-term-1" style="line-height: 1.4;">
                                     I/We irrevocably and unconditionally agree to be bound by the Terms and Conditions
                                     of PMO Service as specified overleaf and the Terms and Conditions Of Use Of the
@@ -128,7 +129,7 @@
                             <div class="custom-checkbox d-flex align-items-start gap-1">
                                 <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
                                     id="check-term-2" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
-                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                <label class="form-check-label text-caption text-dark cursor-pointer ms-2 text-start"
                                     for="check-term-2" style="line-height: 1.4;">
                                     I/We am/are Authorised to apply for PMO Service and enclose herewith the details of
                                     the person(s) Authorised to access and operate the PMO Service.
@@ -137,7 +138,7 @@
                             <div class="custom-checkbox d-flex align-items-start gap-1">
                                 <input class="form-check-input term-check cursor-pointer flex-shrink-0" type="checkbox"
                                     id="check-term-3" style="width: 1.15rem; height: 1.15rem; margin-top: 2px;">
-                                <label class="form-check-label fs-8 text-dark cursor-pointer ms-2 text-start"
+                                <label class="form-check-label text-caption text-dark cursor-pointer ms-2 text-start"
                                     for="check-term-3" style="line-height: 1.4;">
                                     I/We undertake to notify Public Mutual of any change in the mandate for PMO
                                     Services.
@@ -225,7 +226,7 @@
                                         style="background: #f1f3f5; padding: 10px; text-align: center; letter-spacing: 6px; font-style: italic; font-size: 1.4rem; color: #495057; border-radius: 8px; user-select: none; font-family: monospace;">
                                         2YA8U2
                                     </div>
-                                    <div class="mt-2" style="font-size: 0.75rem;">Can't read the text? <a href="#"
+                                    <div class="mt-2" style="font-size: var(--type-meta);">Can't read the text? <a href="#"
                                             id="refresh-captcha" class="text-dark fw-bold">Try another text</a></div>
                                 </div>
                                 <div class="col-md-6">
@@ -237,7 +238,7 @@
 
                             <!-- Credentials Configuration (Moved from Step 3) -->
                             <div class="border-top pt-4 mt-4 mb-4">
-                                <h4 class="fw-bold mb-3" style="font-size: 1.1rem; color: #1a1e36;">Create Login
+                                <h4 class="fw-bold mb-3" style="font-size: var(--type-lead); color: #1a1e36;">Create Login
                                     Credentials</h4>
                                 <div class="row mb-3">
                                     <div class="col-md-12">
@@ -306,21 +307,21 @@
                             style="background-color: #f8f9ff; border-color: #dde3f5 !important;">
 
                             <div class="flex-grow-1">
-                                <div class="fs-9 text-muted mb-1">Roles</div>
-                                <div class="text-dark" style="font-size: 0.8rem;">Unit Trust: <span class="fw-bold"
+                                <div class="text-meta text-muted mb-1">Roles</div>
+                                <div class="text-dark" style="font-size: var(--type-caption);">Unit Trust: <span class="fw-bold"
                                         id="displayRoleUt">User &amp; Authoriser</span></div>
-                                <div class="text-dark" style="font-size: 0.8rem;">EOP: <span class="fw-bold"
+                                <div class="text-dark" style="font-size: var(--type-caption);">EOP: <span class="fw-bold"
                                         id="displayRoleEop">Admin</span></div>
                             </div>
                             <div class="text-end">
-                                <div class="fs-9 text-muted mb-1">Company</div>
-                                <div class="fw-semibold text-dark fs-9" id="display-company">Ativa Studio Solution Sdn
+                                <div class="text-meta text-muted mb-1">Company</div>
+                                <div class="fw-semibold text-dark text-meta" id="display-company">Ativa Studio Solution Sdn
                                     Bhd</div>
                             </div>
                         </div>
 
                         <form id="step3Form">
-                            <h6 class="fw-bold mb-3" style="font-size: 0.9rem;">Security Verification</h6>
+                            <h6 class="fw-bold mb-3" style="font-size: var(--type-caption);">Security Verification</h6>
                             <div class="mb-3">
                                 <label class="form-label">Verification Method</label>
                                 <select class="form-select text-dark fw-semibold">
@@ -336,7 +337,7 @@
                                     <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
                                         PAC</button>
                                 </div>
-                                <p class="fs-9 text-success mb-0 d-none" id="regPacDemoHint">Successfully Verification.
+                                <p class="text-meta text-success mb-0 d-none" id="regPacDemoHint">Successfully Verification.
                                 </p>
                             </div>
                             <div class="pac-info-text mb-4 text-muted">
@@ -347,7 +348,7 @@
                             <div
                                 class="pac-info-text mb-4 fw-bold p-3 bg-light rounded-3 d-flex align-items-center border">
                                 <i class="iconoir-smartphone-device fs-4 me-3 text-danger"></i>
-                                <span class="fs-9">PAC Sent to XXX12XXXXX3 <br>
+                                <span class="text-meta">PAC Sent to XXX12XXXXX3 <br>
                                     Security Number:QD5788156"</span>
                             </div>
 
@@ -376,7 +377,7 @@
                 <!-- Column 1: Products & Services -->
                 <div class="col-6 col-md-3">
                     <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
-                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                    <ul class="list-unstyled footer-links" style="font-size: var(--type-caption); line-height: 1.8;">
                         <li><a href="#">Unit Trust</a></li>
                         <li><a href="#">Get Started</a></li>
                         <li><a href="#">Build Wealth</a></li>
@@ -401,7 +402,7 @@
                 <!-- Column 2: Privileges & Company -->
                 <div class="col-6 col-md-3">
                     <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
-                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: var(--type-caption); line-height: 1.8;">
                         <li><a href="#">Mutual Gold</a></li>
                         <li><a href="#">Mutual Elite</a></li>
                         <li><a href="#">Mutual Signature</a></li>
@@ -410,7 +411,7 @@
                     </ul>
 
                     <h6 class="fw-bold text-navy mb-3">Happening</h6>
-                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                    <ul class="list-unstyled footer-links mb-4" style="font-size: var(--type-caption); line-height: 1.8;">
                         <li><a href="#">New Funds</a></li>
                         <li><a href="#">Campaigns</a></li>
                     </ul>
@@ -418,7 +419,7 @@
                     <h6 class="fw-bold text-navy mb-3">Join Us</h6>
 
                     <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
-                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                    <ul class="list-unstyled footer-links" style="font-size: var(--type-caption); line-height: 1.8;">
                         <li><a href="#">Vision Mission</a></li>
                         <li><a href="#">Core Values</a></li>
                         <li><a href="#">Our Profile</a></li>
@@ -432,14 +433,14 @@
                     <div class="row">
                         <div class="col-6">
                             <h6 class="fw-bold text-navy mb-3">Resources</h6>
-                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
+                            <ul class="list-unstyled footer-links mb-4" style="font-size: var(--type-caption); line-height: 1.8;">
                                 <li><a href="#">Learning Hub</a></li>
                                 <li><a href="#">Downloads</a></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <h6 class="fw-bold text-navy mb-3">Important Information</h6>
-                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
+                            <ul class="list-unstyled footer-links" style="font-size: var(--type-caption); line-height: 1.8;">
                                 <li><a href="#">Contact Us (Form)</a></li>
                                 <li><a href="#">Branches</a></li>
                                 <li><a href="#">Customer Service Hotline</a></li>
@@ -464,17 +465,17 @@
     <footer class="bottom-footer py-4 w-100 bg-navy text-white">
         <div class="container text-center text-md-start px-4">
             <!-- Disclaimer -->
-            <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
+            <p class="small mb-3 opacity-75" style="font-size: var(--type-caption); line-height: 1.6;">
                 *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
                 Malaysia.
             </p>
 
             <!-- Vanguard-Style Important Disclosures -->
             <div class="vanguard-disclosures mb-4 text-start text-white-50"
-                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                style="font-size: var(--type-meta); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
                 <div class="row g-4 mb-3">
                     <div class="col-lg-6">
-                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Important Investment & Risk
+                        <h6 class="text-white fw-bold mb-2" style="font-size: var(--type-caption);">Important Investment & Risk
                             Information</h6>
                         <p class="mb-2"><strong>All investing is subject to risk, including the possible loss of the
                                 money you invest.</strong> Past performance is not a guarantee or reliable indicator of
@@ -488,7 +489,7 @@
                             online. Please read them thoroughly before making any investment decisions.</p>
                     </div>
                     <div class="col-lg-6">
-                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.8rem;">Regulatory & Licensing
+                        <h6 class="text-white fw-bold mb-2" style="font-size: var(--type-caption);">Regulatory & Licensing
                             Disclosures</h6>
                         <p class="mb-2">Public Mutual Berhad 197501001842 (23419-A) is a registered unit trust
                             management company under the Capital Markets and Services Act 2007, regulated and supervised
@@ -515,7 +516,7 @@
             <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
             <!-- Links -->
             <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
-                style="font-size: 0.78rem;">
+                style="font-size: var(--type-caption);">
                 <a href="website-disclaimer.html"
                     class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Website
                     Disclaimer</a>
@@ -554,32 +555,32 @@
             </div>
             <!-- Copyright and Social Buttons -->
             <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
+                <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: var(--type-meta);">
                     <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <span class="small opacity-75 me-2" style="font-size: 0.75rem; font-weight: 500;">Connect with
+                    <span class="small opacity-75 me-2" style="font-size: var(--type-meta); font-weight: 500;">Connect with
                         us:</span>
                     <a href="https://www.facebook.com" target="_blank"
                         class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
                         style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Facebook"><i
-                            class="iconoir-facebook" style="font-size: 1rem;"></i></a>
+                            class="iconoir-facebook" style="font-size: var(--type-body);"></i></a>
                     <a href="https://www.instagram.com" target="_blank"
                         class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
                         style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="Instagram"><i
-                            class="iconoir-instagram" style="font-size: 1rem;"></i></a>
+                            class="iconoir-instagram" style="font-size: var(--type-body);"></i></a>
                     <a href="https://www.youtube.com" target="_blank"
                         class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
                         style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="YouTube"><i
-                            class="iconoir-youtube" style="font-size: 1rem;"></i></a>
+                            class="iconoir-youtube" style="font-size: var(--type-body);"></i></a>
                     <a href="https://www.tiktok.com" target="_blank"
                         class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
                         style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="TikTok"><i
-                            class="iconoir-tiktok" style="font-size: 1rem;"></i></a>
+                            class="iconoir-tiktok" style="font-size: var(--type-body);"></i></a>
                     <a href="https://www.linkedin.com" target="_blank"
                         class="text-white hover-opacity-100 opacity-75 transition-all d-flex align-items-center justify-content-center rounded-circle"
                         style="width: 32px; height: 32px; background: rgba(255,255,255,0.1);" title="LinkedIn"><i
-                            class="iconoir-linkedin" style="font-size: 1rem;"></i></a>
+                            class="iconoir-linkedin" style="font-size: var(--type-body);"></i></a>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@
   background: #F8FAFC;
   border-bottom: 1px solid #E8EEF5 !important;
   color: #64748B !important;
-  font-size: 12px !important;
+  font-size: var(--type-meta) !important;
   font-weight: 700 !important;
   line-height: 18px;
   white-space: normal;
@@ -51,7 +51,7 @@
   border-bottom: 1px solid #EEF3F8 !important;
   background: transparent;
   color: #16161A !important;
-  font-size: 13px !important;
+  font-size: var(--type-table) !important;
   font-weight: 500 !important;
   line-height: 20px;
 }
@@ -84,13 +84,13 @@
 .pmo-data-table--details tbody>tr> :first-child {
   width: 38%;
   color: #64748B !important;
-  font-size: 12px !important;
+  font-size: var(--type-meta) !important;
   font-weight: 700 !important;
 }
 
 .pmo-data-table--details tbody>tr> :not(:first-child) {
   color: #16161A !important;
-  font-size: 13px !important;
+  font-size: var(--type-table) !important;
   font-weight: 600 !important;
 }
 

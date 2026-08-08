@@ -7,6 +7,8 @@
     <title>Public Mutual Design System Library</title>
     <link href="PMO corporate/css/montserrat.css" rel="stylesheet">
     <link rel="stylesheet" href="PMO corporate/css/iconoir.css">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="pmo-core.css">
     <style>
         :root {
             /* Canonical tokens aligned to PMO corporate/css/styles.css */
@@ -1300,28 +1302,28 @@
                                     <td>Normal paragraph and form body copy</td>
                                 </tr>
                                 <tr>
-                                    <td><code>--type-body-sm</code></td>
+                                    <td><code>--type-caption</code></td>
                                     <td><code>0.875rem</code></td>
-                                    <td>Current <code>0.85rem</code>, <code>0.875rem</code>, <code>0.9rem</code></td>
+                                    <td>Secondary body, helper paragraphs, nav labels</td>
                                     <td>Secondary body, helper paragraphs, nav labels</td>
                                 </tr>
                                 <tr>
                                     <td><code>--type-caption</code></td>
-                                    <td><code>0.8rem</code></td>
-                                    <td>Current <code>fs-8</code> and most dashboard labels</td>
+                                    <td><code>0.875rem</code></td>
+                                    <td>Semantic <code>.text-caption</code> and most dashboard labels</td>
                                     <td>Table cells, compact labels, small controls</td>
                                 </tr>
                                 <tr>
                                     <td><code>--type-meta</code></td>
-                                    <td><code>0.72rem</code></td>
-                                    <td>Current <code>0.7rem</code>, <code>0.72rem</code>, <code>fs-9</code></td>
+                                    <td><code>0.75rem</code></td>
+                                    <td>Semantic <code>.text-meta</code></td>
                                     <td>Metadata, timestamps, legal footnotes</td>
                                 </tr>
                                 <tr>
-                                    <td><code>--type-micro</code></td>
-                                    <td><code>0.6rem</code></td>
-                                    <td>Current <code>fs-10</code></td>
-                                    <td>Badges only; avoid for long readable text</td>
+                                    <td><code>--type-xs</code></td>
+                                    <td><code>0.75rem</code></td>
+                                    <td>Icon-only utility sizing via <code>.icon-size-xs</code></td>
+                                    <td>Use only for compact icons and indicators</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1335,7 +1337,8 @@
                             <h2>Reusable UI inventory</h2>
                         </div>
                         <p class="section-note">
-                            Shared primitives now live in <code>pmo-core.css</code>; shell stylesheets retain only
+                            Foundation tokens live in <code>design-tokens.css</code> and shared primitives live in
+                            <code>pmo-core.css</code>; shell stylesheets retain only
                             portal layout and page-specific modifiers.
                         </p>
                     </div>
@@ -1641,8 +1644,7 @@
                                             href="Corporate Website/landing.html"><code>Corporate Website/landing.html</code></a>
                                     </td>
                                     <td>31 inline typography, 11 inline colors</td>
-                                    <td>Marketing page mixes <code>fs-4</code>, <code>fs-5</code>, <code>fs-8</code>
-                                        with custom inline sizes</td>
+                                    <td>Marketing page uses semantic type utilities and token-backed sizes</td>
                                     <td><span class="chip amber">P1</span></td>
                                 </tr>
                                 <tr>
@@ -1687,9 +1689,9 @@
                             <div class="state-cell"><code>--type-xs</code> to <code>--type-display</code></div>
                             <div class="state-cell"><span class="chip red">P0</span></div>
 
-                            <div class="state-cell component" role="rowheader">Bootstrap fs scale is overused</div>
-                            <div class="state-cell"><code>fs-8</code> appears 1,666 times and <code>fs-9</code> appears
-                                935 times.</div>
+                            <div class="state-cell component" role="rowheader">Legacy fs scale removed</div>
+                            <div class="state-cell">Production pages use semantic type utilities from
+                                <code>design-tokens.css</code>.</div>
                             <div class="state-cell">Small text becomes the default instead of a deliberate caption
                                 style.</div>
                             <div class="state-cell">Create semantic classes like <code>.text-caption</code>,
@@ -1838,9 +1840,15 @@
                             <tbody>
                                 <tr>
                                     <td><a class="source-link"
+                                            href="design-tokens.css"><code>design-tokens.css</code></a>
+                                    </td>
+                                    <td>Canonical foundation/type tokens for every shell.</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="source-link"
                                             href="pmo-core.css"><code>pmo-core.css</code></a>
                                     </td>
-                                    <td>Canonical tokens plus the shared badge, view-tab, and gateway-tab component contracts.</td>
+                                    <td>Shared badge, view-tab, gateway-tab, and data-table contracts.</td>
                                 </tr>
                                 <tr>
                                     <td><a class="source-link"

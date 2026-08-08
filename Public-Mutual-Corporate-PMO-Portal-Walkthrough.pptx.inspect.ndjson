@@ -1,0 +1,150 @@
+{"kind":"deck","id":"pr/4tijle","name":"Deck"}
+{"kind":"layout","layoutId":"ce3f3442-eb03-4390-a7b5-6cd89384bddd","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"a3596650-8d7d-415c-973e-35313d0a070c","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/v5st6n","slide":1,"title":"Corporate PMO Portal","textShapes":5}
+{"kind":"textbox","id":"sh/al47qx07","slide":1,"text":"Corporate PMO Portal","textPreview":"Corporate PMO Portal","textChars":20,"textLines":1,"bbox":[72,190,900,86]}
+{"kind":"textbox","id":"sh/lcfqpcju","slide":1,"text":"A guided walkthrough of registration, login and corporate investment management","textPreview":"A guided walkthrough of registration, login and corporate investment management","textChars":79,"textLines":1,"bbox":[76,292,720,64]}
+{"kind":"shape","id":"sh/kb6pw7i9","slide":1,"bbox":[76,397,245,8]}
+{"kind":"textbox","id":"sh/jad8n21o","slide":1,"text":"Designed for trusted corporate self-service across Unit Trust and Employer Online Portal workflows.","textPreview":"Designed for trusted corporate self-service across Unit Trust and Employer Online Portal workflows.","textChars":99,"textLines":1,"bbox":[76,438,600,62]}
+{"kind":"shape","id":"sh/y947uh03","slide":1,"bbox":[832,150,330,350]}
+{"kind":"textbox","id":"sh/tgfqtwjq","slide":1,"text":"One corporate portal\nfor investment visibility,\naction and control.","textPreview":"One corporate portal | for investment visibility, | action and control.","textChars":67,"textLines":3,"bbox":[872,215,245,178]}
+{"kind":"textbox","id":"sh/8f6p0ri5","slide":1,"text":"REGISTRATION → LOGIN → MANAGE","textPreview":"REGISTRATION → LOGIN → MANAGE","textChars":29,"textLines":1,"bbox":[872,430,245,28]}
+{"kind":"image","id":"im/t83el0ze","slide":1,"name":"","alt":"Public Mutual logo","bbox":[72,52,138,44]}
+{"kind":"image","id":"im/65cva50n","slide":1,"name":"","alt":"Corporate PMO logo","bbox":[222,54,146,42]}
+{"kind":"notes","id":"nt/v5st6n","slide":1,"text":""}
+{"kind":"slide","id":"sl/jgy4wo","slide":2,"title":"CORPORATE PMO PORTAL","textShapes":16}
+{"kind":"textbox","id":"sh/y1gzqho3","slide":2,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/l47i1w7e","slide":2,"text":"THE EXPERIENCE","textPreview":"THE EXPERIENCE","textChars":14,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/03yhsr6t","slide":2,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/bep0vmpc","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/qdwzmhor","slide":2,"text":"A controlled path from enrolment to action","textPreview":"A controlled path from enrolment to action","textChars":42,"textLines":1,"bbox":[64,110,850,60]}
+{"kind":"textbox","id":"sh/d07ixw7i","slide":2,"text":"The portal creates a clear hand-off between onboarding, secure access and day-to-day investment operations.","textPreview":"The portal creates a clear hand-off between onboarding, secure access and day-to-day investment operations.","textChars":107,"textLines":1,"bbox":[64,176,880,52]}
+{"kind":"shape","id":"sh/cfyhor6x","slide":2,"bbox":[64,300,334,228]}
+{"kind":"textbox","id":"sh/va9076pg","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[90,326,65,34]}
+{"kind":"textbox","id":"sh/a90jy1ob","slide":2,"text":"Register","textPreview":"Register","textChars":8,"textLines":1,"bbox":[90,382,260,43]}
+{"kind":"textbox","id":"sh/grqtgfy9","slide":2,"text":"Agree to service terms and identify the corporate user.","textPreview":"Agree to service terms and identify the corporate user.","textChars":55,"textLines":1,"bbox":[90,438,256,56]}
+{"kind":"textbox","id":"sh/hszupkfu","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[406,386,38,40]}
+{"kind":"shape","id":"sh/upobepgj","slide":2,"bbox":[449,300,334,228]}
+{"kind":"textbox","id":"sh/vqhsnax4","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[475,326,65,34]}
+{"kind":"textbox","id":"sh/8n6tcfyd","slide":2,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[475,382,260,43]}
+{"kind":"textbox","id":"sh/tofalkfy","slide":2,"text":"Set credentials, confirm role context and validate with PAC.","textPreview":"Set credentials, confirm role context and validate with PAC.","textChars":60,"textLines":1,"bbox":[475,438,256,56]}
+{"kind":"textbox","id":"sh/6loba5g7","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[791,386,38,40]}
+{"kind":"shape","id":"sh/7mxsjaxs","slide":2,"bbox":[834,300,334,228]}
+{"kind":"textbox","id":"sh/kj6t8vyh","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[860,326,65,34]}
+{"kind":"textbox","id":"sh/lkfah0zm","slide":2,"text":"Manage","textPreview":"Manage","textChars":6,"textLines":1,"bbox":[860,382,260,43]}
+{"kind":"textbox","id":"sh/14nipsne","slide":2,"text":"Review holdings, submit requests and authorise transactions.","textPreview":"Review holdings, submit requests and authorise transactions.","textChars":60,"textLines":1,"bbox":[860,438,256,56]}
+{"kind":"notes","id":"nt/jgy4wo","slide":2,"text":""}
+{"kind":"slide","id":"sl/9yas8p","slide":3,"title":"CORPORATE PMO PORTAL","textShapes":18}
+{"kind":"textbox","id":"sh/87ulgn6h","slide":3,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/76147ipw","slide":3,"text":"REGISTRATION · STEP 1","textPreview":"REGISTRATION · STEP 1","textChars":21,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/65s3edob","slide":3,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/l4jm5s7q","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/k3alcn65","slide":3,"text":"Registration begins with a clear service commitment","textPreview":"Registration begins with a clear service commitment","textChars":51,"textLines":1,"bbox":[64,110,950,60]}
+{"kind":"textbox","id":"sh/z2143ip0","slide":3,"text":"The first screen establishes the terms, mandate and authorised-access context before any user details are collected.","textPreview":"The first screen establishes the terms, mandate and authorised-access context before any user details are collected.","textChars":116,"textLines":1,"bbox":[64,176,920,50]}
+{"kind":"shape","id":"sh/y1s3adof","slide":3,"bbox":[678,125,470,430]}
+{"kind":"textbox","id":"sh/50nmhc7a","slide":3,"text":"Corporate PMO Registration","textPreview":"Corporate PMO Registration","textChars":26,"textLines":1,"bbox":[720,168,360,30]}
+{"kind":"shape","id":"sh/4ze5o76p","slide":3,"bbox":[720,218,362,2]}
+{"kind":"textbox","id":"sh/id4fu1g3","slide":3,"text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[724,254,28,28]}
+{"kind":"textbox","id":"sh/jedgn6h8","slide":3,"text":"Terms and Conditions accepted","textPreview":"Terms and Conditions accepted","textChars":29,"textLines":1,"bbox":[762,250,292,36]}
+{"kind":"textbox","id":"sh/4fmxwbyt","slide":3,"text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[724,323,28,28]}
+{"kind":"textbox","id":"sh/5gvypgze","slide":3,"text":"Corporate mandate acknowledged","textPreview":"Corporate mandate acknowledged","textChars":30,"textLines":1,"bbox":[762,319,292,36]}
+{"kind":"textbox","id":"sh/a94fq10r","slide":3,"text":"✓","textPreview":"✓","textChars":1,"textLines":1,"bbox":[724,392,28,28]}
+{"kind":"textbox","id":"sh/vadgjmhc","slide":3,"text":"Authorised users confirmed","textPreview":"Authorised users confirmed","textChars":26,"textLines":1,"bbox":[762,388,292,36]}
+{"kind":"shape","id":"sh/wbmxsrix","slide":3,"bbox":[720,466,170,43]}
+{"kind":"textbox","id":"sh/hcvylwzi","slide":3,"text":"Disagree","textPreview":"Disagree","textChars":8,"textLines":1,"bbox":[732,474,145,24]}
+{"kind":"shape","id":"sh/e5of2lgv","slide":3,"bbox":[912,466,170,43]}
+{"kind":"textbox","id":"sh/f6xgvqhg","slide":3,"text":"Agree","textPreview":"Agree","textChars":5,"textLines":1,"bbox":[924,474,145,24]}
+{"kind":"shape","id":"sh/bq9cnix8","slide":3,"bbox":[76,305,12,12]}
+{"kind":"textbox","id":"sh/qpgvudgn","slide":3,"text":"Set the right expectations","textPreview":"Set the right expectations","textChars":26,"textLines":1,"bbox":[108,295,465,30]}
+{"kind":"textbox","id":"sh/dcrupsfy","slide":3,"text":"The opening makes the service boundaries and account authority explicit.","textPreview":"The opening makes the service boundaries and account authority explicit.","textChars":72,"textLines":1,"bbox":[108,329,465,54]}
+{"kind":"shape","id":"sh/cridwnyd","slide":3,"bbox":[76,430,12,12]}
+{"kind":"textbox","id":"sh/ze9cr2x4","slide":3,"text":"Move forward only when ready","textPreview":"Move forward only when ready","textChars":28,"textLines":1,"bbox":[108,420,465,30]}
+{"kind":"textbox","id":"sh/yd0vyxgj","slide":3,"text":"An affirmative “Agree” action advances the user into the registration form.","textPreview":"An affirmative “Agree” action advances the user into the registration form.","textChars":75,"textLines":1,"bbox":[108,454,465,54]}
+{"kind":"notes","id":"nt/9yas8p","slide":3,"text":""}
+{"kind":"slide","id":"sl/mxexxz","slide":4,"title":"CORPORATE PMO PORTAL","textShapes":18}
+{"kind":"textbox","id":"sh/czqlgrid","slide":4,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/byhknm1s","slide":4,"text":"REGISTRATION · STEP 2","textPreview":"REGISTRATION · STEP 2","textChars":21,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/qxo3eh07","slide":4,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/l4zmtgzu","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/03qlkbi9","slide":4,"text":"Company identity and login credentials are collected together","textPreview":"Company identity and login credentials are collected together","textChars":61,"textLines":1,"bbox":[64,110,1050,60]}
+{"kind":"textbox","id":"sh/z2hkr6ho","slide":4,"text":"The portal pairs corporate registration details with secure account setup, keeping the onboarding journey in one place.","textPreview":"The portal pairs corporate registration details with secure account setup, keeping the onboarding journey in one place.","textChars":119,"textLines":1,"bbox":[64,176,920,52]}
+{"kind":"shape","id":"sh/y183i10j","slide":4,"bbox":[64,296,522,114]}
+{"kind":"textbox","id":"sh/18f2hcjq","slide":4,"text":"Company Registration No.","textPreview":"Company Registration No.","textChars":24,"textLines":1,"bbox":[92,318,260,27]}
+{"kind":"textbox","id":"sh/g76l87i5","slide":4,"text":"Corporate identity","textPreview":"Corporate identity","textChars":18,"textLines":1,"bbox":[92,355,310,25]}
+{"kind":"textbox","id":"sh/a54j2dw3","slide":4,"text":"Required","textPreview":"Required","textChars":8,"textLines":1,"bbox":[462,339,90,22]}
+{"kind":"shape","id":"sh/vqd0vixo","slide":4,"bbox":[670,296,522,114]}
+{"kind":"textbox","id":"sh/wrm14ne9","slide":4,"text":"Full Name & IC No.","textPreview":"Full Name & IC No.","textChars":18,"textLines":1,"bbox":[698,318,260,27]}
+{"kind":"textbox","id":"sh/xsvixsfu","slide":4,"text":"Authorised individual","textPreview":"Authorised individual","textChars":21,"textLines":1,"bbox":[698,355,310,25]}
+{"kind":"textbox","id":"sh/it4j6xwf","slide":4,"text":"Required","textPreview":"Required","textChars":8,"textLines":1,"bbox":[1068,339,90,22]}
+{"kind":"shape","id":"sh/jud0z2x0","slide":4,"bbox":[64,444,522,114]}
+{"kind":"textbox","id":"sh/kvm18nel","slide":4,"text":"Mobile & security code","textPreview":"Mobile & security code","textChars":22,"textLines":1,"bbox":[92,466,260,27]}
+{"kind":"textbox","id":"sh/5wfi1sfq","slide":4,"text":"Contact validation","textPreview":"Contact validation","textChars":18,"textLines":1,"bbox":[92,503,310,25]}
+{"kind":"textbox","id":"sh/6xojaxwb","slide":4,"text":"Required","textPreview":"Required","textChars":8,"textLines":1,"bbox":[462,487,90,22]}
+{"kind":"shape","id":"sh/7yx032xw","slide":4,"bbox":[670,444,522,114]}
+{"kind":"textbox","id":"sh/32x0r2t4","slide":4,"text":"User ID & password","textPreview":"User ID & password","textChars":18,"textLines":1,"bbox":[698,466,260,27]}
+{"kind":"textbox","id":"sh/21ozixcj","slide":4,"text":"Login credentials","textPreview":"Login credentials","textChars":17,"textLines":1,"bbox":[698,503,310,25]}
+{"kind":"textbox","id":"sh/pozitcba","slide":4,"text":"Required","textPreview":"Required","textChars":8,"textLines":1,"bbox":[1068,487,90,22]}
+{"kind":"textbox","id":"sh/4nqhk7up","slide":4,"text":"Built-in password rules help the user create a credential that meets the portal’s requirements.","textPreview":"Built-in password rules help the user create a credential that meets the portal’s requirements.","textChars":95,"textLines":1,"bbox":[64,600,1050,30]}
+{"kind":"notes","id":"nt/mxexxz","slide":4,"text":""}
+{"kind":"slide","id":"sl/k1lho5","slide":5,"title":"CORPORATE PMO PORTAL","textShapes":16}
+{"kind":"textbox","id":"sh/e1w3uxo7","slide":5,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/14725s7y","slide":5,"text":"REGISTRATION · STEP 3","textPreview":"REGISTRATION · STEP 3","textChars":21,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/g3ylw76d","slide":5,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/ry5kzipg","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/6xw3qdob","slide":5,"text":"Security verification confirms access and role context","textPreview":"Security verification confirms access and role context","textChars":54,"textLines":1,"bbox":[64,110,950,60]}
+{"kind":"textbox","id":"sh/t0n21s7m","slide":5,"text":"Before access is granted, the applicant confirms the company, the Unit Trust and EOP role assignments, and a PAC verification method.","textPreview":"Before access is granted, the applicant confirms the company, the Unit Trust and EOP role assignments, and a PAC verification method.","textChars":133,"textLines":1,"bbox":[64,176,970,50]}
+{"kind":"shape","id":"sh/szelsn61","slide":5,"bbox":[64,285,530,246]}
+{"kind":"textbox","id":"sh/bu94bmp0","slide":5,"text":"Role context","textPreview":"Role context","textChars":12,"textLines":1,"bbox":[96,316,220,28]}
+{"kind":"textbox","id":"sh/qtg32hof","slide":5,"text":"Unit Trust","textPreview":"Unit Trust","textChars":10,"textLines":1,"bbox":[96,370,140,28]}
+{"kind":"textbox","id":"sh/0ril87it","slide":5,"text":"User & Authoriser","textPreview":"User & Authoriser","textChars":17,"textLines":1,"bbox":[280,370,250,28]}
+{"kind":"textbox","id":"sh/1sr21cze","slide":5,"text":"Employer Online Portal","textPreview":"Employer Online Portal","textChars":22,"textLines":1,"bbox":[96,416,178,28]}
+{"kind":"textbox","id":"sh/ep036x0n","slide":5,"text":"Admin","textPreview":"Admin","textChars":5,"textLines":1,"bbox":[280,416,250,28]}
+{"kind":"textbox","id":"sh/zq9kz2h8","slide":5,"text":"Ativa Studio Solution Sdn Bhd","textPreview":"Ativa Studio Solution Sdn Bhd","textChars":29,"textLines":1,"bbox":[96,471,370,25]}
+{"kind":"shape","id":"sh/cnil47ix","slide":5,"bbox":[662,285,486,246]}
+{"kind":"textbox","id":"sh/dor2xsz2","slide":5,"text":"PAC verification","textPreview":"PAC verification","textChars":16,"textLines":1,"bbox":[696,316,240,28]}
+{"kind":"textbox","id":"sh/ql032x0r","slide":5,"text":"SMS Personal Authentication Code","textPreview":"SMS Personal Authentication Code","textChars":32,"textLines":1,"bbox":[696,366,330,25]}
+{"kind":"shape","id":"sh/rm9kv2hc","slide":5,"bbox":[696,413,230,45]}
+{"kind":"textbox","id":"sh/4jyl0nil","slide":5,"text":"Enter 8-digit PAC","textPreview":"Enter 8-digit PAC","textChars":17,"textLines":1,"bbox":[712,424,170,20]}
+{"kind":"shape","id":"sh/pk72tsz6","slide":5,"bbox":[945,413,160,45]}
+{"kind":"textbox","id":"sh/5gzixoru","slide":5,"text":"COMPLETE","textPreview":"COMPLETE","textChars":8,"textLines":1,"bbox":[959,424,132,20]}
+{"kind":"textbox","id":"sh/kfq14jap","slide":5,"text":"Result: a verified user is ready to enter the portal with the appropriate operating permissions.","textPreview":"Result: a verified user is ready to enter the portal with the appropriate operating permissions.","textChars":96,"textLines":1,"bbox":[64,590,1010,30]}
+{"kind":"notes","id":"nt/k1lho5","slide":5,"text":""}
+{"kind":"slide","id":"sl/azdt4t","slide":6,"title":"CORPORATE PMO PORTAL","textShapes":11}
+{"kind":"textbox","id":"sh/fytsfmdg","slide":6,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/0z29oru1","slide":6,"text":"AFTER LOGIN · DASHBOARD","textPreview":"AFTER LOGIN · DASHBOARD","textChars":23,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/10bahcvm","slide":6,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/6t0rixcz","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/ru98b2d4","slide":6,"text":"The dashboard puts portfolio health and next actions in view","textPreview":"The dashboard puts portfolio health and next actions in view","textChars":60,"textLines":1,"bbox":[64,104,1040,54]}
+{"kind":"textbox","id":"sh/svi9k7up","slide":6,"text":"On login, corporate users land on a consolidated command centre for holdings, transactions, fund performance and analytics.","textPreview":"On login, corporate users land on a consolidated command centre for holdings, transactions, fund performance and analytics.","textChars":123,"textLines":1,"bbox":[64,164,1030,44]}
+{"kind":"shape","id":"sh/ap4ru1c3","slide":6,"bbox":[834,278,12,12]}
+{"kind":"textbox","id":"sh/bqdsn6to","slide":6,"text":"Portfolio at a glance","textPreview":"Portfolio at a glance","textChars":21,"textLines":1,"bbox":[866,268,310,30]}
+{"kind":"textbox","id":"sh/3m9of65c","slide":6,"text":"Holdings, investment cost and returns are surfaced prominently.","textPreview":"Holdings, investment cost and returns are surfaced prominently.","textChars":63,"textLines":1,"bbox":[866,302,310,54]}
+{"kind":"shape","id":"sh/2l0n61or","slide":6,"bbox":[834,402,12,12]}
+{"kind":"textbox","id":"sh/pob61gni","slide":6,"text":"Work that needs attention","textPreview":"Work that needs attention","textChars":25,"textLines":1,"bbox":[866,392,310,30]}
+{"kind":"textbox","id":"sh/onip8bmx","slide":6,"text":"Pending approvals are flagged with a direct route to action.","textPreview":"Pending approvals are flagged with a direct route to action.","textChars":60,"textLines":1,"bbox":[866,426,310,54]}
+{"kind":"shape","id":"sh/bqto3q58","slide":6,"bbox":[834,526,12,12]}
+{"kind":"textbox","id":"sh/qpk7al4n","slide":6,"text":"Investment intelligence","textPreview":"Investment intelligence","textChars":23,"textLines":1,"bbox":[866,516,310,30]}
+{"kind":"textbox","id":"sh/dsb65gne","slide":6,"text":"Recent transactions, price performance and fund analytics sit together.","textPreview":"Recent transactions, price performance and fund analytics sit together.","textChars":71,"textLines":1,"bbox":[866,550,310,54]}
+{"kind":"image","id":"im/srmdkjm1","slide":6,"name":"","geometry":"roundRect","alt":"Corporate PMO dashboard from prototype","bbox":[64,244,730,405]}
+{"kind":"notes","id":"nt/azdt4t","slide":6,"text":""}
+{"kind":"slide","id":"sl/czubw3","slide":7,"title":"CORPORATE PMO PORTAL","textShapes":14}
+{"kind":"textbox","id":"sh/yh8bqlgf","slide":7,"text":"CORPORATE PMO PORTAL","textPreview":"CORPORATE PMO PORTAL","textChars":20,"textLines":1,"bbox":[64,40,420,22]}
+{"kind":"textbox","id":"sh/lkju1gz6","slide":7,"text":"AFTER LOGIN · WHAT USERS CAN DO","textPreview":"AFTER LOGIN · WHAT USERS CAN DO","textChars":31,"textLines":1,"bbox":[1040,40,176,22]}
+{"kind":"shape","id":"sh/kjatsbyl","slide":7,"bbox":[64,74,1152,2]}
+{"kind":"textbox","id":"sh/buhcv6h4","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[64,672,45,20]}
+{"kind":"textbox","id":"sh/at8bm1gj","slide":7,"text":"A single portal supports visibility, execution and governance","textPreview":"A single portal supports visibility, execution and governance","textChars":61,"textLines":1,"bbox":[64,110,1030,58]}
+{"kind":"textbox","id":"sh/xwzuxgzu","slide":7,"text":"The logged-in navigation makes routine servicing and control tasks easy to find without losing the high-level portfolio view.","textPreview":"The logged-in navigation makes routine servicing and control tasks easy to find without losing the high-level portfolio view.","textChars":125,"textLines":1,"bbox":[64,176,1030,48]}
+{"kind":"textbox","id":"sh/wvqtobyp","slide":7,"text":"Review accounts","textPreview":"Review accounts","textChars":15,"textLines":1,"bbox":[64,300,420,30]}
+{"kind":"shape","id":"sh/fq1c7qh8","slide":7,"bbox":[64,343,88,4]}
+{"kind":"textbox","id":"sh/upsvy5gn","slide":7,"text":"View holdings, account details, fund performance and analytics.","textPreview":"View holdings, account details, fund performance and analytics.","textChars":63,"textLines":1,"bbox":[64,363,440,55]}
+{"kind":"textbox","id":"sh/cjapkf21","slide":7,"text":"Make investments","textPreview":"Make investments","textChars":16,"textLines":1,"bbox":[672,300,420,30]}
+{"kind":"shape","id":"sh/dkj6tkjm","slide":7,"bbox":[672,343,88,4]}
+{"kind":"textbox","id":"sh/qh8ni5kv","slide":7,"text":"Top up and submit investment or redemption requests.","textPreview":"Top up and submit investment or redemption requests.","textChars":52,"textLines":1,"bbox":[672,363,440,55]}
+{"kind":"textbox","id":"sh/ri1ora1g","slide":7,"text":"Authorise work","textPreview":"Authorise work","textChars":14,"textLines":1,"bbox":[64,468,420,30]}
+{"kind":"shape","id":"sh/4fq5gv2p","slide":7,"bbox":[64,511,88,4]}
+{"kind":"textbox","id":"sh/pgz6p0ja","slide":7,"text":"Review and approve pending transactions using role-based controls.","textPreview":"Review and approve pending transactions using role-based controls.","textChars":66,"textLines":1,"bbox":[64,531,440,55]}
+{"kind":"textbox","id":"sh/2t8nelkz","slide":7,"text":"Stay informed","textPreview":"Stay informed","textChars":13,"textLines":1,"bbox":[672,468,420,30]}
+{"kind":"shape","id":"sh/3ehonqlk","slide":7,"bbox":[672,511,88,4]}
+{"kind":"textbox","id":"sh/grq5cv2t","slide":7,"text":"Search transaction history, download statements and view online activities.","textPreview":"Search transaction history, download statements and view online activities.","textChars":75,"textLines":1,"bbox":[672,531,440,55]}
+{"kind":"textbox","id":"sh/hsz6l03e","slide":7,"text":"Corporate PMO combines a polished onboarding experience with operational tools that help users act confidently after login.","textPreview":"Corporate PMO combines a polished onboarding experience with operational tools that help users act confidently after login.","textChars":123,"textLines":1,"bbox":[64,634,1110,28]}
+{"kind":"notes","id":"nt/czubw3","slide":7,"text":""}

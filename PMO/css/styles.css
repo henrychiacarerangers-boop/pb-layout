@@ -1,24 +1,4 @@
-:root {
-    --brand-primary: #ff1700;
-    --brand-navy: #002e77;
-    --accent-primary: #002e77;
-    --action-primary: #002e77;
-    --interactive-hover: #58595b;
-    --bg-container: #FCFCFC;
-    --bg-main: #FCFCFC;
-    --ui-support: #8e9ab0;
-    --text-primary: #16161a;
-    --text-secondary: #48484b;
-
-    /* Standardized Structure */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-pill: 50rem;
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.04);
-    --border-light: 1px solid rgba(0, 0, 0, 0.04);
-}
-
+/* Shared foundation tokens are defined in /design-tokens.css. */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8fafc;
@@ -197,7 +177,7 @@ body {
 }
 
 .form-label {
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: #6c757d;
     margin-bottom: 5px;
 }
@@ -244,12 +224,12 @@ body {
     align-items: center;
     text-decoration: none;
     color: #333;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
 }
 
 .link-item i {
     margin-right: 10px;
-    font-size: 1.1rem;
+    font-size: var(--type-lead);
 }
 
 /* Red Info Footer */
@@ -257,13 +237,13 @@ body {
     background-color: #ff1700;
     color: white;
     padding: 40px 0;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
 }
 
 .info-footer h5 {
     font-weight: 700;
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: var(--type-body);
 }
 
 .info-footer a {
@@ -276,7 +256,7 @@ body {
     background-color: var(--brand-navy);
     color: white;
     padding: 15px 0;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
 }
 
 .bottom-links a {
@@ -363,7 +343,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-bottom: 10px;
     transition: all 0.3s ease;
 }
@@ -375,13 +355,13 @@ body {
 
 .step-text {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
     line-height: 1.2;
 }
 
 .step-text small {
     font-weight: 400;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     color: var(--ui-support);
 }
 
@@ -420,7 +400,7 @@ body {
 .register-card .subtitle {
     text-align: center;
     color: #333;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     margin-bottom: 30px;
 }
 
@@ -431,7 +411,7 @@ body {
     padding: 25px;
     height: 200px;
     overflow-y: auto;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
@@ -447,14 +427,14 @@ body {
 .custom-check-list li {
     display: flex;
     align-items: flex-start;
-    font-size: 0.8rem;
+    font-size: var(--type-caption);
     margin-bottom: 12px;
     color: #555;
 }
 
 .custom-check-list li i {
     color: #198754;
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-right: 12px;
     margin-top: -3px;
 }
@@ -482,7 +462,7 @@ body {
     border: none;
     color: #ff1700;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     padding: 0;
 }
 
@@ -497,7 +477,7 @@ body {
 }
 
 .pac-info-text {
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     color: #333;
     display: flex;
     align-items: flex-start;
@@ -505,7 +485,7 @@ body {
 }
 
 .pac-info-text i {
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
     margin-right: 10px;
 }
 
@@ -531,13 +511,13 @@ body {
 
 .legal-card h1 {
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: var(--type-title);
     color: var(--brand-navy);
     margin-bottom: 8px;
 }
 
 .legal-card p.subtitle {
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     color: var(--ui-support);
     margin-bottom: 30px;
 }
@@ -549,7 +529,7 @@ body {
     padding: 24px !important;
     max-height: 280px !important;
     overflow-y: auto;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 35px;
@@ -636,7 +616,7 @@ body {
 .input-group-text {
     background-color: #f8fafc;
     color: var(--ui-support) !important;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     transition: all 0.2s ease;
 }
 
@@ -729,7 +709,7 @@ body {
 .scroller-badge {
     background-color: var(--brand-navy) !important;
     color: white !important;
-    font-size: 0.7rem !important;
+    font-size: var(--type-meta) !important;
     font-weight: 600 !important;
     padding: 4px 10px !important;
     border-radius: 20px !important;
@@ -799,7 +779,7 @@ body {
 .footer-links a {
     color: #666;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     transition: color 0.2s ease;
 }
 
@@ -946,7 +926,7 @@ body {
 .widescreen-header-links a {
     color: #333333 !important;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     font-weight: 600;
     transition: color 0.2s ease;
 }
@@ -992,7 +972,7 @@ body {
 }
 
 .widescreen-header-links .dropdown-item {
-    font-size: 0.95rem !important;
+    font-size: var(--type-body) !important;
     font-weight: 600;
     color: #002e77 !important;
     padding: 10px 20px !important;
@@ -1011,7 +991,7 @@ body {
     background: #e9ecef;
     padding: 6px 12px;
     border-radius: 12px;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     color: #495057;
     cursor: pointer;
@@ -1023,7 +1003,7 @@ body {
     background: #e9ecef;
     padding: 6px 12px;
     border-radius: 12px;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     color: #495057;
     cursor: pointer;
@@ -1081,7 +1061,7 @@ body {
 
 .widescreen-main-panel.has-carousel .hero-title {
     color: #ffffff !important;
-    font-size: 2.2rem;
+    font-size: var(--type-title);
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 15px;
@@ -1095,7 +1075,7 @@ body {
 
 .widescreen-main-panel.has-carousel .hero-subtitle {
     color: rgba(255, 255, 255, 0.95) !important;
-    font-size: 1.05rem;
+    font-size: var(--type-body);
     font-weight: 600;
     margin-bottom: 0;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -1129,7 +1109,7 @@ body {
     background: #fff0f0;
     color: #ff1700;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     padding: 4px 10px;
     border-radius: 20px;
     margin-bottom: 15px;
@@ -1139,13 +1119,13 @@ body {
 
 .inline-login-card h3 {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: var(--type-title);
     color: #1a1e36;
     margin-bottom: 5px;
 }
 
 .card-subtitle-text {
-    font-size: 0.8rem;
+    font-size: var(--type-caption);
     color: #8e9ab0;
     margin-bottom: 20px;
 }
@@ -1158,7 +1138,7 @@ body {
     padding: 12px 20px;
     border-radius: 25px;
     flex: 1;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     transition: all 0.2s ease;
 }
 
@@ -1174,7 +1154,7 @@ body {
     padding: 12px 20px;
     border-radius: 25px;
     flex: 1;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     font-weight: 600;
     transition: all 0.2s ease;
 }
@@ -1193,7 +1173,7 @@ body {
 }
 
 .inline-link-item {
-    font-size: 0.8rem;
+    font-size: var(--type-caption);
     color: #495057;
     text-decoration: none;
     display: flex;
@@ -1204,7 +1184,7 @@ body {
 
 .inline-link-item i {
     margin-right: 8px;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     color: #ff1700;
 }
 
@@ -1226,7 +1206,7 @@ body {
 
 .logo-box-text {
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     color: #002e77;
     letter-spacing: 0.5px;
 }
@@ -1245,7 +1225,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     text-transform: uppercase;
     color: #495057 !important;
@@ -1285,7 +1265,7 @@ body {
 }
 
 .top-link-item {
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     text-transform: uppercase;
     color: #495057 !important;
@@ -1311,7 +1291,7 @@ body {
 
 .top-social-icons a {
     color: #495057 !important;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     transition: color 0.2s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
@@ -1324,7 +1304,7 @@ body {
 
 .header-utility-icon {
     color: #495057 !important;
-    font-size: 1.3rem;
+    font-size: var(--type-section);
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -1487,13 +1467,13 @@ body {
 }
 
 .mouse-text {
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     color: #6c757d;
     font-weight: 600;
 }
 
 .widescreen-footer-copyright {
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     color: #adb5bd;
     font-weight: 500;
     position: relative;
@@ -1683,7 +1663,7 @@ body {
     background: #ff1700;
     color: #fff;
     font-weight: 700;
-    font-size: 0.75rem;
+    font-size: var(--type-meta);
     padding: 12px 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1711,7 +1691,7 @@ body {
 
 .ticker-item-link {
     color: #1a1e36;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     font-weight: 600;
     text-decoration: none;
     margin-right: 50px;
@@ -1728,7 +1708,7 @@ body {
     content: "•";
     color: #adb5bd;
     margin-left: 50px;
-    font-size: 1.2rem;
+    font-size: var(--type-lead);
 }
 
 @keyframes tickerScroll {
@@ -1758,7 +1738,7 @@ body {
 }
 
 .insight-title {
-    font-size: 1.25rem;
+    font-size: var(--type-lead);
     font-weight: 700;
     color: #002e77;
     margin-bottom: 20px;
@@ -1778,7 +1758,7 @@ body {
     background: none;
     border: none;
     padding: 10px 20px;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     font-weight: 700;
     color: #6c757d;
     cursor: pointer;
@@ -1796,7 +1776,7 @@ body {
 .fund-risk-badge {
     padding: 2px 8px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     display: inline-block;
 }
@@ -1836,7 +1816,7 @@ body {
     background: #f1f3f5;
     border: none;
     padding: 4px 10px;
-    font-size: 0.7rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     color: #495057;
     border-radius: 6px;
@@ -1973,7 +1953,7 @@ body {
     background: transparent;
     padding: 10px 6px;
     border-radius: 8px;
-    font-size: 0.78rem;
+    font-size: var(--type-caption);
     font-weight: 700;
     color: #495057;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2012,7 +1992,7 @@ body {
 }
 
 .gateway-help-list li {
-    font-size: 0.8rem;
+    font-size: var(--type-caption);
     color: #495057;
     margin-bottom: 12px;
     display: flex;
@@ -2023,7 +2003,7 @@ body {
 
 .gateway-help-list i {
     color: #ff1700;
-    font-size: 0.95rem;
+    font-size: var(--type-body);
     margin-top: 2px;
 }
 
@@ -2044,7 +2024,7 @@ body {
     background: rgba(237, 28, 36, 0.06);
     border: 1px solid rgba(237, 28, 36, 0.15);
     color: #ff1700;
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     padding: 6px 12px;
     border-radius: 20px;
@@ -2126,18 +2106,18 @@ body {
     align-items: center;
     color: #ff1700;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     padding-bottom: 8px;
 }
 
 .security-popover-header i {
-    font-size: 1.1rem;
+    font-size: var(--type-lead);
 }
 
 .security-popover-body {
-    font-size: 0.78rem;
+    font-size: var(--type-caption);
     line-height: 1.5;
     color: #495057;
     text-align: left;
@@ -2212,7 +2192,7 @@ body {
     border: none;
     border-radius: 20px;
     padding: 8px 20px !important;
-    font-size: 0.8rem !important;
+    font-size: var(--type-caption) !important;
     font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -2397,7 +2377,7 @@ body {
     align-items: center;
     background: rgba(237, 28, 36, 0.12);
     color: #ff4d5a;
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -2420,7 +2400,7 @@ body {
 
 .hero-title {
     color: #ffffff;
-    font-size: 2.8rem;
+    font-size: var(--type-display);
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -2428,7 +2408,7 @@ body {
 
 .hero-subtitle {
     color: rgba(255, 255, 255, 0.75);
-    font-size: 1.05rem;
+    font-size: var(--type-body);
     line-height: 1.6;
     max-width: 540px;
 }
@@ -2437,7 +2417,7 @@ body {
     background-color: #ff1700;
     color: #ffffff !important;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
     padding: 12px 28px;
     border-radius: 30px;
     transition: all 0.3s ease;
@@ -2461,7 +2441,7 @@ body {
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
     padding: 12px 28px;
     border-radius: 30px;
     transition: all 0.3s ease;
@@ -2542,7 +2522,7 @@ body {
 
 .gateway-tab-btn {
     border-radius: 10px !important;
-    font-size: 0.82rem !important;
+    font-size: var(--type-caption) !important;
     font-weight: 700 !important;
     padding: 10px 16px !important;
     transition: all 0.3s ease !important;
@@ -2559,7 +2539,7 @@ body {
     border: 1px solid #e2e8f0 !important;
     border-radius: 10px !important;
     padding: 12px 16px !important;
-    font-size: 0.9rem !important;
+    font-size: var(--type-caption) !important;
     font-weight: 500 !important;
     transition: all 0.2s ease !important;
 }
@@ -2660,7 +2640,7 @@ body {
 
 .marquee-ticker-item {
     color: #ffffff;
-    font-size: 0.82rem;
+    font-size: var(--type-caption);
     font-weight: 600;
     text-decoration: none;
     margin-right: 40px;
@@ -2673,7 +2653,7 @@ body {
     content: "✦";
     color: rgba(255, 255, 255, 0.4);
     margin-left: 40px;
-    font-size: 0.9rem;
+    font-size: var(--type-caption);
 }
 
 @keyframes marqueeScroll {
@@ -2746,7 +2726,7 @@ body {
 
 /* Small Card Tag */
 .solution-card-tag {
-    font-size: 0.72rem;
+    font-size: var(--type-meta);
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -2758,7 +2738,7 @@ body {
 .solution-card-title {
     color: #002e77;
     /* Navy */
-    font-size: 1.35rem;
+    font-size: var(--type-section);
     font-weight: 800;
     line-height: 1.3;
     font-family: 'Montserrat', sans-serif;
@@ -2768,7 +2748,7 @@ body {
 .solution-card-body {
     color: #475569;
     /* Slate grey */
-    font-size: 0.85rem;
+    font-size: var(--type-caption);
     line-height: 1.6;
     margin-bottom: 24px;
 }
@@ -2784,7 +2764,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.82rem;
+    font-size: var(--type-caption);
     color: #334155;
     margin-bottom: 8px;
     font-weight: 600;
@@ -2793,7 +2773,7 @@ body {
 .solution-card-list li i {
     color: #ff1700;
     /* Red checkmark */
-    font-size: 0.95rem;
+    font-size: var(--type-body);
 }
 
 /* Red CTA Button for Retail */
@@ -2801,7 +2781,7 @@ body {
     background-color: #ff1700 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
-    font-size: 0.85rem !important;
+    font-size: var(--type-caption) !important;
     padding: 12px 24px !important;
     border-radius: 30px !important;
     border: none !important;
@@ -2857,9 +2837,6 @@ body {
 
 /* === Cross-Page Standardization Layer === */
 :root {
-    --font-size-body: 0.875rem;
-    --font-size-tab: 0.8125rem;
-    --font-size-meta: 0.75rem;
     --text-heading: #1a1e36;
     --text-tab: #495057;
     --text-tab-active: var(--brand-primary);
@@ -2893,7 +2870,7 @@ small,
 .subtitle,
 .card-subtitle-text,
 .pac-info-text {
-    font-size: var(--font-size-meta);
+    font-size: var(--type-meta);
     color: var(--ui-support);
 }
 
@@ -2925,7 +2902,7 @@ small,
 .gateway-tab-btn,
 .chart-tab-mock-btn,
 .platform-tab {
-    font-size: var(--font-size-tab) !important;
+    font-size: var(--type-caption) !important;
     font-weight: 600 !important;
     letter-spacing: 0.01em;
 }
@@ -2995,10 +2972,6 @@ small,
 }
 
 /* --- WCAG 2.1 AA shared safeguards --- */
-:root {
-    --ui-support: #5f6f86;
-}
-
 :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
     outline: 3px solid #ff1700 !important;
     outline-offset: 3px;

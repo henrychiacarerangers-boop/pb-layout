@@ -26,7 +26,7 @@
         }
 
         .prs-detail-label {
-            font-size: 0.78rem;
+            font-size: var(--type-caption);
             color: #5d678e;
             font-weight: 600;
         }
@@ -39,7 +39,7 @@
 
         .prs-detail-accordion .accordion-button {
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: var(--type-body);
             color: #002e77;
             background-color: #f8fafc;
         }
@@ -52,7 +52,8 @@
     </style>
     <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
     <script src="../js/accessibility.js" defer></script>
-    <link rel="stylesheet" href="../../pmo-core.css">
+<link rel="stylesheet" href="../../design-tokens.css">
+<link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
@@ -85,19 +86,19 @@
                                     <a href="../unit-trust/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="eopNavPillUt">
-                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="dashboard.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="eopNavPillEop">
-                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="../analytics/unit-trust.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="eopNavPillAnalytics">
-                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -109,14 +110,14 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
+                                        <span class="text-caption fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
                                             Admin</span>
-                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
@@ -155,7 +156,7 @@
                         Online</span>
                     <span class="text-white fw-normal fs-6">· EOP Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
                     09:16</p>
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
                     <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
@@ -163,10 +164,10 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="upload.html" id="eopTabUpload">Upload</a></li>
                     <li class="nav-item"><a class="nav-link" href="authorise.html" id="eopTabAuthorise">Authorise <span
-                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9"
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta"
                                 id="eopTabAuthBadge">3</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="payment.html" id="eopTabPay">Payment <span
-                                class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabPayBadge">2</span></a></li>
+                                class="badge bg-danger rounded-pill ms-1 text-meta" id="eopTabPayBadge">2</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="transactions.html" id="eopTabTxn">Transactions</a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="statements.html" id="eopTabStatements">Statements</a>
@@ -193,13 +194,13 @@
                             <span class="text-primary text-uppercase fw-bold" id="prsDetailName">PRS Islamic Strategic
                                 Equity</span>
                         </h2>
-                        <span class="text-muted fs-8 fw-semibold mt-1 d-block" id="prsDetailSubtitle">Private Retirement
+                        <span class="text-muted text-caption fw-semibold mt-1 d-block" id="prsDetailSubtitle">Private Retirement
                             Scheme · Employer reference (demo)</span>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <button type="button"
-                        class="btn btn-outline-secondary rounded-pill px-4 fs-8 fw-semibold d-flex align-items-center gap-2"
+                        class="btn btn-outline-secondary rounded-pill px-4 text-caption fw-semibold d-flex align-items-center gap-2"
                         style="border-color: #dee2e6; transition: all 0.3s ease;" id="prsDetailPrintBtn">
                         <i class="iconoir-printer fs-6 text-dark" aria-hidden="true"></i> Print
                     </button>
@@ -211,13 +212,13 @@
                     <div class="col-lg-4 border-lg-end pe-lg-4">
                         <div class="prs-detail-label mb-1">Fund category</div>
                         <div class="mb-3">
-                            <span class="badge rounded-pill fw-semibold fs-8 px-3 py-2"
+                            <span class="badge rounded-pill fw-semibold text-caption px-3 py-2"
                                 style="background-color: rgba(38, 36, 123, 0.1); color: #002e77;"
                                 id="prsDetailBadgeCategory">Growth</span>
-                            <span class="badge rounded-pill fw-semibold fs-8 px-3 py-2 ms-1 bg-light text-dark border"
+                            <span class="badge rounded-pill fw-semibold text-caption px-3 py-2 ms-1 bg-light text-dark border"
                                 id="prsDetailBadgeCore">Core</span>
                             <span
-                                class="badge rounded-pill fw-semibold fs-8 px-3 py-2 ms-1 bg-success bg-opacity-10 text-success d-none"
+                                class="badge rounded-pill fw-semibold text-caption px-3 py-2 ms-1 bg-success bg-opacity-10 text-success d-none"
                                 id="prsDetailBadgeSharia">Sharia</span>
                         </div>
                         <div class="prs-detail-label mb-1">Performance as at</div>
@@ -249,7 +250,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="text-muted fs-9 mb-0 mt-2" id="prsDetailReturnsFootnote">Figures mirror the analytics
+                        <p class="text-muted text-meta mb-0 mt-2" id="prsDetailReturnsFootnote">Figures mirror the analytics
                             grid for this prototype; not live pricing.</p>
                     </div>
                 </div>
@@ -265,7 +266,7 @@
                         </button>
                     </h3>
                     <div id="prsCollapseObjective" class="accordion-collapse collapse show">
-                        <div class="accordion-body fs-8 text-secondary lh-lg" id="prsDetailObjective">
+                        <div class="accordion-body text-caption text-secondary lh-lg" id="prsDetailObjective">
                             Demo copy: this PRS fund aims for long-term capital growth by investing primarily in
                             Sharia-compliant equities across strategic sectors. Asset allocation and risk are managed
                             per scheme rules and regulatory limits.
@@ -280,7 +281,7 @@
                         </button>
                     </h3>
                     <div id="prsCollapseRisk" class="accordion-collapse collapse">
-                        <div class="accordion-body fs-8 text-secondary lh-lg" id="prsDetailRisk">
+                        <div class="accordion-body text-caption text-secondary lh-lg" id="prsDetailRisk">
                             Higher equity exposure may suit members with a longer horizon. Employers should align
                             default fund choices with workforce communication and official PRS risk disclosures.
                         </div>
@@ -294,7 +295,7 @@
                         <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
                         <div>
                             <h6 class="fw-bold text-danger mb-2">Disclaimer</h6>
-                            <p class="fs-8 text-secondary mb-0" id="prsDetailDisclaimer">This screen is a static
+                            <p class="text-caption text-secondary mb-0" id="prsDetailDisclaimer">This screen is a static
                                 prototype. It does not constitute an offer, recommendation, or contract. Refer to scheme
                                 documents and regulatory filings for binding terms.</p>
                         </div>
@@ -317,7 +318,7 @@
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text fs-9">
+                <div class="copyright-text text-meta">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -338,15 +339,15 @@
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
+                    <h6 class="profile-name text-caption fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                    <div class="text-caption text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
                     <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
@@ -371,23 +372,23 @@
                                     class="fw-medium">Authorise Transaction</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
                                         Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
                                         Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -400,19 +401,19 @@
                                 <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Transaction Enquiry</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
                             </ul>
                         </div>
@@ -427,37 +428,37 @@
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="statementCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmtTax">Tax Voucher</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
@@ -475,31 +476,31 @@
                                 <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Contributions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
                                         <span>Authorise Contribution</span>
-                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                                        <span class="badge bg-danger rounded-pill text-meta" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
                                         <span>Make Payment</span>
-                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
+                                        <span class="badge rounded-pill text-meta fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
                                     </a>
@@ -516,19 +517,19 @@
                                 <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/transactions.html" id="eopSideTxnPast">
                                         Past Transaction
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
                                         Pending Transaction
                                     </a>
@@ -544,21 +545,21 @@
                                 <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Statements</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
                                 </li>
                             </ul>
@@ -566,7 +567,7 @@
                     </li>
 
                     <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
@@ -584,7 +585,7 @@
                     </li>
 
                     <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
@@ -594,19 +595,19 @@
                                 <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Settings</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="settingsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsPassword">Change Password</a></li>
                             </ul>
                         </div>

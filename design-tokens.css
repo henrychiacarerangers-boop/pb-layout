@@ -1,0 +1,64 @@
+/*
+ * Public Mutual design tokens
+ * The single source of truth for shared foundations and typography.
+ * Use semantic type utilities for markup; fixed font sizes are reserved for
+ * SVG/canvas/chart rendering contracts.
+ */
+
+:root {
+    --brand-primary: #ff1700;
+    --brand-primary-hover: #ac1117;
+    --brand-navy: #002e77;
+    --accent-primary: #002e77;
+    --action-primary: #002e77;
+    --interactive-hover: #58595b;
+    --bg-container: #fcfcfc;
+    --bg-main: #fcfcfc;
+    --surface: #ffffff;
+    --surface-subtle: #f8fafc;
+    --line-subtle: #e8eef5;
+    --border-light: 1px solid rgba(0, 0, 0, 0.04);
+    --text-primary: #16161a;
+    --text-secondary: #48484b;
+    --text-muted: #5f6f86;
+    --ui-support: #5f6f86;
+    --success: #15803d;
+    --warning: #a16207;
+    --danger: #b42318;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 999px;
+    --shadow-sm: 0 4px 12px rgba(15, 40, 78, 0.04);
+    --shadow-md: 0 8px 24px rgba(15, 40, 78, 0.08);
+    --motion-fast: 160ms ease;
+    --motion-standard: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    --type-xs: 0.75rem;
+    --type-meta: 0.75rem;
+    --type-caption: 0.875rem;
+    --type-table: 0.875rem;
+    --type-body: 1rem;
+    --type-lead: 1.125rem;
+    --type-section: 1.25rem;
+    --type-title: 1.75rem;
+    --type-display: clamp(2rem, 3vw, 2.5rem);
+    --line-height-tight: 1.2;
+    --line-height-body: 1.5;
+}
+
+.text-meta { font-size: var(--type-meta) !important; line-height: 1.35; }
+.text-caption { font-size: var(--type-caption) !important; line-height: 1.4; }
+.text-table { font-size: var(--type-table) !important; line-height: 1.4; }
+.text-body { font-size: var(--type-body); line-height: var(--line-height-body); }
+.text-lead { font-size: var(--type-lead) !important; line-height: 1.45; }
+.text-section { font-size: var(--type-section) !important; line-height: 1.35; }
+.text-title { font-size: var(--type-title) !important; line-height: var(--line-height-tight); }
+.text-display { font-size: var(--type-display) !important; line-height: 1.1; }
+.icon-size-xs { font-size: var(--type-xs) !important; line-height: 1; }
+.icon-size-sm { font-size: var(--type-caption) !important; line-height: 1; }

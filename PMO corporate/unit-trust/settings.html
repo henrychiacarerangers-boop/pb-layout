@@ -22,7 +22,7 @@
     <style>
         /* Profile Details styling */
         .profile-section-title {
-            font-size: 1rem;
+            font-size: var(--type-body);
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 1.5rem;
@@ -32,14 +32,14 @@
         }
 
         .profile-label {
-            font-size: 0.72rem;
+            font-size: var(--type-meta);
             font-weight: 500;
             color: #64748b;
             margin-bottom: 0.2rem;
         }
 
         .profile-value {
-            font-size: 0.85rem;
+            font-size: var(--type-caption);
             font-weight: 700;
             color: #0f172a;
             margin-bottom: 1.2rem;
@@ -78,7 +78,7 @@
             border: none;
             border-radius: 8px;
             padding: 8px 16px;
-            font-size: 0.8rem;
+            font-size: var(--type-caption);
             font-weight: bold;
             white-space: nowrap;
             transition: background-color 0.2s;
@@ -89,13 +89,14 @@
         }
 
         .pac-info-text {
-            font-size: 0.72rem;
+            font-size: var(--type-meta);
             line-height: 1.4;
         }
     </style>
     <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
     <script src="../js/accessibility.js" defer></script>
-    <link rel="stylesheet" href="../../pmo-core.css">
+<link rel="stylesheet" href="../../design-tokens.css">
+<link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
@@ -132,19 +133,19 @@
                                     <a href="dashboard.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="pmoShellPillUt">
-                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="../eop/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillEopFromUt">
-                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="../analytics/unit-trust.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillAnalyticsFromUt">
-                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -156,14 +157,14 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
+                                        <span class="text-caption fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
                                             &amp; Authoriser</span>
-                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
@@ -203,7 +204,7 @@
                     <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
                         Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
                     09:16</p>
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
@@ -215,7 +216,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="authorise.html">Authorise <span
-                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
+                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="transactions.html">Transactions</a>
@@ -235,7 +236,7 @@
             <!-- Title Section -->
             <div class="mb-4">
                 <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Profile Information</h2>
-                <p class="text-muted fs-7">Manage your corporate company profile and account credentials</p>
+                <p class="text-muted text-caption">Manage your corporate company profile and account credentials</p>
             </div>
 
             <div id="alertMount"></div>
@@ -280,7 +281,7 @@
                                         Ativa Studio Solution Sdn Bhd</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputCompanyName" value="Ativa Studio Solution Sdn Bhd">
                                     </div>
 
@@ -289,7 +290,7 @@
                                         112312323233</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputCompanyReg" value="112312323233">
                                     </div>
 
@@ -297,7 +298,7 @@
                                     <div class="profile-value profile-value-view text-dark fw-bold"
                                         id="lblCompanyNature">FINANCIAL/INSURANCE</div>
                                     <div class="profile-value-edit d-none">
-                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <select class="form-select rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputCompanyNature">
                                             <option value="FINANCIAL/INSURANCE" selected>FINANCIAL/INSURANCE</option>
                                             <option value="IT/TECHNOLOGY">IT/TECHNOLOGY</option>
@@ -311,7 +312,7 @@
                                     <div class="profile-value profile-value-view text-dark fw-bold"
                                         id="lblCompanyPurpose">RETIREMENT/INVESTMENT</div>
                                     <div class="profile-value-edit d-none">
-                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <select class="form-select rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputCompanyPurpose">
                                             <option value="RETIREMENT/INVESTMENT" selected>RETIREMENT/INVESTMENT
                                             </option>
@@ -325,7 +326,7 @@
                                     <div class="profile-value profile-value-view text-dark fw-bold"
                                         id="lblCompanyFunds">CORPORATE REVENUES</div>
                                     <div class="profile-value-edit d-none">
-                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <select class="form-select rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputCompanyFunds">
                                             <option value="CORPORATE REVENUES" selected>CORPORATE REVENUES</option>
                                             <option value="SHAREHOLDERS LOAN">SHAREHOLDERS LOAN</option>
@@ -337,7 +338,7 @@
                                     <div class="profile-value profile-value-view text-dark fw-bold"
                                         id="lblCompanyWealth">BUSINESS OPERATIONS</div>
                                     <div class="profile-value-edit d-none">
-                                        <select class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <select class="form-select rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputCompanyWealth">
                                             <option value="BUSINESS OPERATIONS" selected>BUSINESS OPERATIONS</option>
                                             <option value="ACCUMULATED SURPLUS">ACCUMULATED SURPLUS</option>
@@ -353,7 +354,7 @@
                                         50200
                                     </div>
                                     <div class="profile-value-edit d-none">
-                                        <textarea class="form-control rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <textarea class="form-control rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputCompanyAddress" rows="3">MENARXXXXXXXXXXXXXXXX
 NO.78XXXXXXXXXXXXXXXXX
 50200</textarea>
@@ -364,7 +365,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         id="lblCompanyPhone">018-9019203990</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputCompanyPhone" value="018-9019203990">
                                     </div>
                                 </div>
@@ -382,7 +383,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         Ahmad Razak bin Osman</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputUserName" value="Ahmad Razak bin Osman">
                                     </div>
 
@@ -391,7 +392,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         850821145231</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputUserIC" value="850821145231">
                                     </div>
 
@@ -399,74 +400,74 @@ NO.78XXXXXXXXXXXXXXXXX
                                     <div class="profile-value profile-value-view text-dark fw-bold" id="lblUserRoles">
                                         <div class="mb-1.5">
                                             <span
-                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
+                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill text-meta px-2 py-0.5 fw-semibold"
                                                 style="letter-spacing:0.3px;">Unit Trust</span>
-                                            <span class="ms-1.5 fs-8 text-dark fw-medium" id="lblUtRole">Both (Inputter
+                                            <span class="ms-1.5 text-caption text-dark fw-medium" id="lblUtRole">Both (Inputter
                                                 & Authoriser)</span>
                                         </div>
                                         <div>
                                             <span
-                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill fs-10 px-2 py-0.5 fw-semibold"
+                                                class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 rounded-pill text-meta px-2 py-0.5 fw-semibold"
                                                 style="letter-spacing:0.3px;">EOP Portal</span>
-                                            <span class="ms-1.5 fs-8 text-dark fw-medium" id="lblEopRole">Download only,
+                                            <span class="ms-1.5 text-caption text-dark fw-medium" id="lblEopRole">Download only,
                                                 Authorise only</span>
                                         </div>
                                     </div>
                                     <div class="profile-value-edit d-none mb-3">
                                         <div class="border rounded-3 p-3 bg-light mb-3">
-                                            <label class="form-label text-secondary fs-9 fw-bold mb-2">UNIT TRUST USER
+                                            <label class="form-label text-secondary text-meta fw-bold mb-2">UNIT TRUST USER
                                                 ROLE</label>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="radio" name="inputUtRole"
                                                     id="utRoleInputter" value="Inputter">
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="utRoleInputter">Inputter</label>
                                             </div>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="radio" name="inputUtRole"
                                                     id="utRoleAuthoriser" value="Authoriser">
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="utRoleAuthoriser">Authoriser</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="inputUtRole"
                                                     id="utRoleBoth" value="Both" checked>
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="utRoleBoth">Both (Inputter & Authoriser)</label>
                                             </div>
                                         </div>
 
                                         <div class="border rounded-3 p-3 bg-light">
-                                            <label class="form-label text-secondary fs-9 fw-bold mb-2">EOP USER
+                                            <label class="form-label text-secondary text-meta fw-bold mb-2">EOP USER
                                                 ROLE</label>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="checkbox" name="inputEopRole"
                                                     id="eopRoleDownload" value="Download only" checked>
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="eopRoleDownload">Download only</label>
                                             </div>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="checkbox" name="inputEopRole"
                                                     id="eopRoleUpload" value="Upload only">
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="eopRoleUpload">Upload only</label>
                                             </div>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="checkbox" name="inputEopRole"
                                                     id="eopRoleAuthorise" value="Authorise only" checked>
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="eopRoleAuthorise">Authorise only</label>
                                             </div>
                                             <div class="form-check mb-1">
                                                 <input class="form-check-input" type="checkbox" name="inputEopRole"
                                                     id="eopRolePayment" value="Make Payment only">
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="eopRolePayment">Make Payment only</label>
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="inputEopRole"
                                                     id="eopRoleAdmin" value="Admin">
-                                                <label class="form-check-label fs-8 fw-semibold text-dark"
+                                                <label class="form-check-label text-caption fw-semibold text-dark"
                                                     for="eopRoleAdmin">Admin</label>
                                             </div>
                                         </div>
@@ -477,7 +478,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         XXX46XXXXX8 (Ext: 3230)</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputUserMobile" value="XXX46XXXXX8 (Ext: 3230)">
                                     </div>
 
@@ -486,7 +487,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         h*********0@g***l.com</div>
                                     <div class="profile-value-edit d-none">
                                         <input type="text"
-                                            class="form-control rounded-3 py-2 fs-8 fw-bold text-dark mb-3"
+                                            class="form-control rounded-3 py-2 text-caption fw-bold text-dark mb-3"
                                             id="inputUserEmail" value="h*********0@g***l.com">
                                     </div>
 
@@ -498,7 +499,7 @@ NO.78XXXXXXXXXXXXXXXXX
                                         32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                                     </div>
                                     <div class="profile-value-edit d-none">
-                                        <textarea class="form-control rounded-3 py-2 fs-8 fw-semibold text-dark mb-3"
+                                        <textarea class="form-control rounded-3 py-2 text-caption fw-semibold text-dark mb-3"
                                             id="inputUserAddress" rows="3">23 JAXXXXXXXXXX
 BuildingXXXXXXXXXX
 32230XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</textarea>
@@ -512,16 +513,16 @@ BuildingXXXXXXXXXX
                                     <div class="d-flex justify-content-center mb-2">
                                         <i class="iconoir-upload fs-1 text-danger"></i>
                                     </div>
-                                    <h5 class="fw-bold text-dark fs-7">Submit Supporting Document</h5>
-                                    <p class="text-muted fs-8 mb-3">Updating company details or user roles requires
+                                    <h5 class="fw-bold text-dark text-caption">Submit Supporting Document</h5>
+                                    <p class="text-muted text-caption mb-3">Updating company details or user roles requires
                                         statutory verification. Please upload the Board Resolution or Authorization
                                         Letter (PDF, JPG, PNG up to 5MB).</p>
                                     <div class="d-flex justify-content-center align-items-center gap-2">
                                         <input type="file" id="supportingDoc"
-                                            class="form-control form-control-sm rounded-3 fw-semibold text-dark fs-8 border"
+                                            class="form-control form-control-sm rounded-3 fw-semibold text-dark text-caption border"
                                             style="max-width: 350px;">
                                     </div>
-                                    <div class="text-success fs-9 fw-semibold mt-2 d-none" id="docUploadSuccess">
+                                    <div class="text-success text-meta fw-semibold mt-2 d-none" id="docUploadSuccess">
                                         <i class="iconoir-check-circle-solid align-middle me-1"></i> Document uploaded
                                         successfully!
                                     </div>
@@ -552,7 +553,7 @@ BuildingXXXXXXXXXX
                                     <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
 
                                         <div>
-                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
+                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill text-meta px-2.5 py-1 fw-bold mb-1"
                                                 style="letter-spacing: 0.5px; text-transform: uppercase;">Unit Trust
                                                 Consultant (UTC)</div>
                                             <h4 class="fw-bold text-dark fs-5 mb-0">WONG KAH WEI</h4>
@@ -568,7 +569,7 @@ BuildingXXXXXXXXXX
                                             <div class="profile-label">SA Risk Level</div>
                                             <div class="profile-value mb-0">
                                                 <span
-                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
+                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill text-meta px-2 py-1 fw-bold text-dark">Category
                                                     1</span>
                                             </div>
                                         </div>
@@ -582,14 +583,14 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-mail text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="mailto:wong.kw@publicmutual.com.my"
-                                                        class="fs-8 text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
+                                                        class="text-caption text-decoration-none fw-semibold text-dark">wong.kw@publicmutual.com.my</a>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
                                                         style="width: 32px; height: 32px;">
                                                         <i class="iconoir-phone text-secondary fs-6"></i>
                                                     </div>
-                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6012-345
+                                                    <span class="text-caption fw-semibold text-dark">Mobile: +6012-345
                                                         6789</span>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
@@ -598,7 +599,7 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-whatsapp text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="https://wa.me/60123456789" target="_blank"
-                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
+                                                        class="text-caption fw-semibold text-primary text-decoration-underline">WhatsApp:
                                                         +6012-345 6789</a>
                                                 </div>
                                             </div>
@@ -613,7 +614,7 @@ BuildingXXXXXXXXXX
                                     <div class="d-flex align-items-center gap-3 pb-3 border-bottom mb-4">
 
                                         <div>
-                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill fs-10 px-2.5 py-1 fw-bold mb-1"
+                                            <div class="badge bg-primary bg-opacity-10 text-white border border-primary border-opacity-25 rounded-pill text-meta px-2.5 py-1 fw-bold mb-1"
                                                 style="letter-spacing: 0.5px; text-transform: uppercase;">PRS Consultant
                                                 (PRC)</div>
                                             <h4 class="fw-bold text-dark fs-5 mb-0">NOR AZMAN BIN AHMAD</h4>
@@ -629,7 +630,7 @@ BuildingXXXXXXXXXX
                                             <div class="profile-label">SA Risk Level</div>
                                             <div class="profile-value mb-0">
                                                 <span
-                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill fs-9 px-2 py-1 fw-bold text-dark">Category
+                                                    class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25 rounded-pill text-meta px-2 py-1 fw-bold text-dark">Category
                                                     2</span>
                                             </div>
                                         </div>
@@ -642,14 +643,14 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-mail text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="mailto:norazman.ahmad@publicmutual.com.my"
-                                                        class="fs-8 text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
+                                                        class="text-caption text-decoration-none fw-semibold text-dark">norazman.ahmad@publicmutual.com.my</a>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div class="bg-light rounded-circle d-flex align-items-center justify-content-center"
                                                         style="width: 32px; height: 32px;">
                                                         <i class="iconoir-phone text-secondary fs-6"></i>
                                                     </div>
-                                                    <span class="fs-8 fw-semibold text-dark">Mobile: +6019-876
+                                                    <span class="text-caption fw-semibold text-dark">Mobile: +6019-876
                                                         5432</span>
                                                 </div>
                                                 <div class="d-flex align-items-center gap-2">
@@ -658,7 +659,7 @@ BuildingXXXXXXXXXX
                                                         <i class="iconoir-whatsapp text-secondary fs-6"></i>
                                                     </div>
                                                     <a href="https://wa.me/60198765432" target="_blank"
-                                                        class="fs-8 fw-semibold text-primary text-decoration-underline">WhatsApp:
+                                                        class="text-caption fw-semibold text-primary text-decoration-underline">WhatsApp:
                                                         +6019-876 5432</a>
                                                 </div>
                                             </div>
@@ -674,7 +675,7 @@ BuildingXXXXXXXXXX
                                         <i class="iconoir-coins fs-5 text-dark"></i> Fund Allocation by Servicing
                                         Consultant
                                     </h4>
-                                    <p class="text-muted fs-8 mb-4">Below is the complete list of funds held under your
+                                    <p class="text-muted text-caption mb-4">Below is the complete list of funds held under your
                                         corporate account and their respective designated servicing consultants.</p>
 
                                     <div class="table-responsive pmo-table-frame">
@@ -758,11 +759,11 @@ BuildingXXXXXXXXXX
 
                                     <!-- Alert Success Placeholders -->
                                     <div id="passwordAlert"
-                                        class="alert alert-success alert-dismissible fade show d-none rounded-3 fs-8 fw-medium"
+                                        class="alert alert-success alert-dismissible fade show d-none rounded-3 text-caption fw-medium"
                                         role="alert">
                                         <i class="iconoir-check-circle fs-6 me-2 align-middle"></i> Password updated
                                         successfully!
-                                        <button type="button" class="btn-close fs-9" data-bs-dismiss="alert"
+                                        <button type="button" class="btn-close text-meta" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
                                     </div>
 
@@ -770,10 +771,10 @@ BuildingXXXXXXXXXX
                                         <!-- Current Password -->
                                         <div class="mb-4">
                                             <label for="currentPassword"
-                                                class="form-label fs-8 fw-bold text-secondary">Current Password</label>
+                                                class="form-label text-caption fw-bold text-secondary">Current Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                    class="form-control py-2.5 text-caption fw-semibold border-end-0"
                                                     id="currentPassword" placeholder="Enter current password" required
                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
                                                 <button
@@ -787,11 +788,11 @@ BuildingXXXXXXXXXX
 
                                         <!-- New Password -->
                                         <div class="mb-4">
-                                            <label for="newPassword" class="form-label fs-8 fw-bold text-secondary">New
+                                            <label for="newPassword" class="form-label text-caption fw-bold text-secondary">New
                                                 Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                    class="form-control py-2.5 text-caption fw-semibold border-end-0"
                                                     id="newPassword" placeholder="Enter new password" required
                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
                                                 <button
@@ -804,30 +805,30 @@ BuildingXXXXXXXXXX
 
                                             <!-- Interactive Password Rules List -->
                                             <div class="mt-3 p-3 bg-light rounded-3">
-                                                <div class="fs-9 fw-bold text-secondary text-uppercase mb-2">Password
+                                                <div class="text-meta fw-bold text-secondary text-uppercase mb-2">Password
                                                     Requirements:</div>
-                                                <ul class="list-unstyled d-flex flex-column gap-2 fs-9 mb-0 ps-0 text-muted"
+                                                <ul class="list-unstyled d-flex flex-column gap-2 text-meta mb-0 ps-0 text-muted"
                                                     id="passwordRulesList">
                                                     <li class="d-flex align-items-center gap-2" id="rule-case">
                                                         <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                            class="iconoir-info-circle icon-size-sm text-secondary me-1 align-middle"></i>
                                                         <span>Mixture of both upper and lower case letters</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-2" id="rule-number">
                                                         <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                            class="iconoir-info-circle icon-size-sm text-secondary me-1 align-middle"></i>
                                                         <span>Numeric characters (e.g. 1,2,3)</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-2" id="rule-length">
                                                         <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                            class="iconoir-info-circle icon-size-sm text-secondary me-1 align-middle"></i>
                                                         <span>Between 8 and 16 characters without spaces</span>
                                                     </li>
                                                     <li class="d-flex align-items-center gap-2" id="rule-special">
                                                         <i
-                                                            class="iconoir-info-circle fs-7 text-secondary me-1 align-middle"></i>
+                                                            class="iconoir-info-circle icon-size-sm text-secondary me-1 align-middle"></i>
                                                         <span>Special characters (<code
-                                                                class="fs-10 text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
+                                                                class="text-meta text-dark">~!@$%^*_=+[]|;:./?</code>)</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -836,11 +837,11 @@ BuildingXXXXXXXXXX
                                         <!-- Confirm New Password -->
                                         <div class="mb-4">
                                             <label for="confirmPassword"
-                                                class="form-label fs-8 fw-bold text-secondary">Confirm New
+                                                class="form-label text-caption fw-bold text-secondary">Confirm New
                                                 Password</label>
                                             <div class="input-group">
                                                 <input type="password"
-                                                    class="form-control py-2.5 fs-8 fw-semibold border-end-0"
+                                                    class="form-control py-2.5 text-caption fw-semibold border-end-0"
                                                     id="confirmPassword" placeholder="Confirm your new password"
                                                     required
                                                     style="border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border-color: #dee2e6;">
@@ -856,7 +857,7 @@ BuildingXXXXXXXXXX
                                         <!-- Submit Button -->
                                         <div class="d-grid mt-4 pt-2">
                                             <button type="submit"
-                                                class="btn btn-danger rounded-pill py-2.5 fs-8 fw-bold text-white border-0 shadow-sm"
+                                                class="btn btn-danger rounded-pill py-2.5 text-caption fw-bold text-white border-0 shadow-sm"
                                                 style="background-color: var(--brand-primary) !important; border-color: var(--brand-primary) !important;">UPDATE
                                                 PASSWORD</button>
                                         </div>
@@ -873,12 +874,12 @@ BuildingXXXXXXXXXX
                                         <i class="iconoir-shield-check fs-5 text-danger"></i> Practising Safe and Secure
                                         Password
                                     </h4>
-                                    <ul class="list-unstyled d-flex flex-column gap-3 fs-8 text-secondary mt-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-3 text-caption text-secondary mt-3">
                                         <li class="d-flex align-items-start gap-2">
                                             <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
                                             <span>Use a combination of numeric, special characters, upper and lower case
                                                 letters. (e.g. <code
-                                                    class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">Smrt1zv3@</code>).</span>
+                                                    class="bg-white px-2 py-0.5 rounded border text-meta text-dark">Smrt1zv3@</code>).</span>
                                         </li>
                                         <li class="d-flex align-items-start gap-2">
                                             <i class="iconoir-check text-success fs-6 mt-0.5 flex-shrink-0"></i>
@@ -891,7 +892,7 @@ BuildingXXXXXXXXXX
                                             <span>Avoid using dictionary or generic passwords or a password that is
                                                 easily
                                                 identified with you (e.g. <code
-                                                    class="bg-white px-2 py-0.5 rounded border fs-9 text-dark">pass1234</code>,
+                                                    class="bg-white px-2 py-0.5 rounded border text-meta text-dark">pass1234</code>,
                                                 birthday etc).</span>
                                         </li>
                                         <li class="d-flex align-items-start gap-2">
@@ -932,7 +933,7 @@ BuildingXXXXXXXXXX
 
 
                 <!-- Disclaimer/Note Section (Placed OUTSIDE / BELOW the card!) -->
-                <div class="mt-4 text-muted fs-9 ps-3">
+                <div class="mt-4 text-muted text-meta ps-3">
                     Note:<br>Please update your company registration and Authorised representative profile details
                     immediately whenever there are any statutory corporate changes.
                 </div>
@@ -954,7 +955,7 @@ BuildingXXXXXXXXXX
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text fs-9">
+                <div class="copyright-text text-meta">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -974,10 +975,10 @@ BuildingXXXXXXXXXX
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100">
-                    <div class="fs-9 fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
+                    <div class="text-meta fw-bold text-white-50 text-uppercase mb-1">Unit Trust Portal</div>
                     <h5 class="profile-name fs-6 mb-0" id="sidebarMenuLabel">Ahmad Razak bin Osman</h5>
-                    <div class="fs-8 text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
-                    <span class="badge bg-white text-dark fs-9 px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
+                    <div class="text-caption text-white-50 mt-2">Ativa Studio Solution Sdn Bhd</div>
+                    <span class="badge bg-white text-dark text-meta px-2 py-2 fw-bold rounded-pill mt-3">Role: User &amp;
                         Authoriser</span>
                 </div>
             </div>
@@ -1006,23 +1007,23 @@ BuildingXXXXXXXXXX
                                     class="fw-medium">Authorise Transaction</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-5 mt-1" id="AuthoriseCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-1"><a href="authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
                                         Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
                                 <li class="nav-item mb-1"><a href="authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
                                         Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -1035,19 +1036,19 @@ BuildingXXXXXXXXXX
                                 <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Transaction Enquiry</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-5 mt-1" id="transactionEnquiryCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-1"><a href="transactions.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
 
                             </ul>
@@ -1063,28 +1064,28 @@ BuildingXXXXXXXXXX
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-5 mt-1" id="statementCollapse">
                             <ul class="nav flex-column">
                                 <li class="nav-item mb-1"><a href="statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund
                                         Reports</a></li>
                                 <li class="nav-item mb-1"><a href="statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
@@ -1253,15 +1254,15 @@ BuildingXXXXXXXXXX
                     if (isValid) {
                         element.classList.remove('text-muted', 'text-danger');
                         element.classList.add('text-success', 'fw-semibold');
-                        icon.className = 'iconoir-check fs-7 text-success me-1 align-middle';
+                        icon.className = 'iconoir-check icon-size-sm text-success me-1 align-middle';
                     } else {
                         if (newPasswordInput.value.length > 0) {
                             element.classList.remove('text-muted', 'text-success', 'fw-semibold');
                             element.classList.add('text-danger');
-                            icon.className = 'iconoir-xmark fs-7 text-danger me-1 align-middle';
+                            icon.className = 'iconoir-xmark icon-size-sm text-danger me-1 align-middle';
                         } else {
                             element.className = 'd-flex align-items-center gap-2 text-muted';
-                            icon.className = 'iconoir-info-circle fs-7 text-secondary me-1 align-middle';
+                            icon.className = 'iconoir-info-circle icon-size-sm text-secondary me-1 align-middle';
                         }
                     }
                 }
@@ -1515,9 +1516,9 @@ BuildingXXXXXXXXXX
                                 <div class="alert alert-warning border-0 rounded-4 shadow-sm p-4 mb-4 d-flex align-items-start gap-3 animate slideIn" id="profileUpdateAlert" style="background-color: #fffbeb; border-left: 5px solid #ce7226 !important;">
                                     <i class="iconoir-warning-circle text-warning fs-3 mt-0.5" style="color: #ce7226 !important;"></i>
                                     <div>
-                                        <div class="fw-bold text-dark fs-7 mb-1">Pending Statutory Verification</div>
-                                        <p class="text-secondary fs-8 mb-0">Your profile update and role assignment request has been successfully submitted with supporting documents. The updates will take effect once approved by the Public Mutual compliance office.</p>
-                                        <div class="mt-2 fs-9 text-muted">Reference No: PMO-UPD-2026-0421 &middot; Submitted on: 21 July 2026</div>
+                                        <div class="fw-bold text-dark text-caption mb-1">Pending Statutory Verification</div>
+                                        <p class="text-secondary text-caption mb-0">Your profile update and role assignment request has been successfully submitted with supporting documents. The updates will take effect once approved by the Public Mutual compliance office.</p>
+                                        <div class="mt-2 text-meta text-muted">Reference No: PMO-UPD-2026-0421 &middot; Submitted on: 21 July 2026</div>
                                     </div>
                                     <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
@@ -1548,14 +1549,14 @@ BuildingXXXXXXXXXX
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body p-4">
-                    <p class="text-muted fs-8 mb-4">An 8-digit Personal Authentication Code (PAC) is required to
+                    <p class="text-muted text-caption mb-4">An 8-digit Personal Authentication Code (PAC) is required to
                         Authorise company profile updates. Please request and enter the PAC sent to your registered
                         mobile number <span class="fw-bold text-dark">XXX46XXXXX8</span>.</p>
 
                     <div class="mb-4">
-                        <label class="form-label text-secondary fs-9 fw-bold">AUTHENTICATION METHOD</label>
+                        <label class="form-label text-secondary text-meta fw-bold">AUTHENTICATION METHOD</label>
                         <select
-                            class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark border border-secondary border-opacity-25">
+                            class="form-select rounded-3 py-2 text-caption fw-semibold text-dark border border-secondary border-opacity-25">
                             <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
                             <option value="SecureSign">SecureSign</option>
                         </select>
@@ -1563,20 +1564,20 @@ BuildingXXXXXXXXXX
 
                     <!-- PAC input and Request button in single row -->
                     <div class="mb-4">
-                        <label for="pacInput" class="form-label text-secondary fs-9 fw-bold">PAC NUMBER</label>
+                        <label for="pacInput" class="form-label text-secondary text-meta fw-bold">PAC NUMBER</label>
                         <div class="input-group">
-                            <input type="password" class="form-control rounded-3 py-2 fs-8 fw-bold" id="pacInput"
+                            <input type="password" class="form-control rounded-3 py-2 text-caption fw-bold" id="pacInput"
                                 placeholder="Enter 8-digit PAC" maxlength="8" disabled style="letter-spacing: 0.15em;">
-                            <button type="button" class="btn btn-outline-danger px-4 fs-8 fw-bold" id="btnRequestPac"
+                            <button type="button" class="btn btn-outline-danger px-4 text-caption fw-bold" id="btnRequestPac"
                                 style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; font-family: 'Montserrat', sans-serif;">REQUEST
                                 PAC</button>
                         </div>
-                        <div class="form-text fs-9 text-muted mt-2 d-flex align-items-center gap-1" id="pacTimerText">
+                        <div class="form-text text-meta text-muted mt-2 d-flex align-items-center gap-1" id="pacTimerText">
                             <i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit
                             Authorisation code.
                         </div>
                         <!-- Error indicator -->
-                        <div class="text-danger fs-9 fw-semibold mt-2 d-none" id="pacError">
+                        <div class="text-danger text-meta fw-semibold mt-2 d-none" id="pacError">
                             <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
                                 class="fw-bold text-dark">12345678</span>.
                         </div>
@@ -1584,9 +1585,9 @@ BuildingXXXXXXXXXX
                 </div>
                 <!-- Modal Footer -->
                 <div class="modal-footer border-top-0 px-4 pb-4 pt-0">
-                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 fs-8 fw-bold"
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 text-caption fw-bold"
                         data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger rounded-pill px-4 fs-8 fw-bold border-0 shadow-sm"
+                    <button type="button" class="btn btn-danger rounded-pill px-4 text-caption fw-bold border-0 shadow-sm"
                         id="btnVerifyAndSubmit" style="background-color: var(--brand-primary) !important;"
                         disabled>VERIFY & SUBMIT</button>
                 </div>
@@ -1610,14 +1611,14 @@ BuildingXXXXXXXXXX
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body p-4">
-                    <p class="text-muted fs-8 mb-4">An 8-digit Personal Authentication Code (PAC) or SecureSign is
+                    <p class="text-muted text-caption mb-4">An 8-digit Personal Authentication Code (PAC) or SecureSign is
                         required to
                         authorize account password changes. Please select your verification method and proceed.</p>
 
                     <div class="mb-4">
-                        <label class="form-label text-secondary fs-9 fw-bold">AUTHENTICATION METHOD</label>
+                        <label class="form-label text-secondary text-meta fw-bold">AUTHENTICATION METHOD</label>
                         <select
-                            class="form-select rounded-3 py-2 fs-8 fw-semibold text-dark border border-secondary border-opacity-25"
+                            class="form-select rounded-3 py-2 text-caption fw-semibold text-dark border border-secondary border-opacity-25"
                             id="pwdAuthMethod">
                             <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
                             <option value="SecureSign">SecureSign</option>
@@ -1626,21 +1627,21 @@ BuildingXXXXXXXXXX
 
                     <!-- PAC input and Request button in single row -->
                     <div class="mb-4" id="pwdPacInputContainer">
-                        <label for="pwdPacInput" class="form-label text-secondary fs-9 fw-bold">PAC NUMBER</label>
+                        <label for="pwdPacInput" class="form-label text-secondary text-meta fw-bold">PAC NUMBER</label>
                         <div class="input-group">
-                            <input type="password" class="form-control rounded-3 py-2 fs-8 fw-bold" id="pwdPacInput"
+                            <input type="password" class="form-control rounded-3 py-2 text-caption fw-bold" id="pwdPacInput"
                                 placeholder="Enter 8-digit PAC" maxlength="8" disabled style="letter-spacing: 0.15em;">
-                            <button type="button" class="btn btn-outline-danger px-4 fs-8 fw-bold" id="btnPwdRequestPac"
+                            <button type="button" class="btn btn-outline-danger px-4 text-caption fw-bold" id="btnPwdRequestPac"
                                 style="border-top-right-radius: 8px; border-bottom-right-radius: 8px; font-family: 'Montserrat', sans-serif;">REQUEST
                                 PAC</button>
                         </div>
-                        <div class="form-text fs-9 text-muted mt-2 d-flex align-items-center gap-1"
+                        <div class="form-text text-meta text-muted mt-2 d-flex align-items-center gap-1"
                             id="pwdPacTimerText">
                             <i class="iconoir-info-circle text-primary"></i> Click 'REQUEST PAC' to receive your 8-digit
                             Authorisation code.
                         </div>
                         <!-- Error indicator -->
-                        <div class="text-danger fs-9 fw-semibold mt-2 d-none" id="pwdPacError">
+                        <div class="text-danger text-meta fw-semibold mt-2 d-none" id="pwdPacError">
                             <i class="iconoir-xmark-circle me-1 align-middle"></i> Incorrect PAC. Please use code <span
                                 class="fw-bold text-dark">12345678</span>.
                         </div>
@@ -1653,17 +1654,17 @@ BuildingXXXXXXXXXX
                                 style="width: 1.5rem; height: 1.5rem;">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <div class="fs-8 fw-bold text-dark mb-1">Pending SecureSign Approval...</div>
-                            <p class="text-muted fs-9 mb-0">Please open your PMO Plus App and approve the transaction
+                            <div class="text-caption fw-bold text-dark mb-1">Pending SecureSign Approval...</div>
+                            <p class="text-muted text-meta mb-0">Please open your PMO Plus App and approve the transaction
                                 secure sign notification.</p>
                         </div>
                     </div>
                 </div>
                 <!-- Modal Footer -->
                 <div class="modal-footer border-top-0 px-4 pb-4 pt-0">
-                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 fs-8 fw-bold"
+                    <button type="button" class="btn btn-outline-dark rounded-pill px-4 text-caption fw-bold"
                         data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger rounded-pill px-4 fs-8 fw-bold border-0 shadow-sm"
+                    <button type="button" class="btn btn-danger rounded-pill px-4 text-caption fw-bold border-0 shadow-sm"
                         id="btnPwdVerifyAndSubmit" style="background-color: var(--brand-primary) !important;"
                         disabled>VERIFY & SUBMIT</button>
                 </div>

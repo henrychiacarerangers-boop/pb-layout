@@ -29,7 +29,7 @@
             background: none;
             border: none;
             color: var(--brand-red, #ff1700);
-            font-size: 0.75rem;
+            font-size: var(--type-meta);
             font-weight: 700;
             padding: 0;
             letter-spacing: 0.5px;
@@ -91,7 +91,8 @@
     </style>
     <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
     <script src="../js/accessibility.js" defer></script>
-    <link rel="stylesheet" href="../../pmo-core.css">
+<link rel="stylesheet" href="../../design-tokens.css">
+<link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base=".."
@@ -125,19 +126,19 @@
                                     <a href="../unit-trust/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="eopNavPillUt">
-                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="dashboard.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="eopNavPillEop">
-                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span>
+                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
+                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
                                     </a>
                                     <a href="../analytics/unit-trust.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="eopNavPillAnalytics">
-                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
+                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -149,14 +150,14 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
+                                        <span class="text-caption fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
                                             Admin</span>
-                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
+                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
@@ -194,7 +195,7 @@
                         Online</span>
                     <span class="text-white fw-normal fs-6">· EOP Portal</span>
                 </h1>
-                <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
+                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
                     09:16</p>
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
                     <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
@@ -202,10 +203,10 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="upload.html" id="eopTabUpload">Upload</a></li>
                     <li class="nav-item"><a class="nav-link active" href="authorise.html" id="eopTabAuthorise">Authorise
-                            <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9"
+                            <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta"
                                 id="eopTabAuthBadge">3</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="payment.html" id="eopTabPay">Payment <span
-                                class="badge bg-danger rounded-pill ms-1 fs-10" id="eopTabPayBadge">2</span></a></li>
+                                class="badge bg-danger rounded-pill ms-1 text-meta" id="eopTabPayBadge">2</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="transactions.html" id="eopTabTxn">Transactions</a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="statements.html" id="eopTabStatements">Statements</a>
@@ -236,7 +237,7 @@
                     </div>
                 </div>
                 <button type="button"
-                    class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2 rounded-pill px-3 py-2 fs-8 fw-semibold"
+                    class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2 rounded-pill px-3 py-2 text-caption fw-semibold"
                     style="border-color:#dee2e6;transition:all 0.3s ease;" id="eopAuthDetailPrintBtn"
                     onclick="window.print()">
                     <i class="iconoir-printer fs-6" aria-hidden="true"></i> Print
@@ -252,8 +253,8 @@
                     </div>
                 </div>
                 <div class="text-end">
-                    <div class="fw-bold fs-7 text-dark" id="eopAuthPrintTitle">EOP authorisation advice</div>
-                    <div class="text-muted fs-9" id="eopAuthPrintDateTime"></div>
+                    <div class="fw-bold text-caption text-dark" id="eopAuthPrintTitle">EOP authorisation advice</div>
+                    <div class="text-muted text-meta" id="eopAuthPrintDateTime"></div>
                 </div>
             </div>
 
@@ -263,7 +264,7 @@
                         <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
                         <div>
                             <h6 class="fw-bold text-danger mb-2">Authorisation Alert</h6>
-                            <p class="mb-0 fs-8 text-secondary lh-base" id="eopAuthDetailAlertText">This batch is
+                            <p class="mb-0 text-caption text-secondary lh-base" id="eopAuthDetailAlertText">This batch is
                                 pending your PAC approval. Verify <strong class="text-dark">Scheme type</strong>,
                                 <strong class="text-dark">contribution type</strong>, amounts, and employee counts
                                 before authorising.
@@ -333,7 +334,7 @@
                             <h5
                                 class="fw-bold text-dark mb-3 pb-2 border-bottom mt-4 d-flex align-items-center justify-content-between">
                                 <span>Employee Contributions List</span>
-                                <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill fs-8 fw-semibold"
+                                <span class="badge bg-secondary bg-opacity-10 text-dark rounded-pill text-caption fw-semibold"
                                     id="eopAuthDetailEmpBadge">—</span>
                             </h5>
                             <div class="table-responsive mb-4 pmo-table-frame"
@@ -362,9 +363,9 @@
                                     <!-- Wrapper for fields that can be bypassed/hidden during Reject flow -->
                                     <div id="eopAuthPacFieldsWrapper">
                                         <div class="mb-3">
-                                            <label class="form-label text-muted fs-8 fw-semibold"
+                                            <label class="form-label text-muted text-caption fw-semibold"
                                                 for="eopAuthPacMethod">Verification Method</label>
-                                            <select class="form-select fs-8 text-dark fw-semibold"
+                                            <select class="form-select text-caption text-dark fw-semibold"
                                                 id="eopAuthPacMethod">
                                                 <option value="PAC" selected>SMS Personal Authentication Code (PAC)
                                                 </option>
@@ -372,7 +373,7 @@
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label text-dark fs-8 fw-bold" for="eopAuthPacInput">PAC
+                                            <label class="form-label text-dark text-caption fw-bold" for="eopAuthPacInput">PAC
                                                 Number</label>
                                             <div class="pac-group">
                                                 <input type="password"
@@ -387,14 +388,14 @@
                                                 number.
                                                 Please click &apos;REQUEST PAC&apos; and use code 12345678.</div>
                                         </div>
-                                        <div class="pac-info-text mb-3 text-muted fs-9">
+                                        <div class="pac-info-text mb-3 text-muted text-meta">
                                             * Please click &apos;REQUEST PAC&apos; and enter the 8-digit code sent to
                                             your
                                             registered mobile number XXX3ZXXXXX1. Use code <strong>12345678</strong>.
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label text-muted fs-8 fw-semibold"
+                                        <label class="form-label text-muted text-caption fw-semibold"
                                             for="eopAuthRemarksInput">Authoriser Remarks (Optional)</label>
                                         <textarea class="form-control" id="eopAuthRemarksInput" rows="2"
                                             placeholder="Provide a reason (especially if rejecting this request)..."></textarea>
@@ -411,24 +412,24 @@
                             <div>
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Scheme type</div>
-                                    <div class="fs-8 text-dark" id="eopAuthSummaryscheme">—</div>
+                                    <div class="text-muted text-meta mb-1">Scheme type</div>
+                                    <div class="text-caption text-dark" id="eopAuthSummaryscheme">—</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Contribution type</div>
-                                    <div class="fs-8 text-dark" id="eopAuthSummaryContribution">—</div>
+                                    <div class="text-muted text-meta mb-1">Contribution type</div>
+                                    <div class="text-caption text-dark" id="eopAuthSummaryContribution">—</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Initiator</div>
-                                    <div class="fs-8 text-dark" id="eopAuthSummaryPreparer">—</div>
+                                    <div class="text-muted text-meta mb-1">Initiator</div>
+                                    <div class="text-caption text-dark" id="eopAuthSummaryPreparer">—</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Total Contribution (MYR)</div>
+                                    <div class="text-muted text-meta mb-1">Total Contribution (MYR)</div>
                                     <div class="fw-semibold fs-4 text-success" id="eopAuthSummaryAmount">—</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Employees in File</div>
-                                    <div class="fs-8 text-dark" id="eopAuthSummaryEmp">—</div>
+                                    <div class="text-muted text-meta mb-1">Employees in File</div>
+                                    <div class="text-caption text-dark" id="eopAuthSummaryEmp">—</div>
                                 </div>
                             </div>
                         </div>
@@ -439,7 +440,7 @@
                     <div class="form-check custom-checkbox d-flex align-items-start gap-2 mb-3">
                         <input class="form-check-input mt-1 fs-5" type="checkbox" id="eopAuthTermsCheckbox"
                             style="flex-shrink: 0;">
-                        <label class="form-check-label fs-8 text-dark cursor-pointer lh-base"
+                        <label class="form-check-label text-caption text-dark cursor-pointer lh-base"
                             for="eopAuthTermsCheckbox">
                             I confirm that I have read and agreed to the <a href="#"
                                 class="text-danger fw-bold text-decoration-underline"
@@ -448,7 +449,7 @@
                         </label>
                     </div>
                     <div class="invalid-feedback d-none mt-1" id="eopAuthTermsError"
-                        style="color: #ff1700; font-size: 0.75rem;">
+                        style="color: #ff1700; font-size: var(--type-meta);">
                         You must agree to the Terms and Conditions before authorising.
                     </div>
                 </div>
@@ -476,13 +477,13 @@
                             <div class="text-center mb-4">
                                 <div class="rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm"
                                     id="eopAuthDoneIconWrap" style="width:100px;height:100px;">
-                                    <i class="text-white" id="eopAuthDoneIcon" style="font-size:3rem;"
+                                    <i class="text-white" id="eopAuthDoneIcon" style="font-size: var(--type-display);"
                                         aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div class="text-center mb-5">
                                 <h3 class="fw-bold text-dark mb-2" id="eopAuthDoneTitle">Contribution approved</h3>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width:520px;"
+                                <p class="text-muted text-caption mb-0 mx-auto" style="max-width:520px;"
                                     id="eopAuthDoneSubtitle">Your PAC was verified. This batch is authorised for the
                                     next payment step.</p>
                             </div>
@@ -491,56 +492,56 @@
                                 <div class="col-md-6 border-end text-start">
                                     <h5 class="fw-bold mb-4 text-dark">Request Details</h5>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Reference no.</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7"
+                                        <div class="text-muted text-caption mb-2">Reference no.</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-dark text-caption"
                                             id="eopAuthDoneRef">—</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Date / time</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneDt">—
+                                        <div class="text-muted text-caption mb-2">Date / time</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption" id="eopAuthDoneDt">—
                                         </div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Scheme type</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDonescheme">
+                                        <div class="text-muted text-caption mb-2">Scheme type</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption" id="eopAuthDonescheme">
                                             —</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Contribution type</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7"
+                                        <div class="text-muted text-caption mb-2">Contribution type</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption"
                                             id="eopAuthDoneContribution">—</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">No. of employees</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneEmp">—
+                                        <div class="text-muted text-caption mb-2">No. of employees</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption" id="eopAuthDoneEmp">—
                                         </div>
                                     </div>
                                     <div class="mb-2">
-                                        <div class="text-muted fs-8 mb-2">Amount (MYR)</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 fw-semibold text-success fs-7"
+                                        <div class="text-muted text-caption mb-2">Amount (MYR)</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-semibold text-success text-caption"
                                             id="eopAuthDoneAmount">—</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6 ps-md-4 text-start">
                                     <h5 class="fw-bold mb-4 text-dark">Authorisation Details</h5>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Execution Status</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold fs-7" id="eopAuthDoneStatus">
+                                        <div class="text-muted text-caption mb-2">Execution Status</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 fw-bold text-caption" id="eopAuthDoneStatus">
                                             Approved</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">PAC</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDonePac">
+                                        <div class="text-muted text-caption mb-2">PAC</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption" id="eopAuthDonePac">
                                             Verified (SMS)</div>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="text-muted fs-8 mb-2">Authorised on</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7" id="eopAuthDoneAuthDt">
+                                        <div class="text-muted text-caption mb-2">Authorised on</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption" id="eopAuthDoneAuthDt">
                                             —</div>
                                     </div>
                                     <div class="mb-2">
-                                        <div class="text-muted fs-8 mb-2">Authoriser Remarks</div>
-                                        <div class="bg-light rounded-3 px-3 py-3 text-dark fs-7"
+                                        <div class="text-muted text-caption mb-2">Authoriser Remarks</div>
+                                        <div class="bg-light rounded-3 px-3 py-3 text-dark text-caption"
                                             id="eopAuthDoneRemarks">—</div>
                                     </div>
                                 </div>
@@ -579,7 +580,7 @@
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text fs-9">
+                <div class="copyright-text text-meta">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -600,15 +601,15 @@
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name fs-7 fw-bold mb-1" id="eopSidebarUserName"
+                    <h6 class="profile-name text-caption fw-bold mb-1" id="eopSidebarUserName"
                         style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                    <div class="text-caption text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
                     <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
@@ -633,23 +634,23 @@
                                     class="fw-medium">Authorise Transaction</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
                                         Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">2</span></a></li>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
                                         Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">3</span></a>
+                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -662,19 +663,19 @@
                                 <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Transaction Enquiry</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
                             </ul>
                         </div>
@@ -689,37 +690,37 @@
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="statementCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmtTax">Tax Voucher</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
@@ -737,31 +738,31 @@
                                 <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Contributions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
                                         <span>Authorise Contribution</span>
-                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
+                                        <span class="badge bg-danger rounded-pill text-meta" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
                                         <span>Make Payment</span>
-                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
+                                        <span class="badge rounded-pill text-meta fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
                                     </a>
@@ -778,19 +779,19 @@
                                 <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/transactions.html" id="eopSideTxnPast">
                                         Past Transaction
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
                                         Pending Transaction
                                     </a>
@@ -806,21 +807,21 @@
                                 <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
                                 <span class="fw-medium">Statements</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
                                 </li>
                             </ul>
@@ -828,7 +829,7 @@
                     </li>
 
                     <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
@@ -846,7 +847,7 @@
                     </li>
 
                     <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
@@ -856,19 +857,19 @@
                                 <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
                                     class="fw-medium">Settings</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="settingsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
                                         id="pmoSideSettingsPassword">Change Password</a></li>
                             </ul>
                         </div>
@@ -1023,7 +1024,7 @@
                         <tr class="border-bottom">
                             <td class="ps-3 py-3 text-dark">${r.name}</td>
                             <td class="py-3 text-secondary font-monospace">${r.nric}</td>
-                            <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
+                            <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 text-meta fw-bold">${r.fund}</span></td>
                             <td class="py-3 text-secondary">${r.type}</td>
                             <td class="pe-3 py-3 text-end fw-semibold text-dark">MYR ${r.amount}</td>
                         </tr>
@@ -1112,7 +1113,7 @@
                 el('eopAuthDoneContribution').textContent = d.contributionLabel;
                 el('eopAuthDoneEmp').textContent = String(d.employees);
                 el('eopAuthDoneAmount').textContent = amountRm;
-                el('eopAuthDoneAmount').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-success fs-7';
+                el('eopAuthDoneAmount').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-caption text-success';
                 const nowStr = new Date().toLocaleString('en-MY');
                 el('eopAuthDoneAuthDt').textContent = nowStr;
                 el('eopAuthDoneRemarks').textContent = (remarks?.value || '').trim() || '—';
@@ -1125,11 +1126,11 @@
                 wrap.classList.remove('bg-danger');
                 wrap.classList.add('bg-success');
                 icon.className = 'iconoir-check text-white';
-                icon.setAttribute('style', 'font-size:3rem;');
+                icon.setAttribute('style', 'font-size: var(--type-display);');
                 el('eopAuthDoneTitle').textContent = 'Contribution approved';
                 el('eopAuthDoneSubtitle').textContent = 'PAC verified. This batch is authorised and will move to payment / settlement workflow.';
                 el('eopAuthDoneStatus').textContent = 'Approved';
-                el('eopAuthDoneStatus').className = 'bg-light rounded-3 px-3 py-3 fw-bold fs-7 text-success';
+                el('eopAuthDoneStatus').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-caption text-success';
                 detailSec.classList.add('d-none');
                 doneSec.classList.remove('d-none');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1142,12 +1143,12 @@
                 wrap.classList.remove('bg-success');
                 wrap.classList.add('bg-danger');
                 icon.className = 'iconoir-xmark text-white';
-                icon.setAttribute('style', 'font-size:3rem;');
+                icon.setAttribute('style', 'font-size: var(--type-display);');
                 el('eopAuthDoneTitle').textContent = 'Contribution rejected';
                 el('eopAuthDoneSubtitle').textContent = 'This batch was rejected. The initiator will see your remarks and may resubmit.';
                 el('eopAuthDoneStatus').textContent = 'Rejected';
-                el('eopAuthDoneStatus').className = 'bg-light rounded-3 px-3 py-3 fw-bold fs-7 text-danger';
-                el('eopAuthDoneAmount').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-dark fs-7';
+                el('eopAuthDoneStatus').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-caption text-danger';
+                el('eopAuthDoneAmount').className = 'bg-light rounded-3 px-3 py-3 fw-bold text-caption text-dark';
                 detailSec.classList.add('d-none');
                 doneSec.classList.remove('d-none');
                 window.scrollTo({ top: 0, behavior: 'smooth' });

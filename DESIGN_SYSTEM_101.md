@@ -64,7 +64,13 @@ Observed usage:
 - Headings: 600 to 700 weight
 - Body copy: 400 to 500 weight
 - Labels / captions: 700 uppercase in some nav and status areas
-- Compact metadata: `fs-8`, `fs-9`, `fs-10` scale in dashboards
+- Compact metadata: `.text-meta` and `.text-caption` backed by `design-tokens.css`
+
+Canonical type APIs: `.text-meta` (12px), `.text-caption` / `.text-table` (14px),
+`.text-body` (16px), `.text-lead` (18px), `.text-section` (20px), `.text-title`
+(28px), and `.text-display` (responsive 32–40px). Icon-only controls use
+`.icon-size-xs` or `.icon-size-sm`. Do not introduce fixed UI font sizes outside
+documented SVG, canvas, and chart-label rendering contracts.
 
 ### 2.3 Spacing and Rhythm
 
