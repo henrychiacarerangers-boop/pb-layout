@@ -24,7 +24,7 @@
   border-collapse: collapse;
   border-spacing: 0;
   background: #FFFFFF;
-  color: #16161A;
+  color: #1f2937;
   font-family: Montserrat, Arial, sans-serif;
 }
 
@@ -50,7 +50,7 @@
   padding: 14px 16px;
   border-bottom: 1px solid #EEF3F8 !important;
   background: transparent;
-  color: #16161A !important;
+  color: #1f2937 !important;
   font-size: var(--type-table) !important;
   font-weight: 500 !important;
   line-height: 20px;
@@ -89,7 +89,7 @@
 }
 
 .pmo-data-table--details tbody>tr> :not(:first-child) {
-  color: #16161A !important;
+  color: #1f2937 !important;
   font-size: var(--type-table) !important;
   font-weight: 600 !important;
 }
@@ -133,7 +133,7 @@
 
 /* Dates are operational data, not secondary decoration. */
 .pmo-data-table .pmo-table-date {
-  color: #16161A !important;
+  color: #1f2937 !important;
   font-size: 13px !important;
   font-weight: 500 !important;
   line-height: 20px;

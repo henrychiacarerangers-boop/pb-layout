@@ -6,11 +6,11 @@
  */
 
 :root {
-    --brand-primary: #ff1700;
+    --brand-primary: #d3112b;
     --brand-primary-hover: #ac1117;
-    --brand-navy: #002e77;
-    --accent-primary: #002e77;
-    --action-primary: #002e77;
+    --brand-navy: #1b2a4a;
+    --accent-primary: #1b2a4a;
+    --action-primary: #d3112b;
     --interactive-hover: #58595b;
     --bg-container: #fcfcfc;
     --bg-main: #fcfcfc;
@@ -18,8 +18,8 @@
     --surface-subtle: #f8fafc;
     --line-subtle: #e8eef5;
     --border-light: 1px solid rgba(0, 0, 0, 0.04);
-    --text-primary: #16161a;
-    --text-secondary: #48484b;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
     --text-muted: #5f6f86;
     --ui-support: #5f6f86;
     --success: #15803d;
@@ -52,13 +52,52 @@
     --line-height-body: 1.5;
 }
 
-.text-meta { font-size: var(--type-meta) !important; line-height: 1.35; }
-.text-caption { font-size: var(--type-caption) !important; line-height: 1.4; }
-.text-table { font-size: var(--type-table) !important; line-height: 1.4; }
-.text-body { font-size: var(--type-body); line-height: var(--line-height-body); }
-.text-lead { font-size: var(--type-lead) !important; line-height: 1.45; }
-.text-section { font-size: var(--type-section) !important; line-height: 1.35; }
-.text-title { font-size: var(--type-title) !important; line-height: var(--line-height-tight); }
-.text-display { font-size: var(--type-display) !important; line-height: 1.1; }
-.icon-size-xs { font-size: var(--type-xs) !important; line-height: 1; }
-.icon-size-sm { font-size: var(--type-caption) !important; line-height: 1; }
+.text-meta {
+    font-size: var(--type-meta) !important;
+    line-height: 1.35;
+}
+
+.text-caption {
+    font-size: var(--type-caption) !important;
+    line-height: 1.4;
+}
+
+.text-table {
+    font-size: var(--type-table) !important;
+    line-height: 1.4;
+}
+
+.text-body {
+    font-size: var(--type-body);
+    line-height: var(--line-height-body);
+}
+
+.text-lead {
+    font-size: var(--type-lead) !important;
+    line-height: 1.45;
+}
+
+.text-section {
+    font-size: var(--type-section) !important;
+    line-height: 1.35;
+}
+
+.text-title {
+    font-size: var(--type-title) !important;
+    line-height: var(--line-height-tight);
+}
+
+.text-display {
+    font-size: var(--type-display) !important;
+    line-height: 1.1;
+}
+
+.icon-size-xs {
+    font-size: var(--type-xs) !important;
+    line-height: 1;
+}
+
+.icon-size-sm {
+    font-size: var(--type-caption) !important;
+    line-height: 1;
+}

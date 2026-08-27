@@ -27,7 +27,7 @@
         }
 
         .sub-tab-link {
-            font-size: var(--type-caption);
+            font-size: 0.9rem;
             font-weight: 600;
             color: #64748b;
             text-decoration: none;
@@ -48,7 +48,7 @@
 
         .filter-section-title {
             font-weight: 700;
-            font-size: var(--type-caption);
+            font-size: 0.85rem;
             color: #1e293b;
             letter-spacing: 0.3px;
         }
@@ -79,10 +79,7 @@
             transform: scale(1.15);
         }
     </style>
-    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
-    <script src="../js/accessibility.js" defer></script>
-<link rel="stylesheet" href="../../design-tokens.css">
-<link rel="stylesheet" href="../../pmo-core.css">
+    <link rel="stylesheet" href="../css/table-system.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="analytics"
@@ -90,7 +87,7 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -120,19 +117,19 @@
                                     <a href="../unit-trust/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="analyticsNavPillUt">
-                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+
                                     </a>
                                     <a href="../eop/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="analyticsNavPillEop">
-                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+
                                     </a>
                                     <a href="unit-trust.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="analyticsNavPillAnalytics">
-                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -144,14 +141,14 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="text-caption fw-semibold d-none d-sm-inline"
+                                        <span class="fs-8 fw-semibold d-none d-sm-inline"
                                             id="analyticsNavUserLabel">User &amp; Authoriser</span>
-                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item d-flex align-items-center gap-2"
@@ -185,29 +182,24 @@
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
-            <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
-                        Online</span>
-                    <span class="text-white fw-normal fs-6">· Analytics</span>
-                </h1>
-                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
-                    09:16</p>
+        <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="analyticsMainTabs">
+                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="unit-trust.html" id="analyticsTabUt">Unit Trust Analytics</a>
+                        <a class="nav-link active" href="unit-trust.html">Unit Trust Analytics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="eop.html" id="analyticsTabEop">PRS Analytics</a>
+                        <a class="nav-link" href="eop.html">PRS Analytics</a>
                     </li>
+
                 </ul>
             </div>
         </header>
     </div>
 
     <!-- Main Dashboard Content -->
-    <main class="dashboard-content py-5">
+    <main class="dashboard-content py-4">
         <div class="container">
             <!-- Title Section Removed - Migrated to Card Header -->
             <div class="row g-4">
@@ -217,7 +209,7 @@
                     <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4">
                         <!-- Sidebar Header -->
                         <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
-                            <h5 class="fw-bold text-dark fs-6 mb-0">Further filter by &gt;&gt;</h5>
+                            <h5 class="fw-bold text-dark fs-6 mb-0">Further filter by</h5>
                             <button
                                 class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center"
                                 style="width: 28px; height: 28px; border-color: #dee2e6;">
@@ -227,8 +219,8 @@
 
                         <!-- Show Funds Selector -->
                         <div class="mb-4">
-                            <label class="form-label text-muted text-caption fw-semibold mb-1">Show Funds</label>
-                            <select class="form-select rounded-3 text-caption py-2 text-dark border-secondary border-opacity-25"
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1">Show Funds</label>
+                            <select class="form-select rounded-3 fs-8 py-2 text-dark border-secondary border-opacity-25"
                                 style="font-weight: 500;">
                                 <option selected>All Funds</option>
                                 <option>My Favourites Only</option>
@@ -239,9 +231,9 @@
 
                         <!-- Search Bar -->
                         <div class="mb-4">
-                            <label class="form-label text-muted text-caption fw-semibold mb-1">Fund Name or Abbreviation</label>
+                            <label class="form-label text-muted fs-8 fw-semibold mb-1">Fund Name or Abbreviation</label>
                             <div class="input-group">
-                                <input type="text" class="form-control text-caption py-2 border-secondary border-opacity-25"
+                                <input type="text" class="form-control fs-8 py-2 border-secondary border-opacity-25"
                                     placeholder="Search funds..." aria-label="Search funds">
                                 <button class="btn btn-dark px-3 d-flex align-items-center" type="button"
                                     style="background-color: #5d678e; border-color: #5d678e;">
@@ -255,27 +247,27 @@
                             <div class="filter-section-title mb-3">Fund Category</div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catEquity" checked>
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="catEquity">Equity</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catMixed">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="catMixed">Mixed
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catMixed">Mixed
                                     Asset/Balanced</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catBond">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="catBond">Bond/Fixed
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catBond">Bond/Fixed
                                     Income</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catMoney">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="catMoney">Money
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="catMoney">Money
                                     Market</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="catOfFunds">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="catOfFunds">Fund-of-Funds</label>
                             </div>
                         </div>
@@ -285,26 +277,26 @@
                             <div class="filter-section-title mb-3">Geographical Region</div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="regAsia" checked>
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="regAsia">Asia</label>
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="regAsia">Asia</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="regDomestic">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="regDomestic">Domestic</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="regGlobal">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="regGlobal">Global</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="regAsean">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="regAsean">ASEAN</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="regChina">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="regChina">Greater
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="regChina">Greater
                                     China</label>
                             </div>
                         </div>
@@ -314,27 +306,27 @@
                             <div class="filter-section-title mb-3">Thematic</div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themConsumer">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themConsumer">Consumer</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themREITs">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themREITs">Property /
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Property /
                                     REITs / Infrastructure</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themHealth">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themHealth">Sustainable & Responsible</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themSustain">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themSustain">Lifestyle / Technology</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themTech" checked>
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themTech">Pioneer
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themTech">Pioneer
                                     Entrepreneur</label>
                             </div>
                         </div>
@@ -342,12 +334,12 @@
                             <div class="filter-section-title mb-3">Currency Exposure</div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themConsumer">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themConsumer">Diversified Currency</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themREITs">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themREITs">Single
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Single
                                     Currency</label>
                             </div>
                         </div>
@@ -355,32 +347,32 @@
                             <div class="filter-section-title mb-3">Portfolio Objective</div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themConsumer">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themConsumer">General</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themREITs">
-                                <label class="form-check-label text-caption text-secondary fw-medium"
+                                <label class="form-check-label fs-8 text-secondary fw-medium"
                                     for="themREITs">Concentrated Portfolio</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themConsumer">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themConsumer">Income
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themConsumer">Income
                                     Generation</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themREITs">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themREITs">Large
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Large
                                     Cap</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themConsumer">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themConsumer">Small /
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themConsumer">Small /
                                     Mid Cap</label>
                             </div>
                             <div class="custom-checkbox form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="themREITs">
-                                <label class="form-check-label text-caption text-secondary fw-medium" for="themREITs">Flexible
+                                <label class="form-check-label fs-8 text-secondary fw-medium" for="themREITs">Flexible
                                     Positioning</label>
                             </div>
                         </div>
@@ -392,7 +384,7 @@
                 <section class="col-lg-9">
                     <div class="mb-4">
                         <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Fund Analytics</h2>
-                        <p class="text-muted text-caption mb-0">Track and compare your fund performance.</p>
+                        <p class="text-muted fs-7 mb-0">Track and compare your fund performance.</p>
                     </div>
                     <!-- Top Views Selectors Card -->
 
@@ -401,13 +393,13 @@
                         <div class="border-bottom pb-3 mb-4">
                             <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
                                 <a href="#" class="view-tab d-flex align-items-center gap-2">
-                                    <i class="iconoir-info-circle fs-6"></i> Fund Info View
+                                    Fund Info View
                                 </a>
                                 <a href="#" class="view-tab active d-flex align-items-center gap-2">
-                                    <i class="iconoir-graph-up fs-6"></i> Fund Performance View
+                                    Fund Performance View
                                 </a>
                                 <a href="#" class="view-tab d-flex align-items-center gap-2">
-                                    <i class="iconoir-dollar fs-6"></i> Fund Prices View
+                                    Fund Prices View
                                 </a>
                             </div>
                         </div>
@@ -418,11 +410,11 @@
 
                            Interactive Buttons on Same Row -->
                         <!-- <div class="d-flex align-items-center gap-2">
-                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 text-caption text-white fw-bold transition-all" style="background-color: #002e77; border: none;" id="btnFavourites">
+                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-white fw-bold transition-all" style="background-color: #0E0D3B; border: none;" id="btnFavourites">
                                     <i class="iconoir-star-solid text-warning fs-6"></i> My Favourites
                                 </button>
-                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 text-caption text-muted border bg-light transition-all" id="btnCompare">
-                                    Compare Funds <span class="badge bg-secondary rounded-circle px-2 py-1 text-meta ms-1 text-white">0</span>
+                                <button class="btn d-flex align-items-center gap-2 rounded-pill px-3 py-1.5 fs-8 text-muted border bg-light transition-all" id="btnCompare">
+                                    Compare Funds <span class="badge bg-secondary rounded-circle px-2 py-1 fs-9 ms-1 text-white">0</span>
                                 </button>
                             </div> -->
                         <!-- </div> -->
@@ -432,7 +424,7 @@
                                 <table class="pmo-data-table">
                                     <thead>
                                         <tr>
-                                            <th class="ps-4 py-3">
+                                            <th class="ps-4 py-1">
                                                 Fund</th>
                                             <th class="py-3">
                                                 Performance<br>Date</th>
@@ -440,7 +432,7 @@
                                             <th class="py-2" colspan="2">Returns %</th>
                                             <th class="py-2" colspan="3">Annualised Returns (%)
                                             </th>
-                                            <th class="pe-4 py-3">Action
+                                            <th class="pe-4 py-3">
                                             </th>
                                         </tr>
                                         <tr>
@@ -459,14 +451,14 @@
                                     <tbody>
                                         <!-- Row 1 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star-solid favourite-star text-warning"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             ISLAMIC ASIA TACTICAL ALLOCATION</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PIATAF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PIATAF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -486,14 +478,14 @@
 
                                         <!-- Row 2 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             e-ISLAMIC ASIA THEMATIC GROWTH</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PeIATGF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PeIATGF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -513,14 +505,14 @@
 
                                         <!-- Row 3 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PB
                                                             ISLAMIC ASIA STRATEGIC SECTOR</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PBIASSF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PBIASSF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -540,14 +532,14 @@
 
                                         <!-- Row 4 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             ISLAMIC OPTIMAL EQUITY</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PIOEF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PIOEF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -567,14 +559,14 @@
 
                                         <!-- Row 5 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             CHINA ITTIKAL</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PCIF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PCIF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -594,14 +586,14 @@
 
                                         <!-- Row 6 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             REGIONAL SECTOR</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PRSEC</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PRSEC</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -621,14 +613,14 @@
 
                                         <!-- Row 7 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             ISLAMIC ASIA LEADERS EQUITY</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PIALEF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PIALEF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -648,14 +640,14 @@
 
                                         <!-- Row 8 -->
                                         <tr>
-                                            <td class="ps-4 py-3">
+                                            <td class="ps-4 py-1">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <i class="iconoir-star favourite-star"
                                                         onclick="toggleFavourite(this)"></i>
                                                     <div>
                                                         <a href="#" class="text-uppercase mb-1 pmo-table-link">PUBLIC
                                                             ASIA PACIFIC FOCUS</a>
-                                                        <span class="d-block" style="font-size: var(--type-meta);">PAPFF</span>
+                                                        <span class="d-block" style="font-size: 0.7rem;">PAPFF</span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -688,7 +680,7 @@
                                         </h6>
 
                                         <ul
-                                            class="list-unstyled mb-0 d-flex flex-column gap-3 text-caption text-secondary lh-base">
+                                            class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
                                             <li>
                                                 <span class="fw-semibold text-dark">Fund Performance</span> is computed
                                                 based on the latest available fund price.
@@ -746,7 +738,7 @@
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text text-meta">
+                <div class="copyright-text fs-9">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -769,27 +761,29 @@
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name text-caption fw-bold mb-1" id="analyticsSidebarUserName"
-                        style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="text-caption text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                    <h6 class="profile-name fs-7 fw-bold mb-1" id="analyticsSidebarUserName"
+                        style="color: #0E0D3B !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
+                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
                     <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/dashboard.html" id="pmoUtSideDash">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Dashboard</span>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
+                            <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/view_account.html" id="pmoUtSideViewAcct">
-                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/view-acccount.svg" width="20"></img></i> <span
                                 class="fw-medium">View Account</span>
                         </a>
                     </li>
@@ -798,27 +792,26 @@
                             data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
                             aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Authorise Transaction</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/authorise.svg" width="20"></img></i> <span
+                                    class="fw-medium">Authorise</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
-                                        Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
+                                        Top-Up Investment </a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
-                                        Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
+                                        Redemption </a>
                                 </li>
                             </ul>
                         </div>
@@ -828,22 +821,23 @@
                             data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
                             aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Transaction Enquiry</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i> <span
+                                    class="fw-medium">Transaction</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
                             </ul>
                         </div>
@@ -853,47 +847,49 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="statementCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmtTax">Tax Voucher</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -903,34 +899,35 @@
                             aria-expanded="false" aria-controls="eopSidebarContribCollapse"
                             id="eopSidebarContribToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/contribution.svg" width="20"></img></i>
                                 <span class="fw-medium">Contributions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
                                         <span>Authorise Contribution</span>
-                                        <span class="badge bg-danger rounded-pill text-meta" id="eopNavBadgeAuth">3</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
                                         <span>Make Payment</span>
-                                        <span class="badge rounded-pill text-meta fw-bold eop-pending-pay-badge"
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
                                     </a>
@@ -944,22 +941,23 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html" id="eopSideTxnPast">
                                         Past Transaction
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
                                         Pending Transaction
                                     </a>
@@ -972,24 +970,25 @@
                             data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
                             aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i>
                                 <span class="fw-medium">Statements</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
                                 </li>
                             </ul>
@@ -997,47 +996,50 @@
                     </li>
 
                     <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../analytics/unit-trust.html" id="pmoSideUtAnalytics">
-                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/unit-trust.svg" width="20"></img></i> <span
                                 class="fw-medium">Unit Trust Analytics</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../analytics/eop.html"
                             id="pmoSideEopAnalytics">
-                            <i class="iconoir-activity fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">EOP Analytics</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/prs.svg" width="20"></img></i> <span class="fw-medium">PRS
+                                Analytics</span>
                         </a>
                     </li>
 
                     <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#settingsCollapse" role="button" aria-expanded="false"
                             aria-controls="settingsCollapse" id="pmoSideSettingsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/setting.svg" width="20"></img></i> <span
                                     class="fw-medium">Settings</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="settingsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsPassword">Change Password</a></li>
                             </ul>
                         </div>
@@ -1045,8 +1047,9 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
                             id="pmoSideLogout">
-                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Log Out</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/logout.svg" width="20"></img></i> <span class="fw-medium">Log
+                                Out</span>
                         </a>
                     </li>
                 </ul>

@@ -11,8 +11,8 @@
 ## Global Constraints
 
 - Header: 12px / 700 / `#64748b` / `#f8fafc`.
-- Body: 13px / 500 / `#16161a`; key values use 600 only.
-- Detail labels: 12px / 600 / `#64748b`; detail values: 13px / 600 / `#16161a`.
+- Body: 13px / 500 / `#1f2937`; key values use 600 only.
+- Detail labels: 12px / 600 / `#64748b`; detail values: 13px / 600 / `#1f2937`.
 - Preserve all existing table data, controls, and responsive wrappers.
 
 ---

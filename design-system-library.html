@@ -12,17 +12,16 @@
     <style>
         :root {
             /* Canonical tokens aligned to PMO corporate/css/styles.css */
-            --brand-primary: #ff1700;
+            --brand-primary: #d3112b;
             --brand-primary-hover: #ac1117;
-            --brand-navy: #002e77;
-            --accent-primary: #002e77;
-            --action-primary: #002e77;
-            --interactive-hover: #58595b;
+            --brand-navy: #1b2a4a;
+            --accent-primary: #1b2a4a;
+            --action-primary: #d3112b --interactive-hover: #58595b;
             --bg-container: #FCFCFC;
             --bg-main: #f8fafc;
             --ui-support: #8e9ab0;
-            --text-primary: #16161a;
-            --text-secondary: #48484b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-pill: 50rem;
@@ -527,11 +526,25 @@
             line-height: 1.45;
         }
 
-        .field-help { color: var(--text-muted); }
-        .field-feedback.success { color: #0b7e24; }
-        .field-feedback.error { color: #b42318; }
-        .input.is-success { border-color: var(--success); }
-        .input.is-error { border-color: var(--brand-primary); }
+        .field-help {
+            color: var(--text-muted);
+        }
+
+        .field-feedback.success {
+            color: #0b7e24;
+        }
+
+        .field-feedback.error {
+            color: #b42318;
+        }
+
+        .input.is-success {
+            border-color: var(--success);
+        }
+
+        .input.is-error {
+            border-color: var(--brand-primary);
+        }
 
         .mini-card.is-emphasis {
             color: #ffffff;
@@ -540,8 +553,13 @@
         }
 
         .mini-card.is-emphasis strong,
-        .mini-card.is-emphasis span { color: #ffffff; }
-        .mini-card.is-emphasis span { opacity: 0.72; }
+        .mini-card.is-emphasis span {
+            color: #ffffff;
+        }
+
+        .mini-card.is-emphasis span {
+            opacity: 0.72;
+        }
 
         .data-pair {
             display: flex;
@@ -553,11 +571,22 @@
             font-size: 0.74rem;
         }
 
-        .data-pair:last-child { border-bottom: 0; }
-        .data-pair span { color: var(--text-muted); }
-        .data-pair strong { color: var(--text-primary); }
+        .data-pair:last-child {
+            border-bottom: 0;
+        }
 
-        .feedback-stack { display: grid; gap: 9px; }
+        .data-pair span {
+            color: var(--text-muted);
+        }
+
+        .data-pair strong {
+            color: var(--text-primary);
+        }
+
+        .feedback-stack {
+            display: grid;
+            gap: 9px;
+        }
 
         .feedback-item {
             display: flex;
@@ -569,11 +598,33 @@
             line-height: 1.45;
         }
 
-        .feedback-item.info { color: var(--brand-navy); background: var(--navy-soft); }
-        .feedback-item.success { color: #0b7e24; background: var(--success-soft); }
-        .feedback-item.warning { color: #8a4a13; background: var(--warning-soft); }
-        .feedback-item.error { color: #b42318; background: var(--danger-soft); }
-        .feedback-item button { margin-left: auto; border: 0; color: currentColor; background: transparent; cursor: pointer; }
+        .feedback-item.info {
+            color: var(--brand-navy);
+            background: var(--navy-soft);
+        }
+
+        .feedback-item.success {
+            color: #0b7e24;
+            background: var(--success-soft);
+        }
+
+        .feedback-item.warning {
+            color: #8a4a13;
+            background: var(--warning-soft);
+        }
+
+        .feedback-item.error {
+            color: #b42318;
+            background: var(--danger-soft);
+        }
+
+        .feedback-item button {
+            margin-left: auto;
+            border: 0;
+            color: currentColor;
+            background: transparent;
+            cursor: pointer;
+        }
 
         .marketing-demo {
             position: relative;
@@ -596,9 +647,28 @@
             border-radius: 50%;
         }
 
-        .marketing-demo span { color: rgba(255, 255, 255, 0.72); font-size: 0.68rem; font-weight: 800; text-transform: uppercase; }
-        .marketing-demo strong { display: block; max-width: 210px; margin: 9px 0; font-size: 1.1rem; line-height: 1.2; }
-        .marketing-demo .btn { position: relative; z-index: 1; min-height: 34px; padding: 7px 12px; font-size: 0.7rem; }
+        .marketing-demo span {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .marketing-demo strong {
+            display: block;
+            max-width: 210px;
+            margin: 9px 0;
+            font-size: 1.1rem;
+            line-height: 1.2;
+        }
+
+        .marketing-demo .btn {
+            position: relative;
+            z-index: 1;
+            min-height: 34px;
+            padding: 7px 12px;
+            font-size: 0.7rem;
+        }
 
         .chart-demo {
             display: flex;
@@ -617,7 +687,9 @@
             background: linear-gradient(to top, var(--brand-primary), #ff7b6d);
         }
 
-        .chart-bar.navy { background: linear-gradient(to top, var(--brand-navy), #567eb6); }
+        .chart-bar.navy {
+            background: linear-gradient(to top, var(--brand-navy), #567eb6);
+        }
 
         .empty-state {
             display: grid;
@@ -1209,7 +1281,7 @@
                         <article class="token-card">
                             <div class="swatch" style="background:var(--brand-primary)"></div>
                             <h3>Brand Primary</h3>
-                            <code>#ff1700</code>
+                            <code>#d3112b</code>
                             <p>Primary CTA, danger, urgent approvals, notification badges.</p>
                         </article>
                         <article class="token-card">
@@ -1259,7 +1331,7 @@
                                 </tr>
                                 <tr>
                                     <td>Status</td>
-                                    <td><code>#12a833</code>, <code>#ce7226</code>, <code>#ff1700</code></td>
+                                    <td><code>#12a833</code>, <code>#ce7226</code>, <code>#d3112b</code></td>
                                     <td>Success, warning, failed, pending, risk, authorisation feedback.</td>
                                 </tr>
                             </tbody>
@@ -1485,29 +1557,261 @@
                         </p>
                     </div>
                     <div class="specimen-grid">
-                        <article class="specimen" data-component-family="navigation"><div class="specimen-head"><div><h3>Navigation</h3><p>Utility navigation and portal destinations.</p></div><code class="specimen-source">.top-nav</code></div><div class="specimen-body"><nav class="mini-nav" aria-label="Navigation specimen"><span class="mini-nav-brand">PM</span><span class="mini-nav-link active">Overview</span><span class="mini-nav-link">Accounts</span><span class="mini-nav-link">Authorise</span><i class="mini-nav-utility iconoir-bell-notification-solid" aria-hidden="true"></i></nav><p class="usage-note"><strong>Use:</strong> one active destination; keep secondary utilities compact and right-aligned.</p></div></article>
+                        <article class="specimen" data-component-family="navigation">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Navigation</h3>
+                                    <p>Utility navigation and portal destinations.</p>
+                                </div><code class="specimen-source">.top-nav</code>
+                            </div>
+                            <div class="specimen-body">
+                                <nav class="mini-nav" aria-label="Navigation specimen"><span
+                                        class="mini-nav-brand">PM</span><span
+                                        class="mini-nav-link active">Overview</span><span
+                                        class="mini-nav-link">Accounts</span><span
+                                        class="mini-nav-link">Authorise</span><i
+                                        class="mini-nav-utility iconoir-bell-notification-solid" aria-hidden="true"></i>
+                                </nav>
+                                <p class="usage-note"><strong>Use:</strong> one active destination; keep secondary
+                                    utilities compact and right-aligned.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="buttons"><div class="specimen-head"><div><h3>Buttons</h3><p>Clear, pill-shaped action hierarchy.</p></div><code class="specimen-source">.btn-navy</code></div><div class="specimen-body"><div class="preview-row"><button class="btn btn-red" type="button"><i class="iconoir-check" aria-hidden="true"></i> Approve</button><button class="btn btn-navy" type="button">Top Up</button><button class="btn btn-outline" type="button">Back</button><button class="btn btn-ghost" type="button" disabled>Disabled</button><button class="btn btn-navy" type="button" disabled aria-busy="true">Processing</button></div><p class="usage-note"><strong>Use:</strong> reserve red for decisive or high-priority actions; expose focus, disabled, and loading states.</p></div></article>
+                        <article class="specimen" data-component-family="buttons">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Buttons</h3>
+                                    <p>Clear, pill-shaped action hierarchy.</p>
+                                </div><code class="specimen-source">.btn-navy</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="preview-row"><button class="btn btn-red" type="button"><i
+                                            class="iconoir-check" aria-hidden="true"></i> Approve</button><button
+                                        class="btn btn-navy" type="button">Top Up</button><button
+                                        class="btn btn-outline" type="button">Back</button><button class="btn btn-ghost"
+                                        type="button" disabled>Disabled</button><button class="btn btn-navy"
+                                        type="button" disabled aria-busy="true">Processing</button></div>
+                                <p class="usage-note"><strong>Use:</strong> reserve red for decisive or high-priority
+                                    actions; expose focus, disabled, and loading states.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="forms"><div class="specimen-head"><div><h3>Forms</h3><p>Labeled fields with readable feedback.</p></div><code class="specimen-source">.form-control</code></div><div class="specimen-body"><div class="form-demo"><div class="field-state"><label class="input-label" for="demo-email">Notification email</label><input class="input is-success" id="demo-email" type="email" value="finance@company.com"><span class="field-feedback success">Verified email address.</span></div><div class="field-state"><label class="input-label" for="demo-pac">PAC code</label><input class="input is-error" id="demo-pac" aria-describedby="demo-pac-error" value=""><span class="field-feedback error" id="demo-pac-error">Enter the six-digit PAC code.</span></div></div><p class="usage-note"><strong>Use:</strong> place labels above fields; pair semantic borders with text feedback.</p></div></article>
+                        <article class="specimen" data-component-family="forms">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Forms</h3>
+                                    <p>Labeled fields with readable feedback.</p>
+                                </div><code class="specimen-source">.form-control</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="form-demo">
+                                    <div class="field-state"><label class="input-label" for="demo-email">Notification
+                                            email</label><input class="input is-success" id="demo-email" type="email"
+                                            value="finance@company.com"><span class="field-feedback success">Verified
+                                            email address.</span></div>
+                                    <div class="field-state"><label class="input-label" for="demo-pac">PAC
+                                            code</label><input class="input is-error" id="demo-pac"
+                                            aria-describedby="demo-pac-error" value=""><span
+                                            class="field-feedback error" id="demo-pac-error">Enter the six-digit PAC
+                                            code.</span></div>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> place labels above fields; pair semantic
+                                    borders with text feedback.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="cards"><div class="specimen-head"><div><h3>Cards</h3><p>Surfaces communicate real grouping.</p></div><code class="specimen-source">.card</code></div><div class="specimen-body"><div class="grid two"><div class="mini-card"><strong>Unit Trust</strong><span>Standard white surface</span></div><div class="mini-card is-emphasis"><strong>PMO Plus</strong><span>Promoted action surface</span></div></div><p class="usage-note"><strong>Use:</strong> apply elevation only when a surface separates a meaningful task or summary.</p></div></article>
+                        <article class="specimen" data-component-family="cards">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Cards</h3>
+                                    <p>Surfaces communicate real grouping.</p>
+                                </div><code class="specimen-source">.card</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="grid two">
+                                    <div class="mini-card"><strong>Unit Trust</strong><span>Standard white
+                                            surface</span></div>
+                                    <div class="mini-card is-emphasis"><strong>PMO Plus</strong><span>Promoted action
+                                            surface</span></div>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> apply elevation only when a surface
+                                    separates a meaningful task or summary.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="status"><div class="specimen-head"><div><h3>Badges &amp; status</h3><p>Readable semantic workflow states.</p></div><code class="specimen-source">.status-badge</code></div><div class="specimen-body"><div class="preview-row"><span class="chip red">Pending</span><span class="chip green">Approved</span><span class="chip amber">Attention</span><span class="chip gray">Draft</span></div><p class="usage-note"><strong>Use:</strong> always combine colour with a written status; badges should not be the sole signal.</p></div></article>
+                        <article class="specimen" data-component-family="status">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Badges &amp; status</h3>
+                                    <p>Readable semantic workflow states.</p>
+                                </div><code class="specimen-source">.status-badge</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="preview-row"><span class="chip red">Pending</span><span
+                                        class="chip green">Approved</span><span class="chip amber">Attention</span><span
+                                        class="chip gray">Draft</span></div>
+                                <p class="usage-note"><strong>Use:</strong> always combine colour with a written status;
+                                    badges should not be the sole signal.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="tables"><div class="specimen-head"><div><h3>Tables</h3><p>Compact, transaction-focused data lists.</p></div><code class="specimen-source">.custom-table</code></div><div class="specimen-body"><div style="overflow-x:auto"><table class="preview-table"><thead><tr><th scope="col">Reference</th><th scope="col">Status</th><th scope="col">Amount</th></tr></thead><tbody><tr><td>UT-2026-0008</td><td><span class="chip red">Pending</span></td><td>MYR 42,000</td></tr><tr><td>EOP-2026-0102</td><td><span class="chip green">Approved</span></td><td>MYR 100,000</td></tr></tbody></table></div><div class="empty-state"><i class="iconoir-page" aria-hidden="true"></i><span>No pending transactions.<br>Clear empty states explain the next available action.</span></div><p class="usage-note"><strong>Use:</strong> keep headers explicit, rows compact, and actions keyboard reachable.</p></div></article>
+                        <article class="specimen" data-component-family="tables">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Tables</h3>
+                                    <p>Compact, transaction-focused data lists.</p>
+                                </div><code class="specimen-source">.custom-table</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div style="overflow-x:auto">
+                                    <table class="preview-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Reference</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>UT-2026-0008</td>
+                                                <td><span class="chip red">Pending</span></td>
+                                                <td>MYR 42,000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>EOP-2026-0102</td>
+                                                <td><span class="chip green">Approved</span></td>
+                                                <td>MYR 100,000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="empty-state"><i class="iconoir-page" aria-hidden="true"></i><span>No pending
+                                        transactions.<br>Clear empty states explain the next available action.</span>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> keep headers explicit, rows compact, and
+                                    actions keyboard reachable.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="data-display"><div class="specimen-head"><div><h3>Data display</h3><p>KPI tiles and financial summaries.</p></div><code class="specimen-source">.stat-box</code></div><div class="specimen-body"><div class="grid three"><div class="mini-card"><strong>MYR 241k</strong><span>Holdings</span></div><div class="mini-card"><strong>128</strong><span>Employees</span></div><div class="mini-card"><strong>5</strong><span>To approve</span></div></div><div class="data-pair"><span>Available balance</span><strong>MYR 18,340.00</strong></div><p class="usage-note"><strong>Use:</strong> lead with the value, then a short, unambiguous label and context.</p></div></article>
+                        <article class="specimen" data-component-family="data-display">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Data display</h3>
+                                    <p>KPI tiles and financial summaries.</p>
+                                </div><code class="specimen-source">.stat-box</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="grid three">
+                                    <div class="mini-card"><strong>MYR 241k</strong><span>Holdings</span></div>
+                                    <div class="mini-card"><strong>128</strong><span>Employees</span></div>
+                                    <div class="mini-card"><strong>5</strong><span>To approve</span></div>
+                                </div>
+                                <div class="data-pair"><span>Available balance</span><strong>MYR 18,340.00</strong>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> lead with the value, then a short,
+                                    unambiguous label and context.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="feedback"><div class="specimen-head"><div><h3>Feedback</h3><p>Contextual and non-disruptive notices.</p></div><code class="specimen-source">.alert-banner</code></div><div class="specimen-body"><div class="feedback-stack"><div class="feedback-item success"><i class="iconoir-check-circle" aria-hidden="true"></i> Your contribution was submitted for approval.</div><div class="feedback-item warning"><i class="iconoir-warning-triangle" aria-hidden="true"></i> PAC expires in 02:12.<button type="button" data-dismiss-notice aria-label="Close PAC expiry notice"><i class="iconoir-xmark" aria-hidden="true"></i></button></div><div class="feedback-item error"><i class="iconoir-warning-circle" aria-hidden="true"></i> We could not save your changes.</div></div><p class="usage-note"><strong>Use:</strong> put persistent validation near the field; use alerts for consequential page-level events.</p></div></article>
+                        <article class="specimen" data-component-family="feedback">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Feedback</h3>
+                                    <p>Contextual and non-disruptive notices.</p>
+                                </div><code class="specimen-source">.alert-banner</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="feedback-stack">
+                                    <div class="feedback-item success"><i class="iconoir-check-circle"
+                                            aria-hidden="true"></i> Your contribution was submitted for approval.</div>
+                                    <div class="feedback-item warning"><i class="iconoir-warning-triangle"
+                                            aria-hidden="true"></i> PAC expires in 02:12.<button type="button"
+                                            data-dismiss-notice aria-label="Close PAC expiry notice"><i
+                                                class="iconoir-xmark" aria-hidden="true"></i></button></div>
+                                    <div class="feedback-item error"><i class="iconoir-warning-circle"
+                                            aria-hidden="true"></i> We could not save your changes.</div>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> put persistent validation near the field;
+                                    use alerts for consequential page-level events.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="stepper"><div class="specimen-head"><div><h3>Process stepper</h3><p>Visible progression for gated workflows.</p></div><code class="specimen-source">.stepper-container</code></div><div class="specimen-body"><div class="stepper" aria-label="Registration progress: two of three steps complete"><span class="step">1</span><span class="step-line"></span><span class="step">2</span><span class="step-line muted"></span><span class="step muted">3</span></div><p class="usage-note"><strong>Use:</strong> show the current and completed steps; avoid a stepper for a single decision.</p></div></article>
+                        <article class="specimen" data-component-family="stepper">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Process stepper</h3>
+                                    <p>Visible progression for gated workflows.</p>
+                                </div><code class="specimen-source">.stepper-container</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="stepper" aria-label="Registration progress: two of three steps complete">
+                                    <span class="step">1</span><span class="step-line"></span><span
+                                        class="step">2</span><span class="step-line muted"></span><span
+                                        class="step muted">3</span>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> show the current and completed steps; avoid
+                                    a stepper for a single decision.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="tabs"><div class="specimen-head"><div><h3>Tabs</h3><p>Related views within one page context.</p></div><code class="specimen-source">.view-tab</code></div><div class="specimen-body"><div class="tabs-demo" role="tablist" aria-label="Account views"><button class="tab-btn active" type="button" role="tab" aria-selected="true">Dashboard</button><button class="tab-btn" type="button" role="tab" aria-selected="false">Authorise</button><button class="tab-btn" type="button" role="tab" aria-selected="false">Statements</button></div><p class="usage-note"><strong>Use:</strong> use tabs for peer views only; a selected tab must remain visibly distinct.</p></div></article>
+                        <article class="specimen" data-component-family="tabs">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Tabs</h3>
+                                    <p>Related views within one page context.</p>
+                                </div><code class="specimen-source">.view-tab</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="tabs-demo" role="tablist" aria-label="Account views"><button
+                                        class="tab-btn active" type="button" role="tab"
+                                        aria-selected="true">Dashboard</button><button class="tab-btn" type="button"
+                                        role="tab" aria-selected="false">Authorise</button><button class="tab-btn"
+                                        type="button" role="tab" aria-selected="false">Statements</button></div>
+                                <p class="usage-note"><strong>Use:</strong> use tabs for peer views only; a selected tab
+                                    must remain visibly distinct.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="marketing"><div class="specimen-head"><div><h3>Marketing</h3><p>Campaign and premium solution promotion.</p></div><code class="specimen-source">.solution-glass-card</code></div><div class="specimen-body"><div class="marketing-demo"><span>PMO Plus</span><strong>Build your investment future with confidence.</strong><button class="btn btn-red" type="button">Explore solutions</button></div><p class="usage-note"><strong>Use:</strong> use the premium dark surface for a single featured offer, not routine portal actions.</p></div></article>
+                        <article class="specimen" data-component-family="marketing">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Marketing</h3>
+                                    <p>Campaign and premium solution promotion.</p>
+                                </div><code class="specimen-source">.solution-glass-card</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="marketing-demo"><span>PMO Plus</span><strong>Build your investment future
+                                        with confidence.</strong><button class="btn btn-red" type="button">Explore
+                                        solutions</button></div>
+                                <p class="usage-note"><strong>Use:</strong> use the premium dark surface for a single
+                                    featured offer, not routine portal actions.</p>
+                            </div>
+                        </article>
 
-                        <article class="specimen" data-component-family="analytics"><div class="specimen-head"><div><h3>Analytics</h3><p>Financial trends with compact controls.</p></div><code class="specimen-source">.chart-container-mock</code></div><div class="specimen-body"><div class="tabs-demo" role="tablist" aria-label="Chart range"><button class="tab-btn" type="button" role="tab" aria-selected="false">1M</button><button class="tab-btn active" type="button" role="tab" aria-selected="true">6M</button><button class="tab-btn" type="button" role="tab" aria-selected="false">1Y</button></div><div class="chart-demo" aria-label="Illustrative portfolio trend chart"><span class="chart-bar" style="height:36%"></span><span class="chart-bar navy" style="height:54%"></span><span class="chart-bar" style="height:48%"></span><span class="chart-bar navy" style="height:72%"></span><span class="chart-bar" style="height:88%"></span></div><p class="usage-note"><strong>Use:</strong> pair visual trend data with clear labels, ranges, and a text-equivalent in production.</p></div></article>
+                        <article class="specimen" data-component-family="analytics">
+                            <div class="specimen-head">
+                                <div>
+                                    <h3>Analytics</h3>
+                                    <p>Financial trends with compact controls.</p>
+                                </div><code class="specimen-source">.chart-container-mock</code>
+                            </div>
+                            <div class="specimen-body">
+                                <div class="tabs-demo" role="tablist" aria-label="Chart range"><button class="tab-btn"
+                                        type="button" role="tab" aria-selected="false">1M</button><button
+                                        class="tab-btn active" type="button" role="tab"
+                                        aria-selected="true">6M</button><button class="tab-btn" type="button" role="tab"
+                                        aria-selected="false">1Y</button></div>
+                                <div class="chart-demo" aria-label="Illustrative portfolio trend chart"><span
+                                        class="chart-bar" style="height:36%"></span><span class="chart-bar navy"
+                                        style="height:54%"></span><span class="chart-bar"
+                                        style="height:48%"></span><span class="chart-bar navy"
+                                        style="height:72%"></span><span class="chart-bar" style="height:88%"></span>
+                                </div>
+                                <p class="usage-note"><strong>Use:</strong> pair visual trend data with clear labels,
+                                    ranges, and a text-equivalent in production.</p>
+                            </div>
+                        </article>
                     </div>
 
                     <div class="panel panel-pad" style="margin-top:16px">
@@ -1691,7 +1995,8 @@
 
                             <div class="state-cell component" role="rowheader">Legacy fs scale removed</div>
                             <div class="state-cell">Production pages use semantic type utilities from
-                                <code>design-tokens.css</code>.</div>
+                                <code>design-tokens.css</code>.
+                            </div>
                             <div class="state-cell">Small text becomes the default instead of a deliberate caption
                                 style.</div>
                             <div class="state-cell">Create semantic classes like <code>.text-caption</code>,
@@ -1845,8 +2150,7 @@
                                     <td>Canonical foundation/type tokens for every shell.</td>
                                 </tr>
                                 <tr>
-                                    <td><a class="source-link"
-                                            href="pmo-core.css"><code>pmo-core.css</code></a>
+                                    <td><a class="source-link" href="pmo-core.css"><code>pmo-core.css</code></a>
                                     </td>
                                     <td>Shared badge, view-tab, gateway-tab, and data-table contracts.</td>
                                 </tr>

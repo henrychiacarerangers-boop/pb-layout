@@ -180,52 +180,7 @@
         ];
     }
 
-    function buildBreadcrumbMarkup() {
-        const contentArea = document.querySelector(".dashboard-content");
-        if (!contentArea) return;
-        const container = contentArea.querySelector(".container");
-        if (!container || document.getElementById("pmoBreadcrumbsNav")) return;
-
-        const trail = getBreadcrumbTrail();
-        if (!trail.length) return;
-
-        const nav = document.createElement("nav");
-        nav.className = "pmo-breadcrumbs-nav mb-3";
-        nav.setAttribute("aria-label", "Breadcrumb");
-        nav.id = "pmoBreadcrumbsNav";
-
-        const list = document.createElement("ol");
-        list.className = "pmo-breadcrumbs-list mb-0";
-
-        trail.forEach((item, index) => {
-            const li = document.createElement("li");
-            li.className = "pmo-breadcrumbs-item";
-            if (index === trail.length - 1) {
-                li.classList.add("active");
-                li.setAttribute("aria-current", "page");
-                li.innerHTML = `<span class="pmo-breadcrumbs-current">${item.label}</span>`;
-            } else {
-                const link = document.createElement("a");
-                link.className = "pmo-breadcrumbs-link";
-                link.href = item.href || "#";
-                link.textContent = item.label;
-                li.appendChild(link);
-            }
-            list.appendChild(li);
-        });
-
-        const rail = document.createElement("div");
-        rail.className = "pmo-breadcrumbs-rail";
-        rail.appendChild(list);
-
-        const wrapper = document.createElement("div");
-        wrapper.className = "pmo-breadcrumbs-bar";
-        wrapper.appendChild(rail);
-        nav.appendChild(wrapper);
-
-        container.insertBefore(nav, container.firstChild);
-    }
-
+   
     function promotePageIntroBlocks() {
         const container = document.querySelector("main.dashboard-content .container");
         if (!container) return;
@@ -452,7 +407,7 @@
         if (document.getElementById("pmoAlertBanner")) return;
 
         const bannerHtml = `
-        <div class="alert-banner py-2 bg-danger text-white text-center position-relative" id="pmoAlertBanner" style="z-index: 1050; width: 100%; color: #ffffff !important; background-color: #ff1700 !important;">
+        <div class="alert-banner py-2 bg-danger text-white text-center position-relative" id="pmoAlertBanner" style="z-index: 1050; width: 100%; color: #ffffff !important; background-color: #d3112b !important;">
             <div class="container-fluid px-5" style="color: #ffffff !important;">
                 <div id="alertCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" style="color: #ffffff !important;">
                     <div class="carousel-inner" style="color: #ffffff !important;">
@@ -604,10 +559,57 @@
         }
     }
 
+    function injectCorporateDisclosures() {
+        const footerMount = document.getElementById("pmoShellFooterMount");
+        if (!footerMount) return;
+        if (footerMount.querySelector(".vanguard-disclosures")) return;
+
+        const foot = footerMount.querySelector("footer.bottom-footer");
+        if (!foot) return;
+
+        const linkPrefix = portal === "analytics" ? "../internet_risk.html" : "../internet_risk.html";
+
+        const disclosuresHtml = `
+        <div class="vanguard-disclosures mb-4 text-start" style="font-size: 0.73rem; line-height: 1.6; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 20px;">
+            <div class="row g-4 mb-3">
+                <!-- Column 1: Internet Risk -->
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-2" style="font-size: 0.82rem; color: #0E0D3B;"><u style="text-underline-offset: 3px;">Internet Risk</u></h6>
+                    <p class="mb-2 text-secondary" style="font-size: 0.74rem; line-height: 1.55;">Public Mutual Online is an online facility that provides online transactions &amp; account enquiries, as such you may be exposed to the risks associated with hardware &amp; software failure. You are also aware and acknowledge the risks involved when you make any transaction or enquiry online.</p>
+                    <p class="mb-0"><a href="${linkPrefix}" class="fw-bold text-decoration-none" style="color: #0E0D3B;">More</a></p>
+                </div>
+
+                <!-- Column 2: Investment Channels -->
+                <div class="col-lg-4 ps-lg-4" style="border-left: 1px solid rgba(0,0,0,0.08);">
+                    <h6 class="fw-bold mb-2" style="font-size: 0.82rem; color: #0E0D3B;"><u style="text-underline-offset: 3px;">Investment Channels</u></h6>
+                    <p class="mb-2 text-secondary" style="font-size: 0.74rem; line-height: 1.55;">Existing corporate investors could make their investment thru various channels namely:</p>
+                    <ol class="ps-3 mb-0 text-secondary" style="padding-left: 1.1rem; line-height: 1.55; font-size: 0.74rem;">
+                        <li>Online via Corporate Public Mutual Online</li>
+                        <li>Contact their servicing unit trust consultant</li>
+                        <li>Go to the nearest Public Bank branch</li>
+                    </ol>
+                </div>
+
+                <!-- Column 3: Transaction Notice -->
+                <div class="col-lg-4 ps-lg-4" style="border-left: 1px solid rgba(0,0,0,0.08);">
+                    <h6 class="fw-bold mb-2" style="font-size: 0.82rem; color: #0E0D3B;"><u style="text-underline-offset: 3px;">Transaction Notice</u></h6>
+                    <p class="mb-0 text-secondary" style="font-size: 0.74rem; line-height: 1.55;">If an applicant applied for units in the funds and a supplementary prospectus or replacement prospectus is delivered to the Securities Commission for registration before the issuance or transfer of units to the applicant, the applicant will be given the opportunity to withdraw his/her application within 14 days from the date of his/her receipt of notice of the registration of the supplementary prospectus or replacement prospectus. Application for units in the funds cannot be withdrawn where a supplementary prospectus or replacement prospectus has been registered after the issuance or transfer of units to the applicant.</p>
+                </div>
+            </div>
+        </div>
+        `;
+
+        const container = foot.querySelector(".container") || foot;
+        const firstChild = container.firstChild;
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = disclosuresHtml.trim();
+        container.insertBefore(wrapper.firstChild, firstChild);
+    }
+
     try {
-        buildBreadcrumbMarkup();
         promotePageIntroBlocks();
         applyFooterPrintHidden();
+        injectCorporateDisclosures();
         fixTableDropdownClipping();
         initializePopovers();
         syncTableColumnAlignments();

@@ -1,4 +1,20 @@
 /* --- Utilities --- */
+.fs-7 {
+    font-size: 0.9rem !important;
+}
+
+.fs-8 {
+    font-size: 0.8rem !important;
+}
+
+.fs-9 {
+    font-size: 0.7rem !important;
+}
+
+.fs-10 {
+    font-size: 0.6rem !important;
+}
+
 /* --- Standardised Back Circle Button --- */
 .btn-back-circle {
     width: 32px !important;
@@ -26,6 +42,17 @@
     color: #ffffff !important;
 }
 
+/* Shared PAC/SecureSign verification section across UT and EOP flows. */
+.pmo-verification-section {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+.pmo-verification-section h6 {
+    color: var(--brand-navy) !important;
+}
+
 /* --- Dashboard Specific Styles --- */
 
 /* Full-bleed shell top bar mount (matches pre-login .top-nav width) */
@@ -45,11 +72,16 @@ body[data-pmo-shell="true"].d-flex.flex-column>main.dashboard-content {
     flex-grow: 1;
 }
 
-/* Dashboard content area — subtle dot-grid texture for visual depth */
+/* Dashboard content area — subtle dot-grid texture for visual depth.
+   padding-bottom is set explicitly here (overrides Bootstrap py-4's 1.5rem)
+   to ensure a consistent minimum gap between page content and the footer
+   across ALL pages (UT + EOP). flex-grow:1 from the rule above ensures the
+   footer is always pushed to the bottom of the viewport on short pages. */
 main.dashboard-content {
     background-color: #f9f9f9;
     background-image: radial-gradient(circle, rgba(38, 36, 123, 0.065) 1px, transparent 1px);
     background-size: 28px 28px;
+    padding-bottom: 4rem !important; /* ≈64px — standardised across all pages */
 }
 
 /* Dashboard Header — richer gradient + financial trend watermark */
@@ -96,13 +128,13 @@ main.dashboard-content {
 /* Dashboard Tabs */
 .dashboard-tabs {
     gap: 20px;
-    margin-top: 10px;
+
 }
 
 .dashboard-tabs .nav-link {
     color: rgba(255, 255, 255, 0.7);
     padding: 10px 0;
-    font-size: var(--type-caption);
+    font-size: 0.85rem;
     font-weight: 600;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
@@ -126,7 +158,7 @@ body[data-pmo-shell="true"] .pmo-page-title-block {
 }
 
 body[data-pmo-shell="true"] .pmo-page-title {
-    color: var(--text-primary, #16161a) !important;
+    color: var(--text-primary, #1f2937) !important;
     line-height: 1.15;
     letter-spacing: -0.03em;
     margin-bottom: 0.25rem !important;
@@ -164,7 +196,7 @@ body[data-pmo-shell="true"] .nav-pill:not(.active-pill):hover {
 }
 
 body[data-pmo-shell="true"] .active-pill {
-    background-color: var(--brand-navy, #002e77) !important;
+    background-color: var(--brand-navy, #0E0D3B) !important;
     border-color: transparent !important;
 }
 
@@ -188,7 +220,7 @@ body[data-pmo-shell="true"] .popover {
     --bs-popover-body-padding-x: 1rem;
     --bs-popover-body-padding-y: 0.75rem;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     box-shadow: var(--bs-popover-box-shadow) !important;
 }
 
@@ -317,26 +349,26 @@ body[data-pmo-shell="true"] .pmo-alert-banner__close {
     content: "/";
     margin: 0 0.5rem;
     color: #94a3b8;
-    font-size: var(--type-meta);
+    font-size: 0.72rem;
     font-weight: 600;
 }
 
 .pmo-breadcrumbs-link {
     color: #64748b;
     text-decoration: none;
-    font-size: var(--type-meta);
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     transition: color 0.2s ease;
 }
 
 .pmo-breadcrumbs-link:hover {
-    color: var(--brand-navy, #002e77);
+    color: var(--brand-navy, #0E0D3B);
 }
 
 .pmo-breadcrumbs-current {
-    color: var(--text-primary, #16161a);
-    font-size: var(--type-meta);
+    color: var(--text-primary, #1f2937);
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.01em;
 }
@@ -372,7 +404,7 @@ body[data-pmo-shell="true"] .pmo-alert-banner__close {
 .pmo-card-inline-title h1,
 .pmo-card-inline-title h2,
 .pmo-card-inline-title h3 {
-    color: var(--text-primary, #16161a) !important;
+    color: var(--text-primary, #1f2937) !important;
     line-height: 1.15;
     letter-spacing: -0.03em;
     margin-bottom: 0.25rem !important;
@@ -381,7 +413,7 @@ body[data-pmo-shell="true"] .pmo-alert-banner__close {
 h1.pmo-card-inline-title,
 h2.pmo-card-inline-title,
 h3.pmo-card-inline-title {
-    color: var(--text-primary, #16161a) !important;
+    color: var(--text-primary, #1f2937) !important;
     line-height: 1.15;
     letter-spacing: -0.03em;
 }
@@ -462,7 +494,7 @@ h2.pmo-card-inline-title {
     margin-bottom: -11px;
     /* Offset so bottom border overlays perfectly on pb-2 border-bottom */
     border-bottom: 2px solid transparent;
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     font-weight: 600 !important;
     color: #64748b !important;
     text-decoration: none !important;
@@ -500,7 +532,7 @@ h2.pmo-card-inline-title {
 /* Filter Sidebar */
 .filter-section-title {
     font-weight: 700;
-    font-size: var(--type-caption);
+    font-size: 0.85rem;
     color: #1e293b;
     letter-spacing: 0.3px;
 }
@@ -523,7 +555,7 @@ h2.pmo-card-inline-title {
 
 /* Status Badge */
 .status-badge {
-    font-size: var(--type-meta);
+    font-size: 0.65rem;
     padding: 3px 8px;
     text-transform: uppercase;
     letter-spacing: 0.45px;
@@ -534,23 +566,30 @@ h2.pmo-card-inline-title {
 }
 
 /* Unified status colors across Unit Trust + EOP:
-   default muted/grey, success green, failed red. */
-.status-muted {
-    background-color: rgba(100, 116, 139, 0.12) !important;
-    color: #64748b !important;
-    border-color: rgba(100, 116, 139, 0.35) !important;
+   warm amber for pending/muted, success green, failed red. */
+.status-muted,
+.status-warning,
+.status-pending {
+    background-color: rgba(206, 114, 38, 0.12) !important;
+    color: #ce7226 !important;
+    border: none !important;
+    font-weight: 600 !important;
 }
 
 .status-success {
     background-color: rgba(18, 168, 51, 0.12) !important;
     color: #12a833 !important;
-    border-color: rgba(18, 168, 51, 0.35) !important;
+    border: none !important;
+    font-weight: 600 !important;
 }
 
-.status-failed {
-    background-color: rgba(237, 28, 36, 0.12) !important;
-    color: #ff1700 !important;
-    border-color: rgba(237, 28, 36, 0.35) !important;
+.status-failed,
+.status-danger,
+.status-rejected {
+    background-color: rgba(211, 17, 43, 0.12) !important;
+    color: #d3112b !important;
+    border: none !important;
+    font-weight: 600 !important;
 }
 
 
@@ -583,8 +622,8 @@ h2.pmo-card-inline-title {
 
 /* Custom Pills / Tabs inside Cards */
 .custom-pills .nav-link.active {
-    border-bottom: 2px solid #ff1700 !important;
-    color: #ff1700 !important;
+    border-bottom: 2px solid #d3112b !important;
+    color: #d3112b !important;
 }
 
 /* Stat Box */
@@ -606,7 +645,7 @@ h2.pmo-card-inline-title {
 
 .sidebar-nav .nav-link {
     padding: 12px 16px;
-    font-size: var(--type-body);
+    font-size: 0.95rem;
     color: #333;
     transition: all 0.2s ease;
 }
@@ -730,7 +769,7 @@ h2.pmo-card-inline-title {
     border: 1px solid rgba(38, 36, 123, 0.15) !important;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     font-weight: 500 !important;
 }
 
@@ -764,7 +803,7 @@ h2.pmo-card-inline-title {
     border: none !important;
     border-radius: 0 !important;
     font-weight: 600 !important;
-    font-size: var(--type-body) !important;
+    font-size: 0.95rem !important;
     padding: 18px 24px !important;
     /* Generous padding */
     text-align: center !important;
@@ -809,7 +848,7 @@ h2.pmo-card-inline-title {
 
 /* Elegant badge style overrides inside custom tabs */
 .custom-card-tabs .nav-link .badge {
-    font-size: var(--type-caption) !important;
+    font-size: 0.8rem !important;
     padding: 3px 8px !important;
     border-radius: 20px !important;
     transition: all 0.25s ease !important;
@@ -860,21 +899,21 @@ h2.pmo-card-inline-title {
     width: 2rem;
     height: 2px;
     margin-top: 0.45rem;
-    background: #ff1700;
+    background: #d3112b;
     border-radius: 1px;
 }
 
 .portal-sidebar-profile-card .profile-name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     letter-spacing: -0.02em;
 }
 
 /* Role pill — light grey field, navy text */
 .portal-sidebar-profile-card .badge.bg-white {
     border: 1px solid #dce3e8 !important;
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     background-color: #f4f7f9 !important;
     font-weight: 600 !important;
     transition: all 0.3s ease;
@@ -883,13 +922,13 @@ h2.pmo-card-inline-title {
 /* EOP SPA: active item inside collapse — keep submenu compact (no full-width gradient) */
 .eop-sidebar-offcanvas .sidebar-nav .collapse .nav-link.active {
     background: transparent !important;
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     font-weight: 700 !important;
     box-shadow: none !important;
 }
 
 .eop-sidebar-offcanvas .sidebar-nav .collapse .nav-link.active i {
-    color: #ff1700 !important;
+    color: #d3112b !important;
 }
 
 /* --- Premium Side Menu & Submenus --- */
@@ -898,6 +937,69 @@ h2.pmo-card-inline-title {
     background-color: #ffffff !important;
     border-right: 1px solid rgba(0, 0, 0, 0.05) !important;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Responsive portal navigation: desktop uses the top menu, mobile uses the sidebar. */
+@media (min-width: 992px) {
+    body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
+    body[data-pmo-shell="true"] #eopBtnOpenSidebar,
+    body[data-pmo-shell="true"] #sidebarMenu,
+    body[data-pmo-shell="true"] #eopSidebarOffcanvas {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
+    body[data-pmo-shell="true"] #eopBtnOpenSidebar {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav .d-none.d-lg-flex {
+        display: none !important;
+    }
+
+    body[data-pmo-shell="true"] .dashboard-tabs {
+        display: none !important;
+    }
+
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav > .container-fluid {
+        padding-inline: 1rem !important;
+    }
+
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav > .d-flex.align-items-center.justify-content-between {
+        min-height: 44px;
+    }
+
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav > .d-flex.align-items-center.justify-content-between > .d-flex.align-items-center.gap-3 {
+        gap: 0 !important;
+    }
+
+    body[data-pmo-shell="true"] #pmoShellBrandUt,
+    body[data-pmo-shell="true"] #eopBrandLink {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    body[data-pmo-shell="true"] #pmoShellBrandUt:hover,
+    body[data-pmo-shell="true"] #eopBrandLink:hover {
+        transform: translateX(-50%);
+    }
+
+    body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
+    body[data-pmo-shell="true"] #eopBtnOpenSidebar {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+    }
+
+    body[data-pmo-shell="true"] .pmo-user-dropdown-btn {
+        gap: 0 !important;
+    }
 }
 
 /* Sidebar Nav Links */
@@ -915,7 +1017,7 @@ h2.pmo-card-inline-title {
 /* Hover state for main items */
 .sidebar-nav .nav-link:not(.active):hover {
     background-color: rgba(38, 36, 123, 0.03) !important;
-    color: var(--brand-navy) !important;
+    color: var(--brand-primary) !important;
 }
 
 .sidebar-nav .nav-link:not(.active):hover i {
@@ -925,14 +1027,13 @@ h2.pmo-card-inline-title {
 
 /* Active state for main items */
 .sidebar-nav .nav-link.active {
-    background: linear-gradient(135deg, var(--brand-navy) 0%, var(--accent-primary) 100%) !important;
-    color: #ffffff !important;
+    background: none !important;
+    color: #0E0D3B !important;
     font-weight: 600 !important;
-    box-shadow: 0 4px 12px rgba(14, 13, 59, 0.15) !important;
 }
 
 .sidebar-nav .nav-link.active i {
-    color: #ffffff !important;
+    color: #d3112b !important;
 }
 
 /* Arrow rotation transition */
@@ -954,7 +1055,7 @@ h2.pmo-card-inline-title {
 
 .sidebar-nav .collapse .nav-link {
     padding: 8px 0 !important;
-    font-size: var(--type-caption) !important;
+    font-size: 0.8rem !important;
     font-weight: 500 !important;
     color: #58595b !important;
     background: transparent !important;
@@ -981,6 +1082,7 @@ h2.pmo-card-inline-title {
     color: var(--brand-primary) !important;
     padding-left: 6px !important;
 }
+
 
 .sidebar-nav .collapse .nav-link:hover::before {
     width: 8px;
@@ -1039,7 +1141,10 @@ h2.pmo-card-inline-title {
 
 .promo-card-img {
     border-radius: 15px;
-    max-height: 280px;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
 }
 
 .promo-card-content {
@@ -1050,30 +1155,30 @@ h2.pmo-card-inline-title {
     color: #000000;
     font-weight: 700;
     margin-bottom: 0.25rem;
-    font-size: var(--type-caption);
+    font-size: 0.85rem;
     line-height: 1.3;
 }
 
 .promo-card-text {
     color: var(--ui-support) !important;
-    font-size: var(--type-meta);
+    font-size: 0.72rem;
     line-height: 1.35;
     margin-bottom: 0;
 }
 
 /* --- Premium Branded User Dropdown --- */
 .pmo-user-dropdown-btn {
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 600 !important;
-    font-size: var(--type-caption) !important;
+    font-size: 0.8rem !important;
     display: flex;
     align-items: center;
     transition: color 0.2s ease !important;
 }
 
 .pmo-user-dropdown-btn:hover {
-    color: #ff1700 !important;
+    color: #d3112b !important;
 }
 
 .pmo-user-dropdown-btn .bg-light.rounded-circle {
@@ -1090,21 +1195,21 @@ h2.pmo-card-inline-title {
 }
 
 .pmo-user-dropdown-btn i.iconoir-user {
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     transition: color 0.2s ease !important;
 }
 
 .pmo-user-dropdown-btn:hover i.iconoir-user {
-    color: #ff1700 !important;
+    color: #d3112b !important;
 }
 
 .pmo-user-dropdown-btn .iconoir-nav-arrow-down {
-    color: #002e77 !important;
+    color: #0E0D3B !important;
     transition: color 0.2s ease, transform 0.2s ease !important;
 }
 
 .pmo-user-dropdown-btn:hover .iconoir-nav-arrow-down {
-    color: #ff1700 !important;
+    color: #d3112b !important;
     transform: translateY(1px);
 }
 
@@ -1117,13 +1222,13 @@ h2.pmo-card-inline-title {
     color: #475569 !important;
     font-weight: 600 !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     transition: all 0.2s ease !important;
 }
 
 .pmo-user-dropdown-item:hover {
     background-color: rgba(38, 36, 123, 0.06) !important;
-    color: #002e77 !important;
+    color: #0E0D3B !important;
 }
 
 .pmo-user-dropdown-item i {
@@ -1132,16 +1237,16 @@ h2.pmo-card-inline-title {
 }
 
 .pmo-user-dropdown-item:hover i {
-    color: #002e77 !important;
+    color: #0E0D3B !important;
 }
 
 .pmo-user-dropdown-item.text-danger:hover {
     background-color: rgba(237, 28, 36, 0.06) !important;
-    color: #ff1700 !important;
+    color: #d3112b !important;
 }
 
 .pmo-user-dropdown-item.text-danger:hover i {
-    color: #ff1700 !important;
+    color: #d3112b !important;
 }
 
 /* Custom Collapsible Header Styles */
@@ -1170,7 +1275,7 @@ header nav .position-absolute.start-50.translate-middle-x {
 
 header nav .position-absolute.start-50.translate-middle-x .nav-pill {
     cursor: pointer !important;
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     font-weight: 600 !important;
     color: #64748b !important;
     padding: 6px 16px !important;
@@ -1202,7 +1307,7 @@ header nav .position-absolute.start-50.translate-middle-x .active-pill span {
 }
 
 header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
-    font-size: var(--type-meta) !important;
+    font-size: 0.75rem !important;
     font-weight: 600 !important;
 }
 
@@ -1263,8 +1368,300 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 .dashboard-content h2[id*="Title"] {
     font-size: 1.4rem !important;
     font-weight: 700 !important;
-    color: #16161a !important;
+    color: #1f2937 !important;
     letter-spacing: -0.02em !important;
     margin-top: 0 !important;
     margin-bottom: 0.5rem !important;
+}
+
+.back-btn-link {
+    font-size: 1.1rem;
+    color: var(--brand-navy);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-btn-link:hover {
+    transform: translateX(-3px);
+    color: var(--brand-primary);
+}
+
+.detail-header-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 30px;
+}
+
+.financial-val {
+    font-weight: 700;
+    color: var(--brand-navy);
+    font-size: 1.4rem;
+}
+
+.financial-label {
+    font-size: 0.78rem;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.bubble-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    margin-left: 6px;
+}
+
+.bubble-info {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: #e8f0fe;
+    color: var(--brand-navy);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+/* Compact transaction filters (shared by Unit Trust and EOP transaction pages) */
+.pmo-transaction-filter-card {
+    padding: 18px !important;
+    transition: width 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pmo-transaction-filter-card > .pmo-filter-header {
+    margin-bottom: 14px !important;
+    padding-bottom: 12px !important;
+}
+
+.pmo-transaction-filter-card > .mb-4 {
+    margin-bottom: 14px !important;
+}
+
+.pmo-transaction-filter-card .filter-section-title {
+    margin-bottom: 8px !important;
+    font-size: 0.78rem;
+}
+
+.pmo-transaction-filter-card .form-check {
+    margin-bottom: 5px !important;
+}
+
+.pmo-transaction-filter-card .form-control,
+.pmo-transaction-filter-card .form-select {
+    min-height: 38px;
+}
+
+.pmo-filter-toggle {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    background: var(--brand-primary, #d3112b) !important;
+    color: #fff !important;
+    box-shadow: 0 5px 12px rgba(211, 17, 43, 0.18);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.pmo-filter-toggle:hover,
+.pmo-filter-toggle:focus-visible {
+    background: var(--brand-primary-hover, #ac1117) !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.pmo-filter-toggle i {
+    transition: transform 0.2s ease;
+}
+
+.pmo-transaction-filter-card.is-collapsed {
+    width: 64px;
+    padding: 12px !important;
+}
+
+.pmo-transaction-filter-card.is-collapsed > :not(.pmo-filter-header) {
+    display: none !important;
+}
+
+.pmo-transaction-filter-card.is-collapsed > .pmo-filter-header {
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.pmo-transaction-filter-card.is-collapsed .pmo-filter-heading {
+    display: none;
+}
+
+.pmo-transaction-filter-reset {
+    width: 100%;
+    min-height: 38px;
+    border-radius: 10px !important;
+    font-size: 0.78rem !important;
+}
+
+@media (min-width: 992px) {
+    .pmo-transaction-layout > .pmo-transaction-filter-sidebar {
+        flex: 0 0 25%;
+        max-width: 25%;
+        transition: flex-basis 0.2s ease, max-width 0.2s ease;
+    }
+
+    .pmo-transaction-layout > .pmo-transaction-main {
+        flex: 0 0 75%;
+        max-width: 75%;
+        transition: flex-basis 0.2s ease, max-width 0.2s ease;
+    }
+
+    .pmo-transaction-layout.is-filter-collapsed > .pmo-transaction-filter-sidebar {
+        flex-basis: 76px !important;
+        max-width: 76px !important;
+    }
+
+    .pmo-transaction-layout.is-filter-collapsed > .pmo-transaction-main,
+    .pmo-transaction-layout.is-filter-hidden > .pmo-transaction-main {
+        flex: 1 1 0 !important;
+        max-width: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .pmo-transaction-filter-card.is-collapsed {
+        width: 64px;
+    }
+}
+
+.accordion-body-custom {
+    padding: 24px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #dee2e6;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+.summary-row.total-returns {
+    border-bottom: 3px double var(--brand-navy);
+    font-weight: 700;
+    color: var(--brand-navy);
+    font-size: 0.95rem;
+}
+
+.detail-table th {
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 12px;
+    background-color: #f8f9fa;
+}
+
+.detail-table td {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 12px;
+    color: #212529;
+}
+
+.dda-banner {
+    border-left: 4px solid var(--brand-primary);
+    background-color: #fff5f5;
+    padding: 12px 16px;
+    border-radius: 4px;
+}
+
+.dda-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.dda-desc {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #c92a2a;
+    margin: 0;
+}
+
+.btn-action-premium {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+/* Standardized Bottom Action Bar (UX Spacing & Touch Targets) */
+.pmo-action-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 2rem !important;
+    margin-bottom: 3.5rem !important;
+}
+
+.pmo-action-bar--center {
+    justify-content: center !important;
+}
+
+.pmo-action-bar .btn,
+.pmo-btn-action {
+    min-width: 140px;
+    padding: 10px 28px !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    border-radius: 50px !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Keep solid action labels readable even when a page has a legacy inline color. */
+.pmo-action-bar .btn-danger,
+.pmo-btn-action.btn-danger {
+    color: #ffffff !important;
+}
+
+/* Solid master actions must keep readable labels in every state. */
+body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
+        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark) {
+    color: #ffffff !important;
+}
+
+body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
+        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):hover,
+body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
+        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):focus-visible {
+    color: #ffffff !important;
+}
+
+.pmo-action-bar .btn:hover,
+.pmo-btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+.pmo-action-bar .btn-danger:hover,
+.pmo-btn-action.btn-danger:hover {
+    box-shadow: 0 6px 18px rgba(211, 17, 43, 0.35) !important;
 }

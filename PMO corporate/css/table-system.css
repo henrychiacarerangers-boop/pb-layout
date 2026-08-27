@@ -1,0 +1,556 @@
+/*
+ * PMO data-table system
+ * The only production source of table presentation.  Keep page CSS free of
+ * table layout, typography, border, colour, width, and alignment overrides.
+ */
+.pmo-table-frame,
+.table-responsive:has(> .pmo-data-table) {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.pmo-table-frame.table-responsive {
+  overflow-x: auto;
+}
+
+.pmo-data-table {
+  width: 100%;
+  min-width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #FFFFFF;
+  color: #1f2937;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.pmo-data-table :is(th) {
+  box-sizing: border-box;
+  text-align: right !important;
+  vertical-align: middle;
+  border: 0 !important;
+}
+
+.pmo-data-table :is(td) {
+  box-sizing: border-box;
+  text-align: right !important;
+  vertical-align: middle;
+  border: 0 !important;
+}
+
+.pmo-data-table :is(th, td):first-child {
+  text-align: left !important;
+}
+
+/* Status columns stay centered even though numeric table cells default right. */
+.pmo-data-table :is(th, td).pmo-status-column,
+.pmo-data-table :is(td):has(> .pmo-status-badge) {
+  text-align: center !important;
+}
+
+/* Empty table messages are centered as a single full-width state. */
+.pmo-data-table td.pmo-empty-state-cell {
+  text-align: center !important;
+}
+
+/* Explicit table utility classes override the numeric right-alignment default. */
+.pmo-data-table :is(th, td).text-start {
+  text-align: left !important;
+}
+
+.pmo-data-table :is(th, td).text-center {
+  text-align: center !important;
+}
+
+.pmo-data-table :is(th, td).text-end {
+  text-align: right !important;
+}
+
+.pmo-data-table thead th {
+  padding: 10px 12px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.pmo-data-table tbody :is(td, th) {
+  padding: 12px 12px;
+  border-bottom: 1px dotted #e2e8f0 !important;
+  background: transparent;
+  color: #1f2937 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 20px;
+}
+
+.pmo-data-table tbody tr:last-child> :is(td, th) {
+  border-bottom: none !important;
+}
+
+.pmo-data-table tbody tr {
+  transition: background-color 160ms ease;
+}
+
+.pmo-data-table tbody tr:hover {
+  background-color: rgba(0, 46, 119, 0.02) !important;
+}
+
+.pmo-data-table tbody tr:focus-visible> :is(td, th) {
+  background: #EAF2FF !important;
+  box-shadow: inset 3px 0 0 #0E0D3B;
+}
+
+.pmo-data-table tbody tr[role="link"] {
+  cursor: pointer;
+}
+
+.pmo-data-table tbody tr[role="link"]:hover .pmo-table-link {
+  color: #001F52 !important;
+}
+
+/* Analytical Column Shading */
+.pmo-data-table th.pmo-col-shaded,
+.pmo-data-table td.pmo-col-shaded {
+  background-color: #f1f5f9 !important;
+}
+
+.pmo-data-table tbody tr:hover td.pmo-col-shaded {
+  background-color: #e2e8f0 !important;
+}
+
+/* Dedicated Column Styling */
+.pmo-data-table .pmo-fund-cell {
+  text-align: left !important;
+}
+
+.pmo-data-table .pmo-fund-code {
+  font-weight: 700;
+  color: #002e77 !important;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.pmo-data-table .pmo-fund-code:hover {
+  color: #d3112b !important;
+  text-decoration: underline !important;
+}
+
+.pmo-data-table .pmo-fund-name {
+  font-weight: 700;
+  color: #0f172a !important;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin-top: 3px;
+  line-height: 1.3;
+}
+
+.pmo-data-table .pmo-category-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #002e77;
+  background-color: rgba(0, 46, 119, 0.08);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.pmo-data-table .pmo-risk-meter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pmo-data-table .pmo-risk-meter img {
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Transact Action Menu Link */
+.pmo-btn-transact {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #002e77 !important;
+  text-decoration: none !important;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.pmo-btn-transact:hover,
+.pmo-btn-transact:focus {
+  background-color: rgba(0, 46, 119, 0.08);
+  color: #001F52 !important;
+}
+
+.pmo-btn-transact i {
+  font-size: 14px;
+}
+
+/* Standardized Table Status Badges */
+.pmo-status-badge,
+.badge.bg-success.bg-opacity-10,
+.badge.bg-danger.bg-opacity-10,
+.badge.bg-warning.bg-opacity-10 {
+  padding: 4px 12px !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.25 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  text-transform: none !important;
+}
+
+.pmo-status-badge.pmo-status-paid,
+.pmo-status-badge.pmo-status-success,
+.pmo-status-badge.pmo-status-approved,
+.badge.bg-success.bg-opacity-10,
+.badge.status-success,
+.badge.bg-success-subtle {
+  background-color: rgba(18, 168, 51, 0.12) !important;
+  color: #12a833 !important;
+}
+
+.pmo-status-badge.pmo-status-pending,
+.pmo-status-badge.pmo-status-warning,
+.badge.bg-warning.bg-opacity-10,
+.badge.status-warning,
+.badge.status-pending,
+.badge.bg-warning-subtle {
+  background-color: rgba(206, 114, 38, 0.12) !important;
+  color: #ce7226 !important;
+}
+
+.pmo-status-badge.pmo-status-rejected,
+.pmo-status-badge.pmo-status-failed,
+.pmo-status-badge.pmo-status-danger,
+.badge.bg-danger.bg-opacity-10,
+.badge.status-danger,
+.badge.status-failed,
+.badge.status-rejected,
+.badge.bg-danger-subtle {
+  background-color: rgba(211, 17, 43, 0.12) !important;
+  color: #d3112b !important;
+}
+
+.pmo-status-badge.pmo-status-neutral,
+.pmo-status-badge.pmo-status-muted {
+  background-color: rgba(88, 89, 91, 0.10) !important;
+  color: #58595b !important;
+}
+
+.pmo-data-table--details tbody>tr> :first-child {
+  width: 38%;
+  color: #64748B !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+.pmo-data-table--details tbody>tr> :not(:first-child) {
+  color: #1f2937 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+/* Shared dashboard analytics grid: responsive proportions without fixed pixels. */
+.pmo-data-table--fund-analytics {
+  table-layout: fixed;
+}
+
+.pmo-data-table--fund-analytics :is(th, td):nth-child(1) {
+  width: 40%;
+}
+
+.pmo-data-table--fund-analytics :is(th, td):nth-child(2),
+.pmo-data-table--fund-analytics :is(th, td):nth-child(3),
+.pmo-data-table--fund-analytics :is(th, td):nth-child(4) {
+  width: 20%;
+}
+
+.pmo-data-table--fund-analytics tbody td {
+  vertical-align: middle;
+}
+
+.pmo-data-table--fund-analytics tbody td:nth-child(n + 2) {
+  white-space: nowrap;
+}
+
+.pmo-data-table .pmo-table-primary {
+  color: #0E0D3B !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+}
+
+.pmo-data-table .pmo-table-meta {
+  color: #000000 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 18px;
+}
+
+/* Dates are operational data, not secondary decoration. */
+.pmo-data-table .pmo-table-date {
+  color: #1f2937 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 20px;
+}
+
+.pmo-data-table :is(.pmo-table-link, .pmo-table-action),
+.pmo-data-table a[href]:not(.pmo-table-action-button):not(.pmo-table-dropdown-action):not(.pmo-btn-transact):not(.pmo-btn-approve):not(.pmo-btn-reject) {
+  color: #002e77 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.pmo-data-table :is(.pmo-table-link, .pmo-table-action):hover,
+.pmo-data-table a[href]:not(.pmo-table-action-button):not(.pmo-table-dropdown-action):not(.pmo-btn-transact):not(.pmo-btn-approve):not(.pmo-btn-reject):hover {
+  color: #d3112b !important;
+}
+
+.pmo-data-table .pmo-table-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.pmo-data-table .pmo-table-status--success {
+  color: #15803D;
+}
+
+.pmo-data-table .pmo-table-status--warning {
+  color: #A16207;
+}
+
+.pmo-data-table .pmo-table-status--danger {
+  color: #B42318;
+}
+
+@media (max-width: 767.98px) {
+  .pmo-data-table thead th,
+  .pmo-data-table tbody td {
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* View Switcher Tabs (Returns View vs Info View) */
+.pmo-view-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pmo-view-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 4px 8px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #58595b;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.pmo-view-btn:hover {
+  color: #002e77;
+}
+
+.pmo-view-btn.active {
+  color: #002e77 !important;
+  border-bottom: 2px solid #002e77 !important;
+  font-weight: 700 !important;
+}
+
+/* Scheme Top Navigation */
+.pmo-scheme-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pmo-scheme-tab-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #002e77;
+  padding: 10px 4px;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.pmo-scheme-tab-link:hover {
+  color: #002e77;
+}
+
+.pmo-scheme-tab-link.active {
+  color: #002e77 !important;
+  border-bottom: 2px solid #12a833 !important;
+  font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   Modern Table Action Buttons: Approve & Reject (Corporate Pro Max)
+   ========================================================================== */
+.pmo-action-btn-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+  flex-wrap: nowrap !important;
+}
+
+.pmo-btn-approve,
+a.pmo-btn-approve {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 5px 14px !important;
+  border-radius: 20px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #12a833 !important;
+  background-color: #f0fdf4 !important;
+  border: 1px solid #86efac !important;
+  text-decoration: none !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 1px 2px rgba(18, 168, 51, 0.08) !important;
+}
+
+.pmo-btn-approve i,
+a.pmo-btn-approve i {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  color: #12a833 !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease !important;
+}
+
+.pmo-btn-approve:hover,
+a.pmo-btn-approve:hover {
+  background-color: #12a833 !important;
+  border-color: #12a833 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(18, 168, 51, 0.25) !important;
+}
+
+.pmo-btn-approve:hover i,
+a.pmo-btn-approve:hover i {
+  color: #ffffff !important;
+}
+
+.pmo-btn-reject,
+a.pmo-btn-reject {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  padding: 5px 14px !important;
+  border-radius: 20px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #d3112b !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fca5a5 !important;
+  text-decoration: none !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 1px 2px rgba(211, 17, 43, 0.08) !important;
+}
+
+.pmo-btn-reject i,
+a.pmo-btn-reject i {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  color: #d3112b !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease !important;
+}
+
+.pmo-btn-reject:hover,
+a.pmo-btn-reject:hover {
+  background-color: #d3112b !important;
+  border-color: #d3112b !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(211, 17, 43, 0.25) !important;
+}
+
+.pmo-btn-reject:hover i,
+a.pmo-btn-reject:hover i {
+  color: #ffffff !important;
+}
+
+/* Average Cost Speech Bubble Badge */
+.pmo-avg-cost-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  background-color: #12a833;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50% 50% 0 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-left: 4px;
+  line-height: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pmo-avg-cost-badge:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 6px rgba(18, 168, 51, 0.4);
+}

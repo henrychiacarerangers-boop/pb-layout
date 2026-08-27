@@ -36,7 +36,7 @@ All three projects adhere to the same premium UI/UX standards to ensure a cohesi
     *   **Light (300)**: Secondary microcopy.
 
 ### 2. Signature Color Palette
-*   **Brand Primary (Red)**: `#ff1700` (Primary actions, key highlights, urgency).
+*   **Brand Primary (Red)**: `#d3112b` (Primary actions, key highlights, urgency).
 *   **PMO Brand Primary (Navy)**: `#002e77` (Structural foundation, trust, stability).
 *   **Accent Primary (Navy/Purple)**: `#373761` (Headers, standard text).
 *   **Action Primary (Bright Blue)**: `#002e77` (Active states, tooltips).

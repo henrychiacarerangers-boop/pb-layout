@@ -13,7 +13,7 @@
 - Preserve every value, `href`, ID, name, data attribute, filter, tab, tooltip, download flow, JavaScript hook, dropdown, and existing control behaviour.
 - Use navy `#002E77` as the sole ordinary accent; keep semantic success, warning, and danger colours only for status meaning.
 - Use one 12px table-frame radius and an off-white/white visual theme; do not add gradients, vertical grid lines, or page-local table styling.
-- Keep dates and numeric operational data charcoal `#16161A`; use muted slate only for supporting metadata.
+- Keep dates and numeric operational data charcoal `#1f2937`; use muted slate only for supporting metadata.
 - Normal table links are navy, 700 weight, and underlined. Dropdown items and only the Unit Trust Pending Approval `View Details` buttons remain control exceptions.
 - Scope the semantic-markup audit to `PMO corporate/eop`, `PMO corporate/unit-trust`, and `PMO corporate/analytics`. The master system still loads on every current production table page.
 
@@ -97,7 +97,7 @@ Use one token set and apply it throughout the file:
 .table-responsive:has(> .pmo-data-table) {
   --pmo-table-navy: #002E77;
   --pmo-table-navy-hover: #001F52;
-  --pmo-table-ink: #16161A;
+  --pmo-table-ink: #1f2937;
   --pmo-table-slate: #64748B;
   --pmo-table-border: #E8EEF5;
   --pmo-table-divider: #EEF3F8;

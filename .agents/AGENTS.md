@@ -19,7 +19,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ## 1. Color Palette Tokens (Strict Specification)
 
 ### Primary & Brand Colors
-- **Brand Red**: `#ff1700`
+- **Brand Red**: `#d3112b`
   - *Primary use*: Primary CTA buttons, key action highlights, error/alert text banners, main header accents.
 - **Brand Navy**: `#000000`
   - *Primary use*: Base navbars, footer panels, branding elements, major structural container lines.
@@ -39,7 +39,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 ### Semantic Intent Scales
 - **Success/Completed**: `#12a833`
 - **Warning/Pending**: `#ce7226`
-- **Error/Alert**: `#ff1700`
+- **Error/Alert**: `#d3112b`
 
 ---
 
@@ -69,7 +69,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
   ```css
   transition: all 0.3s ease;
   ```
-- **Primary CTA**: Colored solid Brand Red (`#ff1700`), hovering to `#c41219` with a subtle elevation shift:
+- **Primary CTA**: Colored solid Brand Red (`#d3112b`), hovering to `#c41219` with a subtle elevation shift:
   ```css
   .btn-primary:hover {
       background-color: #c41219;
@@ -84,7 +84,7 @@ Whenever you edit HTML pages, write custom CSS rules, or create UI structures fo
 - **Focus glow**: Override default blue halos to a soft Brand Red overlay:
   ```css
   input:focus, select:focus {
-      border-color: #ff1700 !important;
+      border-color: #d3112b !important;
       box-shadow: 0 0 8px rgba(237, 28, 36, 0.25) !important;
       outline: none;
   }

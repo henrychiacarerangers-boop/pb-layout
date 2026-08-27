@@ -21,17 +21,14 @@
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <link rel="stylesheet" href="../css/eop-dashboard.css">
 
-    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
-    <script src="../js/accessibility.js" defer></script>
-<link rel="stylesheet" href="../../design-tokens.css">
-<link rel="stylesheet" href="../../pmo-core.css">
+    <link rel="stylesheet" href="../css/table-system.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -61,19 +58,19 @@
                                     <a href="dashboard.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="pmoShellPillUt">
-                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+
                                     </a>
                                     <a href="../eop/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillEopFromUt">
-                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+
                                     </a>
                                     <a href="../analytics/unit-trust.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillAnalyticsFromUt">
-                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -85,14 +82,13 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="text-caption fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
-                                            &amp; Authoriser</span>
-                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
+
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
@@ -124,15 +120,8 @@
             </div>
         </div>
 
-        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
-            <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
-                        Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
-                        Portal</span>
-                </h1>
-                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
-                    09:16</p>
+        <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-0 pb-0 position-relative z-1">
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -142,8 +131,7 @@
                         <a class="nav-link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="authorise.html">Authorise <span
-                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span></a>
+                        <a class="nav-link" href="authorise.html">Authorise </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="transactions.html">Transactions</a>
@@ -167,7 +155,8 @@
                     <i class="iconoir-warning-triangle me-2"></i>
                     <span>Pending Approval: <strong>3 Transactions</strong></span>
                 </div>
-                <a href="authorise.html"><button class="btn btn-danger btn-sm px-4 rounded-pill text-caption fw-bold">Approve
+                <a href="authorise.html?tab=redemption"><button
+                        class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold">Approve
                         Now</button></a>
             </div>
 
@@ -176,6 +165,11 @@
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
                         <div class="card-body p-4 d-flex flex-column">
+                            <div class="pb-4">
+                                <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual
+                                        Online</span></h1>
+                                <p class="fs-8 mb-4">Last Login: 20 April 2026, 09:16</p>
+                            </div>
                             <div class="d-flex justify-content-between align-items-start mb-4">
                                 <div class="d-flex align-items-center">
                                     <div class="icon-box bg-opacity-10 text-primary rounded-3 d-flex align-items-center justify-content-center me-3"
@@ -184,18 +178,17 @@
                                     </div>
                                     <div>
                                         <div class="d-flex align-items-center gap-2 mb-1">
-                                            <h2 class="mb-0 fw-bold fs-3 amount-value" data-value="MYR 241,560.57">
+                                            <h2 class="mb-0 fw-bold fs-3 amount-value" data-value="MYR 557,371.72">
                                                 ********</h2>
                                             <button class="btn btn-link p-0 text-muted border-0 toggle-amounts-btn"
                                                 title="Toggle amounts visibility">
                                                 <i class="iconoir-eye-closed fs-5"></i>
                                             </button>
                                         </div>
-                                        <small class="text-muted text-caption">Your Portfolio Holdings as of 5 May 2026,
-                                            17:01</small>
+                                        <small class="text-muted fs-8">Your Portfolio Holdings as of 28 July 2026</small>
                                     </div>
                                 </div>
-                                <button class="btn btn-dark rounded-pill px-4 text-caption fw-bold shadow-sm"
+                                <button class="btn pmo-btn-action btn-danger shadow-sm"
                                     onclick="location.href='top_up.html'">Top Up</button>
                             </div>
 
@@ -203,43 +196,46 @@
                                 <div class="col-4">
                                     <div
                                         class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold text-caption text-dark mb-1 amount-value"
-                                            data-value="MYR 192,020.57">
+                                        <div class="fw-bold fs-7 text-dark mb-1 amount-value"
+                                            data-value="MYR 240,520.57">
                                             ********</div>
                                         <div
-                                            class="text-muted text-meta d-flex align-items-center justify-content-center gap-1">
-                                            Investment Cost <i class="iconoir-info-circle" style="cursor: pointer;"
-                                                data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="The amount shown here is calculated based on the overall holdings and amount transferred in/out. This amount will not be affected by Switching and income distribution."></i>
+                                            class="text-muted fs-9 d-flex align-items-center justify-content-center gap-1">
+                                            Investment Cost <span class="bubble-info"><i class="iconoir-info-circle"
+                                                    style="cursor: pointer;" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover" data-bs-placement="top"
+                                                    data-bs-content="The amount shown here is calculated based on the overall holdings and amount transferred in/out. This amount will not be affected by Switching and income distribution."></i></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div
                                         class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold text-caption text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
-                                            data-value="MYR 49,540.00">
+                                        <div class="fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
+                                            data-value="MYR 316,851.15">
                                             ********
                                         </div>
-                                        <div class="text-muted text-meta">Unrealised Returns <i class="iconoir-info-circle"
-                                                style="cursor: pointer;" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="How are Unrealised Returns calculated?<br>The unrealised returns amount is calculated by taking the Market Value of your portfolio holdings minus the Investment Cost. The percentage is calculated by dividing the unrealised returns amount with the investment cost and multiplying it by 100."></i>
+                                        <div class="text-muted fs-9">Unrealised Returns <span class="bubble-info"><i
+                                                    class="iconoir-info-circle" style="cursor: pointer;"
+                                                    data-bs-toggle="popover" data-bs-trigger="hover"
+                                                    data-bs-placement="top"
+                                                    data-bs-content="How are Unrealised Returns calculated?<br>The unrealised returns amount is calculated by taking the Market Value of your portfolio holdings minus the Investment Cost. The percentage is calculated by dividing the unrealised returns amount with the investment cost and multiplying it by 100."></i></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div
                                         class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold text-caption text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
+                                        <div class="fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
                                             data-value="MYR 12,302.00">
                                             ********
                                         </div>
-                                        <div class="text-muted text-meta">Realised Returns <i class="iconoir-info-circle"
-                                                style="cursor: pointer;" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="How are Realised Returns calculated? <br> 
-The realised returns are the gain/loss resulting from the redemption of your investment. The realised returns shown here are the cumulative amount since the inception of your investment."></i>
+                                        <div class="text-muted fs-9">Realised Returns <span class="bubble-info"><i
+                                                    class="iconoir-info-circle" style="cursor: pointer;"
+                                                    data-bs-toggle="popover" data-bs-trigger="hover"
+                                                    data-bs-placement="top"
+                                                    data-bs-content="How are Realised Returns calculated? <br>
+The realised returns are the gain/loss resulting from the redemption of your investment. The realised returns shown here are the cumulative amount since the inception of your investment."></i></span>
                                         </div>
                                     </div>
                                 </div>
@@ -252,26 +248,26 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                      Left Image/Emblem 
                                     <div class="me-3 position-relative d-flex align-items-center justify-content-center"
                                         style="width: 50px; height: 50px; min-width: 50px;">
-                                        <img src="../images/Mutual-Signature.png" alt=""
+                                        <img src="../images/Mutual-Signature.png"
                                             style="width: 50px; height: auto; min-width: 50px;">
                                     </div>
                                      Right Text Details 
                                     <div class="flex-grow-1">
                                         <div class="d-flex align-items-center justify-content-between mb-1">
-                                            <span class="text-meta text-uppercase fw-bold text-muted"
+                                            <span class="fs-9 text-uppercase fw-bold text-muted"
                                                 style="letter-spacing: 0.05em; font-family: 'Montserrat', sans-serif;">Privilege
                                                 Circle</span>
                                             <span
-                                                class="badge bg-warning bg-opacity-25 text-warning-emphasis fw-bold text-meta px-2 py-0.5 rounded-pill border border-warning border-opacity-25">GOLD</span>
+                                                class="badge bg-warning bg-opacity-25 text-warning-emphasis fw-bold fs-10 px-2 py-0.5 rounded-pill border border-warning border-opacity-25">GOLD</span>
                                         </div>
-                                        <div class="text-caption text-dark fw-semibold"
+                                        <div class="fs-8 text-dark fw-semibold"
                                             style="font-family: 'Montserrat', sans-serif;">
-                                            Your MGQP: <span class="fw-bold text-dark text-caption">21,121.16</span>
+                                            Your MGQP: <span class="fw-bold text-dark fs-7">21,121.16</span>
                                         </div>
-                                        <div class="text-meta text-muted mt-1 d-flex align-items-center gap-1">
+                                        <div class="fs-9 text-muted mt-1 d-flex align-items-center gap-1">
 
                                             <span>Another <strong class="text-dark">128,879 MGQP</strong> to <strong
-                                                    style="color: #002e77 !important;">MUTUAL ELITE</strong>
+                                                    style="color: #0E0D3B !important;">MUTUAL ELITE</strong>
                                                 status</span>
                                         </div>
                                     </div>
@@ -286,15 +282,15 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                     <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="fw-bold mb-0 fs-6">Last Transaction</h5>
+                                <h5 class="fw-bold mb-0 fs-6">Monthly Transactions</h5>
                                 <a href="transactions.html"
-                                    class="text-dark fw-bold text-decoration-underline text-caption">View More</a>
+                                    class="text-dark fw-bold text-decoration-underline fs-8">View More</a>
                             </div>
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table">
                                     <thead>
                                         <tr>
-                                            <th class="ps-4 py-3">Tran Date<br><span>Ref No.
+                                            <th class="ps-4 py-1">Tran Date<br><span>Ref No.
                                                 </span></th>
                                             <th class="py-3">
                                                 Account / Fund<br><span>Description</span></th>
@@ -307,40 +303,34 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         <!-- Row 1 -->
                                         <tr>
                                             <td class="ps-4 py-3 pmo-table-date">
-                                                <div>06/05/2026</div>
-                                                <div style="cursor: help;" data-bs-toggle="tooltip"
+                                                <div class="fw-semibold text-dark">06/05/2026</div>
+                                                <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Initial Investment">II</div>
-                                                <span
-                                                    class="badge bg-success bg-opacity-10 text-success border-opacity-25 rounded-pill mt-1">SUCCESSFUL</span>
+                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta">
-                                                <div class="mb-1" style="font-size: var(--type-caption);">136252514</div>
-                                                <div style="font-size: var(--type-meta); cursor: pointer;"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    title="PB GROWTH FUND (PBGTHF)">PB GROWTH FUND (PBGTHF)
+                                                <div class="pmo-fund-code mb-1">136252514</div>
+                                                <div class="pmo-fund-name" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="PUBLIC e-EMAS GOLD FUND">PUBLIC e-EMAS GOLD FUND
                                                 </div>
-
                                             </td>
-                                            <td class="pe-4">1,000.00</td>
+                                            <td class="pe-4 py-3 text-end fw-semibold text-success">1,000.00</td>
                                         </tr>
                                         <!-- Row 2 -->
                                         <tr>
                                             <td class="ps-4 py-3 pmo-table-date">
-                                                <div>06/05/2026</div>
-                                                <div style="cursor: help;" data-bs-toggle="tooltip"
+                                                <div class="fw-semibold text-dark">06/05/2026</div>
+                                                <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Additional Investment">AI</div>
-                                                <span
-                                                    class="badge bg-success bg-opacity-10 text-success border-opacity-25 rounded-pill mt-1">SUCCESSFUL</span>
+                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta">
-                                                <div class="mb-1" style="font-size: var(--type-caption);">094766508</div>
-                                                <div style="font-size: var(--type-meta); cursor: pointer;"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    title="PB GLOBAL SELECT FUND (PGSF)">PB GLOBAL SELECT FUND
-                                                    (PGSF)</div>
-
+                                                <div class="pmo-fund-code mb-1">094766508</div>
+                                                <div class="pmo-fund-name" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">PUBLIC e-CASH DEPOSIT FUND - CLASS B</div>
                                             </td>
-                                            <td class="pe-4">300.00</td>
+                                            <td class="pe-4 py-3 text-end fw-semibold text-success">
+                                                300.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -352,39 +342,39 @@ The realised returns are the gain/loss resulting from the redemption of your inv
 
             <div class="row g-4 mb-5">
                 <!-- Price and Performance Card -->
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-3 fs-6">Price and Performance of Your Holdings Funds</h5>
                             <div class="text-center mb-3">
-                                <span class="text-caption fw-semibold text-dark">Annualised Return (%)</span>
+                                <span class="fs-8 fw-semibold text-dark">Annualised Return (%)</span>
                             </div>
 
                             <ul class="nav nav-pills custom-pills mb-4 d-flex justify-content-between border-bottom pb-2"
                                 role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button
-                                        class="nav-link active bg-transparent text-dark border-0 rounded-0 px-1 py-1 text-caption fw-bold position-relative performance-tab"
+                                        class="nav-link active bg-transparent text-dark border-0 rounded-0 px-1 py-1 fs-8 fw-bold position-relative performance-tab"
                                         data-period="daily" type="button">Daily Price</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button
-                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 text-caption fw-bold performance-tab"
+                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 fs-8 fw-bold performance-tab"
                                         data-period="1y" type="button">1-Y</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button
-                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 text-caption fw-bold performance-tab"
+                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 fs-8 fw-bold performance-tab"
                                         data-period="3y" type="button">3-Y</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button
-                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 text-caption fw-bold performance-tab"
+                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 fs-8 fw-bold performance-tab"
                                         data-period="5y" type="button">5-Y</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button
-                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 text-caption fw-bold performance-tab"
+                                        class="nav-link bg-transparent text-muted border-0 rounded-0 px-1 py-1 fs-8 fw-bold performance-tab"
                                         data-period="10y" type="button">10-Y</button>
                                 </li>
                             </ul>
@@ -399,55 +389,20 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- Row 1: Balanced (Moderate Risk) -->
+                                        <!-- Row 1: PUBLIC STRATEGIC GROWTH FUND (Risk 4 - High) -->
                                         <tr>
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC SHARIAH BALANCED FUND">
-                                                        PUBLIC SHARIAH BALANCED FUND
+                                                        data-bs-placement="top" title="PB FIXED INCOME FUND">
+                                                        PB FIXED INCOME FUND
                                                     </div>
-                                                    <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                        class="img-fluid" style="height: 16px; cursor: help;"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Shariah Compliant" onerror="this.style.display='none'">
                                                 </div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Balanced Fund">BAL</span>
-                                                    <img src="../images/icon/risk-level/icon_risk3.png" alt="Risk 3"
-                                                        style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 3 - Moderate"
-                                                        onerror="this.style.display='none'">
-                                                </div>
-                                            </td>
-                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
-                                            <td class="pe-4 pt-3 pb-3 performance-cell" id="perf-balanced">
-                                                <div class="d-flex align-items-center justify-content-end gap-1">
-                                                    0.6540 <i class="iconoir-nav-arrow-up-solid text-success"></i>
-                                                </div>
-                                                <div class="text-success" style="text-align: right;">+0.12%</div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 2: Equity (High Risk) -->
-                                        <tr>
-                                            <td class="ps-4 pt-3 pb-3 pmo-table-meta">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC ITTIKAL SEQUEL FUND">
-                                                        PUBLIC ITTIKAL SEQUEL FUND</div>
-                                                    <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                        class="img-fluid" style="height: 16px; cursor: help;"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Shariah Compliant" onerror="this.style.display='none'">
-                                                </div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
-                                                    <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Equity Fund">EQ</span>
+                                                        title="Equity">EQ</span>
                                                     <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" title="Risk 4 - High"
@@ -455,49 +410,184 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 </div>
                                             </td>
                                             <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
-                                            <td class="pe-4 pt-3 pb-3 performance-cell" id="perf-ittikal">
+                                            <td class="pt-3 pb-3" id="perf-strategic">
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
-                                                    0.8520 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                    1.0507 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-success" style="text-align: right;">+0.45%</div>
+                                                <div class="text-danger" style="text-align: right;">-0.02%</div>
                                             </td>
                                         </tr>
-                                        <!-- Row 3: Equity (High Risk - Loss Demonstration) -->
+                                        <!-- Row 2: PUBLIC GLOBAL SELECT FUND (Risk 5 - Very High) -->
                                         <tr>
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC ISLAMIC DIVIDEND FUND">
-                                                        PUBLIC ISLAMIC DIVIDEND FUND
-                                                    </div>
-                                                    <img src="../images/icon/shariah.png" alt="Shariah Compliant"
-                                                        class="img-fluid" style="height: 16px; cursor: help;"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Shariah Compliant" onerror="this.style.display='none'">
+                                                        data-bs-placement="top" title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">
+                                                        PUBLIC e-CASH DEPOSIT FUND - CLASS B</div>
                                                 </div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77; cursor: help;"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Equity Fund">EQ</span>
-                                                    <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                        title="Equity">EQ</span>
+                                                    <img src="../images/icon/risk-level/icon_risk5.png" alt="Risk 5"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 4 - High"
+                                                        data-bs-placement="top" title="Risk 5 - Very High"
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
                                             <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
-                                            <td class="pt-3 pb-3 performance-cell" id="perf-dividend">
+                                            <td class="pt-3 pb-3" id="perf-global">
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
-                                                    0.5210 <i class="iconoir-nav-arrow-down-solid text-danger"></i>
+                                                    1.0028 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-danger" style="text-align: right;">-0.08%</div>
+                                                <div class="text-success" style="text-align: right;">+0.18%</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 3: PB GLOBAL TECHNOLOGY & HEALTHCARE FUND (Risk 5 - Very High) -->
+                                        <tr>
+                                            <td class="pt-3 pb-3 pmo-table-meta">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="PUBLIC e-EMAS GOLD FUND">
+                                                        PUBLIC e-EMAS GOLD FUND
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Equity">EQ</span>
+                                                    <img src="../images/icon/risk-level/icon_risk5.png" alt="Risk 5"
+                                                        style="height: 18px;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Risk 5 - Very High"
+                                                        onerror="this.style.display='none'">
+                                                </div>
+                                            </td>
+                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
+                                            <td class="pt-3 pb-3" id="perf-tech">
+                                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                                    2.0055 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                </div>
+                                                <div class="text-danger" style="text-align: right;">-0.05%</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 4: PUBLIC MONEY MARKET FUND - CLASS A (Risk 1 - Low) -->
+                                        <tr>
+                                            <td class="pt-3 pb-3 pmo-table-meta">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="PB CASH MANAGEMENT FUND - CLASS B">
+                                                        PB CASH MANAGEMENT FUND - CLASS B
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                        style="height: 18px;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
+                                                        onerror="this.style.display='none'">
+                                                </div>
+                                            </td>
+                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
+                                            <td class="pt-3 pb-3" id="perf-mmf">
+                                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                                    0.9996 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                </div>
+                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 5: PUBLIC ISLAMIC MONEY MARKET FUND (Risk 1 - Low) -->
+                                        <tr>
+                                            <td class="pt-3 pb-3 pmo-table-meta">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="PUBLIC ISLAMIC MONEY MARKET FUND">
+                                                        PUBLIC ISLAMIC MONEY MARKET FUND
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                        style="height: 18px;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
+                                                        onerror="this.style.display='none'">
+                                                </div>
+                                            </td>
+                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
+                                            <td class="pt-3 pb-3" id="perf-pimmf">
+                                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                                    1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                </div>
+                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 6: PUBLIC e-CASH DEPOSIT FUND (Risk 1 - Low) -->
+                                        <tr>
+                                            <td class="pt-3 pb-3 pmo-table-meta">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="PUBLIC e-CASH DEPOSIT FUND">
+                                                        PUBLIC e-CASH DEPOSIT FUND
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                        style="height: 18px;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
+                                                        onerror="this.style.display='none'">
+                                                </div>
+                                            </td>
+                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
+                                            <td class="pt-3 pb-3" id="perf-pecdf">
+                                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                                    1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                </div>
+                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Row 7: PB CASH MANAGEMENT FUND (Risk 1 - Low) -->
+                                        <tr>
+                                            <td class="pt-3 pb-3 pmo-table-meta">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div style="cursor: pointer;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="PB CASH MANAGEMENT FUND">
+                                                        PB CASH MANAGEMENT FUND
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
+                                                    <span class="badge rounded-pill px-2 py-1"
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
+                                                        style="height: 18px;" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
+                                                        onerror="this.style.display='none'">
+                                                </div>
+                                            </td>
+                                            <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
+                                            <td class="pt-3 pb-3" id="perf-pbcmf">
+                                                <div class="d-flex align-items-center justify-content-end gap-1">
+                                                    1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                </div>
+                                                <div class="text-success" style="text-align: right;">+0.01%</div>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="text-center mt-3 text-muted text-meta">
+                            <div class="text-center mt-3 text-muted fs-9">
                                 Fund Performance is computed based on the latest available fund price.
                             </div>
                         </div>
@@ -505,13 +595,13 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                 </div>
 
                 <!-- Fund Analytics Card -->
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <h5 class="fw-bold mb-0 fs-6">Fund Analytics</h5>
                                 <a href="../analytics/unit-trust.html"
-                                    class="text-dark fw-bold text-decoration-underline text-caption">View More</a>
+                                    class="text-dark fw-bold text-decoration-underline fs-8">View More</a>
                             </div>
 
                             <div class="pmo-table-frame table-responsive">
@@ -530,9 +620,9 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                             <td class="pt-3 pb-3 pmo-table-primary">
                                                 <div>PUBLIC e-CASH DEPOSIT - CLASS B
                                                 </div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">MM</span>
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B;">MM</span>
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" title="Risk 1 - Very Low"
@@ -551,9 +641,9 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         <tr>
                                             <td class="pt-3 pb-3 pmo-table-primary">
                                                 <div>PUBLIC BOND FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">FI</span>
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B;">FI</span>
                                                     <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" title="Risk 2 - Low"
@@ -571,10 +661,10 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         </tr>
                                         <tr>
                                             <td class="pt-3 pb-3 pmo-table-primary">
-                                                <div>PUBLIC REGIONAL UTILITY FUND</div>
-                                                <div class="mt-1 d-flex align-items-center gap-2 pmo-table-meta">
+                                                <div>PUBLIC SAVING FUND</div>
+                                                <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
-                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #002e77;">EQ</span>
+                                                        style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B;">EQ</span>
                                                     <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" title="Risk 4 - High"
@@ -593,50 +683,43 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="text-center mt-3 text-muted text-meta">
+                            <div class="text-center mt-3 text-muted fs-9">
                                 Price as at 04/05/2026
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <!-- Banners Row -->
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/promo3.png" class="promo-card-img" alt="...">
+                        <img src="../images/promotion/corporate-employee-investing.png" class="promo-card-img" alt="Colleagues reviewing a workplace unit trust investment plan">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
-                            <p class="promo-card-title">Behind Every Award is a Story Like Yours</p>
-                            <p class="promo-card-text">True prestige is not won; it is nurtured. We are honoured by the
-                                recognition, but our greatest reward is the gentle confidence of the families who
-                                entrust us with their tomorrow. Discover our latest campaigns and offerings</p>
+                            <p class="promo-card-title">Make every employee benefit count</p>
+                            <p class="promo-card-text">Give your people a clearer path to long-term investing with a workplace unit trust experience built for employers.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/campaign.jpg" class="promo-card-img" alt="...">
+                        <img src="../images/promotion/corporate-cash-management.png" class="promo-card-img" alt="Corporate finance professional reviewing an investment allocation">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
-                            <h5 class="promo-card-title">LSEG LIPPER FUND AWARDS 2026 – Global Islamic</h5>
-                            <p class="promo-card-text">We are honoured to be recognised as the most awarded recipient at
-                                this year’s LSEG Lipper Fund Awards – Global Islamic, securing 9 awards across our
-                                Shariah-compliant funds, including 2 group awards and 7 individual fund awards.
-                            </p>
+                            <h5 class="promo-card-title">Bring clarity to corporate investing</h5>
+                            <p class="promo-card-text">Keep fund choices, account activity and investment decisions visible in one secure portal.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/promo2.png" class="promo-card-img" alt="...">
+                        <img src="../images/promotion/long-term-wealth-planning.png" class="promo-card-img" alt="Professional couple walking toward a bright future in a landscaped garden">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
-                            <h5 class="promo-card-title">Charting Your Pathway to Wealth, Legacy, And Beyond.</h5>
-                            <p class="promo-card-text">While shaping your financial future, you will unlock a suite of
-                                exclusive privileges and value-added-benefits — turning every Ringgit invested into
-                                opportunities for more.</p>
+                            <h5 class="promo-card-title">Plan today for a stronger tomorrow</h5>
+                            <p class="promo-card-text">Support disciplined wealth building with a long-term view for every employee and every milestone.</p>
                         </div>
                     </div>
                 </div>
@@ -664,7 +747,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text text-meta">
+                <div class="copyright-text fs-9">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -687,27 +770,29 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name text-caption fw-bold mb-1" id="sidebarMenuLabel"
-                        style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="text-caption text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                    <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
+                        style="color: #0E0D3B !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
+                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
                     <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/dashboard.html" id="pmoUtSideDash">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Dashboard</span>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
+                            <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/view_account.html" id="pmoUtSideViewAcct">
-                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/view-acccount.svg" width="20"></img></i> <span
                                 class="fw-medium">View Account</span>
                         </a>
                     </li>
@@ -716,27 +801,26 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
                             aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Authorise Transaction</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/authorise.svg" width="20"></img></i> <span
+                                    class="fw-medium">Authorise</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="AuthoriseCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
-                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html?tab=topup"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
-                                        Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
-                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        Top-Up Investment </a></li>
+                                <li class="nav-item mb-1"><a href="../unit-trust/authorise.html?tab=redemption"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
-                                        Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
+                                        Redemption </a>
                                 </li>
                             </ul>
                         </div>
@@ -746,22 +830,23 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
                             aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Transaction Enquiry</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i> <span
+                                    class="fw-medium">Transaction</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
                             </ul>
                         </div>
@@ -771,44 +856,46 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="statementCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -818,34 +905,35 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             aria-expanded="false" aria-controls="eopSidebarContribCollapse"
                             id="eopSidebarContribToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/contribution.svg" width="20"></img></i>
                                 <span class="fw-medium">Contributions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
                                         <span>Authorise Contribution</span>
-                                        <span class="badge bg-danger rounded-pill text-meta" id="eopNavBadgeAuth">3</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
                                         <span>Make Payment</span>
-                                        <span class="badge rounded-pill text-meta fw-bold eop-pending-pay-badge"
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
                                     </a>
@@ -859,22 +947,23 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html" id="eopSideTxnPast">
                                         Past Transaction
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
                                         Pending Transaction
                                     </a>
@@ -887,24 +976,25 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                             data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
                             aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i>
                                 <span class="fw-medium">Statements</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
                                 </li>
                             </ul>
@@ -912,47 +1002,50 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                     </li>
 
                     <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../analytics/unit-trust.html" id="pmoSideUtAnalytics">
-                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/unit-trust.svg" width="20"></img></i> <span
                                 class="fw-medium">Unit Trust Analytics</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../analytics/eop.html"
                             id="pmoSideEopAnalytics">
-                            <i class="iconoir-activity fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">EOP Analytics</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/prs.svg" width="20"></img></i> <span class="fw-medium">PRS
+                                Analytics</span>
                         </a>
                     </li>
 
                     <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#settingsCollapse" role="button" aria-expanded="false"
                             aria-controls="settingsCollapse" id="pmoSideSettingsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/setting.svg" width="20"></img></i> <span
                                     class="fw-medium">Settings</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="settingsCollapse" data-bs-parent="#sidebarMenu">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsPassword">Change Password</a></li>
                             </ul>
                         </div>
@@ -960,8 +1053,9 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
                             id="pmoSideLogout">
-                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Log Out</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/logout.svg" width="20"></img></i> <span class="fw-medium">Log
+                                Out</span>
                         </a>
                     </li>
                 </ul>
@@ -1007,31 +1101,94 @@ The realised returns are the gain/loss resulting from the redemption of your inv
             const performanceTabs = document.querySelectorAll('.performance-tab');
             const data = {
                 'daily': {
-                    'balanced': { returnText: '+0.12%', isPositive: true, price: '0.6540' },
-                    'ittikal': { returnText: '+0.45%', isPositive: true, price: '0.8520' },
-                    'dividend': { returnText: '-0.08%', isPositive: false, price: '0.5210' }
+                    'strategic': { returnText: '+0.03%', isPositive: true, price: '1.0507' },
+                    'global': { returnText: '+0.01%', isPositive: true, price: '1.0028' },
+                    'tech': { returnText: '+0.53%', isPositive: true, price: '2.0055' },
+                    'mmf': { returnText: '0.00%', isPositive: true, price: '0.9996' },
+                    'pimmf': { returnText: '+0.01%', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '+0.01%', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '+0.01%', isPositive: true, price: '1.0000' }
                 },
                 '1y': {
-                    'balanced': { returnText: '+5.21%', isPositive: true, price: '0.6540' },
-                    'ittikal': { returnText: '+19.81%', isPositive: true, price: '0.8520' },
-                    'dividend': { returnText: '-5.27%', isPositive: false, price: '0.5210' }
+                    'strategic': { returnText: '+12.45%', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '+16.80%', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '+22.40%', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '+3.15%', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '+3.09%', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '+2.94%', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '+3.09%', isPositive: true, price: '1.0000' }
                 },
                 '3y': {
-                    'balanced': { returnText: '+18.45%', isPositive: true, price: '0.6540' },
-                    'ittikal': { returnText: '+45.60%', isPositive: true, price: '0.8520' },
-                    'dividend': { returnText: '+12.40%', isPositive: true, price: '0.5210' }
+                    'strategic': { returnText: '+34.20%', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '+42.15%', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '+58.90%', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '+8.90%', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '+8.75%', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '+8.50%', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '+8.80%', isPositive: true, price: '1.0000' }
                 },
                 '5y': {
-                    'balanced': { returnText: '+32.10%', isPositive: true, price: '0.6540' },
-                    'ittikal': { returnText: '+88.90%', isPositive: true, price: '0.8520' },
-                    'dividend': { returnText: '+28.35%', isPositive: true, price: '0.5210' }
+                    'strategic': { returnText: '+68.50%', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '+84.30%', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '+112.50%', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '+15.40%', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '+15.10%', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '+14.90%', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '+15.20%', isPositive: true, price: '1.0000' }
                 },
                 '10y': {
-                    'balanced': { returnText: '+75.60%', isPositive: true, price: '0.6540' },
-                    'ittikal': { returnText: '+142.20%', isPositive: true, price: '0.8520' },
-                    'dividend': { returnText: '+64.80%', isPositive: true, price: '0.5210' }
+                    'strategic': { returnText: '+128.40%', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '+155.60%', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '+198.20%', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '+32.60%', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '+31.80%', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '+30.90%', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '+32.10%', isPositive: true, price: '1.0000' }
                 }
             };
+
+            const currentFundNames = {
+                'PUBLIC STRATEGIC GROWTH FUND': 'PB FIXED INCOME FUND',
+                'PUBLIC GLOBAL SELECT FUND': 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
+                'PB GLOBAL TECHNOLOGY & HEALTHCARE FUND': 'PUBLIC e-EMAS GOLD FUND',
+                'PUBLIC MONEY MARKET FUND - CLASS A': 'PB CASH MANAGEMENT FUND - CLASS B'
+            };
+            const retiredFundNames = [
+                'PUBLIC ISLAMIC MONEY MARKET FUND',
+                'PUBLIC e-CASH DEPOSIT FUND',
+                'PB CASH MANAGEMENT FUND'
+            ];
+
+            document.querySelectorAll('tr').forEach(function (row) {
+                // Remove only rows whose fund label is an exact retired name. Using
+                // substring matching would incorrectly remove the approved "- CLASS B" funds.
+                const rowFundLabels = Array.from(row.querySelectorAll('[title]'))
+                    .map(function (element) { return element.getAttribute('title'); })
+                    .filter(Boolean);
+                if (retiredFundNames.some(function (name) { return rowFundLabels.includes(name); })) row.remove();
+            });
+            document.querySelectorAll('[title]').forEach(function (element) {
+                const replacement = currentFundNames[element.getAttribute('title')];
+                if (replacement) {
+                    element.setAttribute('title', replacement);
+                    element.textContent = replacement;
+                }
+            });
+
+            const latestPrices = {
+                strategic: { price: '1.0507', date: '27/07/2026', change: '+0.03%', state: 'text-success' },
+                global: { price: '1.0028', date: '28/07/2026', change: '+0.01%', state: 'text-success' },
+                tech: { price: '2.0055', date: '27/07/2026', change: '+0.53%', state: 'text-success' },
+                mmf: { price: '0.9996', date: '28/07/2026', change: '0.00%', state: 'text-muted' }
+            };
+            Object.entries(latestPrices).forEach(function ([key, latest]) {
+                const cell = document.getElementById('perf-' + key);
+                if (!cell) return;
+                cell.innerHTML = '<div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">' + latest.price + '</div><div class="' + latest.state + ' fs-9 fw-bold">' + latest.change + '</div>';
+                const row = cell.closest('tr');
+                const dateCell = row?.querySelector('.pmo-table-date');
+                if (dateCell) dateCell.textContent = latest.date;
+            });
 
             performanceTabs.forEach(tab => {
                 tab.addEventListener('click', function () {
@@ -1048,22 +1205,25 @@ The realised returns are the gain/loss resulting from the redemption of your inv
 
                     if (periodData) {
                         // Apply updates with a subtle fade animation
-                        ['balanced', 'ittikal', 'dividend'].forEach(key => {
+                        ['strategic', 'global', 'tech', 'mmf', 'pimmf', 'pecdf', 'pbcmf'].forEach(key => {
                             const cell = document.getElementById('perf-' + key);
                             if (cell) {
                                 cell.style.opacity = '0.2';
                                 cell.style.transition = 'opacity 0.15s ease-in-out';
 
                                 setTimeout(() => {
-                                    const item = periodData[key];
+                                    const item = {
+                                        ...periodData[key],
+                                        price: latestPrices[key]?.price || periodData[key].price
+                                    };
                                     const arrowClass = item.isPositive ? 'iconoir-nav-arrow-up-solid text-success' : 'iconoir-nav-arrow-down-solid text-danger';
                                     const textClass = item.isPositive ? 'text-success' : 'text-danger';
 
                                     cell.innerHTML = `
-                                        <div class="fw-bold text-caption text-dark d-flex align-items-center justify-content-end gap-1">
-                                            ${item.price} <i class="${arrowClass} icon-size-sm"></i>
+                                        <div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
+                                            ${item.price} <i class="${arrowClass} fs-7"></i>
                                         </div>
-                                        <div class="${textClass} text-meta fw-bold">${item.returnText}</div>
+                                        <div class="${textClass} fs-9 fw-bold">${item.returnText}</div>
                                     `;
                                     cell.style.opacity = '1';
                                 }, 150);

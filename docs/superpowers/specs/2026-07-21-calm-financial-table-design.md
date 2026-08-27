@@ -19,7 +19,7 @@ Make every production EOP and Unit Trust table easy to scan: one obvious identif
 ## Visual Hierarchy
 
 - **Primary identifiers:** fund names, account numbers, reference numbers, invoice numbers, and statement numbers use navy `#002E77`, 600 weight, 13px. They are not automatically underlined unless interactive.
-- **Operational data:** dates, transaction amounts, units, prices, volatility, and returns use charcoal `#16161A`, 500 weight, 13px. Dates are never muted.
+- **Operational data:** dates, transaction amounts, units, prices, volatility, and returns use charcoal `#1f2937`, 500 weight, 13px. Dates are never muted.
 - **Supporting metadata:** descriptions, scheme details, user names, and secondary labels use slate `#6B7A90`, 12px, 500 weight.
 - **Links/downloads:** regular table anchors use navy, 700 weight, and a 1px underline. Hover uses darker navy.
 - **Statuses:** retain semantic green, amber, red, or neutral colours. No status colour is repurposed for ordinary text.

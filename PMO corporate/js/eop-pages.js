@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function makeNewRowBadge(idx, prefix) {
             const span = document.createElement('span');
-            span.className = 'badge rounded-pill text-meta fw-semibold pmo-new-row-badge';
+            span.className = 'badge rounded-pill fs-10 fw-semibold pmo-new-row-badge';
             span.id = `${prefix}${idx}`;
             span.setAttribute('role', 'status');
             span.textContent = 'New';
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tr = document.createElement('tr');
                 tr.className = 'border-bottom';
                 const tdName = document.createElement('td');
-                tdName.className = 'ps-4 py-3';
+                tdName.className = 'ps-4 py-3 text-uppercase';
                 const nameWrap = document.createElement('div');
                 nameWrap.className = 'd-flex flex-wrap align-items-center gap-2';
                 const nameSpan = document.createElement('span');
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tdFund = document.createElement('td');
                 tdFund.className = 'py-3';
                 const fundBadge = document.createElement('span');
-                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 text-meta fw-bold';
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
                 fundBadge.textContent = r.fund;
                 tdFund.appendChild(fundBadge);
                 tr.appendChild(tdFund);
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tdType.textContent = SALARY_TYPE_DISPLAY;
                 tr.appendChild(tdType);
                 const tdAmt = document.createElement('td');
-                tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark';
+                tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark pmo-col-shaded';
                 tdAmt.textContent = fmtAmt(r.amount);
                 tr.appendChild(tdAmt);
                 tbodySalary.appendChild(tr);
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tr = document.createElement('tr');
                 tr.className = 'border-bottom';
                 const tdName = document.createElement('td');
-                tdName.className = 'ps-4 py-3';
+                tdName.className = 'text-uppercase ps-4 py-3';
                 const nameWrap = document.createElement('div');
                 nameWrap.className = 'd-flex flex-wrap align-items-center gap-2';
                 const nameSpan = document.createElement('span');
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tdFund = document.createElement('td');
                 tdFund.className = 'py-3';
                 const fundBadge = document.createElement('span');
-                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 text-meta fw-bold';
+                fundBadge.className = 'badge bg-light text-dark border px-2 py-1 fs-9 fw-bold';
                 fundBadge.textContent = r.fund;
                 tdFund.appendChild(fundBadge);
                 tr.appendChild(tdFund);
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tdType.textContent = EMP_LABEL[r.kind] || r.kind;
                 tr.appendChild(tdType);
                 const tdAmt = document.createElement('td');
-                tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark';
+                tdAmt.className = 'pe-4 py-3 text-end fw-semibold text-dark pmo-col-shaded';
                 tdAmt.textContent = fmtAmt(r.amount);
                 tr.appendChild(tdAmt);
                 tbodyEmployer.appendChild(tr);
@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tr class="border-bottom">
                         <td class="ps-3 py-3 text-dark">${r.name}</td>
                         <td class="py-3 text-secondary">${r.nric}</td>
-                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 text-meta fw-bold">${r.fund}</span></td>
+                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
                         <td class="pe-3 py-3 text-end fw-semibold text-dark">RM ${r.amount}</td>
                     </tr>
@@ -1120,6 +1120,20 @@ document.addEventListener('DOMContentLoaded', () => {
         bankSelect?.addEventListener('change', syncSidePanel);
         methodSelect?.addEventListener('change', syncSidePanel);
 
+        const eopPayPacMethod = document.getElementById('eopPayPacMethod');
+        const eopPayPacFieldsWrapper = document.getElementById('eopPayPacFieldsWrapper');
+        const eopPaySecureSignContainer = document.getElementById('eopPaySecureSignContainer');
+
+        eopPayPacMethod?.addEventListener('change', function () {
+            if (this.value === 'SecureSign') {
+                eopPayPacFieldsWrapper?.classList.add('d-none');
+                eopPaySecureSignContainer?.classList.remove('d-none');
+            } else {
+                eopPayPacFieldsWrapper?.classList.remove('d-none');
+                eopPaySecureSignContainer?.classList.add('d-none');
+            }
+        });
+
         document.getElementById('eopPayBtnRequestPac')?.addEventListener('click', () => {
             if (pacInput) pacInput.value = '12345678';
             pacInput?.classList.remove('is-invalid');
@@ -1128,10 +1142,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         confirmBtn?.addEventListener('click', (e) => {
             e.preventDefault();
-            if ((pacInput?.value || '').trim() !== '12345678') {
-                pacInput?.classList.add('is-invalid');
-                pacErr?.classList.remove('d-none');
-                return;
+            const isSecureSign = eopPayPacMethod && eopPayPacMethod.value === 'SecureSign';
+            if (!isSecureSign) {
+                if ((pacInput?.value || '').trim() !== '12345678') {
+                    pacInput?.classList.add('is-invalid');
+                    pacErr?.classList.remove('d-none');
+                    return;
+                }
             }
             pacInput?.classList.remove('is-invalid');
             pacErr?.classList.add('d-none');

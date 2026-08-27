@@ -35,7 +35,7 @@ The codebase repeatedly uses these core colors:
 
 | Token | Value | Meaning |
 |---|---:|---|
-| `--brand-primary` | `#ff1700` | Primary brand red, danger, urgent action |
+| `--brand-primary` | `#d3112b` | Primary brand red, danger, urgent action |
 | `--brand-navy` | `#002e77` or `#0E0D3B` in some shells | Core structural navy |
 | `--accent-primary` | `#002e77` | Primary action accent |
 | `--action-primary` | `#002e77` | Interactive primary button / active state |
@@ -43,8 +43,8 @@ The codebase repeatedly uses these core colors:
 | `--bg-container` | `#FCFCFC` | Surface background |
 | `--bg-main` | `#FCFCFC` / `#f8fafc` | Page background |
 | `--ui-support` | `#8e9ab0` | Muted labels, helper text |
-| `--text-primary` | `#16161a` | Main body text |
-| `--text-secondary` | `#48484b` | Secondary body text |
+| `--text-primary` | `#1f2937` | Main body text |
+| `--text-secondary` | `#6b7280` | Secondary body text |
 
 Semantic colors in the UI:
 

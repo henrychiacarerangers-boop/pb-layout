@@ -1,7 +1,8 @@
 /* --- Landing Page Premium Styles --- */
 :root {
-    --text-navy: #002e77;
+    --text-navy: #1b2a4a;
     --navy-hover: #373761;
+    --brand-primary: #d3112b;
 }
 
 .text-navy {
@@ -103,7 +104,7 @@
     border-radius: 8px;
     transition: all 0.2s ease;
     font-weight: 600;
-    font-size: var(--type-body);
+    font-size: 0.95rem;
     padding: 10px 15px !important;
 }
 
@@ -121,7 +122,7 @@
 .main-nav .nav-link {
     font-weight: 600;
     color: #333;
-    font-size: var(--type-body);
+    font-size: 0.95rem;
     padding: 10px 0;
     position: relative;
 }
@@ -250,13 +251,13 @@
 }
 
 .cta-dark h2 {
-    font-size: var(--type-title);
+    font-size: 2.5rem;
     color: white;
 }
 
 .cta-dark p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: var(--type-lead);
+    font-size: 1.25rem;
 }
 
 .goal-selection {
@@ -274,7 +275,7 @@
     border-radius: 0;
     color: white;
     padding: 12px 0;
-    font-size: var(--type-lead);
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
@@ -304,7 +305,7 @@
     border: 2px solid #dee2e6;
     border-radius: 10px;
     padding: 15px 20px;
-    font-size: var(--type-body);
+    font-size: 1rem;
     background-color: #fff;
     transition: all 0.3s ease;
 }
@@ -367,7 +368,7 @@
 .footer-links a {
     color: #666;
     text-decoration: none;
-    font-size: var(--type-caption);
+    font-size: 0.85rem;
     transition: color 0.2s ease;
 }
 
@@ -450,7 +451,7 @@
 /* --- PRS & EPF-MIS Section UX Improvements --- */
 .section-eyebrow {
     letter-spacing: 2px;
-    font-size: var(--type-caption);
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--brand-primary);
@@ -537,7 +538,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff1700;
+    color: #d3112b;
     /* Brand Red */
     font-size: 1.8rem;
     margin-bottom: 24px;
@@ -545,7 +546,7 @@
 }
 
 .solution-glass-card:hover .solution-card-icon-circle {
-    background-color: #ff1700;
+    background-color: #d3112b;
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(237, 28, 36, 0.2);
@@ -553,18 +554,18 @@
 
 .solution-glass-card:hover {
     transform: translateY(-8px) !important;
-    border-color: #ff1700 !important;
+    border-color: #d3112b !important;
     /* Accent Red */
     box-shadow: 0 30px 60px rgba(38, 36, 123, 0.12) !important;
 }
 
 /* Small Card Tag */
 .solution-card-tag {
-    font-size: var(--type-meta);
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #ff1700;
+    color: #d3112b;
     /* Red accent */
     margin-bottom: 12px;
 }
@@ -572,7 +573,7 @@
 .solution-card-title {
     color: #002e77;
     /* Navy */
-    font-size: var(--type-section);
+    font-size: 1.35rem;
     font-weight: 800;
     line-height: 1.3;
     font-family: 'Montserrat', sans-serif;
@@ -582,7 +583,7 @@
 .solution-card-body {
     color: #475569;
     /* Slate grey */
-    font-size: var(--type-caption);
+    font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 24px;
 }
@@ -598,14 +599,1360 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: var(--type-caption);
+    font-size: 0.82rem;
     color: #334155;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
 .solution-card-list li i {
-    color: #ff1700;
+    color: #d3112b;
     /* Red checkmark */
-    font-size: var(--type-body);
+    font-size: 0.95rem;
 }
+
+/* Keep the original Corporate menu inside the 105px second header. */
+.corporate-legacy-nav {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    height: auto;
+    margin: 0;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    pointer-events: none;
+}
+
+.corporate-legacy-nav>.container {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    align-items: center;
+    padding: 0 48px;
+}
+
+.corporate-legacy-nav .navbar-toggler {
+    display: none;
+}
+
+.corporate-legacy-nav .navbar-collapse {
+    display: flex !important;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0 310px 0 230px;
+    pointer-events: auto;
+}
+
+.corporate-legacy-nav .navbar-nav {
+    flex-wrap: nowrap;
+    gap: clamp(1rem, 1.7vw, 2rem) !important;
+}
+
+.corporate-legacy-nav .nav-link {
+    padding: .5rem 0 !important;
+    white-space: nowrap;
+}
+
+.widescreen-header>.d-flex,
+.widescreen-header>.widescreen-header-links,
+.widescreen-header>.d-xl-none {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 1199.98px) {
+    .corporate-legacy-nav {
+        display: none;
+    }
+}
+
+/* --- Funds Insights Dashboard --- */
+.fund-insights-legacy {
+    display: none;
+}
+
+.funds-dashboard {
+    padding: 5.25rem 0 6rem;
+    background: #f8fafc;
+}
+
+.funds-dashboard-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.45rem;
+    border-bottom: 1px solid #e1e7ee;
+}
+
+.funds-dashboard h2 {
+    margin: 0;
+    color: #17243b;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+}
+
+.funds-dashboard-tabs {
+    display: flex;
+    padding: .28rem;
+    border-radius: 12px;
+    background: #eef2f6;
+}
+
+.funds-dashboard-tabs button {
+    padding: .68rem 1.1rem;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #536074;
+    font-family: inherit;
+    font-size: .73rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.funds-dashboard-tabs button.is-active {
+    background: #ffffff;
+    color: #1b2639;
+    box-shadow: 0 2px 8px rgba(15, 35, 65, .1);
+}
+
+.popular-funds-panel {
+    padding: 2.1rem 2.1rem 1.55rem;
+    border: 1px solid #e0e6ed;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgba(21, 39, 70, .04);
+}
+
+.popular-funds-panel-head,
+.popular-funds-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular-funds-panel h3 {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    margin: 0;
+    color: #1b2639;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.popular-funds-panel h3 i,
+.risk-level {
+    color: #d3112b;
+}
+
+.popular-funds-panel-head>a,
+.popular-funds-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    color: #546176;
+    font-size: .76rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.popular-funds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1.7rem 0 1.45rem;
+}
+
+.popular-funds-grid article {
+    min-height: 190px;
+    padding: 1.45rem;
+    border: 1px solid #e7ebf0;
+    border-radius: 13px;
+    background: #ffffff;
+}
+
+.risk-level {
+    margin: 0 0 1.15rem;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.popular-funds-grid a {
+    display: block;
+    margin-bottom: .88rem;
+    color: #1d2c43;
+    font-size: .77rem;
+    font-weight: 700;
+    line-height: 1.48;
+    text-decoration: none;
+}
+
+.popular-funds-grid a:hover,
+.popular-funds-panel-head>a:hover,
+.popular-funds-footer a:hover {
+    color: #d3112b;
+}
+
+.popular-funds-footer {
+    justify-content: flex-end;
+    padding-top: 1.2rem;
+    border-top: 1px solid #edf0f4;
+}
+
+@media (max-width: 991.98px) {
+    .funds-dashboard-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .funds-dashboard-tabs {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .funds-dashboard-tabs button {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .funds-dashboard {
+        padding: 3.75rem 0;
+    }
+
+    .popular-funds-panel {
+        padding: 1.35rem;
+    }
+
+    .popular-funds-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-funds-grid article {
+        min-height: auto;
+    }
+}
+
+/* --- What's New --- */
+.whats-new {
+    padding: 5.5rem 0;
+    background: #ffffff;
+}
+
+.whats-new-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.whats-new h2 {
+    margin: 0;
+    color: #17243b;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+}
+
+.whats-new-head p {
+    margin: .45rem 0 0;
+    color: #667386;
+    font-size: .93rem;
+}
+
+.news-controls {
+    display: flex;
+    gap: .65rem;
+}
+
+.news-controls button {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: #f8fafc;
+    color: #6c7281;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.news-controls button:hover {
+    background: #d3112b;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.whats-new-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+}
+
+.news-card {
+    overflow: hidden;
+    border: 1px solid #e3e8ef;
+    border-radius: 14px;
+    background: #ffffff;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(21, 39, 70, .09);
+}
+
+.news-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.news-card-body {
+    padding: 1.2rem 1.15rem 1.3rem;
+}
+
+.news-card h3 {
+    min-height: 52px;
+    margin: 0 0 1.2rem;
+    color: #25334a;
+    font-size: .95rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.news-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: .42rem;
+    color: #d3112b;
+    font-size: .77rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.news-card a:hover {
+    color: #8f1928;
+}
+
+@media (max-width: 767.98px) {
+    .whats-new {
+        padding: 4rem 0;
+    }
+
+    .whats-new-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .whats-new-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card img {
+        height: auto;
+        max-height: 280px;
+    }
+
+    .news-card-body,
+    .news-card h3 {
+        min-height: 0;
+    }
+}
+
+/* Shared platform header - matches PMO, Corporate PMO, UTC Connect and PMO Plus */
+body {
+    padding-top: 50px;
+}
+
+.widescreen-sidebar-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1060;
+    display: flex;
+    height: 50px;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-shrink: 0;
+    padding: 0 48px;
+    border-bottom: 1px solid #dee2e6;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+.top-bar-tabs {
+    display: flex;
+    align-items: stretch;
+}
+
+.top-tab {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    color: #495057 !important;
+    font-size: .72rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.top-tab:hover {
+    color: #d3112b !important;
+}
+
+.top-tab.active {
+    margin: 0 -1px;
+    border-right: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    background: #ffffff;
+    color: #d3112b !important;
+}
+
+.top-tab.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 4px;
+    background: #d3112b;
+    content: '';
+}
+
+.top-bar-right-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-link-item {
+    color: #495057 !important;
+    font-size: .72rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: color .2s ease;
+}
+
+.top-link-item:hover {
+    color: #d3112b !important;
+}
+
+.top-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.top-social-icons a {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    border: 0;
+    border-radius: 50%;
+    background: #f8fafc;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-social-icons img {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+.top-social-icons a:hover {
+    background: #f5f6f8;
+    transform: translateY(-1px);
+}
+
+.widescreen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 105px;
+    box-sizing: border-box;
+    z-index: 1060;
+    background: #ffffff !important;
+    padding: 16px 48px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.widescreen-header-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.widescreen-header-links a {
+    color: #333333 !important;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.widescreen-header-links a:hover {
+    color: #d3112b !important;
+}
+
+.widescreen-header-links .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.15em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.widescreen-header-links .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.widescreen-header-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    padding: 10px 0;
+    min-width: 240px;
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+    .widescreen-header-links .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.widescreen-header-links .dropdown-item {
+    font-size: 0.95rem !important;
+    font-weight: 600;
+    color: #002e77 !important;
+    padding: 10px 20px !important;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.widescreen-header-links .dropdown-item:hover {
+    background-color: #f1f5f9 !important;
+    color: #d3112b !important;
+}
+
+.header-cta-btn {
+    background-color: #d3112b !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-cta-btn:hover {
+    background-color: #002e77 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(38, 36, 123, 0.2);
+}
+
+.header-utility-icon {
+    color: #495057 !important;
+    font-size: 1.3rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none !important;
+}
+
+.header-utility-icon:hover {
+    color: #d3112b !important;
+    transform: scale(1.08);
+}
+
+.header-utility-icon span {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d3112b;
+}
+
+.language-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: #e9ecef;
+    color: #495057;
+    font-size: .75rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 1199.98px) {
+    body {
+        padding-top: 0;
+        padding-bottom: 50px;
+    }
+
+    .widescreen-sidebar-panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: none;
+        justify-content: center !important;
+        padding: 0 15px !important;
+        top: auto;
+        bottom: 0;
+        box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .top-bar-right-links,
+    .widescreen-header-links {
+        display: none;
+    }
+
+    .top-bar-tabs {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .top-tab {
+        flex: 1 0 auto;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   PMO Corporate Landing Page Redesign - Pixel-Exact Mockup Implementation
+   ========================================================================== */
+
+/* --- 1. Hero Section --- */
+.corp-hero-section {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    background-color: #1b2639;
+    overflow: hidden;
+}
+
+.corp-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+    z-index: 1;
+}
+
+.corp-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%);
+    z-index: 2;
+}
+
+.corp-hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.corp-hero-textbox {
+    max-width: 600px;
+    padding-left: 20px;
+}
+
+.corp-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.btn-hero-action {
+    background-color: #d3112b;
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 11px 32px;
+    border-radius: 50px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(211, 17, 43, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-hero-action:hover {
+    background-color: #b80d23;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211, 17, 43, 0.55);
+}
+
+.corp-hero-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #d3112b;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.corp-hero-nav:hover {
+    background-color: #b80d23;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.corp-hero-prev {
+    left: 28px;
+}
+
+.corp-hero-next {
+    right: 28px;
+}
+
+@media (max-width: 991.98px) {
+    .corp-hero-section {
+        height: 380px;
+    }
+    .corp-hero-title {
+        font-size: 2.2rem;
+    }
+    .corp-hero-prev {
+        left: 14px;
+    }
+    .corp-hero-next {
+        right: 14px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .corp-hero-section {
+        height: 320px;
+    }
+    .corp-hero-title {
+        font-size: 1.75rem;
+    }
+    .corp-hero-textbox {
+        padding-left: 0;
+    }
+    .btn-hero-action {
+        font-size: 0.85rem;
+        padding: 9px 24px;
+    }
+}
+
+/* --- 2. Funds Insights Dashboard Section --- */
+.funds-dash-wrapper {
+    background-color: #ffffff;
+    padding: 60px 0 50px;
+}
+
+.funds-dash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.funds-dash-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #17243b;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.funds-segmented-tabs {
+    display: inline-flex;
+    background-color: #e9eff5;
+    border-radius: 50px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.funds-tab-pill {
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #55657d;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.funds-tab-pill.active {
+    background-color: #ffffff;
+    color: #17243b;
+    box-shadow: 0 2px 8px rgba(23, 36, 59, 0.12);
+}
+
+.funds-dash-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    padding: 30px 32px 24px;
+}
+
+.funds-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.funds-card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.funds-flame-icon {
+    color: #d3112b;
+    font-size: 1.25rem;
+}
+
+.funds-card-title-group h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #17243b;
+    margin: 0;
+}
+
+.btn-all-funds-outline {
+    display: inline-block;
+    padding: 5px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #55657d;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.btn-all-funds-outline:hover {
+    border-color: #d3112b;
+    color: #d3112b;
+}
+
+.funds-risk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.funds-risk-column {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 12px;
+    padding: 22px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.risk-level-badge {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #d3112b;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.risk-funds-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.risk-fund-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.77rem;
+    font-weight: 700;
+    color: #17243b;
+    line-height: 1.45;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.risk-fund-link:hover {
+    color: #d3112b;
+}
+
+.funds-card-bottombar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.view-full-fund-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #17243b;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.view-full-fund-link:hover {
+    color: #d3112b;
+}
+
+@media (max-width: 991.98px) {
+    .funds-risk-grid {
+        grid-template-columns: 1fr;
+    }
+    .funds-segmented-tabs {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* --- 3. What's New Section --- */
+.whats-new-wrap {
+    background-color: #f8fafc;
+    padding: 65px 0 60px;
+}
+
+.section-head-flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.section-title-large {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #17243b;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle-muted {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 6px 0 0;
+}
+
+.carousel-round-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.round-arrow-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #55657d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.round-arrow-btn:hover {
+    background-color: #d3112b;
+    border-color: #d3112b;
+    color: #ffffff;
+}
+
+.whats-new-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.news-promo-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.news-card-media {
+    width: 100%;
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.news-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-card-info {
+    padding: 22px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.news-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #17243b;
+    line-height: 1.45;
+    margin-bottom: 20px;
+    min-height: 48px;
+}
+
+.news-readmore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #d3112b;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.news-readmore-link:hover {
+    color: #b80d23;
+    gap: 9px;
+}
+
+@media (max-width: 991.98px) {
+    .whats-new-cards-row {
+        grid-template-columns: 1fr;
+    }
+    .news-card-title {
+        min-height: auto;
+    }
+}
+
+/* --- 4. Products & Services Section --- */
+.products-services-wrap {
+    background-color: #ffffff;
+    padding: 60px 0 70px;
+}
+
+.products-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-box-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 42px 28px 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.product-box-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
+}
+
+.product-icon-container {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.product-icon-img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-box-card:hover .product-icon-img {
+    transform: scale(1.08);
+}
+
+
+.product-box-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #17243b;
+    margin-bottom: 12px;
+}
+
+.product-box-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 290px;
+}
+
+@media (max-width: 991.98px) {
+    .products-grid-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 5. Clean Modern Footer --- */
+.corp-site-footer {
+    background-color: #141f32;
+    color: #ffffff;
+    padding-top: 56px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-section-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav-links a {
+    color: #94a3b8;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+    color: #ffffff;
+}
+
+.footer-app-badges-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.store-download-btn {
+    background-color: #000000;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+    width: fit-content;
+    transition: all 0.2s ease;
+}
+
+.store-download-btn:hover {
+    background-color: #1e293b;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.store-btn-sub {
+    display: block;
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.store-btn-main {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.footer-pmo-plus-access {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.qr-codes-holder {
+    display: flex;
+    gap: 12px;
+}
+
+.qr-code-white-box {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom-legal-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 48px;
+    padding: 24px 0 32px;
+}
+
+.footer-legal-links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 0.76rem;
+}
+
+.footer-legal-links-list a {
+    color: #94a3b8;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links-list a:hover {
+    color: #ffffff;
+}
+
+.footer-legal-links-list .link-sep {
+    color: #475569;
+    font-size: 0.72rem;
+}
+
+.footer-disclaimer-note {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.footer-copyright-statement {
+    font-size: 0.72rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* --- Chatbot Launcher Integration --- */
+.chatbot-container {
+    bottom: 28px !important;
+    right: 32px !important;
+    z-index: 1060 !important;
+}
+
+
+

@@ -33,7 +33,7 @@
             background: none;
             border: none;
             color: var(--brand-red, #dc3545);
-            font-size: var(--type-meta);
+            font-size: 0.75rem;
             font-weight: 700;
             padding: 0;
             letter-spacing: 0.5px;
@@ -83,10 +83,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="../../table-system.css?v=table-links-20260721">
-    <script src="../js/accessibility.js" defer></script>
-<link rel="stylesheet" href="../../design-tokens.css">
-<link rel="stylesheet" href="../../pmo-core.css">
+    <link rel="stylesheet" href="../css/table-system.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
@@ -94,7 +91,7 @@
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #ff1700 85%, #fd4b57 100%);">
+        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -124,19 +121,19 @@
                                     <a href="dashboard.html"
                                         class="nav-pill active-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none"
                                         id="pmoShellPillUt">
-                                        <span class="text-caption fw-bold text-dark">Unit Trust</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-bold text-dark">Unit Trust</span>
+
                                     </a>
                                     <a href="../eop/dashboard.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillEopFromUt">
-                                        <span class="text-caption fw-semibold text-dark">Employer Online Portal (EOP)</span>
-                                        <span class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span>
+                                        <span class="fs-8 fw-semibold text-dark">Employer Online Portal (EOP)</span>
+
                                     </a>
                                     <a href="../analytics/unit-trust.html"
                                         class="nav-pill d-flex align-items-center px-4 py-2 rounded-pill text-decoration-none border bg-light text-muted"
                                         id="pmoShellPillAnalyticsFromUt">
-                                        <span class="text-caption fw-semibold text-dark">Analytics</span>
+                                        <span class="fs-8 fw-semibold text-dark">Analytics</span>
                                     </a>
                                 </div>
                                 <div class="dropdown">
@@ -148,14 +145,13 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="text-caption fw-semibold d-none d-sm-inline" id="pmoShellNavUserUt">User
-                                            &amp; Authoriser</span>
-                                        <i class="iconoir-nav-arrow-down icon-size-sm ms-1 align-middle" aria-hidden="true"></i>
+
+                                        <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 text-caption animate slideIn pmo-user-dropdown-menu"
+                                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
                                         aria-labelledby="userMenuDropdown" style="min-width: 200px;">
                                         <li
-                                            class="dropdown-header text-muted fw-bold text-meta text-uppercase px-3 py-1 border-bottom">
+                                            class="dropdown-header text-muted fw-bold fs-9 text-uppercase px-3 py-1 border-bottom">
                                             Account Settings</li>
                                         <li>
                                             <a class="dropdown-item rounded-3 d-flex align-items-center gap-2 px-3 py-2 mt-1 pmo-user-dropdown-item"
@@ -188,15 +184,8 @@
         </div>
 
         <!-- Header Section -->
-        <header class="dashboard-header text-white pt-3 pb-0 position-relative z-1" style="background: transparent;">
-            <div class="container pt-2 pb-0 position-relative z-1">
-                <h1 class="fw-normal mb-1 fs-4 text-white">Welcome to <span class="fw-bold">Corporate Public Mutual
-                        Online</span>
-                    <span class="fw-normal fs-6" style="color: rgba(255, 255, 255, 0.85) !important;">· Unit Trust
-                        Portal</span>
-                </h1>
-                <p class="text-caption mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
-                    09:16</p>
+        <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
+            <div class="container pt-0 pb-0 position-relative z-1">
 
                 <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
@@ -206,8 +195,7 @@
                         <a class="nav-link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="authorise.html">Authorise <span
-                                class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">5</span></a>
+                        <a class="nav-link active" href="authorise.html">Authorise </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="transactions.html">Transactions</a>
@@ -222,11 +210,11 @@
     </div>
 
     <!-- Main Content -->
-    <main class="dashboard-content py-5">
+    <main class="dashboard-content py-4">
         <div class="container">
 
             <!-- Breadcrumbs / Top Header Actions (Standardised) -->
-            <div
+            <div id="authoriseHeaderBar"
                 class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4 print-hidden">
                 <div class="d-flex align-items-center gap-3">
                     <a href="authorise.html" class="btn-back-circle" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -236,17 +224,13 @@
                     <div>
                         <h2 class="fw-bold text-dark fs-3 m-0 d-flex align-items-center flex-wrap gap-2">
                             <span class="text-secondary fw-medium" id="headerRefDisplay">UT26000000000195</span>
-                            <span class="text-primary fw-bold" id="headerFundDisplay">PUBLIC STRATEGIC GROWTH
-                                FUND</span>
+                            <span class="text-primary fw-bold" id="headerFundDisplay">PB FIXED INCOME FUND</span>
                         </h2>
-                        <span class="text-muted text-caption fw-semibold mt-1 d-block">Authorise Top-Up Investment
-                            Request</span>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <button
-                        class="btn btn-outline-secondary btn-action-premium bg-white shadow-sm d-flex align-items-center gap-2"
-                        style="border-color: #dee2e6;" onclick="window.print()">
+                    <button type="button" onclick="window.print()"
+                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2">
                         <i class="iconoir-printer fs-6"></i> Print
                     </button>
                 </div>
@@ -262,78 +246,97 @@
                     </div>
                 </div>
                 <div class="text-end">
-                    <div class="fw-bold text-caption text-dark">Top-Up Investment Authorisation Advice</div>
-                    <div class="text-muted text-meta">Corporate Public Mutual Online</div>
-                    <div class="text-muted text-meta" id="printDateTime"></div>
+                    <div class="fw-bold fs-7 text-dark">Top-Up Investment Authorisation Advice</div>
+                    <div class="text-muted fs-9">Corporate Public Mutual Online</div>
+                    <div class="text-muted fs-9" id="printDateTime"></div>
                 </div>
             </div>
 
             <!-- Crucial Alert Box -->
-            <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5">
+            <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5" id="authoriseAlertCard">
                 <div class="card-body p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
                     <div class="d-flex gap-3">
                         <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
                         <div>
                             <h6 class="fw-bold text-danger mb-2">Authorisation Alert</h6>
-
-                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-caption text-secondary lh-base">
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
                                 <li class="text-muted" style="text-align: justify;">The following are the investment top
-                                    up pending your authorisation for payment at your bank. </li>
+                                    up pending your authorisation for payment at your bank.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-
             <!-- STEP 1: Main Verification & Detail View -->
             <div id="authoriseDetailSection" class="row g-4">
 
-                <!-- LEFT: Form fields and transaction details (on the left as standard) -->
-                <div class="col-lg-7">
-                    <!-- Request Summary Card -->
+                <!-- LEFT: Form fields and transaction details -->
+                <div class="col-lg-8">
+                    <!-- Unified Request and Investment Details Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
                         <div class="card-body p-4">
-                            <h5
-                                class="fw-bold text-dark mb-3 pb-2 border-bottom d-flex align-items-center justify-content-between">
-                                <span>Request Overview</span>
-                            </h5>
+                            <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
 
                             <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table pmo-data-table--details">
+                                <table class="pmo-data-table pmo-data-table--details mb-0">
                                     <tbody>
                                         <tr>
-                                            <td>Reference No.</td>
-                                            <td id="refNoDisplay">UT26000000000195</td>
+                                            <td style="width: 38%;">Reference No.</td>
+                                            <td class="fw-bold text-dark" id="refNoDisplay">UT26000000000195</td>
                                         </tr>
                                         <tr>
-                                            <td>Request Date & Time</td>
-                                            <td id="requestDateDisplay" class="pmo-table-date">2026/04/10 14:15:22</td>
+                                            <td>Request Date &amp; Time</td>
+                                            <td id="requestDateDisplay" class="pmo-table-date text-dark">2026/04/10
+                                                14:15:22</td>
                                         </tr>
                                         <tr>
                                             <td>Fund Name</td>
-                                            <td id="fundNameDisplay">PUBLIC STRATEGIC GROWTH
-                                                FUND</td>
+                                            <td class="fw-bold text-dark" id="fundNameDisplay">PB FIXED INCOME FUND</td>
                                         </tr>
                                         <tr>
                                             <td>Account Number</td>
-                                            <td class="pmo-table-primary" id="accountDisplay">094766567</td>
+                                            <td class="pmo-table-primary fw-bold" id="accountDisplay">094766567</td>
                                         </tr>
                                         <tr>
                                             <td>Fund Category</td>
-                                            <td id="fundCategoryDisplay">Equity</td>
+                                            <td class="text-dark" id="fundCategoryDisplay">Equity</td>
                                         </tr>
                                         <tr>
                                             <td>Risk Level</td>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <img id="riskIconDisplay"
-                                                        src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
-                                                        style="height: 20px;">
-                                                    <span id="riskLabelDisplay">Risk 4 -
-                                                        High</span>
-                                                </div>
+                                            <td class="text-dark">
+
+                                                <img id="riskIconDisplay" src="../images/icon/risk-level/icon_risk4.png"
+                                                    alt="Risk 4" style="height: 20px;">
+                                                <span id="riskLabelDisplay" class="fs-8 text-dark">Risk 4 -
+                                                    High</span>
+
                                             </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h5 class="fw-bold text-dark mt-4 mb-3 pt-4 pb-2 border-top border-bottom">Investment &amp; Unit Details</h5>
+                            <div class="table-responsive pmo-table-frame">
+                                <table class="pmo-data-table pmo-data-table--details mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 38%;">Current Unit Balance</td>
+                                            <td class="fw-bold text-dark" id="totalUnitsDisplay">150,000.00 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Top-Up Units to Credit</td>
+                                            <td class="fw-bold text-dark" id="topupUnitsDisplay">45,454.55 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Units After Top-Up</td>
+                                            <td class="fw-bold text-dark" id="afterTopupDisplay">195,454.55 Units</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Investment Amount</td>
+                                            <td class="fw-bold text-success fs-6" id="investmentAmountDisplay">MYR
+                                                100,000.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -341,49 +344,39 @@
                         </div>
                     </div>
 
-
-
+                    <!-- Action Button: Only Back button -->
+                    <div class="pmo-action-bar print-hidden">
+                        <button class="btn btn-outline-dark"
+                            onclick="location.href='authorise.html'">Back</button>
+                    </div>
                 </div>
 
-                <!-- RIGHT: Authorisation Summary Action Deck (on the right as standard) -->
-                <div class="col-lg-5">
+                <!-- RIGHT: Authorisation Summary Action Deck -->
+                <div class="col-lg-4">
                     <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
                         <div class="card-body p-2 d-flex flex-column justify-content-between">
                             <div>
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
                                 <div class="mb-3">
-                                    <div class="text-muted text-meta mb-1">Transaction Category</div>
-                                    <div class="fw-bold text-caption text-dark">Top-Up Investment</div>
+                                    <div class="text-muted fs-9 mb-1">Transaction Category</div>
+                                    <div class="fw-bold fs-8 text-dark">Top-Up Investment</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted text-meta mb-1">Initiator</div>
-                                    <div class="fw-bold text-caption text-dark">Ahmad Razak bin Osman</div>
+                                    <div class="text-muted fs-9 mb-1">Initiator</div>
+                                    <div class="fw-bold fs-8 text-dark">Ahmad Razak bin Osman</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted text-meta mb-1">Top-Up Investment Amount</div>
+                                    <div class="text-muted fs-9 mb-1">Top-Up Investment Amount</div>
                                     <div class="fw-bold fs-4 text-success" id="investmentAmountDisplay2">MYR 100,000.00
                                     </div>
                                 </div>
-                                <!--<div class="mb-3">
-                                    <div class="text-muted text-meta mb-1">Units to Credit</div>
-                                    <div class="fw-bold text-caption text-dark" id="topupUnitsDisplay2">45,454.55 Units</div>
-                               
                                 <div class="mb-3">
-                                    <div class="text-muted text-meta mb-1">Impact to Portfolio</div>
-                                    <div class="fw-bold text-caption text-dark" id="portfolioImpactDisplay">Increases STRATEGIC
-                                        holdings by 30.3%</div>
+                                    <div class="text-muted fs-9 mb-1">Units to Credit</div>
+                                    <div class="fw-bold fs-8 text-dark" id="topupUnitsDisplay2">45,454.55 Units</div>
                                 </div>
-								 </div>-->
+
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- FOOTER BUTTONS: Outside Cards, Left Standard aligned -->
-                <div class="col-12 print-hidden">
-                    <div class="d-flex justify-content-end gap-3 mt-2">
-                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
-                            onclick="location.href='authorise.html'">Back</button>
                     </div>
                 </div>
             </div>
@@ -408,7 +401,7 @@
                     <a href="#">FAQ</a>
                     <a href="../Corporate Website/landing.html">Public Mutual Fund</a>
                 </div>
-                <div class="copyright-text text-meta">
+                <div class="copyright-text fs-9">
                     <span>2026 © Public Mutual Berhad (197501001842 (23419-A)) ALL RIGHTS RESERVED</span>
                 </div>
             </div>
@@ -431,27 +424,29 @@
                     </button>
                 </div>
                 <div class="portal-sidebar-profile-card w-100" style="padding: 12px 16px 12px 20px !important;">
-                    <h6 class="profile-name text-caption fw-bold mb-1" id="sidebarMenuLabel"
-                        style="color: #002e77 !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
-                    <div class="text-caption text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
+                    <h6 class="profile-name fs-7 fw-bold mb-1" id="sidebarMenuLabel"
+                        style="color: #0E0D3B !important; margin-bottom: 2px !important;">Ahmad Razak bin Osman</h6>
+                    <div class="fs-8 text-muted fw-medium">Ativa Studio Solution Sdn Bhd</div>
                 </div>
             </div>
             <div class="offcanvas-body pt-4">
                 <ul class="nav flex-column sidebar-nav">
                     <!-- Section: Unit Trust -->
-                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-2 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Unit Trust (UT)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/dashboard.html" id="pmoUtSideDash">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Dashboard</span>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
+                            <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../unit-trust/view_account.html" id="pmoUtSideViewAcct">
-                            <i class="iconoir-plus-circle fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/view-acccount.svg" width="20"></img></i> <span
                                 class="fw-medium">View Account</span>
                         </a>
                     </li>
@@ -460,27 +455,26 @@
                             data-bs-toggle="collapse" href="#AuthoriseCollapse" role="button" aria-expanded="false"
                             aria-controls="AuthoriseCollapse" id="pmoUtSideAuthToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-clipboard-check fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Authorise Transaction</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/authorise.svg" width="20"></img></i> <span
+                                    class="fw-medium">Authorise</span>
                             </div>
                             <div class="d-flex align-items-center gap-1">
-                                <span class="badge bg-danger rounded-circle px-2 py-1 text-meta">5</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                <span class="badge bg-danger rounded-circle px-2 py-1 fs-9">5</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="AuthoriseCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthTopup">
-                                        Top-Up Investment <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">2</span></a></li>
+                                        Top-Up Investment </a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/authorise.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideAuthRedeem">
-                                        Redemption <span
-                                            class="badge bg-danger rounded-circle ms-2 px-2 py-1 text-meta">3</span></a>
+                                        Redemption </a>
                                 </li>
                             </ul>
                         </div>
@@ -490,22 +484,23 @@
                             data-bs-toggle="collapse" href="#transactionEnquiryCollapse" role="button"
                             aria-expanded="false" aria-controls="transactionEnquiryCollapse" id="pmoUtSideTxnToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                    class="fw-medium">Transaction Enquiry</span>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i> <span
+                                    class="fw-medium">Transaction</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="transactionEnquiryCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnPending">Pending Investments</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
                             </ul>
                         </div>
@@ -515,47 +510,49 @@
                             data-bs-toggle="collapse" href="#statementCollapse" role="button" aria-expanded="false"
                             aria-controls="statementCollapse" id="pmoUtSideStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i> <span
                                     class="fw-medium">Statement</span>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <span
-                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 text-meta fw-bold">NEW</span>
-                                <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                                    class="badge bg-secondary bg-opacity-25 text-dark rounded-pill px-2 py-1 fs-9 fw-bold">NEW</span>
+                                <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                     aria-hidden="true"></i>
                             </div>
                         </a>
                         <div class="collapse ps-4 mt-1" id="statementCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=transactions"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt1">Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=annual"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt2">Annual/Interim</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=tax"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmtTax">Tax Voucher</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=fund"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt3">Fund Reports</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=einv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt4">e-Invoice</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/statements.html?tab=inv"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideStmt5">Invoice</a></li>
                             </ul>
                         </div>
                     </li>
 
                     <!-- Section: EOP -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Employer Online (EOP)</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../eop/dashboard.html"
                             id="eopSideHome">
-                            <i class="iconoir-home fs-5 me-3 text-dark" aria-hidden="true"></i>
+                            <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark" src="../images/icon/home.svg"
+                                    width="20"></img></i>
                             <span class="fw-medium">Dashboard</span>
                         </a>
                     </li>
@@ -565,34 +562,35 @@
                             aria-expanded="false" aria-controls="eopSidebarContribCollapse"
                             id="eopSidebarContribToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-coins fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/contribution.svg" width="20"></img></i>
                                 <span class="fw-medium">Contributions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarContribCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/contribution.html" id="eopSideMake">Make Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/upload.html" id="eopSideUpload">Upload Contribution</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/authorise.html" id="eopSideAuthorise">
                                         <span>Authorise Contribution</span>
-                                        <span class="badge bg-danger rounded-pill text-meta" id="eopNavBadgeAuth">3</span>
+                                        <span class="badge bg-danger rounded-pill fs-10" id="eopNavBadgeAuth">3</span>
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark d-flex align-items-center justify-content-between"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark d-flex align-items-center justify-content-between"
                                         href="../eop/payment.html" id="eopSidePayment">
                                         <span>Make Payment</span>
-                                        <span class="badge rounded-pill text-meta fw-bold eop-pending-pay-badge"
+                                        <span class="badge rounded-pill fs-10 fw-bold eop-pending-pay-badge"
                                             id="eopNavBadgePay"
                                             style="background-color: var(--brand-primary); color: #fff;">2</span>
                                     </a>
@@ -606,22 +604,23 @@
                             aria-expanded="false" aria-controls="eopSidebarRecordsCollapse"
                             id="eopSidebarRecordsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-page-search fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/transaction-history.svg" width="20"></img></i>
                                 <span class="fw-medium">Transactions</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarRecordsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html" id="eopSideTxnPast">
                                         Past Transaction
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/transactions.html?tab=pending" id="eopSideTxnPending">
                                         Pending Transaction
                                     </a>
@@ -634,24 +633,25 @@
                             data-bs-toggle="collapse" href="#eopSidebarStmtCollapse" role="button" aria-expanded="false"
                             aria-controls="eopSidebarStmtCollapse" id="eopSidebarStmtToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-multiple-pages fs-5 me-3 text-dark" aria-hidden="true"></i>
+                                <i class="fs-5 me-3 text-dark"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/statement.svg" width="20"></img></i>
                                 <span class="fw-medium">Statements</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="eopSidebarStmtCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html" id="eopSideStmt"> Contribution Statements</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=einv" id="eopSideEinv">e-Invoice</a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <a class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                    <a class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         href="../eop/statements.html?tab=inv" id="eopSideInv">Invoice</a>
                                 </li>
                             </ul>
@@ -659,47 +659,50 @@
                     </li>
 
                     <!-- Section: Analysis -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">Analysis</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark"
                             href="../analytics/unit-trust.html" id="pmoSideUtAnalytics">
-                            <i class="iconoir-graph-up fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/unit-trust.svg" width="20"></img></i> <span
                                 class="fw-medium">Unit Trust Analytics</span>
                         </a>
                     </li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../analytics/eop.html"
                             id="pmoSideEopAnalytics">
-                            <i class="iconoir-activity fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">EOP Analytics</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/prs.svg" width="20"></img></i> <span class="fw-medium">PRS
+                                Analytics</span>
                         </a>
                     </li>
 
                     <!-- Section: System -->
-                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase text-meta fw-bold"
+                    <li class="sidebar-section-header px-3 mt-4 mb-2 text-uppercase fs-9 fw-bold"
                         style="letter-spacing: 0.8px; font-size: 10px; color: #373761;">System</li>
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark justify-content-between collapsed"
                             data-bs-toggle="collapse" href="#settingsCollapse" role="button" aria-expanded="false"
                             aria-controls="settingsCollapse" id="pmoSideSettingsToggle">
                             <div class="d-flex align-items-center">
-                                <i class="iconoir-settings fs-5 me-3 text-dark" aria-hidden="true"></i> <span
+                                <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                        src="../images/icon/setting.svg" width="20"></img></i> <span
                                     class="fw-medium">Settings</span>
                             </div>
-                            <i class="iconoir-nav-arrow-down text-muted icon-size-sm transition-transform"
+                            <i class="iconoir-nav-arrow-down text-muted fs-7 transition-transform"
                                 aria-hidden="true"></i>
                         </a>
                         <div class="collapse ps-4 mt-1" id="settingsCollapse">
                             <ul class="nav flex-column border-start ps-3 ms-2">
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#profile"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsProfile">Corporate & Personal Profile</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#agent"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsAgent">Servicing UTC/PRC</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/settings.html#password"
-                                        class="nav-link p-0 text-muted text-caption fw-medium hover-text-dark"
+                                        class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoSideSettingsPassword">Change Password</a></li>
                             </ul>
                         </div>
@@ -707,8 +710,9 @@
                     <li class="nav-item mb-1">
                         <a class="nav-link rounded-3 d-flex align-items-center text-dark" href="../index.html"
                             id="pmoSideLogout">
-                            <i class="iconoir-log-out fs-5 me-3 text-dark" aria-hidden="true"></i> <span
-                                class="fw-medium">Log Out</span>
+                            <i class="fs-5 me-3 text-dark" aria-hidden="true"><img clas="fs-5 me-3 text-dark"
+                                    src="../images/icon/logout.svg" width="20"></img></i> <span class="fw-medium">Log
+                                Out</span>
                         </a>
                     </li>
                 </ul>
@@ -720,9 +724,9 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script defer src="../js/layout-active.js"></script>
     <script>
-        // Initialize tooltips
+        // Initialize tooltips and populate mock data
         document.addEventListener('DOMContentLoaded', function () {
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 let options = {};
                 if (tooltipTriggerEl.tagName === 'TD') {
@@ -732,63 +736,101 @@
             });
 
             // Get query params
-            const urlParams = new URLSearchParams(window.location.search);
-            const refParam = urlParams.get('ref') || 'UT26000000000195';
+                const urlParams = new URLSearchParams(window.location.search);
+                const refParam = urlParams.get('ref') || 'UT26000000000195';
 
-            // Dynamic Mock Data for Pending Top-Up Investment requests
-            const tribesData = {
-                'UT26000000000195': {
-                    fund: 'PUBLIC STRATEGIC GROWTH FUND',
-                    account: '094766567',
-                    category: 'Equity',
-                    riskIcon: '../images/icon/risk-level/icon_risk4.png',
-                    riskLabel: 'Risk 4 - High',
-                    totalUnits: '150,000.00 Units',
-                    topupUnits: '45,454.55 Units',
-                    afterTopup: '195,454.55 Units',
-                    amount: 'MYR 100,000.00',
-                    amountVal: 'MYR 100,000.00 <span class="text-muted text-meta fw-normal">(Est. NAV Price: MYR 2.2000)</span>',
-                    rawAmount: 'MYR 100,000.00',
-                    rawUnits: '45,454.55 Units',
-                    impact: 'Increases STRATEGIC holdings by 30.3%'
-                },
-                'UT26000000000196': {
-                    fund: 'PUBLIC ISLAMIC DIVIDEND FUND',
-                    account: '0283749202',
-                    category: 'Islamic / Dividend',
-                    riskIcon: '../images/icon/risk-level/icon_risk3.png',
-                    riskLabel: 'Risk 3 - Moderate',
-                    totalUnits: '80,000.00 Units',
-                    topupUnits: '22,727.27 Units',
-                    afterTopup: '102,727.27 Units',
-                    amount: 'MYR 50,000.00',
-                    amountVal: 'MYR 50,000.00 <span class="text-muted text-meta fw-normal">(Est. NAV Price: MYR 2.2000)</span>',
-                    rawAmount: 'MYR 50,000.00',
-                    rawUnits: '22,727.27 Units',
-                    impact: 'Increases DIVIDEND holdings by 28.4%'
-                }
-            };
+                // Dynamic Mock Data for Pending Top-Up Investment requests
+                const tribesData = {
+                    'UT26000000000195': {
+                        fund: 'PB FIXED INCOME FUND',
+                        account: '094766567',
+                        category: 'Equity',
+                        riskIcon: '../images/icon/risk-level/icon_risk4.png',
+                        riskLabel: 'Risk 4 - High',
+                        totalUnits: '185,000.00 Units',
+                        topupUnits: '95,174.64 Units',
+                        afterTopup: '280,174.64 Units',
+                        amount: 'MYR 100,000.00',
+                        impact: 'Increases PB FIXED INCOME holdings by 51.4%'
+                    },
+                    'UT26000000000196': {
+                        fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
+                        account: '094766508',
+                        category: 'Equity',
+                        riskIcon: '../images/icon/risk-level/icon_risk5.png',
+                        riskLabel: 'Risk 5 - Very High',
+                        totalUnits: '160,000.00 Units',
+                        topupUnits: '49,860.39 Units',
+                        afterTopup: '209,860.39 Units',
+                        amount: 'MYR 50,000.00',
+                        impact: 'Increases e-CASH DEPOSIT holdings by 31.2%'
+                    },
+                    'UT26000000000197': {
+                        fund: 'PB CASH MANAGEMENT FUND - CLASS B',
+                        account: '148822319',
+                        category: 'Money Market',
+                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                        riskLabel: 'Risk 1 - Low',
+                        totalUnits: '50,000.00 Units',
+                        topupUnits: '20,008.00 Units',
+                        afterTopup: '70,008.00 Units',
+                        amount: 'MYR 20,000.00',
+                        impact: 'Increases PB CASH MANAGEMENT holdings by 40.0%'
+                    }
+                };
 
-            // Grab active transaction data based on parameter
-            const activeTribe = tribesData[refParam] || tribesData['UT26000000000195'];
+                // Grab active transaction data based on parameter
+                const activeTribe = tribesData[refParam] || tribesData['UT26000000000195'];
 
-            // Populate page headers & detail fields with data
-            document.getElementById('headerRefDisplay').textContent = refParam;
-            document.getElementById('headerFundDisplay').textContent = activeTribe.fund;
-            document.getElementById('refNoDisplay').textContent = refParam;
-            document.getElementById('fundNameDisplay').textContent = activeTribe.fund;
-            document.getElementById('accountDisplay').textContent = activeTribe.account;
-            document.getElementById('fundCategoryDisplay').textContent = activeTribe.category;
+                // Populate page headers & detail fields with data
+                const headerRefEl = document.getElementById('headerRefDisplay');
+                const headerFundEl = document.getElementById('headerFundDisplay');
+                if (headerRefEl) headerRefEl.textContent = refParam;
+                if (headerFundEl) headerFundEl.textContent = activeTribe.fund;
 
-            document.getElementById('riskIconDisplay').src = activeTribe.riskIcon;
-            document.getElementById('riskLabelDisplay').textContent = activeTribe.riskLabel;
+                // Overview card
+                const refNoEl = document.getElementById('refNoDisplay');
+                const fundNameEl = document.getElementById('fundNameDisplay');
+                const accountEl = document.getElementById('accountDisplay');
+                const fundCategoryEl = document.getElementById('fundCategoryDisplay');
+                const riskIconEl = document.getElementById('riskIconDisplay');
+                const riskLabelEl = document.getElementById('riskLabelDisplay');
 
-            document.getElementById('investmentAmountDisplay2').textContent = activeTribe.rawAmount;
+                if (refNoEl) refNoEl.textContent = refParam;
+                if (fundNameEl) fundNameEl.textContent = activeTribe.fund;
+                if (accountEl) accountEl.textContent = activeTribe.account;
+                if (fundCategoryEl) fundCategoryEl.textContent = activeTribe.category;
+                if (riskIconEl) riskIconEl.src = activeTribe.riskIcon;
+                if (riskLabelEl) riskLabelEl.textContent = activeTribe.riskLabel;
 
-            // Formulate current request dynamic date
-            const now = new Date();
-            const formattedDate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-            document.getElementById('requestDateDisplay').textContent = formattedDate;
+                // Investment & Unit Details card
+                const totalUnitsEl = document.getElementById('totalUnitsDisplay');
+                const topupUnitsEl = document.getElementById('topupUnitsDisplay');
+                const afterTopupEl = document.getElementById('afterTopupDisplay');
+                const investmentAmountEl = document.getElementById('investmentAmountDisplay');
+
+                if (totalUnitsEl) totalUnitsEl.textContent = activeTribe.totalUnits;
+                if (topupUnitsEl) topupUnitsEl.textContent = activeTribe.topupUnits;
+                if (afterTopupEl) afterTopupEl.textContent = activeTribe.afterTopup;
+                if (investmentAmountEl) investmentAmountEl.textContent = activeTribe.amount;
+
+                // Right column Summary Card
+                const investmentAmountDisplay2 = document.getElementById('investmentAmountDisplay2');
+                const topupUnitsDisplay2 = document.getElementById('topupUnitsDisplay2');
+                const portfolioImpactDisplay = document.getElementById('portfolioImpactDisplay');
+
+                if (investmentAmountDisplay2) investmentAmountDisplay2.textContent = activeTribe.amount;
+                if (topupUnitsDisplay2) topupUnitsDisplay2.textContent = activeTribe.topupUnits;
+                if (portfolioImpactDisplay) portfolioImpactDisplay.textContent = activeTribe.impact;
+
+                // Date
+                const now = new Date();
+                const formattedDate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+            const reqDateEl = document.getElementById('requestDateDisplay');
+            if (reqDateEl) reqDateEl.textContent = formattedDate;
+
+            const printDateTime = document.getElementById('printDateTime');
+            if (printDateTime) printDateTime.textContent = now.toLocaleString('en-MY');
         });
     </script>
 </body>

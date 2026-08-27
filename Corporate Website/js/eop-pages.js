@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function makeNewRowBadge(idx, prefix) {
             const span = document.createElement('span');
-            span.className = 'badge rounded-pill text-meta fw-semibold';
+            span.className = 'badge rounded-pill fs-10 fw-semibold';
             span.id = `${prefix}${idx}`;
             span.setAttribute('role', 'status');
             span.textContent = 'New';
@@ -895,7 +895,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <tr class="border-bottom">
                         <td class="ps-3 py-3 fw-bold text-dark">${r.name}</td>
                         <td class="py-3 text-secondary font-monospace">${r.nric}</td>
-                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 text-meta fw-semibold">${r.fund}</span></td>
+                        <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-semibold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
                         <td class="pe-3 py-3 text-end fw-bold text-dark">RM ${r.amount}</td>
                     </tr>

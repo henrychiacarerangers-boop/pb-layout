@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.48 55.94">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ed1c24;
+        font-family: Poppins-Black, Poppins;
+        font-size: 13px;
+        font-weight: 800;
+        stroke: #ed1c24;
+        stroke-miterlimit: 10;
+        stroke-width: .25px;
+      }
+
+      .cls-2 {
+        fill: #58595b;
+      }
+    </style>
+  </defs>
+  <g id="icon">
+    <g>
+      <path class="cls-2" d="M10.21,1.34h32.01c.34,0,.62-.28.62-.62s-.28-.62-.62-.62H9.64C4.33.1,0,4.43,0,9.74v36.55c0,5.28,4.3,9.6,9.58,9.64h.08s31.18,0,31.18,0c5.32,0,9.64-4.33,9.64-9.64V.69c0-.34-.28-.62-.62-.62s-.62.28-.62.62v45.61c0,4.63-3.77,8.4-8.4,8.4H10.21v.53c0-.34-.28-.62-.62-.62s-.62.28-.62.62v-.53l-.76-.13c-4.04-.7-6.97-4.17-6.97-8.27V9.74C1.24,5.65,4.17,2.17,8.21,1.47l.76-.13"/>
+      <text class="cls-1" transform="translate(9.41 25.75)"><tspan x="0" y="0">UNIT</tspan><tspan x="-5.27" y="15.42">TRUST</tspan></text>
+      <circle class="cls-2" cx="45.83" cy=".64" r=".64"/>
+    </g>
+  </g>
+</svg>

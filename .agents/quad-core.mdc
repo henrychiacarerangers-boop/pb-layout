@@ -32,7 +32,7 @@ For every coding, layout, or script engineering task in this project, you must a
 - **Audit:** Prior to presenting any interface code, verify that it adheres strictly to the **Pro Max Design Guidelines** (`ui_ux_standards.md`):
   - **Typography:** Enforce Google Fonts **Montserrat** (`font-family: 'Montserrat', sans-serif`) globally. System default san-serifs are prohibited.
   - **Surfaces:** Cards must use `border-radius: 15px !important` and a deep diffused floating shadow: `box-shadow: 0 10px 30px rgba(0,0,0,0.2)`.
-  - **Action items:** Standard primary triggers must be pill-shaped (`border-radius: 25px`) colored in solid Brand Red (`#ff1700`).
+  - **Action items:** Standard primary triggers must be pill-shaped (`border-radius: 25px`) colored in solid Brand Red (`#d3112b`).
   - **State Transitions:** Every hover state must be transition-buffered (`transition: all 0.3s ease`).
   - **Script Scoping:** Ensure all Javascript is strictly encapsulated inside a `DOMContentLoaded` block to prevent global variable leakage.
 
