@@ -84,9 +84,11 @@
         }
     </style>
     <link rel="stylesheet" href="../css/table-system.css">
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
     data-pmo-footer-print="1">
 
     <!-- Top Landing Section -->
@@ -187,21 +189,21 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_account.html">View Account</a>
+                        <a class="nav-link pmo-primary-nav__link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="authorise.html">Authorise </a>
+                        <a class="nav-link pmo-primary-nav__link active" href="authorise.html" aria-current="page">Authorise </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="transactions.html">Transactions</a>
+                        <a class="nav-link pmo-primary-nav__link" href="transactions.html">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="statements.html">Statements</a>
+                        <a class="nav-link pmo-primary-nav__link" href="statements.html">Statements</a>
                     </li>
 
                 </ul>
@@ -230,7 +232,7 @@
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <button type="button" onclick="window.print()"
-                        class="btn btn-outline-dark pmo-btn-toolbar">
+                        class="btn btn-outline-dark pmo-btn-toolbar pmo-button pmo-button--secondary">
                         <i class="iconoir-printer"></i> Print
                     </button>
                 </div>
@@ -253,9 +255,9 @@
             </div>
 
             <!-- Crucial Alert Box -->
-            <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5" id="authoriseAlertCard">
-                <div class="card-body p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
-                    <div class="d-flex gap-3">
+            <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5" id="authoriseAlertCard">
+                <div class="card-body pmo-alert pmo-alert--attention p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
+                    <div class="pmo-alert__content d-flex gap-3">
                         <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
                         <div>
                             <h6 class="fw-bold text-danger mb-2">Authorisation Alert</h6>
@@ -274,8 +276,8 @@
                 <!-- LEFT: Form fields and transaction details -->
                 <div class="col-lg-8">
                     <!-- Unified Request and Investment Details Card -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
-                        <div class="card-body p-4">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white mb-4">
+                        <div class="card-body pmo-card__body p-4">
                             <h5 class="fw-bold text-dark mb-3 pb-2 border-bottom">Request Overview</h5>
 
                             <div class="table-responsive pmo-table-frame">
@@ -345,15 +347,15 @@
 
                     <!-- Action Button: Only Back button -->
                     <div class="pmo-action-bar print-hidden">
-                        <button class="btn btn-outline-dark"
+                        <button class="btn btn-outline-dark pmo-button pmo-button--secondary"
                             onclick="location.href='authorise.html'">Back</button>
                     </div>
                 </div>
 
                 <!-- RIGHT: Authorisation Summary Action Deck -->
                 <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="card-body p-2 d-flex flex-column justify-content-between">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body pmo-card__body p-2 d-flex flex-column justify-content-between">
                             <div>
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
                                 <div class="mb-3">

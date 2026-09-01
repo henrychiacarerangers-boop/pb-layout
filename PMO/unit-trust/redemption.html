@@ -190,9 +190,11 @@
             display: none;
         }
     </style>
+    <link rel="stylesheet" href="../../design-tokens.css">
+    <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
@@ -263,25 +265,25 @@
                 <p class="fs-8 mb-4" style="color: rgba(255, 255, 255, 0.75) !important;">Last Login: 20 April 2026,
                     09:16</p>
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="view_account.html">View Account</a>
+                        <a class="nav-link pmo-primary-nav__link active" href="view_account.html" aria-current="page">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Authorise <span
+                        <a class="nav-link pmo-primary-nav__link" href="#">Authorise <span
                                 class="badge bg-danger rounded-circle ms-2 px-2 py-1 fs-9">5</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="transactions.html">Transactions</a>
+                        <a class="nav-link pmo-primary-nav__link" href="transactions.html">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="statements.html">Statements</a>
+                        <a class="nav-link pmo-primary-nav__link" href="statements.html">Statements</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="analytics.html">Analytics</a>
+                        <a class="nav-link pmo-primary-nav__link" href="analytics.html">Analytics</a>
                     </li>
                 </ul>
             </div>
@@ -333,9 +335,9 @@
             <!-- STEP 1: Form (Part 1 - Investment Details Input) -->
             <div id="step1Form" class="row g-4 justify-content-center">
                 <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white h-100 p-4">
-                        <div class="card-body p-2">
-                            <form id="step1Part1Form">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white h-100 p-4">
+                        <div class="card-body pmo-card__body p-2">
+                            <form id="step1Part1Form" class="pmo-transaction-form">
                                 <div class="mb-4">
                                     <label class="form-label fs-8 text-muted mb-2">Select Account to Redeem</label>
                                     <div class="input-group">
@@ -432,7 +434,7 @@
                     <div class="d-flex justify-content-end gap-3 mt-2">
                         <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                             onclick="location.href='view_account.html'">Cancel</button>
-                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm pmo-button pmo-button--primary"
                             id="btn-to-part2">Continue</button>
                     </div>
                 </div>
@@ -512,10 +514,10 @@
                     <div class="d-flex justify-content-end gap-3 mt-2">
                         <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
                             onclick="location.href='view_account.html'">Cancel</button>
-                        <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
-                            id="btn-back-to-part1">Back</button>
-                        <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
-                            id="btn-to-payment">Continue</button>
+                    <button class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold pmo-button pmo-button--secondary"
+                        id="btn-back-to-part1">Back</button>
+                    <button class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm pmo-button pmo-button--primary"
+                        id="btn-to-payment">Continue</button>
                     </div>
                 </div>
             </div>
@@ -524,11 +526,11 @@
             <div id="step2Form" class="row g-4 d-none">
                 <div class="col-lg-7">
                     <!-- LEFT: Security Verification Form -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="card-body p-2">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white p-4">
+                        <div class="card-body pmo-card__body p-2">
                             <h5 class="fw-bold mb-4 pb-2 border-bottom text-dark">Secure Verification</h5>
 
-                            <form id="step2VerificationForm">
+                            <form id="step2VerificationForm" class="pmo-transaction-form">
                                 <!-- Captcha verification -->
                                 <div class="row mb-4 align-items-center">
                                     <div class="col-md-5 mb-3 mb-md-0">
@@ -548,22 +550,22 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">Verification Method</label>
-                                    <select class="form-select text-dark fw-semibold">
+                                <div class="mb-3 pmo-field">
+                                    <label class="form-label pmo-field__label">Verification Method</label>
+                                    <select class="form-select pmo-field__control text-dark fw-semibold">
                                         <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
                                         <option value="SecureSign">SecureSign</option>
                                     </select>
                                 </div>
-                                <div class="mb-2">
-                                    <label class="form-label">PAC Number</label>
+                                <div class="mb-2 pmo-field">
+                                    <label class="form-label pmo-field__label">PAC Number</label>
                                     <div class="pac-group">
-                                        <input type="password" class="form-control" id="pacInput"
-                                            placeholder="Enter 8-digit PAC" value="12345678" maxlength="8">
-                                        <button type="button" class="btn-request-pac" id="btn-request-pac">REQUEST
+                                        <input type="password" class="form-control pmo-field__control" id="pacInput"
+                                            placeholder="Enter 8-digit PAC" value="12345678" maxlength="8" aria-describedby="pac-error" aria-invalid="false">
+                                        <button type="button" class="btn-request-pac pmo-button pmo-button--quiet" id="btn-request-pac">REQUEST
                                             PAC</button>
                                     </div>
-                                    <div class="invalid-feedback" id="pac-error" style="display:none;">Incorrect PAC
+                                    <div class="invalid-feedback pmo-field__feedback" id="pac-error" role="alert" aria-live="polite" style="display:none;">Incorrect PAC
                                         number. Please click 'REQUEST PAC' and use 12345678 to proceed.</div>
                                 </div>
                                 <div class="pac-info-text mb-4 text-muted fs-9">
@@ -617,9 +619,9 @@
 
                 <div class="col-12">
                     <div class="d-flex justify-content-end gap-3 mt-2">
-                        <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold"
+                        <button type="button" class="btn btn-outline-dark rounded-pill px-5 py-2 fw-semibold pmo-button pmo-button--secondary"
                             id="btn-back-to-part2">Back</button>
-                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm"
+                        <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm pmo-button pmo-button--primary"
                             id="btn-confirm-payment-trigger">Confirm Redemption</button>
                     </div>
                 </div>

@@ -161,8 +161,7 @@
                                             style="width: 35px; height: 35px;" aria-hidden="true">
                                             <i class="iconoir-user fs-5 text-dark"></i>
                                         </div>
-                                        <span class="fs-8 fw-semibold d-none d-sm-inline" id="eopNavUserLabel">Employer
-                                            Admin</span>
+
                                         <i class="iconoir-nav-arrow-down fs-7 ms-1 align-middle" aria-hidden="true"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg rounded-4 p-2 mt-2 fs-8 animate slideIn pmo-user-dropdown-menu"
@@ -254,10 +253,8 @@
                             </h2>
                         </div>
                     </div>
-                    <button type="button"
-                        class="btn btn-outline-dark pmo-btn-toolbar print-hidden"
-                        id="eopPayDetailPrintBtn"
-                        onclick="window.print()">
+                    <button type="button" class="btn btn-outline-dark pmo-btn-toolbar print-hidden"
+                        id="eopPayDetailPrintBtn" onclick="window.print()">
                         <i class="iconoir-printer" aria-hidden="true"></i> Print
                     </button>
                 </div>
@@ -474,17 +471,16 @@
 
                                         <!-- PAC Method Container -->
                                         <div id="eopPayPacFieldsWrapper">
-                                            <h6 class="fw-bold text-primary mb-3" style="color: var(--brand-navy) !important;">
+                                            <h6 class="fw-bold text-primary mb-3"
+                                                style="color: var(--brand-navy) !important;">
                                                 Personal Authentication Code (PAC)</h6>
                                             <div class="d-flex align-items-center gap-2 mb-2">
                                                 <input type="password"
                                                     class="form-control border-secondary rounded-2 px-3 py-2 fs-7"
                                                     id="eopPayPacInput" placeholder="PAC No" maxlength="8"
                                                     autocomplete="one-time-code" style="max-width: 240px;">
-                                                <button type="button"
-                                                    class="btn pmo-btn-action btn-dark shadow-sm"
-                                                    id="eopPayBtnRequestPac"
-                                                    style="white-space: nowrap;">Request
+                                                <button type="button" class="btn pmo-btn-action btn-dark shadow-sm"
+                                                    id="eopPayBtnRequestPac" style="white-space: nowrap;">Request
                                                     PAC</button>
                                             </div>
                                             <div class="invalid-feedback d-none mb-2" id="eopPayPacErr"
@@ -526,7 +522,8 @@
 
                                         <!-- SecureSign Method Container -->
                                         <div id="eopPaySecureSignContainer" class="d-none">
-                                            <h6 class="fw-bold text-primary mb-3" style="color: var(--brand-navy) !important;">
+                                            <h6 class="fw-bold text-primary mb-3"
+                                                style="color: var(--brand-navy) !important;">
                                                 SecureSign Verification</h6>
                                             <div
                                                 class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3 mb-2">

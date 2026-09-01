@@ -15,6 +15,27 @@ test('design system library exposes all curated component families', () => {
     }
 });
 
+test('design system library exposes the complete audited inventory', () => {
+    const families = [
+        'application-shell', 'drawer', 'dropdown', 'modal', 'accordion',
+        'download-badge', 'empty-state', 'support-widget'
+    ];
+
+    for (const family of families) {
+        assert.match(html, new RegExp(`data-component-family="${family}"`));
+    }
+});
+
+test('design system library documents every first-wave shared-core contract', () => {
+    for (const contract of [
+        'pmo-app-shell', 'pmo-primary-nav', 'pmo-button', 'pmo-field',
+        'pmo-alert', 'pmo-status', 'pmo-table-frame', 'pmo-data-table',
+        'pmo-card', 'pmo-metric'
+    ]) {
+        assert.match(html, new RegExp(contract));
+    }
+});
+
 test('design system library retains its navigable foundations, patterns, and source map', () => {
     for (const section of ['foundations', 'tokens', 'components', 'previews', 'patterns', 'source']) {
         assert.match(html, new RegExp(`<section id="${section}">`));

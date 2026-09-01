@@ -11,6 +11,7 @@
     <link href="../css/montserrat.css" rel="stylesheet">
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="../css/iconoir.css">
+    <link rel="stylesheet" href="../../design-tokens.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css">
@@ -21,9 +22,10 @@
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
 
     <link rel="stylesheet" href="../css/table-system.css">
+    <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
@@ -123,21 +125,21 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                        <a class="pmo-primary-nav__link nav-link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_account.html">View Account</a>
+                        <a class="pmo-primary-nav__link nav-link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="authorise.html">Authorise </a>
+                        <a class="pmo-primary-nav__link nav-link active" href="authorise.html" aria-current="page">Authorise </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="transactions.html">Transactions</a>
+                        <a class="pmo-primary-nav__link nav-link" href="transactions.html">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="statements.html">Statements</a>
+                        <a class="pmo-primary-nav__link nav-link" href="statements.html">Statements</a>
                     </li>
 
                 </ul>
@@ -152,17 +154,17 @@
                 <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Transactions Pending for Approval</h2>
             </div>
             <!-- Card with Tabs (Styled like Analytics Page) -->
-            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4">
+            <div class="pmo-card card border-0 shadow-sm rounded-4 bg-white mb-4 p-4">
 
                 <!-- View Tab Links (Interactive) -->
                 <div class="border-bottom pb-3 mb-4">
-                    <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
+                    <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0" role="tablist" aria-label="Authorisation type">
                         <a href="javascript:void(0)" class="view-tab active d-flex align-items-center gap-2"
-                            id="tab-topup">
+                            id="tab-topup" role="tab" aria-selected="true" aria-controls="topup">
                             Top-Up Investment
                         </a>
                         <a href="javascript:void(0)" class="view-tab d-flex align-items-center gap-2"
-                            id="tab-redemption">
+                            id="tab-redemption" role="tab" aria-selected="false" aria-controls="redemption">
                             Redemption
                         </a>
                     </div>
@@ -171,7 +173,7 @@
                 <div class="card-body p-0 tab-content" id="authoriseTabContent">
                     <!-- Top-Up Tab Pane (Populated with Pending Requests) -->
                     <!-- Top-Up Tab Pane -->
-                    <div class="tab-pane fade show active" id="topup" role="tabpanel" aria-labelledby="topup-tab">
+                    <div class="tab-pane fade show active" id="topup" role="tabpanel" aria-labelledby="tab-topup">
                         <div class="border rounded-4 overflow-hidden mb-4">
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table">
@@ -376,7 +378,7 @@
                     </div>
 
                     <!-- Redemption Tab Pane -->
-                    <div class="tab-pane fade show" id="redemption" role="tabpanel" aria-labelledby="redemption-tab">
+                    <div class="tab-pane fade" id="redemption" role="tabpanel" aria-labelledby="tab-redemption" hidden>
                         <div class="border rounded-4 overflow-hidden mb-4">
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table">
@@ -972,14 +974,22 @@
             function activateTab(tabName) {
                 if (tabName === 'redemption' && tabRedemption && paneRedemption) {
                     tabRedemption.classList.add('active');
+                    tabRedemption.setAttribute('aria-selected', 'true');
                     if (tabTopup) tabTopup.classList.remove('active');
+                    if (tabTopup) tabTopup.setAttribute('aria-selected', 'false');
                     paneRedemption.classList.add('show', 'active');
+                    paneRedemption.hidden = false;
                     if (paneTopup) paneTopup.classList.remove('show', 'active');
+                    if (paneTopup) paneTopup.hidden = true;
                 } else if (tabName === 'topup' && tabTopup && paneTopup) {
                     tabTopup.classList.add('active');
+                    tabTopup.setAttribute('aria-selected', 'true');
                     if (tabRedemption) tabRedemption.classList.remove('active');
+                    if (tabRedemption) tabRedemption.setAttribute('aria-selected', 'false');
                     paneTopup.classList.add('show', 'active');
+                    paneTopup.hidden = false;
                     if (paneRedemption) paneRedemption.classList.remove('show', 'active');
+                    if (paneRedemption) paneRedemption.hidden = true;
                 }
             }
 
@@ -990,6 +1000,19 @@
 
                 tabRedemption.addEventListener('click', function () {
                     activateTab('redemption');
+                });
+
+                [tabTopup, tabRedemption].forEach(function (tab, index, tabs) {
+                    tab.addEventListener('keydown', function (event) {
+                        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+                        event.preventDefault();
+                        const nextIndex = event.key === 'ArrowRight'
+                            ? (index + 1) % tabs.length
+                            : (index - 1 + tabs.length) % tabs.length;
+                        const nextTab = tabs[nextIndex];
+                        nextTab.focus();
+                        activateTab(nextTab === tabTopup ? 'topup' : 'redemption');
+                    });
                 });
             }
 

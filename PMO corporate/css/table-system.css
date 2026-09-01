@@ -1,3 +1,6 @@
+@import url("../../design-tokens.css");
+@import url("../../pmo-core.css");
+
 /*
  * PMO data-table system
  * The only production source of table presentation.  Keep page CSS free of

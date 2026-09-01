@@ -11,6 +11,7 @@
     <link href="../css/montserrat.css" rel="stylesheet">
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="../css/iconoir.css">
+    <link rel="stylesheet" href="../../design-tokens.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css?v=table-standard-20260721">
@@ -22,9 +23,10 @@
     <link rel="stylesheet" href="../css/eop-dashboard.css">
 
     <link rel="stylesheet" href="../css/table-system.css">
+    <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
     <div class="top-landing-wrapper position-relative"
@@ -123,21 +125,21 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                        <a class="pmo-primary-nav__link nav-link active" href="dashboard.html" aria-current="page">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_account.html">View Account</a>
+                        <a class="pmo-primary-nav__link nav-link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="authorise.html">Authorise </a>
+                        <a class="pmo-primary-nav__link nav-link" href="authorise.html">Authorise </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="transactions.html">Transactions</a>
+                        <a class="pmo-primary-nav__link nav-link" href="transactions.html">Transactions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="statements.html">Statements</a>
+                        <a class="pmo-primary-nav__link nav-link" href="statements.html">Statements</a>
                     </li>
 
                 </ul>
@@ -150,21 +152,19 @@
         <div class="container">
             <!-- Pending Approval Alert -->
             <div
-                class="badge-alert badge-alert-outline-danger d-flex align-items-center justify-content-between w-100 mb-4">
-                <div class="d-flex align-items-center">
+                class="pmo-alert pmo-alert--attention badge-alert badge-alert-outline-danger w-100 mb-4">
+                <div class="pmo-alert__content">
                     <i class="iconoir-warning-triangle me-2"></i>
                     <span>Pending Approval: <strong>3 Transactions</strong></span>
                 </div>
-                <a href="authorise.html?tab=redemption"><button
-                        class="btn btn-danger btn-sm px-4 rounded-pill fs-8 fw-bold">Approve
-                        Now</button></a>
+                <a href="authorise.html?tab=redemption" class="pmo-button pmo-button--primary">Approve now</a>
             </div>
 
             <div class="row g-4 mb-4">
                 <!-- Portfolio Holdings Card -->
                 <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
-                        <div class="card-body p-4 d-flex flex-column">
+                    <div class="pmo-card card border-0 shadow-sm rounded-4 h-100 p-2">
+                        <div class="pmo-card__body card-body p-4 d-flex flex-column">
                             <div class="pb-4">
                                 <h1 class="fw-normal mb-1 fs-4">Welcome to <span class="fw-bold">Corporate Public Mutual
                                         Online</span></h1>
@@ -189,19 +189,19 @@
                                             2026</small>
                                     </div>
                                 </div>
-                                <button class="btn pmo-btn-action btn-danger shadow-sm"
+                                <button class="pmo-button pmo-button--primary btn pmo-btn-action btn-danger shadow-sm"
                                     onclick="location.href='top_up.html'">Top Up</button>
                             </div>
 
                             <div class="row g-2 mb-auto">
                                 <div class="col-4">
                                     <div
-                                        class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold fs-7 text-dark mb-1 amount-value"
+                                        class="pmo-metric stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
+                                        <div class="pmo-metric__value fw-bold fs-7 text-dark mb-1 amount-value"
                                             data-value="MYR 240,520.57">
                                             ********</div>
                                         <div
-                                            class="text-muted fs-9 d-flex align-items-center justify-content-center gap-1">
+                                            class="pmo-metric__label text-muted fs-9 d-flex align-items-center justify-content-center gap-1">
                                             Investment Cost <span class="bubble-info"><i class="iconoir-info-circle"
                                                     style="cursor: pointer;" data-bs-toggle="popover"
                                                     data-bs-trigger="hover" data-bs-placement="top"
@@ -211,12 +211,12 @@
                                 </div>
                                 <div class="col-4">
                                     <div
-                                        class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
+                                        class="pmo-metric stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
+                                        <div class="pmo-metric__value fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
                                             data-value="MYR 316,851.15">
                                             ********
                                         </div>
-                                        <div class="text-muted fs-9">Unrealised Returns <span class="bubble-info"><i
+                                        <div class="pmo-metric__label text-muted fs-9">Unrealised Returns <span class="bubble-info"><i
                                                     class="iconoir-info-circle" style="cursor: pointer;"
                                                     data-bs-toggle="popover" data-bs-trigger="hover"
                                                     data-bs-placement="top"
@@ -226,12 +226,12 @@
                                 </div>
                                 <div class="col-4">
                                     <div
-                                        class="stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
+                                        class="pmo-metric stat-box bg-light rounded-3 p-3 text-center h-100 d-flex flex-column justify-content-center">
+                                        <div class="pmo-metric__value fw-bold fs-7 text-success mb-1 d-flex justify-content-center align-items-center gap-1 amount-value"
                                             data-value="MYR 12,302.00">
                                             ********
                                         </div>
-                                        <div class="text-muted fs-9">Realised Returns <span class="bubble-info"><i
+                                        <div class="pmo-metric__label text-muted fs-9">Realised Returns <span class="bubble-info"><i
                                                     class="iconoir-info-circle" style="cursor: pointer;"
                                                     data-bs-toggle="popover" data-bs-trigger="hover"
                                                     data-bs-placement="top"
@@ -286,8 +286,8 @@ The realised returns are the gain/loss resulting from the redemption of your inv
 
                 <!-- Recent Transactions Card -->
                 <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
-                        <div class="card-body p-4">
+                    <div class="pmo-card card border-0 shadow-sm rounded-4 h-100 p-2">
+                        <div class="pmo-card__body card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="fw-bold mb-0 fs-6">Monthly Transactions</h5>
                                 <a href="transactions.html"
@@ -312,7 +312,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="fw-semibold text-dark fs-8">06/05/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Initial Investment">II</div>
-                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                                <span class="pmo-status pmo-status--success pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta py-2">
                                                 <div class="pmo-fund-code mb-0.5 fs-8">136252514</div>
@@ -328,7 +328,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="fw-semibold text-dark fs-8">06/05/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Additional Investment">AI</div>
-                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                                <span class="pmo-status pmo-status--success pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta py-2">
                                                 <div class="pmo-fund-code mb-0.5 fs-8">094766508</div>
@@ -345,7 +345,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="fw-semibold text-dark fs-8">02/05/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Switch In">SI</div>
-                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                                <span class="pmo-status pmo-status--success pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta py-2">
                                                 <div class="pmo-fund-code mb-0.5 fs-8">094766567</div>
@@ -361,7 +361,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="fw-semibold text-dark fs-8">28/04/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Redemption / Repurchase">RP</div>
-                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                                <span class="pmo-status pmo-status--success pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
                                             <td class="pmo-table-meta py-2">
                                                 <div class="pmo-fund-code mb-0.5 fs-8">148822319</div>
@@ -383,8 +383,8 @@ The realised returns are the gain/loss resulting from the redemption of your inv
             <div class="row g-4 mb-5">
                 <!-- Price and Performance Card -->
                 <div class="col-lg-12">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
-                        <div class="card-body p-4">
+                    <div class="pmo-card card border-0 shadow-sm rounded-4 h-100 p-2">
+                        <div class="pmo-card__body card-body p-4">
                             <h5 class="fw-bold mb-3 fs-6">Price and Performance of Your Holdings Funds</h5>
                             <div class="text-center mb-3">
                                 <span class="fs-8 fw-semibold text-dark">Annualised Return (%)</span>
@@ -639,8 +639,8 @@ The realised returns are the gain/loss resulting from the redemption of your inv
 
                 <!-- Fund Analytics Card -->
                 <!-- <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-2">
-                        <div class="card-body p-4">
+                    <div class="pmo-card card border-0 shadow-sm rounded-4 h-100 p-2">
+                        <div class="pmo-card__body card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <h5 class="fw-bold mb-0 fs-6">Fund Analytics</h5>
                                 <a href="../analytics/unit-trust.html"

@@ -31,13 +31,18 @@
     --space-3: 12px;
     --space-4: 16px;
     --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
     --radius-sm: 8px;
     --radius-md: 16px;
+    --radius-lg: 24px;
     --radius-pill: 999px;
     --shadow-sm: 0 4px 12px rgba(15, 40, 78, 0.04);
     --shadow-md: 0 8px 24px rgba(15, 40, 78, 0.08);
     --motion-fast: 160ms ease;
     --motion-standard: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-emphasis: 360ms cubic-bezier(0.16, 1, 0.3, 1);
+    --focus-ring: 0 0 0 3px rgba(211, 17, 43, 0.24);
 
     --type-xs: 0.75rem;
     --type-meta: 0.75rem;

@@ -1705,6 +1705,63 @@
                         <table class="spec-table">
                             <thead>
                                 <tr>
+                                    <th>First-wave contract</th>
+                                    <th>Canonical class</th>
+                                    <th>Variants / states</th>
+                                    <th>Reference migration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Application navigation</td>
+                                    <td><code>.pmo-app-shell</code><br><code>.pmo-primary-nav</code></td>
+                                    <td>Current page, hover, keyboard focus, horizontal overflow on mobile.</td>
+                                    <td>Corporate Dashboard and PMO Dashboard</td>
+                                </tr>
+                                <tr>
+                                    <td>Button</td>
+                                    <td><code>.pmo-button</code></td>
+                                    <td>Primary, secondary, quiet, danger; default, hover, focus, disabled.</td>
+                                    <td>Corporate approval action and PMO top-up actions</td>
+                                </tr>
+                                <tr>
+                                    <td>Form &amp; PAC</td>
+                                    <td><code>.pmo-field</code> <code>.pmo-transaction-form</code></td>
+                                    <td>Default, focus, error, helper / validation feedback; multi-step transaction form composition.</td>
+                                    <td>Authorisation and transaction migration</td>
+                                </tr>
+                                <tr>
+                                    <td>Access &amp; recovery</td>
+                                    <td><code>.pmo-auth-shell</code> <code>.pmo-auth-form</code></td>
+                                    <td>Login, registration, recovery, PAC verification; primary and secondary action hierarchy.</td>
+                                    <td>Corporate PMO access pages</td>
+                                </tr>
+                                <tr>
+                                    <td>Status &amp; alert</td>
+                                    <td><code>.pmo-alert</code><br><code>.pmo-status</code></td>
+                                    <td>Attention, success, pending, danger, neutral; status always includes text.</td>
+                                    <td>Corporate Dashboard pending approval and transaction states</td>
+                                </tr>
+                                <tr>
+                                    <td>Data table</td>
+                                    <td><code>.pmo-table-frame</code><br><code>.pmo-data-table</code></td>
+                                    <td>Standard, detail, financial analytics; scroll-safe mobile frame.</td>
+                                    <td>Corporate Dashboard transaction and fund tables</td>
+                                </tr>
+                                <tr>
+                                    <td>Card &amp; metric</td>
+                                    <td><code>.pmo-card</code><br><code>.pmo-metric</code></td>
+                                    <td>Summary surface, metric value, metric label; responsive padding.</td>
+                                    <td>Both reference dashboards</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel" style="margin-top:16px">
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
                                     <th>Component</th>
                                     <th>Variants</th>
                                     <th>Required states</th>

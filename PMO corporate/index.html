@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/iconoir.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../design-tokens.css">
+    <link rel="stylesheet" href="../pmo-core.css">
     <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
 
     <!-- Custom style overrides for financial solutions card hover animations -->
@@ -52,7 +54,7 @@
     <link rel="stylesheet" href="css/table-system.css">
 </head>
 
-<body class="premium-login-body">
+<body class="premium-login-body pmo-app-shell pmo-auth-shell">
 
     <div class="widescreen-login-container">
 
@@ -140,7 +142,7 @@
 
                             <!-- Tab Panel 1: Corporate Log In -->
                             <div class="gateway-panel active" id="corp-login">
-                                <form id="loginForm">
+                                <form id="loginForm" class="pmo-auth-form">
                                     <!-- Security Alert (Cybersecurity Tips Hover) -->
                                     <div class="security-alert-container mb-3 text-start">
                                         <div class="security-alert-trigger-wrapper">

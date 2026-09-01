@@ -103,7 +103,279 @@
 .custom-table { --pmo-component: data-table-legacy; }
 .mini-table { --pmo-component: compact-table-legacy; }
 
+/*
+ * First-wave shared component contracts
+ *
+ * Use these .pmo-* classes in new or migrated PMO and PMO Corporate markup.
+ * Legacy Bootstrap combinations remain available only while their pages migrate.
+ */
+
+.pmo-app-shell {
+    min-height: 100dvh;
+    color: var(--text-primary);
+    background: var(--surface-subtle);
+}
+
+.pmo-app-shell :focus-visible {
+    outline: 0;
+    box-shadow: var(--focus-ring);
+}
+
+/* Legacy portal bridge: data-pmo-shell is the temporary shell marker on pages
+ * awaiting semantic class migration. It keeps the same baseline and focus
+ * treatment without creating a second component implementation. */
+body[data-pmo-shell] {
+    min-height: 100dvh;
+    color: var(--text-primary);
+    background: var(--surface-subtle);
+}
+
+body[data-pmo-shell] :focus-visible {
+    outline: 0;
+    box-shadow: var(--focus-ring);
+}
+
+body[data-pmo-shell] .dashboard-tabs {
+    display: flex;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+body[data-pmo-shell] .dashboard-tabs .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 0 10px;
+    border-bottom: 3px solid transparent;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: var(--type-caption);
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body[data-pmo-shell] .dashboard-tabs .nav-link:hover,
+body[data-pmo-shell] .dashboard-tabs .nav-link:focus-visible,
+body[data-pmo-shell] .dashboard-tabs .nav-link.active,
+body[data-pmo-shell] .dashboard-tabs .nav-link[aria-current="page"] {
+    border-bottom-color: currentColor;
+    color: #ffffff;
+}
+
+body[data-pmo-shell] .card {
+    border-color: rgba(27, 42, 74, 0.08);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+body[data-pmo-shell] :is(.form-control, .form-select) {
+    min-height: 44px;
+    border-color: rgba(27, 42, 74, 0.18);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+}
+
+body[data-pmo-shell] :is(.form-control, .form-select):focus {
+    border-color: var(--brand-primary);
+    box-shadow: var(--focus-ring);
+}
+
+body[data-pmo-shell] .invalid-feedback {
+    color: var(--danger);
+    font-size: var(--type-xs);
+}
+
+.pmo-primary-nav {
+    display: flex;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.pmo-primary-nav__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 0 10px;
+    border-bottom: 3px solid transparent;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: var(--type-caption);
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--motion-fast), border-color var(--motion-fast);
+}
+
+.pmo-primary-nav__link:hover,
+.pmo-primary-nav__link:focus-visible { color: #ffffff; }
+
+.pmo-primary-nav__link[aria-current="page"] {
+    border-bottom-color: currentColor;
+    color: #ffffff;
+}
+
+.pmo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 40px;
+    padding: 9px 18px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+    font: inherit;
+    font-size: var(--type-caption);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--motion-fast), background-color var(--motion-fast), border-color var(--motion-fast), color var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.pmo-button:hover:not(:disabled) { transform: translateY(-1px); }
+.pmo-button:disabled,
+.pmo-button[aria-disabled="true"] { cursor: not-allowed; opacity: 0.52; }
+.pmo-button--primary { color: #ffffff; background: var(--brand-primary); border-color: var(--brand-primary); }
+.pmo-button--primary:hover:not(:disabled) { color: #ffffff; background: var(--brand-primary-hover); border-color: var(--brand-primary-hover); }
+.pmo-button--secondary { color: var(--brand-navy); background: #ffffff; border-color: rgba(27, 42, 74, 0.22); }
+.pmo-button--secondary:hover:not(:disabled) { color: var(--brand-primary); border-color: var(--brand-primary); }
+.pmo-button--quiet { color: var(--text-muted); background: transparent; border-color: transparent; }
+.pmo-button--danger { color: #ffffff; background: var(--danger); border-color: var(--danger); }
+
+.pmo-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: var(--type-caption);
+    line-height: 1.45;
+}
+
+.pmo-alert__content { display: flex; align-items: center; gap: var(--space-2); }
+.pmo-alert--attention { color: #8d1b27; border-color: rgba(180, 35, 24, 0.22); background: #fff5f5; }
+
+.pmo-card {
+    height: 100%;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+}
+
+.pmo-card__body { padding: var(--space-5); }
+
+.pmo-metric {
+    height: 100%;
+    padding: var(--space-3);
+    border: 1px solid rgba(27, 42, 74, 0.06);
+    border-radius: var(--radius-sm);
+    background: var(--surface-subtle);
+}
+
+.pmo-metric__value {
+    color: var(--text-primary);
+    font-size: var(--type-section);
+    font-weight: 750;
+    line-height: var(--line-height-tight);
+}
+
+.pmo-metric__label {
+    margin-top: var(--space-1);
+    color: var(--text-muted);
+    font-size: var(--type-xs);
+    line-height: 1.4;
+}
+
+.pmo-field { display: grid; gap: 6px; }
+.pmo-field__label { color: var(--text-secondary); font-size: var(--type-caption); font-weight: 700; }
+.pmo-field__control { min-height: 44px; border: 1px solid rgba(27, 42, 74, 0.18); border-radius: var(--radius-sm); padding: 10px 12px; background: var(--surface); color: var(--text-primary); font: inherit; }
+.pmo-field__control:focus { outline: 0; border-color: var(--brand-primary); box-shadow: var(--focus-ring); }
+.pmo-field--error .pmo-field__control { border-color: var(--danger); }
+.pmo-field__feedback { color: var(--danger); font-size: var(--type-xs); line-height: 1.4; }
+
+/* Transaction form pattern: compose existing fields without changing page logic. */
+.pmo-transaction-form { display: grid; gap: var(--space-3); }
+.pmo-transaction-form .form-label { color: var(--text-secondary); font-size: var(--type-caption); font-weight: 700; }
+.pmo-transaction-form .form-control,
+.pmo-transaction-form .form-select {
+    min-height: 44px;
+    border-color: rgba(27, 42, 74, 0.18);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+}
+.pmo-transaction-form .form-control:focus,
+.pmo-transaction-form .form-select:focus { border-color: var(--brand-primary); box-shadow: var(--focus-ring); }
+.pmo-transaction-form .form-control.is-invalid,
+.pmo-transaction-form .form-select.is-invalid { border-color: var(--danger); }
+.pmo-transaction-form .invalid-feedback { color: var(--danger); font-size: var(--type-xs); }
+.pmo-transaction-form .form-check-input:focus { box-shadow: var(--focus-ring); }
+
+/* Access-shell pattern: login, recovery, registration, and first-login security. */
+.pmo-auth-shell :focus-visible { outline: 0; box-shadow: var(--focus-ring); }
+.pmo-auth-shell :is(.inline-login-card, .register-card, .legal-card, .pac-verification-card) {
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+}
+.pmo-auth-form { display: grid; gap: var(--space-3); }
+.pmo-auth-form .form-label { color: var(--text-secondary); font-size: var(--type-caption); font-weight: 700; }
+.pmo-auth-form :is(.form-control, .form-select) {
+    min-height: 44px;
+    border-color: rgba(27, 42, 74, 0.18);
+    border-radius: var(--radius-sm);
+}
+.pmo-auth-form :is(.form-control, .form-select):focus { border-color: var(--brand-primary); box-shadow: var(--focus-ring); }
+.pmo-auth-shell .btn-log-in { color: #ffffff; background: var(--brand-primary); border-color: var(--brand-primary); }
+.pmo-auth-shell .btn-clear { color: var(--brand-navy); background: #ffffff; border-color: rgba(27, 42, 74, 0.22); }
+
+.pmo-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 26px;
+    padding: 4px 9px;
+    border-radius: var(--radius-pill);
+    font-size: var(--type-xs);
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+.pmo-status--success { color: #166534; background: #dcfce7; }
+.pmo-status--pending { color: #9a3412; background: #ffedd5; }
+.pmo-status--danger { color: #991b1b; background: #fee2e2; }
+.pmo-status--neutral { color: #475569; background: #e2e8f0; }
+
+.pmo-table-frame {
+    overflow-x: auto;
+    border: 1px solid rgba(27, 42, 74, 0.08);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+}
+
+.pmo-data-table { width: 100%; }
+
+@media (max-width: 767px) {
+    .pmo-alert { align-items: flex-start; flex-direction: column; }
+    .pmo-alert .pmo-button { width: 100%; }
+    .pmo-card__body { padding: var(--space-4); }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .view-tab,
-    .gateway-tab-btn { transition: none; }
+    .gateway-tab-btn,
+    .pmo-primary-nav__link,
+    .pmo-button { transition: none; }
 }

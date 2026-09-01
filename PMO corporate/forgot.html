@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/iconoir.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../design-tokens.css">
+    <link rel="stylesheet" href="../pmo-core.css">
     <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
@@ -80,7 +82,7 @@
     </style>
 </head>
 
-<body>
+<body class="pmo-app-shell pmo-auth-shell">
 
     <!-- Floating SMS Push Notification Container -->
     <div class="sms-toast-container position-fixed top-0 start-50 translate-middle-x p-3"
@@ -178,7 +180,7 @@
                         </div>
 
                         <!-- Form Area -->
-                        <form id="step1Form" class="mt-4">
+                        <form id="step1Form" class="mt-4 pmo-auth-form">
 
                             <!-- Fields for Option A: Forgot Password Only -->
                             <div id="fields-password-only">
@@ -262,7 +264,7 @@
                         <h2 id="step2-title">Create New Password</h2>
                         <!--                        <p class="subtitle" id="step2-subtitle">Please configure a robust new password for your PMO corporate profile.</p>-->
 
-                        <form id="step2Form">
+                        <form id="step2Form" class="pmo-auth-form">
                             <!-- Retrieved container (Only for Option B: Reset Both) -->
                             <div class="mb-3 d-none" id="username-update-container">
                                 <label class="form-label">New User ID</label>
@@ -326,7 +328,7 @@
 
 
 
-                        <form id="step3Form">
+                        <form id="step3Form" class="pmo-auth-form">
                             <div class="mb-3">
                                 <label class="form-label">Verification Method</label>
                                 <select class="form-select text-dark fw-semibold">
