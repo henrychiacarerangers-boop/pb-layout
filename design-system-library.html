@@ -16,7 +16,8 @@
             --brand-primary-hover: #ac1117;
             --brand-navy: #1b2a4a;
             --accent-primary: #1b2a4a;
-            --action-primary: #d3112b --interactive-hover: #58595b;
+            --action-primary: #d3112b;
+            --interactive-hover: #58595b;
             --bg-container: #FCFCFC;
             --bg-main: #f8fafc;
             --ui-support: #8e9ab0;
@@ -1099,6 +1100,182 @@
             line-height: 1.6;
         }
 
+        .audit-banner {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 18px 20px;
+            border: 1px solid rgba(206, 114, 38, 0.24);
+            border-radius: var(--radius-md);
+            color: #7c3f0d;
+            background: #fffaf2;
+            font-size: 0.8rem;
+            line-height: 1.55;
+        }
+
+        .audit-banner i { font-size: 1.3rem; }
+
+        .audit-banner strong { color: var(--text-primary); }
+
+        .shell-demo {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #ffffff;
+        }
+
+        .shell-demo-header,
+        .shell-demo-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 34px;
+            padding: 0 10px;
+            color: rgba(255, 255, 255, 0.84);
+            background: var(--brand-navy);
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .shell-demo-main {
+            display: grid;
+            grid-template-columns: 54px 1fr;
+            min-height: 108px;
+        }
+
+        .shell-demo-rail {
+            display: grid;
+            gap: 8px;
+            align-content: start;
+            padding: 10px;
+            background: #f8fafc;
+        }
+
+        .shell-demo-rail span {
+            display: block;
+            height: 7px;
+            border-radius: 999px;
+            background: #d9e1ee;
+        }
+
+        .shell-demo-content { padding: 14px; }
+
+        .shell-demo-content strong,
+        .shell-demo-content span { display: block; }
+
+        .shell-demo-content strong { font-size: 0.78rem; }
+
+        .shell-demo-content span {
+            width: 72%;
+            height: 7px;
+            margin-top: 10px;
+            border-radius: 999px;
+            background: #e7edf5;
+        }
+
+        .drawer-demo {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            min-height: 132px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+
+        .drawer-demo-nav {
+            display: grid;
+            align-content: start;
+            gap: 7px;
+            padding: 12px;
+            color: rgba(255, 255, 255, 0.78);
+            background: #171838;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .drawer-demo-nav strong { margin-bottom: 6px; color: #ffffff; }
+
+        .drawer-demo-nav span {
+            padding: 7px;
+            border-radius: 6px;
+        }
+
+        .drawer-demo-nav span:first-of-type { color: #ffffff; background: rgba(255, 255, 255, 0.14); }
+
+        .drawer-demo-main { display: grid; place-items: center; color: var(--text-muted); font-size: 0.72rem; }
+
+        .dropdown-demo { position: relative; min-height: 116px; padding: 12px; border-radius: 12px; background: #f8fafc; }
+
+        .dropdown-menu-demo {
+            position: absolute;
+            top: 49px;
+            left: 12px;
+            display: grid;
+            width: 180px;
+            padding: 6px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: var(--shadow-md);
+        }
+
+        .dropdown-menu-demo span { padding: 8px; border-radius: 6px; color: var(--text-primary); font-size: 0.69rem; }
+        .dropdown-menu-demo span:first-child { color: var(--brand-primary); background: #fff5f5; }
+
+        .modal-demo {
+            display: grid;
+            place-items: center;
+            min-height: 132px;
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(27, 42, 74, 0.12);
+        }
+
+        .modal-card-demo {
+            width: min(100%, 230px);
+            padding: 14px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-card-demo strong { display: block; font-size: 0.78rem; }
+        .modal-card-demo p { margin: 5px 0 10px; color: var(--text-muted); font-size: 0.66rem; line-height: 1.45; }
+
+        .accordion-demo { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; }
+        .accordion-row { display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; border-bottom: 1px solid var(--line); color: var(--text-primary); font-size: 0.72rem; font-weight: 700; }
+        .accordion-row:last-child { border: 0; }
+        .accordion-row i { color: var(--text-muted); }
+        .accordion-row.is-open { color: var(--brand-primary); background: #fffafa; }
+
+        .store-badge-demo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 11px;
+            border-radius: 9px;
+            color: #ffffff;
+            background: #12142b;
+        }
+
+        .store-badge-demo i { font-size: 1.2rem; }
+        .store-badge-demo span { display: grid; font-size: 0.57rem; line-height: 1.2; }
+        .store-badge-demo strong { font-size: 0.76rem; }
+
+        .empty-demo {
+            display: grid;
+            place-items: center;
+            min-height: 132px;
+            border: 1px dashed rgba(27, 42, 74, 0.22);
+            border-radius: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .empty-demo i { display: block; margin-bottom: 6px; color: var(--ui-support); font-size: 1.4rem; }
+        .empty-demo span { font-size: 0.7rem; font-weight: 700; }
+
         @media (max-width: 1100px) {
             .app-shell {
                 grid-template-columns: 1fr;
@@ -1191,6 +1368,8 @@
                     Components</a>
                 <a class="nav-link" href="#previews"><i class="iconoir-design-pencil" aria-hidden="true"></i>
                     Previews</a>
+                <a class="nav-link" href="#expanded-components"><i class="iconoir-layers" aria-hidden="true"></i>
+                    Full Inventory</a>
                 <a class="nav-link" href="#site-audit"><i class="iconoir-search" aria-hidden="true"></i> Site Audit</a>
                 <a class="nav-link" href="#patterns"><i class="iconoir-layout-left" aria-hidden="true"></i> Patterns</a>
                 <a class="nav-link" href="#governance"><i class="iconoir-check-circle" aria-hidden="true"></i>
@@ -1217,8 +1396,8 @@
                         <span>Foundation token groups</span>
                     </div>
                     <div class="metric">
-                        <strong>50+</strong>
-                        <span>Reusable component classes</span>
+                        <strong>19</strong>
+                        <span>Audited component families</span>
                     </div>
                     <div class="metric">
                         <strong>6</strong>
@@ -1480,6 +1659,46 @@
                             <code>.bg-fin-dot-grid .bg-fin-hero-panel</code>
                             <p>Dot grids, trend lines, topographic waves, security circuits, candlestick watermarks.</p>
                         </article>
+                        <article class="component-card">
+                            <h3>Application Shell</h3>
+                            <code>.top-nav .bottom-footer .main-footer</code>
+                            <p>Shared header, utility bar, page frame, and footer contracts across public and portal products.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Drawer Navigation</h3>
+                            <code>.custom-sidebar .offcanvas</code>
+                            <p>Mobile and contextual navigation currently repeated across Unit Trust and EOP pages.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Menus &amp; Overlays</h3>
+                            <code>.dropdown-menu .modal-content</code>
+                            <p>Account menus, action menus, confirmation modals, and PAC confirmation dialogs.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Disclosure</h3>
+                            <code>.accordion-header-custom .accordion</code>
+                            <p>Statements, account-detail sections, and FAQ disclosure patterns.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Download Badge</h3>
+                            <code>.store-download-btn .app-store-badge-btn</code>
+                            <p>Public-app and PMO Plus store download calls to action. These should share one component.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Empty &amp; Loading</h3>
+                            <code>.empty-state</code>
+                            <p>Empty states appear in the library, but loading, error recovery, and retry rules still need a production contract.</p>
+                        </article>
+                        <article class="component-card">
+                            <h3>Support Widget</h3>
+                            <code>.chatbot .sms-toast</code>
+                            <p>Chat and SMS notification surfaces need one accessibility and stacking-context standard.</p>
+                        </article>
+                    </div>
+
+                    <div class="audit-banner" style="margin-top:16px">
+                        <i class="iconoir-warning-triangle" aria-hidden="true"></i>
+                        <div><strong>Audit boundary:</strong> the first 12 families are currently curated in this library. The 7 families above are live in product code but were not formally documented before this audit. They are shown below as proposed system components, ready for your approval.</div>
                     </div>
 
                     <div class="panel" style="margin-top:16px">
@@ -1873,6 +2092,81 @@
                     </div>
                 </section>
 
+                <section id="expanded-components">
+                    <div class="section-head">
+                        <div>
+                            <p class="section-kicker">Full Inventory</p>
+                            <h2>The 7 live components missing from the library</h2>
+                        </div>
+                        <p class="section-note">These are already present in production pages. The specimens below make their boundaries visible so you can decide whether each should become a shared component or remain a page pattern.</p>
+                    </div>
+                    <div class="specimen-grid">
+                        <article class="specimen" data-component-family="application-shell">
+                            <div class="specimen-head"><div><h3>Application Shell</h3><p>Header, content rail, and footer as one page-frame contract.</p></div><code class="specimen-source">.top-nav</code></div>
+                            <div class="specimen-body">
+                                <div class="shell-demo"><div class="shell-demo-header"><span>Public Mutual</span><span>Help · Profile</span></div><div class="shell-demo-main"><div class="shell-demo-rail"><span></span><span></span><span></span></div><div class="shell-demo-content"><strong>Dashboard workspace</strong><span></span><span></span></div></div><div class="shell-demo-footer"><span>Privacy</span><span>© Public Mutual</span></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> formalise shared shell slots, but allow public, PMO, Corporate, and UTC brand modifiers.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="drawer">
+                            <div class="specimen-head"><div><h3>Drawer Navigation</h3><p>Mobile portal navigation currently repeated page by page.</p></div><code class="specimen-source">.custom-sidebar</code></div>
+                            <div class="specimen-body">
+                                <div class="drawer-demo"><div class="drawer-demo-nav"><strong>PMO</strong><span>Dashboard</span><span>Accounts</span><span>Statements</span></div><div class="drawer-demo-main">Page content remains available</div></div>
+                                <p class="usage-note"><strong>Decision:</strong> one accessible drawer with focus return, escape-to-close, role-based items, and a single active-state rule.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="dropdown">
+                            <div class="specimen-head"><div><h3>Dropdown Menu</h3><p>Profile, language, and table action menus.</p></div><code class="specimen-source">.dropdown-menu</code></div>
+                            <div class="specimen-body">
+                                <div class="dropdown-demo"><button class="btn btn-outline" type="button" aria-expanded="true">Account menu <i class="iconoir-nav-arrow-down" aria-hidden="true"></i></button><div class="dropdown-menu-demo" role="menu"><span role="menuitem">View profile</span><span role="menuitem">Security settings</span><span role="menuitem">Sign out</span></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> define one menu surface, item height, keyboard model, and danger-action treatment.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="modal">
+                            <div class="specimen-head"><div><h3>Confirmation Modal</h3><p>PAC, password, payment abort, and destructive confirmations.</p></div><code class="specimen-source">.modal-content</code></div>
+                            <div class="specimen-body">
+                                <div class="modal-demo"><div class="modal-card-demo"><strong>Cancel this payment?</strong><p>This action will stop the pending instruction.</p><div class="preview-row"><button class="btn btn-ghost" type="button">Keep</button><button class="btn btn-red" type="button">Cancel</button></div></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> separate confirm, destructive confirm, and PAC verification variants; standardise title, body, action order, and focus trap.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="accordion">
+                            <div class="specimen-head"><div><h3>Accordion / Disclosure</h3><p>Statements, account details, and PMO Plus FAQs.</p></div><code class="specimen-source">.accordion-header-custom</code></div>
+                            <div class="specimen-body">
+                                <div class="accordion-demo"><div class="accordion-row is-open"><span>Account summary</span><i class="iconoir-nav-arrow-up" aria-hidden="true"></i></div><div class="accordion-row"><span>Transaction history</span><i class="iconoir-nav-arrow-down" aria-hidden="true"></i></div><div class="accordion-row"><span>Distributions</span><i class="iconoir-nav-arrow-down" aria-hidden="true"></i></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> use a native button, expose <code>aria-expanded</code>, and define whether multiple panels can remain open.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="download-badge">
+                            <div class="specimen-head"><div><h3>Store Download Badge</h3><p>PMO Plus is currently represented by several visual variants.</p></div><code class="specimen-source">.store-download-btn</code></div>
+                            <div class="specimen-body">
+                                <div class="component-preview"><div class="store-badge-demo"><i class="iconoir-apple" aria-hidden="true"></i><span>Download on the<strong>App Store</strong></span></div><div class="store-badge-demo"><i class="iconoir-google" aria-hidden="true"></i><span>GET IT ON<strong>Google Play</strong></span></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> keep native store artwork and use one size scale; do not restyle official badges arbitrarily.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="empty-state">
+                            <div class="specimen-head"><div><h3>Empty, Loading &amp; Recovery</h3><p>Required data states, not a decorative afterthought.</p></div><code class="specimen-source">.empty-state</code></div>
+                            <div class="specimen-body">
+                                <div class="empty-demo"><div><i class="iconoir-page" aria-hidden="true"></i><span>No pending authorisations</span></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> add system-wide loading skeleton, no-results, failure, and retry variants before further page migration.</p>
+                            </div>
+                        </article>
+
+                        <article class="specimen" data-component-family="support-widget">
+                            <div class="specimen-head"><div><h3>Support &amp; Notification Widget</h3><p>SMS toast and chat support are shared trust surfaces.</p></div><code class="specimen-source">.sms-toast</code></div>
+                            <div class="specimen-body">
+                                <div class="feedback-stack"><div class="feedback-item info"><i class="iconoir-smartphone-device" aria-hidden="true"></i><span><strong>Security code sent</strong><br>Check your registered mobile number.</span></div><div class="feedback-item success"><i class="iconoir-chat-bubble" aria-hidden="true"></i><span><strong>Need help?</strong><br>Chat support is available during business hours.</span></div></div>
+                                <p class="usage-note"><strong>Decision:</strong> define priority, timeout, stacking order, screen-reader announcement, and dismissal behavior in one notification contract.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
                 <section id="site-audit">
                     <div class="section-head">
                         <div>
@@ -1880,28 +2174,28 @@
                             <h2>Website compliance check</h2>
                         </div>
                         <p class="section-note">
-                            Scan result across 54 website HTML pages, excluding this design system page and hidden
-                            tooling templates. The main issue is not missing CSS; it is typography and color overrides
-                            being written directly inside page markup.
+                            Current scan across 94 website HTML pages, excluding this design system page. The main
+                            problem is no longer missing CSS: it is a fragmented component contract, compounded by
+                            inline typography, colour, spacing, and component overrides in page markup.
                         </p>
                     </div>
 
                     <div class="grid four">
                         <article class="mini-card">
-                            <strong>53 / 54</strong>
-                            <span>Pages load the main design CSS</span>
+                            <strong>94</strong>
+                            <span>Production pages audited</span>
                         </article>
                         <article class="mini-card">
-                            <strong>42</strong>
-                            <span>Pages contain inline typography</span>
+                            <strong>3,142</strong>
+                            <span>Inline style attributes found</span>
                         </article>
                         <article class="mini-card">
-                            <strong>54</strong>
-                            <span>Pages contain inline hardcoded colors</span>
+                            <strong>1,936</strong>
+                            <span>Inline design overrides found</span>
                         </article>
                         <article class="mini-card">
-                            <strong>83</strong>
-                            <span>Average compliance score</span>
+                            <strong>19</strong>
+                            <span>Component families to govern</span>
                         </article>
                     </div>
 
@@ -2101,12 +2395,25 @@
                         <div class="map-column">
                             <h3>Components</h3>
                             <ul class="map-list">
+                                <li>components/application-shell</li>
+                                <li>components/navigation</li>
+                                <li>components/drawer</li>
                                 <li>components/button</li>
                                 <li>components/input</li>
+                                <li>components/selection-control</li>
                                 <li>components/card</li>
                                 <li>components/badge</li>
                                 <li>components/table</li>
                                 <li>components/tabs</li>
+                                <li>components/dropdown</li>
+                                <li>components/modal</li>
+                                <li>components/accordion</li>
+                                <li>components/feedback</li>
+                                <li>components/empty-state</li>
+                                <li>components/stepper</li>
+                                <li>components/analytics</li>
+                                <li>components/download-badge</li>
+                                <li>components/footer</li>
                             </ul>
                         </div>
                         <div class="map-column">

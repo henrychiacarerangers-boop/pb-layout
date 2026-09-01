@@ -185,7 +185,8 @@
                                                 <i class="iconoir-eye-closed fs-5"></i>
                                             </button>
                                         </div>
-                                        <small class="text-muted fs-8">Your Portfolio Holdings as of 28 July 2026</small>
+                                        <small class="text-muted fs-8">Your Portfolio Holdings as of 28 July
+                                            2026</small>
                                     </div>
                                 </div>
                                 <button class="btn pmo-btn-action btn-danger shadow-sm"
@@ -241,38 +242,44 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                 </div>
                             </div>
 
-                            <!-- Premium MGQP Status Section -->
-                            <!-- <div class="mt-4 pt-2">
-                                <div class="d-flex align-items-center rounded-3 p-3 border border-warning border-opacity-10"
-                                    style="background: linear-gradient(135deg, rgba(212, 172, 13, 0.03) 0%, rgba(212, 172, 13, 0.08) 100%);">
-                                     Left Image/Emblem 
-                                    <div class="me-3 position-relative d-flex align-items-center justify-content-center"
-                                        style="width: 50px; height: 50px; min-width: 50px;">
-                                        <img src="../images/Mutual-Signature.png"
-                                            style="width: 50px; height: auto; min-width: 50px;">
+                            <!-- Portfolio Allocation & Insights Section -->
+                            <div class="mt-auto pt-3 border-top">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#58595b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                                        </svg>
+                                        <span class="fs-8 fw-bold text-dark mb-0">Asset Allocation</span>
                                     </div>
-                                     Right Text Details 
-                                    <div class="flex-grow-1">
-                                        <div class="d-flex align-items-center justify-content-between mb-1">
-                                            <span class="fs-9 text-uppercase fw-bold text-muted"
-                                                style="letter-spacing: 0.05em; font-family: 'Montserrat', sans-serif;">Privilege
-                                                Circle</span>
-                                            <span
-                                                class="badge bg-warning bg-opacity-25 text-warning-emphasis fw-bold fs-10 px-2 py-0.5 rounded-pill border border-warning border-opacity-25">GOLD</span>
-                                        </div>
-                                        <div class="fs-8 text-dark fw-semibold"
-                                            style="font-family: 'Montserrat', sans-serif;">
-                                            Your MGQP: <span class="fw-bold text-dark fs-7">21,121.16</span>
-                                        </div>
-                                        <div class="fs-9 text-muted mt-1 d-flex align-items-center gap-1">
-
-                                            <span>Another <strong class="text-dark">128,879 MGQP</strong> to <strong
-                                                    style="color: #0E0D3B !important;">MUTUAL ELITE</strong>
-                                                status</span>
-                                        </div>
-                                    </div>
+                                    <span class="badge bg-light text-secondary border border-secondary border-opacity-25 rounded-pill px-2.5 py-1 fs-9 fw-semibold">4 Active Accounts</span>
                                 </div>
-                            </div> -->
+
+                                <!-- Allocation Multi-bar -->
+                                <div class="progress rounded-pill mb-2.5" style="height: 7px; background-color: #eef2f5;">
+                                    <div class="progress-bar" role="progressbar" style="width: 65.1%; background-color: #10b981; border-top-left-radius: 4px; border-bottom-left-radius: 4px;" aria-valuenow="65.1" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" title="Money Market (MM): 65.1% (MYR 362,992.22)"></div>
+                                    <div class="progress-bar" role="progressbar" style="width: 34.9%; background-color: #f59e0b; border-top-right-radius: 4px; border-bottom-right-radius: 4px;" aria-valuenow="34.9" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" title="Bond (BO): 34.9% (MYR 194,379.50)"></div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-1">
+                                    <!-- Legend -->
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="d-flex align-items-center gap-1.5 fs-9 text-secondary">
+                                            <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background-color: #10b981;"></span>
+                                            <span>Money Market (MM) <strong class="text-dark">65.1%</strong></span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-1.5 fs-9 text-secondary">
+                                            <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background-color: #f59e0b;"></span>
+                                            <span>Bond (BO) <strong class="text-dark">34.9%</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick View Link -->
+                                    <a href="view_account.html" class="text-dark fw-bold text-decoration-underline fs-8 d-inline-flex align-items-center gap-1">
+                                        View Accounts <i class="iconoir-arrow-right fs-9"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,51 +293,84 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                 <a href="transactions.html"
                                     class="text-dark fw-bold text-decoration-underline fs-8">View More</a>
                             </div>
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
+                            <div class="table-responsive pmo-table-frame" style="max-height: 295px; overflow-y: auto;">
+                                <table class="pmo-data-table mb-0">
+                                    <thead class="sticky-top bg-light">
                                         <tr>
-                                            <th class="ps-4 py-1">Tran Date<br><span>Ref No.
+                                            <th class="ps-4 py-2">Tran Date<br><span>Ref No.
                                                 </span></th>
-                                            <th class="py-3">
+                                            <th class="py-2">
                                                 Account / Fund<br><span>Description</span></th>
-                                            <th class="pe-4 py-3">
+                                            <th class="pe-4 py-2">
                                                 Paid/(Redeemed)<br>MYR</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!-- Row 1 -->
                                         <tr>
-                                            <td class="ps-4 py-3 pmo-table-date">
-                                                <div class="fw-semibold text-dark">06/05/2026</div>
+                                            <td class="ps-4 py-2 pmo-table-date">
+                                                <div class="fw-semibold text-dark fs-8">06/05/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Initial Investment">II</div>
                                                 <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
-                                            <td class="pmo-table-meta">
-                                                <div class="pmo-fund-code mb-1">136252514</div>
-                                                <div class="pmo-fund-name" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="PUBLIC e-EMAS GOLD FUND">PUBLIC e-EMAS GOLD FUND
+                                            <td class="pmo-table-meta py-2">
+                                                <div class="pmo-fund-code mb-0.5 fs-8">136252514</div>
+                                                <div class="pmo-fund-name fs-8" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="PB CASH PLUS FUND">PB CASH PLUS FUND
                                                 </div>
                                             </td>
-                                            <td class="pe-4 py-3 text-end fw-semibold text-success">1,000.00</td>
+                                            <td class="pe-4 py-2 text-end fw-semibold text-success fs-8">1,000.00</td>
                                         </tr>
                                         <!-- Row 2 -->
                                         <tr>
-                                            <td class="ps-4 py-3 pmo-table-date">
-                                                <div class="fw-semibold text-dark">06/05/2026</div>
+                                            <td class="ps-4 py-2 pmo-table-date">
+                                                <div class="fw-semibold text-dark fs-8">06/05/2026</div>
                                                 <div class="text-muted fs-9" data-bs-toggle="tooltip"
                                                     data-bs-placement="top" title="Additional Investment">AI</div>
                                                 <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
                                             </td>
-                                            <td class="pmo-table-meta">
-                                                <div class="pmo-fund-code mb-1">094766508</div>
-                                                <div class="pmo-fund-name" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">PUBLIC e-CASH DEPOSIT FUND - CLASS B</div>
+                                            <td class="pmo-table-meta py-2">
+                                                <div class="pmo-fund-code mb-0.5 fs-8">094766508</div>
+                                                <div class="pmo-fund-name fs-8" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">PUBLIC e-CASH DEPOSIT
+                                                    FUND - CLASS B</div>
                                             </td>
-                                            <td class="pe-4 py-3 text-end fw-semibold text-success">
-                                                300.00</td>
+                                            <td class="pe-4 py-2 text-end fw-semibold text-success fs-8">300.00</td>
+                                        </tr>
+                                        <!-- Row 3 -->
+                                        <tr>
+                                            <td class="ps-4 py-2 pmo-table-date">
+                                                <div class="fw-semibold text-dark fs-8">02/05/2026</div>
+                                                <div class="text-muted fs-9" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="Switch In">SI</div>
+                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                            </td>
+                                            <td class="pmo-table-meta py-2">
+                                                <div class="pmo-fund-code mb-0.5 fs-8">094766567</div>
+                                                <div class="pmo-fund-name fs-8" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="PB FIXED INCOME FUND">PB FIXED INCOME
+                                                    FUND</div>
+                                            </td>
+                                            <td class="pe-4 py-2 text-end fw-semibold text-success fs-8">5,000.00</td>
+                                        </tr>
+                                        <!-- Row 4 -->
+                                        <tr>
+                                            <td class="ps-4 py-2 pmo-table-date">
+                                                <div class="fw-semibold text-dark fs-8">28/04/2026</div>
+                                                <div class="text-muted fs-9" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top" title="Redemption / Repurchase">RP</div>
+                                                <span class="pmo-status-badge pmo-status-success mt-1">Successful</span>
+                                            </td>
+                                            <td class="pmo-table-meta py-2">
+                                                <div class="pmo-fund-code mb-0.5 fs-8">148822319</div>
+                                                <div class="pmo-fund-name fs-8" data-bs-toggle="tooltip"
+                                                    data-bs-placement="top"
+                                                    title="PB CASH MANAGEMENT FUND - CLASS B">PB CASH MANAGEMENT FUND -
+                                                    CLASS B</div>
+                                            </td>
+                                            <td class="pe-4 py-2 text-end fw-semibold text-danger fs-8">(2,500.00)</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -385,7 +425,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         <tr>
                                             <th class="pb-2">Fund Name</th>
                                             <th class="pb-2">Price Date</th>
-                                            <th class="pb-2">Price/Unit (MYR)</th>
+                                            <th class="pb-2" id="perf-col-header">Price/Unit (MYR)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -402,10 +442,10 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                     <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Equity">EQ</span>
-                                                    <img src="../images/icon/risk-level/icon_risk4.png" alt="Risk 4"
+                                                        title="Bond">BO</span>
+                                                    <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 4 - High"
+                                                        data-bs-placement="top" title="Risk 2 - Low to Moderate"
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
@@ -414,7 +454,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
                                                     1.0507 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-danger" style="text-align: right;">-0.02%</div>
+                                                <div class="text-danger" style="text-align: right;">-0.02</div>
                                             </td>
                                         </tr>
                                         <!-- Row 2: PUBLIC GLOBAL SELECT FUND (Risk 5 - Very High) -->
@@ -422,17 +462,18 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">
+                                                        data-bs-placement="top"
+                                                        title="PUBLIC e-CASH DEPOSIT FUND - CLASS B">
                                                         PUBLIC e-CASH DEPOSIT FUND - CLASS B</div>
                                                 </div>
                                                 <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Equity">EQ</span>
-                                                    <img src="../images/icon/risk-level/icon_risk5.png" alt="Risk 5"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 5 - Very High"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
@@ -441,35 +482,35 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
                                                     1.0028 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-success" style="text-align: right;">+0.18%</div>
+                                                <div class="text-success" style="text-align: right;">0.18%</div>
                                             </td>
                                         </tr>
-                                        <!-- Row 3: PB GLOBAL TECHNOLOGY & HEALTHCARE FUND (Risk 5 - Very High) -->
+                                        <!-- Row 3: PB CASH PLUS FUND (Risk 1 - Low) -->
                                         <tr>
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC e-EMAS GOLD FUND">
-                                                        PUBLIC e-EMAS GOLD FUND
+                                                        data-bs-placement="top" title="PB CASH PLUS FUND">
+                                                        PB CASH PLUS FUND
                                                     </div>
                                                 </div>
                                                 <div class="mt-1 align-items-center gap-2 pmo-table-meta">
                                                     <span class="badge rounded-pill px-2 py-1"
                                                         style="background-color: rgba(38, 36, 123, 0.08); color: #0E0D3B; cursor: help;"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Equity">EQ</span>
-                                                    <img src="../images/icon/risk-level/icon_risk5.png" alt="Risk 5"
+                                                        title="Money Market">MM</span>
+                                                    <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1"
                                                         style="height: 18px;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 5 - Very High"
+                                                        data-bs-placement="top" title="Risk 1 - Low"
                                                         onerror="this.style.display='none'">
                                                 </div>
                                             </td>
                                             <td class="pt-3 pb-3 pmo-table-meta pmo-table-date">05/05/2026</td>
                                             <td class="pt-3 pb-3" id="perf-tech">
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
-                                                    2.0055 <i class="iconoir-nav-arrow-up-solid text-success"></i>
+                                                    1.0037 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-danger" style="text-align: right;">-0.05%</div>
+                                                <div class="text-success" style="text-align: right;">0.01</div>
                                             </td>
                                         </tr>
                                         <!-- Row 4: PUBLIC MONEY MARKET FUND - CLASS A (Risk 1 - Low) -->
@@ -477,7 +518,8 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PB CASH MANAGEMENT FUND - CLASS B">
+                                                        data-bs-placement="top"
+                                                        title="PB CASH MANAGEMENT FUND - CLASS B">
                                                         PB CASH MANAGEMENT FUND - CLASS B
                                                     </div>
                                                 </div>
@@ -497,7 +539,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
                                                     0.9996 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                                <div class="text-success" style="text-align: right;">0.01%</div>
                                             </td>
                                         </tr>
                                         <!-- Row 5: PUBLIC ISLAMIC MONEY MARKET FUND (Risk 1 - Low) -->
@@ -505,7 +547,8 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                             <td class="pt-3 pb-3 pmo-table-meta">
                                                 <div class="d-flex align-items-center gap-2">
                                                     <div style="cursor: pointer;" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="PUBLIC ISLAMIC MONEY MARKET FUND">
+                                                        data-bs-placement="top"
+                                                        title="PUBLIC ISLAMIC MONEY MARKET FUND">
                                                         PUBLIC ISLAMIC MONEY MARKET FUND
                                                     </div>
                                                 </div>
@@ -525,7 +568,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
                                                     1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                                <div class="text-success" style="text-align: right;">0.01%</div>
                                             </td>
                                         </tr>
                                         <!-- Row 6: PUBLIC e-CASH DEPOSIT FUND (Risk 1 - Low) -->
@@ -553,7 +596,7 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                                 <div class="d-flex align-items-center justify-content-end gap-1">
                                                     1.0000 <i class="iconoir-nav-arrow-up-solid text-success"></i>
                                                 </div>
-                                                <div class="text-success" style="text-align: right;">+0.01%</div>
+                                                <div class="text-success" style="text-align: right;">0.01%</div>
                                             </td>
                                         </tr>
                                         <!-- Row 7: PB CASH MANAGEMENT FUND (Risk 1 - Low) -->
@@ -695,31 +738,37 @@ The realised returns are the gain/loss resulting from the redemption of your inv
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/corporate-employee-investing.png" class="promo-card-img" alt="Colleagues reviewing a workplace unit trust investment plan">
+                        <img src="../images/promotion/corporate-employee-investing.png" class="promo-card-img"
+                            alt="Colleagues reviewing a workplace unit trust investment plan">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
                             <p class="promo-card-title">Make every employee benefit count</p>
-                            <p class="promo-card-text">Give your people a clearer path to long-term investing with a workplace unit trust experience built for employers.</p>
+                            <p class="promo-card-text">Give your people a clearer path to long-term investing with a
+                                workplace unit trust experience built for employers.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/corporate-cash-management.png" class="promo-card-img" alt="Corporate finance professional reviewing an investment allocation">
+                        <img src="../images/promotion/corporate-cash-management.png" class="promo-card-img"
+                            alt="Corporate finance professional reviewing an investment allocation">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
                             <h5 class="promo-card-title">Bring clarity to corporate investing</h5>
-                            <p class="promo-card-text">Keep fund choices, account activity and investment decisions visible in one secure portal.</p>
+                            <p class="promo-card-text">Keep fund choices, account activity and investment decisions
+                                visible in one secure portal.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card border-0 rounded-4 shadow-sm promo-card">
-                        <img src="../images/promotion/long-term-wealth-planning.png" class="promo-card-img" alt="Professional couple walking toward a bright future in a landscaped garden">
+                        <img src="../images/promotion/long-term-wealth-planning.png" class="promo-card-img"
+                            alt="Professional couple walking toward a bright future in a landscaped garden">
                         <div class="promo-card-overlay"></div>
                         <div class="promo-card-content">
                             <h5 class="promo-card-title">Plan today for a stronger tomorrow</h5>
-                            <p class="promo-card-text">Support disciplined wealth building with a long-term view for every employee and every milestone.</p>
+                            <p class="promo-card-text">Support disciplined wealth building with a long-term view for
+                                every employee and every milestone.</p>
                         </div>
                     </div>
                 </div>
@@ -1101,56 +1150,56 @@ The realised returns are the gain/loss resulting from the redemption of your inv
             const performanceTabs = document.querySelectorAll('.performance-tab');
             const data = {
                 'daily': {
-                    'strategic': { returnText: '+0.03%', isPositive: true, price: '1.0507' },
-                    'global': { returnText: '+0.01%', isPositive: true, price: '1.0028' },
-                    'tech': { returnText: '+0.53%', isPositive: true, price: '2.0055' },
-                    'mmf': { returnText: '0.00%', isPositive: true, price: '0.9996' },
-                    'pimmf': { returnText: '+0.01%', isPositive: true, price: '1.0000' },
-                    'pecdf': { returnText: '+0.01%', isPositive: true, price: '1.0000' },
-                    'pbcmf': { returnText: '+0.01%', isPositive: true, price: '1.0000' }
+                    'strategic': { returnText: '0.03', isPositive: true, price: '1.0507' },
+                    'global': { returnText: '0.01', isPositive: true, price: '1.0028' },
+                    'tech': { returnText: '0.53', isPositive: true, price: '2.0055' },
+                    'mmf': { returnText: '0.12', isPositive: true, price: '0.9996' },
+                    'pimmf': { returnText: '0.01', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '0.01', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '0.01', isPositive: true, price: '1.0000' }
                 },
                 '1y': {
-                    'strategic': { returnText: '+12.45%', isPositive: true, price: '0.5240' },
-                    'global': { returnText: '+16.80%', isPositive: true, price: '0.5480' },
-                    'tech': { returnText: '+22.40%', isPositive: true, price: '0.7485' },
-                    'mmf': { returnText: '+3.15%', isPositive: true, price: '1.0000' },
-                    'pimmf': { returnText: '+3.09%', isPositive: true, price: '1.0000' },
-                    'pecdf': { returnText: '+2.94%', isPositive: true, price: '1.0000' },
-                    'pbcmf': { returnText: '+3.09%', isPositive: true, price: '1.0000' }
+                    'strategic': { returnText: '12.45', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '16.80', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '22.40', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '3.15', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '3.09', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '2.94', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '3.09', isPositive: true, price: '1.0000' }
                 },
                 '3y': {
-                    'strategic': { returnText: '+34.20%', isPositive: true, price: '0.5240' },
-                    'global': { returnText: '+42.15%', isPositive: true, price: '0.5480' },
-                    'tech': { returnText: '+58.90%', isPositive: true, price: '0.7485' },
-                    'mmf': { returnText: '+8.90%', isPositive: true, price: '1.0000' },
-                    'pimmf': { returnText: '+8.75%', isPositive: true, price: '1.0000' },
-                    'pecdf': { returnText: '+8.50%', isPositive: true, price: '1.0000' },
-                    'pbcmf': { returnText: '+8.80%', isPositive: true, price: '1.0000' }
+                    'strategic': { returnText: '34.20', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '42.15', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '58.90', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '8.90', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '8.75', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '8.50', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '8.80', isPositive: true, price: '1.0000' }
                 },
                 '5y': {
-                    'strategic': { returnText: '+68.50%', isPositive: true, price: '0.5240' },
-                    'global': { returnText: '+84.30%', isPositive: true, price: '0.5480' },
-                    'tech': { returnText: '+112.50%', isPositive: true, price: '0.7485' },
-                    'mmf': { returnText: '+15.40%', isPositive: true, price: '1.0000' },
-                    'pimmf': { returnText: '+15.10%', isPositive: true, price: '1.0000' },
-                    'pecdf': { returnText: '+14.90%', isPositive: true, price: '1.0000' },
-                    'pbcmf': { returnText: '+15.20%', isPositive: true, price: '1.0000' }
+                    'strategic': { returnText: '68.50', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '84.30', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '112.50', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '15.40', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '15.10', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '14.90', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '15.20', isPositive: true, price: '1.0000' }
                 },
                 '10y': {
-                    'strategic': { returnText: '+128.40%', isPositive: true, price: '0.5240' },
-                    'global': { returnText: '+155.60%', isPositive: true, price: '0.5480' },
-                    'tech': { returnText: '+198.20%', isPositive: true, price: '0.7485' },
-                    'mmf': { returnText: '+32.60%', isPositive: true, price: '1.0000' },
-                    'pimmf': { returnText: '+31.80%', isPositive: true, price: '1.0000' },
-                    'pecdf': { returnText: '+30.90%', isPositive: true, price: '1.0000' },
-                    'pbcmf': { returnText: '+32.10%', isPositive: true, price: '1.0000' }
+                    'strategic': { returnText: '128.40', isPositive: true, price: '0.5240' },
+                    'global': { returnText: '155.60', isPositive: true, price: '0.5480' },
+                    'tech': { returnText: '198.20', isPositive: true, price: '0.7485' },
+                    'mmf': { returnText: '32.60', isPositive: true, price: '1.0000' },
+                    'pimmf': { returnText: '31.80', isPositive: true, price: '1.0000' },
+                    'pecdf': { returnText: '30.90', isPositive: true, price: '1.0000' },
+                    'pbcmf': { returnText: '32.10', isPositive: true, price: '1.0000' }
                 }
             };
 
             const currentFundNames = {
                 'PUBLIC STRATEGIC GROWTH FUND': 'PB FIXED INCOME FUND',
                 'PUBLIC GLOBAL SELECT FUND': 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
-                'PB GLOBAL TECHNOLOGY & HEALTHCARE FUND': 'PUBLIC e-EMAS GOLD FUND',
+                'PB GLOBAL TECHNOLOGY & HEALTHCARE FUND': 'PB CASH PLUS FUND',
                 'PUBLIC MONEY MARKET FUND - CLASS A': 'PB CASH MANAGEMENT FUND - CLASS B'
             };
             const retiredFundNames = [
@@ -1176,15 +1225,17 @@ The realised returns are the gain/loss resulting from the redemption of your inv
             });
 
             const latestPrices = {
-                strategic: { price: '1.0507', date: '27/07/2026', change: '+0.03%', state: 'text-success' },
-                global: { price: '1.0028', date: '28/07/2026', change: '+0.01%', state: 'text-success' },
-                tech: { price: '2.0055', date: '27/07/2026', change: '+0.53%', state: 'text-success' },
-                mmf: { price: '0.9996', date: '28/07/2026', change: '0.00%', state: 'text-muted' }
+                strategic: { price: '1.0507', date: '27/08/2026', change: '0.03', state: 'text-success' },
+                global: { price: '1.0028', date: '27/08/2026', change: '0.01', state: 'text-success' },
+                tech: { price: '1.0037', date: '27/08/2026', change: '0.01', state: 'text-success' },
+                mmf: { price: '0.9996', date: '27/08/2026', change: '0.12', state: 'text-success' }
             };
             Object.entries(latestPrices).forEach(function ([key, latest]) {
                 const cell = document.getElementById('perf-' + key);
                 if (!cell) return;
-                cell.innerHTML = '<div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">' + latest.price + '</div><div class="' + latest.state + ' fs-9 fw-bold">' + latest.change + '</div>';
+                const arrowIcon = latest.state === 'text-success' ? 'iconoir-nav-arrow-up-solid' : latest.state === 'text-danger' ? 'iconoir-nav-arrow-down-solid' : '';
+                const arrowHtml = arrowIcon ? '<i class="' + arrowIcon + ' ' + latest.state + '"></i>' : '';
+                cell.innerHTML = '<div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">' + latest.price + ' ' + arrowHtml + '</div><div class="' + latest.state + ' fs-9 fw-bold">' + latest.change + '</div>';
                 const row = cell.closest('tr');
                 const dateCell = row?.querySelector('.pmo-table-date');
                 if (dateCell) dateCell.textContent = latest.date;
@@ -1202,6 +1253,13 @@ The realised returns are the gain/loss resulting from the redemption of your inv
 
                     const period = this.getAttribute('data-period');
                     const periodData = data[period];
+                    const colHeader = document.getElementById('perf-col-header');
+                    const isDaily = period === 'daily';
+
+                    // Swap column header
+                    if (colHeader) {
+                        colHeader.textContent = isDaily ? 'Price/Unit (MYR)' : 'Returns (%)';
+                    }
 
                     if (periodData) {
                         // Apply updates with a subtle fade animation
@@ -1216,15 +1274,25 @@ The realised returns are the gain/loss resulting from the redemption of your inv
                                         ...periodData[key],
                                         price: latestPrices[key]?.price || periodData[key].price
                                     };
-                                    const arrowClass = item.isPositive ? 'iconoir-nav-arrow-up-solid text-success' : 'iconoir-nav-arrow-down-solid text-danger';
                                     const textClass = item.isPositive ? 'text-success' : 'text-danger';
 
-                                    cell.innerHTML = `
-                                        <div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
-                                            ${item.price} <i class="${arrowClass} fs-7"></i>
-                                        </div>
-                                        <div class="${textClass} fs-9 fw-bold">${item.returnText}</div>
-                                    `;
+                                    if (isDaily) {
+                                        // Daily: show price + arrow icon
+                                        const arrowClass = item.isPositive ? 'iconoir-nav-arrow-up-solid text-success' : 'iconoir-nav-arrow-down-solid text-danger';
+                                        cell.innerHTML = `
+                                            <div class="fw-bold fs-8 text-dark d-flex align-items-center justify-content-end gap-1">
+                                                ${item.price} <i class="${arrowClass} fs-7"></i>
+                                            </div>
+                                            <div class="${textClass} fs-9 fw-bold">${item.returnText}</div>
+                                        `;
+                                    } else {
+                                        // 1Y / 3Y / 5Y / 10Y: show only Returns (%) in green, no arrow
+                                        cell.innerHTML = `
+                                            <div class="${textClass} fw-bold fs-8 d-flex align-items-center justify-content-end">
+                                                ${item.returnText}
+                                            </div>
+                                        `;
+                                    }
                                     cell.style.opacity = '1';
                                 }, 150);
                             }

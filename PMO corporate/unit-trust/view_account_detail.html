@@ -307,9 +307,9 @@
                         </ul>
                     </div>
                     <button
-                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2"
+                        class="btn btn-outline-dark pmo-btn-toolbar"
                         onclick="window.print()">
-                        <i class="iconoir-printer fs-6"></i> Print
+                        <i class="iconoir-printer"></i> Print
                     </button>
                 </div>
             </div>
@@ -370,7 +370,7 @@
 
                         <div>
                             <span class="financial-label">Unit Trust Consultant</span>
-                            <div class="fw-bold text-primary fs-7 mt-1">ONG SZE NAN 11295836</div>
+                            <div class="fw-bold text-primary fs-7 mt-1" id="detailUtcDisplay">WONG KAH WEI 90000026</div>
                         </div>
                     </div>
 
@@ -1008,15 +1008,15 @@
                     availUnits: '160,000.00'
                 },
                 '136252514': {
-                    name: 'PUBLIC e-EMAS GOLD FUND',
+                    name: 'PB CASH PLUS FUND',
                     acct: '136252514',
                     initDate: 'Initial Investment on 10/06/2022',
-                    marketValue: 'MYR 152,564.22',
-                    cost: '47,020.57 MYR',
-                    lastPrice: 'MYR 2.0055',
-                    avgCost: '0.6181 MYR',
-                    totalUnits: '76,072.91',
-                    availUnits: '76,072.91'
+                    marketValue: 'MYR 75,277.50',
+                    cost: '75,000.00 MYR',
+                    lastPrice: 'MYR 1.0037',
+                    avgCost: '1.0000 MYR',
+                    totalUnits: '75,000.00',
+                    availUnits: '75,000.00'
                 },
                 '148822319': {
                     name: 'PB CASH MANAGEMENT FUND - CLASS B',
@@ -1073,6 +1073,7 @@
             const detailLastPrice = document.getElementById('detailLastPrice');
             const detailTotalUnits = document.getElementById('detailTotalUnits');
             const detailAvailUnits = document.getElementById('detailAvailUnits');
+            const detailUtcDisplay = document.getElementById('detailUtcDisplay');
 
             if (detailAcctNo) detailAcctNo.textContent = data.acct;
             if (detailFundName) detailFundName.textContent = data.name;
@@ -1081,6 +1082,7 @@
             if (detailLastPrice) detailLastPrice.textContent = data.lastPrice;
             if (detailTotalUnits) detailTotalUnits.textContent = data.totalUnits;
             if (detailAvailUnits) detailAvailUnits.textContent = data.availUnits;
+            if (detailUtcDisplay) detailUtcDisplay.textContent = data.utc || 'WONG KAH WEI 90000026';
 
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

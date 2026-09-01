@@ -81,7 +81,9 @@ main.dashboard-content {
     background-color: #f9f9f9;
     background-image: radial-gradient(circle, rgba(38, 36, 123, 0.065) 1px, transparent 1px);
     background-size: 28px 28px;
-    padding-bottom: 4rem !important; /* ≈64px — standardised across all pages */
+    padding-bottom: 4rem !important;
+    /* ≈64px — standardised across all pages */
+    padding-top: 2.5rem !important;
 }
 
 /* Dashboard Header — richer gradient + financial trend watermark */
@@ -538,8 +540,18 @@ h2.pmo-card-inline-title {
 }
 
 .custom-checkbox .form-check-input:checked {
-    background-color: var(--brand-navy) !important;
-    border-color: var(--brand-navy) !important;
+    background-color: #0E0D3B;
+    border-color: #0E0D3B;
+}
+
+/* Global Checkbox Reset for Flex Layouts & Declarations */
+.d-flex > .form-check-input,
+.pmo-declaration-item .form-check-input,
+.d-flex > input[type="checkbox"].form-check-input {
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
 }
 
 /* Table Action Button (hover zoom) */
@@ -941,6 +953,7 @@ h2.pmo-card-inline-title {
 
 /* Responsive portal navigation: desktop uses the top menu, mobile uses the sidebar. */
 @media (min-width: 992px) {
+
     body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
     body[data-pmo-shell="true"] #eopBtnOpenSidebar,
     body[data-pmo-shell="true"] #sidebarMenu,
@@ -950,6 +963,7 @@ h2.pmo-card-inline-title {
 }
 
 @media (max-width: 991.98px) {
+
     body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
     body[data-pmo-shell="true"] #eopBtnOpenSidebar {
         display: inline-flex !important;
@@ -965,15 +979,15 @@ h2.pmo-card-inline-title {
         display: none !important;
     }
 
-    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav > .container-fluid {
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav>.container-fluid {
         padding-inline: 1rem !important;
     }
 
-    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav > .d-flex.align-items-center.justify-content-between {
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav>.d-flex.align-items-center.justify-content-between {
         min-height: 44px;
     }
 
-    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav > .d-flex.align-items-center.justify-content-between > .d-flex.align-items-center.gap-3 {
+    body[data-pmo-shell="true"] .pmo-shell-dashboard-topnav nav>.d-flex.align-items-center.justify-content-between>.d-flex.align-items-center.gap-3 {
         gap: 0 !important;
     }
 
@@ -1438,12 +1452,12 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
     transition: width 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
 }
 
-.pmo-transaction-filter-card > .pmo-filter-header {
+.pmo-transaction-filter-card>.pmo-filter-header {
     margin-bottom: 14px !important;
     padding-bottom: 12px !important;
 }
 
-.pmo-transaction-filter-card > .mb-4 {
+.pmo-transaction-filter-card>.mb-4 {
     margin-bottom: 14px !important;
 }
 
@@ -1490,11 +1504,11 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
     padding: 12px !important;
 }
 
-.pmo-transaction-filter-card.is-collapsed > :not(.pmo-filter-header) {
+.pmo-transaction-filter-card.is-collapsed> :not(.pmo-filter-header) {
     display: none !important;
 }
 
-.pmo-transaction-filter-card.is-collapsed > .pmo-filter-header {
+.pmo-transaction-filter-card.is-collapsed>.pmo-filter-header {
     justify-content: center !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -1513,27 +1527,31 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 }
 
 @media (min-width: 992px) {
-    .pmo-transaction-layout > .pmo-transaction-filter-sidebar {
+    .pmo-transaction-layout>.pmo-transaction-filter-sidebar {
         flex: 0 0 25%;
         max-width: 25%;
         transition: flex-basis 0.2s ease, max-width 0.2s ease;
     }
 
-    .pmo-transaction-layout > .pmo-transaction-main {
+    .pmo-transaction-layout>.pmo-transaction-main {
         flex: 0 0 75%;
         max-width: 75%;
         transition: flex-basis 0.2s ease, max-width 0.2s ease;
     }
 
-    .pmo-transaction-layout.is-filter-collapsed > .pmo-transaction-filter-sidebar {
+    .pmo-transaction-layout.is-filter-collapsed>.pmo-transaction-filter-sidebar {
         flex-basis: 76px !important;
         max-width: 76px !important;
     }
 
-    .pmo-transaction-layout.is-filter-collapsed > .pmo-transaction-main,
-    .pmo-transaction-layout.is-filter-hidden > .pmo-transaction-main {
-        flex: 1 1 0 !important;
-        max-width: none !important;
+    .pmo-transaction-layout.is-filter-collapsed>.pmo-transaction-main,
+    .pmo-transaction-layout.is-filter-hidden>.pmo-transaction-main,
+    .pmo-transaction-layout>.pmo-transaction-main.col-lg-12,
+    .pmo-transaction-layout>.pmo-transaction-filter-sidebar.d-none+.pmo-transaction-main,
+    .pmo-transaction-layout>.pmo-transaction-filter-sidebar[style*="display: none"]+.pmo-transaction-main {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
 }
 
@@ -1603,12 +1621,33 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
     margin: 0;
 }
 
+/* Standardized PMO Toolbar Action Buttons (Filters, Print, Export) */
+.pmo-btn-toolbar,
 .btn-action-premium {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.25s ease;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    padding: 0 16px !important;
+    border-radius: 50rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    line-height: 1 !important;
+    transition: all 0.25s ease !important;
+    white-space: nowrap !important;
+}
+
+.pmo-btn-toolbar i,
+.btn-action-premium i {
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    vertical-align: middle !important;
 }
 
 /* Standardized Bottom Action Bar (UX Spacing & Touch Targets) */
@@ -1628,12 +1667,27 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 .pmo-action-bar .btn,
 .pmo-btn-action {
     min-width: 140px;
-    padding: 10px 28px !important;
+    height: 42px !important;
+    padding: 0 24px !important;
     font-size: 0.875rem !important;
     font-weight: 600 !important;
     letter-spacing: 0.3px;
     border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    line-height: 1 !important;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pmo-action-bar .btn i,
+.pmo-btn-action i {
+    font-size: 1.1rem !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /* Keep solid action labels readable even when a page has a legacy inline color. */
@@ -1644,14 +1698,14 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
 
 /* Solid master actions must keep readable labels in every state. */
 body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark) {
+    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark) {
     color: #ffffff !important;
 }
 
 body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):hover,
+    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):hover,
 body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-        .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):focus-visible {
+    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):focus-visible {
     color: #ffffff !important;
 }
 

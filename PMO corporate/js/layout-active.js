@@ -606,12 +606,32 @@
         container.insertBefore(wrapper.firstChild, firstChild);
     }
 
+    function syncCategoryBadges() {
+        document.querySelectorAll(".pmo-category-badge, .pmo-badge").forEach(function (badge) {
+            const text = badge.textContent.trim().toUpperCase();
+            if (text === "MM" || text === "MONEY MARKET") {
+                badge.classList.add("pmo-category-badge--mm");
+                badge.classList.remove("pmo-category-badge--bo", "pmo-category-badge--eq", "pmo-category-badge--ma");
+            } else if (text === "BO" || text === "BOND") {
+                badge.classList.add("pmo-category-badge--bo");
+                badge.classList.remove("pmo-category-badge--mm", "pmo-category-badge--eq", "pmo-category-badge--ma");
+            } else if (text === "EQ" || text === "EQUITY") {
+                badge.classList.add("pmo-category-badge--eq");
+                badge.classList.remove("pmo-category-badge--mm", "pmo-category-badge--bo", "pmo-category-badge--ma");
+            } else if (text === "MA" || text === "MIXED ASSET" || text === "BALANCED") {
+                badge.classList.add("pmo-category-badge--ma");
+                badge.classList.remove("pmo-category-badge--mm", "pmo-category-badge--bo", "pmo-category-badge--eq");
+            }
+        });
+    }
+
     try {
         promotePageIntroBlocks();
         applyFooterPrintHidden();
         injectCorporateDisclosures();
         fixTableDropdownClipping();
         initializePopovers();
+        syncCategoryBadges();
         syncTableColumnAlignments();
         observeTableChanges();
         applyUtSidebarActiveForPath();

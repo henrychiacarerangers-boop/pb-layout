@@ -230,8 +230,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <button type="button" onclick="window.print()"
-                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2">
-                        <i class="iconoir-printer fs-6"></i> Print
+                        class="btn btn-outline-dark pmo-btn-toolbar">
+                        <i class="iconoir-printer"></i> Print
                     </button>
                 </div>
             </div>
@@ -300,16 +300,15 @@
                                         </tr>
                                         <tr>
                                             <td>Fund Category</td>
-                                            <td class="text-dark" id="fundCategoryDisplay">Equity</td>
+                                            <td class="text-dark" id="fundCategoryDisplay">Bond</td>
                                         </tr>
                                         <tr>
                                             <td>Risk Level</td>
                                             <td class="text-dark">
 
-                                                <img id="riskIconDisplay" src="../images/icon/risk-level/icon_risk4.png"
-                                                    alt="Risk 4" style="height: 20px;">
-                                                <span id="riskLabelDisplay" class="fs-8 text-dark">Risk 4 -
-                                                    High</span>
+                                                <img id="riskIconDisplay" src="../images/icon/risk-level/icon_risk2.png"
+                                                    alt="Risk 2" style="height: 20px;">
+                                                <span id="riskLabelDisplay" class="fs-8 text-dark">Risk 2 - Low to Moderate</span>
 
                                             </td>
                                         </tr>
@@ -744,9 +743,9 @@
                     'UT26000000000195': {
                         fund: 'PB FIXED INCOME FUND',
                         account: '094766567',
-                        category: 'Equity',
-                        riskIcon: '../images/icon/risk-level/icon_risk4.png',
-                        riskLabel: 'Risk 4 - High',
+                        category: 'Bond',
+                        riskIcon: '../images/icon/risk-level/icon_risk2.png',
+                        riskLabel: 'Risk 2 - Low to Moderate',
                         totalUnits: '185,000.00 Units',
                         topupUnits: '95,174.64 Units',
                         afterTopup: '280,174.64 Units',
@@ -756,9 +755,9 @@
                     'UT26000000000196': {
                         fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
                         account: '094766508',
-                        category: 'Equity',
-                        riskIcon: '../images/icon/risk-level/icon_risk5.png',
-                        riskLabel: 'Risk 5 - Very High',
+                        category: 'Money Market',
+                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                        riskLabel: 'Risk 1 - Low',
                         totalUnits: '160,000.00 Units',
                         topupUnits: '49,860.39 Units',
                         afterTopup: '209,860.39 Units',
@@ -776,6 +775,42 @@
                         afterTopup: '70,008.00 Units',
                         amount: 'MYR 20,000.00',
                         impact: 'Increases PB CASH MANAGEMENT holdings by 40.0%'
+                    },
+                    'UT26000000000198': {
+                        fund: 'PB FIXED INCOME FUND',
+                        account: '094766567',
+                        category: 'Bond',
+                        riskIcon: '../images/icon/risk-level/icon_risk2.png',
+                        riskLabel: 'Risk 2 - Low to Moderate',
+                        totalUnits: '185,000.00 Units',
+                        topupUnits: '71,380.98 Units',
+                        afterTopup: '256,380.98 Units',
+                        amount: 'MYR 75,000.00',
+                        impact: 'Increases PB FIXED INCOME holdings by 38.6%'
+                    },
+                    'UT26000000000199': {
+                        fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
+                        account: '094766508',
+                        category: 'Money Market',
+                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                        riskLabel: 'Risk 1 - Low',
+                        totalUnits: '160,000.00 Units',
+                        topupUnits: '29,916.24 Units',
+                        afterTopup: '189,916.24 Units',
+                        amount: 'MYR 30,000.00',
+                        impact: 'Increases e-CASH DEPOSIT holdings by 18.7%'
+                    },
+                    'UT26000000000201': {
+                        fund: 'PB CASH PLUS FUND',
+                        account: '136252514',
+                        category: 'Money Market',
+                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                        riskLabel: 'Risk 1 - Low',
+                        totalUnits: '75,000.00 Units',
+                        topupUnits: '44,834.11 Units',
+                        afterTopup: '119,834.11 Units',
+                        amount: 'MYR 45,000.00',
+                        impact: 'Increases PB CASH PLUS holdings by 59.8%'
                     }
                 };
 

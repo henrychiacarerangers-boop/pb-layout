@@ -231,8 +231,8 @@
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <button type="button" onclick="window.print()"
-                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2">
-                        <i class="iconoir-printer fs-6"></i> Print
+                        class="btn btn-outline-dark pmo-btn-toolbar">
+                        <i class="iconoir-printer"></i> Print
                     </button>
                 </div>
             </div>
@@ -299,14 +299,14 @@
 
                             <!-- Terms & Conditions validation block -->
                             <div class="mb-3 print-hidden" id="utAuthTermsWrapper">
-                                <div class="form-check custom-checkbox d-flex align-items-start gap-2">
-                                    <input class="form-check-input mt-1 fs-6" type="checkbox" id="utAuthTermsCheckbox"
-                                        style="flex-shrink: 0;">
-                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                <div class="d-flex align-items-start gap-3">
+                                    <input class="form-check-input m-0 flex-shrink-0" type="checkbox" id="utAuthTermsCheckbox"
+                                        style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
                                         for="utAuthTermsCheckbox">
                                         I have read and agreed to the <a href="#"
-                                            class="text-danger fw-bold text-decoration-none"
-                                            style="color: var(--brand-red, #d3112b) !important;">Terms and Conditions of
+                                            class="text-danger fw-bold text-decoration-underline"
+                                            style="color: #d3112b !important;">Terms and Conditions of
                                             Unit
                                             Trust Redemption</a> and hereby authorise this transaction.
                                     </label>
@@ -321,8 +321,11 @@
                             <div id="pac-verification-card" class="pmo-verification-section print-hidden">
                                 <form id="utAuthPacForm">
                                     <div class="mb-3">
-                                        <label class="form-label text-dark fs-8 fw-semibold" for="pacMethod">Verification Method</label>
-                                        <select class="form-select border-secondary rounded-2 px-3 py-2 fs-8 fw-semibold text-dark" id="pacMethod" style="max-width: 380px;">
+                                        <label class="form-label text-dark fs-8 fw-semibold"
+                                            for="pacMethod">Verification Method</label>
+                                        <select
+                                            class="form-select border-secondary rounded-2 px-3 py-2 fs-8 fw-semibold text-dark"
+                                            id="pacMethod" style="max-width: 380px;">
                                             <option value="PAC" selected>SMS Personal Authentication Code (PAC)</option>
                                             <option value="SecureSign">SecureSign (PMO PLUS Mobile App)</option>
                                         </select>
@@ -330,7 +333,9 @@
 
                                     <!-- PAC Method Container -->
                                     <div id="pac-fields-wrapper">
-                                        <h6 class="fw-bold text-primary mb-3" style="color: var(--brand-navy) !important;">Personal Authentication Code (PAC)</h6>
+                                        <h6 class="fw-bold text-primary mb-3"
+                                            style="color: var(--brand-navy) !important;">Personal Authentication Code
+                                            (PAC)</h6>
                                         <div class="d-flex align-items-center gap-2 mb-2">
                                             <input type="password"
                                                 class="form-control border-secondary rounded-2 px-3 py-2 fs-7"
@@ -339,48 +344,69 @@
                                             <button type="button" class="btn pmo-btn-action btn-dark shadow-sm"
                                                 id="btn-request-pac" style="white-space: nowrap;">Request PAC</button>
                                         </div>
-                                        <div class="invalid-feedback d-none mb-2" id="pac-error" style="color: #d3112b; font-size: 0.75rem;">
+                                        <div class="invalid-feedback d-none mb-2" id="pac-error"
+                                            style="color: #d3112b; font-size: 0.75rem;">
                                             Incorrect PAC number. Please click 'Request PAC' and use code 12345678.
                                         </div>
 
                                         <p class="text-secondary fs-8 mb-3" style="color: #58595b !important;">
-                                            * Please request for PAC and enter the number sent to your registered mobile number.
+                                            * Please request for PAC and enter the number sent to your registered mobile
+                                            number.
                                         </p>
 
                                         <div class="d-flex align-items-center gap-3 mt-3 pt-1">
                                             <div class="flex-shrink-0">
-                                                <svg width="34" height="48" viewBox="0 0 36 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect x="1.5" y="1.5" width="33" height="49" rx="6.5" stroke="#000000" stroke-width="2.5" fill="#ffffff"/>
-                                                    <line x1="13" y1="5.5" x2="23" y2="5.5" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                                                    <rect x="4" y="9" width="28" height="34" rx="2" fill="#ffffff"/>
-                                                    <text x="18" y="24" font-family="'Montserrat', sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#000000">PAC</text>
-                                                    <text x="18" y="36" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#000000">***</text>
-                                                    <circle cx="18" cy="47" r="1.5" fill="#000000"/>
+                                                <svg width="34" height="48" viewBox="0 0 36 52" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="1.5" y="1.5" width="33" height="49" rx="6.5"
+                                                        stroke="#000000" stroke-width="2.5" fill="#ffffff" />
+                                                    <line x1="13" y1="5.5" x2="23" y2="5.5" stroke="#000000"
+                                                        stroke-width="2" stroke-linecap="round" />
+                                                    <rect x="4" y="9" width="28" height="34" rx="2" fill="#ffffff" />
+                                                    <text x="18" y="24" font-family="'Montserrat', sans-serif"
+                                                        font-size="10" font-weight="700" text-anchor="middle"
+                                                        fill="#000000">PAC</text>
+                                                    <text x="18" y="36" font-family="'Montserrat', sans-serif"
+                                                        font-size="14" font-weight="700" text-anchor="middle"
+                                                        fill="#000000">***</text>
+                                                    <circle cx="18" cy="47" r="1.5" fill="#000000" />
                                                 </svg>
                                             </div>
                                             <div class="fs-8 text-dark lh-base">
-                                                A 8-digit PAC will be sent to your registered mobile number <strong>XXX46XXXXX8</strong>.<br>Please click Request PAC if you wish to proceed.
+                                                A 8-digit PAC will be sent to your registered mobile number
+                                                <strong>XXX46XXXXX8</strong>.<br>Please click Request PAC if you wish to
+                                                proceed.
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- SecureSign Method Container -->
                                     <div id="secureSignContainer" class="d-none">
-                                        <h6 class="fw-bold text-primary mb-3" style="color: var(--brand-navy) !important;">SecureSign Verification</h6>
+                                        <h6 class="fw-bold text-primary mb-3"
+                                            style="color: var(--brand-navy) !important;">SecureSign Verification</h6>
                                         <div class="p-3 bg-light rounded-3 border d-flex align-items-center gap-3 mb-2">
-                                            <div class="spinner-border text-primary flex-shrink-0" style="width: 2rem; height: 2rem;" role="status">
+                                            <div class="spinner-border text-primary flex-shrink-0"
+                                                style="width: 2rem; height: 2rem;" role="status">
                                                 <span class="visually-hidden">Loading...</span>
                                             </div>
                                             <div>
-                                                <div class="fs-8 fw-bold text-dark mb-1">Awaiting SecureSign Approval on PMO PLUS...</div>
-                                                <p class="text-muted fs-9 mb-0">Please open your <strong>PMO PLUS</strong> mobile app on registered device (<strong>XXX46XXXXX8</strong>) and tap 'Approve' to authorize this redemption.</p>
+                                                <div class="fs-8 fw-bold text-dark mb-1">Awaiting SecureSign Approval on
+                                                    PMO PLUS...</div>
+                                                <p class="text-muted fs-9 mb-0">Please open your <strong>PMO
+                                                        PLUS</strong> mobile app on registered device
+                                                    (<strong>XXX46XXXXX8</strong>) and tap 'Approve' to authorize this
+                                                    redemption.</p>
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-center gap-2 mt-3">
-                                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-semibold fs-9">
-                                                <i class="iconoir-check-circle me-1 align-middle"></i> Push Notification Sent
+                                            <span
+                                                class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-semibold fs-9">
+                                                <i class="iconoir-check-circle me-1 align-middle"></i> Push Notification
+                                                Sent
                                             </span>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fs-9" id="btnResendSecureSign">
+                                            <button type="button"
+                                                class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 fs-9"
+                                                id="btnResendSecureSign">
                                                 Resend Notification
                                             </button>
                                         </div>
@@ -393,12 +419,9 @@
 
                     <!-- Action Buttons under left section -->
                     <div class="pmo-action-bar print-hidden">
-                        <button class="btn btn-outline-dark"
+                        <button type="button" class="btn btn-outline-dark" id="btn-back-cancel"
                             onclick="location.href='authorise.html'">Back</button>
-                        <button class="btn btn-outline-danger shadow-sm"
-                            id="btn-reject-trigger">Reject Request</button>
-                        <button class="btn btn-danger shadow-sm"
-                            id="btn-approve-trigger">Approve &amp; Authorise</button>
+                        <button type="button" class="btn btn-danger shadow-sm" id="btn-confirm-action">Confirm</button>
                     </div>
                 </div>
 
@@ -417,7 +440,7 @@
                                     <div class="fw-bold fs-8 text-dark">Ahmad Razak bin Osman</div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="text-muted fs-9 mb-1">Units to redeem</div>
+                                    <div class="text-muted fs-9 mb-1">Redemption Units</div>
                                     <div class="fw-bold fs-4 " id="redeemUnitsDisplay2">30,000.00</div>
                                 </div>
                             </div>
@@ -432,19 +455,20 @@
                 <div class="mx-auto" style="max-width: 820px;">
                     <!-- Status Card Voucher -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="card-body p-4">
+                        <div class="card-body p-4 p-md-5">
 
-                            <!-- Compact Status Banner -->
-                            <div class="d-flex align-items-center gap-3 p-3 mb-3 rounded-3 bg-success-subtle border border-success-subtle" id="statusBanner">
-                                <div class="rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm flex-shrink-0 bg-success"
-                                    id="statusIconBg" style="width: 44px; height: 44px;">
+                            <!-- Clean Success Hero Header -->
+                            <div class="text-center pb-4 mb-4 border-bottom">
+                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle shadow-sm"
+                                    id="statusIconBg"
+                                    style="width: 60px; height: 60px; background-color: #12a833; color: #ffffff; box-shadow: 0 6px 16px rgba(18, 168, 51, 0.25) !important;">
                                     <i class="iconoir-check text-white" id="statusIcon"
-                                        style="font-size: 1.35rem; stroke-width: 2.5;"></i>
+                                        style="font-size: 1.85rem; stroke-width: 2.8;"></i>
                                 </div>
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-0 fs-6" id="statusMainTitle">Redemption Request Approved</h5>
-                                    <p class="text-muted fs-8 mb-0" id="statusSubTitle">The redemption transaction has been successfully authorised.</p>
-                                </div>
+                                <h4 class="fw-bold text-dark mb-1" id="statusMainTitle" style="letter-spacing: -0.3px;">
+                                    Redemption Request Approved</h4>
+                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 520px;" id="statusSubTitle">
+                                    The redemption transaction has been successfully authorised and queued for payout.</p>
                             </div>
 
                             <!-- Structured Receipt Details Table -->
@@ -464,7 +488,8 @@
                                         </tr>
                                         <tr>
                                             <td>Fund Name</td>
-                                            <td class="fw-bold text-dark" id="doneFundName">PB CASH MANAGEMENT FUND - CLASS B</td>
+                                            <td class="fw-bold text-dark" id="doneFundName">PB CASH MANAGEMENT FUND -
+                                                CLASS B</td>
                                         </tr>
                                         <tr>
                                             <td>Account Number</td>
@@ -487,8 +512,7 @@
                                         <tr>
                                             <td style="width: 40%;">Execution Status</td>
                                             <td>
-                                                <span
-                                                    class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-bold fs-8"
+                                                <span class="pmo-status-badge pmo-status-approved"
                                                     id="doneStatusText">Approved (Pending Payout)</span>
                                             </td>
                                         </tr>
@@ -520,8 +544,8 @@
                             onclick="window.print()">
                             <i class="iconoir-printer fs-6"></i> Print
                         </button>
-                        <button type="button" class="btn btn-outline-dark"
-                            onclick="location.href='dashboard.html'">Back to Dashboard</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="location.href='dashboard.html'">Back
+                            to Dashboard</button>
                         <button type="button" class="btn btn-danger shadow-sm"
                             onclick="location.href='authorise.html'">Back to Authorise List</button>
                     </div>
@@ -870,8 +894,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const btnApprove = document.getElementById('btn-approve-trigger');
-            const btnReject = document.getElementById('btn-reject-trigger');
+            const btnConfirm = document.getElementById('btn-confirm-action') || document.getElementById('btn-approve-trigger');
+            const btnBackCancel = document.getElementById('btn-back-cancel');
 
             const detailSection = document.getElementById('authoriseDetailSection');
             const doneSection = document.getElementById('authoriseDoneSection');
@@ -1006,15 +1030,48 @@
                     rawRedeem: '50,000.00'
                 },
                 'RP26000000000181': {
-                    fund: 'PUBLIC e-EMAS GOLD FUND',
+                    fund: 'PB CASH PLUS FUND',
                     account: '136252514',
                     payout: 'CIMB BANK BERHAD (7029381023)',
-                    totalUnits: '76,072.91 Units',
+                    totalUnits: '75,000.00 Units',
                     redeemUnits: '30,000.00 Units',
-                    afterRedeem: '46,072.91 Units',
-                    payoutVal: 'MYR 60,165.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 2.0055 based on NAV as of 2026/07/27)</span>',
-                    impact: 'Reduces e-EMAS GOLD holdings by 39.4%',
+                    afterRedeem: '45,000.00 Units',
+                    payoutVal: 'MYR 30,111.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0037 based on NAV as of 2026/07/27)</span>',
+                    impact: 'Reduces PB CASH PLUS holdings by 40.0%',
                     rawRedeem: '30,000.00'
+                },
+                'RP26000000000182': {
+                    fund: 'PB FIXED INCOME FUND',
+                    account: '094766567',
+                    payout: 'PUBLIC BANK BERHAD (891823092391)',
+                    totalUnits: '185,000.00 Units',
+                    redeemUnits: '40,000.00 Units',
+                    afterRedeem: '145,000.00 Units',
+                    payoutVal: 'MYR 42,028.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0507 based on NAV as of 2026/07/27)</span>',
+                    impact: 'Reduces PB FIXED INCOME holdings by 21.6%',
+                    rawRedeem: '40,000.00'
+                },
+                'RP26000000000183': {
+                    fund: 'PB CASH MANAGEMENT FUND - CLASS B',
+                    account: '148822319',
+                    payout: 'MAYBANK BERHAD (164019283742)',
+                    totalUnits: '50,000.00 Units',
+                    redeemUnits: '15,000.00 Units',
+                    afterRedeem: '35,000.00 Units',
+                    payoutVal: 'MYR 14,994.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.9996 based on NAV as of 2026/07/27)</span>',
+                    impact: 'Reduces PB CASH MANAGEMENT holdings by 30.0%',
+                    rawRedeem: '15,000.00'
+                },
+                'RP26000000000184': {
+                    fund: 'PUBLIC e-CASH DEPOSIT FUND',
+                    account: '148822321',
+                    payout: 'HONG LEONG BANK (334891023741)',
+                    totalUnits: '35,000.00 Units',
+                    redeemUnits: '10,000.00 Units',
+                    afterRedeem: '25,000.00 Units',
+                    payoutVal: 'MYR 10,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0000 based on NAV as of 2026/07/27)</span>',
+                    impact: 'Reduces e-CASH DEPOSIT holdings by 28.6%',
+                    rawRedeem: '10,000.00'
                 }
             };
 
@@ -1047,23 +1104,13 @@
             document.getElementById('requestDateDisplay').textContent = formattedDate;
 
             if (actionParam === 'reject') {
-                if (btnApprove) btnApprove.style.display = 'none';
-                if (btnReject) {
-                    btnReject.style.display = 'inline-block';
-                    btnReject.className = 'btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm';
-                    btnReject.style.backgroundColor = '#d3112b';
-                    btnReject.style.borderColor = '#d3112b';
-                }
+                if (btnBackCancel) btnBackCancel.textContent = 'Cancel';
+                if (btnConfirm) btnConfirm.textContent = 'Confirm';
                 if (pacVerificationCard) pacVerificationCard.style.display = 'none';
                 if (termsWrapper) termsWrapper.style.display = 'none';
             } else {
-                if (btnReject) btnReject.style.display = 'none';
-                if (btnApprove) {
-                    btnApprove.style.display = 'inline-block';
-                    btnApprove.className = 'btn btn-danger rounded-pill px-5 py-2 fw-semibold shadow-sm';
-                    btnApprove.style.backgroundColor = '#d3112b';
-                    btnApprove.style.borderColor = '#d3112b';
-                }
+                if (btnBackCancel) btnBackCancel.textContent = 'Back';
+                if (btnConfirm) btnConfirm.textContent = 'Confirm';
                 if (pacVerificationCard) pacVerificationCard.style.display = 'block';
                 if (pacInput) {
                     pacInput.value = '12345678';
@@ -1075,25 +1122,23 @@
 
             function showResult(result) {
                 const approved = result === 'approved';
-                const statusBanner = document.getElementById('statusBanner');
-                if (statusBanner) {
-                    statusBanner.className = 'd-flex align-items-center gap-3 p-3 mb-3 rounded-3 bg-success-subtle border border-success-subtle';
-                }
                 if (statusIconBg) {
-                    statusIconBg.classList.remove('bg-danger');
-                    statusIconBg.classList.add('bg-success');
+                    statusIconBg.style.backgroundColor = approved ? '#12a833' : '#d3112b';
+                    statusIconBg.style.boxShadow = approved
+                        ? '0 6px 16px rgba(18, 168, 51, 0.25)'
+                        : '0 6px 16px rgba(211, 17, 43, 0.25)';
                 }
                 if (statusIcon) {
-                    statusIcon.className = 'iconoir-check text-white';
+                    statusIcon.className = approved ? 'iconoir-check text-white' : 'iconoir-xmark text-white';
                 }
                 if (statusMainTitle) {
-                    statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Successfully Rejected';
+                    statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Rejected';
                 }
                 const statusSubTitle = document.getElementById('statusSubTitle');
                 if (statusSubTitle) {
                     statusSubTitle.textContent = approved
                         ? 'The redemption transaction has been successfully authorised and queued for payout.'
-                        : 'This redemption request has been successfully rejected. The initiator has been notified.';
+                        : 'This redemption request has been rejected. It has been sent back to the initiator with your remarks.';
                 }
                 if (doneStatusText) {
                     doneStatusText.textContent = approved ? 'Approved (Pending Payout)' : 'Rejected';
@@ -1121,14 +1166,16 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            if (btnApprove) btnApprove.addEventListener('click', function () {
-                if (!validateTerms() || !validatePAC()) return;
-                showResult('approved');
-            });
-
-            if (btnReject) btnReject.addEventListener('click', function () {
-                showResult('rejected');
-            });
+            if (btnConfirm) {
+                btnConfirm.addEventListener('click', function () {
+                    if (actionParam === 'reject') {
+                        showResult('rejected');
+                    } else {
+                        if (!validateTerms() || !validatePAC()) return;
+                        showResult('approved');
+                    }
+                });
+            }
         });
     </script>
 </body>

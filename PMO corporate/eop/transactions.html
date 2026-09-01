@@ -188,19 +188,18 @@
                 <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title" id="eopTxnPageTitle">Transaction Enquiry
                 </h2>
             </div>
-            <div class="row g-4 pmo-transaction-layout is-filter-collapsed">
+            <div class="row g-4 pmo-transaction-layout" id="eopTxnMainRow">
                 <aside id="eopTxnFilterAside" class="col-lg-3 eop-txn-filter-sidebar pmo-transaction-filter-sidebar">
-                    <div
-                        class="card filter-sidebar-card pmo-transaction-filter-card is-collapsed border-0 shadow-sm rounded-4 bg-white">
-                        <div
-                            class="pmo-filter-header d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
+                    <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4 sticky-top" style="top: 20px;">
+                        <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
                             <h5 class="pmo-filter-heading fw-bold text-dark fs-6 mb-0" id="eopTxnFilterHeading">Further
                                 filter by
                             </h5>
                             <button type="button" id="eopTxnFilterCollapseBtn"
-                                class="btn pmo-filter-toggle d-flex align-items-center justify-content-center"
-                                aria-label="Open filters" aria-expanded="false" title="Open filters">
-                                <i class="iconoir-filter-alt fs-6" aria-hidden="true"></i>
+                                class="btn btn-outline-secondary btn-sm rounded-2 d-flex align-items-center justify-content-center p-0"
+                                style="width: 32px; height: 32px; border-color: #dee2e6;"
+                                aria-label="Collapse filters" title="Collapse filters">
+                                <i class="iconoir-nav-arrow-left fs-5 text-dark" aria-hidden="true"></i>
                             </button>
                         </div>
 
@@ -279,7 +278,7 @@
                     </div>
                     <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
                         <!-- View Tab Links -->
-                        <div class="border-bottom pb-3 mb-4">
+                        <div class="border-bottom pb-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
                             <div class="d-flex align-items-center gap-4 flex-wrap" id="eopTxnViewTabs">
                                 <a href="#" class="view-tab active d-flex align-items-center gap-2"
                                     data-panel="eopTxnPanelHistory" id="eopTxnTabHistory" role="button"
@@ -291,6 +290,11 @@
                                     Pending Transactions
                                 </a>
                             </div>
+                            <!-- Integrated Filter Toggle Button -->
+                            <button type="button" id="btnToggleEopFilter"
+                                class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-inline-flex align-items-center gap-2 shadow-sm">
+                                <i class="iconoir-filter fs-6"></i> Filters
+                            </button>
                         </div>
 
                         <!-- Past transactions -->
@@ -300,7 +304,7 @@
                                 <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Past Transactions History</h5>
                                 <div class="d-flex gap-2">
                                     <button type="button"
-                                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2 eop-print-btn">
+                                        class="btn btn-outline-dark pmo-btn-toolbar eop-print-btn">
                                         <i class="iconoir-printer" aria-hidden="true"></i> Print
                                     </button>
 
@@ -390,10 +394,9 @@
                                 <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Pending Transactions Details</h5>
                                 <div class="d-flex gap-2">
                                     <button type="button"
-                                        class="btn btn-outline-dark fs-8 fw-semibold rounded-pill px-3 py-1.5 d-flex align-items-center gap-2 eop-print-btn">
+                                        class="btn btn-outline-dark pmo-btn-toolbar eop-print-btn">
                                         <i class="iconoir-printer" aria-hidden="true"></i> Print
                                     </button>
-
                                 </div>
                             </div>
                             <div class="border rounded-4 overflow-hidden mb-4">
@@ -817,26 +820,41 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const filterAside = document.getElementById('eopTxnFilterAside');
-            const filterCard = filterAside?.querySelector('.pmo-transaction-filter-card');
-            const filterLayout = document.querySelector('.pmo-transaction-layout');
-            const filterToggle = document.getElementById('eopTxnFilterCollapseBtn');
+            const mainSection = document.getElementById('eopTxnMainSection');
+            const btnCollapseFilter = document.getElementById('eopTxnFilterCollapseBtn');
+            const btnToggleFilter = document.getElementById('btnToggleEopFilter');
             const filterReset = document.getElementById('eopTxnFilterResetBtn');
             const filterControls = filterAside ? Array.from(filterAside.querySelectorAll('select, input')) : [];
             const filterDefaults = filterControls.map(function (control) {
                 return { value: control.value, checked: control.checked };
             });
 
-            function setFilterCollapsed(isCollapsed) {
-                filterCard?.classList.toggle('is-collapsed', isCollapsed);
-                filterLayout?.classList.toggle('is-filter-collapsed', isCollapsed);
-                filterToggle.setAttribute('aria-expanded', String(!isCollapsed));
-                filterToggle.setAttribute('aria-label', isCollapsed ? 'Open filters' : 'Collapse filters');
-                filterToggle.setAttribute('title', isCollapsed ? 'Open filters' : 'Collapse filters');
+            function setFilterOpen(isOpen) {
+                if (isOpen) {
+                    filterAside?.classList.remove('d-none');
+                    mainSection?.classList.add('col-lg-9');
+                    mainSection?.classList.remove('col-lg-12');
+                    btnToggleFilter?.classList.add('btn-dark', 'text-white');
+                    btnToggleFilter?.classList.remove('btn-outline-dark');
+                } else {
+                    filterAside?.classList.add('d-none');
+                    mainSection?.classList.remove('col-lg-9');
+                    mainSection?.classList.add('col-lg-12');
+                    btnToggleFilter?.classList.remove('btn-dark', 'text-white');
+                    btnToggleFilter?.classList.add('btn-outline-dark');
+                }
             }
 
-            setFilterCollapsed(filterCard?.classList.contains('is-collapsed') ?? true);
-            filterToggle?.addEventListener('click', function () {
-                setFilterCollapsed(!(filterCard?.classList.contains('is-collapsed') ?? false));
+            // Start collapsed with full width
+            setFilterOpen(false);
+
+            btnCollapseFilter?.addEventListener('click', function () {
+                setFilterOpen(false);
+            });
+
+            btnToggleFilter?.addEventListener('click', function () {
+                const isCurrentlyHidden = filterAside?.classList.contains('d-none') ?? true;
+                setFilterOpen(isCurrentlyHidden);
             });
 
             filterReset?.addEventListener('click', function () {

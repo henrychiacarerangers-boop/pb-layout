@@ -4,7 +4,8 @@
  * table layout, typography, border, colour, width, and alignment overrides.
  */
 .pmo-table-frame,
-.table-responsive:has(> .pmo-data-table) {
+.table-responsive:has(> .pmo-data-table),
+.document-register {
   width: 100%;
   overflow-x: auto;
   border: 1px solid #E2E8F0;
@@ -47,14 +48,24 @@
   text-align: left !important;
 }
 
-/* Status columns stay centered even though numeric table cells default right. */
-.pmo-data-table :is(th, td).pmo-status-column,
-.pmo-data-table :is(td):has(> .pmo-status-badge) {
+/* Status columns in regular data tables stay centered */
+.pmo-data-table:not(.pmo-data-table--details) :is(th, td).pmo-status-column,
+.pmo-data-table:not(.pmo-data-table--details) :is(td):has(> .pmo-status-badge) {
   text-align: center !important;
 }
 
 /* Empty table messages are centered as a single full-width state. */
-.pmo-data-table td.pmo-empty-state-cell {
+.pmo-data-table td.pmo-empty-state-cell,
+.pmo-data-table :is(th, td).pmo-empty-state-cell,
+.pmo-data-table tr:has(.pmo-empty-state-cell) :is(th, td),
+.pmo-data-table :is(th, td).text-center {
+  text-align: center !important;
+}
+
+.pmo-empty-state-cell i,
+.pmo-empty-state-cell .iconoir-page-search {
+  margin-inline: auto !important;
+  display: block !important;
   text-align: center !important;
 }
 
@@ -71,25 +82,44 @@
   text-align: right !important;
 }
 
+/* Avoid nested double borders when wrapped in container cards */
+.border.rounded-4 > .pmo-table-frame,
+.border.rounded-4 > .document-register,
+.border.rounded-4 > .table-responsive:has(> .pmo-data-table),
+.border > .pmo-table-frame,
+.border > .document-register {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
 .pmo-data-table thead th {
-  padding: 10px 12px;
-  background: #F8FAFC;
+  padding: 12px 14px !important;
+  background: #F8FAFC !important;
   border-bottom: 1px solid #e2e8f0 !important;
   color: #0f172a !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
-  line-height: 16px;
-  white-space: nowrap;
+  line-height: 16px !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+}
+
+.pmo-data-table thead th span {
+  font-weight: 500 !important;
+  font-size: 10.5px !important;
+  color: #64748b !important;
 }
 
 .pmo-data-table tbody :is(td, th) {
-  padding: 12px 12px;
-  border-bottom: 1px dotted #e2e8f0 !important;
+  padding: 13px 14px !important;
+  border-bottom: 1px solid #edf2f7 !important;
   background: transparent;
   color: #1f2937 !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  line-height: 20px;
+  line-height: 20px !important;
+  vertical-align: middle !important;
 }
 
 .pmo-data-table tbody tr:last-child> :is(td, th) {
@@ -155,7 +185,8 @@
   line-height: 1.3;
 }
 
-.pmo-data-table .pmo-category-badge {
+.pmo-data-table .pmo-category-badge,
+.pmo-category-badge {
   display: inline-block;
   font-size: 11px;
   font-weight: 700;
@@ -165,6 +196,49 @@
   border-radius: 6px;
   letter-spacing: 0.5px;
   text-align: center;
+}
+
+/* Category Badge Colors */
+.pmo-category-badge--mm,
+.pmo-category-badge[title*="Money Market"],
+.pmo-category-badge[data-bs-title*="Money Market"],
+.pmo-category-badge[data-bs-original-title*="Money Market"],
+.pmo-badge-mm {
+  color: #047857 !important;
+  background-color: #e6f9f0 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.pmo-category-badge--bo,
+.pmo-category-badge[title*="Bond"],
+.pmo-category-badge[data-bs-title*="Bond"],
+.pmo-category-badge[data-bs-original-title*="Bond"],
+.pmo-badge-bo {
+  color: #b45309 !important;
+  background-color: #fef8ee !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.pmo-category-badge--eq,
+.pmo-category-badge[title*="Equity"],
+.pmo-category-badge[data-bs-title*="Equity"],
+.pmo-category-badge[data-bs-original-title*="Equity"],
+.pmo-badge-eq {
+  color: #0284c7 !important;
+  background-color: #f0f9ff !important;
+  border: 1px solid rgba(2, 132, 199, 0.3) !important;
+}
+
+.pmo-category-badge--ma,
+.pmo-category-badge[title*="Mixed"],
+.pmo-category-badge[title*="Multi"],
+.pmo-category-badge[title*="Balanced"],
+.pmo-category-badge[data-bs-title*="Mixed"],
+.pmo-category-badge[data-bs-original-title*="Mixed"],
+.pmo-badge-ma {
+  color: #7c3aed !important;
+  background-color: #f5f3ff !important;
+  border: 1px solid rgba(124, 58, 237, 0.3) !important;
 }
 
 .pmo-data-table .pmo-risk-meter {
@@ -268,12 +342,20 @@
   color: #64748B !important;
   font-size: 12px !important;
   font-weight: 700 !important;
+  text-align: left !important;
 }
 
 .pmo-data-table--details tbody>tr> :not(:first-child) {
   color: #1f2937 !important;
   font-size: 13px !important;
   font-weight: 600 !important;
+  text-align: right !important;
+}
+
+.pmo-data-table--details td:has(> .pmo-status-badge),
+.pmo-data-table--details td:has(> .badge),
+.pmo-data-table--details td:has(> span) {
+  text-align: right !important;
 }
 
 /* Shared dashboard analytics grid: responsive proportions without fixed pixels. */
@@ -552,5 +634,90 @@ a.pmo-btn-reject:hover i {
 
 .pmo-avg-cost-badge:hover {
   transform: scale(1.15);
-  box-shadow: 0 2px 6px rgba(18, 168, 51, 0.4);
+  box-shadow: 0 2px 6px rgba(18, 168, 51, 0.35);
+}
+
+/* ==========================================================================
+   PMO Multi-Step Wizard Stepper (Pro Max)
+   ========================================================================== */
+.pmo-wizard-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.pmo-wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  cursor: default;
+}
+
+.pmo-wizard-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f3f5;
+  color: #58595b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 2px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.pmo-wizard-step.active .pmo-wizard-circle {
+  background-color: var(--brand-red, #d3112b);
+  border-color: var(--brand-red, #d3112b);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(211, 17, 43, 0.35);
+}
+
+.pmo-wizard-step.completed .pmo-wizard-circle {
+  background-color: #12a833 !important;
+  border-color: #12a833 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(18, 168, 51, 0.28) !important;
+}
+
+.pmo-wizard-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #58595b;
+  transition: color 0.3s ease;
+}
+
+.pmo-wizard-step.active .pmo-wizard-label {
+  color: #000000;
+  font-weight: 700;
+}
+
+.pmo-wizard-step.completed .pmo-wizard-label {
+  color: #12a833;
+}
+
+.pmo-wizard-line {
+  height: 2px;
+  width: 60px;
+  background-color: #dee2e6;
+  margin: 0 12px;
+  transition: background-color 0.3s ease;
+}
+
+.pmo-wizard-line.active {
+  background-color: #12a833;
+}
+
+@media (max-width: 576px) {
+  .pmo-wizard-line {
+    width: 25px;
+    margin: 0 6px;
+  }
+  .pmo-wizard-label {
+    display: none;
+  }
 }
