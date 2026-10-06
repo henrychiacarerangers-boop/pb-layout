@@ -897,7 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <td class="py-3 text-secondary font-monospace">${r.nric}</td>
                         <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-semibold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
-                        <td class="pe-3 py-3 text-end fw-bold text-dark">RM ${r.amount}</td>
+                        <td class="pe-3 py-3 text-end fw-bold text-dark">MYR ${r.amount}</td>
                     </tr>
                 `;
             });
@@ -908,7 +908,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return Number(n).toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         function fmtRmSen(n) {
-            return `RM ${fmtMoney(n)}`;
+            return `MYR ${fmtMoney(n)}`;
         }
         function showStep(idx) {
             [step1, step2, step3].forEach((el, i) => {
@@ -1013,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('eopPayOkTxn').textContent = txn;
                 document.getElementById('eopPayOkDt').textContent = dt;
                 confirmSpin?.classList.add('d-none');
-                if (confirmLab) confirmLab.textContent = 'Confirm & Pay';
+                if (confirmLab) confirmLab.textContent = 'Proceed';
                 confirmBtn.disabled = false;
                 showStep(2);
             }, 1600);

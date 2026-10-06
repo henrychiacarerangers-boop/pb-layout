@@ -16,51 +16,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <link rel="stylesheet" href="../css/eop-dashboard.css">
-    <style>
-        .eop-pay-pac-group {
-            position: relative;
-        }
-
-        .eop-pay-btn-request-pac {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #d3112b;
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0;
-            letter-spacing: 0.4px;
-            transition: color 0.2s ease;
-        }
-
-        .eop-pay-btn-request-pac:hover {
-            color: #c41219;
-        }
-
-        .eop-pay-captcha-box {
-            background: #f1f3f5;
-            padding: 10px;
-            text-align: center;
-            letter-spacing: 5px;
-            font-style: italic;
-            font-size: 1.25rem;
-            color: #495057;
-            border-radius: 8px;
-            user-select: none;
-            font-family: ui-monospace, monospace;
-            border: 1px solid #dee2e6;
-        }
-    </style>
     <link rel="stylesheet" href="../css/table-system.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
 
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
                 <header class="top-nav pmo-shell-dashboard-topnav w-100">
@@ -153,7 +114,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
                     <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a>
                     </li>
@@ -182,160 +143,166 @@
 
             <!-- Step 0: select authorised transactions list -->
             <div id="eopPayStep0">
-                <div class="alert alert-warning border-0 rounded-4 d-none mb-4 fs-8" id="eopPayCancelBanner"
-                    role="status">
-                    <i class="iconoir-warning-triangle me-2" aria-hidden="true"></i>
-                    <span id="eopPayCancelBannerText">Payment run rejected. No debit was attempted.</span>
-                </div>
-                <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4 tab-content-combined"
-                    id="eopPayTabCard">
-                    <div class="border-bottom pb-3 mb-4">
-                        <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
-                            <a href="#" class="view-tab active d-flex align-items-center gap-2" id="eopPayTabSalary"
-                                role="button" aria-controls="eopPayPaneSalary" aria-selected="true">
-                                Salary Deduction
-                            </a>
-                            <a href="#" class="view-tab d-flex align-items-center gap-2" id="eopPayTabEmployer"
-                                role="button" aria-controls="eopPayPaneEmployer" aria-selected="false">
-                                Employer Contribution
-                            </a>
-                        </div>
+                <div class="pmo-alert pmo-alert--attention d-none mb-4" id="eopPayCancelBanner" role="status">
+                    <div class="pmo-alert__content">
+                        <i class="iconoir-warning-triangle fs-5" aria-hidden="true"></i>
+                        <span class="pmo-alert__body" id="eopPayCancelBannerText">Payment run rejected. No debit was
+                            attempted.</span>
                     </div>
-
-                    <div class="card-body p-0 tab-content" id="eopPaymentTabContent">
-                        <div class="tab-pane fade show active" id="eopPayPaneSalary" role="tabpanel"
-                            aria-labelledby="eopPayTabSalary">
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4 py-1">Authorise
-                                                Ref No.</th>
-                                            <th class="py-3">Contribution type</th>
-                                            <th class="py-3">Employee(s)
-                                            </th>
-                                            <th class="py-3">Amount (MYR)
-                                            </th>
-                                            <th class="pe-4 py-3">
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="ps-4 py-1">RC00000000000124</td>
-                                            <td class="py-3"><span>Salary Deduction
-                                                    (IND)</span></td>
-                                            <td class="py-3">18</td>
-                                            <td class="py-3">42,500.00</td>
-                                            <td class="pe-4 py-3 text-end">
-                                                <div class="dropdown d-inline-block">
-                                                    <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                        type="button" id="eopPayMenuSal1" data-bs-toggle="dropdown"
-                                                        aria-expanded="false"
-                                                        aria-label="Transact menu for RC00000000000124">
-                                                        <i class="iconoir-more-vert"></i> Transact
-                                                    </button>
-                                                    <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayActionSal1"
-                                                                href="payment_detail.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Make
-                                                                payment</a></li>
-                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayCancelSal1"
-                                                                href="Abort_payment.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Cancel
-                                                                payment</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="ps-4 py-1">RC00000000000320</td>
-                                            <td class="py-3"><span>Salary Deduction
-                                                    (IND)</span></td>
-                                            <td class="py-3">6</td>
-                                            <td class="py-3">18,200.00</td>
-                                            <td class="pe-4 py-3 text-end">
-                                                <div class="dropdown d-inline-block">
-                                                    <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                        type="button" id="eopPayMenuSal2" data-bs-toggle="dropdown"
-                                                        aria-expanded="false"
-                                                        aria-label="Transact menu for RC00000000000320">
-                                                        <i class="iconoir-more-vert"></i> Transact
-                                                    </button>
-                                                    <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayActionSal2"
-                                                                href="payment_detail.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Make
-                                                                payment</a></li>
-                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayCancelSal2"
-                                                                href="Abort_payment.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Cancel
-                                                                payment</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                </div>
+                <section class="pmo-card mb-4 tab-content-combined" id="eopPayTabCard">
+                    <div class="pmo-card__body">
+                        <div class="border-bottom pb-3 mb-4">
+                            <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0">
+                                <a href="#" class="view-tab active d-flex align-items-center gap-2" id="eopPayTabSalary"
+                                    role="button" aria-controls="eopPayPaneSalary" aria-selected="true">
+                                    Salary Deduction
+                                </a>
+                                <a href="#" class="view-tab d-flex align-items-center gap-2" id="eopPayTabEmployer"
+                                    role="button" aria-controls="eopPayPaneEmployer" aria-selected="false">
+                                    Employer Contribution
+                                </a>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="eopPayPaneEmployer" role="tabpanel"
-                            aria-labelledby="eopPayTabEmployer">
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4 py-1">Authorise
-                                                Ref No.</th>
-                                            <th class="py-3">Contribution type</th>
-                                            <th class="py-3">Employee(s)
-                                            </th>
-                                            <th class="py-3">Amount (MYR)
-                                            </th>
-                                            <th class="pe-4 py-3">
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="ps-4 py-1">RC00000000000502</td>
-                                            <td class="py-3"><span>Revolving Vesting
-                                                    (VSC)/Immediate
-                                                    Vesting (EMP)</span></td>
-                                            <td class="py-3">28</td>
-                                            <td class="py-3">96,000.00</td>
-                                            <td class="pe-4 py-3 text-end">
-                                                <div class="dropdown d-inline-block">
-                                                    <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                        type="button" id="eopPayMenuEmp1" data-bs-toggle="dropdown"
-                                                        aria-expanded="false"
-                                                        aria-label="Transact menu for RC00000000000502">
-                                                        <i class="iconoir-more-vert"></i> Transact
-                                                    </button>
-                                                    <ul
-                                                        class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                        <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayActionEmp1"
-                                                                href="payment_detail.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Make
-                                                                payment</a></li>
-                                                        <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
-                                                                id="eopPayCancelEmp1"
-                                                                href="Abort_payment.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Cancel
-                                                                payment</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="tab-content" id="eopPaymentTabContent">
+                            <div class="tab-pane fade show active" id="eopPayPaneSalary" role="tabpanel"
+                                aria-labelledby="eopPayTabSalary">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="ps-4 py-1">Authorise
+                                                    Ref No.</th>
+                                                <th class="py-3">Contribution type</th>
+                                                <th class="py-3">Employee(s)
+                                                </th>
+                                                <th class="py-3">Amount (MYR)
+                                                </th>
+                                                <th class="pe-4 py-3">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-1">RC00000000000124</td>
+                                                <td class="py-3"><span>Salary Deduction
+                                                        (IND)</span></td>
+                                                <td class="py-3">18</td>
+                                                <td class="py-3">42,500.00</td>
+                                                <td class="pe-4 py-3 text-end">
+                                                    <div class="dropdown d-inline-block">
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
+                                                            type="button" id="eopPayMenuSal1" data-bs-toggle="dropdown"
+                                                            aria-expanded="false"
+                                                            aria-label="Transact menu for RC00000000000124">
+                                                            <i class="iconoir-more-vert"></i> Transact
+                                                        </button>
+                                                        <ul
+                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                            <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayActionSal1"
+                                                                    href="payment_detail.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Make
+                                                                    payment</a></li>
+                                                            <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayCancelSal1"
+                                                                    href="Abort_payment.html?ref=RC00000000000124&amp;ch=salary&amp;emp=18&amp;amt=42500">Cancel
+                                                                    payment</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ps-4 py-1">RC00000000000320</td>
+                                                <td class="py-3"><span>Salary Deduction
+                                                        (IND)</span></td>
+                                                <td class="py-3">6</td>
+                                                <td class="py-3">18,200.00</td>
+                                                <td class="pe-4 py-3 text-end">
+                                                    <div class="dropdown d-inline-block">
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
+                                                            type="button" id="eopPayMenuSal2" data-bs-toggle="dropdown"
+                                                            aria-expanded="false"
+                                                            aria-label="Transact menu for RC00000000000320">
+                                                            <i class="iconoir-more-vert"></i> Transact
+                                                        </button>
+                                                        <ul
+                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                            <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayActionSal2"
+                                                                    href="payment_detail.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Make
+                                                                    payment</a></li>
+                                                            <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayCancelSal2"
+                                                                    href="Abort_payment.html?ref=RC00000000000320&amp;ch=salary&amp;emp=6&amp;amt=18200">Cancel
+                                                                    payment</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="eopPayPaneEmployer" role="tabpanel"
+                                aria-labelledby="eopPayTabEmployer">
+                                <div class="table-responsive pmo-table-frame">
+                                    <table class="pmo-data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="ps-4 py-1">Authorise
+                                                    Ref No.</th>
+                                                <th class="py-3">Contribution type</th>
+                                                <th class="py-3">Employee(s)
+                                                </th>
+                                                <th class="py-3">Amount (MYR)
+                                                </th>
+                                                <th class="pe-4 py-3">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="ps-4 py-1">RC00000000000502</td>
+                                                <td class="py-3"><span>Revolving Vesting
+                                                        (VSC)/Immediate
+                                                        Vesting (EMP)</span></td>
+                                                <td class="py-3">28</td>
+                                                <td class="py-3">96,000.00</td>
+                                                <td class="pe-4 py-3 text-end">
+                                                    <div class="dropdown d-inline-block">
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
+                                                            type="button" id="eopPayMenuEmp1" data-bs-toggle="dropdown"
+                                                            aria-expanded="false"
+                                                            aria-label="Transact menu for RC00000000000502">
+                                                            <i class="iconoir-more-vert"></i> Transact
+                                                        </button>
+                                                        <ul
+                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
+                                                            <li><a class="eop-pay-action-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayActionEmp1"
+                                                                    href="payment_detail.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Make
+                                                                    payment</a></li>
+                                                            <li><a class="eop-pay-Cancel-link dropdown-item pmo-table-dropdown-action"
+                                                                    id="eopPayCancelEmp1"
+                                                                    href="Abort_payment.html?ref=RC00000000000502&amp;ch=employer&amp;emp=28&amp;amt=96000">Cancel
+                                                                    payment</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
 
             </div>
@@ -451,7 +418,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>

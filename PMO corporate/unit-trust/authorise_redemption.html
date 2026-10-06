@@ -21,29 +21,6 @@
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
 
     <style>
-        .pac-group {
-            position: relative;
-        }
-
-        .btn-request-pac {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--brand-red, #dc3545);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
-        }
-
-        .btn-request-pac:hover {
-            color: #bd2130;
-        }
-
         .brand-text-red {
             color: var(--brand-red, #dc3545) !important;
         }
@@ -88,12 +65,11 @@
     <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
-    data-pmo-footer-print="1">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut"
+    data-pmo-base=".." data-pmo-footer-print="1">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -189,7 +165,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
@@ -197,7 +173,8 @@
                         <a class="nav-link pmo-primary-nav__link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pmo-primary-nav__link active" href="authorise.html" aria-current="page">Authorise </a>
+                        <a class="nav-link pmo-primary-nav__link active" href="authorise.html"
+                            aria-current="page">Authorise </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="transactions.html">Transactions</a>
@@ -290,11 +267,6 @@
                                             <td>Current Unit Balance</td>
                                             <td id="totalUnitsDisplay">—</td>
                                         </tr>
-
-                                        <tr>
-                                            <td>Estimated Payout Value</td>
-                                            <td class="text-danger" id="payoutValueDisplay">—</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -302,7 +274,8 @@
                             <!-- Terms & Conditions validation block -->
                             <div class="mb-3 print-hidden" id="utAuthTermsWrapper">
                                 <div class="d-flex align-items-start gap-3">
-                                    <input class="form-check-input m-0 flex-shrink-0" type="checkbox" id="utAuthTermsCheckbox"
+                                    <input class="form-check-input m-0 flex-shrink-0" type="checkbox"
+                                        id="utAuthTermsCheckbox"
                                         style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
                                     <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
                                         for="utAuthTermsCheckbox">
@@ -342,13 +315,13 @@
                                             <input type="password"
                                                 class="form-control pmo-field__control border-secondary rounded-2 px-3 py-2 fs-7"
                                                 id="pacInput" placeholder="PAC No" maxlength="8"
-                                                autocomplete="one-time-code" aria-describedby="pac-error" aria-invalid="false"
-                                                style="max-width: 240px;">
-                                            <button type="button" class="btn pmo-btn-action btn-dark shadow-sm pmo-button pmo-button--secondary"
+                                                autocomplete="one-time-code" aria-describedby="pac-error"
+                                                aria-invalid="false" style="max-width: 240px;">
+                                            <button type="button" class="pmo-button pmo-button--secondary"
                                                 id="btn-request-pac" style="white-space: nowrap;">Request PAC</button>
                                         </div>
-                                        <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error" role="alert" aria-live="polite"
-                                            style="color: #d3112b; font-size: 0.75rem;">
+                                        <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error"
+                                            role="alert" aria-live="polite" style="color: #d3112b; font-size: 0.75rem;">
                                             Incorrect PAC number. Please click 'Request PAC' and use code 12345678.
                                         </div>
 
@@ -420,17 +393,11 @@
                         </div>
                     </div>
 
-                    <!-- Action Buttons under left section -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary" id="btn-back-cancel"
-                            onclick="location.href='authorise.html'">Back</button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--primary" id="btn-confirm-action">Confirm</button>
-                    </div>
                 </div>
 
                 <!-- RIGHT: Authorisation Summary Action Deck -->
                 <div class="col-lg-4">
-                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white p-4">
+                    <div class="card pmo-card pmo-card--summary border-0 shadow-sm rounded-4 bg-white p-4">
                         <div class="card-body pmo-card__body p-2 d-flex flex-column justify-content-between">
                             <div>
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
@@ -450,28 +417,31 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary" id="btn-back-cancel"
+                            onclick="location.href='authorise.html'">Back</button>
+                        <button type="button" class="pmo-button pmo-button--primary"
+                            id="btn-confirm-action">Confirm</button>
+                    </div>
+                </div>
             </div>
 
 
             <!-- STEP 2: Done Screen (Approved/Rejected Status) -->
             <div id="authoriseDoneSection" class="d-none py-3 my-2">
                 <div class="mx-auto" style="max-width: 820px;">
-                    <!-- Status Card Voucher -->
                     <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="card-body pmo-card__body p-4 p-md-5">
+                        <div class="card-body pmo-card__body p-4">
 
-                            <!-- Clean Success Hero Header -->
-                            <div class="text-center pb-4 mb-4 border-bottom">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle shadow-sm"
-                                    id="statusIconBg"
-                                    style="width: 60px; height: 60px; background-color: #12a833; color: #ffffff; box-shadow: 0 6px 16px rgba(18, 168, 51, 0.25) !important;">
-                                    <i class="iconoir-check text-white" id="statusIcon"
-                                        style="font-size: 1.85rem; stroke-width: 2.8;"></i>
+                            <div class="pmo-outcome-header">
+                                <div class="pmo-outcome-icon pmo-outcome-icon--success" id="statusIconBg"
+                                    style="background-color: #12a833;">
+                                    <i class="iconoir-check" id="statusIcon"></i>
                                 </div>
-                                <h4 class="fw-bold text-dark mb-1" id="statusMainTitle" style="letter-spacing: -0.3px;">
-                                    Redemption Request Approved</h4>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 520px;" id="statusSubTitle">
-                                    The redemption transaction has been successfully authorised and queued for payout.</p>
+                                <div>
+                                    <h4 class="pmo-outcome-title" id="statusMainTitle">Redemption Request Approved</h4>
+                                </div>
                             </div>
 
                             <!-- Structured Receipt Details Table -->
@@ -513,23 +483,23 @@
                                 <table class="pmo-data-table pmo-data-table--details mb-0">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 40%;">Execution Status</td>
+                                            <td style="width: 40%;">Status</td>
                                             <td>
-                                                <span class="pmo-status pmo-status--success pmo-status-badge pmo-status-approved"
-                                                    id="doneStatusText">Approved (Pending Payout)</span>
+                                                <span class="pmo-status pmo-status--success"
+                                                    id="doneStatusText">Successful</span>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>Redeemed Units</td>
-                                            <td class="fw-bold text-danger" id="doneRedeemUnits">30,000.00 Units</td>
+                                            <td class="fw-bold text-danger" id="doneRedeemUnits">30,000.00</td>
                                         </tr>
                                         <tr>
                                             <td>Remaining Unit Balance</td>
-                                            <td class="fw-bold text-success" id="doneRemainingUnits">9,000.00 Units</td>
+                                            <td class="fw-bold text-success" id="doneRemainingUnits">9,000.00</td>
                                         </tr>
                                         <tr>
-                                            <td>Authorised On</td>
+                                            <td>Authorised Date/Time</td>
                                             <td class="pmo-table-date text-dark" id="doneDateTime">2026/05/11 14:42:00
                                             </td>
                                         </tr>
@@ -541,15 +511,14 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="pmo-action-bar flex-wrap print-hidden">
-                        <button type="button"
-                            class="btn btn-outline-dark pmo-button pmo-button--secondary d-flex align-items-center justify-content-center gap-2"
-                            onclick="window.print()">
-                            <i class="iconoir-printer fs-6"></i> Print
+                    <div class="pmo-action-bar print-hidden">
+                        <button type="button" class="pmo-button pmo-button--secondary" onclick="window.print()">
+                            <i class="iconoir-printer" aria-hidden="true"></i> Print
                         </button>
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary" onclick="location.href='dashboard.html'">Back
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='dashboard.html'">Back
                             to Dashboard</button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--danger"
+                        <button type="button" class="pmo-button pmo-button--danger"
                             onclick="location.href='authorise.html'">Back to Authorise List</button>
                     </div>
                 </div>
@@ -669,7 +638,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -1024,9 +993,9 @@
                     fund: 'PB CASH MANAGEMENT FUND - CLASS B',
                     account: '148822319',
                     payout: 'PUBLIC BANK BERHAD (891823092391)',
-                    totalUnits: '50,000.00 Units',
-                    redeemUnits: '20,000.00 Units',
-                    afterRedeem: '30,000.00 Units',
+                    totalUnits: '50,000.00',
+                    redeemUnits: '20,000.00',
+                    afterRedeem: '30,000.00',
                     payoutVal: 'MYR 19,992.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.9996 based on NAV as of 2026/07/28)</span>',
                     impact: 'Reduces PB CASH MANAGEMENT holdings by 40.0%',
                     rawRedeem: '20,000.00'
@@ -1035,10 +1004,10 @@
                     fund: 'PB FIXED INCOME FUND',
                     account: '094766567',
                     payout: 'MAYBANK BERHAD (164019283742)',
-                    totalUnits: '185,000.00 Units',
-                    redeemUnits: '50,000.00 Units',
-                    afterRedeem: '135,000.00 Units',
-                    payoutVal: 'MYR 52,535.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0507 based on NAV as of 2026/07/27)</span>',
+                    totalUnits: '974.69.00',
+                    redeemUnits: '50,000.00',
+                    afterRedeem: '135,000.00',
+                    payoutVal: 'MYR 52,535.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0337 based on NAV as of 2026/07/27)</span>',
                     impact: 'Reduces PB FIXED INCOME holdings by 27.0%',
                     rawRedeem: '50,000.00'
                 },
@@ -1046,9 +1015,9 @@
                     fund: 'PB CASH PLUS FUND',
                     account: '136252514',
                     payout: 'CIMB BANK BERHAD (7029381023)',
-                    totalUnits: '75,000.00 Units',
-                    redeemUnits: '30,000.00 Units',
-                    afterRedeem: '45,000.00 Units',
+                    totalUnits: '250,000.00',
+                    redeemUnits: '30,000.00',
+                    afterRedeem: '45,000.00',
                     payoutVal: 'MYR 30,111.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0037 based on NAV as of 2026/07/27)</span>',
                     impact: 'Reduces PB CASH PLUS holdings by 40.0%',
                     rawRedeem: '30,000.00'
@@ -1057,10 +1026,10 @@
                     fund: 'PB FIXED INCOME FUND',
                     account: '094766567',
                     payout: 'PUBLIC BANK BERHAD (891823092391)',
-                    totalUnits: '185,000.00 Units',
-                    redeemUnits: '40,000.00 Units',
-                    afterRedeem: '145,000.00 Units',
-                    payoutVal: 'MYR 42,028.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0507 based on NAV as of 2026/07/27)</span>',
+                    totalUnits: '974.69.00',
+                    redeemUnits: '40,000.00',
+                    afterRedeem: '145,000.00',
+                    payoutVal: 'MYR 42,028.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0337 based on NAV as of 2026/07/27)</span>',
                     impact: 'Reduces PB FIXED INCOME holdings by 21.6%',
                     rawRedeem: '40,000.00'
                 },
@@ -1068,9 +1037,9 @@
                     fund: 'PB CASH MANAGEMENT FUND - CLASS B',
                     account: '148822319',
                     payout: 'MAYBANK BERHAD (164019283742)',
-                    totalUnits: '50,000.00 Units',
-                    redeemUnits: '15,000.00 Units',
-                    afterRedeem: '35,000.00 Units',
+                    totalUnits: '50,000.00',
+                    redeemUnits: '15,000.00',
+                    afterRedeem: '35,000.00',
                     payoutVal: 'MYR 14,994.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 0.9996 based on NAV as of 2026/07/27)</span>',
                     impact: 'Reduces PB CASH MANAGEMENT holdings by 30.0%',
                     rawRedeem: '15,000.00'
@@ -1079,9 +1048,9 @@
                     fund: 'PUBLIC e-CASH DEPOSIT FUND',
                     account: '148822321',
                     payout: 'HONG LEONG BANK (334891023741)',
-                    totalUnits: '35,000.00 Units',
-                    redeemUnits: '10,000.00 Units',
-                    afterRedeem: '25,000.00 Units',
+                    totalUnits: '35,000.00',
+                    redeemUnits: '10,000.00',
+                    afterRedeem: '25,000.00',
                     payoutVal: 'MYR 10,000.00 <span class="text-muted fs-9 fw-normal">(Est. Price: MYR 1.0000 based on NAV as of 2026/07/27)</span>',
                     impact: 'Reduces e-CASH DEPOSIT holdings by 28.6%',
                     rawRedeem: '10,000.00'
@@ -1096,7 +1065,6 @@
             document.getElementById('accountDisplay').textContent = activeTribe.account;
             document.getElementById('payoutAccountDisplay').textContent = activeTribe.payout;
             document.getElementById('totalUnitsDisplay').textContent = activeTribe.totalUnits;
-            document.getElementById('payoutValueDisplay').innerHTML = activeTribe.payoutVal;
             const portfolioImpactDisplay = document.getElementById('portfolioImpactDisplay');
             if (portfolioImpactDisplay) portfolioImpactDisplay.textContent = activeTribe.impact;
 
@@ -1148,28 +1116,22 @@
             function showResult(result) {
                 const approved = result === 'approved';
                 if (statusIconBg) {
-                    statusIconBg.style.backgroundColor = approved ? '#12a833' : '#d3112b';
-                    statusIconBg.style.boxShadow = approved
-                        ? '0 6px 16px rgba(18, 168, 51, 0.25)'
-                        : '0 6px 16px rgba(211, 17, 43, 0.25)';
+                    statusIconBg.style.backgroundColor = '#12a833';
+                    statusIconBg.style.boxShadow = '0 6px 16px rgba(18, 168, 51, 0.25)';
                 }
                 if (statusIcon) {
-                    statusIcon.className = approved ? 'iconoir-check text-white' : 'iconoir-xmark text-white';
+                    statusIcon.className = 'iconoir-check text-white';
                 }
                 if (statusMainTitle) {
                     statusMainTitle.textContent = approved ? 'Redemption Request Approved' : 'Redemption Request Rejected';
                 }
                 const statusSubTitle = document.getElementById('statusSubTitle');
-                if (statusSubTitle) {
-                    statusSubTitle.textContent = approved
-                        ? 'The redemption transaction has been successfully authorised and queued for payout.'
-                        : 'This redemption request has been rejected. It has been sent back to the initiator with your remarks.';
-                }
+
                 if (doneStatusText) {
-                    doneStatusText.textContent = approved ? 'Approved (Pending Payout)' : 'Rejected';
+                    doneStatusText.textContent = approved ? 'Successful' : 'Rejected';
                     doneStatusText.className = approved
-                        ? 'pmo-status pmo-status--success pmo-status-badge pmo-status-approved'
-                        : 'pmo-status pmo-status--danger pmo-status-badge pmo-status-rejected';
+                        ? 'pmo-status pmo-status--success'
+                        : 'pmo-status pmo-status--danger';
                 }
                 const donePacStatusEl = document.getElementById('donePacStatus');
                 if (donePacStatusEl) {

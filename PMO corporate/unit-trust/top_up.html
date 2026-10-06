@@ -20,29 +20,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <style>
-        .pac-group {
-            position: relative;
-        }
-
-        .btn-request-pac {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--brand-red, #dc3545);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
-        }
-
-        .btn-request-pac:hover {
-            color: #bd2130;
-        }
-
         .brand-text-red {
             color: var(--brand-red, #dc3545) !important;
         }
@@ -91,12 +68,11 @@
     <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
-    data-pmo-footer-print="1">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut"
+    data-pmo-base=".." data-pmo-footer-print="1">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -192,12 +168,13 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pmo-primary-nav__link active" href="view_account.html" aria-current="page">View Account</a>
+                        <a class="nav-link pmo-primary-nav__link active" href="view_account.html"
+                            aria-current="page">View Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="authorise.html">Authorise </a>
@@ -245,10 +222,12 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="badge-alert badge-alert-outline-primary d-inline-flex align-items-center m-0 py-2 px-3">
-                        <i class="iconoir-info-circle me-2 fs-5"></i>
-                        <span class="fs-8 fw-semibold m-0">*The transaction request will not be completed until it is
-                            authorised.</span>
+                    <div class="pmo-alert pmo-alert--info m-0">
+                        <div class="pmo-alert__content">
+                            <i class="iconoir-info-circle" aria-hidden="true"></i>
+                            <span>*The transaction request will not be completed until it is
+                                authorised.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,8 +254,8 @@
             <div id="topUpStep1" class="row g-4 justify-content-center">
                 <!-- LEFT: Investment Inputs -->
                 <div class="col-lg-8">
-                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="card-body pmo-card__body p-2">
+                    <section class="pmo-card mb-4">
+                        <div class="pmo-card__body">
                             <h5 class="fw-bold text-dark mb-4 pb-2 border-bottom">Top-Up Investment Details</h5>
                             <form id="topUpFormStep1" class="pmo-transaction-form">
                                 <!-- 1. Select Account -->
@@ -322,11 +301,11 @@
                                             <option value="MAYBANK 112233445566">MAYBANK 112233445566</option>
                                         </select>
                                     </div>
-                                    <div class="alert alert-secondary d-flex align-items-center border-0 bg-secondary bg-opacity-10 py-2 px-3 m-0 rounded-3"
-                                        style="border-left: 4px solid #6c757d !important;">
-                                        <i class="iconoir-info-circle text-secondary fs-6 me-2 flex-shrink-0"></i>
-                                        <span class="fs-9 text-dark">Please ensure the bank account for payment is
-                                            registered under your company name.</span>
+                                    <div class="pmo-alert pmo-alert--info">
+                                        <div class="pmo-alert__content">
+                                            <i class="iconoir-info-circle fs-5" aria-hidden="true"></i>
+                                            <span class="pmo-alert__body">Please ensure that the bank account which will be used for payment of this investment is registered under your company name.</span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -350,23 +329,14 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Step 1 Action Buttons -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary"
-                            onclick="location.href='view_account.html'">Cancel</button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--primary" id="btnToStep2"
-                            onclick="goToStep2()">
-                            Next <i class="iconoir-nav-arrow-right ms-1"></i>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- RIGHT: Account & Investment Summary -->
                 <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="card-body p-2">
+                    <aside class="pmo-card pmo-card--summary">
+                        <div class="pmo-card__body">
                             <div class="d-flex gap-2 align-items-center mb-4 pb-3 border-bottom">
                                 <a href="#" class="text-primary text-decoration-underline fw-bold fs-5"
                                     id="previewAccountNo">094766567</a>
@@ -383,7 +353,7 @@
                                             <i class="iconoir-info-circle text-primary"></i>
                                         </span>
                                     </div>
-                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">MYR 1.0507</div>
+                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">MYR 1.0337</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-muted fw-normal fs-9 mb-1">Unit Trust Consultant</div>
@@ -396,25 +366,35 @@
                             </div>
                             <div class="mb-3">
                                 <div class="text-muted fw-normal fs-9 mb-1 d-flex align-items-center gap-1">
-                                    Total Units
+                                    Total Balance Units
                                     <span class="bubble-info fs-8 cursor-pointer" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" id="totalUnitsTooltip" title="Loaded 185,000.00">
+                                        data-bs-placement="top" id="totalUnitsTooltip" title="Loaded 974.69.00">
                                         <i class="iconoir-info-circle text-primary"></i>
                                     </span>
                                 </div>
-                                <div class="fw-bold text-dark fs-7" id="previewTotalUnits">185,000.00</div>
+                                <div class="fw-bold text-dark fs-7" id="previewTotalUnits">974.69.00</div>
                             </div>
                             <div class="mb-3">
                                 <div class="text-muted fw-normal fs-9 mb-1 d-flex align-items-center gap-1">
-                                    Available Units
+                                    Total Available Units
                                     <span class="bubble-info fs-8 cursor-pointer" data-bs-toggle="tooltip"
                                         data-bs-placement="top" id="availUnitsTooltip" title="Excludes float units">
                                         <i class="iconoir-info-circle text-primary"></i>
                                     </span>
                                 </div>
-                                <div class="fw-bold text-dark fs-7" id="previewAvailableUnits">185,000.00</div>
+                                <div class="fw-bold text-dark fs-7" id="previewAvailableUnits">974.69.00</div>
                             </div>
                         </div>
+                    </aside>
+                </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='view_account.html'">Cancel</button>
+                        <button type="button" class="pmo-button pmo-button--primary" id="btnToStep2"
+                            onclick="goToStep2()">
+                            Next <i class="iconoir-nav-arrow-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -422,8 +402,8 @@
             <!-- STEP 2: Confirmation & Declarations Section -->
             <div id="topUpStep2" class="row g-4 justify-content-center d-none">
                 <div class="col-lg-9">
-                    <div class="card border-0 shadow-sm rounded-4 bg-white p-4">
-                        <div class="card-body p-2">
+                    <section class="pmo-card mb-4">
+                        <div class="pmo-card__body">
                             <div class="mb-4 pb-2 border-bottom">
                                 <h5 class="fw-bold text-dark mb-1">Confirm Top-Up Details</h5>
                                 <p class="text-muted fs-8 mb-0">Please confirm your top-up details and selected bank for
@@ -457,36 +437,58 @@
                                 </table>
                             </div>
 
-                            <!-- Selected Bank Notice Alert -->
-                            <div class="d-flex align-items-start p-3 mb-4 rounded-3"
-                                style="background-color: #f0f4fa; border: 1px solid #d0dcee; border-left: 4px solid #002e77 !important;">
-                                <i class="iconoir-info-circle fs-5 me-2 mt-0.5 flex-shrink-0"
-                                    style="color: #002e77 !important;"></i>
-                                <div class="fs-8" style="color: #404041;">
-                                    <div class="fw-bold mb-1" style="color: #002e77 !important;">Selected Bank for
-                                        Payment</div>
-                                    At the bank portal, please choose the below bank account: <strong
-                                        id="step2AlertBank">PUBLIC BANK BERHAD 891823092391</strong>.
-                                    <div class="text-muted fs-9 mt-1">* Note: Please ensure the correct account is
-                                        chosen if your company operates multiple corporate bank accounts.</div>
+                            <!-- Payment account guidance -->
+                            <div class="pmo-payment-account mt-3 mb-4" role="note">
+                                <div class="pmo-payment-account__header">
+                                    <span class="pmo-payment-account__icon" aria-hidden="true">
+                                        <img class="pmo-payment-account__brand" id="topUpPaymentBankBrand"
+                                            src="../images/icon/pbe.png" alt="">
+                                        <i class="iconoir-building fs-5 d-none" id="topUpPaymentBankFallback"></i>
+                                    </span>
+                                    <div>
+                                        <span class="pmo-payment-account__label">Selected bank for payment</span>
+                                        <strong class="pmo-payment-account__value" id="step2AlertBank">PUBLIC BANK
+                                            BERHAD 891823092391</strong>
+                                    </div>
+                                </div>
+                                <p class="pmo-payment-account__note">*Maximum amount is subject to FPX's and participating banks' transfer limit. By clicking on the "Confirm" button below, you agree to FPX's <a href="#"
+                                            class="text-danger fw-bold text-decoration-underline"
+                                            style="color: #d3112b !important;">Terms and Conditions</a>.</p>
+                                <div class="pmo-alert pmo-alert--info mt-3">
+                                    <div class="pmo-alert__content pmo-alert__content--start">
+                                        <i class="iconoir-info-circle fs-5" aria-hidden="true"></i>
+                                        <span class="pmo-alert__body">Should you encounter any issues during the payment process, please check your bank account's transaction record to confirm the payment status before attempting another investment.</span>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Declarations & Disclaimers Section -->
                             <div class="mb-4 pt-3 border-top" id="topUpTermsWrapper">
-                                <h6 class="fw-bold text-dark mb-3">Declarations &amp; Disclaimers</h6>
-
+								
+<label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1">The contents of this website including the Product Highlights Sheet and prospectus is not an offer to sell or a solicitation of an offer to buy unit trust funds.
+								<br> <br>
+								A copy of the funds' Product Highlights Sheet and prospectus featured in this website has been lodged with the Securities Commission.
+								<br><br>
+								The Securities Commission shall not be liable for any non-disclosure on the part of the management company and takes no responsibility for the contents of the Product Highlights Sheet and Prospectus/Information Memorandum, makes no respresentation as to its accuracy or completeness and expressly disclaims any liaibility whatsover for any loss arising from or in reliance upon the whole or any part of the contents of the Product Highlighte Sheet and Prospectus/Information Memorandum.
+								<br><br>
+								By clicking on the 'Agree' button, you:
+								<br><br>
+								</label>
                                 <!-- Checkbox 1: PHS -->
                                 <div class="d-flex align-items-start gap-3 mb-3">
+								
                                     <input class="form-check-input m-0 flex-shrink-0" type="checkbox" id="checkPHS"
                                         checked
                                         style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
                                     <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
                                         for="checkPHS">
+											Have read and understood the above Product Highlights Sheet 
                                         I have read and understood the <a href="#"
                                             class="text-danger fw-bold text-decoration-underline"
                                             style="color: #d3112b !important;">Product Highlights Sheet</a>
-                                        for <span class="step2FundNameText fw-semibold">PB FIXED INCOME FUND</span>.
+                                        and <span><a href="#"
+                                            class="text-danger fw-bold text-decoration-underline"
+                                            style="color: #d3112b !important;">Prospectus/Information Memorandum</a></span>.
                                     </label>
                                 </div>
 
@@ -497,11 +499,11 @@
                                         style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
                                     <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
                                         for="checkProspectus">
-                                        I have read and understood the <a href="#"
+                                        	Have read, understood and agreed to the above statement, <a href="#"
                                             class="text-danger fw-bold text-decoration-underline"
-                                            style="color: #d3112b !important;">Prospectus / Information
-                                            Memorandum</a> for <span class="step2FundNameText fw-semibold">PB FIXED
-                                            INCOME FUND</span>.
+                                            style="color: #d3112b !important;">Investment Disclaimer</a>, <a href="#"
+                                            class="text-danger fw-bold text-decoration-underline"
+                                            style="color: #d3112b !important;">Terms And Conditions</a> and notices contained within.
                                     </label>
                                 </div>
 
@@ -512,10 +514,7 @@
                                         style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
                                     <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
                                         for="checkTerms">
-                                        I have read, understood, and agreed to the <a href="#"
-                                            class="text-danger fw-bold text-decoration-underline"
-                                            style="color: #d3112b !important;">Terms and Conditions</a> of
-                                        this investment.
+                                        Understand that should you cease to be a PMO subscriber, the Management may redeem your entire account(s) under the Public e-Series of Funds.
                                     </label>
                                 </div>
 
@@ -534,7 +533,8 @@
                             <!-- Personal Authentication Code (PAC) & SecureSign Section -->
                             <div id="pac-verification-card" class="pmo-verification-section pt-3 border-top">
                                 <div class="mb-3 pmo-field">
-                                    <label class="form-label pmo-field__label text-dark fs-8 fw-semibold" for="pacMethod">Verification
+                                    <label class="form-label pmo-field__label text-dark fs-8 fw-semibold"
+                                        for="pacMethod">Verification
                                         Method</label>
                                     <select
                                         class="form-select pmo-field__control border-secondary rounded-2 px-3 py-2 fs-8 fw-semibold text-dark"
@@ -551,14 +551,15 @@
 
                                     <div class="d-flex align-items-center gap-2 mb-2 pmo-field">
                                         <input type="password"
-                                            class="form-control pmo-field__control border-secondary rounded-2 px-3 py-2 fs-7" id="pacInput"
-                                            placeholder="PAC No" maxlength="8" value="12345678"
-                                            autocomplete="one-time-code" aria-describedby="pac-error" aria-invalid="false" style="max-width: 240px;">
-                                        <button type="button" class="btn pmo-btn-action btn-dark shadow-sm pmo-button pmo-button--secondary"
+                                            class="form-control pmo-field__control border-secondary rounded-2 px-3 py-2 fs-7"
+                                            id="pacInput" placeholder="PAC No" maxlength="8" value="12345678"
+                                            autocomplete="one-time-code" aria-describedby="pac-error"
+                                            aria-invalid="false" style="max-width: 240px;">
+                                        <button type="button" class="pmo-button pmo-button--secondary"
                                             id="btn-request-pac" style="white-space: nowrap;">Request PAC</button>
                                     </div>
-                                    <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error" role="alert" aria-live="polite"
-                                        style="color: #d3112b; font-size: 0.75rem;">
+                                    <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error"
+                                        role="alert" aria-live="polite" style="color: #d3112b; font-size: 0.75rem;">
                                         Incorrect PAC number. Please click 'Request PAC' and use code 12345678.
                                     </div>
 
@@ -626,16 +627,17 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Step 2 Action Buttons -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary" id="btnBackToStep1"
+                </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary" id="btnBackToStep1"
                             onclick="goToStep1()">
-                            <i class="iconoir-nav-arrow-left me-1"></i> Back
+                            <i class="iconoir-nav-arrow-left" aria-hidden="true"></i> Back
                         </button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--primary"
-                            id="btn-confirm-topup" onclick="confirmTopUp()">
+                        <button type="button" class="pmo-button pmo-button--primary" id="btn-confirm-topup"
+                            onclick="confirmTopUp()">
                             Confirm &amp; Pay
                         </button>
                     </div>
@@ -645,23 +647,18 @@
             <!-- STEP 3: Completed / Payment Successfully Screen -->
             <div id="step3Form" class="d-none py-3 my-2">
                 <div class="mx-auto" style="max-width: 820px;">
-                    <!-- Status Card Voucher -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="card-body p-4 p-md-5">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
+                        <div class="card-body pmo-card__body p-4">
 
-                            <!-- Clean Success Hero Header -->
-                            <div class="text-center pb-4 mb-4 border-bottom">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle shadow-sm"
-                                    id="statusIconBg"
-                                    style="width: 60px; height: 60px; background-color: #12a833; color: #ffffff; box-shadow: 0 6px 16px rgba(18, 168, 51, 0.25) !important;">
-                                    <i class="iconoir-check text-white" id="statusIcon"
-                                        style="font-size: 1.85rem; stroke-width: 2.8;"></i>
+                            <div class="pmo-outcome-header">
+                                <div class="pmo-outcome-icon pmo-outcome-icon--success" id="statusIconBg"
+                                    style="background-color: #12a833;">
+                                    <i class="iconoir-check" id="statusIcon"></i>
                                 </div>
-                                <h4 class="fw-bold text-dark mb-1" id="statusMainTitle" style="letter-spacing: -0.3px;">
-                                    Payment Successful (Top-Up Submitted)</h4>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 520px;" id="statusSubTitle">
-                                    The top-up investment transaction has been successfully processed and queued for
-                                    authorisation.</p>
+                                <div>
+                                    <h4 class="pmo-outcome-title" id="statusMainTitle">Submission Completed</h4>
+
+                                </div>
                             </div>
 
                             <!-- Structured Receipt Details Table -->
@@ -701,10 +698,10 @@
                                 <table class="pmo-data-table pmo-data-table--details mb-0">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 40%;">Execution Status</td>
+                                            <td style="width: 40%;">Status</td>
                                             <td>
-                                                <span class="pmo-status-badge pmo-status-approved"
-                                                    id="doneStatusText">Successful (Pending Authorisation)</span>
+                                                <span class="pmo-status pmo-status--success"
+                                                    id="doneStatusText">Pending Payment</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -737,15 +734,14 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="pmo-action-bar flex-wrap print-hidden">
-                        <button type="button"
-                            class="btn btn-outline-dark d-flex align-items-center justify-content-center gap-2"
-                            onclick="window.print()">
-                            <i class="iconoir-printer fs-6"></i> Print Advice
+                    <div class="pmo-action-bar print-hidden">
+                        <button type="button" class="pmo-button pmo-button--secondary" onclick="window.print()">
+                            <i class="iconoir-printer" aria-hidden="true"></i> Print
                         </button>
-                        <button type="button" class="btn btn-outline-dark" onclick="location.href='dashboard.html'">Back
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='dashboard.html'">Back
                             to Dashboard</button>
-                        <button type="button" class="btn btn-danger shadow-sm"
+                        <button type="button" class="pmo-button pmo-button--primary"
                             onclick="location.href='view_account.html'">View Account</button>
                     </div>
                 </div>
@@ -843,7 +839,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -1128,9 +1124,9 @@
                 if (previewAccountName) previewAccountName.textContent = fundName;
 
                 const fundData = {
-                    '094766567': { price: 'MYR 1.0507', totalUnits: '185,000.00', availableUnits: '185,000.00', asAt: '27/07/2026', avgCost: '0.4054 MYR' },
-                    '094766508': { price: 'MYR 1.0028', totalUnits: '160,000.00', availableUnits: '160,000.00', asAt: '28/07/2026', avgCost: '1.0000 MYR' },
-                    '136252514': { price: 'MYR 1.0037', totalUnits: '75,000.00', availableUnits: '75,000.00', asAt: '27/07/2026', avgCost: '1.0010 MYR' },
+                    '094766567': { price: 'MYR 1.0337', totalUnits: '974.69.00', availableUnits: '974.69.00', asAt: '27/07/2026', avgCost: '0.4054 MYR' },
+                    '094766508': { price: 'MYR 1.0028', totalUnits: '17,883.37', availableUnits: '17,883.37', asAt: '28/07/2026', avgCost: '1.0000 MYR' },
+                    '136252514': { price: 'MYR 1.0037', totalUnits: '250,000.00', availableUnits: '250,000.00', asAt: '27/07/2026', avgCost: '1.0010 MYR' },
                     '148822319': { price: 'MYR 0.9996', totalUnits: '50,000.00', availableUnits: '50,000.00', asAt: '28/07/2026', avgCost: '0.9980 MYR' }
                 };
 
@@ -1209,13 +1205,18 @@
                 const step2InvestAmount = document.getElementById('step2InvestAmount');
                 const step2PaymentBank = document.getElementById('step2PaymentBank');
                 const step2AlertBank = document.getElementById('step2AlertBank');
+                const topUpPaymentBankBrand = document.getElementById('topUpPaymentBankBrand');
+                const topUpPaymentBankFallback = document.getElementById('topUpPaymentBankFallback');
                 const bankVal = selectBank ? selectBank.value : 'PUBLIC BANK BERHAD 891823092391';
+                const isPublicBank = bankVal.toUpperCase().includes('PUBLIC');
 
                 if (step2FundName) step2FundName.textContent = fundName;
                 if (step2AccountNo) step2AccountNo.textContent = acctNo;
                 if (step2InvestAmount) step2InvestAmount.textContent = 'MYR ' + amt;
                 if (step2PaymentBank) step2PaymentBank.textContent = bankVal;
                 if (step2AlertBank) step2AlertBank.textContent = bankVal;
+                if (topUpPaymentBankBrand) topUpPaymentBankBrand.classList.toggle('d-none', !isPublicBank);
+                if (topUpPaymentBankFallback) topUpPaymentBankFallback.classList.toggle('d-none', isPublicBank);
 
                 document.querySelectorAll('.step2FundNameText').forEach(el => el.textContent = fundName);
 

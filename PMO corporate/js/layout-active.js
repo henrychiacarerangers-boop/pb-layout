@@ -328,11 +328,13 @@
         if (relatedSection && nav.contains(relatedSection)) {
             activateMainLink(relatedSection);
             const collapseTarget = relatedSection.getAttribute("href");
-            const collapse = collapseTarget && nav.querySelector(collapseTarget);
-            if (collapse) {
-                relatedSection.classList.remove("collapsed");
-                relatedSection.setAttribute("aria-expanded", "true");
-                collapse.classList.add("show");
+            if (collapseTarget && collapseTarget.startsWith("#")) {
+                const collapse = nav.querySelector(collapseTarget);
+                if (collapse) {
+                    relatedSection.classList.remove("collapsed");
+                    relatedSection.setAttribute("aria-expanded", "true");
+                    collapse.classList.add("show");
+                }
             }
         }
 

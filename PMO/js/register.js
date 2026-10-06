@@ -79,16 +79,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function syncStep3Summary() {
-        var companyEl = document.getElementById('companyName');
+        var regNoEl = document.getElementById('companyRegNo') || document.getElementById('NewcompanyRegNo');
         var displayCompany = document.getElementById('display-company');
         var roleUt = document.getElementById('regRoleUt');
         var roleEop = document.getElementById('regRoleEop');
         var displayRoleUt = document.getElementById('displayRoleUt');
         var displayRoleEop = document.getElementById('displayRoleEop');
 
-        if (displayCompany && companyEl) {
-            var v = companyEl.value.trim();
-            displayCompany.textContent = v || '—';
+        if (displayCompany && regNoEl) {
+            var id = regNoEl.value.trim();
+            const companyRegistry = {
+                '1i2020-2-A': 'Ativa Studio Solution Sdn Bhd',
+                '2b2021-3-C': 'Global Tech Consulting Sdn Bhd',
+                '3c2022-4-D': 'Quantum Logistics Berhad'
+            };
+            var resolvedName = companyRegistry[id] || ('Company ID: ' + id);
+            displayCompany.textContent = resolvedName;
         }
         if (displayRoleUt && roleUt && roleUt.selectedIndex >= 0) {
             displayRoleUt.textContent = roleUt.options[roleUt.selectedIndex].text;
@@ -252,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Validate PAC
             if (pacInput && pacInput.value.trim() !== '12345678') {
                 pacInput.classList.add('is-invalid');
-                alert("Incorrect PAC code. Please use 12345678 for testing.");
+                alert("Incorrect PAC code.");
                 return;
             } else if (pacInput) {
                 pacInput.classList.remove('is-invalid');

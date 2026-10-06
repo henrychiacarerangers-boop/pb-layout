@@ -956,8 +956,10 @@ h2.pmo-card-inline-title {
 
     body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
     body[data-pmo-shell="true"] #eopBtnOpenSidebar,
+    body[data-pmo-shell="true"] #analyticsBtnOpenSidebar,
     body[data-pmo-shell="true"] #sidebarMenu,
-    body[data-pmo-shell="true"] #eopSidebarOffcanvas {
+    body[data-pmo-shell="true"] #eopSidebarOffcanvas,
+    body[data-pmo-shell="true"] #analyticsSidebarOffcanvas {
         display: none !important;
     }
 }
@@ -965,7 +967,8 @@ h2.pmo-card-inline-title {
 @media (max-width: 991.98px) {
 
     body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
-    body[data-pmo-shell="true"] #eopBtnOpenSidebar {
+    body[data-pmo-shell="true"] #eopBtnOpenSidebar,
+    body[data-pmo-shell="true"] #analyticsBtnOpenSidebar {
         display: inline-flex !important;
         align-items: center;
         justify-content: center;
@@ -992,7 +995,8 @@ h2.pmo-card-inline-title {
     }
 
     body[data-pmo-shell="true"] #pmoShellBrandUt,
-    body[data-pmo-shell="true"] #eopBrandLink {
+    body[data-pmo-shell="true"] #eopBrandLink,
+    body[data-pmo-shell="true"] #analyticsBrandLink {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -1000,12 +1004,14 @@ h2.pmo-card-inline-title {
     }
 
     body[data-pmo-shell="true"] #pmoShellBrandUt:hover,
-    body[data-pmo-shell="true"] #eopBrandLink:hover {
+    body[data-pmo-shell="true"] #eopBrandLink:hover,
+    body[data-pmo-shell="true"] #analyticsBrandLink:hover {
         transform: translateX(-50%);
     }
 
     body[data-pmo-shell="true"] #pmoShellBtnOpenSidebarUt,
-    body[data-pmo-shell="true"] #eopBtnOpenSidebar {
+    body[data-pmo-shell="true"] #eopBtnOpenSidebar,
+    body[data-pmo-shell="true"] #analyticsBtnOpenSidebar {
         width: 44px;
         height: 44px;
         flex: 0 0 44px;
@@ -1178,6 +1184,180 @@ h2.pmo-card-inline-title {
     font-size: 0.72rem;
     line-height: 1.35;
     margin-bottom: 0;
+}
+
+.pmo-promo-rail__viewport {
+    overflow: hidden;
+}
+
+.pmo-promo-rail__track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pmo-promo-rail__item {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    min-width: 0;
+}
+
+.pmo-promo-rail__dot {
+    background: rgba(108, 114, 128, 0.28);
+    border: 0;
+    border-radius: 999px;
+    height: 0.5rem;
+    padding: 0;
+    transition: background-color 160ms ease, transform 160ms ease;
+    width: 0.5rem;
+}
+
+.pmo-promo-rail__dot.active {
+    background: #d3112b;
+    transform: scale(1.15);
+}
+
+.pmo-promo-rail__dot:focus-visible {
+    outline: 2px solid #0e0d3b;
+    outline-offset: 3px;
+}
+
+@media (max-width: 767.98px) {
+    .pmo-promo-rail__item { flex-basis: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pmo-promo-rail__track { transition: none; }
+}
+
+/* Unit Trust dashboard: corporate investment recommendations */
+.pmo-promo-carousel__eyebrow {
+    color: #d3112b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.pmo-promo-carousel__count {
+    color: #6c7280;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.pmo-promo-carousel__frame {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px rgba(14, 13, 59, 0.12);
+}
+
+.pmo-promo-carousel__item {
+    height: 320px;
+    position: relative;
+}
+
+.pmo-promo-carousel__item::after {
+    background: linear-gradient(90deg, rgba(14, 13, 59, 0.84) 0%, rgba(14, 13, 59, 0.5) 45%, rgba(14, 13, 59, 0.08) 100%);
+    content: "";
+    inset: 0;
+    position: absolute;
+}
+
+.pmo-promo-carousel__item img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.pmo-promo-carousel__copy {
+    color: #ffffff;
+    left: clamp(1.5rem, 5vw, 4rem);
+    max-width: 31rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.pmo-promo-carousel__copy p {
+    color: #ffc3cb;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+
+.pmo-promo-carousel__copy h3 {
+    color: inherit;
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 0.6rem;
+}
+
+.pmo-promo-carousel__copy span {
+    display: block;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.pmo-promo-carousel__indicators {
+    bottom: 0.85rem;
+    justify-content: flex-start;
+    left: clamp(1.5rem, 5vw, 4rem);
+    margin: 0;
+    right: auto;
+    z-index: 2;
+}
+
+.pmo-promo-carousel__indicators [data-bs-target] {
+    background-color: rgba(255, 255, 255, 0.55) !important;
+    border: 0;
+    border-radius: 999px;
+    height: 4px;
+    margin: 0 0.22rem;
+    opacity: 1;
+    width: 1.25rem;
+}
+
+.pmo-promo-carousel__indicators .active {
+    background-color: #ed1c24 !important;
+    width: 2rem !important;
+}
+
+.pmo-promo-carousel__control {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    color: #0e0d3b;
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    opacity: 1;
+    top: calc(50% - 1.25rem);
+    width: 2.5rem;
+    z-index: 2;
+}
+
+.pmo-promo-carousel__control:hover,
+.pmo-promo-carousel__control:focus-visible {
+    background: #ffffff;
+    color: #d3112b;
+}
+
+.pmo-promo-carousel__control.carousel-control-prev { left: 1rem; }
+.pmo-promo-carousel__control.carousel-control-next { right: 1rem; }
+
+@media (max-width: 575.98px) {
+    .pmo-promo-carousel__item { height: 360px; }
+    .pmo-promo-carousel__item::after { background: linear-gradient(0deg, rgba(14, 13, 59, 0.9) 0%, rgba(14, 13, 59, 0.35) 75%); }
+    .pmo-promo-carousel__copy { left: 1.5rem; right: 1.5rem; top: auto; transform: none; bottom: 3rem; }
+    .pmo-promo-carousel__control { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pmo-promo-carousel__frame .carousel-item { transition: none; }
 }
 
 /* --- Premium Branded User Dropdown --- */
@@ -1648,74 +1828,4 @@ header nav .position-absolute.start-50.translate-middle-x .nav-pill span {
     align-items: center !important;
     justify-content: center !important;
     vertical-align: middle !important;
-}
-
-/* Standardized Bottom Action Bar (UX Spacing & Touch Targets) */
-.pmo-action-bar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 16px;
-    margin-top: 2rem !important;
-    margin-bottom: 3.5rem !important;
-}
-
-.pmo-action-bar--center {
-    justify-content: center !important;
-}
-
-.pmo-action-bar .btn,
-.pmo-btn-action {
-    min-width: 140px;
-    height: 42px !important;
-    padding: 0 24px !important;
-    font-size: 0.875rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.3px;
-    border-radius: 50px !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    line-height: 1 !important;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.pmo-action-bar .btn i,
-.pmo-btn-action i {
-    font-size: 1.1rem !important;
-    line-height: 1 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Keep solid action labels readable even when a page has a legacy inline color. */
-.pmo-action-bar .btn-danger,
-.pmo-btn-action.btn-danger {
-    color: #ffffff !important;
-}
-
-/* Solid master actions must keep readable labels in every state. */
-body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark) {
-    color: #ffffff !important;
-}
-
-body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):hover,
-body[data-pmo-shell="true"] :is(.btn-primary, .btn-danger, .btn-dark, .pmo-btn-action.btn-primary,
-    .pmo-btn-action.btn-danger, .pmo-btn-action.btn-dark):focus-visible {
-    color: #ffffff !important;
-}
-
-.pmo-action-bar .btn:hover,
-.pmo-btn-action:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12) !important;
-}
-
-.pmo-action-bar .btn-danger:hover,
-.pmo-btn-action.btn-danger:hover {
-    box-shadow: 0 6px 18px rgba(211, 17, 43, 0.35) !important;
 }

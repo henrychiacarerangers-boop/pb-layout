@@ -1,10 +1,14 @@
+@import url("../../design-tokens.css");
+@import url("../../pmo-core.css");
+
 /* EOP Employer workspace — scope: eop_dashboard.html */
 
-/* Main content cards — same elevation as unit-trust dashboard (.card.border-0.shadow-sm.rounded-4) */
+/* Main content cards — aligned with shared portal card system */
 .eop-surface-card {
+    background-color: #ffffff !important;
+    border: 0 !important;
     border-radius: var(--radius-md) !important;
-    box-shadow: var(--shadow-sm) !important;
-    border: none !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05) !important;
     transition: all 0.3s ease;
 }
 
@@ -21,7 +25,7 @@
 
 .eop-last-contribution-badge {
     border-radius: var(--radius-md) !important;
-    background: linear-gradient(135deg, #002e77 0%, #002e77 100%);
+    background: #ffffff;
     color: #fff;
     /* Align with portal chrome (dashboard-styles .portal-sidebar-profile-card) */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
@@ -99,6 +103,7 @@
     padding-bottom: 10px;
 }
 
+
 .prs-analytics-sort-hint {
     font-size: 0.7rem;
     opacity: 0.55;
@@ -108,8 +113,8 @@
 
 /* EOP Transaction Enquiry — filter sidebar (unit-trust-style) */
 .eop-txn-filter-sidebar .form-check-input:checked {
-    background-color: var(--brand-navy, #002e77) !important;
-    border-color: var(--brand-navy, #002e77) !important;
+    background-color: var(--brand-navy, #0E0D3B) !important;
+    border-color: var(--brand-navy, #0E0D3B) !important;
 }
 
 .eop-txn-pending-banner {
@@ -117,14 +122,42 @@
     border-color: #fcd34d !important;
 }
 
-/* Align EOP-specific surfaces with the shared card scale */
-.eop-surface-card {
-    border: 1px solid rgba(0, 0, 0, 0.06) !important;
-    box-shadow: var(--shadow-md) !important;
+/* Table Sorting Styles */
+.sortable-header {
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.analytics-view-selector .view-tab,
-.analytics-view-selector .nav-link {
-    font-size: 0.8125rem !important;
-    font-weight: 600 !important;
+.sortable-header:hover {
+    background-color: #f1f5f9 !important;
+    color: #0E0D3B !important;
+}
+
+.sort-icon {
+    font-weight: 600;
+}
+
+/* Post Download CTA Banner */
+.post-download-card {
+    background: linear-gradient(135deg, #0E0D3B 0%, #373761 100%) !important;
+    border-left: 5px solid #12a833 !important;
+    /* Success/Completed color */
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+.post-download-btn-primary {
+    background-color: #d3112b !important;
+    border-color: #d3112b !important;
+    color: #ffffff !important;
+    border-radius: 25px !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.post-download-btn-primary:hover {
+    background-color: #c41219 !important;
+    border-color: #c41219 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3) !important;
+    color: #ffffff !important;
 }

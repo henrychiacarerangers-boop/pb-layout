@@ -1006,7 +1006,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <td class="py-3 text-secondary">${r.nric}</td>
                         <td class="py-3"><span class="badge bg-light text-dark border px-2 py-1 fs-9 fw-bold">${r.fund}</span></td>
                         <td class="py-3 text-secondary">${r.type}</td>
-                        <td class="pe-3 py-3 text-end fw-semibold text-dark">RM ${r.amount}</td>
+                        <td class="pe-3 py-3 text-end fw-semibold text-dark">MYR ${r.amount}</td>
                     </tr>
                 `;
             });
@@ -1017,7 +1017,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return Number(n).toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         function fmtRmSen(n) {
-            return `RM ${fmtMoney(n)}`;
+            return `MYR ${fmtMoney(n)}`;
         }
         function showStep(idx) {
             [step1, step2, step3].forEach((el, i) => {
@@ -1062,34 +1062,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Dynamically update the visual selected bank details card to mirror unit-trust design
             const visualCardName = document.getElementById('eopPayVisualBankName');
-            const visualCardLogo = document.getElementById('eopPayVisualBankLogo');
             const visualCardLimit = document.getElementById('eopPayVisualBankLimit');
+            const visualCardBrand = document.getElementById('eopPayVisualBankBrand');
+            const visualCardFallback = document.getElementById('eopPayVisualBankFallback');
             if (visualCardName && bankSelect) {
                 visualCardName.textContent = bankSelect.value;
                 const val = bankSelect.value.toUpperCase();
-                if (val.includes('PUBLIC')) {
-                    if (visualCardLogo) {
-                        visualCardLogo.style.display = 'inline-block';
-                        visualCardLogo.src = '../images/icon/pbe.png';
-                        visualCardLogo.alt = 'PBe';
-                    }
+                const isPublicBank = val.includes('PUBLIC');
+                visualCardBrand?.classList.toggle('d-none', !isPublicBank);
+                visualCardFallback?.classList.toggle('d-none', isPublicBank);
+                if (isPublicBank) {
                     if (visualCardLimit) visualCardLimit.textContent = '*Payment limit through PBe is subject to corporate FPX online banking limits.';
                 } else if (val.includes('MAYBANK')) {
-                    if (visualCardLogo) {
-                        visualCardLogo.style.display = 'inline-block';
-                        visualCardLogo.src = 'https://via.placeholder.com/80x30?text=Maybank';
-                        visualCardLogo.alt = 'Maybank';
-                    }
                     if (visualCardLimit) visualCardLimit.textContent = '*Payment limit through Maybank2u Biz is subject to corporate FPX online banking limits.';
                 } else if (val.includes('CIMB')) {
-                    if (visualCardLogo) {
-                        visualCardLogo.style.display = 'inline-block';
-                        visualCardLogo.src = 'https://via.placeholder.com/80x30?text=CIMB';
-                        visualCardLogo.alt = 'CIMB';
-                    }
                     if (visualCardLimit) visualCardLimit.textContent = '*Payment limit through BizChannel@CIMB is subject to corporate FPX online banking limits.';
                 } else {
-                    if (visualCardLogo) visualCardLogo.style.display = 'none';
                     if (visualCardLimit) visualCardLimit.textContent = '*Payment limit through FPX is subject to corporate FPX online banking limits.';
                 }
             }
@@ -1169,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('eopPayOkTxn').textContent = txn;
                 document.getElementById('eopPayOkDt').textContent = dt;
                 confirmSpin?.classList.add('d-none');
-                if (confirmLab) confirmLab.textContent = 'Confirm & Pay';
+                if (confirmLab) confirmLab.textContent = 'Proceed';
                 confirmBtn.disabled = false;
                 showStep(2);
             }, 1600);

@@ -82,13 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fieldsPasswordOnly.classList.remove('d-none');
             fieldsBoth.classList.add('d-none');
             
-            // Toggle labels
-            step1Label.textContent = "Verification";
-            if (step3Subtitle) {
-                step3Subtitle.textContent = "We have sent a Personal Authentication Code (PAC) to your registered mobile number.";
-            }
-            pacMessage.innerHTML = "PAC Sent to XXX12XXXXX3<br>Security Number:QD5788156";
-            
+           
             // Refresh Captcha
             currentCaptchaIdx = 0;
             captchaBox.textContent = captchas[currentCaptchaIdx];
@@ -104,13 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fieldsBoth.classList.remove('d-none');
             fieldsPasswordOnly.classList.add('d-none');
             
-            // Toggle labels
-            step1Label.textContent = "Company Info";
-            if (step3Subtitle) {
-                step3Subtitle.textContent = "User ID and verify credentials using SMS PAC.";
-            }
-            pacMessage.innerHTML = "PAC Sent to XXX12XXXXX3.<br>Security Number:QD5788156";
-            
+           
             // Refresh Captcha
             currentCaptchaIdx = 1;
             captchaBox.textContent = captchas[currentCaptchaIdx];

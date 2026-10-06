@@ -21,29 +21,6 @@
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
 
     <style>
-        .pac-group {
-            position: relative;
-        }
-
-        .btn-request-pac {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--brand-red, #dc3545);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
-        }
-
-        .btn-request-pac:hover {
-            color: #bd2130;
-        }
-
         .brand-text-red {
             color: var(--brand-red, #dc3545) !important;
         }
@@ -88,12 +65,11 @@
     <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
-    data-pmo-footer-print="1">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut"
+    data-pmo-base=".." data-pmo-footer-print="1">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -189,7 +165,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
@@ -197,7 +173,8 @@
                         <a class="nav-link pmo-primary-nav__link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pmo-primary-nav__link active" href="authorise.html" aria-current="page">Authorise </a>
+                        <a class="nav-link pmo-primary-nav__link active" href="authorise.html"
+                            aria-current="page">Authorise </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="transactions.html">Transactions</a>
@@ -254,18 +231,14 @@
                 </div>
             </div>
 
-            <!-- Crucial Alert Box -->
-            <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-5" id="authoriseAlertCard">
-                <div class="card-body pmo-alert pmo-alert--attention p-4 border-start border-4 border-danger" style="background-color: #fffbfb;">
-                    <div class="pmo-alert__content d-flex gap-3">
-                        <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
-                        <div>
-                            <h6 class="fw-bold text-danger mb-2">Authorisation Alert</h6>
-                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
-                                <li class="text-muted" style="text-align: justify;">The following are the investment top
-                                    up pending your authorisation for payment at your bank.</li>
-                            </ul>
-                        </div>
+            <!-- Shared authorisation attention pattern -->
+            <div class="pmo-alert pmo-alert--attention mb-5" id="authoriseAlertCard" role="alert">
+                <div class="pmo-alert__content pmo-alert__content--start">
+                    <i class="iconoir-info-circle fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                    <div>
+                        <h6 class="pmo-alert__title">Authorisation Alert</h6>
+                        <p class="pmo-alert__body">The following investment top-up is pending your authorisation for
+                            payment at your bank.</p>
                     </div>
                 </div>
             </div>
@@ -302,7 +275,7 @@
                                         </tr>
                                         <tr>
                                             <td>Fund Category</td>
-                                            <td class="text-dark" id="fundCategoryDisplay">Bond</td>
+                                            <td class="text-dark" id="fundCategoryDisplay">Bond/Fixed Income</td>
                                         </tr>
                                         <tr>
                                             <td>Risk Level</td>
@@ -310,7 +283,7 @@
 
                                                 <img id="riskIconDisplay" src="../images/icon/risk-level/icon_risk2.png"
                                                     alt="Risk 2" style="height: 20px;">
-                                                <span id="riskLabelDisplay" class="fs-8 text-dark">Risk 2 - Low to Moderate</span>
+                                                <span id="riskLabelDisplay" class="fs-8 text-dark">Risk 2 - Low</span>
 
                                             </td>
                                         </tr>
@@ -318,21 +291,22 @@
                                 </table>
                             </div>
 
-                            <h5 class="fw-bold text-dark mt-4 mb-3 pt-4 pb-2 border-top border-bottom">Investment &amp; Unit Details</h5>
+                            <h5 class="fw-bold text-dark mt-4 mb-3 pt-4 pb-2 border-top border-bottom">Investment &amp;
+                                Unit Details</h5>
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table pmo-data-table--details mb-0">
                                     <tbody>
                                         <tr>
                                             <td style="width: 38%;">Current Unit Balance</td>
-                                            <td class="fw-bold text-dark" id="totalUnitsDisplay">150,000.00 Units</td>
+                                            <td class="fw-bold text-dark" id="totalUnitsDisplay">150,000.00</td>
                                         </tr>
                                         <tr>
                                             <td>Top-Up Units to Credit</td>
-                                            <td class="fw-bold text-dark" id="topupUnitsDisplay">45,454.55 Units</td>
+                                            <td class="fw-bold text-dark" id="topupUnitsDisplay">45,454.55</td>
                                         </tr>
                                         <tr>
-                                            <td>Total Units After Top-Up</td>
-                                            <td class="fw-bold text-dark" id="afterTopupDisplay">195,454.55 Units</td>
+                                            <td>Total Balance Units After Top-Up</td>
+                                            <td class="fw-bold text-dark" id="afterTopupDisplay">195,454.55</td>
                                         </tr>
                                         <tr>
                                             <td>Investment Amount</td>
@@ -345,16 +319,11 @@
                         </div>
                     </div>
 
-                    <!-- Action Button: Only Back button -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button class="btn btn-outline-dark pmo-button pmo-button--secondary"
-                            onclick="location.href='authorise.html'">Back</button>
-                    </div>
                 </div>
 
                 <!-- RIGHT: Authorisation Summary Action Deck -->
                 <div class="col-lg-4">
-                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white p-4">
+                    <div class="card pmo-card pmo-card--summary border-0 shadow-sm rounded-4 bg-white p-4">
                         <div class="card-body pmo-card__body p-2 d-flex flex-column justify-content-between">
                             <div>
                                 <h6 class="fw-bold text-dark mb-4 pb-2 border-bottom">Authorisation Summary</h6>
@@ -373,11 +342,17 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="text-muted fs-9 mb-1">Units to Credit</div>
-                                    <div class="fw-bold fs-8 text-dark" id="topupUnitsDisplay2">45,454.55 Units</div>
+                                    <div class="fw-bold fs-8 text-dark" id="topupUnitsDisplay2">45,454.55</div>
                                 </div>
 
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='authorise.html'">Back</button>
                     </div>
                 </div>
             </div>
@@ -499,7 +474,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -737,132 +712,132 @@
             });
 
             // Get query params
-                const urlParams = new URLSearchParams(window.location.search);
-                const refParam = urlParams.get('ref') || 'UT26000000000195';
+            const urlParams = new URLSearchParams(window.location.search);
+            const refParam = urlParams.get('ref') || 'UT26000000000195';
 
-                // Dynamic Mock Data for Pending Top-Up Investment requests
-                const tribesData = {
-                    'UT26000000000195': {
-                        fund: 'PB FIXED INCOME FUND',
-                        account: '094766567',
-                        category: 'Bond',
-                        riskIcon: '../images/icon/risk-level/icon_risk2.png',
-                        riskLabel: 'Risk 2 - Low to Moderate',
-                        totalUnits: '185,000.00 Units',
-                        topupUnits: '95,174.64 Units',
-                        afterTopup: '280,174.64 Units',
-                        amount: 'MYR 100,000.00',
-                        impact: 'Increases PB FIXED INCOME holdings by 51.4%'
-                    },
-                    'UT26000000000196': {
-                        fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
-                        account: '094766508',
-                        category: 'Money Market',
-                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
-                        riskLabel: 'Risk 1 - Low',
-                        totalUnits: '160,000.00 Units',
-                        topupUnits: '49,860.39 Units',
-                        afterTopup: '209,860.39 Units',
-                        amount: 'MYR 50,000.00',
-                        impact: 'Increases e-CASH DEPOSIT holdings by 31.2%'
-                    },
-                    'UT26000000000197': {
-                        fund: 'PB CASH MANAGEMENT FUND - CLASS B',
-                        account: '148822319',
-                        category: 'Money Market',
-                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
-                        riskLabel: 'Risk 1 - Low',
-                        totalUnits: '50,000.00 Units',
-                        topupUnits: '20,008.00 Units',
-                        afterTopup: '70,008.00 Units',
-                        amount: 'MYR 20,000.00',
-                        impact: 'Increases PB CASH MANAGEMENT holdings by 40.0%'
-                    },
-                    'UT26000000000198': {
-                        fund: 'PB FIXED INCOME FUND',
-                        account: '094766567',
-                        category: 'Bond',
-                        riskIcon: '../images/icon/risk-level/icon_risk2.png',
-                        riskLabel: 'Risk 2 - Low to Moderate',
-                        totalUnits: '185,000.00 Units',
-                        topupUnits: '71,380.98 Units',
-                        afterTopup: '256,380.98 Units',
-                        amount: 'MYR 75,000.00',
-                        impact: 'Increases PB FIXED INCOME holdings by 38.6%'
-                    },
-                    'UT26000000000199': {
-                        fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
-                        account: '094766508',
-                        category: 'Money Market',
-                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
-                        riskLabel: 'Risk 1 - Low',
-                        totalUnits: '160,000.00 Units',
-                        topupUnits: '29,916.24 Units',
-                        afterTopup: '189,916.24 Units',
-                        amount: 'MYR 30,000.00',
-                        impact: 'Increases e-CASH DEPOSIT holdings by 18.7%'
-                    },
-                    'UT26000000000201': {
-                        fund: 'PB CASH PLUS FUND',
-                        account: '136252514',
-                        category: 'Money Market',
-                        riskIcon: '../images/icon/risk-level/icon_risk1.png',
-                        riskLabel: 'Risk 1 - Low',
-                        totalUnits: '75,000.00 Units',
-                        topupUnits: '44,834.11 Units',
-                        afterTopup: '119,834.11 Units',
-                        amount: 'MYR 45,000.00',
-                        impact: 'Increases PB CASH PLUS holdings by 59.8%'
-                    }
-                };
+            // Dynamic Mock Data for Pending Top-Up Investment requests
+            const tribesData = {
+                'UT26000000000195': {
+                    fund: 'PB FIXED INCOME FUND',
+                    account: '094766567',
+                    category: 'Bond/Fixed Income',
+                    riskIcon: '../images/icon/risk-level/icon_risk2.png',
+                    riskLabel: 'Risk 2 - Low',
+                    totalUnits: '974.69.00',
+                    topupUnits: '95,174.64',
+                    afterTopup: '280,174.64',
+                    amount: 'MYR 100,000.00',
+                    impact: 'Increases PB FIXED INCOME holdings by 51.4%'
+                },
+                'UT26000000000196': {
+                    fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
+                    account: '094766508',
+                    category: 'Money Market',
+                    riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                    riskLabel: 'Risk 1 - Very Low',
+                    totalUnits: '17,883.37',
+                    topupUnits: '49,860.39',
+                    afterTopup: '209,860.39',
+                    amount: 'MYR 50,000.00',
+                    impact: 'Increases e-CASH DEPOSIT holdings by 31.2%'
+                },
+                'UT26000000000197': {
+                    fund: 'PB CASH MANAGEMENT FUND - CLASS B',
+                    account: '148822319',
+                    category: 'Money Market',
+                    riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                    riskLabel: 'Risk 1 - Very Low',
+                    totalUnits: '50,000.00',
+                    topupUnits: '20,008.00',
+                    afterTopup: '70,008.00',
+                    amount: 'MYR 20,000.00',
+                    impact: 'Increases PB CASH MANAGEMENT holdings by 40.0%'
+                },
+                'UT26000000000198': {
+                    fund: 'PB FIXED INCOME FUND',
+                    account: '094766567',
+                    category: 'Bond/Fixed Income',
+                    riskIcon: '../images/icon/risk-level/icon_risk2.png',
+                    riskLabel: 'Risk 2 - Low',
+                    totalUnits: '974.69.00',
+                    topupUnits: '71,380.98',
+                    afterTopup: '256,380.98',
+                    amount: 'MYR 250,000.00',
+                    impact: 'Increases PB FIXED INCOME holdings by 38.6%'
+                },
+                'UT26000000000199': {
+                    fund: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
+                    account: '094766508',
+                    category: 'Money Market',
+                    riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                    riskLabel: 'Risk 1 - Very Low',
+                    totalUnits: '17,883.37',
+                    topupUnits: '29,916.24',
+                    afterTopup: '189,916.24',
+                    amount: 'MYR 30,000.00',
+                    impact: 'Increases e-CASH DEPOSIT holdings by 18.7%'
+                },
+                'UT26000000000201': {
+                    fund: 'PB CASH PLUS FUND',
+                    account: '136252514',
+                    category: 'Money Market',
+                    riskIcon: '../images/icon/risk-level/icon_risk1.png',
+                    riskLabel: 'Risk 1 - Very Low',
+                    totalUnits: '250,000.00',
+                    topupUnits: '44,834.11',
+                    afterTopup: '119,834.11',
+                    amount: 'MYR 45,000.00',
+                    impact: 'Increases PB CASH PLUS holdings by 59.8%'
+                }
+            };
 
-                // Grab active transaction data based on parameter
-                const activeTribe = tribesData[refParam] || tribesData['UT26000000000195'];
+            // Grab active transaction data based on parameter
+            const activeTribe = tribesData[refParam] || tribesData['UT26000000000195'];
 
-                // Populate page headers & detail fields with data
-                const headerRefEl = document.getElementById('headerRefDisplay');
-                const headerFundEl = document.getElementById('headerFundDisplay');
-                if (headerRefEl) headerRefEl.textContent = refParam;
-                if (headerFundEl) headerFundEl.textContent = activeTribe.fund;
+            // Populate page headers & detail fields with data
+            const headerRefEl = document.getElementById('headerRefDisplay');
+            const headerFundEl = document.getElementById('headerFundDisplay');
+            if (headerRefEl) headerRefEl.textContent = refParam;
+            if (headerFundEl) headerFundEl.textContent = activeTribe.fund;
 
-                // Overview card
-                const refNoEl = document.getElementById('refNoDisplay');
-                const fundNameEl = document.getElementById('fundNameDisplay');
-                const accountEl = document.getElementById('accountDisplay');
-                const fundCategoryEl = document.getElementById('fundCategoryDisplay');
-                const riskIconEl = document.getElementById('riskIconDisplay');
-                const riskLabelEl = document.getElementById('riskLabelDisplay');
+            // Overview card
+            const refNoEl = document.getElementById('refNoDisplay');
+            const fundNameEl = document.getElementById('fundNameDisplay');
+            const accountEl = document.getElementById('accountDisplay');
+            const fundCategoryEl = document.getElementById('fundCategoryDisplay');
+            const riskIconEl = document.getElementById('riskIconDisplay');
+            const riskLabelEl = document.getElementById('riskLabelDisplay');
 
-                if (refNoEl) refNoEl.textContent = refParam;
-                if (fundNameEl) fundNameEl.textContent = activeTribe.fund;
-                if (accountEl) accountEl.textContent = activeTribe.account;
-                if (fundCategoryEl) fundCategoryEl.textContent = activeTribe.category;
-                if (riskIconEl) riskIconEl.src = activeTribe.riskIcon;
-                if (riskLabelEl) riskLabelEl.textContent = activeTribe.riskLabel;
+            if (refNoEl) refNoEl.textContent = refParam;
+            if (fundNameEl) fundNameEl.textContent = activeTribe.fund;
+            if (accountEl) accountEl.textContent = activeTribe.account;
+            if (fundCategoryEl) fundCategoryEl.textContent = activeTribe.category;
+            if (riskIconEl) riskIconEl.src = activeTribe.riskIcon;
+            if (riskLabelEl) riskLabelEl.textContent = activeTribe.riskLabel;
 
-                // Investment & Unit Details card
-                const totalUnitsEl = document.getElementById('totalUnitsDisplay');
-                const topupUnitsEl = document.getElementById('topupUnitsDisplay');
-                const afterTopupEl = document.getElementById('afterTopupDisplay');
-                const investmentAmountEl = document.getElementById('investmentAmountDisplay');
+            // Investment & Unit Details card
+            const totalUnitsEl = document.getElementById('totalUnitsDisplay');
+            const topupUnitsEl = document.getElementById('topupUnitsDisplay');
+            const afterTopupEl = document.getElementById('afterTopupDisplay');
+            const investmentAmountEl = document.getElementById('investmentAmountDisplay');
 
-                if (totalUnitsEl) totalUnitsEl.textContent = activeTribe.totalUnits;
-                if (topupUnitsEl) topupUnitsEl.textContent = activeTribe.topupUnits;
-                if (afterTopupEl) afterTopupEl.textContent = activeTribe.afterTopup;
-                if (investmentAmountEl) investmentAmountEl.textContent = activeTribe.amount;
+            if (totalUnitsEl) totalUnitsEl.textContent = activeTribe.totalUnits;
+            if (topupUnitsEl) topupUnitsEl.textContent = activeTribe.topupUnits;
+            if (afterTopupEl) afterTopupEl.textContent = activeTribe.afterTopup;
+            if (investmentAmountEl) investmentAmountEl.textContent = activeTribe.amount;
 
-                // Right column Summary Card
-                const investmentAmountDisplay2 = document.getElementById('investmentAmountDisplay2');
-                const topupUnitsDisplay2 = document.getElementById('topupUnitsDisplay2');
-                const portfolioImpactDisplay = document.getElementById('portfolioImpactDisplay');
+            // Right column Summary Card
+            const investmentAmountDisplay2 = document.getElementById('investmentAmountDisplay2');
+            const topupUnitsDisplay2 = document.getElementById('topupUnitsDisplay2');
+            const portfolioImpactDisplay = document.getElementById('portfolioImpactDisplay');
 
-                if (investmentAmountDisplay2) investmentAmountDisplay2.textContent = activeTribe.amount;
-                if (topupUnitsDisplay2) topupUnitsDisplay2.textContent = activeTribe.topupUnits;
-                if (portfolioImpactDisplay) portfolioImpactDisplay.textContent = activeTribe.impact;
+            if (investmentAmountDisplay2) investmentAmountDisplay2.textContent = activeTribe.amount;
+            if (topupUnitsDisplay2) topupUnitsDisplay2.textContent = activeTribe.topupUnits;
+            if (portfolioImpactDisplay) portfolioImpactDisplay.textContent = activeTribe.impact;
 
-                // Date
-                const now = new Date();
-                const formattedDate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+            // Date
+            const now = new Date();
+            const formattedDate = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
             const reqDateEl = document.getElementById('requestDateDisplay');
             if (reqDateEl) reqDateEl.textContent = formattedDate;
 

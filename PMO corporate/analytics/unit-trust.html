@@ -86,8 +86,7 @@
     data-pmo-base="..">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -99,8 +98,9 @@
                             aria-label="Portal primary">
                             <div class="d-flex align-items-center justify-content-between w-100 position-relative">
                                 <div class="d-flex align-items-center gap-3">
-                                    <button class="btn btn-link border-0 p-0 text-decoration-none" type="button"
-                                        data-bs-toggle="offcanvas" data-bs-target="#analyticsSidebarOffcanvas"
+                                    <button class="btn btn-link border-0 p-0 text-decoration-none d-lg-none"
+                                        type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#analyticsSidebarOffcanvas"
                                         aria-controls="analyticsSidebarOffcanvas" id="analyticsBtnOpenSidebar">
                                         <i class="iconoir-menu fs-4 text-dark" aria-hidden="true"></i>
                                     </button>
@@ -184,12 +184,12 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="unit-trust.html">Unit Trust Analytics</a>
+                        <a class="nav-link active" href="unit-trust.html">Unit Trust</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="eop.html">PRS Analytics</a>
+                        <a class="nav-link" href="eop.html">Private Retirement Scheme</a>
                     </li>
 
                 </ul>
@@ -382,8 +382,8 @@
                 <!-- RIGHT COLUMN: Analytics Main Dashboard Panel (col-lg-9) -->
                 <section class="col-lg-9">
                     <div class="mb-4">
-                        <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Fund Analytics</h2>
-                        <p class="text-muted fs-7 mb-0">Track and compare your fund performance.</p>
+                        <h2 class="fw-bold text-dark fs-3 mb-1 pmo-card-inline-title">Analytics - Our Funds</h2>
+
                     </div>
                     <!-- Top Views Selectors Card -->
 
@@ -668,51 +668,47 @@
                             </div>
                         </div>
 
-                        <!-- HIGHLIGHTED DISCLAIMER PANEL (Requested by user) -->
-                        <div class="border rounded-4 overflow-hidden mb-5">
-                            <div class="card-body p-4 border-start border-4 border-danger"
-                                style="background-color: #fffbfb;">
-                                <div class="d-flex gap-3">
-                                    <i class="iconoir-info-circle text-danger fs-4 mt-1 flex-shrink-0"></i>
-                                    <div>
-                                        <h6 class="fw-bold text-danger mb-2">Important Regulatory Notes & Disclaimers
-                                        </h6>
+                        <!-- Shared regulatory attention pattern -->
+                        <div class="pmo-alert pmo-alert--attention mb-5" role="note">
+                            <div class="pmo-alert__content pmo-alert__content--start">
+                                <i class="iconoir-info-circle fs-4 mt-1 flex-shrink-0" aria-hidden="true"></i>
+                                <div>
+                                    <h6 class="pmo-alert__title">Important Regulatory Notes &amp; Disclaimers
+                                    </h6>
 
-                                        <ul
-                                            class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
-                                            <li>
-                                                <span class="fw-semibold text-dark">Fund Performance</span> is computed
-                                                based on the latest available fund price.
-                                            </li>
-                                            <li>
-                                                <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is
-                                                based
-                                                on the fund’s portfolio returns as at <strong class="text-dark">28 Feb
-                                                    2026</strong> (source: Lipper, latest update).
-                                            </li>
-                                            <li class="text-muted" style="text-align: justify;">
-                                                The Volatility Factor (VF) means there is a possibility for the fund in
-                                                generating an upside return or downside return around this VF. The
-                                                Volatility Class (VC) is assigned by Lipper based on quintile ranks of
-                                                the
-                                                VF for qualified funds. The VF is subject to monthly revisions and the
-                                                VC is
-                                                revised every six months or other intervals as advised by FIMM. The
-                                                volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and
-                                                “Very
-                                                High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤
-                                                7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than
-                                                13.525 respectively. For this period to 30 June 2026, the VCs for the
-                                                funds
-                                                are based on the VFs of the respective funds as at 28 February 2026. The
-                                                fund’s portfolio may have changed since this date and there is no
-                                                guarantee
-                                                that the fund will continue to have the same VF or VC in the future.
-                                                Presently, only funds launched in the market for at least 36 months will
-                                                display the VF and its VC.
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3 fs-8 text-secondary lh-base">
+                                        <li>
+                                            <span class="fw-semibold text-dark">Fund Performance</span> is computed
+                                            based on the latest available fund price.
+                                        </li>
+                                        <li>
+                                            <span class="fw-semibold text-dark">3-Year Volatility Factor</span> is
+                                            based
+                                            on the fund’s portfolio returns as at <strong class="text-dark">28 Feb
+                                                2026</strong> (source: Lipper, latest update).
+                                        </li>
+                                        <li class="text-muted" style="text-align: justify;">
+                                            The Volatility Factor (VF) means there is a possibility for the fund in
+                                            generating an upside return or downside return around this VF. The
+                                            Volatility Class (VC) is assigned by Lipper based on quintile ranks of
+                                            the
+                                            VF for qualified funds. The VF is subject to monthly revisions and the
+                                            VC is
+                                            revised every six months or other intervals as advised by FIMM. The
+                                            volatility banding for the “Very Low”, “Low”, “Moderate”, “High” and
+                                            “Very
+                                            High” VCs as at 28 February 2026 are 0.000 ≤ VF ≤ 4.245, 4.245 &lt; VF ≤
+                                            7.705, 7.705 &lt; VF ≤ 10.245, 10.245 &lt; VF ≤ 13.525 and VF more than
+                                            13.525 respectively. For this period to 30 June 2026, the VCs for the
+                                            funds
+                                            are based on the VFs of the respective funds as at 28 February 2026. The
+                                            fund’s portfolio may have changed since this date and there is no
+                                            guarantee
+                                            that the fund will continue to have the same VF or VC in the future.
+                                            Presently, only funds launched in the market for at least 36 months will
+                                            display the VF and its VC.
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -834,7 +830,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>

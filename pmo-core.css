@@ -116,6 +116,12 @@
     background: var(--surface-subtle);
 }
 
+/* Corporate portal chrome: one shared landing treatment replaces the repeated
+ * page-level gradient declarations used by the portal workspaces. */
+body[data-pmo-shell="true"] .top-landing-wrapper {
+    background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);
+}
+
 .pmo-app-shell :focus-visible {
     outline: 0;
     box-shadow: var(--focus-ring);
@@ -136,58 +142,92 @@ body[data-pmo-shell] :focus-visible {
 }
 
 body[data-pmo-shell] .dashboard-tabs {
-    display: flex;
-    gap: var(--space-4);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow-x: auto;
+    display: flex !important;
+    gap: var(--space-4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    overflow-x: auto !important;
     scrollbar-width: thin;
 }
 
 body[data-pmo-shell] .dashboard-tabs .nav-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 48px;
-    padding: 12px 0 10px;
-    border-bottom: 3px solid transparent;
-    color: rgba(255, 255, 255, 0.74);
-    font-size: var(--type-caption);
-    font-weight: 700;
-    line-height: 1.35;
-    text-decoration: none;
-    white-space: nowrap;
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 48px !important;
+    padding: 12px 0 10px !important;
+    border-bottom: 3px solid transparent !important;
+    color: rgba(255, 255, 255, 0.74) !important;
+    font-size: var(--type-caption) !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
 }
 
 body[data-pmo-shell] .dashboard-tabs .nav-link:hover,
 body[data-pmo-shell] .dashboard-tabs .nav-link:focus-visible,
 body[data-pmo-shell] .dashboard-tabs .nav-link.active,
 body[data-pmo-shell] .dashboard-tabs .nav-link[aria-current="page"] {
-    border-bottom-color: currentColor;
-    color: #ffffff;
+    border-bottom-color: currentColor !important;
+    color: #ffffff !important;
 }
 
 body[data-pmo-shell] .card {
-    border-color: rgba(27, 42, 74, 0.08);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(27, 42, 74, 0.08) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-md) !important;
 }
 
 body[data-pmo-shell] :is(.form-control, .form-select) {
-    min-height: 44px;
-    border-color: rgba(27, 42, 74, 0.18);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
+    min-height: 44px !important;
+    border-color: rgba(27, 42, 74, 0.18) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
 }
 
 body[data-pmo-shell] :is(.form-control, .form-select):focus {
-    border-color: var(--brand-primary);
-    box-shadow: var(--focus-ring);
+    border-color: var(--brand-primary) !important;
+    box-shadow: var(--focus-ring) !important;
+}
+
+body[data-pmo-shell] .form-label,
+.pmo-auth-shell .form-label {
+    color: var(--text-secondary) !important;
+    font-size: var(--type-caption) !important;
+    font-weight: 700 !important;
+    line-height: 1.4;
+    letter-spacing: normal !important;
+    text-transform: none !important;
 }
 
 body[data-pmo-shell] .invalid-feedback {
     color: var(--danger);
     font-size: var(--type-xs);
+}
+
+body[data-pmo-shell] .btn:not(.btn-link):not(.btn-close) {
+    min-height: 40px !important;
+    border-radius: var(--radius-pill) !important;
+    font-size: var(--type-caption) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+}
+
+body[data-pmo-shell] :is(.btn-primary, .btn-danger) {
+    color: #ffffff !important;
+    background: var(--brand-primary) !important;
+    border-color: var(--brand-primary) !important;
+}
+
+body[data-pmo-shell] :is(.btn-outline-dark, .btn-outline-secondary) {
+    color: var(--brand-navy) !important;
+    background: #ffffff !important;
+    border-color: rgba(27, 42, 74, 0.22) !important;
+}
+
+body[data-pmo-shell] :is(.btn-primary, .btn-danger, .btn-outline-dark, .btn-outline-secondary):hover:not(:disabled) {
+    transform: translateY(-1px);
 }
 
 .pmo-primary-nav {
@@ -249,7 +289,47 @@ body[data-pmo-shell] .invalid-feedback {
 .pmo-button--secondary { color: var(--brand-navy); background: #ffffff; border-color: rgba(27, 42, 74, 0.22); }
 .pmo-button--secondary:hover:not(:disabled) { color: var(--brand-primary); border-color: var(--brand-primary); }
 .pmo-button--quiet { color: var(--text-muted); background: transparent; border-color: transparent; }
+.pmo-button--success { color: #166534; background: #dcfce7; border-color: #86efac; }
+.pmo-button--success:hover:not(:disabled) { color: #ffffff; background: #16a34a; border-color: #16a34a; }
 .pmo-button--danger { color: #ffffff; background: var(--danger); border-color: var(--danger); }
+.pmo-button--danger:hover:not(:disabled) { color: #ffffff; background: #b42318; border-color: #b42318; }
+.pmo-button--danger-outline { color: #991b1b; background: #fee2e2; border-color: #fca5a5; }
+.pmo-button--danger-outline:hover:not(:disabled) { color: #ffffff; background: var(--danger); border-color: var(--danger); }
+.pmo-button--compact { min-height: 32px; padding: 6px 12px; font-size: var(--type-xs); }
+
+/* Footer-safe action pattern: keep task completion controls in normal document
+ * flow, after their content grid, with a clear boundary before the footer. */
+.pmo-action-region {
+    width: 100%;
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(27, 42, 74, 0.10);
+}
+
+.pmo-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+    margin-bottom: 0;
+}
+
+.pmo-action-region .pmo-action-bar { margin-top: 0; }
+.pmo-action-bar--center { justify-content: center; }
+.pmo-action-bar :is(.btn, .pmo-button) {
+    min-width: 140px;
+    min-height: 42px;
+    padding: 10px 24px;
+}
+.pmo-action-bar :is(.btn, .pmo-button) i { font-size: 1.1rem; line-height: 1; }
+
+@media (max-width: 575.98px) {
+    .pmo-action-region { margin-top: var(--space-4); padding-top: var(--space-3); }
+    .pmo-action-bar { justify-content: stretch; }
+    .pmo-action-bar :is(.btn, .pmo-button) { flex: 1 1 100%; width: 100%; }
+}
 
 .pmo-alert {
     display: flex;
@@ -264,7 +344,18 @@ body[data-pmo-shell] .invalid-feedback {
 }
 
 .pmo-alert__content { display: flex; align-items: center; gap: var(--space-2); }
+.pmo-alert__content--start { align-items: flex-start; }
+.pmo-alert__title {
+    margin: 0 0 4px;
+    color: inherit;
+    font-size: var(--type-caption);
+    font-weight: 750;
+    line-height: 1.35;
+}
+.pmo-alert__body { margin: 0; color: var(--text-secondary); }
 .pmo-alert--attention { color: #8d1b27; border-color: rgba(180, 35, 24, 0.22); background: #fff5f5; }
+.pmo-alert--info { color: var(--brand-navy); border-color: rgba(27, 42, 74, 0.16); background: #f3f7fc; }
+.pmo-alert--success { color: #166534; border-color: rgba(22, 101, 52, 0.20); background: #f0fdf4; }
 
 .pmo-card {
     height: 100%;
@@ -274,7 +365,142 @@ body[data-pmo-shell] .invalid-feedback {
     box-shadow: var(--shadow-md);
 }
 
+.pmo-card--summary {
+    height: auto;
+}
+
 .pmo-card__body { padding: var(--space-5); }
+
+/* Statement workspaces use one calm surface. Section headings, filters, and
+ * registers sit directly inside it; only the table frame keeps a boundary. */
+.pmo-statement-section {
+    margin: 0 0 var(--space-5);
+}
+
+.pmo-statement-section:last-child { margin-bottom: 0; }
+
+.pmo-statement-section__header,
+.pmo-statement-section .accordion-header-custom {
+    padding: 0 0 var(--space-3);
+    margin: 0 0 var(--space-3);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.10);
+}
+
+.pmo-statement-section .accordion-header-custom {
+    padding: 0 0 var(--space-3) !important;
+    background: transparent !important;
+}
+
+.pmo-statement-empty {
+    display: grid;
+    min-height: 220px;
+    place-content: center;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Payment account confirmation: show the selected account clearly without
+ * turning routine bank guidance into a large warning treatment. */
+.pmo-payment-account {
+    padding: var(--space-4);
+    border: 1px solid rgba(27, 42, 74, 0.14);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+}
+
+.pmo-payment-account__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.pmo-payment-account__icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    color: var(--brand-navy);
+    background: #f3f7fc;
+}
+
+.pmo-payment-account__brand {
+    display: block;
+    width: 28px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.pmo-payment-account__label {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--text-muted);
+    font-size: var(--type-xs);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.pmo-payment-account__value {
+    display: block;
+    color: var(--text-primary);
+    font-size: var(--type-caption);
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.pmo-payment-account__note {
+    margin: var(--space-3) 0 0 48px;
+    color: var(--text-secondary);
+    font-size: var(--type-xs);
+    line-height: 1.5;
+}
+
+@media (max-width: 575.98px) {
+    .pmo-payment-account { padding: var(--space-3); }
+    .pmo-payment-account__note { margin-left: 0; }
+}
+
+/* Transaction outcome: a compact receipt heading, not a celebratory hero. */
+.pmo-outcome-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid rgba(27, 42, 74, 0.10);
+}
+
+.pmo-outcome-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.pmo-outcome-icon--success { background: #12a833; }
+.pmo-outcome-icon i { font-size: 1.35rem; line-height: 1; stroke-width: 2.5; }
+
+.pmo-outcome-title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--type-section);
+    font-weight: 750;
+    line-height: var(--line-height-tight);
+}
+
+.pmo-outcome-copy {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+    font-size: var(--type-caption);
+    line-height: 1.45;
+}
 
 .pmo-metric {
     height: 100%;
@@ -338,6 +564,22 @@ body[data-pmo-shell] .invalid-feedback {
     border-radius: var(--radius-sm);
 }
 .pmo-auth-form :is(.form-control, .form-select):focus { border-color: var(--brand-primary); box-shadow: var(--focus-ring); }
+.pmo-auth-shell :is(.form-control, .form-select) {
+    min-height: 44px !important;
+    border-color: rgba(27, 42, 74, 0.18) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-primary) !important;
+}
+.pmo-auth-shell :is(.form-control, .form-select):focus {
+    border-color: var(--brand-primary) !important;
+    box-shadow: var(--focus-ring) !important;
+}
+.pmo-auth-shell .btn:not(.btn-link):not(.btn-close) {
+    min-height: 40px !important;
+    border-radius: var(--radius-pill) !important;
+    font-size: var(--type-caption) !important;
+    font-weight: 700 !important;
+}
 .pmo-auth-shell .btn-log-in { color: #ffffff; background: var(--brand-primary); border-color: var(--brand-primary); }
 .pmo-auth-shell .btn-clear { color: var(--brand-navy); background: #ffffff; border-color: rgba(27, 42, 74, 0.22); }
 
@@ -371,6 +613,7 @@ body[data-pmo-shell] .invalid-feedback {
     .pmo-alert { align-items: flex-start; flex-direction: column; }
     .pmo-alert .pmo-button { width: 100%; }
     .pmo-card__body { padding: var(--space-4); }
+    .pmo-outcome-header { align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

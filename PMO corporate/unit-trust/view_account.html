@@ -81,8 +81,7 @@
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -178,7 +177,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
@@ -216,26 +215,25 @@
                                     style="width: 32px; height: 32px;">
                             </div>
                             <div>
-                                <span class="fs-9 text-uppercase fw-bold text-muted letter-spacing-1 d-block mb-1">Total
-                                    Portfolio Value</span>
+                                <span class="fw-bold text-muted letter-spacing-1 d-flex align-items-center gap-1 mb-1">
+                                    Total Value
+                                </span>
                                 <div class="d-flex align-items-baseline gap-2 flex-wrap">
                                     <h2 class="mb-0 fw-bold fs-3 text-dark"
                                         style="font-family: 'Montserrat', sans-serif !important; letter-spacing: -0.5px;">
-                                        MYR 557,371.72
+                                        MYR 287,252.41
                                     </h2>
-                                    <span class="fs-8 text-muted fw-normal">as of 28 July 2026</span>
+                                    <span class="fs-8 text-muted fw-normal cursor-pointer" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-placement="top"
+                                        data-bs-content="Portfolio value is calculated based on the latest available fund prices. Pricing date may vary by funds.">as
+                                        of 28 July 2026</span>
                                 </div>
                             </div>
                         </div>
                         <div class="d-flex align-items-center gap-2">
-                            <a href="top_up.html"
-                                class="btn btn-danger rounded-pill px-4 py-2 fs-8 fw-semibold shadow-sm d-inline-flex align-items-center gap-2"
-                                style="background-color: #d3112b; border-color: #d3112b;">
-                                <i class="iconoir-plus fs-7"></i> Top Up Investment
-                            </a>
+                            
                         </div>
                     </div>
-
                     <!-- Bottom Metrics Grid: 3 Metric Tiles -->
                     <div class="row g-3">
                         <!-- Metric 1: Investment Cost -->
@@ -247,15 +245,15 @@
                                         Investment Cost
                                         <span class="bubble-info fs-8 cursor-pointer">
                                             <i class="iconoir-info-circle text-secondary" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="Calculated based on the overall holdings and principal amount transferred in/out. Not affected by Switching or income distribution."></i>
+                                                data-bs-trigger="hover focus" data-bs-placement="top"
+                                                data-bs-content="The amount shown here is calculated based on the overall holdings and amount transferred in/out. This amount will not be affected by Switching and income distribution."></i>
                                         </span>
                                     </span>
 
                                 </div>
                                 <div class="fw-bold fs-5 text-dark"
                                     style="font-family: 'Montserrat', sans-serif !important;">
-                                    MYR 240,520.57
+                                    MYR 277,100.00
                                 </div>
                             </div>
                         </div>
@@ -267,17 +265,15 @@
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span class="text-muted fs-8 fw-semibold d-flex align-items-center gap-1">
                                         Unrealised Profit/Loss
-                                        <span class="bubble-info fs-8 cursor-pointer">
-                                            <i class="iconoir-info-circle text-secondary" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="Market Value of portfolio holdings minus Investment Cost."></i>
-                                        </span>
+                                    </span>
+                                </div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="fw-bold fs-5 text-dark"
+                                        style="font-family: 'Montserrat', sans-serif !important;">
+                                        MYR 10,152.41
                                     </span>
                                     <span
-                                        class="badge bg-success bg-opacity-15 text-white rounded-pill fs-9 fw-bold px-2 py-0.5 border border-success border-opacity-25">131.74%</span>
-                                </div>
-                                <div class="fw-bold fs-5" style="font-family: 'Montserrat', sans-serif !important;">
-                                    MYR 316,851.15
+                                        class="badge bg-success bg-opacity-15 text-white rounded-pill fs-9 fw-bold px-2 py-0.5 border border-success border-opacity-25">3.74%</span>
                                 </div>
                             </div>
                         </div>
@@ -289,17 +285,12 @@
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <span class="text-muted fs-8 fw-semibold d-flex align-items-center gap-1">
                                         Realised Profit/Loss
-                                        <span class="bubble-info fs-8 cursor-pointer">
-                                            <i class="iconoir-info-circle text-secondary" data-bs-toggle="popover"
-                                                data-bs-trigger="hover" data-bs-placement="top"
-                                                data-bs-content="Cumulative profit/loss resulting from historical redemptions since account inception."></i>
-                                        </span>
                                     </span>
 
                                 </div>
                                 <div class="fw-bold fs-5 text-dark"
                                     style="font-family: 'Montserrat', sans-serif !important;">
-                                    MYR 12,302.00
+                                    MYR 0.00
                                 </div>
                             </div>
                         </div>
@@ -333,12 +324,23 @@
                             </div>
                         </div>
 
-                        <!-- 1. Filter Accounts by -->
+                        <!-- 1. Search Keyword -->
                         <div class="mb-3">
                             <label class="form-label text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-1.5"
-                                for="filterUnitStatus">Filter Accounts by</label>
-                            <select
-                                class="form-select rounded-3 fs-8 py-2 text-dark border-secondary border-opacity-25 fw-medium bg-light"
+                                for="filterFundNameInput">Quick Search</label>
+                            <div class="position-relative">
+                                <i
+                                    class="iconoir-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted fs-7"></i>
+                                <input type="text" class="form-control rounded-3 fs-8 py-2 ps-5 border bg-white"
+                                    id="filterFundNameInput" placeholder="Fund name or account no.">
+                            </div>
+                        </div>
+
+                        <!-- 2. Filter Accounts by Status -->
+                        <div class="mb-3">
+                            <label class="form-label text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-1.5"
+                                for="filterUnitStatus">Account Status</label>
+                            <select class="form-select rounded-3 fs-8 py-2 text-dark border fw-medium bg-white"
                                 id="filterUnitStatus">
                                 <option value="with_units" selected>With Units</option>
                                 <option value="all">All Accounts</option>
@@ -346,15 +348,16 @@
                             </select>
                         </div>
 
-                        <!-- 2. Fund Category -->
+                        <!-- 3. Fund Category -->
                         <div class="mb-3">
-                            <div class="fw-bold text-dark fs-8 mb-2">Fund Category</div>
+                            <div class="text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-2">Fund Category
+                            </div>
                             <div class="d-flex flex-column gap-2">
                                 <div class="form-check d-flex align-items-center justify-content-between m-0">
                                     <div class="d-flex align-items-center gap-2">
                                         <input class="form-check-input filter-category-checkbox mt-0" type="checkbox"
                                             value="EQ" id="catFilterEquity">
-                                        <label class="form-check-label fs-8 text-dark"
+                                        <label class="form-check-label fs-8 text-dark cursor-pointer"
                                             for="catFilterEquity">Equity</label>
                                     </div>
                                     <span
@@ -364,8 +367,9 @@
                                     <div class="d-flex align-items-center gap-2">
                                         <input class="form-check-input filter-category-checkbox mt-0" type="checkbox"
                                             value="MA" id="catFilterMixed">
-                                        <label class="form-check-label fs-8 text-dark" for="catFilterMixed">Mixed
-                                            Asset</label>
+                                        <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                            for="catFilterMixed">Mixed
+                                            Asset/Balanced</label>
                                     </div>
                                     <span
                                         class="pmo-category-badge pmo-category-badge--ma fs-10 px-1.5 py-0.5">MA</span>
@@ -374,7 +378,8 @@
                                     <div class="d-flex align-items-center gap-2">
                                         <input class="form-check-input filter-category-checkbox mt-0" type="checkbox"
                                             value="BO" id="catFilterBond">
-                                        <label class="form-check-label fs-8 text-dark" for="catFilterBond">Bond</label>
+                                        <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                            for="catFilterBond">Bond/Fixed Income</label>
                                     </div>
                                     <span
                                         class="pmo-category-badge pmo-category-badge--bo fs-10 px-1.5 py-0.5">BO</span>
@@ -383,7 +388,8 @@
                                     <div class="d-flex align-items-center gap-2">
                                         <input class="form-check-input filter-category-checkbox mt-0" type="checkbox"
                                             value="MM" id="catFilterMoney">
-                                        <label class="form-check-label fs-8 text-dark" for="catFilterMoney">Money
+                                        <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                            for="catFilterMoney">Money
                                             Market</label>
                                     </div>
                                     <span
@@ -392,98 +398,73 @@
                                 <div class="form-check d-flex align-items-center justify-content-between m-0">
                                     <div class="d-flex align-items-center gap-2">
                                         <input class="form-check-input filter-category-checkbox mt-0" type="checkbox"
-                                            value="FOF" id="catFilterFOF">
-                                        <label class="form-check-label fs-8 text-dark"
+                                            value="OA" id="catFilterFOF">
+                                        <label class="form-check-label fs-8 text-dark cursor-pointer"
                                             for="catFilterFOF">Fund-of-Funds</label>
                                     </div>
-                                    <span class="badge bg-light text-muted border fs-10 px-1.5 py-0.5">FOF</span>
+                                    <span class="badge bg-light text-muted border fs-10 px-1.5 py-0.5">OA</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 3. Geographical Region -->
+                        <!-- 4. Geographical Region -->
                         <div class="mb-3">
-                            <div class="fw-bold text-dark fs-8 mb-2">Geographical Region</div>
+                            <div class="text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-2">Geographical
+                                Region</div>
                             <div class="d-flex flex-column gap-2">
                                 <div class="form-check m-0">
                                     <input class="form-check-input filter-region-checkbox" type="checkbox" value="Asia"
                                         id="regFilterAsia">
-                                    <label class="form-check-label fs-8 text-dark" for="regFilterAsia">Asia</label>
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                        for="regFilterAsia">Asia</label>
                                 </div>
                                 <div class="form-check m-0">
                                     <input class="form-check-input filter-region-checkbox" type="checkbox"
                                         value="Domestic" id="regFilterDomestic">
-                                    <label class="form-check-label fs-8 text-dark"
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
                                         for="regFilterDomestic">Domestic</label>
                                 </div>
                                 <div class="form-check m-0">
                                     <input class="form-check-input filter-region-checkbox" type="checkbox"
                                         value="Global" id="regFilterGlobal">
-                                    <label class="form-check-label fs-8 text-dark" for="regFilterGlobal">Global</label>
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                        for="regFilterGlobal">Global</label>
                                 </div>
                                 <div class="form-check m-0">
                                     <input class="form-check-input filter-region-checkbox" type="checkbox" value="ASEAN"
                                         id="regFilterAsean">
-                                    <label class="form-check-label fs-8 text-dark" for="regFilterAsean">ASEAN</label>
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                        for="regFilterAsean">ASEAN</label>
                                 </div>
                                 <div class="form-check m-0">
                                     <input class="form-check-input filter-region-checkbox" type="checkbox"
                                         value="Greater China" id="regFilterChina">
-                                    <label class="form-check-label fs-8 text-dark" for="regFilterChina">Greater
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer"
+                                        for="regFilterChina">Greater
                                         China</label>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 4. Fund Name or Abbreviation Search -->
-                        <div class="mb-3">
-                            <label
-                                class="form-label text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-1.5">Fund
-                                Search</label>
-                            <div class="position-relative">
-                                <i
-                                    class="iconoir-search position-absolute top-50 start-0 translate-middle-y ms-2.5 text-muted fs-7"></i>
-                                <input type="text"
-                                    class="form-control rounded-3 fs-8 py-2 ps-5 border-secondary border-opacity-25 bg-light"
-                                    id="filterFundNameInput" placeholder="Fund Name or Abbr">
-                            </div>
-                        </div>
-
                         <!-- 5. Unit Trust Consultant -->
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label class="form-label text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-1.5"
-                                for="filterUtcSelect">Unit Trust Consultant</label>
-                            <select
-                                class="form-select rounded-3 fs-8 py-2 text-dark border-secondary border-opacity-25 fw-medium bg-light"
+                                for="filterUtcSelect">Servicing Consultant</label>
+                            <select class="form-select rounded-3 fs-8 py-2 text-dark border fw-medium bg-white"
                                 id="filterUtcSelect">
-                                <option value="all" selected>ALL</option>
+                                <option value="all" selected>All Consultants</option>
                                 <option value="90000026">90000026 - WONG KAH WEI</option>
                             </select>
                         </div>
 
-                        <!-- 6. Account No Search -->
-                        <div class="mb-4">
-                            <label
-                                class="form-label text-muted fs-9 fw-bold text-uppercase letter-spacing-1 mb-1.5">Account
-                                Search</label>
-                            <div class="position-relative">
-                                <i
-                                    class="iconoir-search position-absolute top-50 start-0 translate-middle-y ms-2.5 text-muted fs-7"></i>
-                                <input type="text"
-                                    class="form-control rounded-3 fs-8 py-2 ps-5 border-secondary border-opacity-25 bg-light"
-                                    id="filterAccountNoInput" placeholder="Account No">
-                            </div>
-                        </div>
-
-                        <!-- 7. Bottom Actions -->
+                        <!-- 6. Bottom Actions -->
                         <div class="d-flex flex-column gap-2">
                             <button type="button"
                                 class="btn btn-danger w-100 rounded-pill py-2 fw-semibold fs-8 shadow-sm"
                                 id="btnFilterApply" style="background-color: #d3112b; border-color: #d3112b;">
                                 Apply Filters
                             </button>
-                            <button type="button"
-                                class="btn btn-outline-secondary w-100 rounded-pill py-2 fw-semibold fs-8"
+                            <button type="button" class="btn btn-outline-dark w-100 rounded-pill py-2 fw-semibold fs-8"
                                 id="btnFilterReset">
                                 Reset Filters
                             </button>
@@ -521,18 +502,16 @@
                                 <div class="col-12 col-md-6 col-lg-6 text-md-end">
                                     <div class="d-flex align-items-center justify-content-md-end gap-2 flex-wrap">
                                         <span class="text-muted fs-9 fw-medium me-1" id="searchResultSummary">Showing
-                                            all 7 accounts</span>
+                                            all 4 accounts</span>
                                         <button type="button" id="resetFiltersBtn"
                                             class="btn btn-link text-danger fs-9 fw-semibold p-0 text-decoration-none d-none me-2">
                                             Reset
                                         </button>
-                                        <button type="button"
-                                            class="btn btn-outline-dark pmo-btn-toolbar"
+                                        <button type="button" class="btn btn-outline-dark pmo-btn-toolbar"
                                             id="btnExpandFilter">
                                             <i class="iconoir-filter"></i> Filters
                                         </button>
-                                        <button type="button"
-                                            class="btn btn-outline-dark pmo-btn-toolbar"
+                                        <button type="button" class="btn btn-outline-dark pmo-btn-toolbar"
                                             onclick="window.print()">
                                             <i class="iconoir-printer"></i> Print
                                         </button>
@@ -562,15 +541,30 @@
                                     <table class="pmo-data-table">
                                         <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 text-start">Fund</th>
-                                                <th class="py-3 text-center">Category</th>
-                                                <th class="py-3 text-center">Risk</th>
-                                                <th class="py-3 text-end">Total Units</th>
-                                                <th class="py-3 text-end pmo-col-shaded">Price/Unit<br>MYR</th>
-                                                <th class="py-3 text-end">Market Value<br>MYR</th>
-                                                <th class="py-3 text-end">Investment Cost<br>by Account MYR</th>
-                                                <th class="py-3 text-end">Unrealised<br>Return MYR</th>
-                                                <th class="py-3 text-end pmo-col-shaded">Return<br>(%)</th>
+                                                <th class="ps-4 py-3 text-start sortable-header" data-sort="fund">Fund
+                                                    <i class="sort-icon iconoir-nav-arrow-up"></i>
+                                                </th>
+                                                <th class="py-3 text-center sortable-header" data-sort="category">
+                                                    Category <i class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-center sortable-header" data-sort="risk">Risk <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end sortable-header" data-sort="units">Total Units
+                                                    <i class="sort-icon iconoir-nav-arrow-up"></i>
+                                                </th>
+                                                <th class="py-3 text-end pmo-col-shaded sortable-header"
+                                                    data-sort="price">Price/Unit<br>MYR <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end sortable-header" data-sort="marketValue">Market
+                                                    Value<br>MYR <i class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end pmo-col-shaded sortable-header"
+                                                    data-sort="cost">Investment Cost<br>by Account MYR <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end sortable-header" data-sort="unrealisedReturn">
+                                                    Unrealised<br>P/L MYR <i class="sort-icon iconoir-nav-arrow-up"></i>
+                                                </th>
+                                                <th class="py-3 text-end pmo-col-shaded sortable-header"
+                                                    data-sort="returnPercent">Unrealised<br>P/L % <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
                                                 <th class="pe-4 py-3 text-end"></th>
                                             </tr>
                                         </thead>
@@ -592,35 +586,37 @@
                                                 <td class="py-3 text-center"><span
                                                         class="pmo-category-badge cursor-pointer"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Bond">BO</span></td>
+                                                        title="Bond/Fixed Income">BO</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 2 - Low to Moderate">
+                                                        data-bs-placement="top" title="Risk 2 - Low">
                                                         <img src="../images/icon/risk-level/icon_risk2.png"
                                                             alt="Risk 2">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end">185,000.00</td>
+                                                <td class="py-3 text-end">974.69.00</td>
                                                 <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
+                                                    <span class="cursor-pointer text-nowrap" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" data-bs-html="true"
                                                         data-bs-title="as at 21/08/2026<br><span class='text-danger fw-semibold'>-0.02%</span>">
-                                                        0.5240 <i class="iconoir-nav-arrow-down-solid text-danger"
+                                                        1.0337 <i class="iconoir-nav-arrow-down-solid text-danger"
                                                             style="font-size: 11px;"></i>
                                                     </span>
                                                 </td>
-                                                <td class="py-3 text-end fw-semibold text-dark">194,379.50</td>
-                                                <td class="py-3 text-end">
-                                                    <span>75,000.00</span>
+                                                <td class="py-3 text-end fw-semibold text-dark">1,007.54</td>
+                                                <td class="py-3 text-end pmo-col-shaded">
+                                                    <span>1,000.00</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.4054">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.4054">$</span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-success">119,379.50</td>
                                                 <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">159.17
                                                 </td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -659,32 +655,34 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end">160,000.00</td>
+                                                <td class="py-3 text-end">17,883.37</td>
                                                 <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
+                                                    <span class="cursor-pointer text-nowrap" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" data-bs-html="true"
                                                         data-bs-title="as at 21/08/2026<br><span class='text-success fw-semibold'>0.18%</span>">
-                                                        0.5480 <i class="iconoir-nav-arrow-up-solid text-success"
+                                                        1.0028 <i class="iconoir-nav-arrow-up-solid text-success"
                                                             style="font-size: 11px;"></i>
                                                     </span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark">160,448.00</td>
-                                                <td class="py-3 text-end">
+                                                <td class="py-3 text-end pmo-col-shaded">
                                                     <span>70,000.00</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.4375">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.4375">$</span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-success">90,448.00</td>
                                                 <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">129.21
                                                 </td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -722,32 +720,34 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end">76,072.91</td>
+                                                <td class="py-3 text-end">256,825.06</td>
                                                 <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
+                                                    <span class="cursor-pointer text-nowrap" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" data-bs-html="true"
                                                         data-bs-title="as at 21/08/2026<br><span class='text-danger fw-semibold'>-0.05%</span>">
-                                                        0.7485 <i class="iconoir-nav-arrow-down-solid text-danger"
+                                                        1.0009 <i class="iconoir-nav-arrow-down-solid text-danger"
                                                             style="font-size: 11px;"></i>
                                                     </span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark">152,564.22</td>
-                                                <td class="py-3 text-end">
-                                                    <span>47,020.57</span>
+                                                <td class="py-3 text-end pmo-col-shaded">
+                                                    <span>250,000.00</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.6181">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.6181">$</span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-success">105,543.65</td>
                                                 <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">224.46
                                                 </td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -785,32 +785,34 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
                                                 </td>
                                                 <td class="py-3 text-end">50,000.00</td>
                                                 <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
+                                                    <span class="cursor-pointer text-nowrap" data-bs-toggle="tooltip"
                                                         data-bs-placement="top" data-bs-html="true"
                                                         data-bs-title="as at 21/08/2026<br><span class='text-success fw-semibold'>+0.01%</span>">
-                                                        1.0000 <i class="iconoir-nav-arrow-up-solid text-success"
+                                                        0.9996 <i class="iconoir-nav-arrow-up-solid text-success"
                                                             style="font-size: 11px;"></i>
                                                     </span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark">49,980.00</td>
-                                                <td class="py-3 text-end">
-                                                    <span>48,500.00</span>
+                                                <td class="py-3 text-end pmo-col-shaded">
+                                                    <span>11,251.41</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.9700">$</span>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-success">1,480.00</td>
                                                 <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">3.05
                                                 </td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -828,203 +830,17 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <!-- Row 5: PUBLIC ISLAMIC MONEY MARKET FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822320"
-                                                            class="pmo-fund-code">148822320</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PUBLIC ISLAMIC MONEY MARKET FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end">40,000.00</td>
-                                                <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" data-bs-html="true"
-                                                        data-bs-title="as at 21/08/2026<br><span class='text-success fw-semibold'>+0.01%</span>">
-                                                        1.0000 <i class="iconoir-nav-arrow-up-solid text-success"
-                                                            style="font-size: 11px;"></i>
-                                                    </span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-dark">40,000.00</td>
-                                                <td class="py-3 text-end">
-                                                    <span>38,800.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-success">1,200.00</td>
-                                                <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">3.09
-                                                </td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822320">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!-- Row 6: PUBLIC e-CASH DEPOSIT FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822321"
-                                                            class="pmo-fund-code">148822321</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PUBLIC e-CASH DEPOSIT FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end">35,000.00</td>
-                                                <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" data-bs-html="true"
-                                                        data-bs-title="as at 21/08/2026<br><span class='text-success fw-semibold'>+0.01%</span>">
-                                                        1.0000 <i class="iconoir-nav-arrow-up-solid text-success"
-                                                            style="font-size: 11px;"></i>
-                                                    </span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-dark">35,000.00</td>
-                                                <td class="py-3 text-end">
-                                                    <span>34,000.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9714">$</span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-success">1,000.00</td>
-                                                <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">2.94
-                                                </td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822321">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!-- Row 7: PB CASH MANAGEMENT FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822322"
-                                                            class="pmo-fund-code">148822322</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PB CASH MANAGEMENT FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end">25,000.00</td>
-                                                <td class="py-3 text-end pmo-col-shaded">
-                                                    <span class="cursor-pointer" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" data-bs-html="true"
-                                                        data-bs-title="as at 21/08/2026<br><span class='text-success fw-semibold'>+0.01%</span>">
-                                                        1.0000 <i class="iconoir-nav-arrow-up-solid text-success"
-                                                            style="font-size: 11px;"></i>
-                                                    </span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-dark">25,000.00</td>
-                                                <td class="py-3 text-end">
-                                                    <span>24,250.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
-                                                </td>
-                                                <td class="py-3 text-end fw-semibold text-success">750.00</td>
-                                                <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">3.09
-                                                </td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822322">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                             <!-- No Results Row -->
                                             <tr id="noReturnsMatchRow" class="d-none">
                                                 <td colspan="10" class="text-center py-5 pmo-empty-state-cell">
-                                                    <div class="py-4 d-flex flex-column align-items-center justify-content-center text-center mx-auto">
+                                                    <div
+                                                        class="py-4 d-flex flex-column align-items-center justify-content-center text-center mx-auto">
                                                         <i class="iconoir-page-search fs-1 text-muted mb-2 mx-auto"
                                                             style="opacity: 0.5;"></i>
-                                                        <div class="fw-bold text-dark fs-7 mb-1">No matching accounts found</div>
-                                                        <div class="text-muted fs-8 mb-3">Try adjusting your search keyword</div>
+                                                        <div class="fw-bold text-dark fs-7 mb-1">No matching accounts
+                                                            found</div>
+                                                        <div class="text-muted fs-8 mb-3">Try adjusting your search
+                                                            keyword</div>
                                                         <button type="button"
                                                             class="btn btn-outline-danger btn-sm rounded-pill px-3 py-1 fs-8 reset-search-trigger">
                                                             Reset Search
@@ -1045,13 +861,23 @@
                                     <table class="pmo-data-table">
                                         <thead>
                                             <tr>
-                                                <th class="ps-4 py-3 text-start">Fund</th>
-                                                <th class="py-3 text-center">Category</th>
-                                                <th class="py-3 text-center">Risk</th>
-                                                <th class="py-3 text-end pmo-col-shaded">Total Units</th>
-                                                <th class="py-3 text-end">Market Value<br>MYR</th>
-                                                <th class="py-3 text-center pmo-col-shaded">UTC</th>
-                                                <th class="py-3 text-center">DDA<br>Enrolled</th>
+                                                <th class="ps-4 py-3 text-start sortable-header" data-sort="fund">Fund
+                                                    <i class="sort-icon iconoir-nav-arrow-up"></i>
+                                                </th>
+                                                <th class="py-3 text-center sortable-header" data-sort="category">
+                                                    Category <i class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-center sortable-header" data-sort="risk">Risk <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end pmo-col-shaded sortable-header"
+                                                    data-sort="units">Total Units <i
+                                                        class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-end sortable-header" data-sort="marketValue">Market
+                                                    Value<br>MYR <i class="sort-icon iconoir-nav-arrow-up"></i></th>
+                                                <th class="py-3 text-center pmo-col-shaded sortable-header"
+                                                    data-sort="utc">UTC <i class="sort-icon iconoir-nav-arrow-up"></i>
+                                                </th>
+                                                <th class="py-3 text-center sortable-header" data-sort="dda">
+                                                    DDA<br>Enrolled <i class="sort-icon iconoir-nav-arrow-up"></i></th>
                                                 <th class="pe-4 py-3 text-end"></th>
                                             </tr>
                                         </thead>
@@ -1073,19 +899,20 @@
                                                 <td class="py-3 text-center"><span
                                                         class="pmo-category-badge cursor-pointer"
                                                         data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Bond">BO</span></td>
+                                                        title="Bond/Fixed Income">BO</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 2 - Low to Moderate">
+                                                        data-bs-placement="top" title="Risk 2 - Low">
                                                         <img src="../images/icon/risk-level/icon_risk2.png"
                                                             alt="Risk 2">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end pmo-col-shaded">185,000.00</td>
+                                                <td class="py-3 text-end pmo-col-shaded">11,251.41</td>
                                                 <td class="py-3 text-end fw-semibold text-dark">
-                                                    <span>194,379.50</span>
+                                                    <span>1,007.54</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.4054">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.4054">$</span>
                                                 </td>
                                                 <td class="py-3 text-center pmo-col-shaded">
                                                     <span class="fw-semibold text-dark">90000026</span>
@@ -1095,7 +922,8 @@
                                                 <td class="py-3 text-center text-muted">-</td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -1134,16 +962,17 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end pmo-col-shaded">160,000.00</td>
+                                                <td class="py-3 text-end pmo-col-shaded">17,883.37</td>
                                                 <td class="py-3 text-end fw-semibold text-dark">
                                                     <span>160,448.00</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.4375">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.4375">$</span>
                                                 </td>
                                                 <td class="py-3 text-center pmo-col-shaded">
                                                     <span class="fw-semibold text-dark">90000026</span>
@@ -1153,7 +982,8 @@
                                                 <td class="py-3 text-center text-muted">-</td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -1191,16 +1021,17 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
                                                 </td>
-                                                <td class="py-3 text-end pmo-col-shaded">76,072.91</td>
+                                                <td class="py-3 text-end pmo-col-shaded">256,825.06</td>
                                                 <td class="py-3 text-end fw-semibold text-dark">
                                                     <span>152,564.22</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.6181">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.6181">$</span>
                                                 </td>
                                                 <td class="py-3 text-center pmo-col-shaded">
                                                     <span class="fw-semibold text-dark">90000026</span>
@@ -1210,7 +1041,8 @@
                                                 <td class="py-3 text-center text-muted">-</td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -1248,7 +1080,7 @@
                                                         title="Money Market">MM</span></td>
                                                 <td class="py-3 text-center">
                                                     <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
+                                                        data-bs-placement="top" title="Risk 1 - Very Low">
                                                         <img src="../images/icon/risk-level/icon_risk1.png"
                                                             alt="Risk 1">
                                                     </div>
@@ -1257,7 +1089,8 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">
                                                     <span>49,980.00</span>
                                                     <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
+                                                        data-bs-placement="top"
+                                                        title="Avg Cost/Unit MYR 0.9700">$</span>
                                                 </td>
                                                 <td class="py-3 text-center pmo-col-shaded">
                                                     <span class="fw-semibold text-dark">90000026</span>
@@ -1267,7 +1100,8 @@
                                                 <td class="py-3 text-center text-muted">-</td>
                                                 <td class="pe-4 py-3 text-end">
                                                     <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
+                                                        <button
+                                                            class="pmo-button pmo-button--quiet pmo-button--compact dropdown-toggle-no-caret"
                                                             type="button" data-bs-toggle="dropdown"
                                                             aria-expanded="false" aria-label="Transact menu">
                                                             <i class="iconoir-more-vert"></i> Transact
@@ -1285,185 +1119,17 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <!-- Row 5: PUBLIC ISLAMIC MONEY MARKET FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822320"
-                                                            class="pmo-fund-code">148822320</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PUBLIC ISLAMIC MONEY MARKET FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end pmo-col-shaded">40,000.00</td>
-                                                <td class="py-3 text-end fw-semibold text-dark">
-                                                    <span>40,000.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
-                                                </td>
-                                                <td class="py-3 text-center pmo-col-shaded">
-                                                    <span class="fw-semibold text-dark">90000026</span>
-                                                    <i class="iconoir-user text-success ms-1 fs-8"
-                                                        data-bs-toggle="tooltip" title="Servicing UTC: 90000026"></i>
-                                                </td>
-                                                <td class="py-3 text-center text-muted">-</td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822320">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!-- Row 6: PUBLIC e-CASH DEPOSIT FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822321"
-                                                            class="pmo-fund-code">148822321</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PUBLIC e-CASH DEPOSIT FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end pmo-col-shaded">35,000.00</td>
-                                                <td class="py-3 text-end fw-semibold text-dark">
-                                                    <span>35,000.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9714">$</span>
-                                                </td>
-                                                <td class="py-3 text-center pmo-col-shaded">
-                                                    <span class="fw-semibold text-dark">90000026</span>
-                                                    <i class="iconoir-user text-success ms-1 fs-8"
-                                                        data-bs-toggle="tooltip" title="Servicing UTC: 90000026"></i>
-                                                </td>
-                                                <td class="py-3 text-center text-muted">-</td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822321">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <!-- Row 7: PB CASH MANAGEMENT FUND -->
-                                            <tr>
-                                                <td class="ps-4 py-3 pmo-fund-cell">
-                                                    <div class="d-inline-flex align-items-center gap-1">
-                                                        <a href="view_account_detail.html?account=148822322"
-                                                            class="pmo-fund-code">148822322</a>
-                                                        <span class="bubble-info fs-8 cursor-pointer"><i
-                                                                class="iconoir-info-circle text-primary"
-                                                                data-bs-toggle="popover" data-bs-trigger="hover focus"
-                                                                data-bs-placement="top" data-bs-content="Cash scheme"
-                                                                style="cursor: help;"></i></span>
-                                                    </div>
-                                                    <div class="pmo-fund-name">PB CASH MANAGEMENT FUND</div>
-                                                </td>
-                                                <td class="py-3 text-center"><span
-                                                        class="pmo-category-badge cursor-pointer"
-                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Money Market">MM</span></td>
-                                                <td class="py-3 text-center">
-                                                    <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Risk 1 - Low">
-                                                        <img src="../images/icon/risk-level/icon_risk1.png"
-                                                            alt="Risk 1">
-                                                    </div>
-                                                </td>
-                                                <td class="py-3 text-end pmo-col-shaded">25,000.00</td>
-                                                <td class="py-3 text-end fw-semibold text-dark">
-                                                    <span>25,000.00</span>
-                                                    <span class="pmo-avg-cost-badge" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Avg Cost/Unit RM 0.9700">$</span>
-                                                </td>
-                                                <td class="py-3 text-center pmo-col-shaded">
-                                                    <span class="fw-semibold text-dark">90000026</span>
-                                                    <i class="iconoir-user text-success ms-1 fs-8"
-                                                        data-bs-toggle="tooltip" title="Servicing UTC: 90000026"></i>
-                                                </td>
-                                                <td class="py-3 text-center text-muted">-</td>
-                                                <td class="pe-4 py-3 text-end">
-                                                    <div class="dropdown d-inline-block">
-                                                        <button class="pmo-btn-transact dropdown-toggle-no-caret"
-                                                            type="button" data-bs-toggle="dropdown"
-                                                            aria-expanded="false" aria-label="Transact menu">
-                                                            <i class="iconoir-more-vert"></i> Transact
-                                                        </button>
-                                                        <ul
-                                                            class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3 p-2">
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="view_account_detail.html?account=148822322">View
-                                                                    Details</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="top_up.html">Top Up</a></li>
-                                                            <li><a class="dropdown-item pmo-table-dropdown-action"
-                                                                    href="redemption.html">Redeem</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>
-                                            </tr>
                                             <!-- No Results Row -->
                                             <tr id="noInfoMatchRow" class="d-none">
                                                 <td colspan="8" class="text-center py-5 pmo-empty-state-cell">
-                                                    <div class="py-4 d-flex flex-column align-items-center justify-content-center text-center mx-auto">
+                                                    <div
+                                                        class="py-4 d-flex flex-column align-items-center justify-content-center text-center mx-auto">
                                                         <i class="iconoir-page-search fs-1 text-muted mb-2 mx-auto"
                                                             style="opacity: 0.5;"></i>
-                                                        <div class="fw-bold text-dark fs-7 mb-1">No matching accounts found</div>
-                                                        <div class="text-muted fs-8 mb-3">Try adjusting your search keyword</div>
+                                                        <div class="fw-bold text-dark fs-7 mb-1">No matching accounts
+                                                            found</div>
+                                                        <div class="text-muted fs-8 mb-3">Try adjusting your search
+                                                            keyword</div>
                                                         <button type="button"
                                                             class="btn btn-outline-danger btn-sm rounded-pill px-3 py-1 fs-8 reset-search-trigger">
                                                             Reset Search
@@ -1591,7 +1257,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -1819,10 +1485,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const currentFunds = {
-                '094766567': { name: 'PB FIXED INCOME FUND', price: 1.0507, units: 185000, cost: 75000, category: 'BO', region: 'Domestic', utc: '90000026' },
-                '094766508': { name: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B', price: 1.0028, units: 160000, cost: 70000, category: 'MM', region: 'Domestic', utc: '90000026' },
-                '136252514': { name: 'PB CASH PLUS FUND', price: 1.0037, units: 75000, cost: 75000, category: 'MM', region: 'Domestic', utc: '90000026' },
-                '148822319': { name: 'PB CASH MANAGEMENT FUND - CLASS B', price: 0.9996, units: 50000, cost: 48500, category: 'MM', region: 'Domestic', utc: '90000026' }
+                '094766567': { name: 'PB FIXED INCOME FUND', price: 1.0337, units: 974.69, cost: 1000, category: 'BO', region: 'Domestic', utc: '90000026' },
+                '094766508': { name: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B', price: 1.0010, units: 17883.37, cost: 16000, category: 'MM', region: 'Domestic', utc: '90000026' },
+                '136252514': { name: 'PB CASH PLUS FUND', price: 1.0009, units: 256825.06, cost: 250000.00, category: 'MM', region: 'Domestic', utc: '90000026' },
+                '148822319': { name: 'PB CASH MANAGEMENT FUND - CLASS B', price: 1.0032, units: 11251.41, cost: 10100, category: 'MM', region: 'Domestic', utc: '90000026' }
             };
 
             document.querySelectorAll('tbody tr').forEach(function (row) {
@@ -1836,22 +1502,36 @@
                 }
 
                 row.dataset.account = accountCode;
+                row.dataset.fund = fund.name;
                 row.dataset.category = fund.category;
                 row.dataset.region = fund.region;
                 row.dataset.utc = fund.utc;
                 row.dataset.units = fund.units;
+                row.dataset.price = fund.price;
 
                 const fundName = row.querySelector('.pmo-fund-name');
                 if (fundName) fundName.textContent = fund.name;
 
                 if (row.closest('#contentReturnsView')) {
-                    const price = row.querySelector('.pmo-col-shaded span');
+                    const price = row.querySelectorAll('td')[4]?.querySelector('span');
                     if (price) price.firstChild.textContent = fund.price.toFixed(4) + ' ';
                 }
 
                 const marketValue = fund.units * fund.price;
                 const unrealisedReturn = marketValue - fund.cost;
                 const returnPercent = (unrealisedReturn / fund.cost) * 100;
+
+                row.dataset.marketValue = marketValue;
+                row.dataset.cost = fund.cost;
+                row.dataset.unrealisedReturn = unrealisedReturn;
+                row.dataset.returnPercent = returnPercent;
+
+                const riskImg = row.querySelector('.pmo-risk-meter img');
+                row.dataset.risk = riskImg ? (riskImg.getAttribute('alt') || '2').replace(/\D/g, '') || '2' : '2';
+
+                const ddaCell = row.querySelectorAll('td')[6];
+                row.dataset.dda = ddaCell ? ddaCell.textContent.trim() : '-';
+
                 const format = function (value) {
                     return value.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 };
@@ -1946,7 +1626,6 @@
             const catCheckboxes = document.querySelectorAll('.filter-category-checkbox');
             const regCheckboxes = document.querySelectorAll('.filter-region-checkbox');
             const filterFundNameInput = document.getElementById('filterFundNameInput');
-            const filterAccountNoInput = document.getElementById('filterAccountNoInput');
             const filterUtcSelect = document.getElementById('filterUtcSelect');
             const searchInput = document.getElementById('accountSearchInput');
             const clearSearchBtn = document.getElementById('clearAccountSearchBtn');
@@ -1963,9 +1642,7 @@
             const totalCount = returnsRows.length;
 
             function applyFilters() {
-                const searchVal = searchInput ? searchInput.value.trim().toLowerCase() : '';
-                const fundNameVal = filterFundNameInput ? filterFundNameInput.value.trim().toLowerCase() : '';
-                const acctNoVal = filterAccountNoInput ? filterAccountNoInput.value.trim().toLowerCase() : '';
+                const queryVal = (searchInput ? searchInput.value : (filterFundNameInput ? filterFundNameInput.value : '')).trim().toLowerCase();
                 const utcVal = filterUtcSelect ? filterUtcSelect.value : 'all';
                 const unitStatusVal = filterUnitStatus ? filterUnitStatus.value : 'with_units';
 
@@ -1984,14 +1661,8 @@
 
                     let match = true;
 
-                    // Text search (search bar)
-                    if (searchVal && !rowText.includes(searchVal)) match = false;
-
-                    // Fund Name / Abbr input
-                    if (fundNameVal && !rowText.includes(fundNameVal)) match = false;
-
-                    // Account No input
-                    if (acctNoVal && !acct.includes(acctNoVal)) match = false;
+                    // Text search (search bar & filter keyword)
+                    if (queryVal && !rowText.includes(queryVal) && !acct.includes(queryVal)) match = false;
 
                     // UTC dropdown
                     if (utcVal !== 'all' && utc !== utcVal) match = false;
@@ -2020,14 +1691,32 @@
                     }
                 }
 
+                if (clearSearchBtn) {
+                    clearSearchBtn.classList.toggle('d-none', !queryVal);
+                }
+                if (resetFiltersBtn) {
+                    const hasActiveFilters = queryVal || utcVal !== 'all' || unitStatusVal !== 'with_units' || selectedCategories.length > 0 || selectedRegions.length > 0;
+                    resetFiltersBtn.classList.toggle('d-none', !hasActiveFilters);
+                }
+
                 if (noReturnsRow) noReturnsRow.classList.toggle('d-none', visibleCount > 0);
                 if (noInfoRow) noInfoRow.classList.toggle('d-none', visibleCount > 0);
             }
 
-            // Event Listeners
-            [searchInput, filterFundNameInput, filterAccountNoInput].forEach(inp => {
-                inp?.addEventListener('input', applyFilters);
-            });
+            // 2-Way Synchronised Search Inputs
+            if (searchInput && filterFundNameInput) {
+                searchInput.addEventListener('input', function () {
+                    filterFundNameInput.value = searchInput.value;
+                    applyFilters();
+                });
+                filterFundNameInput.addEventListener('input', function () {
+                    searchInput.value = filterFundNameInput.value;
+                    applyFilters();
+                });
+            } else {
+                searchInput?.addEventListener('input', applyFilters);
+                filterFundNameInput?.addEventListener('input', applyFilters);
+            }
 
             btnFilterApply?.addEventListener('click', applyFilters);
             filterUnitStatus?.addEventListener('change', applyFilters);
@@ -2038,7 +1727,6 @@
             function resetAllFilters() {
                 if (searchInput) searchInput.value = '';
                 if (filterFundNameInput) filterFundNameInput.value = '';
-                if (filterAccountNoInput) filterAccountNoInput.value = '';
                 if (filterUtcSelect) filterUtcSelect.value = 'all';
                 if (filterUnitStatus) filterUnitStatus.value = 'with_units';
                 catCheckboxes.forEach(cb => cb.checked = false);
@@ -2051,7 +1739,79 @@
             resetFiltersBtn?.addEventListener('click', resetAllFilters);
             clearSearchBtn?.addEventListener('click', function () {
                 if (searchInput) searchInput.value = '';
+                if (filterFundNameInput) filterFundNameInput.value = '';
                 applyFilters();
+            });
+
+            // Multi-column sorting for both Returns View and Info View
+            let currentSortCol = null;
+            let currentSortAsc = true;
+
+            function sortTable(tableWrapperId, colName) {
+                const container = document.getElementById(tableWrapperId);
+                if (!container) return;
+                const tbody = container.querySelector('tbody');
+                if (!tbody) return;
+
+                const rows = Array.from(tbody.querySelectorAll('tr:not(#noReturnsMatchRow):not(#noInfoMatchRow)'));
+                const noMatchRow = tbody.querySelector('#noReturnsMatchRow, #noInfoMatchRow');
+
+                if (currentSortCol === colName) {
+                    currentSortAsc = !currentSortAsc;
+                } else {
+                    currentSortCol = colName;
+                    currentSortAsc = true;
+                }
+
+                // Update sort icons across all sortable headers
+                document.querySelectorAll('.sortable-header').forEach(th => {
+                    const icon = th.querySelector('.sort-icon');
+                    const isCurrent = th.dataset.sort === colName;
+                    th.classList.toggle('sorted-asc', isCurrent && currentSortAsc);
+                    th.classList.toggle('sorted-desc', isCurrent && !currentSortAsc);
+                    if (icon) {
+                        if (isCurrent) {
+                            icon.className = currentSortAsc
+                                ? 'sort-icon iconoir-nav-arrow-up'
+                                : 'sort-icon iconoir-nav-arrow-down';
+                        } else {
+                            icon.className = 'sort-icon iconoir-nav-arrow-up';
+                        }
+                    }
+                });
+
+                rows.sort((a, b) => {
+                    let valA = a.dataset[colName] ?? '';
+                    let valB = b.dataset[colName] ?? '';
+
+                    const numA = parseFloat(valA);
+                    const numB = parseFloat(valB);
+
+                    let comp = 0;
+                    if (!isNaN(numA) && !isNaN(numB) && !['fund', 'category', 'utc', 'dda', 'account'].includes(colName)) {
+                        comp = numA - numB;
+                    } else {
+                        comp = String(valA).localeCompare(String(valB));
+                    }
+                    return currentSortAsc ? comp : -comp;
+                });
+
+                rows.forEach(r => tbody.appendChild(r));
+                if (noMatchRow) tbody.appendChild(noMatchRow);
+            }
+
+            document.querySelectorAll('#contentReturnsView .sortable-header').forEach(th => {
+                th.addEventListener('click', () => {
+                    const col = th.dataset.sort;
+                    if (col) sortTable('contentReturnsView', col);
+                });
+            });
+
+            document.querySelectorAll('#contentInfoView .sortable-header').forEach(th => {
+                th.addEventListener('click', () => {
+                    const col = th.dataset.sort;
+                    if (col) sortTable('contentInfoView', col);
+                });
             });
         });
     </script>

@@ -74,8 +74,7 @@
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -170,7 +169,7 @@
         <!-- Header Section -->
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
@@ -202,7 +201,8 @@
 
                 <!-- LEFT SIDEBAR: Filters Column (col-lg-3) -->
                 <aside id="transactionFilterAside" class="col-lg-3 pmo-transaction-filter-sidebar d-none">
-                    <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4 sticky-top" style="top: 20px;">
+                    <div class="card filter-sidebar-card border-0 shadow-sm rounded-4 bg-white p-4 sticky-top"
+                        style="top: 20px;">
                         <!-- Sidebar Header -->
                         <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom">
                             <div>
@@ -211,8 +211,8 @@
                             </div>
                             <button type="button" id="utTxnFilterCollapseBtn"
                                 class="btn btn-outline-secondary btn-sm rounded-2 d-flex align-items-center justify-content-center p-0"
-                                style="width: 32px; height: 32px; border-color: #dee2e6;"
-                                aria-label="Collapse filters" title="Collapse filters">
+                                style="width: 32px; height: 32px; border-color: #dee2e6;" aria-label="Collapse filters"
+                                title="Collapse filters">
                                 <i class="iconoir-nav-arrow-left fs-5 text-dark" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -312,7 +312,8 @@
                     <!-- Top Views Selectors Card -->
                     <div class="card border-0 shadow-sm rounded-4 bg-white p-4 mb-4">
                         <!-- View Tab Links -->
-                        <div class="border-bottom pb-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div
+                            class="border-bottom pb-3 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
                             <div class="d-flex align-items-center gap-4 flex-wrap" id="txnTabLinks">
                                 <a href="#" class="view-tab active d-flex align-items-center gap-2"
                                     data-panel="panel-past">
@@ -322,7 +323,7 @@
                                     Online Activities
                                 </a>
                                 <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="panel-pending">
-                                    Pending Investments
+                                    Pending Requests
                                 </a>
                             </div>
                         </div>
@@ -347,15 +348,15 @@
                         <!-- ===== PANEL: Past Transactions ===== -->
                         <div id="panel-past" class="txn-panel">
                             <!-- Panel Actions (Filters/Print) -->
-                            <div class="d-flex justify-content-between align-items-center mb-3 print-hidden flex-wrap gap-2">
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-3 print-hidden flex-wrap gap-2">
                                 <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Past Transactions History</h5>
                                 <div class="d-flex align-items-center gap-2">
                                     <button type="button" id="btnToggleTxnFilter"
                                         class="btn btn-outline-dark pmo-btn-toolbar">
                                         <i class="iconoir-filter"></i> Filters
                                     </button>
-                                    <button type="button"
-                                        class="btn btn-outline-dark pmo-btn-toolbar"
+                                    <button type="button" class="btn btn-outline-dark pmo-btn-toolbar"
                                         onclick="window.print()">
                                         <i class="iconoir-printer"></i> Print
                                     </button>
@@ -370,11 +371,12 @@
                                                 <th class="py-3 text-start">Desc</th>
                                                 <th class="py-3 text-start">Account</th>
                                                 <th class="py-3 text-start">Fund</th>
-                                                <th class="py-3 text-end pmo-col-shaded">Paid/(Redeemed)<br>RM</th>
-                                                <th class="py-3 text-end">Invested/(Received)<br>RM</th>
-                                                <th class="py-3 text-end">Total Units</th>
-                                                <th class="py-3 text-end">Sales/Switch<br>Charge<br>RM</th>
-                                                <th class="pe-4 py-3 text-end pmo-col-shaded">GST/SST Charges<br>RM</th>
+                                                <th class="py-3 text-end pmo-col-shaded">Paid/(Redeemed)<br>MYR</th>
+                                                <th class="py-3 text-end">Invested/(Received)<br>MYR</th>
+                                                <th class="py-3 text-end">Total Balance Units</th>
+                                                <th class="py-3 text-end">Sales/Switch<br>Charge<br>MYR</th>
+                                                <th class="pe-4 py-3 text-end pmo-col-shaded">GST/SST Charges<br>MYR
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -398,14 +400,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>996.31</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0037 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0037 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="No sales/switch charge"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -429,14 +433,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>9,541.98</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0507 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0337 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="No sales/switch charge"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -462,14 +468,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>1,665.66</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0028 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0028 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>14.10</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="Sales charge rate: 4.95%"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">1.13</td>
                                             </tr>
@@ -493,14 +501,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>20,000.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 0.9996 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 0.9996 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="No sales/switch charge"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -524,14 +534,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>12,500.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0507 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0337 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="Sales charge rate: 5.00%"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -557,14 +569,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>8,250.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0028 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0028 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="No redemption charge"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -588,14 +602,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>35,000.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 0.9996 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 0.9996 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="Sales charge rate: 5.00%"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -620,14 +636,16 @@
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>12,881.68</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip"
-                                                            title="Price/Unit (RM): 1.0507 · Type of Units: Loaded"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                            title="Price/Unit (MYR): 1.0337 · Type of Units: Loaded"><i
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="py-3 text-end">
                                                     <div class="d-inline-flex align-items-center gap-1">
                                                         <span>0.00</span><span class="bubble-info"
                                                             data-bs-toggle="tooltip" title="No redemption charge"><i
-                                                                class="iconoir-info-circle"></i></span></div>
+                                                                class="iconoir-info-circle"></i></span>
+                                                    </div>
                                                 </td>
                                                 <td class="pe-4 py-3 text-end pmo-col-shaded">0.00</td>
                                             </tr>
@@ -643,9 +661,7 @@
                             <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
                                 <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Online Activities</h5>
                                 <div class="d-flex gap-2">
-                                    <button
-                                        class="btn btn-outline-dark pmo-btn-toolbar"
-                                        onclick="window.print()">
+                                    <button class="btn btn-outline-dark pmo-btn-toolbar" onclick="window.print()">
                                         <i class="iconoir-printer"></i> Print
                                     </button>
                                 </div>
@@ -675,7 +691,8 @@
                                                 <td class="py-3 text-start pmo-table-primary">
                                                     <div class="fw-semibold text-dark">Top-Up Request</div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=094766567" class="pmo-fund-code">094766567</a>
+                                                        <a href="view_account_detail.html?account=094766567"
+                                                            class="pmo-fund-code">094766567</a>
                                                         <span class="text-muted mx-1">-</span>
                                                         <span class="text-dark fw-semibold">PB FIXED INCOME FUND</span>
                                                     </div>
@@ -685,7 +702,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">47,587.32</td>
                                                 <td class="py-3 text-start pmo-table-meta">Ahmad Razak</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--pending">Pending Authorisation</span>
                                                 </td>
                                             </tr>
                                             <!-- Row 2 -->
@@ -695,11 +712,14 @@
                                                     <div class="text-muted fs-8">RP21802930190</div>
                                                 </td>
                                                 <td class="py-3 text-start pmo-table-primary">
-                                                    <div class="fw-semibold text-dark">Authorise Redemption Request</div>
+                                                    <div class="fw-semibold text-dark">Authorise Redemption Request
+                                                    </div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=148822319" class="pmo-fund-code">148822319</a>
+                                                        <a href="view_account_detail.html?account=148822319"
+                                                            class="pmo-fund-code">148822319</a>
                                                         <span class="text-muted mx-1">-</span>
-                                                        <span class="text-dark fw-semibold">PB CASH MANAGEMENT FUND - CLASS B</span>
+                                                        <span class="text-dark fw-semibold">PB CASH MANAGEMENT FUND -
+                                                            CLASS B</span>
                                                     </div>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark pmo-col-shaded">
@@ -707,7 +727,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">15,006.00</td>
                                                 <td class="py-3 text-start pmo-table-meta">Sarah Lee</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--danger">Failed</span>
                                                 </td>
                                             </tr>
                                             <!-- Row 3 -->
@@ -719,9 +739,11 @@
                                                 <td class="py-3 text-start pmo-table-primary">
                                                     <div class="fw-semibold text-dark">Reject Redemption Request</div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=094766508" class="pmo-fund-code">094766508</a>
+                                                        <a href="view_account_detail.html?account=094766508"
+                                                            class="pmo-fund-code">094766508</a>
                                                         <span class="text-muted mx-1">-</span>
-                                                        <span class="text-dark fw-semibold">PUBLIC e-CASH DEPOSIT FUND - CLASS B</span>
+                                                        <span class="text-dark fw-semibold">PUBLIC e-CASH DEPOSIT FUND -
+                                                            CLASS B</span>
                                                     </div>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark pmo-col-shaded">
@@ -729,7 +751,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">19,944.16</td>
                                                 <td class="py-3 text-start pmo-table-meta">Sarah Lee</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--danger">Failed</span>
                                                 </td>
                                             </tr>
                                             <!-- Row 4 -->
@@ -741,7 +763,8 @@
                                                 <td class="py-3 text-start pmo-table-primary">
                                                     <div class="fw-semibold text-dark">Authorise Top-Up Request</div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=094766567" class="pmo-fund-code">094766567</a>
+                                                        <a href="view_account_detail.html?account=094766567"
+                                                            class="pmo-fund-code">094766567</a>
                                                         <span class="text-muted mx-1">-</span>
                                                         <span class="text-dark fw-semibold">PB FIXED INCOME FUND</span>
                                                     </div>
@@ -751,7 +774,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">23,793.66</td>
                                                 <td class="py-3 text-start pmo-table-meta">Sarah Lee</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--success">Successful</span>
                                                 </td>
                                             </tr>
                                             <!-- Row 5 -->
@@ -763,9 +786,11 @@
                                                 <td class="py-3 text-start pmo-table-primary">
                                                     <div class="fw-semibold text-dark">Redemption Request</div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=094766508" class="pmo-fund-code">094766508</a>
+                                                        <a href="view_account_detail.html?account=094766508"
+                                                            class="pmo-fund-code">094766508</a>
                                                         <span class="text-muted mx-1">-</span>
-                                                        <span class="text-dark fw-semibold">PUBLIC e-CASH DEPOSIT FUND - CLASS B</span>
+                                                        <span class="text-dark fw-semibold">PUBLIC e-CASH DEPOSIT FUND -
+                                                            CLASS B</span>
                                                     </div>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark pmo-col-shaded">
@@ -773,7 +798,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">8,226.96</td>
                                                 <td class="py-3 text-start pmo-table-meta">Ahmad Razak</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--pending">Pending Authorisation</span>
                                                 </td>
                                             </tr>
                                             <!-- Row 6 -->
@@ -785,9 +810,11 @@
                                                 <td class="py-3 text-start pmo-table-primary">
                                                     <div class="fw-semibold text-dark">Top-Up Request</div>
                                                     <div class="fs-8 mt-1">
-                                                        <a href="view_account_detail.html?account=148822319" class="pmo-fund-code">148822319</a>
+                                                        <a href="view_account_detail.html?account=148822319"
+                                                            class="pmo-fund-code">148822319</a>
                                                         <span class="text-muted mx-1">-</span>
-                                                        <span class="text-dark fw-semibold">PB CASH MANAGEMENT FUND - CLASS B</span>
+                                                        <span class="text-dark fw-semibold">PB CASH MANAGEMENT FUND -
+                                                            CLASS B</span>
                                                     </div>
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark pmo-col-shaded">35,000.00
@@ -795,7 +822,7 @@
                                                 <td class="py-3 text-end fw-semibold text-dark">35,014.01</td>
                                                 <td class="py-3 text-start pmo-table-meta">Ahmad Razak</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-success">Successful</span>
+                                                    <span class="pmo-status pmo-status--pending">Pending Authorisation</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -804,14 +831,14 @@
                             </div>
                         </div>
 
-                        <!-- ===== PANEL: Pending Investments ===== -->
+                        <!-- ===== PANEL: Pending Requests ===== -->
                         <div id="panel-pending" class="txn-panel d-none">
                             <!-- Alert Banner -->
                             <div class="d-flex align-items-start gap-3 p-3 rounded-3 mb-4 border"
                                 style="background:#fffbeb;border-color:#fcd34d !important;">
                                 <i class="iconoir-warning-circle text-warning fs-5 flex-shrink-0 mt-1"></i>
                                 <div>
-                                    <div class="fw-bold text-dark fs-8 mb-1">Action Required — Pending Investments</div>
+                                    <div class="fw-bold text-dark fs-8 mb-1">Action Required — Pending Requests</div>
                                     <div class="text-muted fs-9">The following investments are Pending payment or
                                         authorisation. Please complete payment or contact your authoriser to proceed.
                                     </div>
@@ -819,11 +846,9 @@
                             </div>
                             <!-- Panel Actions (Print/Export) -->
                             <div class="d-flex justify-content-between align-items-center mb-3 print-hidden">
-                                <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Pending Investments Details</h5>
+                                <h5 class="fw-bold mb-0 text-dark fs-6 ps-2">Pending Requests Details</h5>
                                 <div class="d-flex gap-2">
-                                    <button
-                                        class="btn btn-outline-dark pmo-btn-toolbar"
-                                        onclick="window.print()">
+                                    <button class="btn btn-outline-dark pmo-btn-toolbar" onclick="window.print()">
                                         <i class="iconoir-printer"></i> Print
                                     </button>
                                 </div>
@@ -836,7 +861,7 @@
                                                 <th class="ps-4 py-3 text-start">Request Date/Time<br><span
                                                         class="text-muted fw-normal fs-9">Desc. Ref.</span></th>
                                                 <th class="py-3 text-start">Account / Fund</th>
-                                                <th class="py-3 text-end pmo-col-shaded">Amount Transacted (RM)</th>
+                                                <th class="py-3 text-end pmo-col-shaded">Amount Transacted (MYR)</th>
                                                 <th class="py-3 text-end">Units Transacted</th>
                                                 <th class="pe-4 py-3 text-center pmo-status-column">Status</th>
                                             </tr>
@@ -856,8 +881,7 @@
                                                     100,000.00</td>
                                                 <td class="py-3 text-end fw-semibold text-dark">95,174.65</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-pending">Pending
-                                                        Payment</span>
+                                                    <span class="pmo-status pmo-status--pending">Float</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -875,7 +899,7 @@
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark">49,860.39</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-pending">Pending
+                                                    <span class="pmo-status pmo-status--pending">Pending
                                                         Authorisation</span>
                                                 </td>
                                             </tr>
@@ -893,7 +917,7 @@
                                                 </td>
                                                 <td class="py-3 text-end fw-semibold text-dark">20,008.00</td>
                                                 <td class="pe-4 py-3 text-center">
-                                                    <span class="pmo-status-badge pmo-status-pending">Pending
+                                                    <span class="pmo-status pmo-status--pending">Pending
                                                         Payment</span>
                                                 </td>
                                             </tr>
@@ -1104,7 +1128,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -1351,7 +1375,7 @@
                     btnToggleFilter.classList.toggle('d-inline-flex', isPastTransactions);
                 }
 
-                // Online Activities and Pending Investments do not have filters and expand to full width
+                // Online Activities and Pending Requests do not have filters and expand to full width
                 if (!isPastTransactions) {
                     filterAside?.classList.add('d-none');
                     filterLayout?.classList.add('is-filter-hidden');

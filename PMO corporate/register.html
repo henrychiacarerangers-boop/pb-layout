@@ -53,14 +53,50 @@
 
 <body class="pmo-app-shell pmo-auth-shell">
 
-    <!-- Header -->
-    <header class="top-nav">
-        <div class="container d-flex align-items-center">
-            <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Logo" height="40"></a>
-            <div class="portal-title h4 mb-0 d-none d-md-block"><img src="images/pmo-logo-corporate.png" alt="Logo"
-                    height="40"></div>
+    <!-- Top Utility Header -->
+    <div class="widescreen-header">
+        <div class="d-flex align-items-center gap-4">
+            <div class="logo-box d-flex align-items-center gap-3">
+                <a href="../Corporate Website/landing.html"><img src="images/logo.png" alt="Public Mutual Logo"
+                        height="45"></a>
+                <div style="width: 1px; height: 45px; background-color: #dee2e6;"></div>
+                <img src="images/pmo-logo-corporate.png" alt="PMO Corporate Logo" height="45"
+                    style="margin-top: 2px;">
+            </div>
         </div>
-    </header>
+
+        <div class="widescreen-header-links">
+            <a href="../Corporate Website/landing.html" class="header-cta-btn me-3"
+                style="background:#0E0D3B !important;">Corporate Solutions</a>
+
+            <a href="#" class="header-utility-icon me-2" title="Notifications">
+                <i class="iconoir-bell"></i>
+                <span
+                    style="position: absolute; top: -1px; right: -1px; width: 6px; height: 6px; background-color: #d3112b; border-radius: 50%;"></span>
+            </a>
+
+            <a href="#" class="header-utility-icon me-3" title="Search">
+                <i class="iconoir-search"></i>
+            </a>
+
+            <div class="dropdown">
+                <div class="language-dropdown dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="images/my.png" alt="Malaysia Flag" width="16">
+                    <span class="ms-1">English</span>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end" style="min-width: 80px;">
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">Malay</a></li>
+                    <li><a class="dropdown-item" href="#">简体中文</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="btn text-navy d-xl-none border-0 p-0 lh-1" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sitemapOffcanvas" aria-controls="sitemapOffcanvas" style="font-size: 1.75rem;">
+            <i class="iconoir-menu"></i>
+        </button>
+    </div>
 
     <!-- Registration Section -->
     <div class="register-hero-section">
@@ -343,158 +379,53 @@
         </div>
     </div>
 
-    <!-- Comprehensive Footer Section (Standardized Design, Sync with Corporate Landing Page) -->
-    <footer class="main-footer py-5 border-top w-100 bg-light text-start">
-        <div class="container px-4">
-            <div class="row g-4">
-                <!-- Column 1: Products & Services -->
-                <div class="col-6 col-md-3">
-                    <h6 class="fw-bold text-navy mb-3">Products & Services</h6>
-                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
-                        <li><a href="#">Unit Trust</a></li>
-                        <li><a href="#">Get Started</a></li>
-                        <li><a href="#">Build Wealth</a></li>
-                        <li><a href="#">List of Funds</a></li>
-                        <li><a href="#">e-Series Funds</a></li>
-                        <li><a href="#">Islamic Funds</a></li>
-                        <li><a href="#">EPF-MIS</a></li>
-                        <li><a href="#">Sustainable and Responsible Investing</a></li>
-                        <li><a href="#">Fund Prices</a></li>
-                        <li><a href="#">Fund Report/Fund Fact Sheet</a></li>
-                        <li><a href="#">Private Retirement Scheme</a></li>
-                        <li><a href="#">Fund Explorer</a></li>
-                        <li><a href="#">Financial Planning</a></li>
-                        <li><a href="#">Retirement</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Specific Goals</a></li>
-                        <li><a href="#">Insurance, Will & Wasiat Writing</a></li>
-                        <li><a href="#">Regular investing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 2: Privileges & Company -->
-                <div class="col-6 col-md-3">
-                    <h6 class="fw-bold text-navy mb-3">Privileges Circle</h6>
-                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
-                        <li><a href="#">Mutual Gold</a></li>
-                        <li><a href="#">Mutual Elite</a></li>
-                        <li><a href="#">Mutual Signature</a></li>
-                        <li><a href="#">Mutual Platinum</a></li>
-                        <li><a href="#">Mutual Prestige</a></li>
-                    </ul>
-
-                    <h6 class="fw-bold text-navy mb-3">Happening</h6>
-                    <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
-                        <li><a href="#">New Funds</a></li>
-                        <li><a href="#">Campaigns</a></li>
-                    </ul>
-
-                    <h6 class="fw-bold text-navy mb-3">Join Us</h6>
-
-                    <h6 class="fw-bold text-navy mb-3 mt-4">About Us</h6>
-                    <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
-                        <li><a href="#">Vision Mission</a></li>
-                        <li><a href="#">Core Values</a></li>
-                        <li><a href="#">Our Profile</a></li>
-                        <li><a href="#">Our People</a></li>
-                        <li><a href="#">Track Record</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Resources & Info -->
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="col-6">
-                            <h6 class="fw-bold text-navy mb-3">Resources</h6>
-                            <ul class="list-unstyled footer-links mb-4" style="font-size: 0.8rem; line-height: 1.8;">
-                                <li><a href="#">Learning Hub</a></li>
-                                <li><a href="#">Downloads</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <h6 class="fw-bold text-navy mb-3">Important Information</h6>
-                            <ul class="list-unstyled footer-links" style="font-size: 0.8rem; line-height: 1.8;">
-                                <li><a href="#">Contact Us (Form)</a></li>
-                                <li><a href="#">Branches</a></li>
-                                <li><a href="#">Customer Service Hotline</a></li>
-                                <li><a href="#">Investor Guide</a></li>
-                                <li><a href="#">Check Your UTC's Credentials</a></li>
-                                <li><a href="#">Announcements & News</a></li>
-                                <li><a href="#">Cybersecurity Awareness</a></li>
-                                <li><a href="#">Anti-Bribery and Anti-Corruption Policy</a></li>
-                                <li><a href="#">Whistleblowing Policy & Procedure</a></li>
-                                <li><a href="#">Advertising Disclaimer</a></li>
-                                <li><a href="#">Cross Trade Policy</a></li>
-                                <li><a href="#">Glossary</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <!-- Bottom Utility Footer -->
     <footer class="bottom-footer py-4 w-100 bg-navy text-white">
         <div class="container text-center text-md-start px-4">
-            <!-- Disclaimer -->
             <p class="small mb-3 opacity-75" style="font-size: 0.78rem; line-height: 1.6;">
                 *In terms of total retail fund size managed amongst private unit trust companies and PRS providers in
                 Malaysia.
             </p>
 
-            <!-- Corporate PMO Regulatory & Disclosures Section (Internet Risk, Investment Channels, Transaction Notice) -->
-            <div class="corporate-disclosures-grid mb-4 pt-3" style="border-top: 1px solid rgba(255,255,255,0.08);">
-                <div class="row g-3">
-                    <!-- Card 1: Internet Risk -->
+            <div class="vanguard-disclosures mb-4 text-start text-white-50"
+                style="font-size: 0.72rem; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                <div class="row g-4 mb-3">
                     <div class="col-lg-4">
-                        <div class="corp-disclosure-card h-100">
-                            <div class="corp-disclosure-header">
-                                Internet Risk
-                            </div>
-                            <div class="corp-disclosure-body">
-                                <p class="mb-3">
-                                    Public Mutual Online is an online facility that provides online transactions &amp; account enquiries, as such you may be exposed to the risks associated with hardware &amp; software failure. You are also aware and acknowledge the risks involved when you make any transaction or enquiry online.
-                                </p>
-                                <p class="mb-0 mt-auto pt-2">
-                                    Click <a href="internet_risk.html" target="_blank" class="corp-link-more">Here</a> to find out more
-                                </p>
-                            </div>
-                        </div>
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.82rem;"><u
+                                style="text-underline-offset: 3px;">Internet Risk</u></h6>
+                        <p class="mb-2">Public Mutual Online is an online facility that provides online transactions
+                            &amp; account enquiries, as such you may be exposed to the risks associated with hardware
+                            &amp; software failure. You are also aware and acknowledge the risks involved when you make
+                            any transaction or enquiry online.</p>
+                        <p class="mb-0">Click <a href="internet_risk.html"
+                                class="text-white fw-bold text-decoration-none">Here</a> to find out more</p>
                     </div>
 
-                    <!-- Card 2: Investment Channels -->
-                    <div class="col-lg-4">
-                        <div class="corp-disclosure-card h-100">
-                            <div class="corp-disclosure-header">
-                                Investment Channels
-                            </div>
-                            <div class="corp-disclosure-body">
-                                <p class="mb-2">Existing corporate investors could make their investment thru various channels namely:</p>
-                                <ol class="corp-channel-list">
-                                    <li>Online via Corporate Public Mutual Online</li>
-                                    <li>Contact their servicing unit trust consultant</li>
-                                    <li>Go to the nearest Public Bank branch</li>
-                                </ol>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 ps-lg-4" style="border-left: 1px solid rgba(255,255,255,0.12);">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.82rem;"><u
+                                style="text-underline-offset: 3px;">Investment Channels</u></h6>
+                        <p class="mb-2">Existing corporate investors could make their investment thru various channels
+                            namely:</p>
+                        <ol class="ps-3 mb-0" style="padding-left: 1.1rem; line-height: 1.6;">
+                            <li>Online via Corporate Public Mutual Online</li>
+                            <li>Contact their servicing unit trust consultant</li>
+                            <li>Go to the nearest Public Bank branch</li>
+                        </ol>
                     </div>
 
-                    <!-- Card 3: Transaction Notice -->
-                    <div class="col-lg-4">
-                        <div class="corp-disclosure-card h-100">
-                            <div class="corp-disclosure-header">
-                                Transaction Notice
-                            </div>
-                            <div class="corp-disclosure-body">
-                                <p class="mb-0">
-                                    If an applicant applied for units in the funds and a supplementary prospectus or replacement prospectus is delivered to the Securities Commission for registration before the issuance or transfer of units to the applicant, the applicant will be given the opportunity to withdraw his/her application within 14 days from the date of his/her receipt of notice of the registration of the supplementary prospectus or replacement prospectus. Application for units in the funds cannot be withdrawn where a supplementary prospectus or replacement prospectus has been registered after the issuance or transfer of units to the applicant.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 ps-lg-4" style="border-left: 1px solid rgba(255,255,255,0.12);">
+                        <h6 class="text-white fw-bold mb-2" style="font-size: 0.82rem;"><u
+                                style="text-underline-offset: 3px;">Transaction Notice</u></h6>
+                        <p class="mb-0">If an applicant applied for units in the funds and a supplementary prospectus or
+                            replacement prospectus is delivered to the Securities Commission for registration before the
+                            issuance or transfer of units to the applicant, the applicant will be given the opportunity to
+                            withdraw his/her application within 14 days from the date of his/her receipt of notice of the
+                            registration of the supplementary prospectus or replacement prospectus. Application for units
+                            in the funds cannot be withdrawn where a supplementary prospectus or replacement prospectus
+                            has been registered after the issuance or transfer of units to the applicant.</p>
                     </div>
                 </div>
-            </div>
+
                 <div class="border-top border-white-10 pt-3 opacity-75"
                     style="border-top: 1px solid rgba(255,255,255,0.05);">
                     <p class="mb-0">Public Mutual Online (PMO), PMO Corporate, and UTC Connect are proprietary digital
@@ -506,7 +437,6 @@
             </div>
 
             <hr class="border-white opacity-10 my-3" style="border-color: rgba(255,255,255,0.1) !important;">
-            <!-- Links -->
             <div class="bottom-links d-flex flex-wrap gap-1 gap-md-1 justify-content-center justify-content-md-start"
                 style="font-size: 0.78rem;">
                 <a href="website-disclaimer.html"
@@ -545,7 +475,7 @@
                     class="text-white text-decoration-none small opacity-75 hover-opacity-100 transition-all duration-200">Terms
                     and Conditions of Use</a>
             </div>
-            <!-- Copyright and Social Buttons -->
+
             <div class="mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
                 <div class="copyright-text small opacity-75 text-center text-md-start" style="font-size: 0.75rem;">
                     <span>Copyright © Public Mutual Berhad 197501001842 (23419-A) ALL RIGHTS RESERVED.</span>

@@ -56,23 +56,13 @@
         .statement-row-downloadable tbody tr:hover .statement-download-date {
             color: #001f52 !important;
         }
-
-        .document-register {
-            padding: 24px !important;
-            margin-bottom: 24px !important;
-        }
-
-        .document-register h5 {
-            color: #0E0D3B !important;
-        }
     </style>
     <link rel="stylesheet" href="../css/table-system.css">
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="eop" data-pmo-base="..">
 
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
         <div class="pmo-shell-topnav-bleed w-100">
             <div id="pmoShellTopNavMount">
                 <header class="top-nav pmo-shell-dashboard-topnav w-100">
@@ -165,7 +155,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto" id="eopMainTabs">
                     <li class="nav-item"><a class="nav-link" href="dashboard.html" id="eopTabHome">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contribution.html" id="eopTabMake">Contribution</a>
                     </li>
@@ -190,128 +180,362 @@
                 <h2 class="fw-bold text-dark fs-2 mb-2" id="eopStmtPageTitle">Statements</h2>
             </div>
 
-            <!-- Unified Card Box -->
-            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4 p-4">
-                <div
-                    class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 pb-3 mb-4 border-bottom">
-                    <div class="d-flex align-items-center gap-4 flex-wrap" id="eopStmtViewTabs">
-                        <a href="#" class="view-tab active d-flex align-items-center gap-2" data-panel="eopStmtPanelPrs"
-                            id="eopStmtTabPrs" role="button" aria-current="page">
-                            Contribution Statements
-                        </a>
-                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelAnnual"
-                            id="eopStmtTabAnnual">
-                            Annual Statement
-                        </a>
-                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelEinv"
-                            id="eopStmtTabEinv" role="button">
-                            e-Invoice
-                        </a>
+            <!-- One workspace surface; table frames remain the only nested boundary. -->
+            <section class="pmo-card mb-4">
+                <div class="pmo-card__body">
+                    <div
+                        class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 pb-3 mb-4 border-bottom">
+                        <div class="d-flex align-items-center gap-4 flex-wrap" id="eopStmtViewTabs">
+                            <a href="#" class="view-tab active d-flex align-items-center gap-2"
+                                data-panel="eopStmtPanelPrs" id="eopStmtTabPrs" role="button" aria-current="page">
+                                Contribution Statements
+                            </a>
+                            <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelAnnual"
+                                id="eopStmtTabAnnual">
+                                Annual Statement
+                            </a>
+                            <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelEinv"
+                                id="eopStmtTabEinv" role="button">
+                                e-Invoice
+                            </a>
 
-                        <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelInv"
-                            id="eopStmtTabInv" role="button">
-                            Invoice
-                        </a>
+                            <a href="#" class="view-tab d-flex align-items-center gap-2" data-panel="eopStmtPanelInv"
+                                id="eopStmtTabInv" role="button">
+                                Invoice
+                            </a>
+                        </div>
+                        <!-- Month & Year Filters -->
+                        <div class="d-none" aria-hidden="true">
+                            <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                    class="iconoir-filter-list me-1"></i>Filter:</span>
+                            <select
+                                class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="width: 130px; height: 36px;" id="eopStmtFilterMonth">
+                                <option value="all" selected>All Months</option>
+                                <option value="Jan">January</option>
+                                <option value="Feb">February</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
+                                <option value="May">May</option>
+                                <option value="Jun">June</option>
+                                <option value="Jul">July</option>
+                                <option value="Aug">August</option>
+                                <option value="Sep">September</option>
+                                <option value="Oct">October</option>
+                                <option value="Nov">November</option>
+                                <option value="Dec">December</option>
+                            </select>
+                            <select
+                                class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                style="width: 110px; height: 36px;" id="eopStmtFilterYear">
+                                <option value="all" selected>All Years</option>
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </div>
                     </div>
-                    <!-- Month & Year Filters -->
-                    <div class="d-none" aria-hidden="true">
-                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                class="iconoir-filter-list me-1"></i>Filter:</span>
-                        <select
-                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                            style="width: 130px; height: 36px;" id="eopStmtFilterMonth">
-                            <option value="all" selected>All Months</option>
-                            <option value="Jan">January</option>
-                            <option value="Feb">February</option>
-                            <option value="Mar">March</option>
-                            <option value="Apr">April</option>
-                            <option value="May">May</option>
-                            <option value="Jun">June</option>
-                            <option value="Jul">July</option>
-                            <option value="Aug">August</option>
-                            <option value="Sep">September</option>
-                            <option value="Oct">October</option>
-                            <option value="Nov">November</option>
-                            <option value="Dec">December</option>
-                        </select>
-                        <select
-                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                            style="width: 110px; height: 36px;" id="eopStmtFilterYear">
-                            <option value="all" selected>All Years</option>
-                            <option value="2026">2026</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Keep card open: tab content is inside this unified card -->
+                    <!-- Keep card open: tab content is inside this unified card -->
 
-                <!-- Tab Content -->
-                <div class="tab-content pt-2">
+                    <!-- Tab Content -->
+                    <div class="tab-content pt-2">
 
-                    <!-- PRS contribution statements -->
-                    <div id="eopStmtPanelPrs" class="eop-stmt-panel">
-                        <div class="document-register border rounded-4 overflow-hidden">
-                            <div class="accordion-header-custom" data-bs-toggle="collapse"
-                                data-bs-target="#eopStmtCollapsePrsTxn" aria-expanded="true"
-                                aria-controls="eopStmtCollapsePrsTxn" id="eopStmtHdrPrsTxn">
-                                <span class="fw-bold text-dark fs-7">Statement of Employer Contributions</span>
-                                <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
-                                    aria-hidden="true"></i>
+                        <!-- PRS contribution statements -->
+                        <div id="eopStmtPanelPrs" class="eop-stmt-panel">
+                            <div class="pmo-statement-section">
+                                <div class="accordion-header-custom" data-bs-toggle="collapse"
+                                    data-bs-target="#eopStmtCollapsePrsTxn" aria-expanded="true"
+                                    aria-controls="eopStmtCollapsePrsTxn" id="eopStmtHdrPrsTxn">
+                                    <span class="fw-bold text-dark fs-7">Statement of Employer Contributions</span>
+                                    <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
+                                        aria-hidden="true"></i>
+                                </div>
+                                <div id="eopStmtCollapsePrsTxn" class="collapse show">
+                                    <div class="table-responsive pmo-table-frame">
+                                        <table class="pmo-data-table pmo-data-table--documents">
+                                            <thead>
+                                                <tr>
+                                                    <th class="ps-4 py-1">Period
+                                                        / Date</th>
+                                                    <th class="py-3">
+                                                        Schema type<br><span>Contribution
+                                                            type</span>
+                                                    </th>
+                                                    <th class="pe-4 py-3">Document type
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-month="Apr" data-year="2026">
+                                                    <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                            class="eop-stmt-table-link pmo-table-link"
+                                                            id="eopStmtLinkPrs1">Apr 2026</a></td>
+                                                    <td class="py-3">
+                                                        <div>Salary Deduction</div>
+                                                        <div class="mt-1">Salary Deduction
+                                                            (IND)</div>
+                                                    </td>
+                                                    <td class="pe-4 py-3">Statement of
+                                                        Transcation
+                                                    </td>
+                                                </tr>
+                                                <tr data-month="Mar" data-year="2026">
+                                                    <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                            class="eop-stmt-table-link pmo-table-link"
+                                                            id="eopStmtLinkPrs2">Mar 2026</a></td>
+                                                    <td class="py-3">
+                                                        <div>Salary Deduction</div>
+                                                        <div class="mt-1">Salary Deduction
+                                                            (IND)</div>
+                                                    </td>
+                                                    <td class="pe-4 py-3">Statement of
+                                                        Transcation
+                                                    </td>
+                                                </tr>
+                                                <tr data-month="Feb" data-year="2026">
+                                                    <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
+                                                            class="eop-stmt-table-link pmo-table-link"
+                                                            id="eopStmtLinkPrs3">Feb 2026</a></td>
+                                                    <td class="py-3">
+                                                        <div>Employer contribution</div>
+                                                        <div class="mt-1">Vesting
+                                                            (VSC)/Immediate Vesting (EMP)</div>
+                                                    </td>
+                                                    <td class="pe-4 py-3">Statement of
+                                                        Transcation
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="eopStmtCollapsePrsTxn" class="collapse show">
+                        </div>
+
+                        <!-- Annual / interim -->
+                        <div id="eopStmtPanelAnnual" class="eop-stmt-panel d-none">
+                            <div class="pmo-statement-section">
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Annual Statements</h5>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                                class="iconoir-filter-list me-1"></i>Filter:</span>
+                                        <select
+                                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                            style="width: 130px; height: 36px;" id="eopStmtFilterMonthEinv">
+                                            <option value="all" selected>All Years</option>
+                                            <option value="Jan">2026</option>
+                                            <option value="Feb">2025</option>
+                                            <option value="Mar">2024</option>
+                                            <option value="Apr">2023</option>
+                                            <option value="May">2022</option>
+                                            <option value="Jun">2021</option>
+                                            <option value="Jul">2020</option>
+                                            <option value="Aug">2019</option>
+                                            <option value="Sep">2018</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
                                 <div class="table-responsive pmo-table-frame">
-                                    <table class="pmo-data-table">
+                                    <table class="pmo-data-table pmo-data-table--documents">
                                         <thead>
                                             <tr>
-                                                <th class="ps-4 py-1">Period
-                                                    / Date</th>
-                                                <th class="py-3">
-                                                    Schema type<br><span>Contribution
-                                                        type</span>
+                                                <th class="ps-4 py-1">Period / Date</th>
+
+                                                <th class="py-3">Document type
                                                 </th>
-                                                <th class="pe-4 py-3">Document type
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-month="Apr" data-year="2026">
+
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
+                                                <td class="py-3">Annual Statements</td>
+
+                                            </tr>
+                                            <tr data-month="Apr" data-year="2026">
+
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">05 Apr 2025</td>
+                                                <td class="py-3">Annual Statements</td>
+
+                                            </tr>
+                                            <tr data-month="Apr" data-year="2026">
+
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">02 Apr 2024</td>
+                                                <td class="py-3">Annual Statements</td>
+
+                                            </tr>
+                                            <tr data-month="Apr" data-year="2026">
+
+                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date">01 Apr 2023</td>
+                                                <td class="py-3">Annual Statements</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PRS fund notices -->
+                        <div id="eopStmtPanelFund" class="eop-stmt-panel d-none">
+                            <div class="pmo-statement-empty">
+                                <i class="iconoir-page-search fs-1 text-muted mb-3 d-block" aria-hidden="true"></i>
+                                <p class="text-muted mb-0 fw-medium fs-8" id="eopStmtFundEmpty">No new PRS fund
+                                    prospectus
+                                    or employer notice packs for your default fund list.</p>
+                            </div>
+                        </div>
+
+                        <!-- e-Invoice -->
+                        <div id="eopStmtPanelEinv" class="eop-stmt-panel d-none">
+                            <div class="pmo-statement-section">
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                                class="iconoir-filter-list me-1"></i>Filter:</span>
+                                        <select
+                                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                            style="width: 130px; height: 36px;" id="eopStmtFilterMonthEinv">
+                                            <option value="all" selected>All Months</option>
+                                            <option value="Jan">January</option>
+                                            <option value="Feb">February</option>
+                                            <option value="Mar">March</option>
+                                            <option value="Apr">April</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">June</option>
+                                            <option value="Jul">July</option>
+                                            <option value="Aug">August</option>
+                                            <option value="Sep">September</option>
+                                            <option value="Oct">October</option>
+                                            <option value="Nov">November</option>
+                                            <option value="Dec">December</option>
+                                        </select>
+                                        <select
+                                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                            style="width: 110px; height: 36px;" id="eopStmtFilterYearEinv">
+                                            <option value="all" selected>All Years</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="table-responsive pmo-table-frame">
+                                    <table
+                                        class="pmo-data-table pmo-data-table--documents pmo-data-table--document-download">
+                                        <thead>
+                                            <tr>
+                                                <th class="ps-4 py-1">e-Invoice
+                                                    No.</th>
+                                                <th class="py-3">Date</th>
+                                                <th class="py-3">Document type
+                                                </th>
+                                                <th class="pe-4 py-3">Download
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr data-month="Apr" data-year="2026">
-                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
-                                                        class="eop-stmt-table-link pmo-table-link"
-                                                        id="eopStmtLinkPrs1">Apr 2026</a></td>
-                                                <td class="py-3">
-                                                    <div>Salary Deduction</div>
-                                                    <div class="mt-1">Salary Deduction
-                                                        (IND)</div>
-                                                </td>
-                                                <td class="pe-4 py-3">Statement of
-                                                    Transcation
+                                                <td class="ps-4 py-1"><span class="d-block">TR2600004083678</span></td>
+                                                <td class="py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
+                                                <td class="py-3">e-Invoice</td>
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"
+                                                        id="eopEinvPdf1"><i class="iconoir-download"></i> PDF</a></td>
+                                            </tr>
+                                            <tr data-month="Apr" data-year="2026">
+                                                <td class="ps-4 py-1"><span class="d-block">TR2600004083679</span></td>
+                                                <td class="py-3 pmo-table-meta pmo-table-date">05 Apr 2026</td>
+                                                <td class="py-3">Self-billed e-Invoice</td>
+                                                <td class="pe-4 py-3"><a href="#" class="pmo-table-link"
+                                                        id="eopEinvPdf2"><i class="iconoir-download"></i> PDF</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Invoice -->
+                        <div id="eopStmtPanelInv" class="eop-stmt-panel d-none">
+                            <div class="pmo-statement-section">
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Invoices</h5>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
+                                        <span class="fs-8 fw-semibold text-muted text-nowrap"><i
+                                                class="iconoir-filter-list me-1"></i>Filter:</span>
+                                        <select
+                                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                            style="width: 130px; height: 36px;" id="eopStmtFilterMonthInv">
+                                            <option value="all" selected>All Months</option>
+                                            <option value="Jan">January</option>
+                                            <option value="Feb">February</option>
+                                            <option value="Mar">March</option>
+                                            <option value="Apr">April</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">June</option>
+                                            <option value="Jul">July</option>
+                                            <option value="Aug">August</option>
+                                            <option value="Sep">September</option>
+                                            <option value="Oct">October</option>
+                                            <option value="Nov">November</option>
+                                            <option value="Dec">December</option>
+                                        </select>
+                                        <select
+                                            class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
+                                            style="width: 110px; height: 36px;" id="eopStmtFilterYearInv">
+                                            <option value="all" selected>All Years</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="table-responsive pmo-table-frame">
+                                    <table
+                                        class="pmo-data-table pmo-data-table--documents pmo-data-table--document-download">
+                                        <thead>
+                                            <tr>
+                                                <th class="ps-4 py-1">Invoice
+                                                    No.
+                                                </th>
+                                                <th class="py-3">Date</th>
+                                                <th class="py-3">Document type
+                                                </th>
+                                                <th class="pe-4 py-3">Download
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-month="Apr" data-year="2026">
+                                                <td class="ps-4 py-1">TR2600004083680</td>
+                                                <td class="py-3 pmo-table-meta pmo-table-date">11 Apr 2026</td>
+                                                <td class="py-3">Invoice</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link" id="eopInvPdf1"><i
+                                                            class="iconoir-download"></i> PDF</a>
                                                 </td>
                                             </tr>
-                                            <tr data-month="Mar" data-year="2026">
-                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
-                                                        class="eop-stmt-table-link pmo-table-link"
-                                                        id="eopStmtLinkPrs2">Mar 2026</a></td>
-                                                <td class="py-3">
-                                                    <div>Salary Deduction</div>
-                                                    <div class="mt-1">Salary Deduction
-                                                        (IND)</div>
-                                                </td>
-                                                <td class="pe-4 py-3">Statement of
-                                                    Transcation
-                                                </td>
-                                            </tr>
-                                            <tr data-month="Feb" data-year="2026">
-                                                <td class="ps-4 py-3 pmo-table-meta pmo-table-date"><a href="#"
-                                                        class="eop-stmt-table-link pmo-table-link"
-                                                        id="eopStmtLinkPrs3">Feb 2026</a></td>
-                                                <td class="py-3">
-                                                    <div>Employer contribution</div>
-                                                    <div class="mt-1">Vesting
-                                                        (VSC)/Immediate Vesting (EMP)</div>
-                                                </td>
-                                                <td class="pe-4 py-3">Statement of
-                                                    Transcation
+                                            <tr data-month="Apr" data-year="2026">
+                                                <td class="ps-4 py-1">TR2600004083681</td>
+                                                <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
+                                                <td class="py-3">Credit Note</td>
+                                                <td class="pe-4 py-3">
+                                                    <a href="#" class="pmo-table-link" id="eopInvPdf2"><i
+                                                            class="iconoir-download"></i> PDF</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -320,237 +544,8 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Annual / interim -->
-                    <div id="eopStmtPanelAnnual" class="eop-stmt-panel d-none">
-                        <div class="document-register border rounded-4 overflow-hidden">
-                            <div
-                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1">Annual Statements</h5>
-                                </div>
-                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 130px; height: 36px;" id="eopStmtFilterMonthEinv">
-                                        <option value="all" selected>All Years</option>
-                                        <option value="Jan">2026</option>
-                                        <option value="Feb">2025</option>
-                                        <option value="Mar">2024</option>
-                                        <option value="Apr">2023</option>
-                                        <option value="May">2022</option>
-                                        <option value="Jun">2021</option>
-                                        <option value="Jul">2020</option>
-                                        <option value="Aug">2019</option>
-                                        <option value="Sep">2018</option>
-
-                                    </select>
-
-                                </div>
-                            </div>
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4 py-1">Period / Date</th>
-
-                                            <th class="py-3">Document type
-                                            </th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-month="Apr" data-year="2026">
-
-                                            <td class="ps-4 py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
-                                            <td class="py-3">Annual Statements</td>
-
-                                        </tr>
-                                        <tr data-month="Apr" data-year="2026">
-
-                                            <td class="ps-4 py-3 pmo-table-meta pmo-table-date">05 Apr 2025</td>
-                                            <td class="py-3">Annual Statements</td>
-
-                                        </tr>
-                                        <tr data-month="Apr" data-year="2026">
-
-                                            <td class="ps-4 py-3 pmo-table-meta pmo-table-date">02 Apr 2024</td>
-                                            <td class="py-3">Annual Statements</td>
-
-                                        </tr>
-                                        <tr data-month="Apr" data-year="2026">
-
-                                            <td class="ps-4 py-3 pmo-table-meta pmo-table-date">01 Apr 2023</td>
-                                            <td class="py-3">Annual Statements</td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- PRS fund notices -->
-                    <div id="eopStmtPanelFund" class="eop-stmt-panel d-none">
-                        <div class="card border-0 shadow-sm rounded-4 bg-white p-5 text-center">
-                            <i class="iconoir-page-search fs-1 text-muted mb-3 d-block" aria-hidden="true"></i>
-                            <p class="text-muted mb-0 fw-medium fs-8" id="eopStmtFundEmpty">No new PRS fund prospectus
-                                or employer notice packs for your default fund list.</p>
-                        </div>
-                    </div>
-
-                    <!-- e-Invoice -->
-                    <div id="eopStmtPanelEinv" class="eop-stmt-panel d-none">
-                        <div class="document-register border rounded-4 overflow-hidden">
-                            <div
-                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1">e-Invoice</h5>
-                                </div>
-                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 130px; height: 36px;" id="eopStmtFilterMonthEinv">
-                                        <option value="all" selected>All Months</option>
-                                        <option value="Jan">January</option>
-                                        <option value="Feb">February</option>
-                                        <option value="Mar">March</option>
-                                        <option value="Apr">April</option>
-                                        <option value="May">May</option>
-                                        <option value="Jun">June</option>
-                                        <option value="Jul">July</option>
-                                        <option value="Aug">August</option>
-                                        <option value="Sep">September</option>
-                                        <option value="Oct">October</option>
-                                        <option value="Nov">November</option>
-                                        <option value="Dec">December</option>
-                                    </select>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 110px; height: 36px;" id="eopStmtFilterYearEinv">
-                                        <option value="all" selected>All Years</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4 py-1">e-Invoice
-                                                No.</th>
-                                            <th class="py-3">Date</th>
-                                            <th class="py-3">Document type
-                                            </th>
-                                            <th class="pe-4 py-3">Download
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-1"><span class="d-block">TR2600004083678</span></td>
-                                            <td class="py-3 pmo-table-meta pmo-table-date">12 Apr 2026</td>
-                                            <td class="py-3">e-Invoice</td>
-                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="eopEinvPdf1"><i
-                                                        class="iconoir-download"></i> PDF</a></td>
-                                        </tr>
-                                        <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-1"><span class="d-block">TR2600004083679</span></td>
-                                            <td class="py-3 pmo-table-meta pmo-table-date">05 Apr 2026</td>
-                                            <td class="py-3">Self-billed e-Invoice</td>
-                                            <td class="pe-4 py-3"><a href="#" class="pmo-table-link" id="eopEinvPdf2"><i
-                                                        class="iconoir-download"></i> PDF</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Invoice -->
-                    <div id="eopStmtPanelInv" class="eop-stmt-panel d-none">
-                        <div class="document-register border rounded-4 overflow-hidden">
-                            <div
-                                class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-3 pb-2 border-bottom">
-                                <div>
-                                    <h5 class="fw-bold text-dark mb-1">Invoices</h5>
-                                </div>
-                                <div class="d-flex align-items-center gap-2 me-md-2 mb-2">
-                                    <span class="fs-8 fw-semibold text-muted text-nowrap"><i
-                                            class="iconoir-filter-list me-1"></i>Filter:</span>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 130px; height: 36px;" id="eopStmtFilterMonthInv">
-                                        <option value="all" selected>All Months</option>
-                                        <option value="Jan">January</option>
-                                        <option value="Feb">February</option>
-                                        <option value="Mar">March</option>
-                                        <option value="Apr">April</option>
-                                        <option value="May">May</option>
-                                        <option value="Jun">June</option>
-                                        <option value="Jul">July</option>
-                                        <option value="Aug">August</option>
-                                        <option value="Sep">September</option>
-                                        <option value="Oct">October</option>
-                                        <option value="Nov">November</option>
-                                        <option value="Dec">December</option>
-                                    </select>
-                                    <select
-                                        class="form-select form-select-sm border-secondary border-opacity-25 rounded-pill fs-8 fw-semibold px-3"
-                                        style="width: 110px; height: 36px;" id="eopStmtFilterYearInv">
-                                        <option value="all" selected>All Years</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="table-responsive pmo-table-frame">
-                                <table class="pmo-data-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="ps-4 py-1">Invoice
-                                                No.
-                                            </th>
-                                            <th class="py-3">Date</th>
-                                            <th class="py-3">Document type
-                                            </th>
-                                            <th class="pe-4 py-3">Download
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-1">TR2600004083680</td>
-                                            <td class="py-3 pmo-table-meta pmo-table-date">11 Apr 2026</td>
-                                            <td class="py-3">Invoice</td>
-                                            <td class="pe-4 py-3">
-                                                <a href="#" class="pmo-table-link" id="eopInvPdf1"><i
-                                                        class="iconoir-download"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                        <tr data-month="Apr" data-year="2026">
-                                            <td class="ps-4 py-1">TR2600004083681</td>
-                                            <td class="py-3 pmo-table-meta pmo-table-date">01 Apr 2026</td>
-                                            <td class="py-3">Credit Note</td>
-                                            <td class="pe-4 py-3">
-                                                <a href="#" class="pmo-table-link" id="eopInvPdf2"><i
-                                                        class="iconoir-download"></i> PDF</a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div> <!-- closes outer unified card -->
+            </section>
         </div> <!-- closes container -->
     </main>
 
@@ -662,7 +657,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>

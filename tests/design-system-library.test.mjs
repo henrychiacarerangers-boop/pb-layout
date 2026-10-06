@@ -3,6 +3,10 @@ import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const html = readFileSync(new URL('../design-system-library.html', import.meta.url), 'utf8');
+const corporateReview = readFileSync(
+    new URL('../corporate-pmo-component-review.html', import.meta.url),
+    'utf8'
+);
 
 test('design system library exposes all curated component families', () => {
     const families = [
@@ -47,4 +51,27 @@ test('interactive examples provide an accessible name and visible focus treatmen
     assert.match(html, /\.btn:focus-visible/);
     assert.match(html, /<button[^>]*aria-label=/);
     assert.match(html, /role="tablist"/);
+});
+
+test('Corporate PMO review presents every current shared component family', () => {
+    for (const contract of [
+        'design-tokens.css', 'pmo-core.css', 'PMO corporate/css/table-system.css',
+        'pmo-primary-nav', 'pmo-button--primary', 'pmo-button--secondary',
+        'pmo-button--quiet', 'pmo-button--success', 'pmo-button--danger-outline',
+        'pmo-button--danger', 'pmo-button--compact', 'pmo-action-region',
+        'pmo-alert--info', 'pmo-alert--attention', 'pmo-card', 'pmo-card--summary', 'pmo-metric',
+        'pmo-outcome-header', 'pmo-outcome-icon', 'pmo-outcome-title', 'pmo-outcome-copy',
+        'pmo-field', 'pmo-transaction-form', 'pmo-auth-form', 'pmo-status--success',
+        'pmo-status--pending', 'pmo-status--danger', 'pmo-status--neutral',
+        'pmo-table-frame', 'pmo-data-table', 'pmo-data-table--documents',
+        'pmo-data-table--document-download'
+    ]) {
+        assert.match(corporateReview, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    }
+
+    for (const section of ['foundations', 'navigation', 'actions', 'feedback', 'data', 'forms', 'auth', 'tables']) {
+        assert.match(corporateReview, new RegExp(`id="${section}"`));
+    }
+
+    assert.doesNotMatch(corporateReview, /badge-alert|pmo-btn-action|pmo-status-badge/);
 });

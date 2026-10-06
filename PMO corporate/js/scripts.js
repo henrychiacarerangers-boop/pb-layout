@@ -25,35 +25,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Form Submit Logic (Prototype presentation)
-    loginForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent actual submission
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent actual submission
 
-        // Basic UI validation feedback
-        if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
-            alert('Please enter both username and password.');
-            return;
-        }
+            // TEMPORARY: Direct login to dashboard (also handles pressing Enter in form fields)
+            window.location.href = 'unit-trust/dashboard.html';
 
-        // Show loading state
-        loginBtn.disabled = true;
-        btnText.textContent = 'Authenticating... ';
-        btnSpinner.classList.remove('d-none');
+            /* --- NORMAL T&C BEHAVIOUR (Reserved for normal flow to internet_risk.html) ---
+            // Basic UI validation feedback
+            if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                alert('Please enter both username and password.');
+                return;
+            }
 
-        // Simulate API call delay
-        setTimeout(() => {
-            // Success State
-            btnSpinner.classList.add('d-none');
-            btnText.textContent = 'Success!';
-            loginBtn.style.backgroundColor = '#198754';
-            loginBtn.style.borderColor = '#198754';
+            // Show loading state
+            if (loginBtn) {
+                loginBtn.disabled = true;
+                btnText.textContent = 'Authenticating... ';
+                btnSpinner.classList.remove('d-none');
+            }
 
-            // Reset and simulate redirect after 0.5s
+            // Simulate API call delay
             setTimeout(() => {
-                window.location.href = 'internet_risk.html';
-            }, 500);
+                // Success State
+                if (btnSpinner) btnSpinner.classList.add('d-none');
+                if (btnText) btnText.textContent = 'Success!';
+                if (loginBtn) {
+                    loginBtn.style.backgroundColor = '#198754';
+                    loginBtn.style.borderColor = '#198754';
+                }
 
-        }, 1500);
-    });
+                // Reset and simulate redirect after 0.5s
+                setTimeout(() => {
+                    window.location.href = 'internet_risk.html';
+                }, 500);
+
+            }, 1500);
+            -------------------------------------------------------------------------------- */
+        });
+    }
 
     // Wealth Gateway Tab Switching Logic
     const gatewayTabButtons = document.querySelectorAll('.gateway-tab-btn');

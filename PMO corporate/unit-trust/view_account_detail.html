@@ -14,6 +14,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="stylesheet" href="../css/table-system.css">
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
@@ -152,8 +153,7 @@
 <body class="bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -249,7 +249,7 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="dashboard.html">Dashboard</a>
                     </li>
@@ -288,7 +288,8 @@
                             <span class="text-dark fw-medium" id="detailAcctNo">094766567</span>
                             <span class="text-primary fw-bold" id="detailFundName">PB FIXED INCOME FUND</span>
                         </h2>
-                        <span class="text-dark fs-8 fw-semibold mt-1 d-block" id="detailInitialDate">Initial Investment on 20/12/2021</span>
+                        <span class="text-dark fs-8 fw-semibold mt-1 d-block" id="detailInitialDate">Initial Investment
+                            on 20/12/2021</span>
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
@@ -306,9 +307,7 @@
                                         class="me-2 fs-7 align-middle"></i>Redeem</a></li>
                         </ul>
                     </div>
-                    <button
-                        class="btn btn-outline-dark pmo-btn-toolbar"
-                        onclick="window.print()">
+                    <button class="btn btn-outline-dark pmo-btn-toolbar" onclick="window.print()">
                         <i class="iconoir-printer"></i> Print
                     </button>
                 </div>
@@ -324,32 +323,32 @@
                             <div class="col-6">
                                 <div class="financial-label">Market Value</div>
                                 <div class="d-flex align-items-center mt-1">
-                                    <span class="financial-val" id="detailMarketValue">MYR 194,379.50</span>
-                                    <span class="bubble-indicator" id="detailCostTooltip" data-bs-toggle="tooltip"
-                                        title="Investment Cost 75,000.00 MYR"><i class="iconoir-dollar"></i></span>
+                                    <span class="financial-val" id="detailMarketValue">MYR 1,007.54</span>
+                                    <span class="pmo-avg-cost-badge" id="detailCostTooltip" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Investment Cost 250,000.00 MYR">$</span>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="financial-label">Last Price</div>
                                 <div class="d-flex align-items-center mt-1">
-                                    <span class="financial-val text-dark" id="detailLastPrice">MYR 1.0507</span>
-                                    <span class="bubble-indicator" id="detailPriceTooltip" data-bs-toggle="tooltip"
-                                        title="as at 21/08/2026 Avg Cost/Unit 0.4054 MYR"><i
-                                            class="iconoir-dollar"></i></span>
+                                    <span class="financial-val text-dark" id="detailLastPrice">MYR 1.0337</span>
+                                    <span class="pmo-avg-cost-badge" id="detailPriceTooltip" data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        title="as at 21/08/2026 Avg Cost/Unit 0.4054 MYR">$</span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="financial-label">Total Units</div>
+                                <div class="financial-label">Total Balance Units</div>
                                 <div class="d-flex align-items-center mt-1">
-                                    <span class="financial-val fs-5 text-dark" id="detailTotalUnits">185,000.00</span>
-                                    <span class="bubble-info" id="detailLoadedTooltip" data-bs-toggle="tooltip" title="Loaded 185,000.00"><i
-                                            class="iconoir-info-circle"></i></span>
+                                    <span class="financial-val fs-5 text-dark" id="detailTotalUnits">974.69.00</span>
+                                    <span class="bubble-info" id="detailLoadedTooltip" data-bs-toggle="tooltip"
+                                        title="Loaded 974.69.00"><i class="iconoir-info-circle"></i></span>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="financial-label">Available Units</div>
                                 <div class="d-flex align-items-center mt-1">
-                                    <span class="financial-val fs-5 text-dark" id="detailAvailUnits">185,000.00</span>
+                                    <span class="financial-val fs-5 text-dark" id="detailAvailUnits">974.69.00</span>
                                     <span class="bubble-info" data-bs-toggle="tooltip" title="Excludes float units"><i
                                             class="iconoir-info-circle"></i></span>
                                 </div>
@@ -365,12 +364,13 @@
                     <div class="col-lg-4 border-end-lg px-lg-4">
                         <div class="mb-3">
                             <span class="financial-label">Distribution</span>
-                            <div class="fw-semibold text-dark fs-7 mt-1">Re-invest</div>
+                            <div class="fw-semibold text-dark fs-7 mt-1">Initial Investment</div>
                         </div>
 
                         <div>
                             <span class="financial-label">Unit Trust Consultant</span>
-                            <div class="fw-bold text-primary fs-7 mt-1" id="detailUtcDisplay">WONG KAH WEI 90000026</div>
+                            <div class="fw-bold text-primary fs-7 mt-1" id="detailUtcDisplay">WONG xxxx xxxxx 90000026
+                            </div>
                         </div>
                     </div>
 
@@ -404,35 +404,35 @@
                     <div class="accordion-body-custom pt-1">
                         <div class="summary-row">
                             <span>Market Value Of Current Holdings</span>
-                            <span>12,564.43</span>
+                            <span id="summaryMarketValue">1,007.54</span>
                         </div>
                         <div class="summary-row">
                             <span>Proceeds From Redemption/Switch-Out/Transfer-Out/Distribution Payout</span>
-                            <span>0.00</span>
+                            <span id="summaryProceeds">0.00</span>
                         </div>
                         <div class="summary-row">
                             <span>Amount Paid</span>
-                            <span>(10,000.00)</span>
+                            <span id="summaryAmountPaid">(250,000.00)</span>
                         </div>
                         <div class="summary-row">
                             <span>Switch-In/Transfer-In</span>
-                            <span>(0.00)</span>
+                            <span id="summarySwitchIn">(0.00)</span>
                         </div>
                         <div class="summary-row total-returns mt-2">
                             <span>Total Returns</span>
-                            <span>2,564.43</span>
+                            <span id="summaryTotalReturns">119,379.50</span>
                         </div>
                         <div class="summary-row border-0 mt-3 align-items-start flex-column flex-sm-row gap-2">
                             <div>
                                 <span class="fw-bold text-dark">Unrealised Returns</span>
-                                <span class="text-muted fs-8 ms-2">25.64% of Investment Cost of Holdings MYR
-                                    10,000.00</span>
+                                <span class="text-muted fs-8 ms-2" id="summaryUnrealisedDesc">159.17% of Investment Cost
+                                    of Holdings MYR 250,000.00</span>
                             </div>
-                            <span class="fw-bold text-dark fs-7">2,564.43</span>
+                            <span class="fw-bold text-dark fs-7" id="summaryUnrealisedReturns">119,379.50</span>
                         </div>
                         <div class="summary-row border-0 pb-0">
                             <span class="fw-bold text-dark">Realised Returns</span>
-                            <span class="fw-bold text-dark fs-7">0.00</span>
+                            <span class="fw-bold text-dark fs-7" id="summaryRealisedReturns">0.00</span>
                         </div>
                     </div>
                 </div>
@@ -444,8 +444,8 @@
                     aria-expanded="true" aria-controls="collapseTransactions">
                     <span class="fw-bold text-dark fs-7">Account Transactions</span>
                     <div class="d-flex align-items-center gap-3">
-                        <span class="text-secondary fs-8 fw-semibold">Total Units <strong
-                                class="text-dark">25,063.70</strong></span>
+                        <span class="text-secondary fs-8 fw-semibold">Total Balance Units <strong class="text-dark"
+                                id="txHeaderTotalUnits">974.69.00</strong></span>
                         <i class="iconoir-nav-arrow-up fs-5 text-dark accordion-icon transition-transform"
                             aria-hidden="true"></i>
                     </div>
@@ -474,15 +474,15 @@
                                     <tr>
                                         <th class="ps-4 py-3 text-start">Tran Date</th>
                                         <th class="py-3 text-start">Description</th>
-                                        <th class="py-3 text-end pmo-col-shaded">Paid/(Redeemed)<br>RM</th>
-                                        <th class="py-3 text-end">Invested/(Received)<br>RM</th>
-                                        <th class="py-3 text-end">Total Units</th>
-                                        <th class="py-3 text-end pmo-col-shaded">Price/Unit<br>RM</th>
-                                        <th class="py-3 text-end">Sales/Switch Charge<br>RM</th>
-                                        <th class="pe-4 py-3 text-end pmo-col-shaded">GST/SST Charges<br>RM</th>
+                                        <th class="py-3 text-end pmo-col-shaded">Paid/(Redeemed)<br>MYR</th>
+                                        <th class="py-3 text-end">Invested/(Received)<br>MYR</th>
+                                        <th class="py-3 text-end">Total Balance Units</th>
+                                        <th class="py-3 text-end pmo-col-shaded">Price/Unit<br>MYR</th>
+                                        <th class="py-3 text-end">Sales/Switch Charge<br>MYR</th>
+                                        <th class="pe-4 py-3 text-end pmo-col-shaded">GST/SST Charges<br>MYR</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="txTableBody">
                                     <tr>
                                         <td class="ps-4 py-3 text-start pmo-table-meta pmo-table-date">01/09/2022</td>
                                         <td class="py-3 text-start pmo-table-meta">
@@ -497,13 +497,13 @@
                                         <td class="py-3 text-end">74.56</td>
                                         <td class="py-3 text-end">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <span>211.46</span>
+                                                <span>70.96</span>
                                                 <span class="bubble-info" data-bs-toggle="tooltip"
                                                     title="Type of Units : Loaded"><i
                                                         class="iconoir-info-circle text-primary"></i></span>
                                             </div>
                                         </td>
-                                        <td class="py-3 text-end pmo-col-shaded">0.3526</td>
+                                        <td class="py-3 text-end pmo-col-shaded">1.0337</td>
                                         <td class="py-3 text-end">
                                             <div class="d-inline-flex align-items-center gap-1">
                                                 <span>0.00</span>
@@ -523,20 +523,20 @@
                                                         class="iconoir-info-circle text-primary"></i></span>
                                             </div>
                                         </td>
-                                        <td class="py-3 text-end pmo-col-shaded">10,000.00</td>
-                                        <td class="py-3 text-end">9,528.35</td>
+                                        <td class="py-3 text-end pmo-col-shaded">250,000.00</td>
+                                        <td class="py-3 text-end">730.00</td>
                                         <td class="py-3 text-end">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <span>24,852.24</span>
+                                                <span>184,929.04</span>
                                                 <span class="bubble-info" data-bs-toggle="tooltip"
                                                     title="Type of Units : Loaded"><i
                                                         class="iconoir-info-circle text-primary"></i></span>
                                             </div>
                                         </td>
-                                        <td class="py-3 text-end pmo-col-shaded">0.3834</td>
+                                        <td class="py-3 text-end pmo-col-shaded">0.3864</td>
                                         <td class="py-3 text-end">
                                             <div class="d-inline-flex align-items-center gap-1">
-                                                <span>471.65</span>
+                                                <span>3,537.38</span>
                                                 <span class="bubble-info" data-bs-toggle="tooltip" title="5%"><i
                                                         class="iconoir-info-circle text-primary"></i></span>
                                             </div>
@@ -578,19 +578,19 @@
                                         <th class="ps-4 py-3 text-start">Financial Year</th>
                                         <th class="py-3 text-center">Distribution Date</th>
                                         <th class="py-3 text-end pmo-col-shaded">Distribution<br>(sen/unit)</th>
-                                        <th class="py-3 text-end">Distribution Amount<br>RM</th>
+                                        <th class="py-3 text-end">Distribution Amount<br>MYR</th>
                                         <th class="py-3 text-center">Distribution Instruction</th>
                                         <th class="pe-4 py-3 text-center">Type</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="distTableBody">
                                     <tr>
                                         <td class="ps-4 py-3 text-start fw-bold text-dark">2022</td>
                                         <td class="py-3 text-center pmo-table-meta pmo-table-date">30/08/2022</td>
                                         <td class="py-3 text-end pmo-col-shaded">0.30</td>
                                         <td class="py-3 text-end fw-semibold text-dark">74.56</td>
                                         <td class="py-3 text-center">
-                                            <span class="pmo-category-badge">Re-invest</span>
+                                            <span class="pmo-category-badge">Initial Investment</span>
                                         </td>
                                         <td class="pe-4 py-3 text-center fw-semibold">FINAL</td>
                                     </tr>
@@ -715,7 +715,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -989,83 +989,104 @@
                     name: 'PB FIXED INCOME FUND',
                     acct: '094766567',
                     initDate: 'Initial Investment on 20/12/2021',
-                    marketValue: 'MYR 194,379.50',
-                    cost: '75,000.00 MYR',
-                    lastPrice: 'MYR 1.0507',
+                    marketValue: 'MYR 1,007.54',
+                    marketValueNum: '1,007.54',
+                    cost: '1,000.00 MYR',
+                    costNum: '1,000.00',
+                    lastPrice: 'MYR 1.0337',
+                    lastPriceNum: '1.0337',
                     avgCost: '0.4054 MYR',
-                    totalUnits: '185,000.00',
-                    availUnits: '185,000.00'
+                    totalUnits: '974.69.00',
+                    availUnits: '974.69.00',
+                    totalReturns: '7.54',
+                    returnPct: '0.75%',
+                    utc: 'WONG xxxx xxxxx 90000026',
+                    transactions: [
+                        { date: '01/08/2026', code: 'AI', name: 'Additional Investment', paid: '74.56', invested: '74.56', units: '889.02', price: '1.0337', charge: '0.00', chargeTip: '0%', gst: '0.00' },
+                        { date: '20/08/2026', code: 'AI', name: 'Initial Investment', paid: '800.00', invested: '730.00', units: '45.61', price: '1.0337', charge: '0.00', chargeTip: '0%', gst: '0.00' }
+                    ],
+                    distribution: [
+                        { year: '2026', date: '30/08/2026', sen: '0.30', amount: '74.56', instruction: 'Initial Investment', type: 'FINAL' }
+                    ]
                 },
                 '094766508': {
                     name: 'PUBLIC e-CASH DEPOSIT FUND - CLASS B',
                     acct: '094766508',
                     initDate: 'Initial Investment on 15/03/2022',
-                    marketValue: 'MYR 160,448.00',
-                    cost: '70,000.00 MYR',
-                    lastPrice: 'MYR 1.0028',
+                    marketValue: 'MYR 17,901.25',
+                    marketValueNum: '17,901.25',
+                    cost: '16,000.00 MYR',
+                    costNum: '16,000.00',
+                    lastPrice: 'MYR 1.0010',
+                    lastPriceNum: '1.0010',
                     avgCost: '0.4375 MYR',
-                    totalUnits: '160,000.00',
-                    availUnits: '160,000.00'
+                    totalUnits: '17,883.37',
+                    availUnits: '17,883.37',
+                    totalReturns: '1901.25',
+                    returnPct: '11.88%',
+                    utc: 'WONG xxxx xxxxx 90000026',
+                    transactions: [
+                        { date: '01/08/2026', code: 'AI', name: 'Additional Investment', paid: '48.00', invested: '48.00', units: '47.87', price: '1.0010', charge: '0.00', chargeTip: '0%', gst: '0.00' },
+                        { date: '15/08/2026', code: 'AI', name: 'Initial Investment', paid: '7,000.00', invested: '7,000.00', units: '9,952.13', price: '1.0010', charge: '0.00', chargeTip: '0%', gst: '0.00' }
+                    ],
+                    distribution: [
+                        { year: '2026', date: '30/08/2026', sen: '0.30', amount: '48.00', instruction: 'Initial Investment', type: 'FINAL' }
+                    ]
                 },
                 '136252514': {
                     name: 'PB CASH PLUS FUND',
                     acct: '136252514',
                     initDate: 'Initial Investment on 10/06/2022',
-                    marketValue: 'MYR 75,277.50',
-                    cost: '75,000.00 MYR',
-                    lastPrice: 'MYR 1.0037',
+                    marketValue: 'MYR 257,056.20',
+                    marketValueNum: '257,056.20',
+                    cost: '250,000.00 MYR',
+                    costNum: '250,000.00',
+                    lastPrice: 'MYR 1.0009',
+                    lastPriceNum: '1.0009',
                     avgCost: '1.0000 MYR',
-                    totalUnits: '75,000.00',
-                    availUnits: '75,000.00'
+                    totalUnits: '256,825.06',
+                    availUnits: '256,825.06',
+                    totalReturns: '7,056.20',
+                    returnPct: '2.82%',
+                    utc: 'WONG xxxx xxxxx 90000026',
+                    transactions: [
+                        { date: '01/09/2026', code: 'AI', name: 'Additional Investment', paid: '74.56', invested: '74.56', units: '74.28', price: '1.0009', charge: '0.00', chargeTip: '0%', gst: '4.50' },
+                        { date: '10/08/2026', code: 'AI', name: 'Initial Investment', paid: '250,000.00', invested: '250,000.00', units: '925.72', price: '1.0009', charge: '0.00', chargeTip: '0%', gst: '0.00' }
+                    ],
+                    distribution: [
+                        { year: '2026', date: '30/08/2026', sen: '0.30', amount: '74.56', instruction: 'Initial Investment', type: 'FINAL' }
+                    ]
                 },
                 '148822319': {
                     name: 'PB CASH MANAGEMENT FUND - CLASS B',
                     acct: '148822319',
                     initDate: 'Initial Investment on 05/01/2023',
-                    marketValue: 'MYR 49,980.00',
-                    cost: '48,500.00 MYR',
-                    lastPrice: 'MYR 0.9996',
+                    marketValue: 'MYR 11,287.41',
+                    marketValueNum: '11,287.41',
+                    cost: '11,251.41 MYR',
+                    costNum: '11,251.41',
+                    lastPrice: 'MYR 1.0032',
+                    lastPriceNum: '1.0032',
                     avgCost: '0.9700 MYR',
-                    totalUnits: '50,000.00',
-                    availUnits: '50,000.00'
-                },
-                '148822320': {
-                    name: 'PUBLIC ISLAMIC MONEY MARKET FUND',
-                    acct: '148822320',
-                    initDate: 'Initial Investment on 12/03/2023',
-                    marketValue: 'MYR 40,000.00',
-                    cost: '38,800.00 MYR',
-                    lastPrice: 'MYR 1.0000',
-                    avgCost: '0.9700 MYR',
-                    totalUnits: '40,000.00',
-                    availUnits: '40,000.00'
-                },
-                '148822321': {
-                    name: 'PUBLIC e-CASH DEPOSIT FUND',
-                    acct: '148822321',
-                    initDate: 'Initial Investment on 20/07/2023',
-                    marketValue: 'MYR 35,000.00',
-                    cost: '34,000.00 MYR',
-                    lastPrice: 'MYR 1.0000',
-                    avgCost: '0.9714 MYR',
-                    totalUnits: '35,000.00',
-                    availUnits: '35,000.00'
-                },
-                '148822322': {
-                    name: 'PB CASH MANAGEMENT FUND',
-                    acct: '148822322',
-                    initDate: 'Initial Investment on 15/11/2023',
-                    marketValue: 'MYR 25,000.00',
-                    cost: '24,250.00 MYR',
-                    lastPrice: 'MYR 1.0000',
-                    avgCost: '0.9700 MYR',
-                    totalUnits: '25,000.00',
-                    availUnits: '25,000.00'
+                    totalUnits: '11,251.41',
+                    availUnits: '11,251.41',
+                    totalReturns: '36.00',
+                    returnPct: '11.76%',
+                    utc: 'WONG xxxx xxxxx 90000026',
+                    transactions: [
+                        { date: '01/09/2026', code: 'AI', name: 'Additional Investment', paid: '30.00', invested: '30.00', units: '30.01', price: '1.0032', charge: '0.00', chargeTip: '0%', gst: '0.00' },
+                        { date: '05/01/2026', code: 'AI', name: 'Initial Investment', paid: '11,251.41', invested: '11,251.41', units: '9,969.99', price: '1.0032', charge: '0.00', chargeTip: '0%', gst: '0.00' }
+                    ],
+                    distribution: [
+                        { year: '2026', date: '30/08/2026', sen: '0.30', amount: '30.00', instruction: 'Initial Investment', type: 'FINAL' }
+                    ]
                 }
             };
 
             const currentAccountCodes = ['094766567', '094766508', '136252514', '148822319'];
             const data = currentAccountCodes.includes(acctParam) ? accountsData[acctParam] : accountsData['094766567'];
+
+            // Header Elements
             const detailAcctNo = document.getElementById('detailAcctNo');
             const detailFundName = document.getElementById('detailFundName');
             const detailInitialDate = document.getElementById('detailInitialDate');
@@ -1074,6 +1095,9 @@
             const detailTotalUnits = document.getElementById('detailTotalUnits');
             const detailAvailUnits = document.getElementById('detailAvailUnits');
             const detailUtcDisplay = document.getElementById('detailUtcDisplay');
+            const detailCostTooltip = document.getElementById('detailCostTooltip');
+            const detailPriceTooltip = document.getElementById('detailPriceTooltip');
+            const detailLoadedTooltip = document.getElementById('detailLoadedTooltip');
 
             if (detailAcctNo) detailAcctNo.textContent = data.acct;
             if (detailFundName) detailFundName.textContent = data.name;
@@ -1082,15 +1106,110 @@
             if (detailLastPrice) detailLastPrice.textContent = data.lastPrice;
             if (detailTotalUnits) detailTotalUnits.textContent = data.totalUnits;
             if (detailAvailUnits) detailAvailUnits.textContent = data.availUnits;
-            if (detailUtcDisplay) detailUtcDisplay.textContent = data.utc || 'WONG KAH WEI 90000026';
+            if (detailUtcDisplay) detailUtcDisplay.textContent = data.utc || 'WONG xxxx xxxxx 90000026';
 
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            if (detailCostTooltip) {
+                detailCostTooltip.setAttribute('data-bs-title', `Investment Cost ${data.cost}`);
+                detailCostTooltip.setAttribute('title', `Investment Cost ${data.cost}`);
+            }
+            if (detailPriceTooltip) {
+                detailPriceTooltip.setAttribute('data-bs-title', `as at 21/08/2026 Avg Cost/Unit ${data.avgCost}`);
+                detailPriceTooltip.setAttribute('title', `as at 21/08/2026 Avg Cost/Unit ${data.avgCost}`);
+            }
+            if (detailLoadedTooltip) {
+                detailLoadedTooltip.setAttribute('data-bs-title', `Loaded ${data.totalUnits}`);
+                detailLoadedTooltip.setAttribute('title', `Loaded ${data.totalUnits}`);
+            }
+
+            // Summary of Returns Binding
+            const summaryMarketValue = document.getElementById('summaryMarketValue');
+            const summaryProceeds = document.getElementById('summaryProceeds');
+            const summaryAmountPaid = document.getElementById('summaryAmountPaid');
+            const summarySwitchIn = document.getElementById('summarySwitchIn');
+            const summaryTotalReturns = document.getElementById('summaryTotalReturns');
+            const summaryUnrealisedDesc = document.getElementById('summaryUnrealisedDesc');
+            const summaryUnrealisedReturns = document.getElementById('summaryUnrealisedReturns');
+            const summaryRealisedReturns = document.getElementById('summaryRealisedReturns');
+
+            if (summaryMarketValue) summaryMarketValue.textContent = data.marketValueNum;
+            if (summaryProceeds) summaryProceeds.textContent = '0.00';
+            if (summaryAmountPaid) summaryAmountPaid.textContent = `(${data.costNum})`;
+            if (summarySwitchIn) summarySwitchIn.textContent = '(0.00)';
+            if (summaryTotalReturns) summaryTotalReturns.textContent = data.totalReturns;
+            if (summaryUnrealisedDesc) summaryUnrealisedDesc.textContent = `${data.returnPct} of Investment Cost of Holdings MYR ${data.costNum}`;
+            if (summaryUnrealisedReturns) summaryUnrealisedReturns.textContent = data.totalReturns;
+            if (summaryRealisedReturns) summaryRealisedReturns.textContent = '0.00';
+
+            // Account Transactions Binding
+            const txHeaderTotalUnits = document.getElementById('txHeaderTotalUnits');
+            if (txHeaderTotalUnits) txHeaderTotalUnits.textContent = data.totalUnits;
+
+            const txTableBody = document.getElementById('txTableBody');
+            if (txTableBody && data.transactions && data.transactions.length > 0) {
+                txTableBody.innerHTML = data.transactions.map(function (tx) {
+                    return `
+                        <tr>
+                            <td class="ps-4 py-3 text-start pmo-table-meta pmo-table-date">${tx.date}</td>
+                            <td class="py-3 text-start pmo-table-meta">
+                                <div class="d-flex align-items-center gap-1">
+                                    <span class="fw-semibold">${tx.code}</span>
+                                    <span class="bubble-info" data-bs-toggle="tooltip" title="${tx.name}">
+                                        <i class="iconoir-info-circle text-primary"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="py-3 text-end pmo-col-shaded">${tx.paid}</td>
+                            <td class="py-3 text-end">${tx.invested}</td>
+                            <td class="py-3 text-end">
+                                <div class="d-inline-flex align-items-center gap-1">
+                                    <span>${tx.units}</span>
+                                    <span class="bubble-info" data-bs-toggle="tooltip" title="Type of Units : Loaded">
+                                        <i class="iconoir-info-circle text-primary"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="py-3 text-end pmo-col-shaded">${tx.price}</td>
+                            <td class="py-3 text-end">
+                                <div class="d-inline-flex align-items-center gap-1">
+                                    <span>${tx.charge}</span>
+                                    <span class="bubble-info" data-bs-toggle="tooltip" title="${tx.chargeTip || '5%'}">
+                                        <i class="iconoir-info-circle text-primary"></i>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="pe-4 py-3 text-end pmo-col-shaded">${tx.gst}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Distribution Binding
+            const distTableBody = document.getElementById('distTableBody');
+            if (distTableBody && data.distribution && data.distribution.length > 0) {
+                distTableBody.innerHTML = data.distribution.map(function (dist) {
+                    return `
+                        <tr>
+                            <td class="ps-4 py-3 text-start fw-bold text-dark">${dist.year}</td>
+                            <td class="py-3 text-center pmo-table-meta pmo-table-date">${dist.date}</td>
+                            <td class="py-3 text-end pmo-col-shaded">${dist.sen}</td>
+                            <td class="py-3 text-end fw-semibold text-dark">${dist.amount}</td>
+                            <td class="py-3 text-center">
+                                <span class="pmo-category-badge">${dist.instruction}</span>
+                            </td>
+                            <td class="pe-4 py-3 text-center fw-semibold">${dist.type}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            // Initialize all Bootstrap tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
                 let options = {};
                 if (tooltipTriggerEl.tagName === 'TD') {
                     options.offset = [0, -10];
                 }
-                return new bootstrap.Tooltip(tooltipTriggerEl, options);
+                new bootstrap.Tooltip(tooltipTriggerEl, options);
             });
 
             // Re-align chevron icons when collapse events trigger

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate PMO Component Review</title>
+    <link rel="stylesheet" href="PMO corporate/css/bootstrap.min.css">
+    <link rel="stylesheet" href="PMO corporate/css/montserrat.css">
+    <link rel="stylesheet" href="PMO corporate/css/iconoir.css">
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="pmo-core.css">
+    <link rel="stylesheet" href="PMO corporate/css/table-system.css">
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; color: var(--text-primary); background: #f4f7fb; font-family: Montserrat, Arial, sans-serif; }
+        a { color: inherit; }
+
+        .review-shell { display: grid; grid-template-columns: 256px minmax(0, 1fr); min-height: 100dvh; }
+        .review-sidebar { position: sticky; top: 0; height: 100dvh; padding: 24px 16px; overflow-y: auto; color: #fff; background: linear-gradient(160deg, #121c34 0%, #1b2a4a 56%, #0e1930 100%); }
+        .review-brand { display: flex; align-items: center; gap: 11px; padding: 4px 8px 22px; border-bottom: 1px solid rgba(255,255,255,.14); }
+        .review-brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--brand-primary); font-size: .78rem; font-weight: 800; box-shadow: 0 10px 24px rgba(211,17,43,.30); }
+        .review-brand strong { display: block; font-size: .83rem; letter-spacing: .02em; }
+        .review-brand span { display: block; margin-top: 3px; color: rgba(255,255,255,.65); font-size: .68rem; }
+        .review-nav { display: grid; gap: 3px; margin-top: 20px; }
+        .review-nav a { padding: 9px 10px; border-radius: 9px; color: rgba(255,255,255,.73); font-size: .74rem; font-weight: 700; text-decoration: none; }
+        .review-nav a:hover { color: #fff; background: rgba(255,255,255,.11); }
+
+        .review-main { min-width: 0; }
+        .review-hero { position: relative; overflow: hidden; padding: 52px clamp(24px, 5vw, 68px) 44px; color: #fff; background: radial-gradient(circle at 82% 8%, rgba(211,17,43,.53), transparent 30%), linear-gradient(135deg, #101c36 0%, #1b2a4a 58%, #263a62 100%); }
+        .review-hero::after { content: ""; position: absolute; right: -140px; bottom: -205px; width: 570px; height: 430px; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; transform: rotate(-18deg); }
+        .review-kicker { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.17); border-radius: 999px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.78); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        .review-hero h1 { position: relative; z-index: 1; max-width: 860px; margin: 18px 0 12px; font-size: clamp(2.15rem, 4.4vw, 4.5rem); line-height: .98; letter-spacing: -.052em; }
+        .review-hero p { position: relative; z-index: 1; max-width: 700px; margin: 0; color: rgba(255,255,255,.75); font-size: .96rem; line-height: 1.65; }
+        .review-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; max-width: 760px; margin-top: 28px; }
+        .review-stat { padding: 13px 14px; border: 1px solid rgba(255,255,255,.13); border-radius: 12px; background: rgba(255,255,255,.07); backdrop-filter: blur(10px); }
+        .review-stat strong { display: block; font-size: 1.1rem; }
+        .review-stat span { display: block; margin-top: 3px; color: rgba(255,255,255,.65); font-size: .67rem; font-weight: 700; }
+
+        .review-content { max-width: 1440px; padding: 36px clamp(20px, 5vw, 68px) 80px; margin: 0 auto; }
+        .review-section { margin-top: 48px; scroll-margin-top: 20px; }
+        .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 16px; }
+        .section-kicker { margin: 0 0 6px; color: var(--brand-primary); font-size: .68rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+        .section-head h2 { margin: 0; color: var(--brand-navy); font-size: 1.42rem; letter-spacing: -.03em; }
+        .section-head p { max-width: 480px; margin: 0; color: var(--text-muted); font-size: .78rem; line-height: 1.55; text-align: right; }
+        .review-panel { padding: clamp(18px, 3vw, 28px); border: 1px solid rgba(27,42,74,.09); border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(15,40,78,.06); }
+        .component-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 14px; color: var(--brand-navy); font-size: .78rem; font-weight: 800; }
+        .component-label code { padding: 4px 7px; border-radius: 6px; color: #a51f30; background: #fff1f2; font-size: .65rem; font-weight: 700; }
+        .review-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+        .span-3 { grid-column: span 3; }.span-4 { grid-column: span 4; }.span-5 { grid-column: span 5; }.span-6 { grid-column: span 6; }.span-7 { grid-column: span 7; }.span-8 { grid-column: span 8; }.span-12 { grid-column: 1 / -1; }
+        .component-tile { min-height: 100%; padding: 18px; border: 1px solid rgba(27,42,74,.08); border-radius: 14px; background: #fbfcfe; }
+        .component-tile h3 { margin: 0 0 5px; color: var(--brand-navy); font-size: .84rem; }
+        .component-tile p { margin: 0 0 15px; color: var(--text-muted); font-size: .71rem; line-height: 1.5; }
+        .stack { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+        .stack--wide { gap: 14px; }
+        .token-list { display: grid; gap: 9px; }
+        .token-row { display: flex; align-items: center; gap: 10px; padding: 8px 9px; border-radius: 9px; background: #fff; }
+        .swatch { width: 22px; height: 22px; flex: 0 0 22px; border: 1px solid rgba(27,42,74,.10); border-radius: 7px; }
+        .token-row strong { display: block; color: var(--brand-navy); font-size: .68rem; }
+        .token-row code { color: var(--text-muted); font-size: .63rem; }
+        .type-sample { padding: 10px 0; border-bottom: 1px solid rgba(27,42,74,.08); }
+        .type-sample:last-child { border-bottom: 0; }
+        .type-sample small { display: block; margin-bottom: 4px; color: var(--text-muted); font-size: .63rem; font-weight: 700; }
+
+        .nav-stage { padding: 0 18px; border-radius: 15px; background: linear-gradient(135deg, #121c34, #243a62); }
+        .nav-stage .pmo-primary-nav { gap: 22px; }
+        .alert-stack { display: grid; gap: 10px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+        .status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+        .status-cell { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px; border: 1px solid rgba(27,42,74,.08); border-radius: 10px; background: #fff; }
+        .status-cell span:last-child { color: var(--text-muted); font-size: .67rem; }
+        .form-demo { display: grid; gap: 16px; }
+        .form-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .form-check-demo { display: flex; align-items: flex-start; gap: 9px; color: var(--text-secondary); font-size: .74rem; line-height: 1.45; }
+        .form-check-demo input { margin-top: 2px; accent-color: var(--brand-primary); }
+        .auth-demo { max-width: 430px; margin: 0 auto; padding: 24px; border: 1px solid rgba(27,42,74,.08); border-radius: var(--radius-md); background: #fff; box-shadow: var(--shadow-md); }
+        .auth-demo h3 { margin: 0 0 5px; color: var(--brand-navy); font-size: 1.15rem; }
+        .auth-demo p { margin: 0 0 18px; color: var(--text-muted); font-size: .74rem; }
+        .table-wrap { overflow-x: auto; }
+        .note { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; padding: 11px 12px; border-left: 3px solid var(--brand-primary); border-radius: 0 9px 9px 0; background: #fff6f7; color: #7d2632; font-size: .72rem; line-height: 1.5; }
+        .review-footer { margin-top: 44px; padding: 20px 0 0; border-top: 1px solid rgba(27,42,74,.10); color: var(--text-muted); font-size: .72rem; }
+
+        @media (max-width: 1080px) { .review-shell { grid-template-columns: 1fr; }.review-sidebar { position: static; height: auto; padding: 16px 20px; }.review-brand { padding-bottom: 14px; }.review-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 14px; }.review-hero { padding-top: 40px; }.span-3 { grid-column: span 6; }.span-4 { grid-column: span 6; }.span-5, .span-7 { grid-column: span 12; }.span-6, .span-8 { grid-column: span 12; } }
+        @media (max-width: 640px) { .review-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }.review-hero { padding: 32px 22px; }.review-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }.review-content { padding: 28px 16px 56px; }.section-head { align-items: start; flex-direction: column; }.section-head p { text-align: left; }.span-3, .span-4 { grid-column: span 12; }.form-split, .metric-grid, .status-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body class="pmo-app-shell">
+    <div class="review-shell">
+        <aside class="review-sidebar" aria-label="Component review navigation">
+            <div class="review-brand">
+                <div class="review-brand-mark">PMO</div>
+                <div><strong>Corporate PMO</strong><span>Component review</span></div>
+            </div>
+            <nav class="review-nav">
+                <a href="#foundations">Foundations</a>
+                <a href="#navigation">Navigation</a>
+                <a href="#actions">Actions</a>
+                <a href="#feedback">Feedback</a>
+                <a href="#data">Cards &amp; data</a>
+                <a href="#forms">Forms</a>
+                <a href="#auth">Access</a>
+                <a href="#tables">Tables</a>
+            </nav>
+        </aside>
+
+        <main class="review-main">
+            <header class="review-hero">
+                <span class="review-kicker"><i class="iconoir-eye" aria-hidden="true"></i> Review mode</span>
+                <h1>Corporate PMO<br>component review.</h1>
+                <p>A live, single-page inventory of the components currently used across Corporate PMO. Review visual hierarchy, spacing, colours, states and interaction treatment here before changing production pages.</p>
+                <div class="review-stats" aria-label="Component review summary">
+                    <div class="review-stat"><strong>8</strong><span>Component families</span></div>
+                    <div class="review-stat"><strong>6</strong><span>Button variants</span></div>
+                    <div class="review-stat"><strong>4</strong><span>Status states</span></div>
+                    <div class="review-stat"><strong>1</strong><span>Shared source of truth</span></div>
+                </div>
+            </header>
+
+            <div class="review-content">
+                <section class="review-section" id="foundations">
+                    <div class="section-head">
+                        <div><p class="section-kicker">01 · Foundations</p><h2>Tokens, type and elevation</h2></div>
+                        <p>These are the visual rules every production component inherits. Changing them changes the system.</p>
+                    </div>
+                    <div class="review-grid">
+                        <article class="review-panel span-4"><div class="component-label">Core colours <code>design-tokens.css</code></div><div class="token-list">
+                            <div class="token-row"><span class="swatch" style="background:#d3112b"></span><div><strong>Brand primary</strong><code>#d3112b</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:#1b2a4a"></span><div><strong>Brand navy</strong><code>#1b2a4a</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:#f8fafc"></span><div><strong>Surface subtle</strong><code>#f8fafc</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:#b42318"></span><div><strong>Danger</strong><code>#b42318</code></div></div>
+                        </div></article>
+                        <article class="review-panel span-4"><div class="component-label">Typography <code>semantic scale</code></div>
+                            <div class="type-sample text-display"><small>Display</small>Corporate control</div>
+                            <div class="type-sample text-title"><small>Title</small>Investment details</div>
+                            <div class="type-sample text-body"><small>Body</small>Clear, stable transaction content.</div>
+                            <div class="type-sample text-caption"><small>Caption</small>Supporting labels and metadata</div>
+                        </article>
+                        <article class="review-panel span-4"><div class="component-label">Geometry <code>spacing / radius</code></div><div class="token-list">
+                            <div class="token-row"><span class="swatch" style="background:#fff;border-radius:8px"></span><div><strong>Small radius</strong><code>8px · fields</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:#fff;border-radius:16px"></span><div><strong>Medium radius</strong><code>16px · cards</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:#fff;border-radius:999px"></span><div><strong>Pill radius</strong><code>buttons / status</code></div></div>
+                            <div class="token-row"><span class="swatch" style="background:linear-gradient(135deg,#fff,#dbeafe)"></span><div><strong>Elevation</strong><code>soft shadow only</code></div></div>
+                        </div></article>
+                    </div>
+                </section>
+
+                <section class="review-section" id="navigation">
+                    <div class="section-head"><div><p class="section-kicker">02 · Navigation</p><h2>Primary portal navigation</h2></div><p>One desktop tab treatment is used across Unit Trust, EOP and analytics pages.</p></div>
+                    <div class="review-panel nav-stage">
+                        <nav aria-label="Primary portal navigation sample"><ul class="pmo-primary-nav">
+                            <li><a class="pmo-primary-nav__link" href="#navigation">Dashboard</a></li>
+                            <li><a class="pmo-primary-nav__link" href="#data">View Account</a></li>
+                            <li><a class="pmo-primary-nav__link" href="#actions" aria-current="page">Authorise</a></li>
+                            <li><a class="pmo-primary-nav__link" href="#tables">Transactions</a></li>
+                            <li><a class="pmo-primary-nav__link" href="#forms">Statements</a></li>
+                        </ul></nav>
+                    </div>
+                </section>
+
+                <section class="review-section" id="actions">
+                    <div class="section-head"><div><p class="section-kicker">03 · Actions</p><h2>Buttons and footer-safe action regions</h2></div><p>Primary actions are decisive; secondary and semantic actions stay visually distinct without introducing new shapes.</p></div>
+                    <div class="review-grid">
+                        <article class="review-panel span-7"><div class="component-label">Button variants <code>.pmo-button</code></div><div class="stack stack--wide">
+                            <button class="pmo-button pmo-button--primary" type="button">Primary action <i class="iconoir-nav-arrow-right" aria-hidden="true"></i></button>
+                            <button class="pmo-button pmo-button--secondary" type="button">Secondary</button>
+                            <button class="pmo-button pmo-button--quiet" type="button">Quiet action</button>
+                            <button class="pmo-button pmo-button--success" type="button"><i class="iconoir-check" aria-hidden="true"></i> Approve</button>
+                            <button class="pmo-button pmo-button--danger-outline" type="button"><i class="iconoir-xmark" aria-hidden="true"></i> Reject</button>
+                            <button class="pmo-button pmo-button--danger" type="button">Destructive</button>
+                            <button class="pmo-button pmo-button--primary" type="button" disabled>Disabled</button>
+                        </div><div class="note"><i class="iconoir-info-circle" aria-hidden="true"></i><span>Use the compact size only within dense table actions. The standard 40–42px button is the default for task completion.</span></div></article>
+                        <article class="review-panel span-5"><div class="component-label">Compact actions <code>--compact</code></div><div class="stack"><button class="pmo-button pmo-button--success pmo-button--compact" type="button">Approve</button><button class="pmo-button pmo-button--danger-outline pmo-button--compact" type="button">Reject</button><button class="pmo-button pmo-button--quiet pmo-button--compact" type="button">Transact</button></div></article>
+                        <article class="review-panel span-12"><div class="component-label">Task completion pattern <code>.pmo-action-region</code></div>
+                            <div class="pmo-action-region"><div class="pmo-action-bar"><button class="pmo-button pmo-button--secondary" type="button">Cancel</button><button class="pmo-button pmo-button--primary" type="button">Continue <i class="iconoir-nav-arrow-right" aria-hidden="true"></i></button></div></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="review-section" id="feedback">
+                    <div class="section-head"><div><p class="section-kicker">04 · Feedback</p><h2>Alerts and transaction states</h2></div><p>Feedback communicates the state of work, not decoration. Only semantic colours are used.</p></div>
+                    <div class="review-grid">
+                        <article class="review-panel span-7"><div class="component-label">Inline alerts <code>.pmo-alert</code></div><div class="alert-stack">
+                            <div class="pmo-alert pmo-alert--info"><div class="pmo-alert__content pmo-alert__content--start"><i class="iconoir-info-circle" aria-hidden="true"></i><div><strong class="pmo-alert__title">Authorisation pending</strong><p class="pmo-alert__body">This transaction will complete after the authoriser approves it.</p></div></div><button class="pmo-button pmo-button--quiet pmo-button--compact" type="button">Learn more</button></div>
+                            <div class="pmo-alert pmo-alert--attention"><div class="pmo-alert__content pmo-alert__content--start"><i class="iconoir-warning-triangle" aria-hidden="true"></i><div><strong class="pmo-alert__title">Action required</strong><p class="pmo-alert__body">Payment requires your attention before the cut-off time.</p></div></div><button class="pmo-button pmo-button--danger-outline pmo-button--compact" type="button">Review</button></div>
+                        </div></article>
+                        <article class="review-panel span-5"><div class="component-label">Statuses <code>.pmo-status</code></div><div class="status-grid">
+                            <div class="status-cell"><span class="pmo-status pmo-status--success">Successful</span><span>completed</span></div>
+                            <div class="status-cell"><span class="pmo-status pmo-status--pending">Pending</span><span>waiting</span></div>
+                            <div class="status-cell"><span class="pmo-status pmo-status--danger">Rejected</span><span>needs review</span></div>
+                            <div class="status-cell"><span class="pmo-status pmo-status--neutral">Draft</span><span>inactive</span></div>
+                        </div></article>
+                        <article class="review-panel span-7"><div class="component-label">Transaction outcome <code>.pmo-outcome-header</code></div>
+                            <div class="pmo-outcome-header"><div class="pmo-outcome-icon pmo-outcome-icon--success"><i class="iconoir-check" aria-hidden="true"></i></div><div><h3 class="pmo-outcome-title">Redemption request approved</h3><p class="pmo-outcome-copy">The transaction has been recorded. Review the receipt details below.</p></div></div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="review-section" id="data">
+                    <div class="section-head"><div><p class="section-kicker">05 · Data display</p><h2>Cards and metrics</h2></div><p>Cards define a clear surface; metrics create a scannable view of financial information.</p></div>
+                    <div class="review-grid">
+                        <article class="pmo-card span-7"><div class="pmo-card__body"><div class="component-label">Information card and fit-content summary <code>.pmo-card / .pmo-card--summary</code></div><h3 style="margin:0;color:var(--brand-navy);font-size:1.15rem">PB Fixed Income Fund</h3><p style="margin:8px 0 18px;color:var(--text-muted);font-size:.78rem;line-height:1.55">Use the summary modifier for a sidebar that should end with its content instead of stretching to match a longer form.</p><div class="stack"><span class="pmo-status pmo-status--success">Active</span><button class="pmo-button pmo-button--secondary pmo-button--compact" type="button">View account</button></div></div></article>
+                        <article class="review-panel span-5"><div class="component-label">Metric cards <code>.pmo-metric</code></div><div class="metric-grid">
+                            <div class="pmo-metric"><div class="pmo-metric__value">MYR 10k</div><div class="pmo-metric__label">Investment amount</div></div>
+                            <div class="pmo-metric"><div class="pmo-metric__value">3</div><div class="pmo-metric__label">Pending approvals</div></div>
+                            <div class="pmo-metric"><div class="pmo-metric__value">2.4%</div><div class="pmo-metric__label">Return to date</div></div>
+                        </div></article>
+                    </div>
+                </section>
+
+                <section class="review-section" id="forms">
+                    <div class="section-head"><div><p class="section-kicker">06 · Forms</p><h2>Fields, validation and transaction forms</h2></div><p>Every form control has the same touch target, focus treatment, error colour and label hierarchy.</p></div>
+                    <div class="review-grid">
+                        <article class="review-panel span-7"><div class="component-label">Named fields <code>.pmo-field</code></div><form class="form-demo" onsubmit="return false">
+                            <div class="form-split"><label class="pmo-field"><span class="pmo-field__label">Investment amount</span><input class="pmo-field__control" type="text" value="10,000.00" aria-label="Investment amount"></label><label class="pmo-field"><span class="pmo-field__label">Payment account</span><select class="pmo-field__control" aria-label="Payment account"><option>PUBLIC BANK · 891823092391</option><option>MAYBANK · 112233445566</option></select></label></div>
+                            <label class="pmo-field pmo-field--error"><span class="pmo-field__label">Personal authentication code</span><input class="pmo-field__control" type="text" value="1234" aria-invalid="true" aria-describedby="review-pac-error"><span class="pmo-field__feedback" id="review-pac-error">Enter the complete eight-digit PAC.</span></label>
+                            <label class="form-check-demo"><input type="checkbox" checked><span>I confirm this is an execution-only transaction and I have read the required documents.</span></label>
+                            <div class="pmo-payment-account"><div class="pmo-payment-account__header"><span class="pmo-payment-account__icon" aria-hidden="true"><i class="iconoir-building"></i></span><div><span class="pmo-payment-account__label">Selected bank for payment</span><strong class="pmo-payment-account__value">PUBLIC BANK BERHAD 891823092391</strong></div></div><p class="pmo-payment-account__note">Use this account at the bank portal and confirm it carefully before continuing.</p></div>
+                        </form></article>
+                        <article class="review-panel span-5"><div class="component-label">Transaction composition <code>.pmo-transaction-form</code></div><form class="pmo-transaction-form" onsubmit="return false"><label><span class="form-label">Fund</span><select class="form-select"><option>PB Fixed Income Fund</option></select></label><label><span class="form-label">Reference</span><input class="form-control" type="text" placeholder="OL12389128391923"></label><div class="invalid-feedback d-block">Example validation message</div></form></article>
+                    </div>
+                </section>
+
+                <section class="review-section" id="auth">
+                    <div class="section-head"><div><p class="section-kicker">07 · Access</p><h2>Authentication shell</h2></div><p>The access pattern uses the same card, label, field and focus language as the portal.</p></div>
+                    <div class="review-panel"><div class="auth-demo pmo-auth-shell"><div class="component-label">Login form <code>.pmo-auth-form</code></div><h3>Welcome back</h3><p>Sign in to Corporate PMO.</p><form class="pmo-auth-form" onsubmit="return false"><label><span class="form-label">Corporate User ID</span><input class="form-control" type="text" value="ahmad.razak"></label><label><span class="form-label">Password</span><input class="form-control" type="password" value="password"></label><div class="stack"><button class="pmo-button pmo-button--primary" type="button">Log in</button><button class="pmo-button pmo-button--quiet" type="button">Forgot password?</button></div></form></div></div>
+                </section>
+
+                <section class="review-section" id="tables">
+                    <div class="section-head"><div><p class="section-kicker">08 · Tables</p><h2>Financial and document tables</h2></div><p>Numeric tables align values for comparison. Statement registers keep document information grouped at the reading edge.</p></div>
+                    <div class="review-panel table-wrap"><div class="component-label">Transaction list <code>.pmo-data-table</code></div><div class="pmo-table-frame"><table class="pmo-data-table"><thead><tr><th>Reference</th><th>Transaction</th><th>Amount (MYR)</th><th class="pmo-status-column">Status</th><th>Action</th></tr></thead><tbody>
+                        <tr><td class="pmo-table-primary">OL123891</td><td>Top-Up Investment</td><td>10,000.00</td><td class="pmo-status-column"><span class="pmo-status pmo-status--success">Successful</span></td><td><button class="pmo-button pmo-button--quiet pmo-button--compact" type="button">View</button></td></tr>
+                        <tr><td class="pmo-table-primary">RP260179</td><td>Redemption</td><td>25,000.00</td><td class="pmo-status-column"><span class="pmo-status pmo-status--pending">Pending</span></td><td><button class="pmo-button pmo-button--quiet pmo-button--compact" type="button">View</button></td></tr>
+                        <tr><td class="pmo-table-primary">EOP441092</td><td>Employer Contribution</td><td>92,470.50</td><td class="pmo-status-column"><span class="pmo-status pmo-status--danger">Rejected</span></td><td><button class="pmo-button pmo-button--quiet pmo-button--compact" type="button">View</button></td></tr>
+                    </tbody></table></div></div>
+                    <div class="review-panel table-wrap" style="margin-top:16px"><div class="component-label">Flat statement workspace <code>.pmo-statement-section</code></div><div class="pmo-statement-section"><div class="pmo-statement-section__header"><strong>Statement register</strong></div><div class="pmo-table-frame"><table class="pmo-data-table pmo-data-table--documents pmo-data-table--document-download"><thead><tr><th>Date</th><th>Type</th><th>Fund name</th><th>Download</th></tr></thead><tbody>
+                        <tr><td class="pmo-table-date">30 Apr 2026</td><td>Annual</td><td class="pmo-table-primary">PB Fixed Income Fund</td><td><a class="pmo-table-link" href="#">PDF</a></td></tr>
+                    </tbody></table></div></div></div>
+                </section>
+
+                <footer class="review-footer">Corporate PMO component review · Current shared source: <code>design-tokens.css</code>, <code>pmo-core.css</code> and <code>table-system.css</code>. Use this page to approve changes before they are rolled into production flows.</footer>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

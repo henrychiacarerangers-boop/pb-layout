@@ -8,6 +8,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const core = readFileSync(join(root, 'pmo-core.css'), 'utf8');
 const corporateTableSystem = readFileSync(join(root, 'PMO corporate/css/table-system.css'), 'utf8');
 const corporateEopStyles = readFileSync(join(root, 'PMO corporate/css/eop-dashboard.css'), 'utf8');
+const corporateDashboardStyles = readFileSync(join(root, 'PMO corporate/css/dashboard-styles.css'), 'utf8');
 const corporateDashboard = readFileSync(join(root, 'PMO corporate/unit-trust/dashboard.html'), 'utf8');
 const pmoDashboard = readFileSync(join(root, 'PMO/unit-trust/dashboard.html'), 'utf8');
 const corporateAuthorise = readFileSync(join(root, 'PMO corporate/unit-trust/authorise.html'), 'utf8');
@@ -19,11 +20,16 @@ const corporateTopup = readFileSync(join(root, 'PMO corporate/unit-trust/top_up.
 const corporateRedemption = readFileSync(join(root, 'PMO corporate/unit-trust/redemption.html'), 'utf8');
 const pmoTopup = readFileSync(join(root, 'PMO/unit-trust/top_up.html'), 'utf8');
 const pmoRedemption = readFileSync(join(root, 'PMO/unit-trust/redemption.html'), 'utf8');
+const corporateEopPayment = readFileSync(join(root, 'PMO corporate/eop/payment.html'), 'utf8');
+const corporateEopPaymentDetail = readFileSync(join(root, 'PMO corporate/eop/payment_detail.html'), 'utf8');
+const corporateEopAbortPayment = readFileSync(join(root, 'PMO corporate/eop/abort_payment.html'), 'utf8');
+const corporateEopTransactionDetail = readFileSync(join(root, 'PMO corporate/eop/transaction_detail.html'), 'utf8');
 test('PMO core declares the shared component contracts', () => {
     for (const selector of [
         '.badge-alert', '.view-tab', '.gateway-tab-btn', '.pmo-data-table',
         '.pmo-app-shell', '.pmo-primary-nav', '.pmo-button', '.pmo-alert',
-        '.pmo-card', '.pmo-metric', '.pmo-field', '.pmo-transaction-form', '.pmo-auth-shell', '.pmo-auth-form', '.pmo-status'
+        '.pmo-card', '.pmo-metric', '.pmo-field', '.pmo-transaction-form', '.pmo-auth-shell', '.pmo-auth-form', '.pmo-status',
+        '.pmo-payment-account'
     ]) {
         assert.ok(core.includes(selector), `missing ${selector}`);
     }
@@ -79,6 +85,14 @@ test('Corporate Authorisation detail pages inherit the shared shell and data-dis
         ]) {
             assert.match(markup, new RegExp(contract), `${name} missing ${contract}`);
         }
+    }
+
+    assert.match(core, /\.pmo-card--summary\s*\{\s*height: auto;/, 'summary card must fit its content');
+    for (const [name, markup] of [
+        ['Corporate Top-Up Authorisation', corporateAuthoriseTopup],
+        ['Corporate Redemption Authorisation', corporateAuthoriseRedemption]
+    ]) {
+        assert.match(markup, /pmo-card--summary/, `${name} must not stretch its summary card`);
     }
 });
 
@@ -138,6 +152,52 @@ test('transaction creation flows use the shared form, PAC, card, navigation, and
     }
 });
 
+test('the EOP payment journey uses one shared workspace language from batch to receipt', () => {
+    for (const [name, markup] of [
+        ['Payment List', corporateEopPayment],
+        ['Payment Detail', corporateEopPaymentDetail],
+        ['Abort Payment', corporateEopAbortPayment],
+        ['Transaction Detail', corporateEopTransactionDetail]
+    ]) {
+        for (const contract of ['pmo-card', 'pmo-table-frame', 'pmo-data-table', 'pmo-button']) {
+            assert.match(markup, new RegExp(contract), `${name} missing ${contract}`);
+        }
+    }
+
+    for (const [name, markup] of [
+        ['Payment Detail', corporateEopPaymentDetail],
+        ['Abort Payment', corporateEopAbortPayment],
+        ['Transaction Detail', corporateEopTransactionDetail]
+    ]) {
+        assert.match(markup, /pmo-card--summary/, `${name} summary card must fit its content`);
+        assert.match(markup, /pmo-action-region/, `${name} must use the shared action region`);
+        assert.doesNotMatch(markup, /btn btn-danger rounded-pill px-5/, `${name} retains a legacy primary action`);
+    }
+
+    assert.match(corporateEopPayment, /pmo-alert pmo-alert--attention d-none/, 'Payment List cancellation feedback must use the shared alert');
+    assert.match(corporateEopPaymentDetail, /pmo-alert pmo-alert--info mt-3/, 'Payment Detail bank guidance must use the shared alert');
+});
+
+test('Top-Up and EOP payment use the shared compact payment account guidance', () => {
+    assert.match(corporateTopup, /pmo-payment-account/, 'Top-Up must use the shared payment account component');
+    assert.match(corporateEopPaymentDetail, /pmo-payment-account/, 'EOP payment must use the shared payment account component');
+    assert.match(corporateTopup, /id="topUpStep2" class="row g-4 d-none"/, 'Top-Up confirmation must use the shared two-column payment workspace');
+    assert.match(corporateTopup, /<section class="pmo-card mb-4">/, 'Top-Up confirmation must use the shared card surface');
+    assert.match(corporateTopup, /pmo-card pmo-card--summary/, 'Top-Up confirmation must use the compact shared summary');
+    assert.doesNotMatch(corporateTopup, /id="topUpStep2"[\s\S]{0,180}card border-0 shadow-sm/, 'Top-Up confirmation retains the legacy card wrapper');
+    assert.doesNotMatch(corporateTopup, /Selected Bank Notice Alert/, 'Top-Up retains its oversized bank alert');
+    assert.match(corporateTopup, /topUpPaymentBankBrand/, 'Top-Up must show the selected Public Bank payment brand');
+    assert.match(corporateEopPaymentDetail, /eopPayVisualBankBrand/, 'EOP must show the selected Public Bank payment brand');
+
+    for (const contract of [
+        '.pmo-payment-account__header', '.pmo-payment-account__icon',
+        '.pmo-payment-account__label', '.pmo-payment-account__value', '.pmo-payment-account__note',
+        '.pmo-payment-account__brand'
+    ]) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+});
+
 test('local shell styles do not redeclare first-wave shared contracts', () => {
     for (const file of ['PMO/css/styles.css', 'PMO corporate/css/styles.css', 'UTC/css/styles.css', 'Corporate Website/css/styles.css']) {
         const stylesheet = readFileSync(join(root, file), 'utf8');
@@ -178,5 +238,177 @@ test('every Corporate PMO page loads the shared core directly or through its fin
             markup.includes('pmo-core.css') || markup.includes('table-system.css') || markup.includes('eop-dashboard.css'),
             `Corporate portal page missing a final shared-core bridge: ${page}`
         );
+    }
+});
+
+test('Corporate feedback uses canonical alerts and centralised label and status specifications', () => {
+    for (const page of [
+        'eop/dashboard.html', 'unit-trust/dashboard.html', 'unit-trust/top_up.html', 'unit-trust/redemption.html'
+    ]) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        assert.doesNotMatch(markup, /badge-alert/, `legacy alert remains in ${page}`);
+    }
+
+    for (const contract of [
+        '.pmo-alert--info', '.pmo-alert--success', '.pmo-alert__content--start',
+        '.pmo-alert__title', '.pmo-alert__body', 'body[data-pmo-shell] .form-label', 'text-transform: none !important',
+        '.pmo-status--success', '.pmo-status--pending', '.pmo-status--danger', '.pmo-status--neutral'
+    ]) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+
+    for (const contract of ['min-height: 26px !important', 'padding: 4px 9px !important', 'font-weight: 750 !important']) {
+        assert.match(corporateTableSystem, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `status system missing ${contract}`);
+    }
+});
+
+test('Corporate detail and analytics pages use the shared alert pattern without local overrides', () => {
+    const attentionPages = [
+        'analytics/eop.html', 'analytics/unit-trust.html',
+        'eop/abort_payment.html', 'eop/authorise_detail.html',
+        'eop/payment_detail.html', 'eop/transaction_detail.html',
+        'unit-trust/authorise_topup.html'
+    ];
+
+    for (const page of attentionPages) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        assert.match(markup, /pmo-alert/, `${page} must use the shared alert`);
+        assert.doesNotMatch(markup, /border-start border-4 border-(?:danger|success)/, `${page} retains a legacy alert border`);
+        assert.doesNotMatch(markup, /background-color:\s*#(?:fffbfb|f6fcf8)/i, `${page} retains a legacy alert fill`);
+    }
+
+    for (const page of ['eop/abort_payment.html', 'eop/authorise_detail.html', 'eop/payment_detail.html']) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        assert.doesNotMatch(markup, /Pro Max Corporate Design Guidelines Overrides/, `${page} retains page-wide component overrides`);
+        assert.doesNotMatch(markup, /^\s*\.(?:card|btn-danger|btn-outline-dark|btn-outline-danger)\s*\{/m, `${page} retains a global component override`);
+    }
+
+    const corporateRoot = join(root, 'PMO corporate');
+    assert.match(core, /body\[data-pmo-shell="true"\] \.top-landing-wrapper/, 'shared portal landing treatment is missing');
+    const allPages = [
+        'index.html', 'forgot.html', 'register.html', 'internet_risk.html',
+        'analytics/eop.html', 'analytics/unit-trust.html',
+        'eop/abort_payment.html', 'eop/authorise.html', 'eop/authorise_detail.html',
+        'eop/contribution.html', 'eop/dashboard.html', 'eop/payment.html',
+        'eop/payment_detail.html', 'eop/statements.html', 'eop/transaction_detail.html',
+        'eop/transactions.html', 'eop/upload.html',
+        'unit-trust/authorise.html', 'unit-trust/authorise_redemption.html',
+        'unit-trust/authorise_topup.html', 'unit-trust/dashboard.html', 'unit-trust/redemption.html',
+        'unit-trust/settings.html', 'unit-trust/statements.html', 'unit-trust/top_up.html',
+        'unit-trust/transactions.html', 'unit-trust/view_account.html', 'unit-trust/view_account_detail.html'
+    ];
+
+    for (const page of allPages) {
+        const markup = readFileSync(join(corporateRoot, page), 'utf8');
+        assert.doesNotMatch(markup, /\.pac-group\s*\{|\.btn-request-pac\s*\{/, `${page} retains an unused PAC style`);
+    }
+
+    for (const page of allPages.slice(4)) {
+        const markup = readFileSync(join(corporateRoot, page), 'utf8');
+        assert.doesNotMatch(markup, /style="background: radial-gradient\(circle at 20% 30%/, `${page} retains the shared portal gradient inline`);
+    }
+});
+
+test('Corporate portal source uses the canonical navigation, action, and status component names', () => {
+    const corporateRoot = join(root, 'PMO corporate');
+    const portalPages = [
+        'analytics/eop.html', 'analytics/unit-trust.html',
+        'eop/abort_payment.html', 'eop/authorise.html', 'eop/authorise_detail.html',
+        'eop/contribution.html', 'eop/dashboard.html', 'eop/payment.html',
+        'eop/payment_detail.html', 'eop/statements.html', 'eop/transaction_detail.html',
+        'eop/transactions.html', 'eop/upload.html',
+        'unit-trust/authorise.html', 'unit-trust/authorise_redemption.html',
+        'unit-trust/authorise_topup.html', 'unit-trust/dashboard.html', 'unit-trust/redemption.html',
+        'unit-trust/settings.html', 'unit-trust/statements.html', 'unit-trust/top_up.html',
+        'unit-trust/transactions.html', 'unit-trust/view_account.html', 'unit-trust/view_account_detail.html'
+    ];
+
+    for (const page of portalPages) {
+        const markup = readFileSync(join(corporateRoot, page), 'utf8');
+        assert.match(markup, /pmo-primary-nav/, `${page} missing canonical primary navigation`);
+        assert.doesNotMatch(markup, /pmo-status-badge|pmo-btn-(?:approve|reject|transact)|badge-alert/, `${page} contains retired component markup`);
+    }
+
+    for (const contract of ['.pmo-button--success', '.pmo-button--danger-outline', '.pmo-button--compact']) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+
+    assert.doesNotMatch(corporateTableSystem, /pmo-btn-(?:approve|reject|transact)|pmo-status-badge/, 'table system retains retired component aliases');
+});
+
+test('Corporate action bars use one footer-safe shared pattern', () => {
+    const actionPages = new Map([
+        ['eop/abort_payment.html', { bars: 2, regions: 1 }],
+        ['eop/authorise_detail.html', { bars: 2, regions: 1 }],
+        ['eop/payment_detail.html', { bars: 3, regions: 2 }],
+        ['unit-trust/authorise_redemption.html', { bars: 2, regions: 1 }],
+        ['unit-trust/authorise_topup.html', { bars: 1, regions: 1 }],
+        ['unit-trust/redemption.html', { bars: 3, regions: 2 }],
+        ['unit-trust/top_up.html', { bars: 3, regions: 2 }]
+    ]);
+
+    for (const [page, expected] of actionPages) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        assert.equal((markup.match(/\bpmo-action-bar\b/g) || []).length, expected.bars, `${page} action bar count drifted`);
+        assert.equal((markup.match(/\bpmo-action-region\b/g) || []).length, expected.regions, `${page} needs its full-width action region`);
+        assert.doesNotMatch(markup, /pmo-btn-action|pmo-action-bar flex-wrap/, `${page} retains a legacy action treatment`);
+    }
+
+    for (const contract of ['.pmo-action-region', '.pmo-action-bar', '.pmo-action-region .pmo-action-bar']) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+
+    assert.doesNotMatch(corporateDashboardStyles, /^\.pmo-action-bar\b/m, 'legacy Corporate action-bar contract remains outside the shared core');
+});
+
+test('Corporate completion screens use the compact shared transaction outcome header', () => {
+    const completionPages = [
+        'unit-trust/authorise_redemption.html', 'unit-trust/top_up.html', 'unit-trust/redemption.html',
+        'eop/authorise_detail.html', 'eop/payment_detail.html', 'eop/abort_payment.html'
+    ];
+
+    for (const page of completionPages) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        for (const contract of ['pmo-outcome-header', 'pmo-outcome-icon', 'pmo-outcome-title']) {
+            assert.match(markup, new RegExp(contract), `${page} missing ${contract}`);
+        }
+        assert.doesNotMatch(markup, /Clean Success Hero Header|<!-- Status Header -->/, `${page} retains a large legacy outcome header`);
+        assert.doesNotMatch(markup, /width:\s*(?:60|72)px;\s*height:\s*(?:60|72)px/, `${page} retains an oversized outcome icon`);
+    }
+
+    for (const contract of ['.pmo-outcome-header', '.pmo-outcome-icon', '.pmo-outcome-icon--success', '.pmo-outcome-title', '.pmo-outcome-copy']) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+});
+
+test('Corporate statement registers distinguish documents from financial data', () => {
+    const unitTrustStatements = readFileSync(join(root, 'PMO corporate/unit-trust/statements.html'), 'utf8');
+    const eopStatements = readFileSync(join(root, 'PMO corporate/eop/statements.html'), 'utf8');
+
+    assert.equal((unitTrustStatements.match(/pmo-data-table--documents/g) || []).length, 6, 'Unit Trust must classify every document register');
+    assert.match(unitTrustStatements, /pmo-data-table--statement-financial/, 'Tax voucher must retain a financial table treatment');
+    assert.equal((eopStatements.match(/pmo-data-table--documents/g) || []).length, 4, 'EOP must classify every statement register');
+
+    for (const contract of [
+        '.pmo-data-table--documents', '.pmo-data-table--document-download',
+        '.pmo-data-table--document-downloads-3', '.pmo-data-table--statement-financial'
+    ]) {
+        assert.match(corporateTableSystem, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
+    }
+});
+
+test('Corporate statement workspaces use one surface rather than cards within cards', () => {
+    for (const [name, page] of [
+        ['Unit Trust Statements', 'unit-trust/statements.html'],
+        ['EOP Statements', 'eop/statements.html']
+    ]) {
+        const markup = readFileSync(join(root, 'PMO corporate', page), 'utf8');
+        assert.match(markup, /pmo-card__body/, `${name} needs the shared workspace surface`);
+        assert.match(markup, /pmo-statement-section/, `${name} needs the shared flat section pattern`);
+        assert.doesNotMatch(markup, /document-register|border rounded-4 overflow-hidden/, `${name} retains a nested statement card`);
+    }
+
+    for (const contract of ['.pmo-statement-section', '.pmo-statement-empty']) {
+        assert.match(core, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `missing ${contract}`);
     }
 });

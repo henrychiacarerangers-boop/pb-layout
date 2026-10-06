@@ -25,11 +25,11 @@
     <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base="..">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut"
+    data-pmo-base="..">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -133,7 +133,8 @@
                         <a class="pmo-primary-nav__link nav-link" href="view_account.html">View Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pmo-primary-nav__link nav-link active" href="authorise.html" aria-current="page">Authorise </a>
+                        <a class="pmo-primary-nav__link nav-link active" href="authorise.html"
+                            aria-current="page">Authorise </a>
                     </li>
                     <li class="nav-item">
                         <a class="pmo-primary-nav__link nav-link" href="transactions.html">Transactions</a>
@@ -158,7 +159,8 @@
 
                 <!-- View Tab Links (Interactive) -->
                 <div class="border-bottom pb-3 mb-4">
-                    <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0" role="tablist" aria-label="Authorisation type">
+                    <div class="d-flex align-items-center gap-4 flex-wrap mt-2 mt-md-0" role="tablist"
+                        aria-label="Authorisation type">
                         <a href="javascript:void(0)" class="view-tab active d-flex align-items-center gap-2"
                             id="tab-topup" role="tab" aria-selected="true" aria-controls="topup">
                             Top-Up Investment
@@ -174,6 +176,8 @@
                     <!-- Top-Up Tab Pane (Populated with Pending Requests) -->
                     <!-- Top-Up Tab Pane -->
                     <div class="tab-pane fade show active" id="topup" role="tabpanel" aria-labelledby="tab-topup">
+                        <p class="text-muted fs-8 mb-3">The following are the investment top up pending your
+                            authorisation for payment at your bank.</p>
                         <div class="border rounded-4 overflow-hidden mb-4">
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table">
@@ -198,12 +202,12 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <span class="pmo-category-badge" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Bond">BO</span>
+                                                    data-bs-placement="top" title="Bond/Fixed Income">BO</span>
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 2 - Low to Moderate">
-                                                     <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2">
+                                                    data-bs-placement="top" title="Risk 2 - Low">
+                                                    <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2">
                                                 </div>
                                             </td>
                                             <td class="py-3 text-start pmo-table-primary">
@@ -232,7 +236,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -262,7 +266,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -288,11 +292,11 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <span class="pmo-category-badge" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Bond">BO</span>
+                                                    data-bs-placement="top" title="Bond/Fixed Income">BO</span>
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 2 - Low to Moderate">
+                                                    data-bs-placement="top" title="Risk 2 - Low">
                                                     <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2">
                                                 </div>
                                             </td>
@@ -302,7 +306,7 @@
                                             </td>
                                             <td class="py-3 text-start pmo-table-meta pmo-table-date">2026/04/09
                                                 09:12:05</td>
-                                            <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">75,000.00
+                                            <td class="py-3 text-end fw-semibold text-success pmo-col-shaded">250,000.00
                                             </td>
                                             <td class="pe-4 py-3 text-end">
                                                 <a href="authorise_topup.html?ref=UT26000000000198"
@@ -322,7 +326,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -353,7 +357,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -379,6 +383,7 @@
 
                     <!-- Redemption Tab Pane -->
                     <div class="tab-pane fade" id="redemption" role="tabpanel" aria-labelledby="tab-redemption" hidden>
+                        <p class="text-muted fs-8 mb-3">Redemption pending your authorisation.</p>
                         <div class="border rounded-4 overflow-hidden mb-4">
                             <div class="table-responsive pmo-table-frame">
                                 <table class="pmo-data-table">
@@ -408,7 +413,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -424,10 +429,12 @@
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000179&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000179&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -439,11 +446,11 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <span class="pmo-category-badge" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Bond">BO</span>
+                                                    data-bs-placement="top" title="Bond/Fixed Income">BO</span>
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 2 - Low to Moderate">
+                                                    data-bs-placement="top" title="Risk 2 - Low">
                                                     <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2">
                                                 </div>
                                             </td>
@@ -453,16 +460,18 @@
                                             </td>
                                             <td class="py-3 text-start pmo-table-meta pmo-table-date">2026/04/05
                                                 02:22:19</td>
-                                            <td class="py-3 text-end">185,000.00</td>
+                                            <td class="py-3 text-end">974.69.00</td>
                                             <td class="py-3 text-end fw-semibold text-danger pmo-col-shaded">50,000.00
                                             </td>
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000180&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000180&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -478,7 +487,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -488,16 +497,18 @@
                                             </td>
                                             <td class="py-3 text-start pmo-table-meta pmo-table-date">2026/04/01
                                                 16:12:54</td>
-                                            <td class="py-3 text-end">76,072.91</td>
+                                            <td class="py-3 text-end">256,825.06</td>
                                             <td class="py-3 text-end fw-semibold text-danger pmo-col-shaded">30,000.00
                                             </td>
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000181&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000181&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -509,11 +520,11 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <span class="pmo-category-badge" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Bond">BO</span>
+                                                    data-bs-placement="top" title="Bond/Fixed Income">BO</span>
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 2 - Low to Moderate">
+                                                    data-bs-placement="top" title="Risk 2 - Low">
                                                     <img src="../images/icon/risk-level/icon_risk2.png" alt="Risk 2">
                                                 </div>
                                             </td>
@@ -523,16 +534,18 @@
                                             </td>
                                             <td class="py-3 text-start pmo-table-meta pmo-table-date">2026/03/28
                                                 13:40:00</td>
-                                            <td class="py-3 text-end">185,000.00</td>
+                                            <td class="py-3 text-end">974.69.00</td>
                                             <td class="py-3 text-end fw-semibold text-danger pmo-col-shaded">40,000.00
                                             </td>
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000182&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000182&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -548,7 +561,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -564,10 +577,12 @@
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000183&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000183&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -575,7 +590,7 @@
                                         <tr>
                                             <td class="ps-4 py-3 text-start fw-bold text-dark">RP26000000000184</td>
                                             <td class="py-3 text-start pmo-table-primary">
-                                                <div class="pmo-fund-name">PUBLIC e-CASH DEPOSIT FUND - CLASS B</div>
+                                                <div class="pmo-fund-name">PUBLIC <span style="text-transform:lowercase;">e</span>-CASH DEPOSIT FUND - CLASS B</div>
                                             </td>
                                             <td class="py-3 text-center">
                                                 <span class="pmo-category-badge" data-bs-toggle="tooltip"
@@ -583,7 +598,7 @@
                                             </td>
                                             <td class="py-3 text-center">
                                                 <div class="pmo-risk-meter" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Risk 1 - Low">
+                                                    data-bs-placement="top" title="Risk 1 - Very Low">
                                                     <img src="../images/icon/risk-level/icon_risk1.png" alt="Risk 1">
                                                 </div>
                                             </td>
@@ -599,10 +614,12 @@
                                             <td class="pe-4 py-3 text-end">
                                                 <div class="pmo-action-btn-group">
                                                     <a href="authorise_redemption.html?ref=RP26000000000184&action=approve"
-                                                        class="pmo-btn-approve"><i class="iconoir-check"></i>
+                                                        class="pmo-button pmo-button--success pmo-button--compact"><i
+                                                            class="iconoir-check"></i>
                                                         Approve</a>
                                                     <a href="authorise_redemption.html?ref=RP26000000000184&action=reject"
-                                                        class="pmo-btn-reject"><i class="iconoir-xmark"></i> Reject</a>
+                                                        class="pmo-button pmo-button--danger-outline pmo-button--compact"><i
+                                                            class="iconoir-xmark"></i> Reject</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -728,7 +745,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>

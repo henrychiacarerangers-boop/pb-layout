@@ -39,6 +39,28 @@
 
         const root = document.getElementById("eopSidebarOffcanvas");
         if (root) {
+            function activateMainLink(link) {
+                link.classList.add("active");
+                link.classList.remove("text-dark");
+                const label = link.querySelector("span.fw-medium");
+                if (label) {
+                    label.classList.remove("fw-medium");
+                    label.classList.add("fw-semibold");
+                }
+                link.querySelectorAll("i.text-dark").forEach((icon) => icon.classList.remove("text-dark"));
+            }
+
+            function deactivateMainLink(link) {
+                link.classList.remove("active");
+                link.classList.add("text-dark");
+                const label = link.querySelector("span.fw-semibold");
+                if (label) {
+                    label.classList.remove("fw-semibold");
+                    label.classList.add("fw-medium");
+                }
+                link.querySelectorAll("i.fs-5").forEach((icon) => icon.classList.add("text-dark"));
+            }
+
             root.querySelectorAll('a[href$=".html"]').forEach((a) => {
                 a.classList.remove("active");
             });
@@ -62,12 +84,13 @@
                 "authorise_detail.html": "eopSideAuthorise",
                 "payment.html": "eopSidePayment",
                 "payment_detail.html": "eopSidePayment",
+                "abort_payment.html": "eopSidePayment",
                 "transactions.html": "eopSideTxn",
                 "statements.html": "eopSideStmt",
                 "einvoice.html": "eopSideEinv",
                 "invoice.html": "eopSideInv",
-                "analytics.html": "eopSideAnalytics",
-                "prs_fund_detail.html": "eopSideAnalytics",
+                "analytics.html": "pmoSideEopAnalytics",
+                "prs_fund_detail.html": "pmoSideEopAnalytics",
             };
             let sid = byPath[path];
             if (path === "transactions.html") {
@@ -81,7 +104,19 @@
             if (sid) {
                 const el = document.getElementById(sid);
                 if (el) {
-                    el.classList.add("active");
+                    const collapse = el.closest(".collapse");
+                    if (collapse) {
+                        const toggle = root.querySelector(`[href="#${collapse.id}"]`);
+                        if (toggle) {
+                            activateMainLink(toggle);
+                            toggle.classList.remove("collapsed");
+                            toggle.setAttribute("aria-expanded", "true");
+                        }
+                        collapse.classList.add("show");
+                        el.classList.add("active-sub");
+                    } else {
+                        el.classList.add("active");
+                    }
                     if (sid === "eopSideHome") {
                         el.classList.remove("text-dark");
                         el.querySelectorAll("i").forEach((ico) => ico.classList.remove("text-dark"));
@@ -93,6 +128,13 @@
                     }
                 }
             }
+
+            root.querySelectorAll('a.nav-link.rounded-3[data-bs-toggle="collapse"]').forEach((toggle) => {
+                toggle.addEventListener("click", () => {
+                    root.querySelectorAll("a.nav-link.rounded-3.active").forEach(deactivateMainLink);
+                    activateMainLink(toggle);
+                });
+            });
         }
 
         if (!window.bootstrap) return;
@@ -121,6 +163,7 @@
     }
 
     if (document.body && document.body.getAttribute("data-pmo-shell") === "true") {
+        run();
         window.addEventListener("pmoShellReady", run, { once: true });
     } else if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", run);

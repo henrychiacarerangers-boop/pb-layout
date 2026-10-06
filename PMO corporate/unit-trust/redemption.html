@@ -20,29 +20,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
     <!-- <link rel="manifest" href="../images/favicon/site.webmanifest" /> -->
     <style>
-        .pac-group {
-            position: relative;
-        }
-
-        .btn-request-pac {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--brand-red, #dc3545);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
-        }
-
-        .btn-request-pac:hover {
-            color: #bd2130;
-        }
-
         .brand-text-red {
             color: var(--brand-red, #dc3545) !important;
         }
@@ -91,12 +68,11 @@
     <link rel="stylesheet" href="../../pmo-core.css">
 </head>
 
-<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut" data-pmo-base=".."
-    data-pmo-footer-print="1">
+<body class="pmo-app-shell bg-light d-flex flex-column min-vh-100" data-pmo-shell="true" data-pmo-portal="ut"
+    data-pmo-base=".." data-pmo-footer-print="1">
 
     <!-- Top Landing Section -->
-    <div class="top-landing-wrapper position-relative"
-        style="background: radial-gradient(circle at 20% 30%, rgba(237, 28, 36, 0.45) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(255, 77, 90, 0.35) 0%, transparent 65%), radial-gradient(circle at 90% 10%, rgba(148, 14, 18, 0.8) 0%, transparent 40%), linear-gradient(135deg, #5c080b 0%, #940e12 35%, #d3112b 85%, #fd4b57 100%);">
+    <div class="top-landing-wrapper position-relative">
 
         <!-- Floating Navbar -->
         <!-- Top nav (partials/top-nav-*.html via js/layout-partials.js) -->
@@ -192,12 +168,13 @@
         <header class="dashboard-header text-white pt-0 pb-0 position-relative z-1" style="background: transparent;">
             <div class="container pt-0 pb-0 position-relative z-1">
 
-                <ul class="nav dashboard-tabs pmo-primary-nav border-0 flex-nowrap overflow-auto">
+                <ul class="pmo-primary-nav nav dashboard-tabs border-0 flex-nowrap overflow-auto">
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link pmo-primary-nav__link active" href="view_account.html" aria-current="page">View Account</a>
+                        <a class="nav-link pmo-primary-nav__link active" href="view_account.html"
+                            aria-current="page">View Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link pmo-primary-nav__link" href="authorise.html">Authorise </a>
@@ -245,10 +222,12 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <div class="badge-alert badge-alert-outline-primary d-inline-flex align-items-center m-0 py-2 px-3">
-                        <i class="iconoir-info-circle me-2 fs-5"></i>
-                        <span class="fs-8 fw-semibold m-0">*The transaction request will not be completed until it is
-                            authorised.</span>
+                    <div class="pmo-alert pmo-alert--info m-0">
+                        <div class="pmo-alert__content">
+                            <i class="iconoir-info-circle" aria-hidden="true"></i>
+                            <span>*The transaction request will not be completed until it is
+                                authorised.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,7 +266,7 @@
                                                 class="iconoir-user"></i></span>
                                         <select class="form-select form-select-lg fs-7" id="selectAccount">
                                             <option value="094766567" data-name="PB FIXED INCOME FUND"
-                                                data-price="1.0507" data-units="185000.00" data-available="185000.00"
+                                                data-price="1.0337" data-units="185000.00" data-available="185000.00"
                                                 data-nav-date="2026/07/27" selected>094766567 PB FIXED INCOME FUND
                                             </option>
                                             <option value="094766508" data-name="PUBLIC e-CASH DEPOSIT FUND - CLASS B"
@@ -317,17 +296,6 @@
                                             units.</div>
                                     </div>
                                 </div>
-                                <div class="mb-4">
-                                    <div class="d-flex align-items-center gap-2 mt-2 p-2 bg-light rounded-3 border">
-                                        <i class="iconoir-calculator fs-6 text-muted"></i>
-                                        <span class="fs-8 text-muted">Estimated Redemption Value: <strong
-                                                class="text-dark" id="estimatedValue">MYR 157,605.00</strong> <span
-                                                class="fw-normal text-muted ms-1 fs-9"
-                                                id="estValueNavDateWrapper">(based on NAV price as of <span
-                                                    id="estValueNavDate">2026/07/27</span>)</span></span>
-                                    </div>
-                                </div>
-
                                 <!-- 3. Payout Information (Read-only Bank-in Details) -->
                                 <div class="mb-4">
                                     <label class="form-label fs-8 text-muted mb-2">Payout Information</label>
@@ -362,15 +330,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 1 Action Buttons -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary"
-                            onclick="location.href='view_account.html'">Cancel</button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--primary" id="btnToStep2"
-                            onclick="goToStep2()">
-                            Next <i class="iconoir-nav-arrow-right ms-1"></i>
-                        </button>
-                    </div>
                 </div>
 
                 <!-- RIGHT: Redemption & Account Summary -->
@@ -393,7 +352,7 @@
                                             <i class="iconoir-info-circle text-primary"></i>
                                         </span>
                                     </div>
-                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">MYR 1.0507</div>
+                                    <div class="fw-bold text-dark fs-7" id="previewLastPrice">MYR 1.0337</div>
                                 </div>
                                 <div class="col-6">
                                     <div class="text-muted fw-normal fs-9 mb-1">Unit Trust Consultant</div>
@@ -407,26 +366,36 @@
 
                             <div class="mb-3">
                                 <div class="text-muted fw-normal fs-9 mb-1 d-flex align-items-center gap-1">
-                                    Total Units
+                                    Total Balance Units
                                     <span class="bubble-info fs-8 cursor-pointer" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" id="totalUnitsTooltip" title="Loaded 185,000.00">
+                                        data-bs-placement="top" id="totalUnitsTooltip" title="Loaded 974.69.00">
                                         <i class="iconoir-info-circle text-primary"></i>
                                     </span>
                                 </div>
-                                <div class="fw-bold text-dark fs-7" id="previewTotalUnits">185,000.00</div>
+                                <div class="fw-bold text-dark fs-7" id="previewTotalUnits">974.69.00</div>
                             </div>
 
                             <div class="mb-3">
                                 <div class="text-muted fw-normal fs-9 mb-1 d-flex align-items-center gap-1">
-                                    Available Units
+                                    Total Available Units
                                     <span class="bubble-info fs-8 cursor-pointer" data-bs-toggle="tooltip"
                                         data-bs-placement="top" id="availUnitsTooltip" title="Excludes float units">
                                         <i class="iconoir-info-circle text-primary"></i>
                                     </span>
                                 </div>
-                                <div class="fw-bold text-dark fs-7" id="previewAvailableUnits">185,000.00</div>
+                                <div class="fw-bold text-dark fs-7" id="previewAvailableUnits">974.69.00</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='view_account.html'">Cancel</button>
+                        <button type="button" class="pmo-button pmo-button--primary" id="btnToStep2"
+                            onclick="goToStep2()">
+                            Next <i class="iconoir-nav-arrow-right" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -458,12 +427,7 @@
                                         <tr>
                                             <td>Redemption Units</td>
                                             <td class="fw-bold text-danger fs-6" id="step2RedeemUnits">
-                                                150,000.00 Units</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Estimated Redemption Value</td>
-                                            <td class="fw-bold text-dark fs-5" id="step2EstValue">MYR
-                                                157,605.00</td>
+                                                150,000.00</td>
                                         </tr>
                                         <tr>
                                             <td>Mode of Payment</td>
@@ -482,24 +446,24 @@
                             </div>
 
                             <!-- Payout Information Alert -->
-                            <div class="d-flex align-items-start p-3 mb-4 rounded-3"
+                            <!--<div class="d-flex align-items-start p-3 mb-4 rounded-3"
                                 style="background-color: #f0f4fa; border: 1px solid #d0dcee; border-left: 4px solid #002e77 !important;">
                                 <i class="iconoir-info-circle fs-5 me-2 mt-0.5 flex-shrink-0"
                                     style="color: #002e77 !important;"></i>
                                 <div class="fs-8" style="color: #404041;">
                                     <div class="fw-bold mb-1" style="color: #002e77 !important;">Payout Information
                                     </div>
-                                    Redemption proceeds will be credited via <strong>Bank-in</strong> to <strong>PUBLIC
-                                        BANK BERHAD 891823092391</strong> within T+2 business days.
+                                    Redemption proceeds will be credited to your registered bank account within T+2 business days upon authorisation.
                                 </div>
-                            </div>
+                            </div>-->
 
 
 
                             <!-- Personal Authentication Code (PAC) & SecureSign Section -->
                             <div id="pac-verification-card" class="pmo-verification-section pt-3 border-top">
                                 <div class="mb-3 pmo-field">
-                                    <label class="form-label pmo-field__label text-dark fs-8 fw-semibold" for="pacMethod">Verification
+                                    <label class="form-label pmo-field__label text-dark fs-8 fw-semibold"
+                                        for="pacMethod">Verification
                                         Method</label>
                                     <select
                                         class="form-select pmo-field__control border-secondary rounded-2 px-3 py-2 fs-8 fw-semibold text-dark"
@@ -516,14 +480,15 @@
 
                                     <div class="d-flex align-items-center gap-2 mb-2 pmo-field">
                                         <input type="password"
-                                            class="form-control pmo-field__control border-secondary rounded-2 px-3 py-2 fs-7" id="pacInput"
-                                            placeholder="PAC No" maxlength="8" value="12345678"
-                                            autocomplete="one-time-code" aria-describedby="pac-error" aria-invalid="false" style="max-width: 240px;">
-                                        <button type="button" class="btn pmo-btn-action btn-dark shadow-sm pmo-button pmo-button--secondary"
+                                            class="form-control pmo-field__control border-secondary rounded-2 px-3 py-2 fs-7"
+                                            id="pacInput" placeholder="PAC No" maxlength="8" value="12345678"
+                                            autocomplete="one-time-code" aria-describedby="pac-error"
+                                            aria-invalid="false" style="max-width: 240px;">
+                                        <button type="button" class="pmo-button pmo-button--secondary"
                                             id="btn-request-pac" style="white-space: nowrap;">Request PAC</button>
                                     </div>
-                                    <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error" role="alert" aria-live="polite"
-                                        style="color: #d3112b; font-size: 0.75rem;">
+                                    <div class="invalid-feedback pmo-field__feedback d-none mb-2" id="pac-error"
+                                        role="alert" aria-live="polite" style="color: #d3112b; font-size: 0.75rem;">
                                         Incorrect PAC number. Please click 'Request PAC' and use code 12345678.
                                     </div>
 
@@ -595,9 +560,11 @@
 
                                 <!-- Terms & Conditions Checkbox -->
                                 <div class="d-flex align-items-start gap-3 mb-2">
-                                    <input class="form-check-input m-0 flex-shrink-0" type="checkbox" id="checkTerms" checked
+                                    <input class="form-check-input m-0 flex-shrink-0" type="checkbox" id="checkTerms"
+                                        checked
                                         style="width: 18px; height: 18px; min-width: 18px; margin: 0 !important; cursor: pointer;">
-                                    <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1" for="checkTerms">
+                                    <label class="form-check-label fs-8 text-dark cursor-pointer m-0 ps-1"
+                                        for="checkTerms">
                                         I have read, understood, and agreed to the <a href="#"
                                             class="text-danger fw-bold text-decoration-underline"
                                             style="color: #d3112b !important;">Terms and Conditions of Unit
@@ -613,14 +580,15 @@
                         </div>
                     </div>
 
-                    <!-- Step 2 Action Buttons -->
-                    <div class="pmo-action-bar print-hidden">
-                        <button type="button" class="btn btn-outline-dark pmo-button pmo-button--secondary" id="btnBackToStep1"
+                </div>
+                <div class="col-12 pmo-action-region print-hidden">
+                    <div class="pmo-action-bar">
+                        <button type="button" class="pmo-button pmo-button--secondary" id="btnBackToStep1"
                             onclick="goToStep1()">
-                            <i class="iconoir-nav-arrow-left me-1"></i> Back
+                            <i class="iconoir-nav-arrow-left" aria-hidden="true"></i> Back
                         </button>
-                        <button type="button" class="btn btn-danger shadow-sm pmo-button pmo-button--primary"
-                            id="btn-confirm-redemption" onclick="confirmRedemption()">Confirm Redemption</button>
+                        <button type="button" class="pmo-button pmo-button--primary" id="btn-confirm-redemption"
+                            onclick="confirmRedemption()">Proceed</button>
                     </div>
                 </div>
             </div>
@@ -628,20 +596,19 @@
             <!-- STEP 3: Completed / Redemption Voucher Screen -->
             <div id="step3Form" class="d-none py-3 my-2">
                 <div class="mx-auto" style="max-width: 820px;">
-                    <!-- Status Card Voucher -->
-                    <div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
-                        <div class="card-body p-4 p-md-5">
+                    <div class="card pmo-card border-0 shadow-sm rounded-4 bg-white overflow-hidden mb-4">
+                        <div class="card-body pmo-card__body p-4">
 
-                            <!-- Clean Success Hero Header -->
-                            <div class="text-center pb-4 mb-4 border-bottom">
-                                <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle shadow-sm"
-                                    id="statusIconBg"
-                                    style="width: 60px; height: 60px; background-color: #12a833; color: #ffffff; box-shadow: 0 6px 16px rgba(18, 168, 51, 0.25) !important;">
-                                    <i class="iconoir-check text-white" id="statusIcon"
-                                        style="font-size: 1.85rem; stroke-width: 2.8;"></i>
+                            <div class="pmo-outcome-header">
+                                <div class="pmo-outcome-icon pmo-outcome-icon--success" id="statusIconBg"
+                                    style="background-color: #12a833;">
+                                    <i class="iconoir-check" id="statusIcon"></i>
                                 </div>
-                                <h4 class="fw-bold text-dark mb-1" id="statusMainTitle" style="letter-spacing: -0.3px;">Redemption Request Submitted Successfully</h4>
-                                <p class="text-muted fs-8 mb-0 mx-auto" style="max-width: 520px;" id="statusSubTitle">The redemption transaction has been successfully submitted and queued for authorisation.</p>
+                                <div>
+                                    <h4 class="pmo-outcome-title" id="statusMainTitle">Redemption Request
+                                        Completed</h4>
+
+                                </div>
                             </div>
 
                             <!-- Structured Receipt Details Table -->
@@ -681,15 +648,15 @@
                                 <table class="pmo-data-table pmo-data-table--details mb-0">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 40%;">Execution Status</td>
+                                            <td style="width: 40%;">Status</td>
                                             <td>
-                                                <span class="pmo-status-badge pmo-status-success"
-                                                    id="doneStatusText">Successful (Pending Authorisation)</span>
+                                                <span class="pmo-status pmo-status--success"
+                                                    id="doneStatusText">Pending for Authorisation</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Redeemed Units</td>
-                                            <td class="fw-bold text-danger" id="doneRedeemUnits">150,000.00 Units</td>
+                                            <td class="fw-bold text-danger" id="doneRedeemUnits">150,000.00</td>
                                         </tr>
                                         <tr>
                                             <td>Estimated Value</td>
@@ -717,15 +684,14 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="pmo-action-bar flex-wrap print-hidden">
-                        <button type="button"
-                            class="btn btn-outline-dark d-flex align-items-center justify-content-center gap-2"
-                            onclick="window.print()">
-                            <i class="iconoir-printer fs-6"></i> Print Advice
+                    <div class="pmo-action-bar print-hidden">
+                        <button type="button" class="pmo-button pmo-button--secondary" onclick="window.print()">
+                            <i class="iconoir-printer" aria-hidden="true"></i> Print
                         </button>
-                        <button type="button" class="btn btn-outline-dark" onclick="location.href='dashboard.html'">Back
+                        <button type="button" class="pmo-button pmo-button--secondary"
+                            onclick="location.href='dashboard.html'">Back
                             to Dashboard</button>
-                        <button type="button" class="btn btn-danger shadow-sm"
+                        <button type="button" class="pmo-button pmo-button--primary"
                             onclick="location.href='view_account.html'">View Account</button>
                     </div>
                 </div>
@@ -823,7 +789,7 @@
                                         id="pmoUtSideTxnPast">Past Transactions</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=pending"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
-                                        id="pmoUtSideTxnPending">Pending Investments</a></li>
+                                        id="pmoUtSideTxnPending">Pending Requests</a></li>
                                 <li class="nav-item mb-1"><a href="../unit-trust/transactions.html?tab=online"
                                         class="nav-link p-0 text-muted fs-8 fw-medium hover-text-dark"
                                         id="pmoUtSideTxnOnline">Online Activities</a></li>
@@ -1109,14 +1075,14 @@
                 if (!opt) return;
 
                 const fundData = {
-                    '094766567': { price: 'MYR 1.0507', totalUnits: '185,000.00', availableUnits: '185,000.00', asAt: '27/07/2026', avgCost: '0.4054 MYR' },
-                    '094766508': { price: 'MYR 1.0028', totalUnits: '160,000.00', availableUnits: '160,000.00', asAt: '28/07/2026', avgCost: '1.0000 MYR' },
-                    '136252514': { price: 'MYR 1.0037', totalUnits: '75,000.00', availableUnits: '75,000.00', asAt: '27/07/2026', avgCost: '1.0010 MYR' },
+                    '094766567': { price: 'MYR 1.0337', totalUnits: '974.69.00', availableUnits: '974.69.00', asAt: '27/07/2026', avgCost: '0.4054 MYR' },
+                    '094766508': { price: 'MYR 1.0028', totalUnits: '17,883.37', availableUnits: '17,883.37', asAt: '28/07/2026', avgCost: '1.0000 MYR' },
+                    '136252514': { price: 'MYR 1.0037', totalUnits: '250,000.00', availableUnits: '250,000.00', asAt: '27/07/2026', avgCost: '1.0010 MYR' },
                     '148822319': { price: 'MYR 0.9996', totalUnits: '50,000.00', availableUnits: '50,000.00', asAt: '28/07/2026', avgCost: '0.9980 MYR' }
                 };
 
                 const curData = fundData[opt.value] || fundData['094766567'];
-                const price = parseFloat(opt.dataset.price || 1.0507);
+                const price = parseFloat(opt.dataset.price || 1.0337);
                 const rawUnits = redeemUnits ? redeemUnits.value.replace(/,/g, '') : '150000';
                 const units = parseFloat(rawUnits) || 0;
                 const est = units * price;
@@ -1144,7 +1110,7 @@
                     availUnitsTooltip.setAttribute('data-bs-original-title', 'Excludes float units');
                 }
 
-                if (summaryRedeemUnits) summaryRedeemUnits.textContent = formatNumber(units) + ' units';
+                if (summaryRedeemUnits) summaryRedeemUnits.textContent = formatNumber(units);
                 if (summaryEstValue) summaryEstValue.textContent = 'MYR ' + formatNumber(est);
                 if (summaryPayoutBank && selectPayoutBank) summaryPayoutBank.textContent = selectPayoutBank.value;
                 if (estValueNavDate) estValueNavDate.textContent = navDate;
@@ -1183,7 +1149,7 @@
                 const opt = getSelectedOption();
                 if (!opt) return false;
 
-                const price = parseFloat(opt.dataset.price || 1.0507);
+                const price = parseFloat(opt.dataset.price || 1.0337);
                 const est = units * price;
                 const fundName = opt.dataset.name;
                 const acctNo = opt.value;
@@ -1191,12 +1157,10 @@
                 const step2FundName = document.getElementById('step2FundName');
                 const step2AccountNo = document.getElementById('step2AccountNo');
                 const step2RedeemUnits = document.getElementById('step2RedeemUnits');
-                const step2EstValue = document.getElementById('step2EstValue');
 
                 if (step2FundName) step2FundName.textContent = fundName;
                 if (step2AccountNo) step2AccountNo.textContent = acctNo;
-                if (step2RedeemUnits) step2RedeemUnits.textContent = formatNumber(units) + ' Units';
-                if (step2EstValue) step2EstValue.textContent = 'MYR ' + formatNumber(est);
+                if (step2RedeemUnits) step2RedeemUnits.textContent = formatNumber(units);
 
                 document.querySelectorAll('.step2FundNameText').forEach(el => el.textContent = fundName);
 
@@ -1314,7 +1278,7 @@
                 const opt = getSelectedOption();
                 if (!opt) return false;
 
-                const price = parseFloat(opt.dataset.price || 1.0507);
+                const price = parseFloat(opt.dataset.price || 1.0337);
                 const est = units * price;
                 const bankVal = selectPayoutBank ? selectPayoutBank.value : 'PUBLIC BANK BERHAD 891823092391';
                 const now = new Date();
@@ -1335,7 +1299,7 @@
 
                 if (doneFundName) doneFundName.textContent = opt.dataset.name;
                 if (doneAccount) doneAccount.textContent = opt.value;
-                if (doneRedeemUnits) doneRedeemUnits.textContent = formatNumber(units) + ' Units';
+                if (doneRedeemUnits) doneRedeemUnits.textContent = formatNumber(units);
                 if (doneEstValue) doneEstValue.textContent = 'MYR ' + formatNumber(est);
                 if (donePayoutBank) donePayoutBank.textContent = bankVal;
                 if (doneDateTime) doneDateTime.textContent = formattedDateTime;

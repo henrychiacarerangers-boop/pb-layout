@@ -8,8 +8,8 @@ const fundReportsPanel = html.match(/<div class="tab-pane fade" id="fundreports"
 test('Fund Reports has an explicit Show action and visible language PDF download buttons', () => {
     assert.match(fundReportsPanel, /id="showFundReports"/);
     assert.match(fundReportsPanel, /data-keep-download-column/);
-    assert.match(fundReportsPanel, />English<\/th>/);
-    assert.match(fundReportsPanel, />Bahasa Malaysia<\/th>/);
-    assert.match(fundReportsPanel, />Mandarin<\/th>/);
+    assert.match(fundReportsPanel, />\s*English\s*<\/th>/);
+    assert.match(fundReportsPanel, />\s*Bahasa\s+Malaysia\s*<\/th>/);
+    assert.match(fundReportsPanel, />\s*Mandarin\s*<\/th>/);
     assert.match(fundReportsPanel, /iconoir-download/);
 });
